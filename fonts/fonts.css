@@ -1,0 +1,22 @@
+/* Inconsolata LGC */
+
+@font-face {
+	font-family: 'Inconsolata LGC';
+	src: url('incons-r-subset.woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Inconsolata LGC';
+	src: url('incons-ri-subset.woff');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Inconsolata LGC';
+	src: url('incons-rb-subset.woff');
+	font-weight: bold;
+	font-style: normal;
+}
