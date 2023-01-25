@@ -1,0 +1,193 @@
+@charset "utf-8";
+@namespace epub "http://www.idpf.org/2007/ops";
+
+@import url(fonts/fonts.css);
+
+body {
+    margin: 5%;
+    font-size: medium;
+    font-family: serif;
+    hyphens: auto;
+    -epub-hyphens: auto;
+    line-break: strict;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: sans-serif;
+    font-variant: small-caps;
+    hyphens: none;
+    -epub-hyphens: none;
+    page-break-after: avoid;
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+p {
+    text-indent: 1em;
+}
+
+header>.title {
+    font-size: 2.4em;
+    text-align: center;
+}
+
+header>.author {
+    font-size: 1.4em;
+    text-align: right;
+}
+
+h1+p {
+    text-indent: 0;
+}
+
+section>h1+p:first-letter {
+    float: left;
+    font-size: 2.4em;
+    line-height: 1;
+    margin-top: 0.1em;
+    margin-right: 0.1em;
+}
+
+/*
+blockquote+p,
+blockquote p:first-child,
+h2+p,
+h3+p,
+*/
+header+p,
+hr+p>ol>li>p:first-child {
+    text-indent: 0;
+}
+
+ol.toc {
+    padding: 0;
+    margin-left: 1em;
+}
+
+ol.toc li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid;
+    height: 0;
+    margin: 1.5em auto;
+    width: 25%;
+}
+
+cite {
+    font-style: normal;
+}
+
+abbr {
+    border: none;
+    white-space: nowrap;
+}
+
+blockquote cite {
+    display: block;
+    font-style: italic;
+    text-align: right;
+}
+
+blockquote cite i {
+    font-style: normal;
+}
+
+a {
+    hyphens: none;
+    -epub-hyphens: none;
+}
+
+blockquote p {
+    font-style: italic;
+    text-align: left;
+    text-indent: 0;
+}
+
+blockquote p span {
+    display: block;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+blockquote br {
+    display: none;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+pre,
+tt,
+code,
+samp,
+kbd {
+    font-family: "Inconsolata LGC", "DejaVu Sans Mono", monospace;
+    word-wrap: break-word;
+    font-size: 0.9em;
+}
+
+pre {
+    line-height: 1.2em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    white-space: pre-wrap;
+    display: block;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+    box-sizing: border-box;
+    border: white 0.5em solid;
+}
+
+figcaption {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+p img {
+    border-radius: 0;
+    border: none;
+}
+
+sup {
+    vertical-align: super;
+    line-height: 0.5em;
+}
+
+sub {
+    vertical-align: sub;
+    line-height: 0.5em;
+}
+
+span.keyword {
+    font-family: sans-serif;
+    font-weight: bold;
+}
