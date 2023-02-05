@@ -24,4 +24,7 @@ by [Bartosz Milewski][bartosz github], based on:
 [onlurking]: https://github.com/onlurking/category-theory-for-programmers
 
 ## 日本語訳について
+
+html版は[github pages](https://ktgw0316.github.io/milewski-ctfp-markdown/)としても公開しています。
+
 ※2023年2月現在、下訳が終わった段階で、推敲はまだ途中です。誤訳を含む可能性が高いことにご注意ください。
