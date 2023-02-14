@@ -19,8 +19,6 @@
 * [[hom集合](#hom-set){epub:type="index-locator"}]{epub:type="index-term"}
 * [[Lawvere理論](#lawvere_theory){epub:type="index-locator"}]{epub:type="index-term"}
 * [[modus ponens](#modus_ponen){epub:type="index-locator"}]{epub:type="index-term"}
-* [[onto](#onto){epub:type="index-locator"}]{epub:type="index-term"}
-* [[surjective](#surjective){epub:type="index-locator"}]{epub:type="index-term"}
 * [[theorems for free](#theorems_for_free){epub:type="index-locator"}]{epub:type="index-term"}
 * [[variant](#variant){epub:type="index-locator"}]{epub:type="index-term"}
 * [[writerモナド](#writer_monad){epub:type="index-locator"}]{epub:type="index-term"}
@@ -32,6 +30,7 @@
   * [[操作的-](#operational_semantics){epub:type="index-locator"}]{epub:type="index-term"}
   * [[表示的-](#denotational_semantics){epub:type="index-locator"}]{epub:type="index-term"}
 * [[インスタンス](#instance){epub:type="index-locator"}]{epub:type="index-term"}
+* [[上への](#onto){epub:type="index-locator"}]{epub:type="index-term"}
 * [[埋め込み](#embedding){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- か -->
@@ -69,6 +68,7 @@
   * [[右-](#right_adjoint){epub:type="index-locator"}]{epub:type="index-term"}
 * [[スケルトン](#skeleton){epub:type="index-locator"}]{epub:type="index-term"}
 * [[線形順序](#linear_order){epub:type="index-locator"}]{epub:type="index-term"}
+* [[全射](#surjective){epub:type="index-locator"}]{epub:type="index-term"}
 * [[前順序](#preorder){epub:type="index-locator"}]{epub:type="index-term"}
 * [[全順序](#total_order){epub:type="index-locator"}]{epub:type="index-term"}
 * [[双カルテシアン閉](#bicartesian_closed){epub:type="index-locator"}]{epub:type="index-term"}
