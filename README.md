@@ -7,7 +7,8 @@ by [Bartosz Milewski][bartosz github], based on:
 
 * Original [blogpost series][blogpost series]
 * [PDF/LaTeX version][ctfp-pdf] by Igal Tabachnik
-* [epub version][onlurking] by Diogo Felix 
+* [epub version][onlurking] by Diogo Felix (base.css)
+* [easy pandoc templates](https://github.com/ryangrose/easy-pandoc-templates) by Ryan Grose (pandoc html template)
 
 ## How to build
 
@@ -15,7 +16,7 @@ by [Bartosz Milewski][bartosz github], based on:
 1. `cd english/` (or `cd japanese/` if you want to build Japanese version)
 1. `mkdir build`
 1. `cp -R ../images ../base.css build/`
-1. `pandoc -d ../defaults.yaml --to=html5 -o build/index.html`
+1. `pandoc -d ../defaults.yaml --template=../html_templates/bootstrap_menu.html --to=html5 -o build/index.html`
 
 [bartosz github]: https://github.com/BartoszMilewski
 [blogpost series]:
