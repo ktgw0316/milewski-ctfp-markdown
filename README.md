@@ -1,6 +1,6 @@
 # milewski-ctfp-markdown
 
-バルトシュ・ミレフスキー著『プログラマーのための圏論』の非公式markdown版（日本語訳を含む）
+バルトシュ・ミレフスキー著『プログラマーのための圏論』の非公式markdown版（[原著者の公開許可済み](https://github.com/ktgw0316/milewski-ctfp-markdown/issues/2#issuecomment-1494275529)の日本語訳を含む）
 
 An *unofficial* markdown version of "**C**ategory **T**heory **F**or **P**rogrammers"
 by [Bartosz Milewski][bartosz github], based on:
@@ -21,7 +21,7 @@ by [Bartosz Milewski][bartosz github], based on:
 [bartosz github]: https://github.com/BartoszMilewski
 [blogpost series]:
   https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/
-[ctfp-pdf]: https://raw.githubusercontent.com/hmemcpy/milewski-ctfp-pdf/
+[ctfp-pdf]: https://github.com/hmemcpy/milewski-ctfp-pdf/
 [onlurking]: https://github.com/onlurking/category-theory-for-programmers
 
 ## 日本語訳について
