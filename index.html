@@ -3963,7 +3963,7 @@
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Stmt</span> <span class="ot">=</span> <span class="dt">Stmt</span> <span class="dt">String</span> <span class="dt">Bool</span></span></code></pre>
         </div>
         <p>
-          これは単に<code>String</code>と<code>Bool</code>の直積だが、独自の名前とコンストラクターが与えられている。このスタイルの宣言の利点は、内容は同じでも意味と機能が異なり、互いに置き換えられない型を多数定義できることだ。
+          これは単に<code>String</code>と<code>Bool</code>の積だが、独自の名前とコンストラクターが与えられている。このスタイルの宣言の利点は、内容は同じでも意味と機能が異なり、互いに置き換えられない型を多数定義できることだ。
         </p>
         <p>
           タプルや複数の引数を持つコンストラクターを使ってプログラミングすると、複雑で間違いが生じやすくなる。どのコンポーネントが何を表しているかを追うのが大変になるからだ。コンポーネントに名前を付ける方が望ましい場合がよくある。名前付きフィールドを持つ直積型は、Haskellでは<span
@@ -4027,7 +4027,7 @@
         </div>
         <p>また、ペアと同様に、<code>Either</code>は (同型を除いて)
           可換であり、ネストでき、ネストの順序は (同型を除いて)
-          無関係だ。したがって、たとえば、トリプルに相当する直和:</p>
+          無関係だ。したがって、たとえば、トリプルに相当する和:</p>
         <div class="sourceCode" id="cb126">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">OneOfThree</span> a b c <span class="ot">=</span> <span class="dt">Sinistral</span> a <span class="op">|</span> <span class="dt">Medial</span> b <span class="op">|</span> <span class="dt">Dextral</span> c</span></code></pre>
@@ -4088,7 +4088,7 @@
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Maybe</span> a <span class="ot">=</span> <span class="dt">Nothing</span> <span class="op">|</span> <span class="dt">Just</span> a</span></code></pre>
         </div>
-        <p><code>Maybe</code>型は2つの型の直和だ。このことは2つのコンストラクターを個々の型に分けるとわかる。1つ目は次のようになる:</p>
+        <p><code>Maybe</code>型は2つの型の和だ。このことは2つのコンストラクターを個々の型に分けるとわかる。1つ目は次のようになる:</p>
         <div class="sourceCode" id="cb132">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">NothingType</span> <span class="ot">=</span> <span class="dt">Nothing</span></span></code></pre>
@@ -4143,7 +4143,8 @@
         <p>
           <code>maybeTail</code>の定義の最初の部分は、<code>Nil</code>コンストラクターをパターンとして使い、<code>Nothing</code>を返す。2番目の部分では、<code>Cons</code>コンストラクターをパターンとして使う。コンストラクターの最初の引数には興味がないため、ワイルドカードで置き換える。<code>Cons</code>の2番目の引数は、変数<code>t</code>に束縛される
           (厳密に言えば、一度式に束縛されたら決して変化しないものの、変数と呼ぶことにする)。戻り値は<code>Just t</code>だ。こうして、<code>List</code>の作成方法に応じて、句の1つに一致するようになった。作成に<code>Cons</code>が使われるときは、渡した2つの引数が取得される
-          (最初の引数は破棄される)。</p>
+          (最初の引数は破棄される)。
+        </p>
         <p>
           さらに複雑な直和型は、C++では多相クラス階層を使って実装されている。共通の祖先を持つ一連のクラスは、1つのバリアント型として理解でき、その中では仮想関数テーブルが隠しタグとして機能する。Haskellではコンストラクター上のパターンマッチングで特殊なコードを呼び出して行っていることを、C++では仮想関数テーブルのポインターに基づいて仮想関数呼び出しをディスパッチして実現している。
         </p>
@@ -4899,7 +4900,8 @@
           (残念ながら、テンプレート仮想関数は作れない)？
           フリーテンプレート関数は、カリー化版と非カリー化版のどちらにすべきだろうか？
           C++コンパイラは不足した型情報を正しく推論できるのか、それとも明示的に指定すべきだろうか？
-          入力関数<code>f</code>が<code>int</code>から<code>bool</code>への関数である状況を考えてみよう。コンパイラに<code>g</code>の型が分かるだろうか:</p>
+          入力関数<code>f</code>が<code>int</code>から<code>bool</code>への関数である状況を考えてみよう。コンパイラに<code>g</code>の型が分かるだろうか:
+        </p>
         <div class="sourceCode" id="cb169">
           <pre
             class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> g <span class="op">=</span> fmap<span class="op">(</span>f<span class="op">);</span></span></code></pre>
@@ -4999,7 +5001,8 @@
           <code>List a</code>に作用する関数は、リストの2つのコンストラクターに対応する2つの場合を考慮する必要がある。<code>Nil</code>の場合は自明で、単に<code>Nil</code>を返す。空のリストでできることはあまりない。<code>Cons</code>の場合は、再帰を伴うため、ややトリッキーだ。そこで、少し前に戻って、何をしようとしているのか考えてみよう。<code>a</code>のリストと、<code>a</code>を<code>b</code>に変換する関数<code>f</code>があり、<code>b</code>のリストを生成したいと考えている。自明なのは、<code>f</code>を使ってリストの各要素を<code>a</code>から<code>b</code>に変換することだ。(空でない)
           リストが頭部と尾部の<code>Cons</code>として定義されている場合、実際にはどうやってそれを行うのだろうか。<code>f</code>を頭部に適用し、リフト
           (<code>fmap</code>)
-          された<code>f</code>を尾部に適用する。これは再帰的な定義だ。リフトされた<code>f</code>をリフトされた<code>f</code>を用いて定義しているからだ。</p>
+          された<code>f</code>を尾部に適用する。これは再帰的な定義だ。リフトされた<code>f</code>をリフトされた<code>f</code>を用いて定義しているからだ。
+        </p>
         <div class="sourceCode" id="cb180">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span> f (<span class="dt">Cons</span> x t) <span class="ot">=</span> <span class="dt">Cons</span> (f x) (<span class="fu">fmap</span> f t)</span></code></pre>
@@ -5041,7 +5044,8 @@
         <p>
           <code>std::transform</code>は<code>fmap</code>のより原始的な従兄弟だ。それに渡せるイテレータを実装しているため、ほとんどのC++コンテナは関手だと言える。残念ながら、関手の単純さは、イテレータや一時変数
           (上記の<code>fmap</code>の実装を参照)
-          でいつも煩雑になるため失われてしまう。新しく提案されたC++のrangeライブラリによってrangeの関手的な性質がより顕著になったのは喜ばしい。</p>
+          でいつも煩雑になるため失われてしまう。新しく提案されたC++のrangeライブラリによってrangeの関手的な性質がより顕著になったのは喜ばしい。
+        </p>
         <h3 data-number="7.1.7" id="reader関手"><span class="header-section-number">7.1.7</span> Reader関手</h3>
         <p>
           さて、直観が育ってきただろう――たとえば、関手はある種のコンテナだ――では、一見したところ非常に異なる例をお見せしよう。型<code>a</code>からの、<code>a</code>を返す関数の型への写像を考えてみよう。関数型についてはあまり詳しく述べていない
@@ -5109,7 +5113,8 @@
         <p>
           <code>Const</code>型コンストラクターは<code>c</code>と<code>a</code>の2つの型を取る。アローコンストラクターで行ったように、部分適用で関手を作成しよう。データコンストラクター
           (これも<code>Const</code>と呼ばれる)
-          は型<code>c</code>の値を1つだけ取る。これは<code>a</code>には依存しない。この型コンストラクターの<code>fmap</code>の型は次のようになる:</p>
+          は型<code>c</code>の値を1つだけ取る。これは<code>a</code>には依存しない。この型コンストラクターの<code>fmap</code>の型は次のようになる:
+        </p>
         <div class="sourceCode" id="cb192">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb192-1"><a href="#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span><span class="ot"> ::</span> (a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> <span class="dt">Const</span> c a <span class="ot">-&gt;</span> <span class="dt">Const</span> c b</span></code></pre>
@@ -5456,8 +5461,9 @@
         </table>
         <p>この型クラス定義では、両方のデフォルト実装を<code>bimap</code>として提供している。</p>
         <p>
-          <code>Bifunctor</code>のインスタンスを宣言するときには、<code>bimap</code>を実装して<code>first</code>と<code>second</code>のデフォルト値を受け入れるか、<code>first</code>と<code>second</code>の両方を実装して<code>bimap</code>のデフォルト値を受け入れるか、どちらかを選択できる
-          (もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはあなたの責任になる)。</p>
+          <code>Bifunctor</code>のインスタンスを宣言するときには、<code>bimap</code>を実装してデフォルトの<code>first</code>と<code>second</code>を受け入れるか、<code>first</code>と<code>second</code>の両方を実装してデフォルトの<code>bimap</code>を受け入れるか、どちらかを選択できる
+          (もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる)。
+        </p>
         <h2 data-number="8.2" id="積と余積の双関手"><span class="header-section-number">8.2</span> 積と余積の双関手</h2>
         <p>双関手の重要な例として、圏論的な積がある。それは<a
             href="#products-and-coproducts">普遍的構成</a>によって定義される2つの対象の積だ。対象の任意のペアに対して積が存在する場合、これらの対象から積への写像は双関手的だ。これは一般に真であり、Haskellに特によく当てはまる。以下に、ペアのコンストラクターについての<code>Bifunctor</code>インスタンスを示す。最も単純な直積型だ:
@@ -5480,7 +5486,7 @@
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb207-1"><a href="#cb207-1" aria-hidden="true" tabindex="-1"></a>(,) a b <span class="ot">=</span> (a, b)</span></code></pre>
         </div>
         <p>
-          双対性によって、余積は、圏内の対象のすべてのペアに対して定義されている場合、双関手でもある。Haskellでは、<code>Either</code>の型コンストラクターが<code>Bifunctor</code>のインスタンスであることが良い例だ。
+          双対性より、余積は、圏内の対象のすべてのペアに対して定義されているなら双関手でもある。Haskellでは、<code>Either</code>の型コンストラクターが<code>Bifunctor</code>のインスタンスであることが良い例だ:
         </p>
         <div class="sourceCode" id="cb208">
           <pre
@@ -5490,7 +5496,7 @@
         </div>
         <p>これもコード自体が説明になっている。</p>
         <p>モノイダル圏について話したときのことを覚えているだろうか？
-          モノイダル圏は、単位対象とともに対象に作用する二項演算子を定義する。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          モノイダル圏は、対象に作用する二項演算子と単位対象とを定義する。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mstyle mathvariant="bold">
                 <mi>𝐒</mi>
@@ -5499,18 +5505,26 @@
               </mstyle>
               <annotation encoding="application/x-tex">\symbf{Set}</annotation>
             </semantics>
-          </math>はカルテシアン積に関して単集合を単位とするモノイダル圏である、と述べた。また、非交和に関しても空集合を単位とするモノイダル圏だ。述べていなかったのは、モノイダル圏の要件の1つは二項演算子が双関手であることだ、ということだ。これは非常に重要な要件だ。我々は、モノイダル積を、射によって定義される圏の構造と両立させたい。我々は今、モノイダル圏の完全な定義に一歩近づいている
+          </math>はカルテシアン積に関して単集合を単位とするモノイダル圏である、と述べた。また、非交和に関しても空集合を単位とするモノイダル圏だ。述べていなかったのは、モノイダル圏の要件の1つは二項演算子が双関手であることだ、ということだ。これは非常に重要な要件だ。射によって定義される圏の構造とモノイダル積とを両立させたいからだ。我々は今、モノイダル圏の完全な定義に一歩近づいている
           (そこに到達する前に、まだ自然性について学ぶ必要がある)。</p>
         <h2 data-number="8.3" id="関手的代数的データ型"><span class="header-section-number">8.3</span> 関手的代数的データ型</h2>
         <p>これまで何例か見てきたパラメーター化されたデータ型に対して、<code>fmap</code>を定義でき、それらが関手であることがわかった。複雑なデータ型は単純なデータ型から構成される。特に、代数的データ型
           (ADT)
-          は、直和と直積を使って作成される。先ほど、直和と直積が関手的であるのを見た。関手が合成するのも知っている。したがって、ADTの基本的な構成要素が関手的であると示せれば、パラメーター化されたADTも関手的だとわかる。
-        </p>
+          は、和と積を使って作成される。先ほど、和と積が関手的であるのを見た。関手が合成するのも知っている。したがって、ADTの基本的な構成要素が関手的であると示せれば、パラメーター化されたADTも関手的だとわかる。</p>
         <p>では、パラメーター化された代数的データ型の構成要素は何だろうか？
-          まず、<code>Maybe</code>における<code>Nothing</code>や、<code>List</code>における<code>Nil</code>のように、関手の型パラメーターに依存しない項目がある。それらは<code>Const</code>関手と等価だ。<code>Const</code>関手は型パラメーターを無視することを覚えておいてほしい
+          まず、<code>Maybe</code>における<code>Nothing</code>や、<code>List</code>における<code>Nil</code>のように、関手の型パラメーターに依存しない要素がある。それらは<code>Const</code>関手と等価だ。<code>Const</code>関手は型パラメーターを無視することを忘れないでほしい
           (実際には、興味があるのは<em>2番目</em>の型パラメーターであり、最初のパラメーターは一定に保たれる)。</p>
-        <p>次に、<code>Maybe</code>における<code>Just</code>のように、単に型パラメーター自体をカプセル化する要素がある。これらは恒等関手と等価だ。以前、恒等関手について<g3>Cat</g3>
-          の恒等射として言及したが、Haskellでの定義は説明しなかった。それはこうだ:</p>
+        <p>次に、<code>Maybe</code>における<code>Just</code>のように、単に型パラメーター自体をカプセル化する要素がある。これらは恒等関手と等価だ。以前、恒等関手について<math
+            display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mstyle mathvariant="bold">
+                <mi>𝐂</mi>
+                <mi>𝐚</mi>
+                <mi>𝐭</mi>
+              </mstyle>
+              <annotation encoding="application/x-tex">\symbf{Cat}</annotation>
+            </semantics>
+          </math>の恒等射として言及したが、Haskellでの定義は説明しなかった。それをここに示す:</p>
         <div class="sourceCode" id="cb209">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb209-1"><a href="#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Identity</span> a <span class="ot">=</span> <span class="dt">Identity</span> a</span></code></pre>
@@ -5522,40 +5536,40 @@
         </div>
         <p><code>Identity</code>は、型<code>a</code>の (不変な)
           値を常に1つだけ格納する、最も単純なコンテナと見なせる。</p>
-        <p>代数的データ構造の他のすべては、これら2つのプリミティブから直積と直和を使って構成される。</p>
-        <p>この新しい知識に基づいて、型の<code>Maybe</code>コンストラクターを改めて見てみよう。</p>
+        <p>代数的データ構造の他のすべては、これら2つのプリミティブから積と和を使って構成される。</p>
+        <p>この新しい知識に基づいて、<code>Maybe</code>型コンストラクターを改めて見てみよう。</p>
         <div class="sourceCode" id="cb211">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb211-1"><a href="#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Maybe</span> a <span class="ot">=</span> <span class="dt">Nothing</span> <span class="op">|</span> <span class="dt">Just</span> a</span></code></pre>
         </div>
-        <p>これは2つの型の直和で、直和が関手的なのは知っている。最初の部分である<code>Nothing</code>は、<code>a</code>に作用する<code>Const ()</code>として表せる
-          (<code>Const</code>の最初の型パラメーターはunitに設定されている――後で<code>Const</code>のさらに興味深い使い方を説明する)。2番目の部分は、恒等関手の別名だ。<code>Maybe</code>は、同型を除いて、次のようにも定義できる:
+        <p>これは2つの型の和だ。和が関手的なのは知っている。1つ目の部分である<code>Nothing</code>は、<code>a</code>に作用する<code>Const ()</code>として表せる
+          (<code>Const</code>の最初の型パラメーターはunitに設定されている――後で<code>Const</code>のさらに興味深い使い方を説明する)。2つ目の部分は、恒等関手の別名だ。<code>Maybe</code>は、同型を除いて、次のようにも定義できる:
         </p>
         <div class="sourceCode" id="cb212">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb212-1"><a href="#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Maybe</span> a <span class="ot">=</span> <span class="dt">Either</span> (<span class="dt">Const</span> () a) (<span class="dt">Identity</span> a)</span></code></pre>
         </div>
         <p>
-          したがって<code>Maybe</code>は、双関手<code>Either</code>を、2つの関手<code>Const ()</code>と<code>Identity</code>に合成したものだ。(<code>Const</code>は実際には双関手だが、ここでは常に部分適用で使う)。
+          したがって、<code>Maybe</code>は双関手<code>Either</code>を2つの関手<code>Const ()</code>と<code>Identity</code>に合成したものだ。(<code>Const</code>は実際には双関手だが、ここでは常に部分適用で使う。)
         </p>
         <p>
           関手の合成が関手であることはすでに見た。同じことが双関手にも当てはまるのは容易に納得できる。必要なのは、2つの関手を持つ双関手の合成が、射にどのように作用するかを理解することだけだ。2つの射が与えられた場合、片方の関手で片方の射を、もう1つの関手でもう1つの射をそれぞれリフトするだけでよい。次に、そのようにして得られるリフトされた射のペアを、双関手でリフトする。
         </p>
         <p>この合成はHaskellで表現できる。双関手<code>bf</code>
-          (引数として2つの型を取る双関手コンストラクターである型変数)、2つの関手<code>fu</code>と<code>gu</code>
+          (2つの型を引数に取る双関手コンストラクターである型変数)、2つの関手<code>fu</code>と<code>gu</code>
           (それぞれ1つの型変数を取る型コンストラクター)、および2つの通常の型<code>a</code>と<code>b</code>によってパラメーター化されるデータ型を定義しよう。<code>fu</code>を<code>a</code>に適用し、<code>gu</code>を<code>b</code>に適用し、それから<code>bf</code>を結果の2つの型に適用する:
         </p>
         <div class="sourceCode" id="cb213">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb213-1"><a href="#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">BiComp</span> bf fu gu a b <span class="ot">=</span> <span class="dt">BiComp</span> (bf (fu a) (gu b))</span></code></pre>
         </div>
-        <p>これが対象の合成であり、型の合成だ。Haskellで型コンストラクターを型に適用する方法が、関数を引数に適用するのと同じであるのに注目してほしい。構文は同じだ。</p>
+        <p>これが対象の合成であり、型の合成だ。Haskellで型コンストラクターを型に適用する方法が、関数を引数に適用するのと同じであることに注目してほしい。それらは同じ構文だ。</p>
         <p>
-          少し迷ったなら、<code>BiComp</code>の適用を、<code>Either</code>、<code>Const ()</code>、<code>Identity</code>、<code>a</code>、<code>b</code>の順に試してみてほしい。<code>Maybe b</code>の必要最小限のバージョンを復元できるだろう
+          少し迷ったなら、<code>BiComp</code>を、<code>Either</code>、<code>Const ()</code>、<code>Identity</code>、<code>a</code>、<code>b</code>の順に適用してみてほしい。<code>Maybe b</code>の必要最小限のバージョンを復元できるだろう
           (<code>a</code>は無視する)。</p>
         <p>
-          新しいデータ型<code>BiComp</code>は、<code>a</code>および<code>b</code>内の双関手だが、<code>bf</code>自体が<code>Bifunctor</code>であり、<code>fu</code>および<code>gu</code>が<code>Functor</code>である場合に限る。コンパイラは、<code>bf</code>で利用可能な<code>bimap</code>の定義、および<code>fu</code>と<code>gu</code>で利用可能な<code>fmap</code>の定義が存在すると認識している必要がある。Haskellでは、これはインスタンス宣言の前提条件として表現されている:
-          クラス制約のセットが二重矢印の前に書かれる:</p>
+          新しいデータ型<code>BiComp</code>は、<code>a</code>および<code>b</code>内の双関手だが、<code>bf</code>自体が<code>Bifunctor</code>であり、<code>fu</code>および<code>gu</code>が<code>Functor</code>である場合に限る。コンパイラは、<code>bf</code>に対する<code>bimap</code>の定義と、<code>fu</code>と<code>gu</code>に対する<code>fmap</code>の定義とが存在することを認識している必要がある。Haskellでは、これはインスタンス宣言の前提条件として表現される。つまり、クラス制約のセットが二重矢印の前に書かれる:
+        </p>
         <div class="sourceCode" id="cb214">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb214-1"><a href="#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> (<span class="dt">Bifunctor</span> bf, <span class="dt">Functor</span> fu, <span class="dt">Functor</span> gu) <span class="ot">=&gt;</span></span>
@@ -5585,29 +5599,30 @@
 <span id="cb217-2"><a href="#cb217-2" aria-hidden="true" tabindex="-1"></a>  <span class="ot">-&gt;</span> bf (fu a) (gu b) <span class="ot">-&gt;</span> bf (fu a&#39;) (gu b&#39;)</span></code></pre>
         </div>
         <p>ジグソーパズルが好きな人なら、この種の型操作で何時間も楽しめるだろう。</p>
-        <p><code>Maybe</code>が関手だと証明する必要はなかったとわかった。この事実は、2つの関手的プリミティブの直和という構築方法から導かれたものだ。</p>
+        <p><code>Maybe</code>が関手だと証明する必要はなかったとわかった。この事実は、2つの関手的プリミティブの和という構築方法から導かれたものだ。</p>
         <p>鋭い読者ならこう尋ねるだろう:
-          代数的データ型に対する<code>Functor</code>インスタンスの導出がそれほど機械的なのなら、コンパイラによって自動化して実行できないのか？
-          実際、可能であり、行われている。ソースファイルの先頭に次の行を含めることで、特定のHaskell拡張を有効にする必要がある:</p>
+          代数的データ型に対する<code>Functor</code>インスタンスをそれほど機械的に導出できるのなら、コンパイラによって自動化して実行できないのか？
+          実際、可能であり、行われている。ただし、ソースファイルの先頭に次の行を含めることで、特定のHaskell拡張を有効にする必要がある:</p>
         <div class="sourceCode" id="cb218">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb218-1"><a href="#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="ot">{-# LANGUAGE DeriveFunctor #-}</span></span></code></pre>
         </div>
-        <p>次に、データ構造体に<code>derivating Functor</code>を追加する:</p>
+        <p>そして、データ構造体に<code>derivating Functor</code>を追加する:</p>
         <div class="sourceCode" id="cb219">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb219-1"><a href="#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Maybe</span> a <span class="ot">=</span> <span class="dt">Nothing</span> <span class="op">|</span> <span class="dt">Just</span> a</span>
 <span id="cb219-2"><a href="#cb219-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">deriving</span> <span class="dt">Functor</span></span></code></pre>
         </div>
         <p>すると、対応する<code>fmap</code>が自動的に実装される。</p>
-        <p>代数的データ構造の正則性により、<g>関手</g>だけでなく、前に述べた<g>Eq</g>
-          型クラスを含む、いくつかの型クラスのインスタンスを派生させられる。コンパイラーに独自の型クラスのインスタンスを派生させるように教えるという選択肢もあるが、それはもう少し高度だ。基本的なビルディング・ブロックと直和と直積の動作を提供し、残りの部分はコンパイラーに計算させるという考え方は同じだ。
+        <p>代数的データ構造の正則性 (regularity)
+          により、<g>関手</g>だけでなく、前に述べた<g>Eq</g>
+          型クラスを含む、いくつかの型クラスのインスタンスを派生させられる。コンパイラーに独自の型クラスのインスタンスを派生させるように教えるという選択肢もあるが、それはもう少し高度だ。もっとも、基本的な構成要素に対する動作と和と積とを提供し、残りの部分はコンパイラーに計算させるという考え方は同じだ。
         </p>
         <h2 data-number="8.4" id="cでの関手-1"><span class="header-section-number">8.4</span> C++での関手</h2>
         <p>
-          C++プログラマーなら、関手の実装に関しては、明らかに自分でやることになる。しかし、C++でもある種の代数的データ構造を見つけられるはずだ。そのようなデータ構造を総称テンプレートにすれば、<code>fmap</code>を素早く実装できるはずだ。
+          C++プログラマーなら、関手の実装に関しては、明らかに自分でやることになる。しかし、C++でもある種の代数的データ構造は見つかるはずだ。そのようなデータ構造を総称テンプレートにすれば、<code>fmap</code>を素早く実装できるだろう。
         </p>
-        <p>データ木構造を見てみよう。Haskellなら再帰的な直和型として定義される。</p>
+        <p>データ木構造を見てみよう。Haskellでは再帰的な直和型として定義される:</p>
         <div class="sourceCode" id="cb220">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb220-1"><a href="#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Tree</span> a <span class="ot">=</span> <span class="dt">Leaf</span> a <span class="op">|</span> <span class="dt">Node</span> (<span class="dt">Tree</span> a) (<span class="dt">Tree</span> a)</span>
@@ -5616,10 +5631,10 @@
         <p>
           前にも述べたように、C++で直和型を実装する方法の1つは、クラス階層を使うことだ。オブジェクト指向言語では、<code>fmap</code>を基本クラス<code>Functor</code>の仮想関数として実装し、それをすべてのサブクラスでオーバーライドするのが自然だ。残念ながらこれは不可能だ。なぜなら、<code>fmap</code>はテンプレートであり、それが作用する対象の型
           (<code>this</code>ポインタ)
-          だけでなく、それに適用された関数の戻り型によってもパラメーター化されているからだ。仮想関数はC++ではテンプレート化できない。<code>fmap</code>を自由な総称関数として実装し、パターンマッチングを<code>dynamic_cast</code>に置き換えよう。
+          だけでなく、それに適用された関数の戻り型によってもパラメーター化されているからだ。C++では仮想関数はテンプレート化できない。<code>fmap</code>を総称フリー関数として実装し、パターンマッチングを<code>dynamic_cast</code>に置き換えよう。
         </p>
-        <p>基本クラスは、動的キャストをサポートするために少なくとも1つの仮想関数を定義する必要があるため、デストラクタを仮想関数にする
-          (いずれにしても良い考えだ)。</p>
+        <p>基本クラスは、動的キャストをサポートするために少なくとも1つの仮想関数を定義する必要があるため、デストラクターを仮想関数にする
+          (いずれにしても良い考えだ):</p>
         <div class="sourceCode" id="cb221">
           <pre
             class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb221-1"><a href="#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">class</span> T<span class="op">&gt;</span></span>
@@ -5627,7 +5642,7 @@
 <span id="cb221-3"><a href="#cb221-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="op">~</span>Tree<span class="op">()</span> <span class="op">{};</span></span>
 <span id="cb221-4"><a href="#cb221-4" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre>
         </div>
-        <p><code>Leaf</code>は、<code>Identity</code>関手を偽装したものだ。</p>
+        <p><code>Leaf</code>は、<code>Identity</code>関手を偽装したものだ:</p>
         <div class="sourceCode" id="cb222">
           <pre
             class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb222-1"><a href="#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">class</span> T<span class="op">&gt;</span></span>
@@ -5636,7 +5651,7 @@
 <span id="cb222-4"><a href="#cb222-4" aria-hidden="true" tabindex="-1"></a>    Leaf<span class="op">(</span>T l<span class="op">)</span> <span class="op">:</span> _label<span class="op">(</span>l<span class="op">)</span> <span class="op">{}</span></span>
 <span id="cb222-5"><a href="#cb222-5" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre>
         </div>
-        <p><code>Node</code>は直積型だ。</p>
+        <p><code>Node</code>は直積型だ:</p>
         <div class="sourceCode" id="cb223">
           <pre
             class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb223-1"><a href="#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">class</span> T<span class="op">&gt;</span></span>
@@ -5647,7 +5662,7 @@
 <span id="cb223-6"><a href="#cb223-6" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre>
         </div>
         <p>
-          <code>fmap</code>を実装するときには、<code>Tree</code>の型で動的ディスパッチを利用する。<code>Leaf</code>の場合は<code>Identity</code>版の<code>fmap</code>を適用し、<code>Node</code>の場合は2つの<code>Tree</code>関手で構成された双関手のように扱われる。C++プログラマーとしては、これらの用語を使ってコードを分析することに慣れていないかもしれないが、圏的な考え方を実践するには適している。
+          <code>fmap</code>を実装するときには、<code>Tree</code>の型で動的ディスパッチを利用する。<code>Leaf</code>の場合は<code>Identity</code>版の<code>fmap</code>を適用し、<code>Node</code>の場合は2つの<code>Tree</code>関手で構成された双関手のように扱う。C++プログラマーとしては、これらの用語を使ってコードを分析することに慣れていないかもしれないが、圏的な考え方を実践するには適している。
         </p>
         <div class="sourceCode" id="cb224">
           <pre
@@ -5666,7 +5681,7 @@
         </div>
         <p>簡単のため、メモリとリソース管理の問題は無視することにしたが、本番コードではおそらくスマート・ポインター
           (uniqueかsharedかはポリシーによる) を使うことになるだろう。</p>
-        <p><code>fmap</code>のHaskell実装と比較してほしい。</p>
+        <p><code>fmap</code>のHaskell実装と比較してほしい:</p>
         <div class="sourceCode" id="cb225">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb225-1"><a href="#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Functor</span> <span class="dt">Tree</span> <span class="kw">where</span></span>
@@ -6457,7 +6472,7 @@
         </ol>
         <h1 data-number="9" id="function-types"><span class="header-section-number">9</span> 関数型</h1>
         <p>ここまでは、関数型の意味について言い繕ってきた。関数型は他の型とは異なる。</p>
-        <p><code>Integer</code>を例にとると、それは単なる整数の集合だ。<code>ブール</code>は2要素の集合だ。しかし、関数型<math display="inline"
+        <p><code>Integer</code>を例にとると、それは単なる整数の集合だ。<code>Bool</code>は2要素の集合だ。しかし、関数型<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -6495,8 +6510,8 @@
         <p>同じことは、hom集合が圏の外にあるような他の圏には当てはまらない。それらは<em>外部</em>
           (external) hom集合と呼ばれることもある。</p>
         <figure>
-          <img src="images/hom-set.jpg" style="width:35.0%" alt="圏Cのhom集合は外部集合だ。" />
-          <figcaption aria-hidden="true">圏Cのhom集合は外部集合だ。</figcaption>
+          <img src="images/hom-set.jpg" style="width:35.0%" alt="この圏Cのhom集合は外部集合だ。" />
+          <figcaption aria-hidden="true">この圏Cのhom集合は外部集合だ。</figcaption>
         </figure>
         <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -6523,9 +6538,9 @@
             </semantics>
           </math>圏からヒントを得る。ただし、集合の性質に一切頼らないように気を付けて、他の圏でも構成が自動的に使えるようにする。</p>
         <p>関数型は、引数の型と結果の型の関係から、複合型と見なせる。対象間の関係を含む複合型の構築についてはすでに説明した。<a
-            href="#products-and-coproducts">積と余積の型</a>を定義するのに普遍的構成を使った。同じトリックを使って関数型を定義できる。作成する関数型、引数の型、結果の型の3つの対象を含むパターンが必要になる。
+            href="#products-and-coproducts">積と余積の型</a>を定義するのに普遍的構成を使った。同じトリックを使って関数型を定義できる。作成する関数型、引数の型、結果の型という3つの対象を含むパターンが必要になる。
         </p>
-        <p>この3つの型を結びつける自明なパターンは<span id="function_application" class="keyword">関数適用</span> (function
+        <p>これら3つの型を結びつける自明なパターンは<span id="function_application" class="keyword">関数適用</span> (function
           application) あるいは<span id="evaluation" class="keyword">評価</span>
           (evaluation)
           と呼ばれる。関数型の候補が与えられたとして、それを<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -6533,7 +6548,17 @@
               <mi>z</mi>
               <annotation encoding="application/x-tex">z</annotation>
             </semantics>
-          </math>と呼ぼう
+          </math>と呼び、引数の型を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>a</mi>
+              <annotation encoding="application/x-tex">a</annotation>
+            </semantics>
+          </math>と呼ぶことにする。関数適用はこのペアを結果の型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>b</mi>
+              <annotation encoding="application/x-tex">b</annotation>
+            </semantics>
+          </math>に写す
           (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mstyle mathvariant="bold">
@@ -6543,22 +6568,9 @@
               </mstyle>
               <annotation encoding="application/x-tex">\symbf{Set}</annotation>
             </semantics>
-          </math>圏でない場合、これは他の対象と同様に単なる対象であることに注意)。引数の型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-            <semantics>
-              <mi>a</mi>
-              <annotation encoding="application/x-tex">a</annotation>
-            </semantics>
-          </math>
-          (対象)
-          を指定すると、関数適用はこのペアを結果の型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-            <semantics>
-              <mi>b</mi>
-              <annotation encoding="application/x-tex">b</annotation>
-            </semantics>
-          </math>
-          (対象) に写す。3つの対象があり、そのうち (引数の型と結果の型を表す)
-          2つが決まった。</p>
-        <p>写像としての関数適用もある。この写像をどのようにしてパターンに組み込めばよいだろうか？
+          </math>圏でない場合、これら3つの型はどれも他の対象と同様に単なる対象であることに注意)。3つの対象があり、そのうち
+          (引数の型と結果の型を表す) 2つが決まった。</p>
+        <p>関数適用も存在し、それは写像だ。どうすればこの写像をパターンに組み込めるだろう？
           対象の内部を見ることが許されている場合、関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>f</mi>
@@ -6611,12 +6623,12 @@
           に写せる。</p>
         <figure>
           <img src="images/functionset.jpg" style="width:35.0%"
-            alt="Setでは、関数の集合zから関数fを選び、集合 (型) aから引数xを選べる。集合 (型) bの中の要素f xが得られる。" />
+            alt="Setでは、関数の集合zから関数fを選び、集合 (型) aから引数xを選べる。その結果、集合 (型) bの中の要素f xが得られる。" />
           <figcaption aria-hidden="true">Setでは、関数の集合zから関数fを選び、集合
-            (型) aから引数xを選べる。集合 (型) bの中の要素f
+            (型) aから引数xを選べる。その結果、集合 (型) bの中の要素f
             xが得られる。</figcaption>
         </figure>
-        <p>しかし、個々のペア
+        <p>その一方で、個々のペア
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -6639,7 +6651,7 @@
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
-          </math>の<em>直積</em>全体について述べることもできる。直積<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>の<em>積</em>全体について述べることもできる。積<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>z</mi>
@@ -6696,7 +6708,7 @@
             </semantics>
           </math>に写す関数になる。
         </p>
-        <p>したがって、パターンはこうだ:
+        <p>したがって、パターンはこうなる:
           2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>z</mi>
@@ -6707,7 +6719,7 @@
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
-          </math>の直積が別の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>の積が別の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>b</mi>
               <annotation encoding="application/x-tex">b</annotation>
@@ -6723,8 +6735,9 @@
           <figcaption aria-hidden="true">普遍的構成の出発点である対象と射のパターン</figcaption>
         </figure>
         <p>このパターンは、普遍的構成を使って関数型を特定するのに十分特化しているだろうか？
-          すべての圏でそうだとは言えない。しかし、我々が関心を持っている圏ではそうだ。別の疑問がある。先に直積を定義せずに関数オブジェクトを定義できるだろうか？
-          直積が全く存在しない圏や、対象のすべてのペアに対しては存在しない圏もある。答えはノーだ。直積型がなければ関数型はない。これについては、後で指数関数について述べるときに再度説明する。</p>
+          すべての圏でそうだとは言えない。しかし、我々が関心を持っている圏ではそうだ。さらに別の疑問もある:
+          積を先に定義せずに関数オブジェクトを定義できるだろうか？
+          積が全く存在しない圏や、対象のすべてのペアに対しては存在しない圏もある。したがって、答えはノーだ。直積型がなければ関数型はない。これについては、後で冪乗について述べるときに再び説明する。</p>
         <p>普遍的構成をおさらいしよう。まず対象と射のパターンから始める。これは粗い検索であり、通常はヒットするものが多すぎる。特に、<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -6740,12 +6753,12 @@
               <mi>z</mi>
               <annotation encoding="application/x-tex">z</annotation>
             </semantics>
-          </math>を取って、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を選んで<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
-          </math>との直積を作れば、そこから<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>との積を作れば、そこから<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>b</mi>
               <annotation encoding="application/x-tex">b</annotation>
@@ -6904,10 +6917,10 @@
               </mrow>
               <annotation encoding="application/x-tex">z\times a</annotation>
             </semantics>
-          </math>への写像だ。そして今、<a href="#functoriality">積の関手性</a>についてすでに議論したので、そのやり方は分かっている。直積自体が関手
+          </math>への写像だ。そして今、<a href="#functoriality">積の関手性</a>についてすでに議論したので、そのやり方は分かっている。積自体が関手
           (正確には自己双関手)
-          であるため、射のペアをリフトできる。すなわち、対象の直積だけでなく、射の直積も定義できる。</p>
-        <p>直積<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          であるため、射のペアをリフトできる。すなわち、対象の積だけでなく、射の積も定義できる。</p>
+        <p>積<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>z</mi>
@@ -6948,15 +6961,12 @@
             </semantics>
           </math>の恒等射だ。
         </p>
-        <p>So, here’s how we can factor one application,
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>そして、ある関数適用<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>g</mi>
               <annotation encoding="application/x-tex">g</annotation>
             </semantics>
-          </math>,
-          out of another application
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>で別の関数適用<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>g</mi>
@@ -6964,8 +6974,7 @@
               </mrow>
               <annotation encoding="application/x-tex">g&#39;</annotation>
             </semantics>
-          </math>:
-        </p>
+          </math>を分解するとこうなる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -6988,8 +6997,8 @@
               <annotation encoding="application/x-tex">g&#39; = g \circ (h \times \mathbf{id})</annotation>
             </semantics>
           </math></p>
-        <p>ここで鍵となるのは、射に対する直積の作用だ。</p>
-        <p>普遍的構成の3番目の部分は、普遍的に最も優れた対象を選ぶことだ。その対象を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>ここで鍵となるのは、射に対する積の作用だ。</p>
+        <p>普遍的構成の第3部は、普遍的に最も優れた対象を選ぶことだ。その対象を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>a</mi>
@@ -6999,8 +7008,8 @@
               <annotation encoding="application/x-tex">a \Rightarrow b</annotation>
             </semantics>
           </math>と呼ぶことにしよう
-          (Haskellの対象制約と混同しないための、1つの型クラスのシンボル名と考えてほしい。後で別の命名方法について議論する)。この対象には独自の関数適用が付属する。<math display="inline"
-            xmlns="http://www.w3.org/1998/Math/MathML">
+          (Haskellの対象制約と混同しないための、1つの型クラスのシンボル名と考えてほしい。後で別の命名方法について議論する)。この対象は独自の関数適用を伴う。それは
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mrow>
@@ -7030,8 +7039,16 @@
               </mrow>
               <annotation encoding="application/x-tex">eval</annotation>
             </semantics>
-          </math>と呼ばれる。対象<code>$a \Rightarrow b$</code>は、関数オブジェクトの他の候補すべてを、その関数適用の射<math display="inline"
-            xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>と呼ばれる。対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>a</mi>
+                <mo>⇒</mo>
+                <mi>b</mi>
+              </mrow>
+              <annotation encoding="application/x-tex">a \Rightarrow b</annotation>
+            </semantics>
+          </math>は、関数オブジェクトの他の候補すべてを、その関数適用の射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>g</mi>
               <annotation encoding="application/x-tex">g</annotation>
@@ -7046,7 +7063,8 @@
               </mrow>
               <annotation encoding="application/x-tex">eval</annotation>
             </semantics>
-          </math>を通じて分解するようなかたちで一意に写せる場合、最も優れていると言える。我々の順位付けでは、この対象は他のどの対象よりも優れている。</p>
+          </math>を通じて分解するようなかたちで一意に写せる場合、最も優れていると言える。我々の順位付けでは、この対象は他のどの対象よりも優れている。
+        </p>
         <figure>
           <img src="images/universalfunctionobject.jpg" style="width:40.0%"
             alt="普遍的な関数オブジェクトの定義。これは上記と同じ図式だが、対象a \Rightarrow bは普遍だ。" />
@@ -7064,22 +7082,17 @@
         </figure>
         <p>形式的には:</p>
         <blockquote>
-          <p>A <em>function object</em> from
-            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mi>a</mi>
                 <annotation encoding="application/x-tex">a</annotation>
               </semantics>
-            </math>
-            to
-            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            </math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mi>b</mi>
                 <annotation encoding="application/x-tex">b</annotation>
               </semantics>
-            </math>
-            is an object
-            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            </math>への<em>関数オブジェクト</em>は、対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mrow>
                   <mi>a</mi>
@@ -7088,8 +7101,7 @@
                 </mrow>
                 <annotation encoding="application/x-tex">a \Rightarrow b</annotation>
               </semantics>
-            </math>
-            together with the morphism
+            </math>に射
             <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mrow>
@@ -7117,14 +7129,12 @@
                 <annotation encoding="application/x-tex">eval \Colon ((a \Rightarrow b) \times a) \to b</annotation>
               </semantics>
             </math>
-            such that for any other object
-            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            を伴ったものであり、他の任意の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mi>z</mi>
                 <annotation encoding="application/x-tex">z</annotation>
               </semantics>
-            </math>
-            with a morphism
+            </math>に射
             <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mrow>
@@ -7136,7 +7146,7 @@
                   <mo>→</mo>
                   <mi>b</mi>
                 </mrow>
-                <annotation encoding="application/x-tex">g \Colon z \times a \to b</annotation>
+                <annotation encoding="application/x-tex">g\Colon z \times a \to b</annotation>
               </semantics>
             </math>
           </p>
@@ -7260,9 +7270,8 @@
             </semantics>
           </math>
           と同型だ。</p>
-        <p>This is why, in Haskell, we interpret the function type
-          <code>a -&gt; b</code> as the categorical function object
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>そのため、Haskellでは、関数の型<code>a -&gt; b</code>を圏論的関数オブジェクト<math display="inline"
+            xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>a</mi>
@@ -7271,8 +7280,7 @@
               </mrow>
               <annotation encoding="application/x-tex">a \Rightarrow b</annotation>
             </semantics>
-          </math>.
-        </p>
+          </math>として解釈する。</p>
         <h2 data-number="9.2" id="カリー化"><span class="header-section-number">9.2</span> カリー化</h2>
         <p>関数オブジェクトの全候補を見てみよう。ただし今回は、射の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -7595,18 +7603,18 @@
               </msup>
               <annotation encoding="application/x-tex">b^{a}</annotation>
             </semantics>
-          </math>で表される。引数の型が指数に含まれていることに注目してほしい。この記法は一見奇妙に思えるかもしれないが、関数と直積の関係を考えると完全に理にかなっている。内部hom対象の普遍的構成で直積を使わなければならないことはすでに見たが、つながりはそれよりも深い。
+          </math>で表される。引数の型が指数に含まれていることに注目してほしい。この記法は一見奇妙に思えるかもしれないが、関数と積の関係を考えると完全に理にかなっている。内部hom対象の普遍的構成で積を使わなければならないことはすでに見たが、つながりはそれよりも深い。
         </p>
         <p>
           これは、<code>Bool</code>、<code>Char</code>、あるいは<code>Int</code>や<code>Double</code>など、有限個の値を持つ型の間の関数を考えるときに最もよく見られる。そのような関数は、少なくとも原理的には、完全にメモ化したり、データ構造に変換してルックアップしたりできる。そしてこれが、射である関数と、対象である関数型との等価性の本質だ。
         </p>
         <p>たとえば、<code>Bool</code>を取る (純粋)
-          関数は、<code>False</code>に対応する値と<code>True</code>に対応する値のペアによって完全に決まる。<code>Bool</code>から<code>Int</code>へのすべての可能な関数の集合は、<code>Int</code>のすべての組み合わせの集合だ。これは直積<code>Int</code>
+          関数は、<code>False</code>に対応する値と<code>True</code>に対応する値のペアによって完全に決まる。<code>Bool</code>から<code>Int</code>へのすべての可能な関数の集合は、<code>Int</code>のすべての組み合わせの集合だ。これは積<code>Int</code>
           ×
           <code>Int</code>と同じか、記法を少し創意工夫するなら、<code>Int</code><sup>2</sup>と同じだ。
         </p>
         <p>別の例として、256種類の値を含むC++の型<code>char</code>を見てみよう
-          (Haskellの<code>Char</code>はユニコードを使っているのでもっと多い)。C++標準ライブラリの一部には、実装に通常はルックアップが使われる関数がいくつかある。<code>isupper</code>や<code>isspace</code>のような関数はテーブルを使って実装される。テーブルは256個のブール値のタプルと等価だ。タプルは直積型であるため、256個のブーリアンの直積を処理している:
+          (Haskellの<code>Char</code>はユニコードを使っているのでもっと多い)。C++標準ライブラリの一部には、実装に通常はルックアップが使われる関数がいくつかある。<code>isupper</code>や<code>isspace</code>のような関数はテーブルを使って実装される。テーブルは256個のブール値のタプルと等価だ。タプルは直積型であるため、256個のブーリアンの積を処理している:
           <code>bool × bool × bool × ... × bool</code>.
           積の繰り返しが冪乗の定義なのは知っているとおりだ。<code>bool</code>を256
           (または<code>char</code>)
@@ -7807,7 +7815,7 @@
               <annotation encoding="application/x-tex">\symbf{Set}</annotation>
             </semantics>
           </math>とHaskellでは、同型は集合<code>a</code>の要素と、それらの要素を選択する関数<code>() -&gt; a</code>の間にある。</p>
-        <h3 data-number="9.5.4" id="直和による冪乗"><span class="header-section-number">9.5.4</span> 直和による冪乗</h3>
+        <h3 data-number="9.5.4" id="和による冪乗"><span class="header-section-number">9.5.4</span> 和による冪乗</h3>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -7834,7 +7842,7 @@
             </semantics>
           </math></p>
         <p>
-          これは、圏論では、2つの対象の余積による冪乗が、2つの冪乗の直積と同型だと明確に示している。Haskellでは、この代数的恒等射には非常に実用的な解釈がある。これは、2つの型の直和からの関数が、個々の型からの関数のペアと等価だと示している。これは、ちょうど直和型での関数を定義するときに使うケース分析だ。<code>case</code>文で1つの関数定義を記述する代わりに、通常はそれを2つ
+          これは、圏論では、2つの対象の余積による冪乗が、2つの冪乗の積と同型だと明確に示している。Haskellでは、この代数的恒等射には非常に実用的な解釈がある。これは、2つの型の和からの関数が、個々の型からの関数のペアと等価だと示している。これは、ちょうど直和型での関数を定義するときに使うケース分析だ。<code>case</code>文で1つの関数定義を記述する代わりに、通常はそれを2つ
           (またはそれ以上)
           の関数に分割して、それぞれの型コンストラクターを別々に処理する。たとえば、直和型<code>(Either Int Double)</code>からの関数を考える:</p>
         <div class="sourceCode" id="cb260">
@@ -7877,9 +7885,9 @@
               <annotation encoding="application/x-tex">(a^{b})^{c} = a^{b \times c}</annotation>
             </semantics>
           </math></p>
-        <p>これは単にカリー化を純粋に冪乗オブジェクトの観点で表現したものだ。関数を返す関数は、直積からの関数
+        <p>これは単にカリー化を純粋に冪乗オブジェクトの観点で表現したものだ。関数を返す関数は、積からの関数
           (2引数の関数) と等価だ。</p>
-        <h3 data-number="9.5.6" id="直積の冪乗"><span class="header-section-number">9.5.6</span> 直積の冪乗</h3>
+        <h3 data-number="9.5.6" id="積の冪乗"><span class="header-section-number">9.5.6</span> 積の冪乗</h3>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -8037,7 +8045,8 @@
         </div>
         <p>
           <code>a</code>を取り<code>b</code>を返す関数<code>f</code>と、型<code>a</code>の具体的な値<code>x</code>とのペアをくれれば、<code>f</code>を<code>x</code>に適用するだけで型<code>b</code>の具体的な値を得られる。この関数を実装することで、型<code>((a -&gt; b), a) -&gt; b</code>が居住であることを示した。modus
-          ponensは我々の論理では真だ。</p>
+          ponensは我々の論理では真だ。
+        </p>
         <p>では、あからさまに間違っている述語ではどうだろうか？ たとえば:
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -8542,7 +8551,7 @@
             </semantics>
           </math></p>
         <p><img src="images/3_naturality.jpg" style="width:40.0%" /></p>
-        <p>いま、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>今、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>F</mi>
@@ -13767,7 +13776,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">e</annotation>
             </semantics>
           </math>を空リストで表せば、「乗算」はリストの連結に他ならないことがわかる。</p>
-        <p>この種の構成では、要素の可能なすべての組み合わせを生成し続け、同一視は最小限に――単位元則と結合則を維持するのにちょうど十分なだけに留める。これは自由構成と呼ばれる。我々はいま、生成元<math
+        <p>この種の構成では、要素の可能なすべての組み合わせを生成し続け、同一視は最小限に――単位元則と結合則を維持するのにちょうど十分なだけに留める。これは自由構成と呼ばれる。我々は今、生成元<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -21697,7 +21706,7 @@ C<sup>op</sup> × C -> Set
               </mstyle>
               <annotation encoding="application/x-tex">\symbf{C}</annotation>
             </semantics>
-          </math>に直積を定義するには、直積圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に積を定義するには、直積圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mstyle mathvariant="bold">
@@ -21734,7 +21743,7 @@ C<sup>op</sup> × C -> Set
             </semantics>
           </math>内の単一の射だ。</p>
         <p><img src="images/adj-productcat.jpg" style="width:50.0%" /></p>
-        <p>直積を定義するために直積圏を使うのは、最初は少し紛らわしいかもしれない。しかし、これらはまったく異なる積だ。普遍的構成は直積圏を定義するのに必要ない。必要なのは対象のペアと射のペアという概念だけだ。</p>
+        <p>積を定義するために直積圏を使うのは、最初は少し紛らわしいかもしれない。しかし、これらはまったく異なる積だ。普遍的構成は直積圏を定義するのに必要ない。必要なのは対象のペアと射のペアという概念だけだ。</p>
         <p>ただし、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mstyle mathvariant="bold">
@@ -22109,7 +22118,7 @@ C<sup>op</sup> × C -> Set
               </mrow>
               <annotation encoding="application/x-tex">\langle a, b \rangle</annotation>
             </semantics>
-          </math>を直積対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を積対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>a</mi>
@@ -22151,7 +22160,7 @@ C<sup>op</sup> × C -> Set
               <mi>c</mi>
               <annotation encoding="application/x-tex">c</annotation>
             </semantics>
-          </math>から直積対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>から積対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>a</mi>
@@ -22278,7 +22287,7 @@ C<sup>op</sup> × C -> Set
               </annotation>
             </semantics>
           </math></p>
-        <p>この写像が存在するならば、対角関手に対して右随伴が存在すると結論できる。この関手は直積を定義する。</p>
+        <p>この写像が存在するならば、対角関手に対して右随伴が存在すると結論できる。この関手は積を定義する。</p>
         <p>Haskellでは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>m</mi>
@@ -22308,7 +22317,7 @@ C<sup>op</sup> × C -> Set
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb378-1"><a href="#cb378-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">=</span> <span class="fu">fst</span> <span class="op">.</span> m</span>
 <span id="cb378-2"><a href="#cb378-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">=</span> <span class="fu">snd</span> <span class="op">.</span> m</span></code></pre>
         </div>
-        <p>直積を定義する2つの方法の同値性の証明を完成するには、hom集合間の写像が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>積を定義する2つの方法の同値性の証明を完成するには、hom集合間の写像が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
@@ -22661,7 +22670,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">(a \Rightarrow b)\times{}a = (L \circ R) b</annotation>
             </semantics>
           </math></p>
-        <p>前に述べたとおり、普遍的構成は同型を除いて一意な対象を定義する。それが直積を
+        <p>前に述べたとおり、普遍的構成は同型を除いて一意な対象を定義する。それが積を
           “the” product、冪乗を “the”
           exponentialと書く理由だ。この特性は随伴にも及ぶ:
           ある関手に随伴があれば、その随伴は同型を除いて一意だ。</p>
@@ -22730,7 +22739,7 @@ construction}.} -->
           <li>随伴の2つの定義について、同値性の証明を完成せよ。</li>
           <li>余積が随伴によって定義できることを示せ。余積のfactorizerの定義から始めよ。</li>
           <li>余積が対角関手の左随伴であることを示せ。</li>
-          <li>直積と関数対象の間の随伴をHaskellで定義せよ。</li>
+          <li>積と関数対象の間の随伴をHaskellで定義せよ。</li>
         </ol>
         <h1 data-number="19" id="自由忘却随伴"><span class="header-section-number">19</span> 自由/忘却随伴</h1>
         <h2 data-number="19.1" id="随伴に基づく自由モノイド"><span class="header-section-number">19.1</span> 随伴に基づく自由モノイド</h2>
@@ -23051,7 +23060,7 @@ construction}.} -->
           </math>の埋め込みが、左側のモノイドの埋め込みを一意に決定し、またその逆も成り立つことを示している。</p>
         <p>Haskellでは、リストのデータ構造は自由モノイドだ
           (ただし、注意点がいくつかある: <a href="http://comonad.com/reader/2015/free-monoids-in-haskell/">Dan
-            Doelのブログ記事</a>を参照)。リスト型<code>[a]</code>は自由モノイドであり、型<code>a</code>は生成元の集合を表す。たとえば、型<code>[Char]</code>には、単位要素――空リスト<code>[]</code>――と、<code>['a']</code>、<code>['b']</code>のような単要素リスト――自由モノイドの生成元が含まれている。残りは「直積」を適用して生成される。ここでは、2つのリストの直積は単に片方をもう片方に連結するだけだ。連結は結合的で単位的
+            Doelのブログ記事</a>を参照)。リスト型<code>[a]</code>は自由モノイドであり、型<code>a</code>は生成元の集合を表す。たとえば、型<code>[Char]</code>には、単位要素――空リスト<code>[]</code>――と、<code>['a']</code>、<code>['b']</code>のような単要素リスト――自由モノイドの生成元が含まれている。残りは「積」を適用して生成される。ここでは、2つのリストの積は単に片方をもう片方に連結するだけだ。連結は結合的で単位的
           (unital) だ
           (つまり、中立元が存在する――ここでは空リストだ)。<code>Char</code>によって生成される自由モノイドは、<code>Char</code>からなるすべての文字列の集合に他ならない。これはHaskellでは<code>String</code>と呼ばれる:
         </p>
@@ -26792,7 +26801,8 @@ construction}.} -->
           (実際、コモナドの同一則では<code>extract . duplicate = id</code>と規定されている)。</p>
         <p>
           <code>Store</code>コモナドは<code>Lens</code>ライブラリの理論的基盤として重要だ。概念としては、<code>Store s a</code>コモナドは、型<code>s</code>をインデックスとしてdate型<code>a</code>の特定のサブ構造に
-          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が次の型を取るなら:</p>
+          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が次の型を取るなら:
+        </p>
         <div class="sourceCode" id="cb508">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb508-1"><a href="#cb508-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> <span class="dt">Store</span> s a</span></code></pre>
@@ -34700,7 +34710,7 @@ construction}.} -->
                 a)</annotation>
             </semantics>
           </math></p>
-        <p>直積と冪乗についての随伴が使える:</p>
+        <p>積と冪乗についての随伴が使える:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -35075,7 +35085,7 @@ construction}.} -->
         <p>
           このデータ構造を解釈すると、不特定の数の<code>i</code>を含むコンテナを取って<code>a</code>を1つ生成する関数を含むものだと言える。それらの<code>i</code>のコンテナも持っている。<code>i</code>が何かは分からないので、このデータ構造で唯一できることは<code>i</code>のコンテナを取得して、それを自然変換を使って関手<code>k</code>で定義されたコンテナに再パックして、関数を呼んで<code>a</code>を得ることだ。たとえば、<code>d</code>が木で<code>k</code>がリストの場合、木を直列化し、得られるリストで関数を呼べば、<code>a</code>が得られる。
         </p>
-        <p>左Kan拡張は関手の右随伴を計算するために使える。直積関手の右随伴が冪乗なのは知っているので、Kan拡張を使って実装してみよう:</p>
+        <p>左Kan拡張は関手の右随伴を計算するために使える。積関手の右随伴が冪乗なのは知っているので、Kan拡張を使って実装してみよう:</p>
         <div class="sourceCode" id="cb589">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb589-1"><a href="#cb589-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Exp</span> a b <span class="ot">=</span> <span class="dt">Lan</span> ((,) a) <span class="dt">I</span> b</span></code></pre>
@@ -43761,21 +43771,17 @@ construction}.} -->
         <ul>
           <li><span epub:type="index-term"><a href="#basic_product_operations" epub:type="index-locator">basic product
                 operations</a></span></li>
-          <li><span epub:type="index-term"><a href="#contextual_computation" epub:type="index-locator">contextual
-                computation</a></span></li>
           <li><span epub:type="index-term"><a href="#extensional" epub:type="index-locator">extensional</a></span></li>
           <li><span epub:type="index-term"><a href="#factorizer" epub:type="index-locator">factorizer</a></span></li>
-          <li><span epub:type="index-term"><a href="#fixed_point" epub:type="index-locator">fixed point</a></span></li>
           <li>one way - <span epub:type="index-term"><a href="#one_way" epub:type="index-locator">a</a></span>, <span
               epub:type="index-term"><a href="#one_way2" epub:type="index-locator">b</a></span></li>
           <li><span epub:type="index-term"><a href="#one-to-one" epub:type="index-locator">one-to-one</a></span></li>
           <li><span epub:type="index-term"><a href="#point" epub:type="index-locator">points</a></span></li>
           <li>predicate – <span epub:type="index-term"><a href="#predicates" epub:type="index-locator">a</a></span>,
-            <span epub:type="index-term"><a href="#predicate" epub:type="index-locator">b</a></span></li>
+            <span epub:type="index-term"><a href="#predicate" epub:type="index-locator">b</a></span>
+          </li>
           <li><span epub:type="index-term"><a href="#proof-relevant_relation" epub:type="index-locator">proof-relevant
                 relation</a></span></li>
-          <li><span epub:type="index-term"><a href="#representation" epub:type="index-locator">representation</a></span>
-          </li>
           <li><span epub:type="index-term"><a href="#total" epub:type="index-locator">total</a></span></li>
         </ul>
         <!-- 英数 -->
@@ -43903,6 +43909,7 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#opposite_category" epub:type="index-locator">反対圏</a></span></li>
           <li><span epub:type="index-term"><a href="#contravariant" epub:type="index-locator">反変</a></span></li>
           <li><span epub:type="index-term"><a href="#evaluation" epub:type="index-locator">評価</a></span></li>
+          <li><span epub:type="index-term"><a href="#representation" epub:type="index-locator">表現</a></span></li>
           <li>表現可能 – <span epub:type="index-term"><a href="#representable" epub:type="index-locator">a</a></span>, <span
               epub:type="index-term"><a href="#representable2" epub:type="index-locator">b</a></span>
             <ul>
@@ -43911,13 +43918,17 @@ construction}.} -->
             </ul>
           </li>
           <li><span epub:type="index-term"><a href="#side_effect" epub:type="index-locator">副作用</a></span></li>
+          <li><span epub:type="index-term"><a href="#fixed_point" epub:type="index-locator">不動点</a></span></li>
           <li><span epub:type="index-term"><a href="#universal_construction" epub:type="index-locator">普遍構成</a></span>
           </li>
           <li><span epub:type="index-term"><a href="#profunctor" epub:type="index-locator">プロ関手</a></span></li>
+          <li><span epub:type="index-term"><a href="#contextual_computation" epub:type="index-locator">文脈付き計算</a></span>
+          </li>
           <li><span epub:type="index-term"><a href="#exponential" epub:type="index-locator">冪乗</a></span></li>
           <li><span epub:type="index-term"><a href="#point-free" epub:type="index-locator">ポイントフリー</a></span></li>
           <li>忘却関手 – <span epub:type="index-term"><a href="#forgetful_functor" epub:type="index-locator">a</a></span>,
-            <span epub:type="index-term"><a href="#forgetful_functor2" epub:type="index-locator">b</a></span></li>
+            <span epub:type="index-term"><a href="#forgetful_functor2" epub:type="index-locator">b</a></span>
+          </li>
           <li><span epub:type="index-term"><a href="#enriched" epub:type="index-locator">enriched</a></span></li>
           <li><span epub:type="index-term"><a href="#enriched_functor" epub:type="index-locator">enriched
                 functor</a></span></li>
