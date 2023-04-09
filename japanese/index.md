@@ -3,16 +3,13 @@
 
 <!-- -->
 * [[basic product operations](#basic_product_operations){epub:type="index-locator"}]{epub:type="index-term"}
-* [[contextual computation](#contextual_computation){epub:type="index-locator"}]{epub:type="index-term"}
 * [[extensional](#extensional){epub:type="index-locator"}]{epub:type="index-term"}
 * [[factorizer](#factorizer){epub:type="index-locator"}]{epub:type="index-term"}
-* [[fixed point](#fixed_point){epub:type="index-locator"}]{epub:type="index-term"}
 * one way - [[a](#one_way){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#one_way2){epub:type="index-locator"}]{epub:type="index-term"}
 * [[one-to-one](#one-to-one){epub:type="index-locator"}]{epub:type="index-term"}
 * [[points](#point){epub:type="index-locator"}]{epub:type="index-term"}
 * predicate -- [[a](#predicates){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#predicate){epub:type="index-locator"}]{epub:type="index-term"}
 * [[proof-relevant relation](#proof-relevant_relation){epub:type="index-locator"}]{epub:type="index-term"}
-* [[representation](#representation){epub:type="index-locator"}]{epub:type="index-term"}
 * [[total](#total){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- 英数 -->
@@ -102,11 +99,14 @@
 * [[反対圏](#opposite_category){epub:type="index-locator"}]{epub:type="index-term"}
 * [[反変](#contravariant){epub:type="index-locator"}]{epub:type="index-term"}
 * [[評価](#evaluation){epub:type="index-locator"}]{epub:type="index-term"}
+* [[表現](#representation){epub:type="index-locator"}]{epub:type="index-term"}
 * 表現可能 -- [[a](#representable){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#representable2){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-前層](#representable_presheaf){epub:type="index-locator"}]{epub:type="index-term"}
 * [[副作用](#side_effect){epub:type="index-locator"}]{epub:type="index-term"}
+* [[不動点](#fixed_point){epub:type="index-locator"}]{epub:type="index-term"}
 * [[普遍構成](#universal_construction){epub:type="index-locator"}]{epub:type="index-term"}
 * [[プロ関手](#profunctor){epub:type="index-locator"}]{epub:type="index-term"}
+* [[文脈付き計算](#contextual_computation){epub:type="index-locator"}]{epub:type="index-term"}
 * [[冪乗](#exponential){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ポイントフリー](#point-free){epub:type="index-locator"}]{epub:type="index-term"}
 * 忘却関手 -- [[a](#forgetful_functor){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#forgetful_functor2){epub:type="index-locator"}]{epub:type="index-term"}
