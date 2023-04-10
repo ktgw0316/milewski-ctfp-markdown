@@ -7312,9 +7312,7 @@
               <annotation encoding="application/x-tex">g \Colon z \times a \to b</annotation>
             </semantics>
           </math></p>
-        <p>Being a morphism from a product comes as close as it gets to being a
-          function of two variables.
-          特に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>積からの射であることと2変数関数であることは同じくらい近い。特に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mstyle mathvariant="bold">
                 <mi>𝐒</mi>
@@ -7383,8 +7381,7 @@
               <annotation encoding="application/x-tex">h \Colon z \to (a \Rightarrow b)</annotation>
             </semantics>
           </math></p>
-        <p>In
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mstyle mathvariant="bold">
                 <mi>𝐒</mi>
@@ -7393,36 +7390,27 @@
               </mstyle>
               <annotation encoding="application/x-tex">\symbf{Set}</annotation>
             </semantics>
-          </math>,
-          this just means that
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>において、これは関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>h</mi>
               <annotation encoding="application/x-tex">h</annotation>
             </semantics>
-          </math>
-          is a function that takes one variable of type
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>が型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>z</mi>
               <annotation encoding="application/x-tex">z</annotation>
             </semantics>
-          </math>
-          and returns a function from
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>の変数を1つ受け取り、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
-          </math>
-          to
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>b</mi>
               <annotation encoding="application/x-tex">b</annotation>
             </semantics>
-          </math>.
-          これによって<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>への関数を返すことを意味する。これによって<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>h</mi>
               <annotation encoding="application/x-tex">h</annotation>
@@ -7440,38 +7428,28 @@
               <annotation encoding="application/x-tex">g</annotation>
             </semantics>
           </math>をカリー化した
-          (curried) バージョンと呼ばれる。
-        </p>
-        <p>This correspondence is one-to-one, because given any
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          (curried) バージョンと呼ばれる。</p>
+        <p>この対応は1対1だ。なぜなら、任意の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>g</mi>
               <annotation encoding="application/x-tex">g</annotation>
             </semantics>
-          </math>
-          there is a unique
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に対し一意な<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>h</mi>
               <annotation encoding="application/x-tex">h</annotation>
             </semantics>
-          </math>,
-          and given any
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>が存在し、任意の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>h</mi>
               <annotation encoding="application/x-tex">h</annotation>
             </semantics>
-          </math>
-          you can always recreate the two-argument function
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に対して次の式を使って引数2つの関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>g</mi>
               <annotation encoding="application/x-tex">g</annotation>
             </semantics>
-          </math>
-          using the formula:
-        </p>
+          </math>を常に再生成できるからだ。</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -7496,21 +7474,17 @@
               <annotation encoding="application/x-tex">g = eval \circ (h \times \mathbf{id})</annotation>
             </semantics>
           </math></p>
-        <p>The function
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>g</mi>
               <annotation encoding="application/x-tex">g</annotation>
             </semantics>
-          </math>
-          can be called the <em>uncurried</em> version of
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>h</mi>
               <annotation encoding="application/x-tex">h</annotation>
             </semantics>
-          </math>.
-        </p>
+          </math>の<em>非カリー化</em>バージョンと呼べる。</p>
         <p>カリー化はHaskellの構文に本質的に組み込まれている。関数を返す関数:</p>
         <div class="sourceCode" id="cb247">
           <pre
@@ -7642,10 +7616,8 @@
           </math>と計算できる。以下同様だ。このような場合には、関数型の冪乗記法が完全に理にかなっている。</p>
         <p>
           <code>int</code>や<code>double</code>を取る関数を完全にメモ化したいとは思わないだろう。しかし、関数とデータ型の間には、常に実用的だとは限らないにしても、同等性がある。リスト、文字列、ツリーなど、無数の型が存在する。これらの型を取る関数をせっせとメモ化したら、無限のストレージが必要になるだろう。しかし、Haskellは遅延評価言語であるため、遅延評価された
-          (無限の) データ構造と関数の境界は曖昧だ。This function vs. data duality
-          explains the identification of Haskell’s function type with the
-          categorical exponential object — which corresponds more to our idea of
-          <em>data</em>.
+          (無限の)
+          データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellでの関数の型と圏論的冪乗オブジェクトとの区別を説明している。圏論的冪乗オブジェクトの方が<em>データ</em>という概念によく対応している。
         </p>
         <h2 data-number="9.4" id="カルテシアン閉圏"><span class="header-section-number">9.4</span> カルテシアン閉圏</h2>
         <p>今後も集合の圏を型や関数のモデルとして使うが、その目的に使える圏のより大きな族があることに言及する価値はある。それらの圏は<span id="Cartesian_closed"
@@ -7749,9 +7721,8 @@
               <annotation encoding="application/x-tex">\symbf{Set}</annotation>
             </semantics>
           </math>内で自明に機能する。つまり、どんな双カルテシアン閉圏でも機能するということだ。</p>
-        <p>In Haskell, we replace 0 with <code>Void</code>; 1 with the unit type
-          <code>()</code>; and the exponential with function type.
-          この主張は、<code>Void</code>から任意の型<code>a</code>への関数の集合は、単集合である単位型と等価だというものだ。言い換えると、関数<code>Void -&gt; a</code>は1つしかない。この関数は以前にも見たことがある:
+        <p>
+          Haskellでは、0を<code>Void</code>で、1を単位型<code>()</code>で、冪乗を関数型でそれぞれ置き換える。この主張は、<code>Void</code>から任意の型<code>a</code>への関数の集合は、単集合である単位型と等価だというものだ。言い換えると、関数<code>Void -&gt; a</code>は1つしかない。この関数は以前にも見たことがある:
           <code>absurd</code>と呼ばれる関数だ。
         </p>
         <p>
