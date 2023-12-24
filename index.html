@@ -67,7 +67,6 @@
     }
 
     pre>code.sourceCode>span {
-      display: inline-block;
       line-height: 1.25;
     }
 
@@ -1441,7 +1440,7 @@
         </div>
         <p>もっと言う必要があるだろうか？</p>
         <p>確かに、不当な批判だったのは真っ先に認めよう！
-          そもそも階乗関数には自明な数学的表記がある。鋭い読者なら「キーボードから文字を読み取ったり、ネットワークを介してパケットを送信したりするための数学的モデルは何か？」と尋ねるだろう。長きに渡って、それはかなり複雑な説明につながる面倒な質問だった。有用なプログラムを書くために不可欠な多くの重要なタスクには、表示的意味論は最適でないように思われたが、操作的意味論では容易に解決できた。突破口は圏論からもたらされた。エウジニオ・モッジによって、計算の効果をモナドに写せることが発見された。これは表示的意味論に新たな生命を与え、純粋関数型プログラムをより使いやすくするだけでなく、従来のプログラミングに新たな光を当てる重要な観察となった。モナドについては後ほど、より圏論的なツールを開発するときに述べる。
+          そもそも階乗関数には自明な数学的表記がある。鋭い読者なら「キーボードから文字を読み取ったり、ネットワークを介してパケットを送信したりするための数学的モデルは何か？」と尋ねるだろう。長きに渡って、それはかなり複雑な説明につながる面倒な質問だった。有用なプログラムを書くために不可欠な多くの重要なタスクには、表示的意味論は最適でないように思われたが、操作的意味論では容易に解決できた。突破口は圏論からもたらされた。エウジニオ・モッジによって、計算作用をモナドに写せることが発見された。これは表示的意味論に新たな生命を与え、純粋関数型プログラムをより使いやすくするだけでなく、従来のプログラミングに新たな光を当てる重要な観察となった。モナドについては後ほど、より圏論的なツールを開発するときに述べる。
         </p>
         <p>
           プログラミングの数学的モデルを持つ重要な利点の1つは、ソフトウェアの正しさを形式的に証明できることだ。消費者向けのソフトウェアを書く際、これはそれほど重要ではないように思えるだろうが、失敗の代償が法外なものになったり、人命が危険にさらされたりするようなプログラミングの領域もある。もっとも、医療システム用のWebアプリケーションを作成する場合であっても、Haskell標準ライブラリの関数やアルゴリズムが正しさを証明済みであるという考えの価値を認めることになるだろう。
@@ -1453,7 +1452,7 @@
         </p>
         <p>また、数の2乗を計算することで犬においしい餌を出すという副作用があってはならない。それを行う「関数」は数学関数として簡単にモデル化できない。</p>
         <p>プログラミング言語では、同じ入力に対して常に同じ結果を生成し、副作用のない関数は<span id="pure_function" class="keyword">純粋関数</span> (pure function)
-          と呼ばれる。Haskellのような純粋関数型言語では、すべての関数は純粋だ。そのため、これらの言語に表示的意味論を与え、圏論でモデル化することが容易になる。他の言語の場合と同様に、純粋なサブセットだけを使うように制約したり、副作用に関する理由を別にしたりすることは常に可能だ。モナドによって、純粋関数のみを使ってあらゆる種類の効果をモデル化する方法については、後ほど説明する。数学的関数だけという制約を課しても何も失われないのだ。
+          と呼ばれる。Haskellのような純粋関数型言語では、すべての関数は純粋だ。そのため、これらの言語に表示的意味論を与え、圏論でモデル化することが容易になる。他の言語の場合と同様に、純粋なサブセットだけを使うように制約したり、副作用に関する理由を別にしたりすることは常に可能だ。モナドによって、純粋関数のみを使ってあらゆる種類の作用をモデル化する方法については、後ほど説明する。数学的関数だけという制約を課しても何も失われないのだ。
         </p>
         <h2 data-number="2.6" id="型の例"><span class="header-section-number">2.6</span> 型の例</h2>
         <p>型が集合であることを理解すれば、ややエキゾチックな型を考えられる。たとえば、空集合に対応するのはどんな型だろう？
@@ -1612,7 +1611,7 @@
                 <div class="sourceCode" id="cb31">
                   <pre
                     class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>   <span class="dt">bool</span> f<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>     <span class="bu">std::</span>cout<span class="op"> &lt;&lt;</span> <span class="st">&quot;Hello!&quot;</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>     <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Hello!&quot;</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span></code></pre>
                 </div>
@@ -1998,8 +1997,8 @@
               <annotation encoding="application/x-tex">f</annotation>
             </semantics>
           </math>の値)、これはpoint-wise
-          equalityと呼ばれる。引数を指定しない関数の等価性は<span id="point-free"
-            class="keyword">point-free</span>と記述される。(ちなみに、point-freeの式は関数合成を含むことが多く、これは点記号で表されるため、初心者は少し混乱するかもしれない。)</p>
+          equalityと呼ばれる。引数を指定しない関数の等価性は<span id="point-free" class="keyword">ポイントフリー</span> (point-free)
+          と表現される。(ちなみに、ポイントフリーの式は関数合成を含むことが多く、これは点記号で表されるため、初心者は少し混乱するかもしれない。)</p>
         <p>C++でモノイドを宣言するのに最も近い方法は、C++20標準のコンセプト機能を使うことだ。</p>
         <div class="sourceCode" id="cb39">
           <pre
@@ -2024,9 +2023,9 @@
         <p>このMonoidコンセプトのインスタンス化は、適切な特殊化とオーバーロードを提供することで実現できる:</p>
         <div class="sourceCode" id="cb40">
           <pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;&gt;</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>string<span class="op"> </span>mempty<span class="op">&lt;</span><span class="bu">std::</span>string<span class="op">&gt;</span> <span class="op">=</span> <span class="op">{</span><span class="st">&quot;&quot;</span><span class="op">};</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>string mempty<span class="op">&lt;</span><span class="bu">std::</span>string<span class="op">&gt;</span> <span class="op">=</span> <span class="op">{</span><span class="st">&quot;&quot;</span><span class="op">};</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>string<span class="op"> </span>mappend<span class="op">(</span><span class="bu">std::</span>string<span class="op"> </span>s1<span class="op">,</span> <span class="bu">std::</span>string<span class="op"> </span>s2<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>string mappend<span class="op">(</span><span class="bu">std::</span>string s1<span class="op">,</span> <span class="bu">std::</span>string s2<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s1 <span class="op">+</span> s2<span class="op">;</span></span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
         </div>
@@ -3801,7 +3800,7 @@
         </ol>
         <h1 data-number="6" id="シンプルな代数的データ型"><span class="header-section-number">6</span> シンプルな代数的データ型</h1>
         <p>
-          型を組み合わせる2つの基本的な方法として、積と余積を使う方法を見てきた。日常のプログラミングにおける多くのデータ構造は、この2つのメカニズムだけを使って構築できると分かった。この事実は重要で実用的な結果をもたらす。データ構造の特性の多くは合成可能だ。たとえば、基本型の値が等値かどうか比較する方法を知っていて、それらの比較を積と余積の型に一般化する方法を知っていれば、自動的に複合型の等値演算子を導出できる。Haskellでは、複合型の大きな部分集合に対して、等価性、比較、文字列への変換、文字列からの変換などを自動的に導出できる。
+          型を組み合わせる2つの基本的な方法として、積と余積を使う方法を見てきた。日常のプログラミングにおける多くのデータ構造は、この2つのメカニズムだけを使って構築できると分かった。この事実は重要で実用的な結果をもたらす。データ構造の特性の多くは合成可能だ。たとえば、基本型の値が等価かどうか比較する方法を知っていて、それらの比較を積と余積の型に一般化する方法を知っていれば、自動的に複合型の等値演算子を導出できる。Haskellでは、複合型の大きな部分集合に対して、等価性、比較、文字列への変換、文字列からの変換などを自動的に導出できる。
         </p>
         <p>次に、直積型 (product type) と直和型 (sum type)
           がプログラミングに現れる様子を詳しく見てみよう。</p>
@@ -4665,7 +4664,8 @@
             </semantics>
           </math>に写す。まるでブラックホールのように働き、すべてを1つの特異点に圧縮する。この関手については、極限と余極限について議論するときに詳しく見よう。</p>
         <h2 data-number="7.1" id="プログラミングにおける関手"><span class="header-section-number">7.1</span> プログラミングにおける関手</h2>
-        <p>現実に戻ってプログラミングについて話をしよう。我々には型と関数の圏がある。この圏をそれ自体に写す関手について話そう。そのような関手は自己関手と呼ばれる。型の圏での自己関手とは何だろうか？
+        <p>現実に戻ってプログラミングについて話をしよう。我々には型と関数の圏がある。この圏をそれ自体に写す関手について話そう。そのような関手は自己関手
+          (endofunctor) と呼ばれる。型の圏での自己関手とは何だろうか？
           まず、それは型を型に写す。そのような写像の例はすでに見たが、おそらくそれとは気付かなかったのだろう。いま述べているのは、ある型の定義が別の型によってパラメーター化されている場合についてだ。いくつか例を見てみよう。</p>
         <h3 data-number="7.1.1" id="maybe関手"><span class="header-section-number">7.1.1</span> Maybe関手</h3>
         <p><code>Maybe</code>は、型<code>a</code>から型<code>Maybe a</code>への写像として定義される:</p>
@@ -5351,7 +5351,7 @@
           を持つ。圏のカルテシアン積はまさに圏だ。
         </p>
         <p>
-          しかし、更に簡単に双関手について考えたいなら、両方の引数を取る関手だと見なせばよい。したがって、関手の規則――結合性と恒等射の保存――を関手から双関手へ翻訳するのではなく、引数ごとに別々にチェックすれば十分だろう。圏のペアから第3の圏への写像があり、それが関手的であることを各引数で別々に
+          しかし、さらに簡単に双関手について考えたいなら、両方の引数を取る関手だと見なせばよい。したがって、関手の規則――結合性と恒等射の保存――を関手から双関手へ翻訳するのではなく、引数ごとに別々にチェックすれば十分だろう。圏のペアから第3の圏への写像があり、それが関手的であることを各引数で別々に
           (たとえば、もう一方の引数を定数にするなどして)
           証明すれば、写像は自動的に双関手になる。<em>関手的</em>とは、正直な関手
           (honest functor) のように射に作用するという意味で用いている。</p>
@@ -7418,7 +7418,7 @@
         <p>標準テンプレートライブラリの<code>std::bind</code>を使えばC++関数を部分適用できる。たとえば、文字列2つを取る関数があるとする:</p>
         <div class="sourceCode" id="cb256">
           <pre
-            class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb256-1"><a href="#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>string<span class="op"> </span>catstr<span class="op">(</span><span class="bu">std::</span>string<span class="op"> </span>s1<span class="op">,</span> <span class="bu">std::</span>string<span class="op"> </span>s2<span class="op">)</span> <span class="op">{</span></span>
+            class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb256-1"><a href="#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>string catstr<span class="op">(</span><span class="bu">std::</span>string s1<span class="op">,</span> <span class="bu">std::</span>string s2<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb256-2"><a href="#cb256-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s1 <span class="op">+</span> s2<span class="op">;</span></span>
 <span id="cb256-3"><a href="#cb256-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
         </div>
@@ -7428,7 +7428,7 @@
             class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb257-1"><a href="#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> <span class="bu">std::</span>placeholders<span class="op">;</span></span>
 <span id="cb257-2"><a href="#cb257-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb257-3"><a href="#cb257-3" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> greet <span class="op">=</span> <span class="bu">std::</span>bind<span class="op">(</span>catstr<span class="op">,</span> <span class="st">&quot;Hello &quot;</span><span class="op">,</span> _1<span class="op">);</span></span>
-<span id="cb257-4"><a href="#cb257-4" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>cout<span class="op"> &lt;&lt;</span> greet<span class="op">(</span><span class="st">&quot;Haskell Curry&quot;</span><span class="op">);</span></span></code></pre>
+<span id="cb257-4"><a href="#cb257-4" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> greet<span class="op">(</span><span class="st">&quot;Haskell Curry&quot;</span><span class="op">);</span></span></code></pre>
         </div>
         <p>ScalaはC++やJavaよりも関数型寄りの、中間的立場に立っている。定義したい関数が部分適用されると予想されるときは、複数引数のリストを使って定義する:</p>
         <pre><code>def catstr(s1: String)(s2: String) = s1 + s2</code></pre>
@@ -16463,7 +16463,7 @@ C<sup>op</sup> × C -> Set
           <code>absurd</code>しかあり得ない。
         </p>
         <p>
-          米田の補題を理解する方法の1つは、集合値関数の間の自然変換は関数の族にすぎず、関数は一般には非可逆だと理解することだ。情報を潰す関数もあり、その場合は終域の一部しかカバーされない。非可逆でない唯一の関数は、可逆なもの、つまり同型だ。したがって、構造を保存する最良の集合値関手は表現可能関手だということになる。それらはhom関手か、あるいはhom関手と自然同型な関手のどちらかだ。その他の関手<math
+          米田の補題を理解する方法の1つは、集合値関手の間の自然変換は関数の族にすぎず、関数は一般には非可逆だと理解することだ。情報を潰す関数もあり、その場合は終域の一部しかカバーされない。非可逆でない唯一の関数は、可逆なもの、つまり同型だ。したがって、構造を保存する最良の集合値関手は表現可能関手だということになる。それらはhom関手か、あるいはhom関手と自然同型な関手のどちらかだ。その他の関手<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>F</mi>
@@ -18174,18 +18174,18 @@ C<sup>op</sup> × C -> Set
         <h1 data-number="17" id="射のすべて"><span class="header-section-number">17</span> 射のすべて</h1>
         <p>まだ圏論は射に関するものだと納得していないなら、私の仕事が不十分だったようだ。次の話題である随伴
           (adjunction)
-          は、hom集合の同型射によって定義されるため、hom集合の構成単位についての直観を見直すことは理にかなっている。また、これまで見てきた多くの構成は、随伴が提供するさらに一般的な言語によって詳しく記述できるため、それらも復習すると役立つだろう。
+          は、hom集合の同型射によって定義されるため、hom集合の構成単位についての直観を見直すのが理にかなっている。また、これまで見てきた多くの構成を復習しておくのも有意義だろう。それらは、随伴が提供するさらに汎用的な語彙によって詳しく記述できるからだ。
         </p>
         <h2 data-number="17.1" id="関手"><span class="header-section-number">17.1</span> 関手</h2>
         <p>
-          まず始めに、本当に関手を射の写像と考えるべきだ――Haskellの<code>Functor</code>型クラスの定義で強調されている考え方で、<code>fmap</code>を中心に展開している。当然、関手は対象――射の終点――も写す。そうでなければ、合成の保存について話せない。対象は射のどのペアが合成可能か教えてくれる。一方の射の終対象がもう一方の始対象と等しくなければ合成できない。したがって、射の合成を<span
+          まず始めに、本当に関手を射の写像だと考えるべきだ。これはHaskellで<code>fmap</code>を中心に展開される<code>Functor</code>型クラスの定義において強調されている考え方だ。当然、関手は対象――射の終点――も写す。そうでなければ、合成の保存について語れない。対象は射のどのペアが合成可能か教えてくれる。一方の射の終対象がもう一方の始対象と等しくなければ合成できない。したがって、射の合成を<span
             id="lifted" class="keyword">リフトされた</span>射の合成に写したい場合、それらの終点の写像は十分に決定される。</p>
         <h2 data-number="17.2" id="可換図式"><span class="header-section-number">17.2</span> 可換図式</h2>
         <p>射の多くの性質は可換図式によって表される。もし特定の射が他の射の合成として複数の方法で記述できるなら、可換図式があることになる。</p>
-        <p>特に、可換図式はほとんどすべての普遍的構成の基礎となっている
+        <p>特に、可換図式はほぼすべての普遍的構成の基礎となっている
           (始対象と終対象という例外を除く)。このことはすでに、積、余積、その他さまざまな
           (余) 極限、冪乗対象、自由モノイドなどの定義で見てきた。</p>
-        <p>積は普遍的構成の簡単な例だ。2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>積は普遍的構成の簡単な例だ。ある2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
@@ -18195,12 +18195,7 @@ C<sup>op</sup> × C -> Set
               <mi>b</mi>
               <annotation encoding="application/x-tex">b</annotation>
             </semantics>
-          </math>を選択し、対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-            <semantics>
-              <mi>c</mi>
-              <annotation encoding="application/x-tex">c</annotation>
-            </semantics>
-          </math>がペアの射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>について、その積となる普遍性を持つような、射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>p</mi>
               <annotation encoding="application/x-tex">p</annotation>
@@ -18210,10 +18205,15 @@ C<sup>op</sup> × C -> Set
               <mi>q</mi>
               <annotation encoding="application/x-tex">q</annotation>
             </semantics>
-          </math>を伴って存在し、積となる普遍性を持つかを確認する。</p>
+          </math>のペアを伴う対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>c</mi>
+              <annotation encoding="application/x-tex">c</annotation>
+            </semantics>
+          </math>の存在を確認する。</p>
         <p><img src="images/productranking.jpg" style="width:30.0%" /></p>
         <p>
-          積は極限の特別な場合だ。極限は錐によって定義される。一般的な錐は可換図式から作成される。それらの図式の可換性は、関手の写像のための適切な自然条件で置き換えてよい。このようにして、可換性は自然変換という高水準言語に対するアセンブリ言語の役割に降格される。
+          積は極限の特別な場合でもある。極限は錐によって定義される。一般的な錐は可換図式から作成される。それらの図式の可換性は、関手の写像のための適切な自然条件で置き換えてよい。このようにして、可換性は自然変換という高水準言語に対するアセンブリ言語の役割に降格される。
         </p>
         <h2 data-number="17.3" id="自然変換"><span class="header-section-number">17.3</span> 自然変換</h2>
         <p>一般に、自然変換は射から可換正方図式への写像が必要なときに非常に便利だ。自然性の正方図式の対辺は、ある射<math display="inline"
@@ -18222,7 +18222,7 @@ C<sup>op</sup> × C -> Set
               <mi>f</mi>
               <annotation encoding="application/x-tex">f</annotation>
             </semantics>
-          </math>を2つの関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を2つの関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>F</mi>
               <annotation encoding="application/x-tex">F</annotation>
@@ -18233,18 +18233,18 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">G</annotation>
             </semantics>
           </math>で写したものだ。他の辺は自然変換のコンポーネントだ
-          (射でもある)。</p>
+          (それらも射だ)。</p>
         <p><img src="images/3_naturality.jpg" style="width:35.0%" /></p>
         <p>自然性は、「隣接する」 (射でつながった)
-          コンポーネントに移っても、圏や関手の構造に逆らわないことを意味する。まず自然変換のコンポーネントを使って対象間のギャップを埋めてから関手を使って隣の対象にジャンプするのでも、その逆でも関係ない。2つの方向は直交している。いうなれば、自然変換では左右に動けて、関手では上下や前後に動ける。関手の<em>像</em>は、対象となる圏でのシートとして視覚化できる。自然変換はFに対応するシートをGに対応する別のシートに写す。
+          コンポーネントに移っても、圏や関手の構造に反しないことを意味する。まず自然変換のコンポーネントを使って対象間のギャップを埋めてから関手を使って隣の対象にジャンプするのでも、その逆でも関係ない。2つの方向は直交している。いうなれば、自然変換では左右に動けて、関手では上下や前後に動ける。関手の<em>像</em>は、対象となる圏でのシートとして視覚化できる。自然変換はFに対応するシートをGに対応する別のシートに写す。
         </p>
         <p><img src="images/sheets.png" style="width:35.0%" /></p>
-        <p>Haskellにおけるこの直交性の例を見た。そこでは、関手の作用はコンテナの形状を変更せずに内容を変更し、自然変換は内容を変更せずに別のコンテナに再パッケージした。これらの操作の順序は関係ない。</p>
+        <p>この直交性のHaskellにおける例を見た。そこでは、関手の作用はコンテナの形状を変更せずに内容を変更し、自然変換は内容を変更せずに別のコンテナに再パッケージした。これらの操作の順序は関係ない。</p>
         <p>
-          極限の定義の中で錐が自然変換に置き換えられるのを見た。自然性はすべての錐について側面が可換なのを保証する。さらに、極限は錐の<em>間の</em>写像によって定義される。これらの写像は可換性条件も満たす必要がある。(たとえば、積の定義における三角形は可換である必要がある)。
+          極限の定義の中で錐が自然変換に置き換えられるのを見た。自然性はすべての錐について側面が可換だと保証する。さらに、極限は錐の<em>間の</em>写像によって定義される。これらの写像は可換性条件も満たす必要がある。(たとえば、積の定義における三角形は可換である必要がある)。
         </p>
         <p>これらの条件も自然性によって代替できる。<em>普遍な</em>錐、すなわち極限は、(反変)
-          hom関手間の自然変換として定義されていたのを思い出すだろう:</p>
+          hom関手間の自然変換として定義されていたのを覚えているだろう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -18278,7 +18278,7 @@ C<sup>op</sup> × C -> Set
               <mi>𝐂</mi>
               <annotation encoding="application/x-tex">\symbf{C}</annotation>
             </semantics>
-          </math>内の対象を、それ自体が自然変換である錐に写す。</p>
+          </math>内の対象を、それ自体が自然変換である錐に写す:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -18348,14 +18348,14 @@ C<sup>op</sup> × C -> Set
               <mi>G</mi>
               <annotation encoding="application/x-tex">G</annotation>
             </semantics>
-          </math>の間の特定の自然変換が<em>同型射</em>なのは偶然だ。</p>
+          </math>の間の特定の自然変換が<em>同型</em>なのは偶然だ。</p>
         <h2 data-number="17.4" id="自然同型"><span class="header-section-number">17.4</span> 自然同型</h2>
         <p>
           自然同型――すべてのコンポーネントが可逆な自然変換――は、圏論で「2つのものは同じである」と言うときの言い方だ。そのような変換のコンポーネントは対象間の同型射――逆が存在する射――でなければならない。関手の像をシートとして表す場合、自然同型はシート間の1対1の可逆な写像だ。
         </p>
         <h2 data-number="17.5" id="hom集合"><span class="header-section-number">17.5</span> Hom集合</h2>
         <p>それにしても、射とは何だろう？
-          射には対象よりも多くの構造がある。対象とは違って、射には2つの端がある。しかし、始対象と終対象を固定すると、それら2つの間の射は退屈な集合を
+          射は対象よりも構造が豊かだ。対象とは違って、射には2つの端がある。しかし、始対象と終対象を固定すると、それら2つの間の射は平凡な集合を
           (少なくとも局所的に小さい圏では)
           形成する。この集合の要素を区別するために<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -18367,8 +18367,9 @@ C<sup>op</sup> × C -> Set
               <mi>g</mi>
               <annotation encoding="application/x-tex">g</annotation>
             </semantics>
-          </math>のような名前を付けることはできるが、実際のところ、何が異なるのだろう？</p>
-        <p>あるhom集合の射の間の本質的な差異は、(隣接するhom集合からの)
+          </math>のような名前を付けることはできるが、実際のところ、違いは何なのだろう？</p>
+        <p>あるhom集合の射の間の本質的な差異は、(隣接するhom集合 (abutting
+          hom-sets) からの)
           他の射と合成する方法にある。ある射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>h</mi>
@@ -18430,7 +18431,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">F f \neq F g</annotation>
             </semantics>
           </math></p>
-        <p>これらの射が属する圏はより豊かで、隣接するhom集合の分解能がより高い。たとえば:</p>
+        <p>これらの射が属する圏はより豊かで、隣接するhom集合による分解能がより高い。たとえば:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -18465,24 +18466,25 @@ C<sup>op</sup> × C -> Set
           </math>の像に含まれない。</p>
         <h2 data-number="17.6" id="hom集合同型"><span class="header-section-number">17.6</span> Hom集合同型</h2>
         <p>
-          圏論では多くの構造がhom集合間の同型射に依存している。しかし、hom集合はただの集合なので、それらの間の同型射から分かることはあまりない。有限集合については、同型射は要素数が同じだと示すだけだ。無限集合なら、濃度が同じでなければならない。しかし、hom集合の意味のある同型射はすべて、合成も考慮しなければならない。そして、合成には複数のhom集合が関わる。あらゆるhom集合にまたがる同型射を定義する必要があり、合成と相互運用する何らかの互換性条件を課す必要がある。そして、<span
+          圏論では多くの構造がhom集合間の同型に依存している。しかし、hom集合はただの集合なので、それらの間の同型射から分かることはあまりない。有限集合については、同型射は要素数が同じだと示すだけだ。無限集合なら、濃度が同じでなければならない。しかし、hom集合の意味のある同型射はすべて、合成も考慮しなければならない。そして、合成には複数のhom集合が関わる。あらゆるhom集合にまたがる同型を定義する必要があり、合成と相互運用できるような何らかの互換性の条件を課す必要がある。そして、<span
             id="natural" class="keyword">自然</span>同型はその条件にぴったり合う。</p>
         <p>だが、hom集合の自然同型とは何だろう？
           自然性は、集合間ではなく、関手間の写像の特性だ。つまり、今はhom集合値関手の間の自然同型について話している。それらの関手は単なる集合値関手ではない。射に対するその作用は、適切なhom関手によって導かれる。射はhom関手によって、前置合成か後置合成のどちらかで
           (合成の変性に依存して) 正準的に写される。</p>
-        <p>米田埋め込みはそのような同型射の一例だ。それは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>米田埋め込みはそのような同型の一例だ。それは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐂</mi>
               <annotation encoding="application/x-tex">\symbf{C}</annotation>
             </semantics>
-          </math>のhom集合を関手圏のhom集合に写す。そしてそれは自然だ。米田埋め込みの関手は、1つは<math display="inline"
+          </math>内のhom集合を関手圏内のhom集合に写す。そしてそれは自然だ。米田埋め込みの関手は、1つは<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐂</mi>
               <annotation encoding="application/x-tex">\symbf{C}</annotation>
             </semantics>
           </math>のhom関手で、もう1つは対象をhom集合間の自然変換の集合に写す。</p>
-        <p>極限の定義もhom集合間の自然同型だ (2番目がやはり関手圏内にある)。</p>
+        <p>極限の定義もhom集合間の自然同型だ
+          (ここでも2番目は関手圏内のhom集合だ):</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -18525,7 +18527,8 @@ C<sup>op</sup> × C -> Set
         <p>冪乗対象や自由モノイドの構成も、hom集合間の自然同型として書き直せることが分かる。</p>
         <p>これは偶然の一致ではない――次に見るように、これらはhom集合の自然同型として定義される随伴の様々な例にすぎない。</p>
         <h2 data-number="17.7" id="hom集合の非対称性"><span class="header-section-number">17.7</span> Hom集合の非対称性</h2>
-        <p>随伴を理解するのに役立つ観察がもう1つある。Hom集合は一般に対称ではない。Hom集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>随伴を理解するのに役立つ観察結果はもう1つある。Hom集合は一般に対称ではない。Hom集合<math display="inline"
+            xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐂</mi>
@@ -18639,10 +18642,11 @@ C<sup>op</sup> × C -> Set
           は空でなければならない。この圏の矢の流れは一方向に決まっている。</p>
         <p>関係が反対称でなくてもよい前順序も、たまにある循環を除けば「ほとんど」方向付けられている。任意の圏を前順序の一般化と見なすのは便利だ。</p>
         <p>前順序はやせた圏だ――すべてのhom集合が単集合か空集合のどちらかだ。一般の圏は「厚い」(thick)
-          前順序として視覚化できる。</p>
+          前順序として可視化できる。</p>
         <h2 data-number="17.8" id="課題-14"><span class="header-section-number">17.8</span> 課題</h2>
         <ol type="1">
-          <li>自然条件の縮退した例を考え、適切な図を描け。たとえば、関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <li>縮退 (degenerate)
+            した自然条件の例を考え、適切な図を描け。たとえば、関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mi>F</mi>
                 <annotation encoding="application/x-tex">F</annotation>
@@ -18741,12 +18745,12 @@ C<sup>op</sup> × C -> Set
           を使っていることに気が付いていただろうか？ それは、射が集合 (hom集合)
           を形成し、集合の要素は等価性を確認できるからだ。</p>
         <p>
-          しかし、等価性は強すぎることが多い。実際には等しくないのに、あらゆる意図と目的に照らして同じであるという例はたくさんある。たとえば、ペアの型<code>(Bool, Char)</code>は<code>(Char, Bool)</code>と厳密に等しいわけではないが、含んでいる情報が同じなのは分かっている。この概念を最もうまく捉えるのは、2つの型の間の<em>同型射</em>――反転可能な射だ。これは射なので、構造を保存する。そして同型
+          しかし、等価性は強すぎることが多い。実際には等価ではないのに、あらゆる意図と目的に照らして同じであるという例はたくさんある。たとえば、ペアの型<code>(Bool, Char)</code>は<code>(Char, Bool)</code>と厳密に等しいわけではないが、含んでいる情報が同じなのは分かっている。この概念を最もうまく捉えたものは、2つの型の間の<em>同型射</em>――反転可能な射だ。これは射なので、構造を保存する。そして同型
           (isomorphism) の “iso”
-          は、もとの場所に帰り着く往復旅行の一部であることを意味する。どちら側から出発するかは関係ない。ペアの場合、この同型射は<code>swap</code>と呼ばれる:</p>
+          は、もとの場所に帰り着く往復旅行の一部であることを意味する。どちら側から出発するかは関係ない。ペアにおいては、この同型射は<code>swap</code>と呼ばれる:</p>
         <div class="sourceCode" id="cb371">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb371-1"><a href="#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="ot">swap ::</span> (a,b) \to (b,a)</span>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb371-1"><a href="#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="ot">swap ::</span> (a,b) <span class="ot">-&gt;</span> (b,a)</span>
 <span id="cb371-2"><a href="#cb371-2" aria-hidden="true" tabindex="-1"></a>swap (a,b) <span class="ot">=</span> (b,a)</span></code></pre>
         </div>
         <p><code>swap</code>はそれ自身の逆だ。</p>
@@ -18870,7 +18874,7 @@ C<sup>op</sup> × C -> Set
             </semantics>
           </math></p>
         <p>
-          関手の等価性を対象の等価性として定義するのは合理的だろう。2つの関手が同じ対象に作用するなら、同じ対象が生成されるはずだ。しかし、一般には、対象の等価性の概念は任意の圏においては存在しない。それは単に定義の一部ではない。(この「等価性とはなにか」といううさぎの穴を深く掘り下げると、ホモトピー型理論に辿り着く。)
+          関手の等価性を対象の等価性として定義するのは合理的に思える。2つの関手が同じ対象に作用するなら、同じ対象が生成されるはずだ。しかし、一般に、対象の等価性の概念は任意の圏においては存在しない。それは単に定義の一部ではない。(この「等価性とはなにか」といううさぎの穴を深く掘り下げると、ホモトピー型理論に辿り着く。)
         </p>
         <p>関手は圏の圏における射<em>である</em>から、それらは等価性で比較可能なはずだ、と主張したくなるかもしれない。実際、対象が集合を形成するような小さい圏を扱う限り、集合の要素の等価性を使って対象を等価性比較できる。
         </p>
@@ -19010,7 +19014,7 @@ C<sup>op</sup> × C -> Set
               </msub>
               <annotation encoding="application/x-tex">I_{\symbf{C}}</annotation>
             </semantics>
-          </math>への別の一方向の自然変換が存在する必要がある。これら2つの自然変換の特徴を以下に示す:</p>
+          </math>への別の一方向の自然変換が存在する必要がある。これら2つの自然変換の表記を以下に示す:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mtable>
@@ -19250,7 +19254,7 @@ C<sup>op</sup> × C -> Set
               <mi>d</mi>
               <annotation encoding="application/x-tex">d</annotation>
             </semantics>
-          </math>を始域として選択でき、ラウンドトリップ関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を始域として選択でき、往復旅行する関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>R</mi>
@@ -19449,11 +19453,11 @@ C<sup>op</sup> × C -> Set
               </annotation>
             </semantics>
           </math></p>
-        <p>これらは、次の図式を可換にするので、三角恒等式 (triangular
-          identities) と呼ばれる:</p>
+        <p>これらは、次の図式を可換にするので、三角恒等式 (triangular identity)
+          と呼ばれる:</p>
         <p><img src="images/triangles.png" /></p>
         <p><img src="images/triangles-2.png" /></p>
-        <p>これらは関手圏の図式だ。矢は自然変換であり、それらの合成は自然変換の水平合成だ。コンポーネントでは、これらの恒等射は次のようになる:</p>
+        <p>これらは関手圏の図式だ。つまり、矢は自然変換であり、それらの合成は自然変換の水平合成だ。コンポーネントで表すと、これらの恒等式は次のようになる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mtable>
@@ -19518,7 +19522,7 @@ C<sup>op</sup> × C -> Set
               </annotation>
             </semantics>
           </math></p>
-        <p>Haskellでは、単位と余単位を別の名前でよく見かける。単位は<code>return</code>
+        <p>Haskellでは単位と余単位を別の名前でよく見かける。単位は<code>return</code>
           (あるいは<code>Applicative</code>の定義では<code>pure</code>)
           として知られている:</p>
         <div class="sourceCode" id="cb372">
@@ -19558,7 +19562,7 @@ C<sup>op</sup> × C -> Set
           (すなわち<code>extract</code>) はその逆を行う:
           コンテナから単一の値を取得または生成する。</p>
         <p>後で述べるように、随伴関手の各ペアはモナドとコモナドを定義する。逆に、すべてのモナドやコモナドは随伴関手のペアに分解され得る――ただし、その分解は一意ではない。</p>
-        <p>Haskellではモナドをよく使うが、それらを随伴関手のペアに分解することはめったにない。その主な理由は、それらの関手によって通常<math display="inline"
+        <p>Haskellではモナドをよく使うが、それらを随伴関手のペアに分解することはめったにない。その主な理由は、それらの関手によって通常は<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -19570,7 +19574,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">\mathbf{Hask}</annotation>
             </semantics>
           </math>の外へ追い出されるからだ。</p>
-        <p>しかし、Haskellでは<span id="endofunctors"
+        <p>しかし、Haskellでは<span id="endofunctor"
             class="keyword">自己関手</span>の随伴を定義できる。以下は<code>Data.Functor.Adjunction</code>から引用した定義の一部だ:</p>
         <div class="sourceCode" id="cb374">
           <pre
@@ -19580,16 +19584,16 @@ C<sup>op</sup> × C -> Set
 <span id="cb374-4"><a href="#cb374-4" aria-hidden="true" tabindex="-1"></a><span class="ot">    counit ::</span> f (u a) <span class="ot">-&gt;</span> a</span></code></pre>
         </div>
         <p>
-          この定義には説明が必要だ。まず、これは多パラメーター型クラスを記述している。2つのパラメーターは<code>f</code>と<code>u</code>だ。その2つの型コンストラクターの間に<code>Adjunction</code>という関係を確立している。
+          この定義には説明が必要だ。まず、これは多パラメーター型クラスを記述している――2つのパラメーターは<code>f</code>と<code>u</code>だ。その2つの型コンストラクターの間に<code>Adjunction</code>という関係を確立している。
         </p>
         <p>バーティカルバーの後の追加条件は、関数の依存関係を指定している。たとえば、<code>f -&gt; u</code>は<code>f</code>によって<code>u</code>が決定されることを意味する
           (<code>f</code>と<code>u</code>の関係は関数で、ここでは型コンストラクターについての関数だ)。逆に、<code>u -&gt; f</code>は、<code>u</code>が分かれば<code>f</code>が一意に決まることを意味する。
         </p>
-        <p>Haskellではなぜ、右随伴<code>u</code>が<span id="representable2"
+        <p>なぜHaskellでは右随伴<code>u</code>が<span id="representable2"
             class="keyword">表現可能</span>関手であるという条件を課せるのかについては、すぐ後で説明する。</p>
         <h2 data-number="18.2" id="随伴とhom集合"><span class="header-section-number">18.2</span> 随伴とhom集合</h2>
         <p>
-          随伴の同等の定義として、hom集合の自然同型によるものがある。その定義はこれまで学んだ普遍的構成とうまく結びついている。ある一意な射がある構成を分解しているという話を聞くたび、それはある集合からhom集合への写像だと考えるべきだ。それが「一意な射を選択する」ということの意味だ。
+          随伴の等価な定義として、hom集合の自然同型によるものがある。その定義はこれまで学んだ普遍的構成とうまく結びついている。ある一意な射がある構成を分解しているという話を聞いたら毎回、それはある集合からhom集合への写像だと見なすべきだ。それが「一意な射を選択する」ということの意味だ。
         </p>
         <p>さらに言うと、分解は自然変換によって記述されることが多い。分解には可換図式が関わる――ある射は2つの射
           (因子)
@@ -19622,8 +19626,7 @@ C<sup>op</sup> × C -> Set
               </mrow>
               <annotation encoding="application/x-tex">R \Colon \symbf{C} \to \symbf{D}</annotation>
             </semantics>
-          </math>がある。2つの任意の対象を選択する:
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>がある。任意の2つの対象として<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐃</mi>
               <annotation encoding="application/x-tex">\symbf{D}</annotation>
@@ -19643,7 +19646,7 @@ C<sup>op</sup> × C -> Set
               <mi>c</mi>
               <annotation encoding="application/x-tex">c</annotation>
             </semantics>
-          </math>だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を選択しよう<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>L</mi>
               <annotation encoding="application/x-tex">L</annotation>
@@ -19676,8 +19679,7 @@ C<sup>op</sup> × C -> Set
               <mi>c</mi>
               <annotation encoding="application/x-tex">c</annotation>
             </semantics>
-          </math>が得られた。これらはhom集合を定義する:
-        </p>
+          </math>が得られた。これらはhom集合を定義する:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -19877,7 +19879,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">\psi</annotation>
             </semantics>
           </math>は次の
-          (反変) 関手間で作用する。</p>
+          (反変) 関手間に作用する:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mtable>
@@ -19920,8 +19922,8 @@ C<sup>op</sup> × C -> Set
               </annotation>
             </semantics>
           </math></p>
-        <p>両方の自然変換が可逆でなければならない。</p>
-        <p>随伴の2つの定義が等しいことは簡単に示せる。例として、hom集合の同型射から始まる単位変換を導出しよう:</p>
+        <p>自然変換は両方とも可逆でなければならない。</p>
+        <p>随伴の2つの定義が等しいことは簡単に示せる。例として、単位変換の導出を、hom集合の同型から始めてみよう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -19963,7 +19965,7 @@ C<sup>op</sup> × C -> Set
               </mrow>
               <annotation encoding="application/x-tex">c = L d</annotation>
             </semantics>
-          </math>でも成り立つ必要がある。</p>
+          </math>でも成り立つ必要がある:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -19998,8 +20000,7 @@ C<sup>op</sup> × C -> Set
               </annotation>
             </semantics>
           </math></p>
-        <p>左辺には少なくとも1つの射、すなわち恒等射が含まれる必要があるのが分かっている。自然変換は、この射を<math display="inline"
-            xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>左辺は少なくとも1つの射、つまり恒等射を必ず含むのが分かっている。自然変換は、この射を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐃</mi>
@@ -20021,12 +20022,12 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">\symbf{D}(d, (R \circ L) d)</annotation>
             </semantics>
           </math>
-          の要素に写して、つまり恒等関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          の要素に写す。すなわち、恒等関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>I</mi>
               <annotation encoding="application/x-tex">I</annotation>
             </semantics>
-          </math>を挿入して、以下の圏内の射に写す:</p>
+          </math>を挿入すると、以下の圏内の射に写す:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -20055,7 +20056,7 @@ C<sup>op</sup> × C -> Set
               <mi>d</mi>
               <annotation encoding="application/x-tex">d</annotation>
             </semantics>
-          </math>でパラメーター化された射の族が得られる。それらは関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>でパラメーター化された射の族が得られた。それらは関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>I</mi>
               <annotation encoding="application/x-tex">I</annotation>
@@ -20076,7 +20077,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">\eta</annotation>
             </semantics>
           </math>だ。</p>
-        <p>逆に、単位と余単位の存在から始めて、hom集合間の変換を定義できる。例として、hom集合<math display="inline"
+        <p>逆に、単位と余単位の存在から始めれば、hom集合間の変換を定義できる。例として、hom集合<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -20470,7 +20471,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">\symbf{C}(L (), c) \cong \symbf{Set}((), R c)</annotation>
             </semantics>
           </math></p>
-        <p>指定された<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>与えられた<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>c</mi>
               <annotation encoding="application/x-tex">c</annotation>
@@ -20489,10 +20490,9 @@ C<sup>op</sup> × C -> Set
             <semantics>
               <mrow>
                 <mi>R</mi>
-                <mspace width="0.222em"></mspace>
                 <mi>c</mi>
               </mrow>
-              <annotation encoding="application/x-tex">R\ c</annotation>
+              <annotation encoding="application/x-tex">R c</annotation>
             </semantics>
           </math>への関数の集合だ。そのような関数が集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -20542,7 +20542,7 @@ C<sup>op</sup> × C -> Set
             </semantics>
           </math>が実際に表現可能であることを示している。</p>
         <h2 data-number="18.3" id="随伴に基づく積"><span class="header-section-number">18.3</span> 随伴に基づく積</h2>
-        <p>先に、普遍的構成を用いた概念をいくつか紹介した。これらの概念の多くは、大域的に定義されている場合、随伴を使って表現する方が簡単だ。最も単純な非自明の例は積だ。<a
+        <p>これまでに、普遍的構成を用いた概念をいくつか紹介した。これらの概念の多くは、大域的に定義されている場合、随伴を使って表現する方が簡単だ。最も単純な非自明の例は積だ。<a
             href="#products-and-coproducts">積の普遍的構成</a>の要点は、普遍的構成を通じて積に似た候補を分解できることだ。</p>
         <p>より正確には、2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -20641,7 +20641,7 @@ C<sup>op</sup> × C -> Set
               </mrow>
               <annotation encoding="application/x-tex">snd</annotation>
             </semantics>
-          </math>を通して分解する一意な射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を通じて分解する一意な射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>m</mi>
@@ -20696,7 +20696,7 @@ C<sup>op</sup> × C -> Set
               <mi>𝐃</mi>
               <annotation encoding="application/x-tex">\symbf{D}</annotation>
             </semantics>
-          </math>を取り上げる。直積圏内の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を取り上げよう。直積圏内の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐂</mi>
@@ -20974,7 +20974,7 @@ C<sup>op</sup> × C -> Set
               </mrow>
               <annotation encoding="application/x-tex">\symbf{C}\times{}\symbf{C}</annotation>
             </semantics>
-          </math>への対角線関手
+          </math>への対角関手
           (diagonal functor)
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -20999,7 +20999,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">\Delta\ c = \langle c, c \rangle</annotation>
             </semantics>
           </math></p>
-        <p>したがって、ここでの随伴の左hom集合は次のようになる:</p>
+        <p>したがって、ここでの随伴の左hom集合はこうなる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -21029,7 +21029,7 @@ C<sup>op</sup> × C -> Set
               </annotation>
             </semantics>
           </math></p>
-        <p>これは直積圏のhom集合だ。その要素は、<code>factorizer</code>の引数として知っている射のペアだ。</p>
+        <p>これは直積圏のhom集合だ。その要素は、<code>factorizer</code>の引数として知っている射のペアだ:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -21054,7 +21054,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">(c \to a) \to (c \to b) \ldots{}</annotation>
             </semantics>
           </math></p>
-        <p>右辺のhom集合は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>右hom集合は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐂</mi>
               <annotation encoding="application/x-tex">\symbf{C}</annotation>
@@ -21064,7 +21064,12 @@ C<sup>op</sup> × C -> Set
               <mi>c</mi>
               <annotation encoding="application/x-tex">c</annotation>
             </semantics>
-          </math>から、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>から、ある関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>R</mi>
+              <annotation encoding="application/x-tex">R</annotation>
+            </semantics>
+          </math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐂</mi>
@@ -21074,12 +21079,7 @@ C<sup>op</sup> × C -> Set
               </mrow>
               <annotation encoding="application/x-tex">\symbf{C}\times{}\symbf{C}</annotation>
             </semantics>
-          </math>内の終対象に作用する関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-            <semantics>
-              <mi>R</mi>
-              <annotation encoding="application/x-tex">R</annotation>
-            </semantics>
-          </math>の結果へと向かう。これはペア<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>内の終対象に作用した結果へと向かう。これこそがペア<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mo stretchy="false" form="prefix">⟨</mo>
@@ -21100,7 +21100,7 @@ C<sup>op</sup> × C -> Set
               </mrow>
               <annotation encoding="application/x-tex">a\times{}b</annotation>
             </semantics>
-          </math>に写す関手だ。このhom集合の要素は<code>factorizer</code>の<em>結果</em>として認識される。</p>
+          </math>に写す関手だ。hom集合のこの要素は<code>factorizer</code>の<em>結果</em>として認識される:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -21126,7 +21126,7 @@ C<sup>op</sup> × C -> Set
           </math></p>
         <p><img src="images/adj-product.jpg" style="width:50.0%" /></p>
         <p>
-          まだ完全な随伴は得られていない。そのためには、まず<code>factorizer</code>が反転可能である必要がある――hom集合の間に<em>同型射</em>を構築しているからだ。<code>factorizer</code>の逆は、ある対象<math
+          まだ完全な随伴は得られていない。まず<code>factorizer</code>が反転可能である必要がある――hom集合の間に<em>同型射</em>を構築しているからだ。<code>factorizer</code>の逆は、ある対象<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>c</mi>
@@ -21152,7 +21152,7 @@ C<sup>op</sup> × C -> Set
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>は次のものの要素になる:</p>
+          </math>は次のものの要素でなければならない:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -21176,7 +21176,7 @@ C<sup>op</sup> × C -> Set
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>を、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mo stretchy="false" form="prefix">⟨</mo>
@@ -21255,7 +21255,7 @@ C<sup>op</sup> × C -> Set
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>をそれぞれ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>f</mi>
@@ -21273,7 +21273,7 @@ C<sup>op</sup> × C -> Set
               </mrow>
               <annotation encoding="application/x-tex">snd</annotation>
             </semantics>
-          </math>で合成することで、常に<code>factorizer</code>の逆を合成できる。</p>
+          </math>でそれぞれ合成することで、常に<code>factorizer</code>の逆を合成できる。</p>
         <div class="sourceCode" id="cb379">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb379-1"><a href="#cb379-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">=</span> <span class="fu">fst</span> <span class="op">.</span> m</span>
@@ -21433,7 +21433,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">a \Rightarrow b</annotation>
             </semantics>
           </math>は、<a
-            href="https://bartoszmilewski.com/2015/03/13/function-types/">普遍的構成</a>を使って定義できる。この構成は、対象のすべてのペアに対して存在するなら、随伴と見なせる。繰り返すが、秘訣は宣言に集中することだ:
+            href="https://bartoszmilewski.com/2015/03/13/function-types/">普遍的構成</a>を使って定義できる。この構成は、対象のすべてのペアに対して存在するなら、随伴と見なせる。繰り返すが、秘訣は言明に集中することだ:
         </p>
         <blockquote>
           <p>他の任意の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -21475,8 +21475,8 @@ C<sup>op</sup> × C -> Set
             </math>
             が存在する。</p>
         </blockquote>
-        <p>この宣言によりhom集合間の写像が確立される。</p>
-        <p>この例では、同じ圏内の対象を処理しているので、随伴関手は2つとも自己関手だ。左
+        <p>この言明によりhom集合間の写像が確立される。</p>
+        <p>この例では、同じ圏内の対象を扱っているので、随伴関手は2つとも自己関手だ。左
           (自己)
           関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -21488,7 +21488,7 @@ C<sup>op</sup> × C -> Set
               <mi>z</mi>
               <annotation encoding="application/x-tex">z</annotation>
             </semantics>
-          </math>に作用するとき、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に作用すると、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>z</mi>
@@ -21515,7 +21515,7 @@ C<sup>op</sup> × C -> Set
               <mi>b</mi>
               <annotation encoding="application/x-tex">b</annotation>
             </semantics>
-          </math>に作用するとき、関数オブジェクト<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に作用すると、関数オブジェクト<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>a</mi>
@@ -21539,7 +21539,7 @@ C<sup>op</sup> × C -> Set
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
-          </math>は固定されている。この2つの関手間の随伴は、次のように記述されることがよくある:</p>
+          </math>は固定されている。この2つの関手間の随伴は、よく次のように記述される:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -21560,7 +21560,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">-\times{}a \dashv (-)^a</annotation>
             </semantics>
           </math></p>
-        <p>この随伴の基礎となるhom集合の写像を最も理解しやすくするには、普遍的構成で用いた図式を描き直せばよい。</p>
+        <p>この随伴の基礎となるhom集合の写像を極力理解しやすくするには、普遍的構成で用いた図式を描き直せばよい。</p>
         <p><img src="images/adj-expo.jpg" style="width:40.0%" /></p>
         <p>射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -21572,7 +21572,7 @@ C<sup>op</sup> × C -> Set
               </mrow>
               <annotation encoding="application/x-tex">eval</annotation>
             </semantics>
-          </math>はこの随伴の余単位に他ならないことに注意してほしい:
+          </math>はこの随伴の余単位に他ならないことに注目してほしい:
           <!-- \footnote{See ch.9 on \hyperref[function-types]{universal
 construction}.} -->
         </p>
@@ -21624,11 +21624,10 @@ construction}.} -->
           </math></p>
         <p>前に述べたとおり、普遍的構成は同型を除いて一意な対象を定義する。それが積を
           “the” product、冪乗を “the”
-          exponentialと書く理由だ。この特性は随伴にも及ぶ:
-          ある関手に随伴があれば、その随伴は同型を除いて一意だ。</p>
+          exponentialと書く理由だ。この特性は随伴にも及ぶ。つまり、ある関手に随伴があるなら、その随伴は同型を除いて一意だ。</p>
         <h2 data-number="18.5" id="課題-15"><span class="header-section-number">18.5</span> 課題</h2>
         <ol type="1">
-          <li>2つの (反変)
+          <li>次の2つの (反変)
             関手間の変換<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mi>ψ</mi>
@@ -21714,7 +21713,7 @@ construction}.} -->
             </semantics>
           </math>内のある対象に対応する集合は、その対象の<span id="underlying_set" class="keyword">台集合</span> (underlying set)
           と呼ばれる。</p>
-        <p>モノイドは、台集合――要素の集合――を持つ対象だ。モノイド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>モノイドは、台集合――要素の集合――を持つ対象だ。モノイドの圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐌</mi>
@@ -21723,7 +21722,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\symbf{Mon}</annotation>
             </semantics>
-          </math>の圏から集合の圏へは忘却関手<code>U</code>が存在し、モノイドをその台集合に写す。それは更に、モノイド射
+          </math>から集合の圏へは忘却関手<code>U</code>が存在し、モノイドをその台集合に写す。それはさらにモノイド射
           (準同型) を集合間の関数に写す。</p>
         <p>私は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -21836,8 +21835,8 @@ construction}.} -->
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>で自然な)
-          同型射によって次が分かる:</p>
+          </math>についての自然)
+          同型によって以下のことが分かる:</p>
         <ul>
           <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
@@ -21913,7 +21912,7 @@ construction}.} -->
                 <mi>h</mi>
                 <annotation encoding="application/x-tex">h</annotation>
               </semantics>
-            </math>と呼んでいた射だ)。</li>
+            </math>と呼んでいた射だ。)</li>
         </ul>
         <p><img src="images/freemonadjunction.jpg" style="width:80.0%" /></p>
         <p>直観では、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -21929,7 +21928,7 @@ construction}.} -->
               <mi>x</mi>
               <annotation encoding="application/x-tex">x</annotation>
             </semantics>
-          </math>に基づいて構築できる「最大の」モノイドだ。モノイドの内部を見られれば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に基づいて構築できる「最大の」モノイドだ。もしモノイドの内部を見られたら、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mrow>
@@ -21949,14 +21948,13 @@ construction}.} -->
               <annotation encoding="application/x-tex">\symbf{Mon}(F x, m)</annotation>
             </semantics>
           </math>
-          に属するすべての射が、この自由モノイドを他のモノイド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          に属するすべての射がこの自由モノイドを他のモノイド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>に<em>埋め込む</em>ことがわかる。It
-          does it by possibly identifying some elements.
-          特に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に<em>埋め込む</em>ことがわかるだろう。それは、おそらくいくつかの要素を同一視することで行われる。具体的には、<math display="inline"
+            xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>F</mi>
@@ -21965,7 +21963,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">F x</annotation>
             </semantics>
           </math>の生成元
-          (すなわち<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          (例えば<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>x</mi>
               <annotation encoding="application/x-tex">x</annotation>
@@ -21996,12 +21994,12 @@ construction}.} -->
               <annotation encoding="application/x-tex">\symbf{Set}(x, U m)</annotation>
             </semantics>
           </math>
-          からの関数で与えられる右側の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          からの関数で与えられる右辺の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>x</mi>
               <annotation encoding="application/x-tex">x</annotation>
             </semantics>
-          </math>の埋め込みが、左側のモノイドの埋め込みを一意に決定し、またその逆も成り立つことを示している。</p>
+          </math>の埋め込みが、左辺のモノイドの埋め込みを一意に決定し、またその逆も成り立つことを示している。</p>
         <p>Haskellでは、リストのデータ構造は自由モノイドだ
           (ただし、注意点がいくつかある: <a href="http://comonad.com/reader/2015/free-monoids-in-haskell/">Dan
             Doelのブログ記事</a>を参照)。リスト型<code>[a]</code>は自由モノイドであり、型<code>a</code>は生成元の集合を表す。たとえば、型<code>[Char]</code>には、単位要素――空リスト<code>[]</code>――と、<code>['a']</code>、<code>['b']</code>のような単要素リスト――自由モノイドの生成元が含まれている。残りは「積」を適用して生成される。ここでは、2つのリストの積は単に片方をもう片方に連結するだけだ。連結は結合的で単位的
@@ -22012,10 +22010,10 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb381-1"><a href="#cb381-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">String</span> <span class="ot">=</span> [<span class="dt">Char</span>]</span></code></pre>
         </div>
-        <p>(<code>type</code>は型シノニムを定義する――既存の型に別の名前を付ける)。</p>
+        <p>(<code>type</code>は型シノニムを定義する――既存の型に別の名前を付ける。)</p>
         <p>
-          もう1つの興味深い例として、単一の生成元から作られた自由モノイドが挙げられる。これはunitのリスト<code>[()]</code>の型だ。その要素は<code>[]</code>、<code>[()]</code>、<code>[(), ()]</code>などだ。そのようなリストはすべて、1つの自然数――長さで記述できる。それ以外に単位リストにエンコードされた情報はない。このようなリスト2つを連結すると、長さが構成要素の長さの合計である新しいリストが生成される。型<code>[()]</code>が、(0を含む)
-          自然数の加算モノイドと同型であることは容易に理解できる。次の2つの関数は互いに逆であり、この同型を示している:</p>
+          もう1つの興味深い例として、単一の生成元から作られた自由モノイドが挙げられる。これはunitのリスト<code>[()]</code>の型だ。その要素は<code>[]</code>、<code>[()]</code>、<code>[(), ()]</code>などだ。そのようなリストはすべて、1つの自然数――長さで記述できる。それ以外にunitのリストにエンコードされた情報はない。このようなリスト2つを連結すると、長さが構成要素の長さの合計である新しいリストが生成される。型<code>[()]</code>が、(0を含む)
+          自然数の加算モノイドと同型であることは容易に理解できる。以下の2つの関数は互いに逆であり、この同型を表している:</p>
         <div class="sourceCode" id="cb382">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb382-1"><a href="#cb382-1" aria-hidden="true" tabindex="-1"></a><span class="ot">toNat ::</span> [()] <span class="ot">-&gt;</span> <span class="dt">Int</span></span>
@@ -22056,9 +22054,9 @@ construction}.} -->
             </semantics>
           </math>である随伴の場合だ。</p>
         <p>形式的には、反転可能な射 (同型射)
-          または反転不可能な射についてのみ述べられる。損失があると見なせるのは後者だ。また、単射
-          (非崩壊) 関数と全射 (終域全体をカバーする)
-          関数という概念を一般化した、モノ (mono-) 射とエピ (epi-)
+          または反転不可能な射についてのみ語れる。損失があると見なせるのは後者だ。また、単射関数
+          (潰さない関数) と全射関数 (終域全体をカバーする関数)
+          という概念を一般化した、モノ (mono-) 射とエピ (epi-)
           射という概念もある。ただし、モノとエピの両方でありながら非可逆な射も存在可能だ。</p>
         <p>自由<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -22080,8 +22078,7 @@ construction}.} -->
               <mi>𝐂</mi>
               <annotation encoding="application/x-tex">\symbf{C}</annotation>
             </semantics>
-          </math>の射は「より少ない」射だ。なぜなら、何らかの追加構造を保存しなければならないからだ。<math display="inline"
-            xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>の射が「より少ない」のは、何らかの追加構造を保存しなければならないからだ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐌</mi>
@@ -22090,12 +22087,12 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\symbf{Mon}</annotation>
             </semantics>
-          </math>の場合、乗算と単位を保存しなければならない。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>の場合は乗算と単位を保存しなければならない。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐃</mi>
               <annotation encoding="application/x-tex">\symbf{D}</annotation>
             </semantics>
-          </math>の射はそれほど多くの構造を保存する必要はないので、「より多くの」射がある。</p>
+          </math>の射はそれほど多くの構造を保存しなくてよいので、「より多くの」射がある。</p>
         <p>忘却関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>U</mi>
@@ -22193,7 +22190,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">\symbf{D}(U c&#39;, U c)</annotation>
             </semantics>
           </math>
-          の部分集合のみをカバーすると予想される。なぜなら、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          の部分集合のみをカバーすると予想される。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐂</mi>
@@ -22229,7 +22226,7 @@ construction}.} -->
           </math>
           の射はそうではないからだ。</p>
         <p><img src="images/forgettingmorphisms.jpg" style="width:45.0%" /></p>
-        <p>しかし、随伴は特定のhom集合の<span id="isomorphism" class="keyword">同型射</span>として定義されるので、<math display="inline"
+        <p>しかし、随伴は特定のhom集合の<span id="isomorphism" class="keyword">同型</span>として定義されるので、<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -22328,9 +22325,10 @@ construction}.} -->
             </semantics>
           </math>の像が本質的に構造のない対象で構成されている必要がある
           (射が保存すべき構造がない)
-          ことを意味する。そのような「構造のない」対象は、自由対象と呼ばれる。</p>
+          ことを意味する。そのような「構造のない」対象は自由対象 (free object)
+          と呼ばれる。</p>
         <p><img src="images/freeimage.jpg" style="width:45.0%" /></p>
-        <p>モノイドの例では、自由モノイドは単位と結合性の規則によって生成される構造以外には何の構造も持たない。それ以外では、すべての乗算はまったく新しい要素を生成する。</p>
+        <p>モノイドの例では、自由モノイドは単位元則と結合則によって生成される構造以外には何の構造も持たない。それ以外では、すべての乗算はまったく新しい要素を生成する。</p>
         <p>自由モノイドでは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -22395,12 +22393,12 @@ construction}.} -->
             </semantics>
           </math>
           (それらの積)
-          の両方を同じ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          の両方を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>要素に写しても構わない。また、加算モノイドでの<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>の同じ要素に写しても構わない。また、加算モノイドで<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mo stretchy="false" form="prefix">[</mo>
@@ -22417,12 +22415,12 @@ construction}.} -->
               <annotation encoding="application/x-tex">5</annotation>
             </semantics>
           </math>
-          (それらの合計)
-          の同定なども同様だ。同定が異なれば、得られるモノイドも異なる。</p>
+          (それらの和)
+          を同一視することなども同様だ。同一視が異なれば、得られるモノイドも異なる。</p>
         <p>これは別の興味深い直観を導く:
           自由モノイドは、モノイダル演算を実行する代わりに、渡された引数を累積
           (accumulate)
-          する。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          する。例えば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>2</mn>
               <annotation encoding="application/x-tex">2</annotation>
@@ -22442,7 +22440,7 @@ construction}.} -->
               <mn>3</mn>
               <annotation encoding="application/x-tex">3</annotation>
             </semantics>
-          </math>をリストに記憶する。この手法の利点は、どんなモノイダル操作を使うか指定する必要がないことだ。引数は累積し続けられ、演算子を結果に適用するのは最後だけだ。そしてその最後の時点で、どんな演算子を適用するか選択できる。数値を加算したり、乗算したり、モジュロ2加算したりできる。自由モノイドは、式の作成と評価を分離する。この考え方は代数について話すときにもう一度見ることになる。
+          </math>をリストに記憶する。この手法の利点は、どんなモノイダル操作を使うか指定する必要がないことだ。引数を累積し続けて、最後だけその結果に演算子を適用すればよい。そしてその最後の時点で、どんな演算子を適用するか選択できる。数値を加算したり、乗算したり、モジュロ2加算したりできる。つまり、自由モノイドは式の作成と評価を分離する。この考え方は代数について話すときにもう一度見ることになる。
         </p>
         <p>この直観は他のもっと複雑な自由構造にも一般化できる。たとえば、評価する前に式木
           (expression tree)
@@ -22465,8 +22463,8 @@ construction}.} -->
             </math>の台集合への関数との間に1対1の対応があることを示せ。</li>
         </ol>
         <h1 data-number="20" id="モナド-プログラマーの定義"><span class="header-section-number">20</span> モナド: プログラマーの定義</h1>
-        <p>プログラマーたちは、モナド (monad)
-          にまつわる神話を発展させてきた。これはプログラミングにおける極めて抽象的で難しい概念の1つだと考えられている。「わかっている」人とそうでない人がいる。多くの人にとって、モナドの概念を理解した瞬間はまるで神秘的な体験だ。モナドは非常に多様な構成の本質を抽象化しているので、日常生活でうまく比喩できるものがない。我々は、暗闇の中で手探りするようになった。まるで、盲人たちが象の端の様々な部分に触れて、「ロープだ」、「木の幹だ」、「ブリトーだ！」と勝ち誇って叫ぶように。
+        <p>
+          プログラマーたちは、モナドにまつわる神話を発展させてきた。これはプログラミングにおける極めて抽象的で難しい概念の1つだと考えられている。「わかっている」人とそうでない人がいる。多くの人にとって、モナドの概念を理解した瞬間はまるで神秘的な体験だ。モナドは非常に多様な構成の本質を抽象化しているので、日常生活でうまく比喩できるものがない。そして我々は暗闇の中で手探りするようになった。まるで盲人たちが象の端の様々な部分に触れて、「ロープだ」、「木の幹だ」、「ブリトーだ！」と勝ち誇って叫ぶように。
         </p>
         <p>はっきり言っておこう。モナドを取り巻く神秘主義はすべて誤解に基づいている。モナドはとてもシンプルな概念だ。混乱を引き起こしているのは、モナドの応用先の多様さだ。</p>
         <p>この記事のための調査の一環として、私はダクトテープ (別名ダックテープ)
@@ -22480,23 +22478,23 @@ construction}.} -->
           <li>吊り橋を建設する</li>
         </ul>
         <p>ダクトテープが何か知らずに、このリストに基づいて理解しようとしているのを想像してほしい。幸運を祈る！</p>
-        <p>そこで、「モナドは……のようなものだ」という常套句のコレクションにもう1つ追加しようと思う:
+        <p>そういうわけで、「モナドは……のようなものだ」という常套句のコレクションにもう1つ追加しようと思う:
           モナドはダクトテープのようなものだ。応用は幅広く多様だが、原理はごく単純だ:
           モナドは物同士をくっつける。より正確には、物同士を合成する。</p>
         <p>
-          このことは、多くのプログラマー、特に命令型言語をバックグラウンドに持つプログラマーがモナドを理解するのに困難が伴う理由の一部を説明している。問題は、プログラミングを関数合成の観点から考えるのに慣れていないことだ。これは理解できる。関数から関数へ値を直接渡すのではなく、中間値に名前を付けることはよくある。グルーコードの短い断片を、ヘルパー関数に抽象化するのではなく、インライン化することもよくある。以下は、ベクトルの長さを求める関数をC言語で命令型スタイルで実装したものだ:
+          このことは、多くのプログラマー、特に命令型言語をバックグラウンドに持つプログラマーがモナドを理解するのに困難が伴う理由の一部を説明している。問題は、プログラミングを関数合成の観点から考えるのに慣れていないことだ。これは理解できる。関数から関数へ値を直接渡さずに、中間値に名前を付けるのはよくあることだ。グルーコードの短い断片を、ヘルパー関数に抽象化せず、インライン化することもよくある。以下は、ベクトルの長さを求める関数をC言語で命令型スタイルで実装したものだ:
         </p>
         <div class="sourceCode" id="cb383">
           <pre
             class="sourceCode c"><code class="sourceCode c"><span id="cb383-1"><a href="#cb383-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> vlen<span class="op">(</span><span class="dt">double</span> <span class="op">*</span>v<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb383-2"><a href="#cb383-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> d <span class="op">=</span> <span class="dv">0</span><span class="er">.0</span><span class="op">;</span></span>
+<span id="cb383-2"><a href="#cb383-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> d <span class="op">=</span> <span class="fl">0.0</span><span class="op">;</span></span>
 <span id="cb383-3"><a href="#cb383-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> n<span class="op">;</span></span>
 <span id="cb383-4"><a href="#cb383-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>n <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> n <span class="op">&lt;</span> <span class="dv">3</span><span class="op">;</span> <span class="op">++</span>n<span class="op">)</span></span>
 <span id="cb383-5"><a href="#cb383-5" aria-hidden="true" tabindex="-1"></a>        d <span class="op">+=</span> v<span class="op">[</span>n<span class="op">]*</span> v<span class="op">[</span>n<span class="op">];</span></span>
 <span id="cb383-6"><a href="#cb383-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sqrt<span class="op">(</span>d<span class="op">);</span></span>
 <span id="cb383-7"><a href="#cb383-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
         </div>
-        <p>これを、明示的に関数合成する (様式化された)
+        <p>これを、明示的な関数合成を用いた (様式化された)
           Haskell版と比較してほしい:</p>
         <div class="sourceCode" id="cb384">
           <pre
@@ -22504,10 +22502,10 @@ construction}.} -->
         </div>
         <p>(ここでは、より謎めかせるために、指数演算子<code>(^)</code>の2番目の引数を<code>2</code>に設定して部分適用した。)</p>
         <p>
-          Haskellのポイント・フリー・スタイルが常に優れていると主張しているのではなく、プログラミングで行うことのすべての基礎に関数合成があると主張しているだけだ。そして実質的には関数を合成しているにもかかわらず、Haskellでは<code>do</code>記法と呼ばれる命令型構文をモナド合成のために提供するのに多大な労力を費やしている。その使い方については後で説明する。まずは、なぜモナド合成が必要なのか説明しよう。
+          Haskellのポイントフリー・スタイルが常に優れていると主張しているのではなく、プログラミングで行うことのすべての基礎に関数合成があると主張しているだけだ。そして実質的には関数を合成しているにもかかわらず、Haskellでは多大な労力を費やして<code>do</code>記法と呼ばれる命令型構文をモナディック合成のために提供している。その使い方については後で説明する。まずは、なぜモナディック合成が必要なのか説明しよう。
         </p>
         <h2 data-number="20.1" id="kleisli圏-1"><span class="header-section-number">20.1</span> Kleisli圏</h2>
-        <p>前に、通常の関数を装飾することで<a
+        <p>以前、通常の関数を装飾することで<a
             href="#writer-monad">Writerモナド</a>に到達した。装飾を行うために、典型的には、戻り値を文字列とペアにした。あるいはもっと一般的には、モノイドの要素とペアにした。今ではそのような装飾が関手だと気付ける:
         </p>
         <div class="sourceCode" id="cb385">
@@ -22517,12 +22515,13 @@ construction}.} -->
 <span id="cb385-3"><a href="#cb385-3" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Functor</span> (<span class="dt">Writer</span> w) <span class="kw">where</span></span>
 <span id="cb385-4"><a href="#cb385-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fmap</span> f (<span class="dt">Writer</span> (a, w)) <span class="ot">=</span> <span class="dt">Writer</span> (f a, w)</span></code></pre>
         </div>
-        <p>その後、以下の形式の装飾された関数を合成する方法、すなわちKleisli矢を発見した。</p>
+        <p>その後、以下の形式の装飾された関数を合成する方法、すなわちKleisli矢
+          (Kleisli arrow) を発見した。</p>
         <div class="sourceCode" id="cb386">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb386-1"><a href="#cb386-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> <span class="dt">Writer</span> w b</span></code></pre>
         </div>
-        <p>ログの累積を実装したのは、合成の内部だった。</p>
+        <p>ログの累積は合成の内部で実装した。</p>
         <p>これでKleisli圏をより一般的に定義する準備ができた。まずは圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐂</mi>
@@ -22618,7 +22617,8 @@ construction}.} -->
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>は<span id="monad" class="keyword">モナド</span>と呼ばれ、その結果形成される圏はKleisli圏と呼ばれる。</p>
+          </math>は<span id="monad" class="keyword">モナド</span> (monad)
+          と呼ばれ、その結果形成される圏はKleisli圏と呼ばれる。</p>
         <p>
           Haskellでは、Kleisli合成はfish演算子<code>&gt;=&gt;</code>を用いて定義され、その恒等射は<code>return</code>と呼ばれる多相関数だ。Kleisli合成を使ったモナドの定義は次の通りだ:
         </p>
@@ -22634,12 +22634,12 @@ construction}.} -->
         <p>この定式化ではモナド則を非常に簡単に表現できる。Haskellではモナド則を強制できないが、等式推論には使える。それらは単にKleisli圏の標準的な合成則だ:</p>
         <div class="sourceCode" id="cb388">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb388-1"><a href="#cb388-1" aria-hidden="true" tabindex="-1"></a>(f <span class="op">&gt;=&gt;</span> g) <span class="op">&gt;=&gt;</span> h <span class="ot">=</span> f <span class="op">&gt;=&gt;</span> (g <span class="op">&gt;=&gt;</span> h) <span class="co">-- associativity</span></span>
-<span id="cb388-2"><a href="#cb388-2" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span> <span class="op">&gt;=&gt;</span> f <span class="ot">=</span> f                  <span class="co">-- left unit</span></span>
-<span id="cb388-3"><a href="#cb388-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">&gt;=&gt;</span> <span class="fu">return</span> <span class="ot">=</span> f                  <span class="co">-- right unit</span></span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb388-1"><a href="#cb388-1" aria-hidden="true" tabindex="-1"></a>(f <span class="op">&gt;=&gt;</span> g) <span class="op">&gt;=&gt;</span> h <span class="ot">=</span> f <span class="op">&gt;=&gt;</span> (g <span class="op">&gt;=&gt;</span> h) <span class="co">-- 結合性</span></span>
+<span id="cb388-2"><a href="#cb388-2" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span> <span class="op">&gt;=&gt;</span> f <span class="ot">=</span> f                  <span class="co">-- 左単位元</span></span>
+<span id="cb388-3"><a href="#cb388-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">&gt;=&gt;</span> <span class="fu">return</span> <span class="ot">=</span> f                  <span class="co">-- 右単位元</span></span></code></pre>
         </div>
-        <p>この種の定義はモナドが本当は何なのかも表している:
-          モナドは装飾された関数を合成する方法だ。副作用や状態は関係ない。関係あるのは合成だ。後で見るように、装飾された関数はさまざまな効果や状態を表現するために使われることがあるが、モナドはそのためのものではない。モナドは粘着力のあるダクトテープで、装飾された関数の一端を別の装飾された関数の一端につなぐ。
+        <p>
+          この種の定義はモナドが本当は何なのかも表している。つまり、モナドは装飾された関数を合成する方法なのだ。副作用や状態は関係ない。関係あるのは合成だ。後で見るように、装飾された関数はさまざまな作用や状態を表現するために使われることがあるが、モナドはそのためのものではない。モナドは粘着力のあるダクトテープで、装飾された関数の一端を別の装飾された関数の一端につなぐ。
         </p>
         <p><code>Writer</code>の例に戻ろう: ログ生成関数
           (<code>Writer</code>関手でのKleisli矢)
@@ -22655,7 +22655,7 @@ construction}.} -->
         </div>
         <p><code>Writer w</code>のモナド則は、<code>w</code>のモノイド則が満たされている限り満たされる
           (これらもHaskellでは強制できない)。</p>
-        <p><code>Writer</code>モナド用に定義された便利なKleisli矢があり、<code>tell</code>と呼ばれている。その唯一の目的は引数をログに追加することだ:</p>
+        <p><code>Writer</code>モナド用に便利なKleisli矢が定義されており、<code>tell</code>と呼ばれる。その唯一の目的は引数をログに追加することだ:</p>
         <div class="sourceCode" id="cb390">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb390-1"><a href="#cb390-1" aria-hidden="true" tabindex="-1"></a><span class="ot">tell ::</span> w <span class="ot">-&gt;</span> <span class="dt">Writer</span> w ()</span>
@@ -22664,7 +22664,7 @@ construction}.} -->
         <p>これは後で他のモナディック関数の構成要素として使うことになる。</p>
         <h2 data-number="20.2" id="fishの解剖"><span class="header-section-number">20.2</span> Fishの解剖</h2>
         <p>
-          さまざまなモナドに対してfish演算子を実装するとすぐ、コードに重複がたくさんあり、簡単に括り出せることに気付くだろう。まず、2つの関数のKleisli合成は1つの関数を返す必要があるので、その実装も型<code>a</code>の引数を1つ取るラムダから始められる。
+          さまざまなモナドに対してfish演算子を実装するとすぐ、コードに重複がたくさんあり、簡単に括り出せることに気付くだろう。まず、2つの関数のKleisli合成は1つの関数を返す必要があるので、その実装も型<code>a</code>の引数を1つ取るラムダから始められる:
         </p>
         <div class="sourceCode" id="cb391">
           <pre
@@ -22684,7 +22684,7 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb393-1"><a href="#cb393-1" aria-hidden="true" tabindex="-1"></a><span class="ot">(&gt;&gt;=) ::</span> m a <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> m b) <span class="ot">-&gt;</span> m b</span></code></pre>
         </div>
-        <p>モナドごとにfish演算子の代わりにbindを定義できる。実際、標準的なHaskellのモナドの定義ではbindが使われている:</p>
+        <p>モナドごとに、fish演算子の代わりにbindを定義できる。実際、標準的なHaskellのモナドの定義ではbindが使われている:</p>
         <div class="sourceCode" id="cb394">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb394-1"><a href="#cb394-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> <span class="dt">Monad</span> m <span class="kw">where</span></span>
@@ -22699,7 +22699,7 @@ construction}.} -->
         </div>
         <p>これは確かにfish演算子の定義より短い。</p>
         <p>
-          <code>m</code>が関手であるという事実を利用すればbindをさらに詳しく分析できる。<code>fmap</code>を使えば<code>m a</code>の内容に関数<code>a -&gt; m b</code>を適用できる。それによって<code>a</code>は<code>m b</code>に変換される。したがって、適用結果は型<code>m (m b)</code>となる。これは必要な結果の型<code>m b</code>そのものではない。しかし、近付いてはいる。<code>m</code>の2重適用を潰してフラットにする関数さえあればよい。そのような関数は<code>join</code>と呼ばれる。
+          <code>m</code>が関手であるという事実を利用すればbindをさらに詳しく分析できる。<code>fmap</code>を使えば<code>m a</code>の内容に関数<code>a -&gt; m b</code>を適用できる。それによって<code>a</code>は<code>m b</code>に変換される。したがって、適用結果は型<code>m (m b)</code>となる。これは必要な結果の型<code>m b</code>そのものではない。しかし、近付いてはいる。<code>m</code>の2重適用を潰す、つまりフラット化する関数さえあればよい。そのような関数は<code>join</code>と呼ばれる。
         </p>
         <div class="sourceCode" id="cb396">
           <pre
@@ -22718,7 +22718,7 @@ construction}.} -->
 <span id="cb398-3"><a href="#cb398-3" aria-hidden="true" tabindex="-1"></a><span class="ot">    return ::</span> a <span class="ot">-&gt;</span> m a</span></code></pre>
         </div>
         <p>
-          ここでは<code>m</code>が<code>Functor</code>であることを明示的に要求した。これまでの2つのモナドの定義ではその必要はなかった。なぜなら、fish演算子かbind演算子をサポートする型コンストラクター<code>m</code>は自動的に関手になるからだ。たとえば、<code>fmap</code>はbindと<code>return</code>で定義できる:
+          ここでは<code>m</code>が<code>Functor</code>であることを明示的に要求した。これまでの2つのモナドの定義ではその必要はなかった。型コンストラクター<code>m</code>は、fish演算子とbind演算子のどちらかをサポートするなら自動的に関手になるからだ。たとえば、<code>fmap</code>はbindと<code>return</code>で定義できる:
         </p>
         <div class="sourceCode" id="cb399">
           <pre
@@ -22732,10 +22732,10 @@ construction}.} -->
         </div>
         <h2 data-number="20.3" id="do記法"><span class="header-section-number">20.3</span> <code>do</code>記法</h2>
         <p>
-          モナドを使ってコードを書く方法の1つは、Kleisli矢を使うこと――fishオペレータでそれらを合成することだ。このプログラミング手法はポイント・フリー・スタイルを一般化したものだ。ポイント・フリーのコードはコンパクトで、実にエレガントなことが多い。しかし、一般的には、理解するのが難しく暗号すれすれだ。だから、ほとんどのプログラマーは関数の引数や中間値に名前を付ける方を好む。
+          モナドを使ってコードを書く方法の1つは、Kleisli矢を使うこと――fishオペレータで合成することだ。このプログラミング手法はポイントフリー・スタイルを一般化したものだ。ポイントフリーのコードはコンパクトで、実にエレガントなことが多い。しかし、一般的には、理解するのが難しく暗号すれすれだ。だから、ほとんどのプログラマーは関数の引数や中間値に名前を付ける方を好む。
         </p>
         <p>
-          それは、モナドを扱う場合にはfish演算子よりもbind演算子を優先するのを意味する。Bindはモナディックな値を取ってモナディックな値を返す。プログラマーはそれらの値に名前を付けることを選択できる。しかし、これは改善とは言えない。本当に望ましいのは、あたかも通常の値を扱っているかのようなふりができることだ。値をカプセル化するモナディックなコンテナが欲しいのではない。命令型コードの動作の仕方が望ましい――グローバルなログの更新などの副作用のほとんどは視界から隠されている。そしてそれこそHaskellが<code>do</code>記法でエミュレートするものだ。
+          それはつまり、モナドを扱う場合にはfish演算子よりもbind演算子を優先するのを意味する。Bindはモナディックな値を取ってモナディックな値を返す。プログラマーはそれらの値に名前を付けても構わない。しかし、これは改善とは言えない。本当にやりたいのは、あたかも通常の値を扱っているかのようなふりができることだ。値をカプセル化するモナディックなコンテナが欲しいのではない。命令型コードのように、グローバルなログの更新などの副作用のほとんどが視界から隠れていてほしい。そしてそれこそHaskellが<code>do</code>記法でエミュレートするものだ。
         </p>
         <p>ここで疑問に思うだろう。一体なぜモナドを使うのか？
           副作用を見えなくしたいなら、命令型言語に留まればいいのではないか？
@@ -22755,7 +22755,7 @@ construction}.} -->
 <span id="cb402-2"><a href="#cb402-2" aria-hidden="true" tabindex="-1"></a>    upStr <span class="ot">&lt;-</span> upCase s</span>
 <span id="cb402-3"><a href="#cb402-3" aria-hidden="true" tabindex="-1"></a>    toWords upStr</span></code></pre>
         </div>
-        <p>ここで、<code>upCase</code>が<code>Writer</code>を生成するにも関わらず、<code>upStr</code>は単に<code>String</code>だ:</p>
+        <p>ここで、<code>upStr</code>は単なる<code>String</code>だが、<code>upCase</code>は<code>Writer</code>を生成するはずだ:</p>
         <div class="sourceCode" id="cb403">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb403-1"><a href="#cb403-1" aria-hidden="true" tabindex="-1"></a><span class="ot">upCase ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Writer</span> <span class="dt">String</span> <span class="dt">String</span></span>
@@ -22764,18 +22764,19 @@ construction}.} -->
         <p>これは<code>do</code>ブロックがコンパイラによって次のように脱糖されるためだ:</p>
         <div class="sourceCode" id="cb404">
           <pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb404-1"><a href="#cb404-1" aria-hidden="true" tabindex="-1"></a>process s <span class="ot">=</span></span>
-<span id="cb404-2"><a href="#cb404-2" aria-hidden="true" tabindex="-1"></a>    upCase s <span class="op">**&gt;&gt;=</span> \<span class="op">**</span> upStr <span class="op">**-&gt;**</span></span>
+<span id="cb404-2"><a href="#cb404-2" aria-hidden="true" tabindex="-1"></a>    upCase s <span class="op">&gt;&gt;=</span> \upStr <span class="ot">-&gt;</span></span>
 <span id="cb404-3"><a href="#cb404-3" aria-hidden="true" tabindex="-1"></a>        toWords upStr</span></code></pre>
         </div>
-        <p><code>upCase</code>のモナディックな結果は<code>String</code>を取るラムダに束縛される。<code>do</code>ブロックに表示されるこの文字列の名前だ。次の行を読むとき:
+        <p>
+          <code>upCase</code>のモナディックな結果は<code>String</code>を引数とするラムダに束縛されている。その引数の名前は<code>do</code>ブロックに書かれていたものと同じだ。次の行:
         </p>
         <div class="sourceCode" id="cb405">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb405-1"><a href="#cb405-1" aria-hidden="true" tabindex="-1"></a>upStr <span class="ot">&lt;-</span> upCase s</span></code></pre>
         </div>
-        <p><code>upStr</code>が<em>得る</em>のは<code>upCase s</code>の結果だ、と言う。</p>
+        <p>は、<code>upStr</code>が<em>得る</em>のは<code>upCase s</code>の結果だ、と読める。</p>
         <p>
-          <code>toWords</code>をインライン化することで、擬似的な命令型スタイルがさらに顕著になる。2つの関数呼び出しに置き換えよう。まず<code>tell</code>の呼び出しで、文字列<code>"toWords"</code>をログに記録する。続いて<code>return</code>の呼び出しで、文字列<code>upStr</code>を<code>words</code>によって分割した結果を返す。<code>words</code>は文字列を扱う通常の関数であることに注意してほしい。
+          <code>toWords</code>をインライン化すると、擬似的な命令型スタイルはさらに顕著になる。2つの関数呼び出しに置き換えよう。まず<code>tell</code>を呼び出して、文字列<code>"toWords"</code>をログに記録する。続いて<code>return</code>を呼び出して、文字列<code>upStr</code>を<code>words</code>によって分割した結果を返す。<code>words</code>は文字列を扱う通常の関数であることに注意してほしい。
         </p>
         <div class="sourceCode" id="cb406">
           <pre
@@ -22784,7 +22785,7 @@ construction}.} -->
 <span id="cb406-3"><a href="#cb406-3" aria-hidden="true" tabindex="-1"></a>    tell <span class="st">&quot;toWords &quot;</span></span>
 <span id="cb406-4"><a href="#cb406-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (<span class="fu">words</span> upStr)</span></code></pre>
         </div>
-        <p>ここではdoブロックの各行が、ネストされた新しいbindを脱糖されたコードに導入する。</p>
+        <p>ここで、doブロックの各行を脱糖すると、ネストされた新たなbindが導入される:</p>
         <div class="sourceCode" id="cb407">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb407-1"><a href="#cb407-1" aria-hidden="true" tabindex="-1"></a>process s <span class="ot">=</span></span>
@@ -22793,13 +22794,13 @@ construction}.} -->
 <span id="cb407-4"><a href="#cb407-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span> (<span class="fu">words</span> upStr)</span></code></pre>
         </div>
         <p><code>tell</code>はunit値を生成するので、後続のラムダに渡す必要はないことに注意してほしい。モナディックな結果の内容を無視するのはよくあることだ
-          (ただし、その効果――ここではログへの寄与――は無視しない)。そのため、そのような場合にbindを置き換える特別な演算子がある:</p>
+          (ただし、その作用――ここではログへの寄与――は無視しない)。そのため、そのような場合にbindを置き換える特別な演算子がある:</p>
         <div class="sourceCode" id="cb408">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb408-1"><a href="#cb408-1" aria-hidden="true" tabindex="-1"></a><span class="ot">(&gt;&gt;) ::</span> m a <span class="ot">-&gt;</span> m b <span class="ot">-&gt;</span> m b</span>
 <span id="cb408-2"><a href="#cb408-2" aria-hidden="true" tabindex="-1"></a>m <span class="op">&gt;&gt;</span> k <span class="ot">=</span> m <span class="op">&gt;&gt;=</span> (\_ <span class="ot">-&gt;</span> k)</span></code></pre>
         </div>
-        <p>コードを実際に脱糖すると次のようになる:</p>
+        <p>実際に脱糖されたコードは次のようになる:</p>
         <div class="sourceCode" id="cb409">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb409-1"><a href="#cb409-1" aria-hidden="true" tabindex="-1"></a>process s <span class="ot">=</span></span>
@@ -22808,24 +22809,24 @@ construction}.} -->
 <span id="cb409-4"><a href="#cb409-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span> (<span class="fu">words</span> upStr)</span></code></pre>
         </div>
         <p>一般に、<code>do</code>ブロックは行 (またはサブブロック)
-          で構成され、左矢印によって新しい名前を導入してコードの残りの部分で使えるようにするか、あるいは純粋に副作用のために実行される。Bind演算子はコード行間で暗黙的に使われる。ちなみに、Haskellでは<code>do</code>ブロックの書式を波括弧とセミコロンで置き換えられる。これが、モナドはセミコロンをオーバーロードする方法だ、と表現される理由になっている。
+          で構成され、左矢印によって新しい名前を導入してコードの残りの部分で使えるようにするか、あるいは純粋に副作用を目的として実行される。Bind演算子はコード行間で暗黙的に使われる。ちなみに、Haskellでは<code>do</code>ブロックの書式を波括弧とセミコロンで置き換えられる。これが、モナドはセミコロンをオーバーロードする方法だ、と表現される理由になっている。
         </p>
         <p>
-          <code>do</code>記法を脱糖する際にラムダとbind演算子をネストすると、<code>do</code>ブロックの残りを各行の結果に基づいて実行するのに影響を与えることに注目してほしい。この特性を使えば、例外をシミュレートするなど、複雑な制御構造を導入できる。
+          <code>do</code>記法を脱糖する際にラムダとbind演算子がネストされると、<code>do</code>ブロックの残りを各行の結果に基づいて実行するのに影響を与えることに注目してほしい。この特性を使えば、例外をシミュレートするなど、複雑な制御構造を導入できる。
         </p>
         <p>興味深いことに、<code>do</code>記法と同等のものが命令型言語、特にC++に応用されている。つまり、再開可能な関数、すなわちコルーチンだ。C++の<a
-            href="https://bartoszmilewski.com/2014/02/26/c17-i-see-a-monad-in-your-future/">futureがモナドを形成する</a>ことは秘密ではない。これは継続モナドの一例だ。継続モナドについてはすぐ後で議論する。継続の問題点は、合成するのが非常に難しいことだ。Haskellでは、<code>do</code>という表記法を使うことで、「こっちのハンドラーがそっちのハンドラーを呼ぶ」というスパゲッティを、逐次コードに非常によく似たものに変換している。再開可能な関数は、同じ変換をC++でも可能にする。また、同じメカニズムを適用すれば、<a
-            href="https://bartoszmilewski.com/2014/04/21/getting-lazy-with-c/">ネストされたループのスパゲッティ</a>をリスト内包表記または「ジェネレーター」に変えられる。これは本質的にリストモナドの<code>do</code>記法だ。モナドの統一的な抽象化がなければ、これらの個々の問題は通常、言語にカスタム拡張を提供して対処されることになる。Haskellでは、すべてライブラリを通じて対処される。
+            href="https://bartoszmilewski.com/2014/02/26/c17-i-see-a-monad-in-your-future/">futureがモナドを形成する</a>ことは秘密ではない。これは継続モナドの一例だ。継続モナドについてはすぐ後で議論する。継続の問題点は、合成するのが非常に難しいことだ。Haskellでは<code>do</code>という表記法を使うことで、「こっちのハンドラーがそっちのハンドラーを呼ぶ」というスパゲッティを、逐次コードに非常によく似たものに変換している。再開可能な関数によって、同じ変換がC++でも可能になる。また、同じメカニズムを適用すれば、<a
+            href="https://bartoszmilewski.com/2014/04/21/getting-lazy-with-c/">ネストされたループのスパゲッティ</a>をリスト内包表記または「ジェネレーター」に変えられる。これは本質的にリストモナドの<code>do</code>記法だ。モナドによる統一的な抽象化がなければ、これらの個々の問題は通常、言語にカスタム拡張を提供して対処されることになる。Haskellでは、すべてライブラリを通じて対処される。
         </p>
         <h1 data-number="21" id="モナドと作用"><span class="header-section-number">21</span> モナドと作用</h1>
         <p>
-          モナドが何のためのものなのかわかった――装飾された関数を合成できる――本当に興味深い疑問は、なぜ装飾された関数が関数プログラミングにおいてそんなに重要なのかということだ。すでに見た例、<code>Writer</code>モナドでは、装飾によって複数の関数呼び出しにわたってログを作成し累積できた。通常は非純粋関数
+          モナドが何のためにあるのかは理解できた。モナドは装飾された関数を合成できる。本当に興味深い疑問は、なぜ装飾された関数が関数プログラミングにおいてそんなに重要なのかということだ。すでに見た例として、<code>Writer</code>モナドでは、装飾によって複数の関数呼び出しにわたってログを作成し累積できた。通常は非純粋関数
           (impure function) を使って
           (たとえば、何らかのグローバルな状態にアクセスし変更することで)
           解決するような問題を、純粋関数を使って解決した。</p>
         <h2 data-number="21.1" id="問題"><span class="header-section-number">21.1</span> 問題</h2>
-        <p>類似の問題の短いリストを、<a href="https://core.ac.uk/download/pdf/21173011.pdf">Eugenio
-            Moggiの独創的な論文</a>から転載して以下に示す。これらはすべて伝統的に、関数の純粋さを放棄することで解決される:</p>
+        <p>よく似た問題を集めた短いリストを、<a href="https://core.ac.uk/download/pdf/21173011.pdf">Eugenio
+            Moggiの独創的な論文</a>から転載して以下に示した。どれも伝統的には関数の純粋さを放棄することで解決される:</p>
         <ul>
           <li>部分性: 停止しない可能性のある計算</li>
           <li>非決定性: 何種類もの結果を返す可能性のある計算</li>
@@ -22841,19 +22842,18 @@ construction}.} -->
           <li>インタラクティブな入力</li>
           <li>インタラクティブな出力</li>
         </ul>
-        <p>本当に驚くべきことは、これらすべての問題が、装飾された関数に目を向けるという、同じ巧妙なトリックを使って解決できるということだ。当然、装飾はそれぞれのケースで全く違うものになる。</p>
+        <p>本当に驚くべきことに、これらすべての問題はひとつの巧妙なトリックで解決できる。装飾された関数にするというトリックだ。もちろん、装飾は各ケースで全く違うものになる。</p>
         <p>
           装飾がモナディックだという条件は、この段階では必要ないことを認識しておかなくてはならない。合成――1つの装飾された関数をより小さな装飾された関数に分解できること――を主張するとき、初めてモナドが必要になる。また、それぞれの装飾が違うため、モナディック合成の実装方法もやはり違うものになるが、全体的なパターンは同じだ。非常に単純な、恒等射を伴った結合的な合成というパターンだ。
         </p>
-        <p>次節では、Haskellでの例について詳しく説明する。圏論に戻りたい人や、Haskellによるモナドの実装にすでに慣れている人は、遠慮なく斜め読みしたり読み飛ばしたりして構わない。</p>
+        <p>次節では、Haskellでの例について詳しく説明する。圏論に戻りたい人や、Haskellによるモナドの実装にすでに慣れている人は、遠慮なく斜め読みしたり飛ばしたりして構わない。</p>
         <h2 data-number="21.2" id="解決策"><span class="header-section-number">21.2</span> 解決策</h2>
         <p>
           まず、<code>Writer</code>モナドの使用方法を分析してみよう。まず、あるタスクを実行する純粋関数から始めた。引数を与えると、ある決まった出力が生成される。この関数を、もとの出力を文字列とペアにすることで装飾する別の関数に置き換えた。これがログ生成の問題に対する解決策だった。
         </p>
-        <p>
-          そこで止めることはできなかった。なぜなら、一般に、モノリシックな解決策は扱いたくないからだ。1つのログ生成関数をより小さなログ生成関数に分解できる必要があった。こうした小さな関数の合成こそがモナドという概念への道標となった。
+        <p>それで終わりにできなかったのは、一般に、モノリシックな解決策は扱いたくないからだ。1つのログ生成関数をより小さなログ生成関数に分解できる必要があった。こうした小さな関数の合成こそがモナドという概念への道標となった。
         </p>
-        <p>本当に驚くべきことは、関数の戻り値の型を装飾するという同一のパターンが、通常は純粋性を放棄する必要がある多種多様な問題に対して機能することだ。リストを見て、それぞれの問題に適用される装飾を順番に特定しよう。</p>
+        <p>本当に驚くべきことは、関数の戻り値の型を装飾するという同一のパターンが、通常は純粋性を放棄する必要がある多種多様な問題に対して機能することだ。リストを見て、それぞれの問題に適用される装飾を順番に突き止めよう。</p>
         <h3 data-number="21.2.1" id="部分性"><span class="header-section-number">21.2.1</span> 部分性</h3>
         <p>停止しない可能性のあるすべての関数について、戻り値の型を「リフトされた」型に変更する。その型はもとの型のすべての値および特別な「ボトム」値<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
@@ -22863,8 +22863,9 @@ construction}.} -->
             </semantics>
           </math>を含む。たとえば、<code>Bool</code>型は集合としては<code>True</code>と<code>False</code>の2つの要素を含む。リフトされた<code>Bool</code>は3つの要素を含む。リフトされた<code>Bool</code>を返す関数は、<code>True</code>または<code>False</code>を生成するか、永久に実行し続ける。
         </p>
-        <p>面白いのは、Haskellのような遅延評価言語では、終わりのない関数が実際に値を返すことがあり、その値が次の関数に渡されうるということだ。この特別な値はボトムと呼ばれる。この値が明示的に必要とされない限り
-          (たとえば、パターンマッチングされるため、あるいは出力として生成されるため)、プログラムの実行を遅らせることなくこの値を渡せる。すべてのHaskellの関数は潜在的に非停止であり得るため、Haskellのすべての型はリフトされることが想定されている。これが、単純な<math
+        <p>面白いのは、Haskellのような遅延評価言語では、終わりのない関数が実際に値を返すことがあり、その値が次の関数に渡されうるということだ。この特別な値はボトムと呼ばれる。この値が
+          (たとえば、パターンマッチングに使うため、あるいは出力として生成したため)
+          明示的に必要とされているのでない限り、プログラムの実行を遅らせることなくこの値を渡せる。すべてのHaskellの関数は潜在的に非停止であり得るため、Haskellのすべての型はリフトされることが想定されている。これが、単純な<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -22886,7 +22887,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{Hask}</annotation>
             </semantics>
-          </math>について頻繁に議論する理由だ。しかし、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>について頻繁に議論する理由だ。もっとも、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐇</mi>
@@ -22896,15 +22897,15 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{Hask}</annotation>
             </semantics>
-          </math>が実際の圏であることは明らかではない
+          </math>が本物の圏かどうかは議論がある
           (<a href="http://math.andrej.com/2016/08/06/hask-is-not-a-category/">Andrej
             Bauerによる記事</a>を参照)。</p>
         <h3 data-number="21.2.2" id="非決定性"><span class="header-section-number">21.2.2</span> 非決定性</h3>
         <p>
-          関数が多くの異なる結果を返すことがあるなら、一度にすべての結果を返す方がよいだろう。意味論的には、非決定論的関数は結果のリストを返す関数と等価だ。これはガーベッジ・コレクションのある遅延評価言語では実に理に適っている。たとえば、必要な値が1つだけの場合はリストの頭部だけを取得すればよく、尾部が評価されることはない。ランダムな値が必要な場合は乱数ジェネレーターを使ってリストのn番目の要素を選択する。遅延評価では結果の無限リストを返すことさえ可能になる。
+          関数が多くの異なる結果を返すことがあるなら、一度にすべての結果を返す方がよいだろう。意味論的には、非決定論的関数は結果のリストを返す関数と等価だ。これはガベージコレクションのある遅延評価言語では実に理に適っている。たとえば、必要な値が1つだけの場合はリストの頭部だけを取得すればよく、尾部が評価されることはない。ランダムな値が必要な場合は乱数ジェネレーターを使ってリストのn番目の要素を選択する。遅延評価では結果の無限リストを返すことさえ可能になる。
         </p>
         <p>
-          リストモナド――Haskellでの非決定論的計算の実装――では<code>join</code>は<code>concat</code>として実装されている。<code>join</code>の役割はコンテナのコンテナをフラットにすることなのを覚えておいてほしい――<code>concat</code>はリストのリストを連結して1つのリストにする。<code>return</code>は単要素リストを作成する:
+          リストモナド――Haskellでの非決定論的計算の実装――では<code>join</code>は<code>concat</code>として実装されている。<code>join</code>の役割はコンテナのコンテナをフラット化することなのを思い出してほしい――<code>concat</code>はリストのリストを連結して1つのリストにする。また、<code>return</code>は単要素リストを作成する:
         </p>
         <div class="sourceCode" id="cb410">
           <pre
@@ -22912,7 +22913,7 @@ construction}.} -->
 <span id="cb410-2"><a href="#cb410-2" aria-hidden="true" tabindex="-1"></a>    join <span class="ot">=</span> <span class="fu">concat</span></span>
 <span id="cb410-3"><a href="#cb410-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> x <span class="ot">=</span> [x]</span></code></pre>
         </div>
-        <p>リストモナドのbind演算子は、<code>fmap</code>の後に<code>join</code>が続くという一般式で与えられ、この場合は次のようになる:</p>
+        <p>リストモナドのbind演算子は、<code>fmap</code>の後に<code>join</code>が続くという一般式で与えられ、ここでは次のようになる:</p>
         <div class="sourceCode" id="cb411">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb411-1"><a href="#cb411-1" aria-hidden="true" tabindex="-1"></a>as <span class="op">&gt;&gt;=</span> k <span class="ot">=</span> <span class="fu">concat</span> (<span class="fu">fmap</span> k as)</span></code></pre>
@@ -22928,7 +22929,7 @@ construction}.} -->
           非決定性が創造的に使われる好例はゲームプログラミングだ。たとえば、コンピューターが人間を相手にチェスをするとき、相手の次の動きは予測できない。しかし、すべての可能な移動のリストを生成して1つずつ分析できる。同様に、非決定論的な構文解析器は、与えられた式に対して可能なすべての構文解析のリストを生成できる。
         </p>
         <p>
-          リストを返す関数は非決定論的だと解釈してもよいものの、リストモナドの応用範囲はもっと広い。なぜなら、リストを生成する計算をつなぎ合わせることは、命令型プログラミングで使われる反復構文――ループ――の関数型での完全な代替手段だからだ。単一のループは、多くの場合<code>fmap</code>を使って書き直せる。fmapはループの本体をリストの各要素に適用する。リストモナドで<code>do</code>記法を使えば、複雑な多重ループを置き換えられる。
+          リストを返す関数は非決定論的だと解釈してもよいものの、リストモナドの応用範囲はもっと広い。リストを生成する計算をつなぎ合わせることは、命令型プログラミングで使われる反復構文――ループ――を関数型プログラミングで完全に代替する手段だからだ。単一のループは、多くの場合<code>fmap</code>を使って書き直せる。fmapはループの本体をリストの各要素に適用する。リストモナドで<code>do</code>記法を使えば、複雑な多重ループを置き換えられる。
         </p>
         <p>私のお気に入りの例は、ピタゴラス数 (Pythagorean triple)
           ――直角三角形の辺を形成できる3つの正の整数の組――を生成するプログラムだ。</p>
@@ -22964,7 +22965,7 @@ construction}.} -->
 <span id="cb413-2"><a href="#cb413-2" aria-hidden="true" tabindex="-1"></a>guard <span class="dt">True</span>  <span class="ot">=</span> [()]</span>
 <span id="cb413-3"><a href="#cb413-3" aria-hidden="true" tabindex="-1"></a>guard <span class="dt">False</span> <span class="ot">=</span> []</span></code></pre>
         </div>
-        <p>この関数 (<code>MonadPlus</code>というより大きなクラスのメンバ)
+        <p>この関数 (<code>MonadPlus</code>というより大きなクラスのメンバー)
           は、ここでは非ピタゴラス数を除外するために使われる。実際、bind
           (または関連する演算子<code>&gt;&gt;</code>)
           の実装を見ると、空リストが与えられると空リストが生成されることに気付くだろう。一方、空でないリスト
@@ -22984,7 +22985,7 @@ construction}.} -->
         </div>
         <p>これはリストモナド (厳密に言えば、<code>MonadPlus</code>)
           のためのさらなる糖衣構文だ。</p>
-        <p>他の関数型言語や命令型言語でも、ジェネレーターやコルーチンという名の下に同様の構造が見られることがある。</p>
+        <p>他の関数型言語や命令型言語でも、ジェネレーターやコルーチンという名のもとに同様の構造が見られることがある。</p>
         <h3 data-number="21.2.3" id="読み取り専用の状態"><span class="header-section-number">21.2.3</span> 読み取り専用の状態</h3>
         <p>外部の状態すなわち環境に対して読み取り専用でアクセスする関数は、その環境を追加の引数として取る関数に常に置き換え可能だ。純粋な関数<code>(a, e) -&gt; b</code>
           (ここで、<code>e</code>は環境の型)
@@ -22994,7 +22995,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb415-1"><a href="#cb415-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">Reader</span> e a <span class="ot">=</span> <span class="dt">Reader</span> (e <span class="ot">-&gt;</span> a)</span></code></pre>
         </div>
         <p>
-          <code>Reader</code>を返す関数は、ミニ実行可能コードを生成すると解釈できる。つまり、ある環境を与えると望ましい結果を生成するような作用だ。そのような作用を実行するためのヘルパー関数<code>runReader</code>がある。
+          <code>Reader</code>を返す関数は、ある環境を与えると望んだ結果を生成するような作用を持つ、小さな実行可能コードを生成すると解釈できる。そのような作用を実行するためのヘルパー関数<code>runReader</code>がある:
         </p>
         <div class="sourceCode" id="cb416">
           <pre
@@ -23014,7 +23015,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb418-1"><a href="#cb418-1" aria-hidden="true" tabindex="-1"></a>ra <span class="op">&gt;&gt;=</span> k <span class="ot">=</span> <span class="dt">Reader</span> (\e <span class="ot">-&gt;</span> <span class="kw">let</span> a <span class="ot">=</span> runReader ra e</span>
 <span id="cb418-2"><a href="#cb418-2" aria-hidden="true" tabindex="-1"></a>                         <span class="kw">in</span> <span class="op">...</span>)</span></code></pre>
         </div>
-        <p>次に、<code>a</code>を継続<code>k</code>に渡せば新しい作用<code>rb</code>が得られる。</p>
+        <p>次に、<code>a</code>を継続<code>k</code>に渡せば新しい作用<code>rb</code>が得られる:</p>
         <div class="sourceCode" id="cb419">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb419-1"><a href="#cb419-1" aria-hidden="true" tabindex="-1"></a>ra <span class="op">&gt;&gt;=</span> k <span class="ot">=</span> <span class="dt">Reader</span> (\e <span class="ot">-&gt;</span> <span class="kw">let</span> a  <span class="ot">=</span> runReader ra e</span>
@@ -23028,7 +23029,7 @@ construction}.} -->
 <span id="cb420-2"><a href="#cb420-2" aria-hidden="true" tabindex="-1"></a>                             rb <span class="ot">=</span> k a</span>
 <span id="cb420-3"><a href="#cb420-3" aria-hidden="true" tabindex="-1"></a>                         <span class="kw">in</span> runReader rb e)</span></code></pre>
         </div>
-        <p><code>return</code>を実装するには、環境を無視してもとのままの値を返す作用を作成する。</p>
+        <p><code>return</code>を実装するには、環境を無視しもとのままの値を返す作用を作成すればよい。</p>
         <p>いくつかの簡略化を経てまとめると、次の定義が得られる:</p>
         <div class="sourceCode" id="cb421">
           <pre
@@ -23037,19 +23038,19 @@ construction}.} -->
 <span id="cb421-3"><a href="#cb421-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> x <span class="ot">=</span> <span class="dt">Reader</span> (\e <span class="ot">-&gt;</span> x)</span></code></pre>
         </div>
         <h3 data-number="21.2.4" id="書き込み専用の状態"><span class="header-section-number">21.2.4</span> 書き込み専用の状態</h3>
-        <p>これは単に最初のログ生成の例だ。装飾は<code>Writer</code>関手によって与えられる:</p>
+        <p>これは最初に例にしたログ生成と同じだ。装飾は<code>Writer</code>関手によって与えられる:</p>
         <div class="sourceCode" id="cb422">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb422-1"><a href="#cb422-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">Writer</span> w a <span class="ot">=</span> <span class="dt">Writer</span> (a, w)</span></code></pre>
         </div>
-        <p>完全を期すため、データコンストラクターをアンパックする小さなヘルパー関数<code>runWriter</code>もある:</p>
+        <p>完全を期すため、データコンストラクターをアンパックする小さなヘルパー関数<code>runWriter</code>も示そう:</p>
         <div class="sourceCode" id="cb423">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb423-1"><a href="#cb423-1" aria-hidden="true" tabindex="-1"></a><span class="ot">runWriter ::</span> <span class="dt">Writer</span> w a <span class="ot">-&gt;</span> (a, w)</span>
 <span id="cb423-2"><a href="#cb423-2" aria-hidden="true" tabindex="-1"></a>runWriter (<span class="dt">Writer</span> (a, w)) <span class="ot">=</span> (a, w)</span></code></pre>
         </div>
         <p>
-          これまで見てきたように、<code>Writer</code>を合成可能にするには、<code>w</code>はモノイドでなければならない。bind演算子で書かれた<code>Writer</code>のモナドインスタンスを以下に示す:
+          すでに見たとおり、<code>Writer</code>を合成可能にするには、<code>w</code>はモノイドでなければならない。bind演算子で書かれた<code>Writer</code>のモナドインスタンスを以下に示す:
         </p>
         <div class="sourceCode" id="cb424">
           <pre
@@ -23060,14 +23061,15 @@ construction}.} -->
         </div>
         <h3 data-number="21.2.5" id="状態"><span class="header-section-number">21.2.5</span> 状態</h3>
         <p>
-          状態へ読み取り/書き込みアクセスする関数は、<code>Reader</code>と<code>Writer</code>の装飾を組み合わせる。それらは、追加の引数として状態を受け取り、結果として値/状態のペアを生成する、次のような純粋関数と見なせる:
-          <code>(a, s) -&gt; (b, s)</code>。カリー化すると、それらはKleisli矢<code>a -&gt; (s -&gt; (b, s))</code>の形になり、装飾は<code>State</code>関手へと抽象化される:
+          状態へ読み取り/書き込みアクセスする関数は、<code>Reader</code>と<code>Writer</code>の装飾を組み合わせる。それらは、追加の引数として状態を受け取り、結果として値/状態のペアを生成する純粋関数
+          <code>(a, s) -&gt; (b, s)</code>
+          と見なせる。カリー化すると、それらはKleisli矢<code>a -&gt; (s -&gt; (b, s))</code>の形になり、装飾は<code>State</code>関手へと抽象化される:
         </p>
         <div class="sourceCode" id="cb425">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb425-1"><a href="#cb425-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">State</span> s a <span class="ot">=</span> <span class="dt">State</span> (s <span class="ot">-&gt;</span> (a, s))</span></code></pre>
         </div>
-        <p>ここでも、Kleisli矢は作用を返すものと見なせて、ヘルパー関数を使って実行できる。</p>
+        <p>ここでも、Kleisli矢は作用を返すものと見なせて、ヘルパー関数を使って実行できる:</p>
         <div class="sourceCode" id="cb426">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb426-1"><a href="#cb426-1" aria-hidden="true" tabindex="-1"></a><span class="ot">runState ::</span> <span class="dt">State</span> s a <span class="ot">-&gt;</span> s <span class="ot">-&gt;</span> (a, s)</span>
@@ -23103,7 +23105,7 @@ construction}.} -->
         </div>
         <h3 data-number="21.2.6" id="例外"><span class="header-section-number">21.2.6</span> 例外</h3>
         <p>
-          例外をスローする命令型関数は、実際には部分関数――引数の値のいくつかに対して定義されていない関数だ。純粋全域関数に関して例外を最も単純に実装するには、<code>Maybe</code>関手を使う。部分関数は全域関数へと拡張される。その全域関数は、意味があるときは常に<code>Just a</code>を返し、意味がないときは<code>Nothing</code>を返す。失敗の原因に関する何らかの情報も返したい場合は、<code>Either</code>関手を代わりに使える
+          例外をスローする命令型関数は、実際には部分関数――引数の値のいくつかに対して定義されていない関数だ。純粋全域関数に関して例外を最もシンプルに実装するには<code>Maybe</code>関手を使う。部分関数は全域関数へと拡張される。その全域関数は、意味があるときは常に<code>Just a</code>を返し、意味がないときは<code>Nothing</code>を返す。失敗の原因に関する何らかの情報も返したい場合は、<code>Either</code>関手を代わりに使える
           (第1の型は固定され、たとえば<code>String</code>とされる)。</p>
         <p>以下は<code>Maybe</code>の<code>Monad</code>インスタンスだ:</p>
         <div class="sourceCode" id="cb431">
@@ -23118,14 +23120,14 @@ construction}.} -->
           ことに注意してほしい。それが例外に期待される振る舞いだ。</p>
         <h3 data-number="21.2.7" id="継続"><span class="header-section-number">21.2.7</span> 継続</h3>
         <p>
-          これは「電話をかけてこないで、こちらから電話する！」という、就職面接後に経験しそうな状況だ。回答を直接得る代わりに、結果とともに呼び出される関数としてハンドラーを提供することが期待されている。このスタイルのプログラミングが特に役立つのは、呼び出し時点で結果がわからない場合だ。たとえば、別のスレッドで評価される場合や、リモートのウェブサイトから配信される場合などだ。この場合のKleisli矢が返す関数は「残りの計算」を表すハンドラーを受け取る:
+          これは「電話はしないでください、こちらから電話しますので！」という、採用面接のあとで経験しそうな状況だ。回答を直接得る代わりに、ある関数をハンドラーとして提供することになっており、そのハンドラーが呼ばれると結果が得られる。このスタイルのプログラミングが特に役立つのは、呼び出し時点で結果がわからない場合だ。たとえば、別のスレッドで評価される場合や、リモートのウェブサイトから配信される場合などだ。この場合のKleisli矢が返す関数は「残りの計算」を表すハンドラーを受け取る:
         </p>
         <div class="sourceCode" id="cb432">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb432-1"><a href="#cb432-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Cont</span> r a <span class="ot">=</span> <span class="dt">Cont</span> ((a <span class="ot">-&gt;</span> r) <span class="ot">-&gt;</span> r)</span></code></pre>
         </div>
         <p>
-          このハンドラー<code>a -&gt; r</code>は、最終的に呼び出されるとき、型<code>r</code>の結果を生成し、その結果が最後に返される。継続は結果の型によってパラメーター化される。(実用上は、これはある種のステータスインジケータである場合が多い。)
+          このハンドラー<code>a -&gt; r</code>は、最終的に呼び出されると型<code>r</code>の結果を生成し、その結果が最後に返される。継続は結果の型によってパラメーター化される。(実用上は、これはある種のステータスインジケーターである場合が多い。)
         </p>
         <p>Kleisli矢から返された作用を実行するためのヘルパー関数もある。それはハンドラーを取得して継続に渡す:</p>
         <div class="sourceCode" id="cb433">
@@ -23141,7 +23143,7 @@ construction}.} -->
 <span id="cb434-2"><a href="#cb434-2" aria-hidden="true" tabindex="-1"></a>         (a <span class="ot">-&gt;</span> (b <span class="ot">-&gt;</span> r) <span class="ot">-&gt;</span> r) <span class="ot">-&gt;</span></span>
 <span id="cb434-3"><a href="#cb434-3" aria-hidden="true" tabindex="-1"></a>         ((b <span class="ot">-&gt;</span> r) <span class="ot">-&gt;</span> r)</span></code></pre>
         </div>
-        <p>目標は、ハンドラー<code>(b -&gt; r)</code>を受け取って結果<code>r</code>を生成する関数を作成することだ。そこで我々の出発点はこうなる:</p>
+        <p>目標は、ハンドラー<code>(b -&gt; r)</code>を受け取って結果<code>r</code>を生成する関数を作成することだ。そこで出発点はこうなる:</p>
         <div class="sourceCode" id="cb435">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb435-1"><a href="#cb435-1" aria-hidden="true" tabindex="-1"></a>ka <span class="op">&gt;&gt;=</span> kab <span class="ot">=</span> <span class="dt">Cont</span> (\hb <span class="ot">-&gt;</span> <span class="op">...</span>)</span></code></pre>
@@ -23166,11 +23168,11 @@ construction}.} -->
         </div>
         <h3 data-number="21.2.8" id="インタラクティブな入力"><span class="header-section-number">21.2.8</span> インタラクティブな入力</h3>
         <p>
-          これは最も厄介な問題であり、多くの混乱の源だ。明らかに、<code>getChar</code>のような関数は、キーボードから入力された文字を返すものなら、純粋であるはずがない。しかし、コンテナ内の文字を返すならどうだろう？
-          そのコンテナから文字を除去する方法がない限り、この関数は純粋であると主張できる。<code>getChar</code>を呼び出すたびに、まったく同じコンテナが返される。概念としては、このコンテナにはすべての可能な文字の重ね合わせが含まれる。
+          これは最も厄介な問題であり、多くの混乱の源だ。明らかに、<code>getChar</code>のような関数は、キーボードから入力された文字を返すのなら、純粋ではあり得ない。しかし、コンテナ内の文字を返すのならどうだろう？
+          そのコンテナから文字を除去する方法がない限り、この関数は純粋であると主張できる。<code>getChar</code>を呼び出すたびに、まったく同じコンテナが返される。概念としては、このコンテナには可能な文字すべての重ね合わせが含まれる。
         </p>
         <p>
-          量子力学に馴染みがあれば、この比喩を問題なく理解できるはずだ。シュレーディンガーの猫が入った箱のようなものだ――ただし、箱を開けたり中を覗いたりする方法はない。この箱は、組み込みの特別な<code>IO</code>関手を使って定義される。この例では<code>getChar</code>をKleisli矢として宣言できる:
+          量子力学に馴染みがあれば、この比喩を問題なく理解できるだろう。これはシュレーディンガーの猫が入った箱のようなものだ――ただし、箱を開けたり中を覗いたりする方法はない。この箱は、組み込みの特別な<code>IO</code>関手を使って定義される。この例では<code>getChar</code>をKleisli矢として宣言できる:
         </p>
         <div class="sourceCode" id="cb439">
           <pre
@@ -23181,7 +23183,7 @@ construction}.} -->
           <code>IO</code>は関手なので<code>fmap</code>を使って内容を操作できる。また、関手として、文字だけでなく任意の型を内容として保持できる。このアプローチの真の有用性が明らかになるのは、Haskellでの<code>IO</code>がモナドなのを考慮したときだ。これは<code>IO</code>オブジェクトを生成するKleisli矢を合成できることを意味する。
         </p>
         <p>Kleisli合成を使えば、<code>IO</code>オブジェクトの内容を覗き見できると思うかもしれない
-          (また量子力学で比喩すると「波動関数を収縮させる」ことにあたる)。実際、<code>getChar</code>は、文字を受け取る別のKleisli矢と合成できる。たとえば、受け取った文字を整数に変換するようなものとだ。注意点として、そのような2番目のKleisli矢は整数を<code>(IO Int)</code>としてしか返せない。ここでも、すべての可能な整数を重ね合わせることになる。以下同様だ。シュレーディンガーの猫は決して袋から出ない。<code>IO</code>モナドに入ると、抜け出す方法はない。<code>IO</code>モナドについて<code>runState</code>や<code>runReader</code>と同等のものはない。<code>runIO</code>はない！
+          (またも量子力学で比喩すると「波動関数を収縮させる」ことにあたる)。実際、<code>getChar</code>は、文字を受け取る別のKleisli矢と合成できる。たとえば、受け取った文字を整数に変換するようなものと合成できる。注意点として、そのような2番目のKleisli矢は整数を<code>(IO Int)</code>としてしか返せない。ここでも、すべての可能な整数を重ね合わせることになる。以下同様だ。シュレーディンガーの猫は決して外に出ない。<code>IO</code>モナドに入ると、抜け出す方法はない。<code>IO</code>モナドについて<code>runState</code>や<code>runReader</code>と同等のものはない。<code>runIO</code>はないのだ！
         </p>
         <p>では、Kleisli矢の結果である<code>IO</code>オブジェクトを、他のKleisli矢と合成する以外に何ができるだろう？
           そう、<code>main</code>から返せる。Haskellでは<code>main</code>は次のシグネチャを持つ:</p>
@@ -23189,7 +23191,7 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb440-1"><a href="#cb440-1" aria-hidden="true" tabindex="-1"></a><span class="ot">main ::</span> <span class="dt">IO</span> ()</span></code></pre>
         </div>
-        <p>そしてこれをKleisli矢と見なすのは自由だ:</p>
+        <p>そしてこれはKleisli矢と見なして構わない:</p>
         <div class="sourceCode" id="cb441">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb441-1"><a href="#cb441-1" aria-hidden="true" tabindex="-1"></a><span class="ot">main ::</span> () <span class="ot">-&gt;</span> <span class="dt">IO</span> ()</span></code></pre>
@@ -23215,7 +23217,7 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb442-1"><a href="#cb442-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">IO</span> a  <span class="ot">=</span>  <span class="dt">RealWorld</span> <span class="ot">-&gt;</span> (a, <span class="dt">RealWorld</span>)</span></code></pre>
         </div>
-        <p>あるいは、<code>State</code>モナドとしては:</p>
+        <p>あるいは、<code>State</code>モナドとしてはこうなる:</p>
         <div class="sourceCode" id="cb443">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb443-1"><a href="#cb443-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">IO</span> <span class="ot">=</span> <span class="dt">State</span> <span class="dt">RealWorld</span></span></code></pre>
@@ -23237,7 +23239,7 @@ construction}.} -->
         <p>理由は2つある:
           Haskellは遅延評価なので、出力――ここではunitオブジェクト――が全く使われない関数は呼び出されない。また、遅延評価でなかったとしても、そのような呼び出しの順序は自由に変更でき、出力を混乱させうる。Haskellで2つの関数を強制的に逐次実行する唯一の方法はデータ依存性を使うことだ。ある関数の入力は別の関数の出力に依存する必要がある。<code>IO</code>アクション間で<code>RealWorld</code>を受け渡せば逐次処理を強制できる。
         </p>
-        <p>概念としては、このプログラムでは:</p>
+        <p>概念としては、以下のプログラム:</p>
         <div class="sourceCode" id="cb446">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb446-1"><a href="#cb446-1" aria-hidden="true" tabindex="-1"></a><span class="ot">main ::</span> <span class="dt">IO</span> ()</span>
@@ -23245,7 +23247,7 @@ construction}.} -->
 <span id="cb446-3"><a href="#cb446-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">putStr</span> <span class="st">&quot;Hello &quot;</span></span>
 <span id="cb446-4"><a href="#cb446-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">putStr</span> <span class="st">&quot;World!&quot;</span></span></code></pre>
         </div>
-        <p>「World!」と表示するアクションは「Hello」がすでに画面に表示されている宇宙を入力として受け取る。そして画面に「Hello
+        <p>では、「World!」と表示するアクションは「Hello」がすでに画面に表示されている宇宙を入力として受け取る。そして画面に「Hello
           World!」と表示された新しい世界を出力する。</p>
         <h2 data-number="21.3" id="おわりに-1"><span class="header-section-number">21.3</span> おわりに</h2>
         <p>
@@ -23253,7 +23255,7 @@ construction}.} -->
         </p>
         <h1 data-number="22" id="圏論から見たモナド"><span class="header-section-number">22</span> 圏論から見たモナド</h1>
         <p>
-          モナドについてプログラマーに話すと、おそらく効果について話すことになるだろう。数学者にとっては、モナドは代数に関するものだ。代数については後で話そう――代数はプログラミングにおいて重要な役割を果たす――まずは、代数とモナドとの関係について少し直観を得てもらおうと思う。さしあたっては、やや身振り手振りでの議論になるが、我慢してほしい。
+          モナドについてプログラマーに話すと、おそらく作用について話すことになるだろう。数学者にとっては、モナドは代数に関するものだ。代数については後で話そう――代数はプログラミングにおいて重要な役割を果たす――まずは、代数とモナドとの関係について少し直観を得てもらおうと思う。さしあたっては、やや身振り手振りでの議論になるが、我慢してほしい。
         </p>
         <p>代数とは式を作成・操作・評価することだ。式は演算子を使って組み立てられる。次の単純な式を考えてみよう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -23287,7 +23289,7 @@ construction}.} -->
               <mn>2</mn>
               <annotation encoding="application/x-tex">2</annotation>
             </semantics>
-          </math>のような定数を加算や乗算のような演算子と組み合わせることで構成されている。プログラマーはよく式を木
+          </math>のような定数とを加算や乗算のような演算子で組み合わせて構成されている。プログラマーはよく式を木
           (tree) と見なす。</p>
         <p><img src="images/exptree.png" style="width:30.0%" /></p>
         <p>木はコンテナなので、より一般化すると、式は変数を格納するコンテナだと言える。圏論ではコンテナを自己関手として表す。型<math display="inline"
@@ -23316,8 +23318,8 @@ construction}.} -->
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
           </math>は式木を構成する自己関手だ。(非自明な分岐式は通常、再帰的に定義された自己関手を使って作成される。)</p>
-        <p>式で実行できる最もよくある操作は何だろう？ それは置換だ:
-          変数を式に置き換えることだ。たとえば、この例では、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>式に対して実行できる最もありふりた操作は何だろう？
+          それは置換だ。つまり、変数を式に置き換えることだ。たとえば、この例では<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>x</mi>
               <annotation encoding="application/x-tex">x</annotation>
@@ -23360,8 +23362,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">(y - 1)^2 + 2 (y - 1) + 1</annotation>
             </semantics>
           </math></p>
-        <p>何が起きたか:
-          型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>何が起きたかというと、型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>m</mi>
@@ -23401,7 +23402,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">m\ b</annotation>
             </semantics>
-          </math>の式になる。詳しく説明させてほしい:</p>
+          </math>の式になる。詳しく説明しよう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -23427,8 +23428,8 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>そうだ、これはモナディックなバインドのシグネチャだ。</p>
-        <p>That was a bit of motivation. Now let’s get to the math of the monad.
-          数学者はプログラマとは異なる表記法を用いる。自己関手には文字<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>これはちょっとしたモチベーションになる。さあ、モナドの計算に移ろう。数学者はプログラマとは異なる表記法を用いる。自己関手には文字<math display="inline"
+            xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>T</mi>
               <annotation encoding="application/x-tex">T</annotation>
@@ -23488,7 +23489,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">T \circ T</annotation>
             </semantics>
           </math>のように合成したものだ
-          (このような平方は自己関手でしか行えない)。</p>
+          (このような平方は自己関手でしか行えない):</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -23635,7 +23636,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">a \to T b</annotation>
             </semantics>
-          </math>として定義されることを覚えておいてほしい。そのような2つの矢の合成
+          </math>として定義されることを思い出そう。そのような2つの矢の合成
           (ここでは下付き文字<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>T</mi>
@@ -23726,13 +23727,13 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb447-1"><a href="#cb447-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">&gt;=&gt;</span> g <span class="ot">=</span> join <span class="op">.</span> <span class="fu">fmap</span> g <span class="op">.</span> f</span></code></pre>
         </div>
-        <p>あるいは、コンポーネントとして:</p>
+        <p>あるいは、コンポーネントで表すとこうなる:</p>
         <div class="sourceCode" id="cb448">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb448-1"><a href="#cb448-1" aria-hidden="true" tabindex="-1"></a>(f <span class="op">&gt;=&gt;</span> g) a <span class="ot">=</span> join (<span class="fu">fmap</span> g (f a))</span></code></pre>
         </div>
         <p>代数的に解釈すると、単に2つの連続した置換を合成しているだけだ。</p>
-        <p>Kleisli矢が圏を形成するためには、それらの合成が結合性を持っていて、かつ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>Kleisli矢が圏を形成するために、それらの合成が結合性を持っていて、かつ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <msub>
                 <mi>η</mi>
@@ -23745,7 +23746,7 @@ construction}.} -->
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
-          </math>における恒等Kleisli矢であるのが望ましい。この要件は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>における恒等Kleisli矢であってほしい。この要件は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>μ</mi>
               <annotation encoding="application/x-tex">\mu</annotation>
@@ -23755,7 +23756,7 @@ construction}.} -->
               <mi>η</mi>
               <annotation encoding="application/x-tex">\eta</annotation>
             </semantics>
-          </math>のモナド則に変換できる。しかし、これらの規則は、別の方法で導出すればもっとモノイド則に似て見えるようになる。実際、<math display="inline"
+          </math>のモナド則に変換できる。しかし、これらの規則は、別の方法で導出すればもっとモノイド則に似て見えてくる。実際、<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>μ</mi>
@@ -23770,7 +23771,7 @@ construction}.} -->
             </semantics>
           </math>は<em>単位</em>
           (unit) と呼ばれる。</p>
-        <p>大まかに言えば、結合則は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>大まかに言うと、結合則は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>T</mi>
               <annotation encoding="application/x-tex">T</annotation>
@@ -23788,9 +23789,8 @@ construction}.} -->
               <mi>T</mi>
               <annotation encoding="application/x-tex">T</annotation>
             </semantics>
-          </math>に縮約するための2つの方法が同じ結果を与えなければならない、と述べている。2つの単位元則
-          (左と右)
-          は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に縮約するための2つの方法が同じ結果を与えなければならない、と述べている。左右2つの単位元則は、<math display="inline"
+            xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>η</mi>
               <annotation encoding="application/x-tex">\eta</annotation>
@@ -23833,7 +23833,7 @@ construction}.} -->
               <mi>T</mi>
               <annotation encoding="application/x-tex">T</annotation>
             </semantics>
-          </math>を合成したものと見なせる。2つの自然変換の水平合成をこれに適用できる:</p>
+          </math>を合成したものと見なせる。これに、次の2つの自然変換の水平合成を適用できる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -23862,7 +23862,7 @@ construction}.} -->
               <mi>μ</mi>
               <annotation encoding="application/x-tex">\mu</annotation>
             </semantics>
-          </math>を適用すると更に<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を適用するとさらに<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>T</mi>
               <annotation encoding="application/x-tex">T</annotation>
@@ -24017,8 +24017,12 @@ construction}.} -->
               <mi>μ</mi>
               <annotation encoding="application/x-tex">\mu</annotation>
             </semantics>
-          </math>を使って戻せる。その結果は恒等自然変換を<code>T</code>に直接適用したかのように同じになるはずだ。そして、同様のことが<math display="inline"
-            xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を使って戻せる。その結果は恒等自然変換を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>T</mi>
+              <annotation encoding="application/x-tex">T</annotation>
+            </semantics>
+          </math>に直接適用したかのように同じになるはずだ。そして、同様のことが<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>T</mi>
@@ -24027,10 +24031,10 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">T \circ \eta</annotation>
             </semantics>
-          </math>にもあてはまるはずだ。</p>
+          </math>にもあてはまると類推できる。</p>
         <p><img src="images/unitlawcomp-1.png" style="width:40.0%" /></p>
         <p>Kleisli矢の合成が実際に圏の規則を満たすことをこれらの規則が保証するのは納得できるだろう。</p>
-        <p>モナドとモノイドの類似点は驚くべきものだ。乗算<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>モナドとモノイドの類似点は驚くべきものだ。どちらにも乗算<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>μ</mi>
               <annotation encoding="application/x-tex">\mu</annotation>
@@ -24059,7 +24063,7 @@ construction}.} -->
         </div>
         <p>この解釈こそがモノイドを単一対象圏として定義するもととなる。その単一対象圏の自己準同型
           (endomorphism)
-          である<code>(m \to m)</code>がモノイドの要素を表す。ただし、Haskellにはカリー化が組み込まれているので、乗算の別の定義からも始められる:</p>
+          である<code>(m -&gt; m)</code>がモノイドの要素を表す。ただし、Haskellにはカリー化が組み込まれているので、乗算の別の定義から始めてもよい:</p>
         <div class="sourceCode" id="cb451">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb451-1"><a href="#cb451-1" aria-hidden="true" tabindex="-1"></a><span class="ot">mu ::</span> (m, m) <span class="ot">-&gt;</span> m</span></code></pre>
@@ -24083,7 +24087,7 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>ただし、問題が1つある:
-          任意の圏での対象は内部を覗き見られないのに、どうすれば単位要素を選択できるだろう？
+          任意の圏では対象の内部を覗き見られないのに、どうすれば単位要素を選択できるだろう？
           そのためのトリックがある。要素選択が単集合からの関数と等価である仕組みを覚えているだろうか？
           Haskellでは、<code>mempty</code>の定義を次の関数に置き換えられた:</p>
         <div class="sourceCode" id="cb452">
@@ -24119,16 +24123,16 @@ construction}.} -->
           </math></p>
         <p>これにより、要素について述べることなく単位「要素」を選べる。</p>
         <p>
-          以前モノイドを単一対象圏として定義したのとは異なり、ここでのモノイダル則は自動的には満たされない――我々はそれを課す必要がある。しかし、それらを定式化するには、基礎となる圏論的な積そのものモノイダル構造を確立しなければならない。まずはHaskellでモノイダル構造がどう機能するか思い出そう。
+          以前モノイドを単一対象圏として定義したときとは違って、ここではモノイダル則が自動的に満たされるわけではなく、それらを課す必要がある。しかし、それらを定式化するには、基礎となる圏論的な積そのもののモノイダル構造を確立しなければならない。まずはHaskellでモノイダル構造がどう機能するか思い出そう。
         </p>
-        <p>結合性から始める。In Haskell, the corresponding equational law
-          is:</p>
+        <p>結合性から始める。Haskellでは、対応する等式的規則 (equational law)
+          はこうなる:</p>
         <div class="sourceCode" id="cb453">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb453-1"><a href="#cb453-1" aria-hidden="true" tabindex="-1"></a>mu x (mu y z) <span class="ot">=</span> mu (mu x y) z</span></code></pre>
         </div>
         <p>これを他の圏に一般化する前に、関数 (射)
-          の等価性として書き直す必要がある。個々の変数に対する作用からそれを抽象化する必要がある――言い換えれば、ポイントフリー記法を使う必要がある。カルテシアン積は双関手だと分かっているので、左辺はこう書ける:</p>
+          の等価性として書き直す必要がある。個々の変数に対する作用から離れた抽象化が必要だ――言い換えれば、ポイントフリー記法を使う必要がある。カルテシアン積は双関手だと分かっているので、左辺はこう書ける:</p>
         <div class="sourceCode" id="cb454">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb454-1"><a href="#cb454-1" aria-hidden="true" tabindex="-1"></a>(mu <span class="op">.</span> bimap <span class="fu">id</span> mu)(x, (y, z))</span></code></pre>
@@ -24149,7 +24153,7 @@ construction}.} -->
           (associator) と呼ばれる可逆関数がある:</p>
         <div class="sourceCode" id="cb457">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb457-1"><a href="#cb457-1" aria-hidden="true" tabindex="-1"></a><span class="ot">alpha ::</span> ((a, b), c) \to (a, (b, c))</span>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb457-1"><a href="#cb457-1" aria-hidden="true" tabindex="-1"></a><span class="ot">alpha ::</span> ((a, b), c) <span class="ot">-&gt;</span> (a, (b, c))</span>
 <span id="cb457-2"><a href="#cb457-2" aria-hidden="true" tabindex="-1"></a>alpha ((x, y), z) <span class="ot">=</span> (x, (y, z))</span></code></pre>
         </div>
         <p>結合子の助けを借りれば<code>mu</code>についての結合則をポイントフリーで書ける:</p>
@@ -24176,12 +24180,12 @@ construction}.} -->
         </p>
         <div class="sourceCode" id="cb461">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb461-1"><a href="#cb461-1" aria-hidden="true" tabindex="-1"></a><span class="ot">lambda ::</span> ((), a) \to a</span>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb461-1"><a href="#cb461-1" aria-hidden="true" tabindex="-1"></a><span class="ot">lambda ::</span> ((), a) <span class="ot">-&gt;</span> a</span>
 <span id="cb461-2"><a href="#cb461-2" aria-hidden="true" tabindex="-1"></a>lambda ((), x) <span class="ot">=</span> x</span></code></pre>
         </div>
         <div class="sourceCode" id="cb462">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb462-1"><a href="#cb462-1" aria-hidden="true" tabindex="-1"></a><span class="ot">rho ::</span> (a, ()) \to a</span>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb462-1"><a href="#cb462-1" aria-hidden="true" tabindex="-1"></a><span class="ot">rho ::</span> (a, ()) <span class="ot">-&gt;</span> a</span>
 <span id="cb462-2"><a href="#cb462-2" aria-hidden="true" tabindex="-1"></a>rho (x, ()) <span class="ot">=</span> x</span></code></pre>
         </div>
         <p>したがって、ポイントフリー版の単位元則は次のようになる:</p>
@@ -24351,12 +24355,12 @@ construction}.} -->
           に対して機能する。モノイダル圏は豊穣圏の定式化において不可欠な役割を果たすことになる。</p>
         <h2 data-number="22.2" id="モノイダル圏におけるモノイド"><span class="header-section-number">22.2</span>
           モノイダル圏におけるモノイド</h2>
-        <p>より一般的な設定のモノイダル圏でモノイドを定義する準備ができた。対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>より一般的な設定のモノイダル圏でモノイドを定義する準備が整った。対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>を選択することから始める。テンソル積を使えば<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を選択することから始めよう。テンソル積を使えば<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
@@ -24460,7 +24464,7 @@ construction}.} -->
           </math>のような積を形成するためには射のペアをリフトする必要があるからだ。これらの図式は、圏論的な積に関するこれまでの結果を直接的に一般化しているだけだ。</p>
         <h2 data-number="22.3" id="モノイドとしてのモナド"><span class="header-section-number">22.3</span> モノイドとしてのモナド</h2>
         <p>
-          モノイダル構造は思いがけないところに現れる。その1つが関手圏だ。少し目を細めれば、関手の合成が積の生成に見えてくるだろう。問題は、2つの関手は合成できるとは限らないことだ――一方の終域圏が他方の始域圏でなければならない。これは射の合成の一般的な規則にすぎない――そして、すでに知っているとおり、関手はまさに圏<math
+          モノイダル構造は思いがけないところに現れる。その1つが関手圏だ。少し目を細めれば、関手の合成が積の生成に見えてくるだろう。問題は、2つの関手は合成できるとは限らないことだ――一方の終域圏が他方の始域圏でなければならない。これは射の合成の一般的な規則に他ならない――そして、すでに知っているとおり、関手はまさに圏<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -24470,7 +24474,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\symbf{Cat}</annotation>
             </semantics>
-          </math>内の射だ。しかし、自己射
+          </math>内の射だ。ただし、自己射
           (同じ対象にループバックする射)
           と同様に自己関手も常に合成可能だ。任意の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -24509,7 +24513,7 @@ construction}.} -->
               <mi>G</mi>
               <annotation encoding="application/x-tex">G</annotation>
             </semantics>
-          </math>を取り、3番目の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を取って、3番目の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>F</mi>
@@ -24520,7 +24524,7 @@ construction}.} -->
             </semantics>
           </math>――それらを合成した自己関手――を生成できる。</p>
         <p>自己関手の合成はテンソル積の良い候補だろうか？
-          まず、それが双関手だと示さなければならない。それを使って射のペア――ここでは自然変換――をリフトできるだろうか？
+          まず、それが双関手だと示さなければならない。それを使って射――ここでは自然変換――のペアをリフトできるだろうか？
           テンソル積で<code>bimap</code>に相当するもののシグネチャは次のようになるだろう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -24618,7 +24622,7 @@ construction}.} -->
               <mi>T</mi>
               <annotation encoding="application/x-tex">T</annotation>
             </semantics>
-          </math>であり、2つの射――自然変換だ:</p>
+          </math>と、2つの射――自然変換だ:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mtable>
@@ -24651,7 +24655,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>それだけでなく、モノイド則もある:</p>
+        <p>それだけでなく、モノイダル則もある:</p>
         <p><img src="images/assoc.png" style="width:40.0%" /></p>
         <p><img src="images/unitlawcomp.png" style="width:50.0%" /></p>
         <p>これらはいままで見てきたモナド則そのものだ。これでSaunders Mac
@@ -24659,7 +24663,7 @@ construction}.} -->
         <blockquote>
           <p>端的に言えば、モナドは自己関手からなる圏におけるモノイドに他ならない。</p>
         </blockquote>
-        <p>関数プログラミングのカンファレンスのTシャツに刻まれているのを見たことがあるかもしれない。</p>
+        <p>これが関数プログラミングのカンファレンスのTシャツにプリントされているのを見たことがあるかもしれない。</p>
         <h2 data-number="22.4" id="随伴に基づくモナド"><span class="header-section-number">22.4</span> 随伴に基づくモナド</h2>
         <p><a href="#adjunctions">随伴</a><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -24808,33 +24812,39 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>モナド則は随伴の単位と余単位によって満たされた恒等射と交換則に従う。</p>
-        <p>随伴から派生したモナドをHaskellであまり見かけないのは、随伴には通常2つの圏が関わるからだ。ただし、冪乗すなわち関数オブジェクトの定義は例外だ。この随伴を形成する2つの自己関手は次のとおりだ:</p>
+        <p>随伴から派生したモナドをHaskellであまり見かけないのは、随伴には通常2つの圏が関わるからだ。ただし、冪乗すなわち関数オブジェクトの定義は例外だ。この随伴は次の2つの自己関手から形成される:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
-              <mrow>
-                <mi>L</mi>
-                <mspace width="0.222em"></mspace>
-                <mi>z</mi>
-                <mo>=</mo>
-                <mi>z</mi>
-                <mo>×</mo>
-                <mrow></mrow>
-                <mi>s</mi>
-                <mi>R</mi>
-                <mspace width="0.222em"></mspace>
-                <mi>b</mi>
-                <mo>=</mo>
-                <mi>s</mi>
-                <mo>⇒</mo>
-                <mi>b</mi>
-              </mrow>
+              <mtable>
+                <mtr>
+                  <mtd columnalign="center" style="text-align: center">
+                    <mi>L</mi>
+                    <mspace width="0.222em"></mspace>
+                    <mi>z</mi>
+                    <mo>=</mo>
+                    <mi>z</mi>
+                    <mo>×</mo>
+                    <mrow></mrow>
+                    <mi>s</mi>
+                    <mi>R</mi>
+                    <mspace width="0.222em"></mspace>
+                    <mi>b</mi>
+                    <mo>=</mo>
+                    <mi>s</mi>
+                    <mo>⇒</mo>
+                    <mi>b</mi>
+                  </mtd>
+                </mtr>
+              </mtable>
               <annotation encoding="application/x-tex">
+                \begin{gather*}
                 L\ z = z\times{}s
                 R\ b = s \Rightarrow b
+                \end{gather*}
               </annotation>
             </semantics>
           </math></p>
-        <p>これらの合成はお馴染みのstateモナドなのが分かるだろう。</p>
+        <p>これらを合成するとお馴染みのstateモナドになるのが分かるだろう。</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -24867,12 +24877,12 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb464-1"><a href="#cb464-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">State</span> s a <span class="ot">=</span> <span class="dt">State</span> (s <span class="ot">-&gt;</span> (a, s))</span></code></pre>
         </div>
-        <p>この随伴もHaskellに翻訳してみよう。左の関手は積の関手だ:</p>
+        <p>この随伴もHaskellに翻訳してみよう。左関手は積関手だ:</p>
         <div class="sourceCode" id="cb465">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb465-1"><a href="#cb465-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">Prod</span> s a <span class="ot">=</span> <span class="dt">Prod</span> (a, s)</span></code></pre>
         </div>
-        <p>右の関手はreader関手だ:</p>
+        <p>そして右関手はreader関手だ:</p>
         <div class="sourceCode" id="cb466">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb466-1"><a href="#cb466-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">Reader</span> s a <span class="ot">=</span> <span class="dt">Reader</span> (s <span class="ot">-&gt;</span> a)</span></code></pre>
@@ -24890,15 +24900,15 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb468-1"><a href="#cb468-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">State</span> s a <span class="ot">=</span> <span class="dt">State</span> (s <span class="ot">-&gt;</span> (a, s))</span></code></pre>
         </div>
         <p>
-          予想通り、随伴の<code>unit</code>はstateモナドの<code>return</code>関数と等価だ。<code>余単位</code>は、引数に作用する関数を評価することによって作用する。これは<code>runState</code>関数の非カリー化版と見なせる。
+          予想通り、随伴の<code>unit</code>はstateモナドの<code>return</code>関数と等価だ。<code>counit</code>は、引数に作用する関数を評価することによって作用する。これは<code>runState</code>関数の非カリー化版と見なせる。
         </p>
         <div class="sourceCode" id="cb469">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb469-1"><a href="#cb469-1" aria-hidden="true" tabindex="-1"></a><span class="ot">runState ::</span> <span class="dt">State</span> s a <span class="ot">-&gt;</span> s <span class="ot">-&gt;</span> (a, s)</span>
 <span id="cb469-2"><a href="#cb469-2" aria-hidden="true" tabindex="-1"></a>runState (<span class="dt">State</span> f) s <span class="ot">=</span> f s</span></code></pre>
         </div>
-        <p>(非カリー化の理由は、<code>余単位</code>ではペアに作用するからだ)。</p>
-        <p>ここで、stateモナドの<code>join</code>を、自然変換<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>(非カリー化する理由は、<code>counit</code>でペアに作用するからだ)。</p>
+        <p>ここでstateモナドの<code>join</code>を自然変換<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>μ</mi>
               <annotation encoding="application/x-tex">\mu</annotation>
@@ -24923,7 +24933,7 @@ construction}.} -->
               <mi>ε</mi>
               <annotation encoding="application/x-tex">\varepsilon</annotation>
             </semantics>
-          </math>を、reader関手の1つのレベルに忍び込ませる必要がある。単に<code>fmap</code>を直接呼び出すことはできない。なぜなら、コンパイラが<code>Reader</code>関手のものではなく<code>State</code>関手のものを選択するだろうからだ。だが、reader関手の<code>fmap</code>は左の関数合成にすぎないことを思い出してほしい。そのため、関数合成を直接使うことにする。
+          </math>をreader関手の1つのレベルに忍び込ませる必要がある。単に<code>fmap</code>を直接呼び出すことはできない。なぜなら、コンパイラが<code>Reader</code>関手のものではなく<code>State</code>関手のものを選択するだろうからだ。だが、reader関手の<code>fmap</code>は左関数合成にすぎないことを思い出してほしい。そのため、関数合成を直接使うことにする。
         </p>
         <p>まず、データコンストラクター<code>State</code>を切り離すことで<code>State</code>関手内の関数を公開する必要がある。これは<code>runState</code>を使って行われる。
         </p>
@@ -24932,7 +24942,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb470-1"><a href="#cb470-1" aria-hidden="true" tabindex="-1"></a><span class="ot">ssa ::</span> <span class="dt">State</span> s (<span class="dt">State</span> s a)</span>
 <span id="cb470-2"><a href="#cb470-2" aria-hidden="true" tabindex="-1"></a>runState<span class="ot"> ssa ::</span> s <span class="ot">-&gt;</span> (<span class="dt">State</span> s a, s)</span></code></pre>
         </div>
-        <p>次に、<code>非カリー化版のrunState</code>によって定義された余単位に左合成する。最後に、<code>State</code>データコンストラクターに戻す:</p>
+        <p>次に、<code>uncurry runState</code>によって定義される余単位に左合成する。最後に、<code>State</code>データコンストラクターに戻す:</p>
         <div class="sourceCode" id="cb471">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb471-1"><a href="#cb471-1" aria-hidden="true" tabindex="-1"></a><span class="ot">join ::</span> <span class="dt">State</span> s (<span class="dt">State</span> s a) <span class="ot">-&gt;</span> <span class="dt">State</span> s a</span>
@@ -24953,7 +24963,7 @@ construction}.} -->
           </math>については次章で述べる。</p>
         <h1 data-number="23" id="コモナド"><span class="header-section-number">23</span> コモナド</h1>
         <p>モナドが使えるようになったので、双対性の恩恵を受けられ、矢を逆にして反対圏で作業するだけでコモナドを無料で手に入れられる。</p>
-        <p>最も基本的なレベルでは、モナドはKleisli矢を合成することであるのを思い出してほしい:</p>
+        <p>最も基本的なレベルでは、モナドはKleisli矢の合成に関するのを思い出してほしい:</p>
         <div class="sourceCode" id="cb472">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb472-1"><a href="#cb472-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> m b</span></code></pre>
@@ -24982,12 +24992,12 @@ construction}.} -->
 <span id="cb476-2"><a href="#cb476-2" aria-hidden="true" tabindex="-1"></a><span class="ot">    (=&gt;=) ::</span> (w a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> (w b <span class="ot">-&gt;</span> c) <span class="ot">-&gt;</span> (w a <span class="ot">-&gt;</span> c)</span>
 <span id="cb476-3"><a href="#cb476-3" aria-hidden="true" tabindex="-1"></a><span class="ot">    extract ::</span> w a <span class="ot">-&gt;</span> a</span></code></pre>
         </div>
-        <p>実際には、後で説明するように、わずかに異なるプリミティブが使われる。</p>
+        <p>実用上は、後で説明するように、わずかに異なるプリミティブが使われる。</p>
         <p>問題は、コモナドがプログラミングで何の役に立つかだ。</p>
         <h2 data-number="23.1" id="コモナドでのプログラミング"><span class="header-section-number">23.1</span>
           コモナドでのプログラミング</h2>
         <p>
-          モナドとコモナドを比べてみよう。モナドはコンテナに値を入れる手段を<code>return</code>によって提供している。そして、内部に格納された値にはアクセスできない。もちろんモナドを実装するデータ構造は内容へのアクセスを提供してもよいが、それはボーナスと見なされる。モナドから値を抽出するための一般的なインターフェースはない。例として見た<code>IO</code>モナドは内容を決して公開しないことを誇りにしている。
+          モナドとコモナドを比べてみよう。モナドはコンテナに値を入れる手段を<code>return</code>によって提供している。そして、内部に格納された値にはアクセスできない。もちろんモナドを実装するデータ構造は内容へのアクセスを提供してもよいが、それはおまけと見なされる。モナドから値を抽出するための一般的なインターフェースはない。例として見た<code>IO</code>モナドは内容を決して公開しないことを誇りとしている。
         </p>
         <p>一方、コモナドは単一の値を取り出す手段を提供している。そして、値を挿入する手段は提供しない。コモナドをコンテナと見なしたいなら、その中身はいつも事前に満たされていて、覗き見られるようになっている。</p>
         <p>Kleisli矢は値を受け取り、文脈で装飾した結果を生成する。同様に、余Kleisli矢は文脈全体と共に値を受け取り、結果を生成する。これは<span id="contextual_computation"
@@ -25026,7 +25036,7 @@ construction}.} -->
         <p>
           当然ながら、積コモナドはreaderモナドとまったく同じ計算を実行するのに使える。ある意味で、環境をコモナドで実装するのはより自然だ――「文脈に沿った計算」の精神に則っている。一方、モナドは<code>do</code>記法という便利な構文糖を備えている。
         </p>
-        <p>readerモナドと積コモナドの関係はさらに深く、reader関手が積関手の右随伴であるという事実と関係がある。しかし、一般的には、コモナドはモナドとは異なる計算の概念を扱う。さらなる例について後で説明する。</p>
+        <p>readerモナドと積コモナドの関係はさらに深く、reader関手が積関手の右随伴であるという事実に関連している。しかし、一般的には、コモナドはモナドとは異なる計算の概念を扱う。さらなる例について後で説明する。</p>
         <p>積コモナド<code>Product</code>は、タプルやレコードを含む任意の直積型へ簡単に一般化できる。</p>
         <h2 data-number="23.3" id="合成の分析"><span class="header-section-number">23.3</span> 合成の分析</h2>
         <p>
@@ -25051,7 +25061,7 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb484-1"><a href="#cb484-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=&gt;=</span> g <span class="ot">=</span> g <span class="op">.</span> extend f</span></code></pre>
         </div>
-        <p>次に、<code>extend</code>は分析できるだろうか？
+        <p>次は<code>extend</code>を解剖できるだろうか？
           なぜ単に関数<code>w a -&gt; b</code>を引数<code>w a</code>に適用しないのか、と言いたくなるかもしれない。しかし、結果として得られる<code>b</code>を<code>w b</code>に変換する方法がないことにすぐ気付くだろう。コモナドには値をリフトする手段がないことを覚えておいてほしい。ここではモナドに類似した構成で<code>fmap</code>を使った。ここで<code>fmap</code>が使えるとすれば、型<code>w (w a)</code>の何かが自由に使える場合だけだ。<code>w a</code>を<code>w (w a)</code>に変えられさえすればよい。そして、便利なことに、それはまさに<code>join</code>の双対だ。それは<code>duplicate</code>と呼ばれる:
         </p>
         <div class="sourceCode" id="cb485">
@@ -25072,19 +25082,19 @@ construction}.} -->
         </div>
         <p><code>extend</code>のデフォルト実装が<code>duplicate</code>によって提供され、逆も同様だ。したがって、どちらか1つをオーバーライドするだけでよい。</p>
         <p>これらの関数の背景にある直観は、一般にコモナドは型<code>a</code>の値で満たされたコンテナと見なせるという考えに基づいている
-          (積コモナドは値が1つしかない特殊なケースだ)。「現在の」値という概念があり、それは<code>extract</code>によって簡単にアクセスできる。余Kleisli矢が実行する計算は現在の値に焦点を合わせるが、周囲のすべての値にアクセスできる。コンウェイのライフゲームを考えてみてほしい。各セルには値が含まれる
+          (積コモナドは値が1つしかない特殊なケースだ)。「現在の」値という概念があり、それは<code>extract</code>によって簡単にアクセスできる。余Kleisli矢は現在の値に焦点を合わせて計算を実行するものの、周囲のすべての値にアクセスできる。コンウェイのライフゲームを考えてみてほしい。各セルには値が含まれる
           (通常は<code>True</code>か<code>False</code>だ)
           。ライフゲームに対応するコモナドは「現在の」セルに焦点を合わせたセルのグリッドだ。</p>
         <p>では<code>duplicate</code>は何をするのだろう？
           それはコモナディックなコンテナ<code>w a</code>を取ってコンテナのコンテナ<code>w (w a)</code>を生成する。つまり、それぞれのコンテナが<code>w a</code>内部の異なる<code>a</code>に焦点を合わせているという考え方だ。ライフゲームでは、グリッドのグリッドが得られる。外側のグリッドの各セルには、個別のセルに焦点を合わせた内側のグリッドが含まれている。
         </p>
         <p>
-          次に<code>extend</code>を見てみよう。これは、余Kleisli矢と、複数の<code>a</code>で満たされた<code>w a</code>コモナディックなコンテナを取る。すべての<code>a</code>に計算を適用して<code>b</code>に置き換える。結果は複数の<code>b</code>で満たされたコモナディックなコンテナだ。そのために<code>extend</code>は、焦点を1つの<code>a</code>から別の<code>a</code>にシフトし、それぞれに余Kleisli矢を適用する。ライフゲームでは、余Kleisli矢は現在のセルの新しい状態を計算する。そのために文脈
+          次に<code>extend</code>を見てみよう。これは、余Kleisli矢と、複数の<code>a</code>で満たされたコモナディックなコンテナ<code>w a</code>を取る。そして、すべての<code>a</code>に計算を適用して<code>b</code>に置き換える。結果は複数の<code>b</code>で満たされたコモナディックなコンテナだ。そのために<code>extend</code>は、焦点を合わせる<code>a</code>を次々にシフトしていき、それぞれに余Kleisli矢を適用する。ライフゲームでは、余Kleisli矢は現在のセルの新しい状態を計算する。そのために文脈
           (すなわち最近傍セル)
           に注目する。<code>extend</code>のデフォルト実装はこの過程を示している。まず<code>duplicate</code>を呼び出してすべての可能な焦点を生成し、次にそのそれぞれに<code>f</code>を適用する。
         </p>
         <h2 data-number="23.4" id="streamコモナド"><span class="header-section-number">23.4</span> Streamコモナド</h2>
-        <p>このプロセスではコンテナのある要素から別の要素に焦点が移される。これを最もうまく説明できるのは無限ストリームの例だ。そのようなストリームはリストにそっくりだが、空のコンストラクターがない点が異なる:</p>
+        <p>コンテナ内で焦点を合わせる要素を次々にシフトしていくこのプロセスを最もうまく説明できるのは無限ストリームの例だ。そのようなストリームはリストにそっくりだが、空のコンストラクターがない点が異なる:</p>
         <div class="sourceCode" id="cb487">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb487-1"><a href="#cb487-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Stream</span> a <span class="ot">=</span> <span class="dt">Cons</span> a (<span class="dt">Stream</span> a)</span></code></pre>
@@ -25123,13 +25133,13 @@ construction}.} -->
         </div>
         <p>ただし、これは決してコモナディックなインターフェイスの一部ではない。</p>
         <p>デジタル信号処理の経験があればすぐ分かるとおり、ストリームに対する余Kleisli矢は単なるデジタルフィルタであり、<code>extend</code>はフィルターされたストリームを生成する。</p>
-        <p>簡単な例として、移動平均フィルターを実装してみよう。ストリームの<code>n</code>個の要素を合計する関数を次に示す:</p>
+        <p>簡単な例として、移動平均フィルターを実装してみよう。ストリームの<code>n</code>個の要素を合計する関数はこうなる:</p>
         <div class="sourceCode" id="cb493">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb493-1"><a href="#cb493-1" aria-hidden="true" tabindex="-1"></a><span class="ot">sumS ::</span> <span class="dt">Num</span> a <span class="ot">=&gt;</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Stream</span> a <span class="ot">-&gt;</span> a</span>
 <span id="cb493-2"><a href="#cb493-2" aria-hidden="true" tabindex="-1"></a>sumS n (<span class="dt">Cons</span> a as) <span class="ot">=</span> <span class="kw">if</span> n <span class="op">&lt;=</span> <span class="dv">0</span> <span class="kw">then</span> <span class="dv">0</span> <span class="kw">else</span> a <span class="op">+</span> sumS (n <span class="op">-</span> <span class="dv">1</span>) as</span></code></pre>
         </div>
-        <p>また、ストリームの最初の<code>n</code>要素の平均を計算する関数を次に示す:</p>
+        <p>また、ストリームの最初の<code>n</code>要素の平均を計算する関数はこうなる:</p>
         <div class="sourceCode" id="cb494">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb494-1"><a href="#cb494-1" aria-hidden="true" tabindex="-1"></a><span class="ot">average ::</span> <span class="dt">Fractional</span> a <span class="ot">=&gt;</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Stream</span> a <span class="ot">-&gt;</span> a</span>
@@ -25142,9 +25152,9 @@ construction}.} -->
 <span id="cb495-2"><a href="#cb495-2" aria-hidden="true" tabindex="-1"></a>movingAvg n <span class="ot">=</span> extend (average n)</span></code></pre>
         </div>
         <p>結果は移動平均のストリームとなる。</p>
-        <p>ストリームは単方向の1次元コモナドの例だ。これは簡単に双方向にしたり多次元に拡張したりできる。</p>
+        <p>ストリームは単方向1次元コモナドの例だ。これは簡単に双方向にしたり多次元に拡張したりできる。</p>
         <h2 data-number="23.5" id="圏論から見たコモナド"><span class="header-section-number">23.5</span> 圏論から見たコモナド</h2>
-        <p>圏論でコモナドを定義するのは双対性の簡単な練習になる。モナドと同様に、自己関手<code>T</code>から始めよう。モナドを定義する2つの自然変換<math display="inline"
+        <p>圏論でコモナドを定義することは双対性の平易な練習になる。モナドと同様に、自己関手<code>T</code>から始めよう。モナドを定義する2つの自然変換<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>η</mi>
@@ -25155,7 +25165,7 @@ construction}.} -->
               <mi>μ</mi>
               <annotation encoding="application/x-tex">\mu</annotation>
             </semantics>
-          </math>は、コモナドに対しては単に反転される。</p>
+          </math>は、コモナドでは単に反転される:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mtable>
@@ -25193,7 +25203,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>これらの変換のコンポーネントは、<code>extract</code>および<code>duplicate</code>に対応する。コモナド則は鏡に映ったモナド則だ。これは驚くことではない。</p>
+        <p>これらの変換のコンポーネントは、<code>extract</code>および<code>duplicate</code>に対応する。コモナド則は鏡に映ったモナド則だ。これは驚くようなことではない。</p>
         <p>また、モナドは随伴から導出できる。双対性は随伴を反転させる:
           左随伴と右随伴が入れ替わる。また、合成<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -25298,8 +25308,8 @@ construction}.} -->
               <annotation encoding="application/x-tex">\delta</annotation>
             </semantics>
           </math>が定義され、コモナドの定義が完成する。</p>
-        <p>
-          モナドがモノイドであることもすでに見た。この宣言の双対にはコモナドが必要だが、ではコモノイドとは何だろう?モノイドとは単一対象圏であるという当初の定義を双対化しても、興味深いものは何も得られない。すべての自己準同型を逆向きにすると、別のモノイドが得られる。しかし、思い出してほしい。モナドへのアプローチで用いた定義は、モノイドとはモノイダル圏の対象であるという、より一般化されたものだ。その構成は2つの射に基づいていた:
+        <p>モナドがモノイドであることもすでに見た。この宣言の双対にはコモナドが必要だが、ではコモノイドとは何だろう？
+          モノイドとは単一対象圏である、という当初の定義を双対化しても興味深いものは何も得られない。すべての自己準同型を逆向きにすると別のモノイドが得られる。しかし、思い出してほしい。モナドへのアプローチで用いた定義は、モノイドとはモノイダル圏の対象であるという、より一般化されたものだ。その構成は2つの射に基づいていた:
         </p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -25374,25 +25384,24 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>コモノイドの定義はHaskellで書ける:</p>
+        <p>コモノイドの定義はHaskellで書くと:</p>
         <div class="sourceCode" id="cb496">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb496-1"><a href="#cb496-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> <span class="dt">Comonoid</span> m <span class="kw">where</span></span>
 <span id="cb496-2"><a href="#cb496-2" aria-hidden="true" tabindex="-1"></a><span class="ot">  split   ::</span> m <span class="ot">-&gt;</span> (m, m)</span>
 <span id="cb496-3"><a href="#cb496-3" aria-hidden="true" tabindex="-1"></a><span class="ot">  destroy ::</span> m <span class="ot">-&gt;</span> ()</span></code></pre>
         </div>
-        <p>but it is rather trivial. Obviously <code>destroy</code> ignores its
-          argument.</p>
+        <p>となり、ほぼ自明だ。明らかに<code>destroy</code>は引数を無視する:</p>
         <div class="sourceCode" id="cb497">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb497-1"><a href="#cb497-1" aria-hidden="true" tabindex="-1"></a>destroy _ <span class="ot">=</span> ()</span></code></pre>
         </div>
-        <p><code>split</code>は単に関数のペアだ:</p>
+        <p>また、<code>split</code>は単に関数のペアだ:</p>
         <div class="sourceCode" id="cb498">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb498-1"><a href="#cb498-1" aria-hidden="true" tabindex="-1"></a>split x <span class="ot">=</span> (f x, g x)</span></code></pre>
         </div>
-        <p>ここで、モノイドの単位元則と双対関係にあるコモノイド則について考えてみよう。</p>
+        <p>ここで、モノイドの単位元則と双対関係にあるコモノイド則について考えてみよう:</p>
         <div class="sourceCode" id="cb499">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb499-1"><a href="#cb499-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="op">.</span> bimap destroy <span class="fu">id</span> <span class="op">.</span> split <span class="ot">=</span> <span class="fu">id</span></span>
@@ -25424,7 +25433,7 @@ construction}.} -->
             </semantics>
           </math>圏)
           では、すべての対象が自明にコモナドであることが示される。</p>
-        <p>幸い、コモノイドを定義するには他にもっと興味深いモノイダル圏がある。1つは自己関手からなる圏だ。そこで分かることとして、モナドが自己関手からなる圏におけるモノイドであるのと同様に:</p>
+        <p>幸い、コモノイドを定義するともっと興味深いモノイダル圏も他にある。1つは自己関手からなる圏だ。そこで分かることとして、モナドが自己関手からなる圏におけるモノイドであるのと同様に:</p>
         <blockquote>
           <p>コモナドは自己関手からなる圏におけるコモノイドである。</p>
         </blockquote>
@@ -25508,13 +25517,13 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>
-          これをHaskellに変換するには、左辺の<code>Prod</code>関手と右辺の<code>Reader</code>関手との間の随伴から始める。<code>Prod</code>の前に<code>Reader</code>を合成するのは次の定義と等価だ:
+          これをHaskellに変換するには、左<code>Prod</code>関手と右<code>Reader</code>関手との間の随伴から始める。<code>Reader</code>の後に<code>Prod</code>を合成するのは次の定義と等価だ:
         </p>
         <div class="sourceCode" id="cb502">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb502-1"><a href="#cb502-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Store</span> s a <span class="ot">=</span> <span class="dt">Store</span> (s <span class="ot">-&gt;</span> a) s</span></code></pre>
         </div>
-        <p>対象<code>a</code>におけるこの随伴の余単位は射だ:</p>
+        <p>対象<code>a</code>におけるこの随伴の余単位は次の射だ:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -25668,28 +25677,28 @@ construction}.} -->
           <code>Store</code>の<code>Reader</code>の部分は、型<code>s</code>の要素をキーとする<code>a</code>の総称コンテナと見なせる。たとえば、<code>s</code>が<code>Int</code>なら、<code>Reader Int a</code>は<code>a</code>の無限双方向ストリームだ。<code>Store</code>は、このコンテナとキー型の値とをペアにする。たとえば、<code>Reader Int a</code>は<code>Int</code>とペアになっている。この場合、<code>extract</code>はこの整数を使って無限ストリームにインデックスを作成する。<code>Store</code>の2番目の要素は現在位置と見なせる。
         </p>
         <p>
-          この例について更に述べると、<code>duplicate</code>は<code>Int</code>によって添字付けされた新しい無限ストリームを作成する。このストリームは要素としてストリームを含む。特に、現在位置にはもとのストリームが含まれている。しかし、他の
+          この例についてさらに述べると、<code>duplicate</code>は<code>Int</code>によって添字付けされた新しい無限ストリームを作成する。このストリームは要素としてストリームを含む。特に、現在位置にはもとのストリームが含まれている。しかし、他の
           (正または負の)
           <code>Int</code>をキーとして使うと、新しいインデックスに位置するシフトされたストリームが得られる。
         </p>
         <p>
           一般に、<code>duplicate</code>された<code>Store</code>に<code>extract</code>が作用すると、もとの<code>Store</code>が生成されることを確信できる
-          (実際、コモナドの同一則では<code>extract . duplicate = id</code>と規定されている)。</p>
+          (実際、コモナドの恒等則では<code>extract . duplicate = id</code>と規定されている)。</p>
         <p>
           <code>Store</code>コモナドは<code>Lens</code>ライブラリの理論的基盤として重要だ。概念としては、<code>Store s a</code>コモナドは、型<code>s</code>をインデックスとしてdate型<code>a</code>の特定のサブ構造に
-          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が次の型を取るなら:</p>
+          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型:</p>
         <div class="sourceCode" id="cb509">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb509-1"><a href="#cb509-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> <span class="dt">Store</span> s a</span></code></pre>
         </div>
-        <p>それは以下の関数のペアと等価だ:</p>
+        <p>を取るなら、以下の関数のペアと等価だ:</p>
         <div class="sourceCode" id="cb510">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb510-1"><a href="#cb510-1" aria-hidden="true" tabindex="-1"></a><span class="ot">set ::</span> a <span class="ot">-&gt;</span> s <span class="ot">-&gt;</span> a</span>
 <span id="cb510-2"><a href="#cb510-2" aria-hidden="true" tabindex="-1"></a><span class="ot">get ::</span> a <span class="ot">-&gt;</span> s</span></code></pre>
         </div>
         <p>
-          <code>a</code>が積型である場合、<code>set</code>は、<code>a</code>内の型<code>s</code>のフィールドをセットする一方で、<code>a</code>の変更されたバージョンを返すように実装できる。同様に、<code>get</code>は、<code>s</code>フィールドの値を<code>a</code>から読み取るように実装できる。これらの考え方については次章で詳しく説明する。
+          <code>a</code>が直積型である場合の<code>set</code>は、<code>a</code>内の型<code>s</code>のフィールドをセットする一方で、<code>a</code>の変更されたバージョンを返すように実装できる。同様に、<code>get</code>は<code>s</code>フィールドの値を<code>a</code>から読み取るように実装できる。これらの考え方については次章で詳しく説明する。
         </p>
         <h2 data-number="23.7" id="課題-17"><span class="header-section-number">23.7</span> 課題</h2>
         <ol type="1">
@@ -26151,7 +26160,7 @@ construction}.} -->
               <mi>f</mi>
               <annotation encoding="application/x-tex">f</annotation>
             </semantics>
-          </math>を無限回適用しているので、更にもう1回適用しても何も変わらない、という直観がある。Haskellでは、不動点の定義は次のようになる:</p>
+          </math>を無限回適用しているので、さらにもう1回適用しても何も変わらない、という直観がある。Haskellでは、不動点の定義は次のようになる:</p>
         <div class="sourceCode" id="cb520">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb520-1"><a href="#cb520-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">Fix</span> f <span class="ot">=</span> <span class="dt">Fix</span> (f (<span class="dt">Fix</span> f))</span></code></pre>
@@ -27569,8 +27578,7 @@ construction}.} -->
               </msup>
               <annotation encoding="application/x-tex">U^T</annotation>
             </semantics>
-          </math>の左随伴であることを示す。そのために、この随伴の単位と余単位を定義し、対応する恒等射の三角形が満たされているのを証明する。次に、この随伴によって生成されるモナドが、実際にもとのモナドであることを示す。
-        </p>
+          </math>の左随伴であることを示す。そのために、この随伴の単位と余単位を定義し、対応する三角恒等式が満たされているのを証明する。次に、この随伴によって生成されるモナドが、実際にもとのモナドであることを示す。</p>
         <p>随伴の単位は次の自然変換だ:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -27803,7 +27811,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">f</annotation>
             </semantics>
           </math>と定義した。</p>
-        <p>随伴を完成させるには、単位と余単位が恒等射の三角形を満たすことも示す必要がある。それらの三角形はこうだ:</p>
+        <p>随伴を完成させるには、単位と余単位が三角恒等式を満たすことも示す必要がある。それらの三角形はこうだ:</p>
         <p><img src="images/talg4.png" /></p>
         <p>最初のものはモナド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -30221,10 +30229,9 @@ construction}.} -->
         <p>予想通り、エンドの双対はコエンドと呼ばれる。それは余くさび (cowedge)
           と呼ばれるくさびの双対で構成されている。(cowedgeの発音はco-wedgeで、cow-edgeではない。)</p>
         <figure>
-          <img src="images/end-31.jpg" title="エッジの効いた牛 (edgy cow) ?" style="width:25.0%"
-            alt="エッジの効いた牛 (An edgy cow) ?" />
-          <figcaption aria-hidden="true">エッジの効いた牛 (An edgy cow)
-            ?</figcaption>
+          <img src="images/end-31.jpg" title="エッジの効いた牛 (edgy cow)？" style="width:25.0%" alt="エッジの効いた牛 (An edgy cow)？" />
+          <figcaption aria-hidden="true">エッジの効いた牛 (An edgy
+            cow)？</figcaption>
         </figure>
         <p>コエンドの記号は、上付きの「積分変数」を添えた積分記号だ:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -37070,8 +37077,7 @@ construction}.} -->
             </semantics>
           </math>内の関数に対応する射以外の射も含むことがある
           (後者は<span id="basic_product_operation" class="keyword">基本的な積操作</span> (basic product operation)
-          とも呼ばれる)。Lawvere理論の等式的規則 (equational law)
-          は、これらの射に符号化される。</p>
+          とも呼ばれる)。Lawvere理論の等式的規則は、これらの射に符号化される。</p>
         <p>鍵となる観察は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐅</mi>
