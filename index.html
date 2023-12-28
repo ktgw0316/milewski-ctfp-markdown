@@ -22006,7 +22006,7 @@ construction}.} -->
           </math>の埋め込みが、左辺のモノイドの埋め込みを一意に決定し、またその逆も成り立つことを示している。</p>
         <p>Haskellでは、リストのデータ構造は自由モノイドだ
           (ただし、注意点がいくつかある: <a href="http://comonad.com/reader/2015/free-monoids-in-haskell/">Dan
-            Doelのブログ記事</a>を参照)。リスト型<code>[a]</code>は自由モノイドであり、型<code>a</code>は生成元の集合を表す。たとえば、型<code>[Char]</code>には、単位要素――空リスト<code>[]</code>――と、<code>['a']</code>、<code>['b']</code>のような単要素リスト――自由モノイドの生成元が含まれている。残りは「積」を適用して生成される。ここでは、2つのリストの積は単に片方をもう片方に連結するだけだ。連結は結合的で単位的
+            Doelのブログ記事</a>を参照)。リスト型<code>[a]</code>は自由モノイドであり、型<code>a</code>は生成元の集合を表す。たとえば、型<code>[Char]</code>には、単位元――空リスト<code>[]</code>――と、<code>['a']</code>、<code>['b']</code>のような単要素リスト――自由モノイドの生成元が含まれている。残りは「積」を適用して生成される。ここでは、2つのリストの積は単に片方をもう片方に連結するだけだ。連結は結合的で単位的
           (unital) だ
           (つまり、中立元が存在する――ここでは空リストだ)。<code>Char</code>によって生成される自由モノイドは、<code>Char</code>からなるすべての文字列の集合に他ならない。これはHaskellでは<code>String</code>と呼ばれる:
         </p>
@@ -24091,7 +24091,7 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>ただし、問題が1つある:
-          任意の圏では対象の内部を覗き見られないのに、どうすれば単位要素を選択できるだろう？
+          任意の圏では対象の内部を覗き見られないのに、どうすれば単位元を選択できるだろう？
           そのためのトリックがある。要素選択が単集合からの関数と等価である仕組みを覚えているだろうか？
           Haskellでは、<code>mempty</code>の定義を次の関数に置き換えられた:</p>
         <div class="sourceCode" id="cb452">
@@ -25711,14 +25711,13 @@ construction}.} -->
           </li>
         </ol>
         <h1 data-number="24" id="f-代数"><span class="header-section-number">24</span> F-代数</h1>
-        <p>モノイドの定式化をいくつか見てきた:
-          集合として、単一対象圏として、モノイダル圏の対象として。この単純な概念からどれだけ多くのジュースを搾り出せるだろうか？</p>
-        <p>やってみよう。モノイドのこの定義を、関数のペアを持つ集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>モノイドについて、集合として、単一対象圏として、モノイダル圏の対象としての定式化を見てきた。この単純な概念からどれだけの果汁をさらに搾り取れるだろうか？</p>
+        <p>やってみよう。次の関数のペアを持つ集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>とする。</p>
+          </math>としてのモノイドの定義を取り上げる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mtable>
@@ -25772,7 +25771,7 @@ construction}.} -->
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>から単位要素を選択する。これらのシグネチャを持つ2つの関数ならどれでもモノイドになるわけではない。結合則と単位元則という追加の条件を課す必要がある。しかし、それについてはしばらく忘れて「潜在的なモノイド」について考えてみよう。関数のペアは、2つの関数集合のカルテシアン積の要素だ。これらの集合が冪乗対象として表現できるのは知っている:
+          </math>から単位元を選択する。これらのシグネチャを持つ2つの関数ならどれでもモノイドになるわけではない。結合則と単位元則という追加の条件を課す必要がある。しかし、それはしばらく忘れて「潜在的なモノイド」について考えてみよう。関数のペアは、2つの関数集合のカルテシアン積の要素だ。これらの集合が冪乗対象として表現できるのは知っている:
         </p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -25870,7 +25869,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\symbf{Set}</annotation>
             </semantics>
-          </math>の余積を表す:ここでは、関数のペアを次のような単一の関数――集合の要素――に置き換えた:</p>
+          </math>の余積を表す。ここで、関数のペアを次のような単一の関数――集合の要素――に置き換える:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -25956,15 +25955,14 @@ construction}.} -->
         <p>1つの二項演算子 (加算)、1つの単項演算子 (否定)、1つの零項演算子
           (恒等射――ここでは0)
           から始めた。そして、それらを1つの関数に結合した。このシグネチャを持つすべての関数は、潜在的な群を定義する。</p>
-        <p>We can go on like this.
-          たとえば、環を定義するにはもう1つの二項演算子と1つの零項演算子を追加する、などだ。毎回、左辺が冪乗の合計
+        <p>同様のことを続けられる。たとえば、環を定義するにはもう1つの二項演算子と1つの零項演算子を追加する、などだ。毎回、左辺が冪乗の和
           (0乗――終対象――を含んでよい)
           であり、右辺が集合自体である関数型が得られる。</p>
         <p>きっと一般化に夢中になってしまうだろう。まず、集合を対象に、関数を射に置き換えられる。n項演算子は、n項積からの射として定義できる。これは有限積
           (finite product)
           をサポートする圏が必要であることを意味する。零項演算子については、終対象が存在する必要がある。したがって、カルテシアン圏が必要だ。これらの演算子を結合するには冪乗が必要なので、必要なのはカルテシアン閉圏だ。最終的に、この代数的な悪ふざけを完成させるには、余積が必要になる。
         </p>
-        <p>あるいは、式の導出方法を忘れて、最終的な積に集中することもできる。射の左側にある積の合計が自己関手を定義する。代わりに任意の自己関手<math display="inline"
+        <p>あるいは、式の導出方法を忘れて、最終的な積に集中することもできる。射の左側にある積の和が自己関手を定義する。代わりに任意の自己関手<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>F</mi>
@@ -26004,7 +26002,7 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb511-1"><a href="#cb511-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Algebra</span> f a <span class="ot">=</span> f a <span class="ot">-&gt;</span> a</span></code></pre>
         </div>
-        <p>これは代数をその評価関数で識別する。</p>
+        <p>代数はその評価関数で識別される。</p>
         <p>モノイドの例では、問題の関手は次のようになる:</p>
         <div class="sourceCode" id="cb512">
           <pre
@@ -26055,10 +26053,10 @@ construction}.} -->
               <annotation encoding="application/x-tex">1 + 1 + a \times{}a + a \times{}a + a</annotation>
             </semantics>
           </math>を表したものだ。</p>
-        <p>環の例としては整数の集合が挙げられる。<code>Integer</code>をキャリア型に選んで、評価関数を次のように定義できる。</p>
+        <p>環の例としては整数の集合が挙げられる。<code>Integer</code>をキャリア型に選ぶと、評価関数を次のように定義できる。</p>
         <div class="sourceCode" id="cb514">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb514-1"><a href="#cb514-1" aria-hidden="true" tabindex="-1"></a><span class="ot">evalZ ::</span> <span class="op">**</span><span class="dt">Algebra</span><span class="op">**</span> <span class="dt">RingF</span> <span class="dt">Integer</span></span>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb514-1"><a href="#cb514-1" aria-hidden="true" tabindex="-1"></a><span class="ot">evalZ ::</span> <span class="dt">Algebra</span> <span class="dt">RingF</span> <span class="dt">Integer</span></span>
 <span id="cb514-2"><a href="#cb514-2" aria-hidden="true" tabindex="-1"></a>evalZ <span class="dt">RZero</span>      <span class="ot">=</span> <span class="dv">0</span></span>
 <span id="cb514-3"><a href="#cb514-3" aria-hidden="true" tabindex="-1"></a>evalZ <span class="dt">ROne</span>       <span class="ot">=</span> <span class="dv">1</span></span>
 <span id="cb514-4"><a href="#cb514-4" aria-hidden="true" tabindex="-1"></a>evalZ (<span class="dt">RAdd</span> m n) <span class="ot">=</span> m <span class="op">+</span> n</span>
@@ -26087,9 +26085,9 @@ construction}.} -->
 <span id="cb516-5"><a href="#cb516-5" aria-hidden="true" tabindex="-1"></a>evalZ (<span class="dt">RMul</span> e1 e2) <span class="ot">=</span> evalZ e1 <span class="op">*</span> evalZ e2</span>
 <span id="cb516-6"><a href="#cb516-6" aria-hidden="true" tabindex="-1"></a>evalZ (<span class="dt">RNeg</span> e)     <span class="ot">=</span> <span class="op">-</span>(evalZ e)</span></code></pre>
         </div>
-        <p>これはまだあまり実用的ではない。なぜなら、すべての整数を1の和として表現することを強制されているからだ。もっとも、緊急時には十分だ。</p>
-        <p>しかし、F-代数の言葉で式ツリーを記述するにはどうすればよいだろうか？
-          関手の定義における自由型変数を再帰的に置換の結果で置き換えるプロセスを、何らかの形で形式化する必要がある。これを段階的に行うことを想像してほしい。まず、深さ1の木を次のように定義する:</p>
+        <p>これはまだあまり実用的ではない。すべての整数を1の和で表現するのが強制されているからだ。もっとも、緊急用には役立つ。</p>
+        <p>それにしても、F-代数の言葉で式木を記述するにはどうすればよいだろうか？
+          関手の定義において、自由型変数を再帰的に置換の結果で置き換えるプロセスを、何らかの形で形式化する必要がある。これを段階的に行うことを想像してほしい。まず、深さ1の木を次のように定義する:</p>
         <div class="sourceCode" id="cb517">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb517-1"><a href="#cb517-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">RingF1</span> a <span class="ot">=</span> <span class="dt">RingF</span> (<span class="dt">RingF</span> a)</span></code></pre>
@@ -26258,8 +26256,8 @@ construction}.} -->
               <mi>b</mi>
               <annotation encoding="application/x-tex">b</annotation>
             </semantics>
-          </math>へ向かう射――と定義する。どの射でもいいわけではない:
-          2つの評価子と互換性がなければならない。(そのような構造保存射を<span id="homomorphism" class="keyword">準同型</span>と呼ぶ。)
+          </math>へ向かう射――と定義する。どの射でもいいわけではなく、2つの評価子と互換性がなければならない。(そのような構造保存射を<span id="homomorphism"
+            class="keyword">準同型</span>と呼ぶ。)
           F-代数の準同型を定義する方法は次のとおりだ。まず、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>m</mi>
@@ -26285,29 +26283,22 @@ construction}.} -->
               <annotation encoding="application/x-tex">F\ m \Colon F\ a \to F\ b</annotation>
             </semantics>
           </math></p>
-        <p>we can then follow it with
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>それから<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>g</mi>
               <annotation encoding="application/x-tex">g</annotation>
             </semantics>
-          </math>
-          to get to
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を辿ると<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>b</mi>
               <annotation encoding="application/x-tex">b</annotation>
             </semantics>
-          </math>.
-          Equivalently, we can use
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に行き着く。同様に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>f</mi>
               <annotation encoding="application/x-tex">f</annotation>
             </semantics>
-          </math>
-          to go from
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を使って<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>F</mi>
@@ -26316,23 +26307,17 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">F\ a</annotation>
             </semantics>
-          </math>
-          to
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
-          </math>
-          and then follow it with
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に移ってから<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>.
-          2つの経路が等しくなるようにしたい:
-        </p>
+          </math>を辿ってもよい。2つの経路が等しくなるようにしたい:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -26658,18 +26643,18 @@ construction}.} -->
               <mi>i</mi>
               <annotation encoding="application/x-tex">i</annotation>
             </semantics>
-          </math>は<code>Fix f</code>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>は<code>Fix f</code>で、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>j</mi>
               <annotation encoding="application/x-tex">j</annotation>
             </semantics>
-          </math>はコンストラクター<code>Fix</code>、その逆は<code>unFix</code>だと認識している。Lambekの定理における同型からは、始代数を得るには、関手<math
+          </math>はコンストラクター<code>Fix</code>、その逆は<code>unFix</code>だと理解している。Lambekの定理における同型からは、始代数を得るには関手<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>f</mi>
               <annotation encoding="application/x-tex">f</annotation>
             </semantics>
-          </math>を取り、その引数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>を取って引数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
@@ -26724,7 +26709,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>最初のものは0を選択し、2番目のものはすべての数をその次の数に写す。前と同じように、この2つは1つにまとめられる:</p>
+        <p>1番目は0を選択し、2番目はすべての数をその次の数に写す。前と同じように、この2つは1つにまとめられる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -26751,12 +26736,12 @@ construction}.} -->
         <p>自然数は、0か、ある数の次の数かのどちらかだ。これは自然数のPeano表現として知られている。</p>
         <h2 data-number="24.4" id="カタモルフィズム"><span class="header-section-number">24.4</span> カタモルフィズム</h2>
         <p>
-          Haskellの表記で初期条件を書き直してみよう。始代数を<code>Fix f</code>と呼ぶ。その評価子はコンストラクター<code>Fix</code>だ。始代数から他の任意の代数への一意な射<code>m</code>が同じ関手上に存在する。台が<code>a</code>であり評価子が<code>alg</code>である代数を選択しよう。
+          Haskellの表記で初期条件を書き直してみよう。始代数は<code>Fix f</code>と呼ばれる。その評価子はコンストラクター<code>Fix</code>だ。始代数から他の任意の代数への一意な射<code>m</code>が同じ関手上に存在する。台が<code>a</code>であり評価子が<code>alg</code>である代数を選択しよう。
         </p>
         <p><a href="images/alg5.png" width="40%"><img src="images/alg5.png" alt="alg5" /></a></p>
-        <p>ところで、<code>m</code>が何なのかに注意してほしい:
+        <p>ところで、<code>m</code>が何なのかに注目してほしい:
           これは不動点の評価子であり、再帰的な式木全体の評価子だ。これを実装するための汎用的な方法を探そう。</p>
-        <p>Lambekの定理はコンストラクター<code>Fix</code>が同型射であることを示している。その逆は<code>unFix</code>と呼ばれる。したがって、この図式で矢印の1つを反転すると次のようになる:
+        <p>Lambekの定理はコンストラクター<code>Fix</code>が同型射であることを示している。その逆は<code>unFix</code>と呼ばれる。したがって、この図式で矢印の1つを反転して次のようにできる:
         </p>
         <p><a href="images/alg6.png" width="40%"><img src="images/alg6.png" alt="alg6" /></a></p>
         <p>この図式の可換条件を書こう:</p>
@@ -26765,10 +26750,10 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb526-1"><a href="#cb526-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">=</span> alg <span class="op">.</span> <span class="fu">fmap</span> m <span class="op">.</span> unFix</span></code></pre>
         </div>
         <p>
-          この方程式は<code>m</code>の再帰的な定義として解釈できる。再帰は、関手<code>f</code>を使って作成されたすべての有限木に対して停止する。そのことは、<code>fmap m</code>が関手<code>f</code>の最上層の下で動作することに着目すれば分かる。言い換えると、それはもとの木の子に対して機能する。子は常にもとの木より1レベル浅くなる。
+          この方程式は<code>m</code>の再帰的な定義として解釈できる。再帰は関手<code>f</code>を使って作成されたすべての有限木に対して停止する。そのことは、<code>fmap m</code>が関手<code>f</code>の最上層の下で動作することに着目すれば分かる。言い換えると、それはもとの木の子に対して機能する。子は常にもとの木より1レベル浅くなる。
         </p>
         <p>
-          <code>Fix f</code>を使って構築された木に<code>m</code>を適用すると、次のようになる。<code>unFix</code>の作用によってコンストラクターが剥がれ、木の最上位があらわになる。次に、最上位ノードのすべての子に<code>m</code>を適用する。それにより、型<code>a</code>の結果が生成される。最後に、非再帰的評価子<code>alg</code>を適用して、これらの結果を結合する。重要な点は、評価子<code>alg</code>が単純な非再帰関数であることだ。
+          <code>Fix f</code>を使って構築された木に<code>m</code>を適用するとどうなるか述べよう。まず、<code>unFix</code>の作用によってコンストラクターが剥がれ、木の最上位があらわになる。次に、最上位ノードのすべての子に<code>m</code>を適用する。それにより、型<code>a</code>の結果が生成される。最後に、非再帰的評価子<code>alg</code>を適用することで、これらの結果を結合する。重要な点は、評価子<code>alg</code>が単純な非再帰関数であることだ。
         </p>
         <p>これは任意の代数<code>alg</code>に対して行えるので、代数をパラメーターに取って<code>m</code>と呼ばれる関数を返す高階関数を定義することは意味がある。この高階関数はカタモルフィズム
           (catamorphism) と呼ばれる。</p>
@@ -26777,7 +26762,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb527-1"><a href="#cb527-1" aria-hidden="true" tabindex="-1"></a><span class="ot">cata ::</span> <span class="dt">Functor</span> f <span class="ot">=&gt;</span> (f a <span class="ot">-&gt;</span> a) <span class="ot">-&gt;</span> <span class="dt">Fix</span> f <span class="ot">-&gt;</span> a</span>
 <span id="cb527-2"><a href="#cb527-2" aria-hidden="true" tabindex="-1"></a>cata alg <span class="ot">=</span> alg <span class="op">.</span> <span class="fu">fmap</span> (cata alg) <span class="op">.</span> unFix</span></code></pre>
         </div>
-        <p>その例を見てみよう。自然数を定義する関手を例にとる:</p>
+        <p>例を見てみよう。自然数を定義する関手を考える:</p>
         <div class="sourceCode" id="cb528">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb528-1"><a href="#cb528-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">NatF</span> a <span class="ot">=</span> <span class="dt">ZeroF</span> <span class="op">|</span> <span class="dt">SuccF</span> a</span></code></pre>
@@ -26803,7 +26788,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb531-1"><a href="#cb531-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">List</span> e <span class="ot">=</span> <span class="dt">Nil</span> <span class="op">|</span> <span class="dt">Cons</span> e (<span class="dt">List</span> e)</span></code></pre>
         </div>
         <p>
-          list関手の代数は、台の特定の型を選択し、2つのコンストラクターについてパターンマッチングを行う関数を定義する。<code>NilF</code>に対するその値は、空リストを評価する方法を示す。また、<code>ConsF</code>に対する値は、現在の要素をそれ以前の累積値と組み合わせる方法を示す。
+          list関手の代数は、台の特定の型を選択し、2つのコンストラクターについてパターンマッチングを行う関数を定義する。<code>NilF</code>に対するその値は、空リストを評価する方法を表す。また、<code>ConsF</code>に対する値は、現在の要素をそれ以前の累積値と組み合わせる方法を表す。
         </p>
         <p>例として、リストの長さを計算するために使える代数を次に示す
           (台の型は<code>Int</code>だ):</p>
@@ -26830,7 +26815,7 @@ construction}.} -->
 <span id="cb534-2"><a href="#cb534-2" aria-hidden="true" tabindex="-1"></a>sumAlg (<span class="dt">ConsF</span> e s) <span class="ot">=</span> e <span class="op">+</span> s</span>
 <span id="cb534-3"><a href="#cb534-3" aria-hidden="true" tabindex="-1"></a>sumAlg <span class="dt">NilF</span> <span class="ot">=</span> <span class="fl">0.0</span></span></code></pre>
         </div>
-        <p>再び、これを次と比較する:</p>
+        <p>再び、これを次のものと比較する:</p>
         <div class="sourceCode" id="cb535">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb535-1"><a href="#cb535-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span> <span class="ot">=</span> <span class="fu">foldr</span> (\e s <span class="ot">-&gt;</span> e <span class="op">+</span> s) <span class="fl">0.0</span></span></code></pre>
@@ -26879,7 +26864,7 @@ construction}.} -->
           では、次の図式を可換にする一意な準同型<code>m</code>が存在する:
         </p>
         <p><a href="images/alg7.png" width="40%"><img src="images/alg7.png" alt="alg7" /></a></p>
-        <p>射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>終余代数はその関手の不動点であり、射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>u</mi>
@@ -26892,9 +26877,8 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">u \Colon t \to F\ t</annotation>
             </semantics>
-          </math>は同型である
-          (余代数に関するLambekの定理)
-          という意味で、終余代数はその関手の不動点だ。</p>
+          </math>が同型射である
+          (余代数に関するLambekの定理) ことを意味する:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -26909,7 +26893,8 @@ construction}.} -->
           </math></p>
         <p>終余代数は通常、プログラミングでは、(無限であってもよい)
           データ構造または遷移系を生成するためのレシピとして解釈される。</p>
-        <p>始代数の評価にカタモルフィズムが使えるのと同様に、終余代数の余評価にはアナモルフィズムが使える。</p>
+        <p>始代数の評価にカタモルフィズムが使えるのと同様に、終余代数の余評価にはアナモルフィズム
+          (anamorphism) が使える:</p>
         <div class="sourceCode" id="cb536">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb536-1"><a href="#cb536-1" aria-hidden="true" tabindex="-1"></a><span class="ot">ana ::</span> <span class="dt">Functor</span> f <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> f a) <span class="ot">-&gt;</span> a <span class="ot">-&gt;</span> <span class="dt">Fix</span> f</span>
@@ -26927,10 +26912,10 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb538-1"><a href="#cb538-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Stream</span> e <span class="ot">=</span> <span class="dt">Stream</span> e (<span class="dt">Stream</span> e)</span></code></pre>
         </div>
         <p><code>StreamF e</code>の余代数は、型<code>a</code>のシードを取り、ある要素と次のシードからなるペアを生成する関数だ
-          (<code>StreamF</code>はペアのファンシーな名前だ)。</p>
+          (ペアを<code>StreamF</code>というファンシーな名前で呼んでいる)。</p>
         <p>無限数列を生成する余代数の簡単な例はすぐ生成できる。たとえば、自乗や逆数などのリストだ。</p>
         <p>
-          もっと興味深い例としては、素数のリストを生成する余代数がある。秘訣は、無限リストを台として使うことだ。最初のシードはリスト<code>[2..]</code>になる。次のシードはこのリストの尾部から2の倍数をすべて除いたものになる。これは奇数のリストであり、3から始まる。次の段階では、このリストの尾部を取って3の倍数をすべて除く。エラトステネスの篩を作っているのに気付いただろう。この余代数は次の関数で実装される:
+          もっと興味深い例としては、素数のリストを生成する余代数がある。無限リストを台として使うのが秘訣だ。最初のシードはリスト<code>[2..]</code>になる。次のシードはこのリストの尾部から2の倍数をすべて除いたものになる。これは奇数のリストであり、3から始まる。次の段階では、このリストの尾部を取って3の倍数をすべて除く。エラトステネスの篩を作っているのに気付いただろう。この余代数は次の関数で実装される:
         </p>
         <div class="sourceCode" id="cb539">
           <pre
@@ -26944,7 +26929,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb540-1"><a href="#cb540-1" aria-hidden="true" tabindex="-1"></a>primes <span class="ot">=</span> ana era [<span class="dv">2</span><span class="op">..</span>]</span></code></pre>
         </div>
         <p>
-          ストリームは無限リストなので、Haskellのリストに変換できるはずだ。そのためには、同じ関手<code>StreamF</code>を使って代数を形成でき、その上でカタモルフィズムを実行できる。たとえば、次のカタモルフィズムはストリームをリストに変換する:
+          ストリームは無限リストなので、Haskellのリストに変換できるはずだ。そのためには、同じ関手<code>StreamF</code>を使って代数を形成したうえでカタモルフィズムを実行すればよい。たとえば、次のカタモルフィズムはストリームをリストに変換する:
         </p>
         <div class="sourceCode" id="cb541">
           <pre
@@ -26953,8 +26938,8 @@ construction}.} -->
 <span id="cb541-3"><a href="#cb541-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">where</span><span class="ot"> al ::</span> <span class="dt">StreamF</span> e [e] <span class="ot">-&gt;</span> [e]</span>
 <span id="cb541-4"><a href="#cb541-4" aria-hidden="true" tabindex="-1"></a>         al (<span class="dt">StreamF</span> e a) <span class="ot">=</span> e <span class="op">:</span> a</span></code></pre>
         </div>
-        <p>ここでは、同じ不動点が同じ自己関手の始代数でもあり終余代数でもある。このことは、任意の圏でいつも成り立つわけでない。一般に、自己関手には不動点が多数ありうる
-          (不動点がないこともある)。始代数はいわゆる最小不動点で、終余代数は最大不動点だ。ただし、Haskellでは、両方とも同じ式で定義され、一致する。</p>
+        <p>ここでは、同じ不動点が同じ自己関手の始代数でもあり終余代数でもある。これは任意の圏でいつも成り立つわけでない。一般に、自己関手には不動点が多数ありうる
+          (不動点がないこともある)。始代数はいわゆる最小不動点で、終余代数は最大不動点だ。ただし、Haskellでは両方とも同じ式で定義され、一致する。</p>
         <p>リストのアナモルフィズムはunfoldと呼ばれる。有限リストを作成するには、関手を改変して<code>Maybe</code>のペアを作成する:</p>
         <div class="sourceCode" id="cb542">
           <pre
@@ -37272,7 +37257,7 @@ construction}.} -->
               <mi>n</mi>
               <annotation encoding="application/x-tex">n</annotation>
             </semantics>
-          </math>項演算を定義するものだ。それらの射によって、Lawvere理論は他の理論とは別物になっている。それらは乗算・加算・単位要素の選択などで、代数を定義する。しかし、<math display="inline"
+          </math>項演算を定義するものだ。それらの射によって、Lawvere理論は他の理論とは別物になっている。それらは乗算・加算・単位元の選択などで、代数を定義する。しかし、<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐋</mi>
