@@ -25412,7 +25412,7 @@ construction}.} -->
 <span id="cb499-2"><a href="#cb499-2" aria-hidden="true" tabindex="-1"></a>rho <span class="op">.</span> bimap <span class="fu">id</span> destroy <span class="op">.</span> split <span class="ot">=</span> <span class="fu">id</span></span></code></pre>
         </div>
         <p>ここで、<code>lambda</code>は左単位子で<code>rho</code>は右単位子だ
-          (<a href="#monad-categorically">モノイダル圏</a>の定義を参照)。これらの定義を挿入すると:</p>
+          (<a href="#monad-categorically">モノイダル圏</a>の定義を参照)。これらの定義を代入すると:</p>
         <div class="sourceCode" id="cb500">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb500-1"><a href="#cb500-1" aria-hidden="true" tabindex="-1"></a>lambda (bimap destroy <span class="fu">id</span> (split x))</span>
@@ -26193,7 +26193,7 @@ construction}.} -->
               <mi>F</mi>
               <annotation encoding="application/x-tex">F</annotation>
             </semantics>
-          </math>における代数は圏を形成する。その圏の対象は代数だ――台となる対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>における代数は圏を形成する。その圏の対象は代数だ――台対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
@@ -27042,7 +27042,7 @@ construction}.} -->
           もし自己関手を式の定義方法だと解釈するなら、代数は式の評価、モナドは式の形成と操作だということになる。代数とモナドを組み合わせることで、多くの機能が得られるだけでなく、いくつかの興味深い質問にも答えられる。そのような疑問の1つはモナドと随伴の関係に関するものだ。これまで見てきたように、すべての随伴はモナド
           (およびコモナド) を<a href="#monads-categorically">定義する</a>。問題は、すべてのモナド
           (コモナド)
-          は随伴から導出できるのかということだ。答えは肯定的だ。任意のモナドを生成する随伴の族が存在する。そのような随伴を2つ紹介する。</p>
+          は随伴から導出できるのかということだ。できる、というのが答えだ。任意のモナドを生成する随伴の族が存在する。そのような随伴を2つ紹介する。</p>
         <p><img src="images/pigalg.png" style="width:25.0%" /></p>
         <p>定義を確認しよう。モナドは、あるコヒーレンス条件を満たす2つの自然変換を伴う自己関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -27268,7 +27268,7 @@ construction}.} -->
 <span id="cb547-2"><a href="#cb547-2" aria-hidden="true" tabindex="-1"></a>alg <span class="op">.</span> join <span class="ot">=</span> alg <span class="op">.</span> <span class="fu">fmap</span> alg</span></code></pre>
         </div>
         <p>
-          簡単な例を見てみよう。リスト自己関手の代数は、ある型<code>a</code>と、<code>a</code>のリストから<code>a</code>を生成する関数とで構成される。この関数は<code>foldr</code>を使って表せる。そのためには、要素の型とアキュムレータの型の両方を<code>a</code>に等しくなるように選ぶ:
+          簡単な例を見てみよう。リスト自己関手の代数は、ある型<code>a</code>と、<code>a</code>のリストから<code>a</code>を生成する関数とで構成される。この関数は<code>foldr</code>を使って表せる。そのためには、要素の型とアキュムレータの型を、両方とも同じ<code>a</code>になるように選ぶ:
         </p>
         <div class="sourceCode" id="cb548">
           <pre
@@ -27288,7 +27288,7 @@ construction}.} -->
         </div>
         <p><code>f</code>を二項演算子と見なすと、この条件は<code>z</code>が右単位元であることを示している。</p>
         <p>
-          第2のコヒーレンス条件は、リストのリストに対して作用する。<code>join</code>の作用は個々のリストを連結する。その後で結果のリストを畳み込める。一方で、まず個々のリストを畳み込み、次に結果のリストを畳み込むこともできる。ここでも、<code>f</code>を二項演算子と見なすと、この条件はその二項演算の結合性を示している。これらの条件は<code>(a, f, z)</code>がモノイドである場合には確実に満たされる。
+          第2のコヒーレンス条件は、リストのリストに対して作用する。<code>join</code>の作用は個々のリストを連結する。その後で結果のリストを畳み込めばよい。一方で、まず個々のリストを畳み込み、次に結果のリストを畳み込んでもよい。ここでも、<code>f</code>を二項演算子と見なすと、この条件はその二項演算の結合性を示している。これらの条件は<code>(a, f, z)</code>がモノイドである場合には確実に満たされる。
         </p>
         <h2 data-number="25.1" id="t-代数"><span class="header-section-number">25.1</span> T-代数</h2>
         <p>数学者はモナドを<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -27527,7 +27527,7 @@ construction}.} -->
               <mi>μ</mi>
               <annotation encoding="application/x-tex">\mu</annotation>
             </semantics>
-          </math>を代数にプラグインするなら、これらはモナド則にすぎない。</p>
+          </math>を代数に代入すれば、これらはモナド則にすぎない。</p>
         <p>ご存知のように、すべての随伴はモナドを定義する。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <msup>
@@ -27594,7 +27594,7 @@ construction}.} -->
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
-          </math>コンポーネントを計算してみよう。恒等関手によって<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>におけるコンポーネントを計算してみよう。恒等関手によって<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
@@ -27764,7 +27764,7 @@ construction}.} -->
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
-          </math>に写す必要がある。忘れてられた評価子<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に写す必要がある。忘れられた評価子<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>f</mi>
               <annotation encoding="application/x-tex">f</annotation>
@@ -27800,7 +27800,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">f</annotation>
             </semantics>
           </math>と定義した。</p>
-        <p>随伴を完成させるには、単位と余単位が三角恒等式を満たすことも示す必要がある。それらの三角形はこうだ:</p>
+        <p>随伴を完成させるには、単位と余単位が三角恒等式を満たすことも示す必要がある。それらの三角形はこう描ける:</p>
         <p><img src="images/talg4.png" /></p>
         <p>最初のものはモナド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -27900,7 +27900,7 @@ construction}.} -->
               </msup>
               <annotation encoding="application/x-tex">U^T</annotation>
             </semantics>
-          </math>は評価子を削除する。したがって、実際に、次が得られる:
+          </math>は評価子を削除する。したがって、確かに次が得られる:
         </p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -27926,7 +27926,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">T</annotation>
             </semantics>
           </math>の単位だ。</p>
-        <p>随伴の余単位は、次の式を使ってモナディックな乗算を生成することを覚えているだろう:</p>
+        <p>随伴の余単位では次の式からモナディックな乗算が生成されるのを覚えているだろう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -28665,7 +28665,7 @@ construction}.} -->
               </msup>
               <annotation encoding="application/x-tex">U^W</annotation>
             </semantics>
-          </math>が存在する。それは余評価だけを忘れている。その右随伴<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>が存在する。それはただ余評価を忘れている。その右随伴<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <msup>
                 <mi>F</mi>
@@ -28673,7 +28673,7 @@ construction}.} -->
               </msup>
               <annotation encoding="application/x-tex">F^W</annotation>
             </semantics>
-          </math>を検討しよう。</p>
+          </math>について考えよう。</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -28729,7 +28729,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">(W\ a, \delta_a)</annotation>
             </semantics>
           </math>
-          を割り当てる。随伴はもとのコモナドをコンポジット<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          を割り当てる。随伴はもとのコモナドを合成<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <msup>
@@ -28847,7 +28847,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">s</annotation>
             </semantics>
           </math>はその「小さな」(small)
-          一部だと考えてほしい)。このペアに関しては、次のようなものがある:</p>
+          一部だと考えてほしい)。このペアに関して、次が成り立つ:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -29131,7 +29131,7 @@ construction}.} -->
               <mi>b</mi>
               <annotation encoding="application/x-tex">b</annotation>
             </semantics>
-          </math>への射があれば、2つの対象には何らかの「関連がある」というものだ。射は、ある意味で、この関係の証明だ。すべてのポセット圏では射が関係<em>である</em>ので、それは一目瞭然だ。一般に、2つの対象間での同じ関係の「証明」は複数存在しうる。それらの証明はhom集合と呼ばれる集合を形成する。対象を変化させると、対象のペアから「証明」の集合への写像が得られる。この写像は関手的だ――1番目の引数については反変で、2番目の引数については共変だ。これは、圏内の対象間に大域的な関係を確立していると見なせる。この関係は次のhom関手で表せる:
+          </math>への射があれば、2つの対象には何らかの「関連がある」というものだ。ある意味で、射はこの関係の証明だ。すべてのポセット圏では射が関係<em>である</em>ので、それは一目瞭然だ。一般に、2つの対象間での同じ関係の「証明」は複数存在しうる。それらの証明はhom集合と呼ばれる集合を形成する。対象を変化させると、対象のペアから「証明」の集合への写像が得られる。この写像は関手的だ――1番目の引数については反変で、2番目の引数については共変だ。これは、圏内の対象間に大域的な関係を確立していると見なせる。この関係は次のhom関手で表せる:
         </p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -29205,7 +29205,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>数学者によると、これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>これは数学者によると<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐂</mi>
               <annotation encoding="application/x-tex">\symbf{C}</annotation>
@@ -29261,7 +29261,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">b</annotation>
             </semantics>
           </math>の間に関係はない。関係は対称である必要はないことに注意してほしい。</p>
-        <p>もう1つの有用な直観は、自己関手はコンテナであるという考え方を一般化することだ。型が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>もう1つの有用な直観は、自己関手はコンテナであるという考え方の一般化だ。型が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>p</mi>
@@ -29442,14 +29442,14 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">p\ a\ b</annotation>
             </semantics>
-          </math>に移動することもできる。</p>
+          </math>に移動することもできる:</p>
         <div class="sourceCode" id="cb564">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb564-1"><a href="#cb564-1" aria-hidden="true" tabindex="-1"></a>dimap <span class="fu">id</span> f<span class="ot"> paa ::</span> p a b</span></code></pre>
         </div>
         <h2 data-number="26.1" id="対角自然変換"><span class="header-section-number">26.1</span> 対角自然変換</h2>
         <p>
-          プロ関手は関手なので、それらの間の自然変換を通常の方法で定義できる。ただし、多くの場合は、2つのプロ関手の対角要素間の写像を定義するだけで十分だ。このような変換は、対角要素を非対角要素に接続できる2つの方法を反映した可換条件を満たす場合、対角自然変換と呼ばれる。関手圏<math
+          プロ関手は関手なので、それらの間の自然変換は通常の方法で定義できる。ただし、多くの場合は2つのプロ関手の対角要素間の写像を定義するだけで十分だ。このような変換は、対角要素を非対角要素に接続できる2つの方法を反映した可換条件を満たす場合、対角自然変換と呼ばれる。関手圏<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -29521,7 +29521,7 @@ construction}.} -->
             </semantics>
           </math>について次の図式が可換となる:</p>
         <p><img src="images/end.jpg" style="width:35.0%" /></p>
-        <p>これは厳密に自然条件より弱いことに注意してほしい。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>これは自然条件よりも厳密に弱いことに注意してほしい。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>α</mi>
               <annotation encoding="application/x-tex">\alpha</annotation>
@@ -29601,9 +29601,9 @@ construction}.} -->
             </semantics>
           </math>によって添字付けされていることに注意してほしい。一方で、対角自然変換は1つの対象によって添字付けされる。なぜなら、対応するプロ関手の対角要素のみを写すからだ。</p>
         <h2 data-number="26.2" id="エンド"><span class="header-section-number">26.2</span> エンド</h2>
-        <p>いまや、「代数」から圏論の「微積分」と見なせるものへ進む準備ができた。エンド
+        <p>いまや「代数」から圏論の「微積分」と見なせるものへ進む準備ができた。エンド
           (およびコエンド)
-          の微積分は、古典的な微積分から、その概念と、いくつかの記法さえ借用している。特に、コエンドは無限和あるいは積分として理解でき、エンドは無限積に類似している。Diracのデルタ関数に似たものさえある。</p>
+          の微積分は、古典的な微積分から、その概念だけでなく、いくつかの記法さえ借用している。特に、コエンドは無限和あるいは積分として理解でき、エンドは無限積に類似している。Diracのデルタ関数に似たものさえある。</p>
         <p>エンドは極限を一般化したもので、関手がプロ関手に置き換えられている。錐の代わりに、くさび
           (wedge)
           がある。くさびの底面はプロ関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -29756,7 +29756,7 @@ construction}.} -->
             </semantics>
           </math>のエンドを普遍くさび
           (universal wedge)
-          として定義する。これは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          として定義する。これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>e</mi>
               <annotation encoding="application/x-tex">e</annotation>
@@ -29882,16 +29882,15 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb566-1"><a href="#cb566-1" aria-hidden="true" tabindex="-1"></a><span class="kw">forall</span> a<span class="op">.</span> p a a</span></code></pre>
         </div>
-        <p>Strictly speaking, this is just a product of all diagonal elements of
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>厳密に言うと、これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>p</mi>
               <annotation encoding="application/x-tex">p</annotation>
             </semantics>
-          </math>,
-          but the wedge condition is satisfied automatically due to <a
-            href="https://bartoszmilewski.com/2017/04/11/profunctor-parametricity/">parametricity</a>.
-          関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>のすべての対角要素の積に過ぎないが、くさび条件は<a
+            href="https://bartoszmilewski.com/2017/04/11/profunctor-parametricity/">パラメトリック性</a>
+          (parametricity)
+          によって自動的に満たされる。任意の関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>f</mi>
@@ -29902,8 +29901,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">f \Colon a \to b</annotation>
             </semantics>
-          </math>について、くさび条件は次のようになる:
-        </p>
+          </math>について、くさび条件は次のようになる:</p>
         <div class="sourceCode" id="cb567">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb567-1"><a href="#cb567-1" aria-hidden="true" tabindex="-1"></a>dimap f <span class="fu">id</span> <span class="op">.</span> <span class="fu">pi</span> <span class="ot">=</span> dimap <span class="fu">id</span> f <span class="op">.</span> <span class="fu">pi</span></span></code></pre>
