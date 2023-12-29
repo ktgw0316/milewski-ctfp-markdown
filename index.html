@@ -1158,7 +1158,7 @@
           (つまり、値によって、参照によって、const参照によって、ムーブによって、など)
           も考慮する必要があるからだ。</p>
         <p>Haskellの恒等関数は、(Preludeと呼ばれる)
-          標準ライブラリの一部だ。宣言と定義は以下の通りだ:</p>
+          標準ライブラリの一部だ。宣言と定義は以下のとおりだ:</p>
         <div class="sourceCode" id="cb12">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">id</span><span class="ot"> ::</span> a <span class="ot">-&gt;</span> a</span>
@@ -1559,7 +1559,7 @@
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> unit<span class="op">(</span>T<span class="op">)</span> <span class="op">{}</span></span></code></pre>
         </div>
         <p>
-          型の類型における次のものは2要素集合だ。C++では<code>bool</code>と呼ばれ、Haskellでは予想通り<code>Bool</code>と呼ばれる。違いは、C++の<code>bool</code>は組み込みの型であるのに対して、Haskellでは次のように定義できることだ:
+          型の類型における次のものは2要素集合だ。C++では<code>bool</code>と呼ばれ、Haskellでは予想どおり<code>Bool</code>と呼ばれる。違いは、C++の<code>bool</code>は組み込みの型であるのに対して、Haskellでは次のように定義できることだ:
         </p>
         <div class="sourceCode" id="cb28">
           <pre
@@ -2136,7 +2136,7 @@
           <figcaption aria-hidden="true">射あるいは集合内の点として見たモノイドhom集合</figcaption>
         </figure>
         <p>
-          数学者が補足すべき箇所は、射は必ずしも集合を形成しないということだけだ。圏の世界には集合よりも大きなものがある。任意の2つの物体間の射が集合を形成する圏は、局所的に小さい、と呼ばれる。約束通り、私はそのような些細なことはほとんど無視するが、記録のために言及すべきだと考えた。
+          数学者が補足すべき箇所は、射は必ずしも集合を形成しないということだけだ。圏の世界には集合よりも大きなものがある。任意の2つの物体間の射が集合を形成する圏は、局所的に小さい、と呼ばれる。約束どおり、私はそのような些細なことはほとんど無視するが、記録のために言及すべきだと考えた。
         </p>
         <p>hom集合の要素は、合成則に従う射としても、ある集合内の点としても見なせる。圏論における多くの興味深い現象はこの事実に根ざしている。ここで、<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4186,7 +4186,7 @@
 <span id="cb142-5"><a href="#cb142-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">Right</span> (x, z) <span class="ot">-&gt;</span> (x, <span class="dt">Right</span> z)</span></code></pre>
         </div>
         <p>
-          <code>case of</code>ステートメントは、パターンマッチング内部関数に使われる。各パターンの後には矢印と、パターンが一致したときに評価される式が続く。たとえば、次の値を指定して<code>prodToSum</code>を呼び出すとする。
+          <code>case of</code>式は、パターンマッチング内部関数に使われる。各パターンの後には矢印と、パターンが一致したときに評価される式が続く。たとえば、次の値を指定して<code>prodToSum</code>を呼び出すとする。
         </p>
         <div class="sourceCode" id="cb143">
           <pre
@@ -5663,7 +5663,7 @@
           注目してほしいのは、この引数が非常に汎用的であることだ。つまり、<code>Writer</code>は任意の型コンストラクターで置き換えられる。Fish演算子と<code>return</code>をサポートしていれば、<code>fmap</code>も定義できる。したがってKleisli圏での装飾は常に関手となる。(ただし、すべての関手がKleisli圏に由来するわけではない。)
         </p>
         <p>
-          先ほど定義した<code>fmap</code>は、<code>derivating Functor</code>を使ってコンパイラによって導来された<code>fmap</code>と同じではないかと思うかもしれない。とても興味深いことに、その通りだ。そうなっているのは、Haskellが多相関数を実装する方法に由来する。それは<span
+          先ほど定義した<code>fmap</code>は、<code>derivating Functor</code>を使ってコンパイラによって導来された<code>fmap</code>と同じではないかと思うかもしれない。とても興味深いことに、そのとおりだ。そうなっているのは、Haskellが多相関数を実装する方法に由来する。それは<span
             id="parametric_polymorphism" class="keyword">パラメトリック多相</span>と呼ばれ、いわゆる<span id="theorem_for_free"
             class="keyword">theorems for
             free</span>の根源となっている。それらの定理の1つは、与えられた型コンストラクターに対して<code>fmap</code>の実装があって、それが恒等射を保存するなら、それは一意である、と述べている。
@@ -7689,7 +7689,7 @@
             </semantics>
           </math></p>
         <p>
-          これは、圏論では2つの対象の余積による冪乗が2つの冪乗の積と同型だと明確に示している。Haskellでは、この代数的恒等射には非常に実用的な解釈がある。これは、2つの型の直和型を取る関数が、個別の型を取る関数のペアと等価だと示している。直和型を取る関数を定義するときに使うケース分析そのものだ。<code>case</code>文で1つの関数定義を記述する代わりに、通常はそれを2つ
+          これは、圏論では2つの対象の余積による冪乗が2つの冪乗の積と同型だと明確に示している。Haskellでは、この代数的恒等射には非常に実用的な解釈がある。これは、2つの型の直和型を取る関数が、個別の型を取る関数のペアと等価だと示している。直和型を取る関数を定義するときに使うケース分析そのものだ。<code>case</code>式で1つの関数定義を記述する代わりに、通常はそれを2つ
           (またはそれ以上)
           の関数に分割して、それぞれの型コンストラクターを別々に処理する。たとえば、直和型
           <code>(Either Int Double)</code> を取る関数を考える:
@@ -10786,7 +10786,8 @@
               </mrow>
               <annotation encoding="application/x-tex">n-1</annotation>
             </semantics>
-          </math>項目を先に調べる必要がある。時間的イベントについて述べる場合、この特性を<em>因果律</em>と呼ぶ。</p>
+          </math>項目を先に調べる必要がある。時間的イベントについて述べる場合、この特性を<em>因果律</em>
+          (causality) と呼ぶ。</p>
         <p>それで、圏論と何の関係があるのだろうか？
           私の主張としては、圏論は大域的アプローチを奨励しており、それゆえ宣言型プログラミングを支持している。第一に、微積分とは異なり、距離・近傍・時間などの概念が組み込まれていない。あるのは抽象的な対象とそれらの間の抽象的な接続だけだ。一連のステップを通じて<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12281,7 +12282,8 @@
         <p>極限のさらに単純な例として、終対象がある。初期衝動としては単元圏が終対象につながると考えがちだが、真実はさらに赤裸々だ。終対象は空圏
           (empty category)
           が生成する極限だ。空圏からの関手は対象を選択しないので、錐は頂点だけに収縮する。普遍錐はその唯一の頂点で、他の頂点からの一意な射を持つ。これが終対象の定義だときっと気付くだろう。</p>
-        <p>次に興味深い極限は<em>イコライザ</em>と呼ばれる。これは2つの要素からなる圏によって生成された極限であり、要素間の2つの平行な射を伴う
+        <p>次に興味深い極限は<em>イコライザ</em> (equalizer)
+          と呼ばれる。これは2つの要素からなる圏によって生成された極限であり、要素間の2つの平行な射を伴う
           (そして、いつものように、それらは恒等射だ)。この圏は、2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
@@ -12981,7 +12983,7 @@ C<sup>op</sup> × C -> Set
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb326-1"><a href="#cb326-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">-&gt;</span> (a, b) <span class="op">~</span> (r <span class="ot">-&gt;</span> a, r <span class="ot">-&gt;</span> b)</span></code></pre>
         </div>
         <p>読者がどう思っているかは分かっている:
-          これらを理解するのに圏論は必要ない。その通りだ！
+          これらを理解するのに圏論は必要ない。そのとおりだ！
           それでも、このような結果が、ビットやバイト、プロセッサーアーキテクチャ、コンパイラー技術、さらにはラムダ計算に頼ることなく、第一原理から得られるのは驚くべきことだと思う。</p>
         <p>「極限」と「連続性」という名前の由来が何なのか気になるなら、それらは微積分学において対応する概念を一般化したものだ。微積分学では、極限と連続性は開近傍に関連して定義される。開集合は、トポロジーを定義し、圏
           (ポセット) を形成する。</p>
@@ -13012,7 +13014,7 @@ C<sup>op</sup> × C -> Set
               押し出しは何か？ 始対象と終対象は何か？</p>
           </li>
           <li>
-            <p>余イコライザとは何か予想できるか？</p>
+            <p>コイコライザ (coequalizer) とは何か予想できるか？</p>
           </li>
           <li>
             <p>終対象が存在する圏では、終対象に向かう引き戻しが積であることを示せ。</p>
@@ -13811,7 +13813,7 @@ C<sup>op</sup> × C -> Set
               </mrow>
               <annotation encoding="application/x-tex">U n</annotation>
             </semantics>
-          </math>の1つの要素へ潰す力がある。ここで、潰すことは自由モノイドのいくつかの要素を特定することに対応する。したがって、生成子<math display="inline"
+          </math>の1つの要素へ潰す力がある。ここで、潰すことは自由モノイドのいくつかの要素を同一視することに対応する。したがって、生成子<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>x</mi>
@@ -13822,7 +13824,7 @@ C<sup>op</sup> × C -> Set
               <mi>x</mi>
               <annotation encoding="application/x-tex">x</annotation>
             </semantics>
-          </math>に基づく自由モノイドから、いくつかの要素を特定することによって得られる。自由モノイドとは、最小限だけしか特定されていないモノイドのことだ。</p>
+          </math>に基づく自由モノイドから、いくつかの要素を同一視することによって得られる。自由モノイドとは、最小限だけしか同一視されていないモノイドのことだ。</p>
         <p>随伴について話すとき、自由モノイドに戻ってこよう。</p>
         <h2 data-number="13.3" id="課題-10"><span class="header-section-number">13.3</span> 課題</h2>
         <ol type="1">
@@ -14297,7 +14299,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">\symbf{C}(-, a)</annotation>
             </semantics>
           </math>
-          も関手なのかという疑問だ。その通り、関手だ。ただし、共変ではなく反変だ。なぜなら、射の端と端を同様にマッチングすると<math display="inline"
+          も関手なのかという疑問だ。そのとおり、関手だ。ただし、共変ではなく反変だ。なぜなら、射の端と端を同様にマッチングすると<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>f</mi>
@@ -22624,7 +22626,7 @@ construction}.} -->
           </math>は<span id="monad" class="keyword">モナド</span> (monad)
           と呼ばれ、その結果形成される圏はKleisli圏と呼ばれる。</p>
         <p>
-          Haskellでは、Kleisli合成はfish演算子<code>&gt;=&gt;</code>を用いて定義され、その恒等射は<code>return</code>と呼ばれる多相関数だ。Kleisli合成を使ったモナドの定義は次の通りだ:
+          Haskellでは、Kleisli合成はfish演算子<code>&gt;=&gt;</code>を用いて定義され、その恒等射は<code>return</code>と呼ばれる多相関数だ。Kleisli合成を使ったモナドの定義は次のとおりだ:
         </p>
         <div class="sourceCode" id="cb387">
           <pre
@@ -24147,7 +24149,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb455-1"><a href="#cb455-1" aria-hidden="true" tabindex="-1"></a>(mu <span class="op">.</span> bimap mu <span class="fu">id</span>)((x, y), z)</span></code></pre>
         </div>
         <p>
-          これはほぼ希望通りだ。残念ながら、厳密に言うとカルテシアン積には結合性がない――<code>(x, (y, z))</code>と<code>((x, y), z)</code>は異なる――ので、ポイントフリーでは書けない:
+          これはほぼ希望どおりだ。残念ながら、厳密に言うとカルテシアン積には結合性がない――<code>(x, (y, z))</code>と<code>((x, y), z)</code>は異なる――ので、ポイントフリーでは書けない:
         </p>
         <div class="sourceCode" id="cb456">
           <pre
@@ -24904,7 +24906,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb468-1"><a href="#cb468-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">State</span> s a <span class="ot">=</span> <span class="dt">State</span> (s <span class="ot">-&gt;</span> (a, s))</span></code></pre>
         </div>
         <p>
-          予想通り、随伴の<code>unit</code>はstateモナドの<code>return</code>関数と等価だ。<code>counit</code>は、引数に作用する関数を評価することによって作用する。これは<code>runState</code>関数の非カリー化版と見なせる。
+          予想どおり、随伴の<code>unit</code>はstateモナドの<code>return</code>関数と等価だ。<code>counit</code>は、引数に作用する関数を評価することによって作用する。これは<code>runState</code>関数の非カリー化版と見なせる。
         </p>
         <div class="sourceCode" id="cb469">
           <pre
@@ -25087,8 +25089,7 @@ construction}.} -->
         <p><code>extend</code>のデフォルト実装が<code>duplicate</code>によって提供され、逆も同様だ。したがって、どちらか1つをオーバーライドするだけでよい。</p>
         <p>これらの関数の背景にある直観は、一般にコモナドは型<code>a</code>の値で満たされたコンテナと見なせるという考えに基づいている
           (積コモナドは値が1つしかない特殊なケースだ)。「現在の」値という概念があり、それは<code>extract</code>によって簡単にアクセスできる。余Kleisli矢は現在の値に焦点を合わせて計算を実行するものの、周囲のすべての値にアクセスできる。コンウェイのライフゲームを考えてみてほしい。各セルには値が含まれる
-          (通常は<code>True</code>か<code>False</code>だ)
-          。ライフゲームに対応するコモナドは「現在の」セルに焦点を合わせたセルのグリッドだ。</p>
+          (通常は<code>True</code>か<code>False</code>だ)。ライフゲームに対応するコモナドは「現在の」セルに焦点を合わせたセルのグリッドだ。</p>
         <p>では<code>duplicate</code>は何をするのだろう？
           それはコモナディックなコンテナ<code>w a</code>を取ってコンテナのコンテナ<code>w (w a)</code>を生成する。つまり、それぞれのコンテナが<code>w a</code>内部の異なる<code>a</code>に焦点を合わせているという考え方だ。ライフゲームでは、グリッドのグリッドが得られる。外側のグリッドの各セルには、個別のセルに焦点を合わせた内側のグリッドが含まれている。
         </p>
@@ -29977,7 +29978,7 @@ construction}.} -->
           profunctor) とそのエンドのみを扱う。</p>
         <h2 data-number="26.3" id="イコライザとしてのエンド"><span class="header-section-number">26.3</span> イコライザとしてのエンド</h2>
         <p>エンドの定義における可換条件はイコライザを用いて書ける。まず、2つの関数を定義しよう
-          (ここではHaskellの表記を使うが、これは数学的表記の方がユーザー・フレンドリーでないように思うからだ)。これらの関数はくさび条件の2つの収束分岐
+          (ここではHaskellの表記の方が数学的表記よりユーザー・フレンドリーだと思うので、そちらを使う)。これらの関数はくさび条件の2つの収束分岐
           (converging branch) に対応する:</p>
         <div class="sourceCode" id="cb570">
           <pre
@@ -30007,7 +30008,7 @@ construction}.} -->
 <span id="cb573-5"><a href="#cb573-5" aria-hidden="true" tabindex="-1"></a>rhoP (<span class="dt">DiaProd</span> paa) <span class="ot">=</span> rho paa</span></code></pre>
         </div>
         <p>
-          <code>p</code>のエンドはこれら2つの関数のイコライザだ。イコライザは、2つの関数が等しい最大の部分集合を選択することに注意してほしい。ここでは、くさびの図式が可換となるようなすべての対角要素の積の部分集合が選択される。
+          <code>p</code>のエンドはこれら2つの関数のイコライザだ。イコライザは2つの関数が等しい最大の部分集合を選択することに注意してほしい。ここでは、くさびの図式が可換となるようなすべての対角要素の積の部分集合が選択される。
         </p>
         <h2 data-number="26.4" id="エンドとしての自然変換"><span class="header-section-number">26.4</span> エンドとしての自然変換</h2>
         <p>エンドの最も重要な例は自然変換の集合だ。2つの関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -30039,18 +30040,17 @@ construction}.} -->
               <annotation encoding="application/x-tex">\symbf{C}(F\ a, G\ a)</annotation>
             </semantics>
           </math>
-          という形式のhom集合から選択された射の族だ。もし自然条件がなければ、自然変換の集合は、これらすべてのhom集合の積にすぎないだろう。実際、Haskellでは次のようになる:</p>
+          という形式のhom集合から選択された射の族だ。もし自然条件がなければ、自然変換の集合はこれらすべてのhom集合の積にすぎないだろう。実際、Haskellでは次のようになる:</p>
         <div class="sourceCode" id="cb574">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb574-1"><a href="#cb574-1" aria-hidden="true" tabindex="-1"></a><span class="kw">forall</span> a<span class="op">.</span> f a <span class="ot">-&gt;</span> g a</span></code></pre>
         </div>
-        <p>Haskellでこれが動作する理由は、自然性がパラメトリック性に従うためだ。ただし、Haskell以外では、このようなhom集合に渡るすべての対角要素が自然変換を生成するわけではない。しかし、次の写像に注目してほしい:
-        </p>
+        <p>Haskellでこれが動作する理由は、自然性がパラメトリック性に従うためだ。ただし、Haskell以外では、このようなhom集合に渡るすべての対角要素が自然変換を生成するわけではない。しかし、写像:</p>
         <div class="sourceCode" id="cb575">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb575-1"><a href="#cb575-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>a, b<span class="op">&gt;</span> <span class="ot">-&gt;</span> <span class="dt">C</span>(<span class="dt">F</span> a, <span class="dt">G</span> b)</span></code></pre>
         </div>
-        <p>これはプロ関手なので、そのエンドを研究するのは意味がある。くさび条件は次のとおりだ:</p>
+        <p>がプロ関手であることに注目すれば、そのエンドを研究するのは意味がある。くさび条件は次のとおりだ:</p>
         <p><img src="images/end1.jpg" style="width:40.0%" /></p>
         <p>集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -30075,7 +30075,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">\int_c \symbf{C}(F\ c, G\ c)</annotation>
             </semantics>
           </math>
-          から要素を1つだけ選択しよう。この要素は2つの射影によって特定の変換の2つのコンポーネントに写される。それらを次のように呼ぼう。</p>
+          から要素を1つだけ選択しよう。この要素は2つの射影によって特定の変換の2つのコンポーネントに写される。それらを次のように呼ぼう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mtable>
@@ -30124,7 +30124,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>左の分岐では、一対の射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>図式の左側の分岐では、一対の射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mo stretchy="false" form="prefix">⟨</mo>
@@ -30180,7 +30180,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>図式のもう1つの分岐からは次が得られる:</p>
+        <p>図式のもう一方の分岐からは次が得られる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -30206,15 +30206,15 @@ construction}.} -->
                 \circ \tau_b \circ F\ f</annotation>
             </semantics>
           </math></p>
-        <p>これらの等価性は、くさび条件によって要求され、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>くさび条件が要求するこれらの等価性は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>τ</mi>
               <annotation encoding="application/x-tex">\tau</annotation>
             </semantics>
           </math>の自然条件に他ならない。</p>
         <h2 data-number="26.5" id="コエンド"><span class="header-section-number">26.5</span> コエンド</h2>
-        <p>予想通り、エンドの双対はコエンドと呼ばれる。それは余くさび (cowedge)
-          と呼ばれるくさびの双対で構成されている。(cowedgeの発音はco-wedgeで、cow-edgeではない。)</p>
+        <p>予想どおり、エンドの双対はコエンドと呼ばれる。それはくさびの双対で構成され、余くさび
+          (cowedge) と呼ばれる (cowedgeの発音はco-wedgeで、cow-edgeではない)。</p>
         <figure>
           <img src="images/end-31.jpg" title="エッジの効いた牛 (edgy cow)？" style="width:25.0%" alt="エッジの効いた牛 (An edgy cow)？" />
           <figcaption aria-hidden="true">エッジの効いた牛 (An edgy
@@ -30238,7 +30238,7 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>エンドが積に関連しているのと同様に、コエンドは余積あるいは和に関連している
-          (この観点から、コエンドは和の極限である積分に似ている)。射影を持つのではなく、プロ関手の対角要素からコエンドに向かう単射を持つ。余くさび条件がなければ、プロ関手<math display="inline"
+          (この観点でコエンドは和の極限である積分に似ている)。射影を持つのではなく、プロ関手の対角要素からコエンドに向かう単射を持つ。余くさび条件がなければ、プロ関手<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>p</mi>
@@ -30293,15 +30293,14 @@ construction}.} -->
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
-          </math>が存在すると言えただろう。エンドの定義で使った全称量化子は、コエンドでは存在量化子になる。</p>
+          </math>が存在すると言えただろう。エンドの定義で使った全称量化子は、コエンドでは存在量化子
+          (existential quantifier) になる。</p>
         <p>このため、擬似Haskellでは、コエンドを次のように定義する:</p>
         <div class="sourceCode" id="cb576">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb576-1"><a href="#cb576-1" aria-hidden="true" tabindex="-1"></a>exists a<span class="op">.</span> p a a</span></code></pre>
         </div>
-        <p>Haskellで存在量化子を定義する標準的な方法は、全称量化された
-          (universally quantified)
-          データコンストラクターを用いるものだ。したがって、次のように定義できる:</p>
+        <p>Haskellで存在量化子を実装する標準的な方法では、全称量化されたデータコンストラクターを用いる。したがって、次のように定義できる:</p>
         <div class="sourceCode" id="cb577">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb577-1"><a href="#cb577-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Coend</span> p <span class="ot">=</span> <span class="kw">forall</span> a<span class="op">.</span> <span class="dt">Coend</span> (p a a)</span></code></pre>
@@ -30323,8 +30322,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
           </math>を選択してもコエンドを構築できるというものだ。</p>
-        <p>エンドがイコライザを使って定義できるのと同様に、コエンドは[余イコライザ]{epub:
-          型=“coequalizer} (coequalizer)
+        <p>エンドがイコライザを使って定義できるのと同様に、コエンドは<span id="coequalizer" class="keyword">コイコライザ</span> (coequalizer)
           を使って記述できる。すべての余くさび条件は、要約すると、可能なすべての関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -30375,7 +30373,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb580-1"><a href="#cb580-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">DiagSum</span> p <span class="ot">=</span> <span class="kw">forall</span> a<span class="op">.</span> <span class="dt">DiagSum</span> (p a a)</span></code></pre>
         </div>
         <p>
-          これら2つの関数の余イコライザはコエンドだ。余イコライザを<code>DiagSum p</code>から得るには、<code>lambda</code>または<code>rho</code>を同じ引数に対して適用することで得られる値を同一視する。ここで、その引数は、関数<math
+          これら2つの関数のコイコライザはコエンドだ。コイコライザを<code>DiagSum p</code>から得るには、<code>lambda</code>または<code>rho</code>を同じ引数に対して適用することで得られる値を同一視する。ここで、引数は関数<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -30398,14 +30396,15 @@ construction}.} -->
             </semantics>
           </math>の要素のペアだ。<code>lambda</code>と<code>rho</code>を適用すると、潜在的に異なる2つの値が生成され、それらの型は<code>DiagSum p</code>だ。コエンドでは、これらの2つの値が同一視され、余くさび条件が自動的に満たされる。
         </p>
-        <p>集合内の関連する要素を識別するプロセスは、形式的には商の取得と呼ばれている。商を定義するには[同値関係]{epub:
-          型=“equivalence_relation} (equivalence relation)
+        <p>集合内の関連する要素を同一視するこのプロセスは形式的に、商を取る、と呼ばれる。商を定義するには<span id="equivalence_relation" class="keyword">同値関係</span>
+          (equivalence
+          relation)
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mo>∼</mo>
               <annotation encoding="application/x-tex">\sim</annotation>
             </semantics>
-          </math>が必要だ。この関係は反射律・対称律・推移律を満たす:
+          </math>が必要だ。同値関係は反射律・対称律・推移律を満たす:
         </p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -30580,7 +30579,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell">(exists x. p x x) -> c ≅ forall x. p x x -> c</code></pre>
         </div>
         <p>
-          これは、存在型を取る関数は多相関数と等価だと示している。これは完全に理にかなっている。なぜなら、そのような関数は、存在型にエンコードされる可能性のある型ならどれでも処理できるようになっている必要があるからだ。これは、直和型を受け入れる関数についての、すべての型に対応したハンドラーのタプルを持ったcaseステートメントとして実装される、という原則と同じだ。ここでは、直和型はコエンドに置き換えられ、ハンドラーの族はエンド、つまり多相関数になる。
+          これは、存在型を取る関数は多相関数と等価だと示している。これは完全に理にかなっている。なぜなら、そのような関数は、存在型にエンコードされる可能性のある型ならどれでも処理できるようになっている必要があるからだ。これは、直和型を受け入れる関数についての、すべての型に対応したハンドラーのタプルを持ったcase式として実装される、という原則と同じだ。ここでは、直和型はコエンドに置き換えられ、ハンドラーの族はエンドすなわち多相関数になる。
         </p>
         <h2 data-number="26.6" id="忍者米田の補題"><span class="header-section-number">26.6</span> 忍者米田の補題</h2>
         <p>米田の補題に現れる自然変換の集合はエンドを使ってエンコードでき、結果として以下の定式化が得られる:</p>
@@ -33530,7 +33529,7 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb586-1"><a href="#cb586-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Lst</span> a <span class="ot">=</span> <span class="kw">forall</span> i<span class="op">.</span> <span class="dt">Monoid</span> i <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> i) <span class="ot">-&gt;</span> i</span></code></pre>
         </div>
-        <p>期待通り、自由モノイド、すなわちHaskellのリストが得られる:</p>
+        <p>期待どおり、自由モノイド、すなわちHaskellのリストが得られる:</p>
         <div class="sourceCode" id="cb587">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb587-1"><a href="#cb587-1" aria-hidden="true" tabindex="-1"></a><span class="ot">toLst ::</span> [a] <span class="ot">-&gt;</span> <span class="dt">Lst</span> a</span>
@@ -37990,7 +37989,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">\symbf{Mon}</annotation>
             </semantics>
           </math>全体に及ぶ。すでに述べた<a
-            href="#free-monoids">普遍的構成</a>は、射の部分集合を特定すれば、すべてのモノイドが適切な自由モノイドから得られることを示していた。したがって、1つの自由モノイドですべてのモノイドがすでに一般化されている。しかし、自由モノイドは無数に存在する。モノイドに対するLawvere理論<math
+            href="#free-monoids">普遍的構成</a>は、射の部分集合を同一視すれば、すべてのモノイドが適切な自由モノイドから得られることを示していた。したがって、1つの自由モノイドですべてのモノイドがすでに一般化されている。しかし、自由モノイドは無数に存在する。モノイドに対するLawvere理論<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <msub>
@@ -39663,7 +39662,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">a^n \times \symbf{L}(n, 1)</annotation>
             </semantics>
           </math>
-          の非交和として始まる。識別は<a href="#ends-and-coends">コエンドを余イコライザとして</a>表現することで生成できる。ある非対角項<math display="inline"
+          の非交和として始まる。識別は<a href="#ends-and-coends">コエンドをコイコライザとして</a>表現することで生成できる。ある非対角項<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
