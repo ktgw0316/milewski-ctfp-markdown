@@ -7493,7 +7493,7 @@
             </semantics>
           </math>と計算できる。以下同様だ。このような場合には、関数型の冪乗記法が完全に理にかなっている。</p>
         <p>
-          <code>int</code>や<code>double</code>を取る関数を完全にメモ化したいとは思わないだろう。しかし、関数とデータ型の間には、常に実用的だとは限らないにしても、同等性がある。型はリスト・文字列・ツリーなど無数に存在する。これらの型を取る関数をせっせとメモ化したら、無限のストレージが必要になるだろう。しかし、Haskellは遅延評価言語であるため、遅延評価された
+          <code>int</code>や<code>double</code>を取る関数を完全にメモ化したいとは思わないだろう。しかし、関数とデータ型の間には、常に実用的だとは限らないにしても、同等性がある。型はリスト・文字列・木など無数に存在する。これらの型を取る関数をせっせとメモ化したら、無限のストレージが必要になるだろう。しかし、Haskellは遅延評価言語であるため、遅延評価された
           (無限の)
           データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪乗対象との区別を説明している。冪乗対象の方が<em>データ</em>という概念によく対応している。</p>
         <h2 data-number="9.4" id="カルテシアン閉圏"><span class="header-section-number">9.4</span> カルテシアン閉圏</h2>
@@ -24354,8 +24354,8 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>(テンソル四重積を単純化するためのコヒーレンス (coherence)
-          条件も存在する。)</p>
+        <p>(テンソル四重積を単純化するためのコヒーレンス条件 (coherence
+          condition) も存在する。)</p>
         <p>重要なのは、よく知られた多くの双関手がテンソル積で記述できることだ。それは特に、積、余積、そしてすぐ後でみるように自己関手の合成
           (そしてDay convolutionのようなより深遠な積)
           に対して機能する。モノイダル圏は豊穣圏の定式化において不可欠な役割を果たすことになる。</p>
@@ -30619,7 +30619,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">\int_z \symbf{Set}(\symbf{C}(a, z), F\ z) \cong F\ a</annotation>
             </semantics>
           </math></p>
-        <p>双対となる式もある:</p>
+        <p>双対として次の式も存在する:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -30648,7 +30648,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">\int^z \symbf{C}(z, a)\times{}F\ z \cong F\ a</annotation>
             </semantics>
           </math></p>
-        <p>この同型はDiracのデルタ関数の式
+        <p>この恒等式はDiracのデルタ関数の式
           (関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -30674,7 +30674,8 @@ construction}.} -->
             </semantics>
           </math>に無限大のピークを持つ分布)
           を強く連想させる。ここでは、hom関手がデルタ関数の役目を果たしている。</p>
-        <p>この2つの同型を合わせて忍者米田の補題と呼ぶこともある。</p>
+        <p>これら2つの恒等式を合わせて忍者米田の補題 (Ninja Yoneda lemma)
+          と呼ぶことがある。</p>
         <p>2番目の式を証明するには米田埋め込みからの帰結を使う。その帰結によると、2つの対象が同型となるのは、それらのhom関手が同型である場合に限られる。言い換えると、<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -30732,7 +30733,7 @@ construction}.} -->
               <mi>c</mi>
               <annotation encoding="application/x-tex">c</annotation>
             </semantics>
-          </math>に向かうhom関手の内側に挿入する:</p>
+          </math>に向かうhom関手の内側に代入する:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -30931,7 +30932,7 @@ construction}.} -->
             </semantics>
           </math></p>
         <h2 data-number="26.7" id="プロ関手の合成"><span class="header-section-number">26.7</span> プロ関手の合成</h2>
-        <p>プロ関手が記述するのは関係――より正確には、証明に関連する関係――だという考え方をさらに検討しよう。つまり、集合<math display="inline"
+        <p>プロ関手が記述するのは関係――より正確には証明に関連する関係――だ、という考え方をさらに検討しよう。つまり、集合<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -31047,27 +31048,27 @@ construction}.} -->
               <annotation encoding="application/x-tex">(q \circ p)\ a\ b = \int^c p\ c\ a\times{}q\ b\ c</annotation>
             </semantics>
           </math></p>
-        <p>Haskellの<code>Data.Profunctor.Composition</code>でのプロ関手の定義は、名前をいくらか変更したうえで、次のとおりだ:</p>
+        <p>Haskellの<code>Data.Profunctor.Composition</code>でのプロ関手は、名前をいくらか変更したうえで、こう定義されている:</p>
         <div class="sourceCode" id="cb581">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb581-1"><a href="#cb581-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Procompose</span> q p a b <span class="kw">where</span></span>
 <span id="cb581-2"><a href="#cb581-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Procompose</span><span class="ot"> ::</span> q a c <span class="ot">-&gt;</span> p c b <span class="ot">-&gt;</span> <span class="dt">Procompose</span> q p a b</span></code></pre>
         </div>
-        <p>これは一般化された代数的データ型、すなわち構文を使っており、自由型変数
-          (ここでは<code>c</code>)
+        <p>これは一般化代数的データ型 (generalized algebraic data type)
+          すなわちの構文を使っており、自由型変数 (ここでは<code>c</code>)
           が自動的に存在量化される。したがって、(非カリー化された)
           データ・コンストラクター<code>Procompose</code>は次と等価だ:</p>
         <pre><code>exists c. (q a c, p c b)</code></pre>
         <p>
-          こうして定義された合成の単位はhom関手だ――これは忍者米田の補題からすぐに導出される。したがって、プロ関手が射の役目を果たす圏があるかどうかを問うのは理にかなっている。答えは肯定的であり、ただし、プロ関手の合成に関する結合則と同一則は自然同型を除いてのみ満たされることに注意する必要がある。それらの結合則と同一則が同型を除いて満たされる圏は、双圏
-          (bicategory) という
-          (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          こうして定義された合成の単位はhom関手だ――これは忍者米田の補題からすぐに導出される。したがって、プロ関手が射の役目を果たす圏があるかを問うのは理にかなっている。ある、というのがその問いの答えだ。ただし、プロ関手の合成に関する結合則と恒等則は自然同型を除いてのみ満たされることに注意する必要がある。それらの結合則と恒等則が同型を除いて満たされる圏は、(<math
+            display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>𝟐</mn>
               <annotation encoding="application/x-tex">\symbf{2}</annotation>
             </semantics>
-          </math>-圏よりも一般化された)
-          名前で呼ばれる。すなわち、双圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>-圏よりも一般化された名前で)
+          双圏 (bicategory)
+          と呼ばれる。すなわち、双圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐏</mi>
@@ -31117,7 +31118,7 @@ construction}.} -->
             </semantics>
           </math>を使った。
         </p>
-        <p>この不自然さを直す時が来た。極限を3つの圏を使って定義しよう。初めに、添字圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>この不自然さを正す時が来た。極限を3つの圏を使って定義しよう。初めに、添字圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐈</mi>
               <annotation encoding="application/x-tex">\symbf{I}</annotation>
@@ -31172,7 +31173,7 @@ construction}.} -->
               <mi>F</mi>
               <annotation encoding="application/x-tex">F</annotation>
             </semantics>
-          </math>はすべて、この錐の潜在的な頂点を指す。</p>
+          </math>はどれも、この錐の潜在的な頂点を指す。</p>
         <p><img src="images/kan15.jpg" style="width:40.0%" /></p>
         <p>錐は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -31360,7 +31361,7 @@ construction}.} -->
               <mi>ε</mi>
               <annotation encoding="application/x-tex">\varepsilon</annotation>
             </semantics>
-          </math>を通じて分解される:</p>
+          </math>を通じて次のように分解される:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -31627,7 +31628,7 @@ construction}.} -->
           </math></p>
         <p>これはかなり長ったらしいが、図式ならすっきりと描ける:</p>
         <p><img src="images/kan7.jpg" style="width:40.0%" /></p>
-        <p>この図式の興味深い見方は、ある意味でKan拡張が「関手の積」の逆のように作用することに気付くことだ。<math display="inline"
+        <p>この図式はあることに気付くと興味深く見えてくる。それはKan拡張が、ある意味で「関手の積」の逆のように作用していることだ。<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -31652,13 +31653,13 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">D/K</annotation>
             </semantics>
-          </math>という表記を使う著者さえいる。実際、その表記では、右Kan拡張の余単位とも呼ばれる<math display="inline"
+          </math>という表記を使う著者さえいる。実際、その表記なら、右Kan拡張の余単位とも呼ばれる<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>ε</mi>
               <annotation encoding="application/x-tex">\varepsilon</annotation>
             </semantics>
-          </math>の定義は、単純な簡約のように見える:</p>
+          </math>の定義は単純な簡約のように見える:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -31934,12 +31935,12 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\varepsilon&#39;</annotation>
             </semantics>
-          </math>と呼んだすべての自然変換が、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>と呼んでいたすべての自然変換が、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>σ</mi>
               <annotation encoding="application/x-tex">\sigma</annotation>
             </semantics>
-          </math>と呼んだ一意な自然変換に対応しているという事実を言い換えたものだ。</p>
+          </math>と呼んでいた一意な自然変換に対応しているという事実を言い換えたものだ。</p>
         <p><img src="images/kan92.jpg" style="width:40.0%" /></p>
         <p>さらに、圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -31964,7 +31965,7 @@ construction}.} -->
               <mi>D</mi>
               <annotation encoding="application/x-tex">D</annotation>
             </semantics>
-          </math>に置き換えられる。すると、次の恒等射が得られる:</p>
+          </math>に置き換えられる。すると、次の恒等式が得られる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -32103,18 +32104,18 @@ construction}.} -->
               <mi>K</mi>
               <annotation encoding="application/x-tex">K</annotation>
             </semantics>
-          </math>に沿った恒等関手の右Kan拡張は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>に沿った恒等関手の右Kan拡張を使って<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>K</mi>
               <annotation encoding="application/x-tex">K</annotation>
             </semantics>
-          </math>の左随伴を計算するために使える。そのためには、もう1つの条件が必要だ:
+          </math>の左随伴を計算できる。そのためには、もう1つの条件が必要だ:
           右Kan拡張は関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>K</mi>
               <annotation encoding="application/x-tex">K</annotation>
             </semantics>
-          </math>によって保存されなければならない。拡張の保存が意味するのは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>によって保存されなければならない。このKan拡張の保存が意味するのは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>K</mi>
               <annotation encoding="application/x-tex">K</annotation>
@@ -32162,7 +32163,7 @@ construction}.} -->
               <mi>K</mi>
               <annotation encoding="application/x-tex">K</annotation>
             </semantics>
-          </math>で除算する表記を使うと、前述の随伴は次のように記述できる:</p>
+          </math>による除算で表記すると、前述の随伴は次のように記述できる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -32192,7 +32193,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">K \circ I/K \cong K/K</annotation>
             </semantics>
           </math></p>
-        <p>ある関手の自身に沿った右Kan拡張<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>ある関手自身に沿った右Kan拡張<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>K</mi>
@@ -32304,7 +32305,7 @@ construction}.} -->
             </semantics>
           </math></p>
         <p><img src="images/kan14.jpg" style="width:40.0%" /></p>
-        <p>次が満たされる場合:</p>
+        <p>が存在する。ただし:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -32380,7 +32381,7 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>は左Kan拡張の単位と呼ばれる。</p>
-        <p>以前と同様に、自然変換の間の1対1の対応関係:</p>
+        <p>先ほどと同様に、自然変換の間の1対1の対応関係:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -32402,7 +32403,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">\eta&#39; = (\sigma \circ K)\ .\ \eta</annotation>
             </semantics>
           </math></p>
-        <p>を、随伴によって再キャストできる:</p>
+        <p>を随伴によって作り直せる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -32534,7 +32535,7 @@ construction}.} -->
           </math></p>
         <h2 data-number="27.4" id="エンドとしてのkan拡張"><span class="header-section-number">27.4</span> エンドとしてのKan拡張</h2>
         <p>Kan拡張の真の力は、エンド (およびコエンド)
-          を使って計算できるという事実に由来する。簡単のため、終域圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          を使って計算できるという事実に由来する。簡単のため終域圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐂</mi>
               <annotation encoding="application/x-tex">\symbf{C}</annotation>
@@ -32548,8 +32549,8 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\symbf{Set}</annotation>
             </semantics>
-          </math>である場合に注目するが、式は任意の圏に拡張できる。</p>
-        <p>Kan拡張を使って関手の作用をもとの始域の外側に拡張できる、という考え方を再検討してみよう。<math display="inline"
+          </math>である場合に注目するが、どの式も任意の圏に拡張できる。</p>
+        <p>Kan拡張を使えば関手の作用をもとの始域の外側に拡張できる、という考え方を再検討してみよう。<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>K</mi>
@@ -32629,13 +32630,13 @@ construction}.} -->
               <mi>𝐀</mi>
               <annotation encoding="application/x-tex">\symbf{A}</annotation>
             </semantics>
-          </math>内の対象をどうするかだ。概念としては、そのような対象はすべて、たくさんの射を通じて、<math display="inline"
+          </math>内の対象をどうするかだ。考え方は、そのような対象はどれも、たくさんの射を通じて<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>K</mi>
               <annotation encoding="application/x-tex">K</annotation>
             </semantics>
-          </math>の像内のすべての対象と潜在的に繋がっている。関手はそれらの射を保存しなければならない。対象<math display="inline"
+          </math>の像内のすべての対象と潜在的に繋がっている、というものだ。関手はそれらの射を保存しなければならない。対象<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
@@ -32646,7 +32647,7 @@ construction}.} -->
               <mi>K</mi>
               <annotation encoding="application/x-tex">K</annotation>
             </semantics>
-          </math>の像への射の全体はhom関手によって特徴づけられる:</p>
+          </math>の像への射の全体は次のhom関手によって特徴づけられる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -32830,7 +32831,7 @@ construction}.} -->
                 [\symbf{A}, \symbf{Set}](\symbf{A}(a, -), \mathbf{Ran}_{K}D)</annotation>
             </semantics>
           </math></p>
-        <p>そして、合成を一列に並べると:</p>
+        <p>そして、先ほどの合成で表すとこうなる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -32900,7 +32901,7 @@ construction}.} -->
                 \symbf{Set}](\symbf{A}(a, -), \mathbf{Ran}_{K}D)</annotation>
             </semantics>
           </math></p>
-        <p>右辺は米田の補題を使って縮約できる:</p>
+        <p>右辺は米田の補題を使って簡潔にできる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -32948,7 +32949,7 @@ construction}.} -->
                 \mathbf{Ran}_{K}D\ a</annotation>
             </semantics>
           </math></p>
-        <p>ここで、自然変換の集合をエンドに書き直すと、右Kan拡張に対するこの非常に便利な式が得られる:</p>
+        <p>ここで、自然変換の集合をエンドに書き直すと、右Kan拡張に対する非常に便利な式が得られる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -33094,7 +33095,7 @@ construction}.} -->
                 [\symbf{I}, \symbf{Set}](D, F&#39; \circ K)</annotation>
             </semantics>
           </math></p>
-        <p>前述の式を左辺に代入しよう:</p>
+        <p>左辺に前述の式を代入しよう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -33418,8 +33419,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">\int_i \symbf{A}(D\ i, F&#39;\ (K\ i))</annotation>
             </semantics>
           </math></p>
-        <p>This is indeed the set of natural transformations that forms the
-          right hand side of the adjunction we set out to prove:</p>
+        <p>この自然変換の集合はまさに、証明しようとしていた随伴の右辺を形成する:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -33450,7 +33450,7 @@ construction}.} -->
           </math></p>
         <p>このようなエンド・コエンド・米田の補題を使った計算は、エンドの「微積分」としてはごく典型的なものだ。</p>
         <h2 data-number="27.5" id="haskellでのkan拡張"><span class="header-section-number">27.5</span> HaskellでのKan拡張</h2>
-        <p>Kan拡張のエンド/コエンドの式は、Haskellに簡単に変換できる。右Kan拡張から始めよう:</p>
+        <p>Kan拡張のエンド・コエンドの式はHaskellに簡単に変換できる。右Kan拡張から始めよう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -33504,26 +33504,21 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb583-1"><a href="#cb583-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">Ran</span> k d a <span class="ot">=</span> <span class="dt">Ran</span> (<span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> k i) <span class="ot">-&gt;</span> d i)</span></code></pre>
         </div>
         <p>
-          この定義を見ると、<code>Ran</code>には、関数を適用できる型<code>a</code>の値と、2つの関手<code>k</code>と<code>d</code>の間の自然変換が含まれている必要があることは明らかだ。For
-          instance, suppose that <code>k</code> is the tree functor, and
-          <code>d</code> is the list functor, and you were given a
-          <code>Ran Tree [] String</code>. これに関数:
+          この定義を見ると、<code>Ran</code>には、関数を適用できる型<code>a</code>の値と、2つの関手<code>k</code>と<code>d</code>の間の自然変換が含まれている必要があることは明らかだ。たとえば、<code>k</code>がtree関手、<code>d</code>がlist関手だとして、<code>Ran Tree [] String</code>が与えられたとする。これに関数:
         </p>
         <div class="sourceCode" id="cb584">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb584-1"><a href="#cb584-1" aria-hidden="true" tabindex="-1"></a><span class="ot">f ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Tree</span> <span class="dt">Int</span></span></code></pre>
         </div>
         <p>
-          を渡すと<code>Int</code>などのリストが返される。右Kan拡張はこの関数を使って木を生成し、再パッケージしてリストにする。たとえば、文字列から構文解析木を生成するパーサーを渡すと、その木の深さ優先トラバースに対応するリストが得られる。
+          を渡すと<code>Int</code>のリストが返される、などだ。右Kan拡張はこの関数を使って木を生成し、再パッケージしてリストにする。たとえば、文字列から構文解析木を生成するパーサーを渡すと、その木の深さ優先トラバースに対応するリストが得られる。
         </p>
         <p>右Kan拡張は、関手<code>d</code>を恒等関手に置き換えれば、任意の関手の左随伴を計算するために使える。これにより、関手<code>k</code>の左随伴は、次の型の多相関数の集合で表される:</p>
         <div class="sourceCode" id="cb585">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb585-1"><a href="#cb585-1" aria-hidden="true" tabindex="-1"></a><span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> k i) <span class="ot">-&gt;</span> i</span></code></pre>
         </div>
-        <p><code>k</code>がモノイドの圏からの忘却関手だとする。The universal
-          quantifier then goes over all monoids.
-          当然、Haskellではモノイダル則を表現できないが、結果の自由関手はちゃんと近似できる
+        <p><code>k</code>がモノイドの圏からの忘却関手だとしよう。すると、全称量化子はすべてのモノイドに及ぶ。もちろんHaskellではモノイダル則を表現できないが、以下は結果の自由関手の適切な近似になっている
           (忘却関手<code>k</code>は対象における恒等関手だ):</p>
         <div class="sourceCode" id="cb586">
           <pre
@@ -33578,18 +33573,18 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>したがって、存在量化子へと翻訳される。記号的には:</p>
+        <p>したがって、存在量化子へと翻訳される。記号的にはこうなる:</p>
         <div class="sourceCode" id="cb588">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb588-1"><a href="#cb588-1" aria-hidden="true" tabindex="-1"></a><span class="dt">Lan</span> k d a <span class="ot">=</span> exists i<span class="op">.</span> (k i <span class="ot">-&gt;</span> a, d i)</span></code></pre>
         </div>
-        <p>これはHaskellで<em>GADT</em>、すなわち全称量化されたデータコンストラクターを使ってコード化できる:</p>
+        <p>これはHaskellでは<em>GADT</em>、あるいは全称量化されたデータコンストラクターを使ってコード化できる:</p>
         <div class="sourceCode" id="cb589">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb589-1"><a href="#cb589-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Lan</span> k d a <span class="ot">=</span> <span class="kw">forall</span> i<span class="op">.</span> <span class="dt">Lan</span> (k i <span class="ot">-&gt;</span> a) (d i)</span></code></pre>
         </div>
         <p>
-          このデータ構造を解釈すると、不特定の数の<code>i</code>を含むコンテナを取って<code>a</code>を1つ生成する関数を含むものだと言える。それらの<code>i</code>のコンテナも持っている。<code>i</code>が何かは分からないので、このデータ構造で唯一できることは<code>i</code>のコンテナを取得して、それを自然変換を使って関手<code>k</code>で定義されたコンテナに再パックして、関数を呼んで<code>a</code>を得ることだ。たとえば、<code>d</code>が木で<code>k</code>がリストの場合、木を直列化し、得られるリストで関数を呼べば、<code>a</code>が得られる。
+          このデータ構造を解釈すると、不特定の数の<code>i</code>を含むコンテナを取って<code>a</code>を1つ生成する関数を含むものだと言える。また、それらの<code>i</code>のコンテナも持つ。<code>i</code>が何かは分からないので、このデータ構造で唯一できるのは、<code>i</code>のコンテナを取得し、自然変換を使って関手<code>k</code>で定義されたコンテナに再パックし、関数を呼んで<code>a</code>を得ることだけだ。たとえば、<code>d</code>が木で<code>k</code>がリストの場合は、木を直列化して得られるリストで関数を呼べば<code>a</code>が得られる。
         </p>
         <p>左Kan拡張は関手の右随伴を計算するために使える。積関手の右随伴が冪乗なのは知っているので、Kan拡張を使って実装してみよう:</p>
         <div class="sourceCode" id="cb590">
@@ -33614,7 +33609,7 @@ construction}.} -->
         </ol>
         <h2 data-number="27.6" id="自由関手"><span class="header-section-number">27.6</span> 自由関手</h2>
         <p>Kan拡張の興味深い応用として自由関手 (free functor)
-          の構成がある。これは次の実際的な問題の解だ:
+          の構成がある。これは以下のような実際的な問題の解となる:
           対象の写像である型コンストラクターがあるとする。その型コンストラクターをもとに関手を定義することは可能だろうか？
           言い換えると、その型コンストラクターを完全な自己関手へと拡張するような射の写像を定義できるだろうか？</p>
         <p>鍵となる観察は、型コンストラクターは離散圏を始域とする関手として表現できる、というものだ。離散圏の射は恒等射だけだ。圏<math display="inline"
@@ -33755,7 +33750,7 @@ construction}.} -->
         <p>ご覧のとおり、自由関手は、関数と引数の両方を記録することで関数のリフトを偽装する。それは、関数合成を記録することによって、リフトされた関数を累積する。関手則は自動的に満たされる。この構成は論文<a
             href="http://okmij.org/ftp/Haskell/extensible/more.pdf">Freer Monads,
             More Extensible Effects</a>で使われたものだ。</p>
-        <p>別の方法として、右Kan拡張を同じ目的に使うこともできる:</p>
+        <p>別の方法として、右Kan拡張も同じ目的に使える:</p>
         <div class="sourceCode" id="cb594">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb594-1"><a href="#cb594-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">FreeF</span> f a <span class="ot">=</span> <span class="dt">FreeF</span> (<span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> i) <span class="ot">-&gt;</span> f i)</span></code></pre>
@@ -33808,10 +33803,10 @@ construction}.} -->
             </semantics>
           </math>上の豊穣圏だと言える。</p>
         <p>
-          サイズの理由に加えて、単なる集合以上の構造があるものへhom集合を一般化することにも関心があるだろう。たとえば、従来の圏には対象間の距離という概念はない。2つの対象は射によって接続されているかいないかのどちらかだ。ある対象に接続されているすべての対象は近傍
+          大きさの理由に加えて、hom集合をただの集合以上の構造があるものへと一般化することも興味深そうだ。たとえば、従来の圏には対象間の距離という概念はない。2つの対象は射によって接続されているかいないかのどちらかだ。ある対象に接続されているすべての対象は近傍
           (neighbors)
           と呼ばれる。現実の人生とは違って、圏においては、友人の友人の友人は、親友と同じくらい近しい。適切な豊穣圏では、対象間の距離を定義できる。</p>
-        <p>豊穣圏について経験を積むべき非常に実用的な理由はもう1つある。それは、圏に関する知識の非常に有用なオンライン情報源である<a
+        <p>豊穣圏について経験を積むべき極めて実用的な理由はもう1つある。それは、圏に関する知識の非常に有用なオンライン情報源である<a
             href="https://ncatlab.org/">nLab</a>が主に豊穣圏について書かれているからだ。</p>
         <h2 data-number="28.1" id="なぜモノイダル圏か"><span class="header-section-number">28.1</span> なぜモノイダル圏か？</h2>
         <p>豊穣圏を構築する際には、モノイダル圏を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -33913,7 +33908,7 @@ construction}.} -->
               <mn>𝟏</mn>
               <annotation encoding="application/x-tex">\symbf{1}</annotation>
             </semantics>
-          </math>の関数を使って定義できる。</p>
+          </math>の関数を使って定義できる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -33936,7 +33931,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">j_a \Colon \symbf{1} \to \symbf{C}(a, a)</annotation>
             </semantics>
           </math></p>
-        <p>ここでも、単集合は終対象に置き換えられるが、さらに進んで、テンソル積の単位<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>ここでも単集合は終対象に置き換えられるが、さらに進んでテンソル積の単位<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>i</mi>
               <annotation encoding="application/x-tex">i</annotation>
@@ -33949,7 +33944,7 @@ construction}.} -->
             </semantics>
           </math>から取った対象は、hom集合を置き換える候補として適している。</p>
         <h2 data-number="28.2" id="モノイダル圏-1"><span class="header-section-number">28.2</span> モノイダル圏</h2>
-        <p>モノイダル圏については前にも述べたが、定義を再定義する価値はある。モノイダル圏は、テンソル積を双関手として定義する:</p>
+        <p>モノイダル圏については前にも述べたが、定義をもう一度述べておく価値はある。モノイダル圏は、テンソル積を双関手として定義する:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -33966,7 +33961,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>このテンソル積は結合的であってほしいが、自然同型を除いた結合則を満たせば十分だ。この同型は結合子と呼ばれる。そのコンポーネントは:</p>
+        <p>このテンソル積は結合的なのが望ましいが、自然同型を除いた結合則さえ満たせば十分だ。この同型射は結合子と呼ばれる。そのコンポーネントはこうなる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -34009,7 +34004,7 @@ construction}.} -->
               <mi>i</mi>
               <annotation encoding="application/x-tex">i</annotation>
             </semantics>
-          </math>を定義する必要がある。これも自然同型を除く。これら2つの同型は、それぞれ左単位子・右単位子と呼ばれ、次の構成要素を持つ:</p>
+          </math>を、これも自然同型を除いて一意に定義する必要がある。これら2つの同型は、それぞれ左単位子・右単位子と呼ばれ、次の構成要素を持つ:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mtable>
@@ -34058,7 +34053,7 @@ construction}.} -->
         <p><img src="images/assoc.jpg" /></p>
         <p><img src="images/idcoherence.jpg" /></p>
         <p>モノイダル圏が<span id="symmetric" class="keyword">対称</span>
-          (symmetric) と呼ばれるのは、自然同型がコンポーネント:</p>
+          (symmetric) と呼ばれる条件は、自然同型がコンポーネント:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -34118,7 +34113,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>かつモノイダル構造と一致している場合だ。</p>
+        <p>かつモノイダル構造と一致していることだ。</p>
         <p>モノイダル圏に関して興味深いのは、内部hom (関数オブジェクト)
           をテンソル積に対する右随伴として定義できることだ。この関数オブジェクト、すなわち冪乗の標準的な定義は、右随伴を通じて圏論的な積へと向かっていたことを思い出してほしい。そのような対象が存在する圏をカルテシアン閉圏と呼んだ。モノイダル圏の内部homを定義する随伴は次のとおりだ:
         </p>
@@ -34167,7 +34162,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">{[}b, c{]}</annotation>
             </semantics>
-          </math>と表記する。この随伴の余単位は自然変換であり、そのコンポーネントは評価射
+          </math>と表記しよう。この随伴の余単位は自然変換であり、そのコンポーネントは評価射
           (evaluation morphism) と呼ばれる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -34251,7 +34246,7 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>両方が定義されているモノイダル圏は<span id="biclosed" class="keyword">双閉</span> (biclosed)
-          と呼ばれる。双閉ではない圏の例としては、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          と呼ばれる。双閉ではない圏の例としては<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐒</mi>
@@ -35792,7 +35787,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">h \Colon a \to a&#39;</annotation>
             </semantics>
           </math></p>
-        <p>次が満たされる場合:</p>
+        <p>が存在する場合だ。ただし:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -40962,7 +40957,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>次が満たされる場合:</p>
+        <p>ただし:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
