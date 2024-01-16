@@ -8,6 +8,13 @@ standalone: true
 html-math-method:
   method: mathml
 
+# pdf
+to: latex
+pdf-engine: lualatex
+metadata:
+  documentclass: ltjsbook
+  geometry: a5paper
+
 # common
 metadata-file: metadata.yaml
 from: markdown+smart
