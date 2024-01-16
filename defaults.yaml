@@ -24,7 +24,6 @@ highlight-style: tango
 table-of-contents: true
 toc-depth: 2
 number-sections: true
-include-in-header: [../mathjax_loader.html]
 reference-location: section
 
 input-files:
