@@ -1482,7 +1482,7 @@
           を取る関数は決して呼び出されない。なぜなら、“nothing”
           を表す値がないからだ。この関数は何を取るのだろうか？
           概念的には、インスタンスが1つしか存在しないダミー値を取るため、明示的に言及する必要はない。しかしHaskellでは、この値を表す記号として、空の括弧のペア<code>()</code>がある。そのため、奇妙な偶然
-          (これは偶然なのか？ )
+          (これは偶然なのか？)
           によって、void関数の呼び出しはC++とHaskellで同じように見える。また、Haskellは簡潔さを好むので、同じシンボル<code>()</code>が型、コンストラクター、そして単集合に対応する唯一の値に使われる。この関数をHaskellで書くとこうなる:
         </p>
         <div class="sourceCode" id="cb22">
@@ -4122,7 +4122,8 @@
         <p>
           <code>maybeTail</code>の定義の最初の部分は、<code>Nil</code>コンストラクターをパターンとして使い、<code>Nothing</code>を返す。2番目の部分では、<code>Cons</code>コンストラクターをパターンとして使う。コンストラクターの最初の引数には興味がないため、ワイルドカードで置き換える。<code>Cons</code>の2番目の引数は、変数<code>t</code>に束縛される
           (厳密に言えば、一度式に束縛されたら決して変化しないものの、変数と呼ぶことにする)。戻り値は<code>Just t</code>だ。こうして、<code>List</code>の作成方法に応じて、句の1つに一致するようになった。作成に<code>Cons</code>が使われるときは、渡した2つの引数が取得される
-          (最初の引数は破棄される)。</p>
+          (最初の引数は破棄される)。
+        </p>
         <p>
           さらに複雑な直和型は、C++では多相クラス階層を使って実装されている。共通の祖先を持つ一連のクラスは、1つのバリアント型として理解でき、その中では仮想関数テーブルが隠しタグとして機能する。Haskellではコンストラクター上のパターンマッチングで特殊なコードを呼び出して行っていることを、C++では仮想関数テーブルのポインターに基づいて仮想関数呼び出しをディスパッチして実現している。
         </p>
@@ -4859,7 +4860,8 @@
           (残念ながら、テンプレート仮想関数は作れない)？
           フリーテンプレート関数は、カリー化版と非カリー化版のどちらにすべきだろうか？
           C++コンパイラは不足した型情報を正しく推論できるのか、それとも明示的に指定すべきだろうか？
-          入力関数<code>f</code>が<code>int</code>から<code>bool</code>への関数である状況を考えてみよう。コンパイラに<code>g</code>の型が分かるだろうか:</p>
+          入力関数<code>f</code>が<code>int</code>から<code>bool</code>への関数である状況を考えてみよう。コンパイラに<code>g</code>の型が分かるだろうか:
+        </p>
         <div class="sourceCode" id="cb169">
           <pre
             class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> g <span class="op">=</span> fmap<span class="op">(</span>f<span class="op">);</span></span></code></pre>
@@ -4959,7 +4961,8 @@
           <code>List a</code>に作用する関数は、リストの2つのコンストラクターに対応する2つの場合を考慮する必要がある。<code>Nil</code>の場合は自明で、単に<code>Nil</code>を返す。空のリストでできることはあまりない。<code>Cons</code>の場合は、再帰を伴うため、ややトリッキーだ。そこで、少し前に戻って、何をしようとしているのか考えてみよう。<code>a</code>のリストと、<code>a</code>を<code>b</code>に変換する関数<code>f</code>があり、<code>b</code>のリストを生成したいと考えている。自明なのは、<code>f</code>を使ってリストの各要素を<code>a</code>から<code>b</code>に変換することだ。(空でない)
           リストが頭部と尾部の<code>Cons</code>として定義されている場合、実際にはどうやってそれを行うのだろうか。<code>f</code>を頭部に適用し、リフト
           (<code>fmap</code>)
-          された<code>f</code>を尾部に適用する。これは再帰的な定義だ。リフトされた<code>f</code>をリフトされた<code>f</code>を用いて定義しているからだ。</p>
+          された<code>f</code>を尾部に適用する。これは再帰的な定義だ。リフトされた<code>f</code>をリフトされた<code>f</code>を用いて定義しているからだ。
+        </p>
         <div class="sourceCode" id="cb180">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span> f (<span class="dt">Cons</span> x t) <span class="ot">=</span> <span class="dt">Cons</span> (f x) (<span class="fu">fmap</span> f t)</span></code></pre>
@@ -5001,7 +5004,8 @@
         <p>
           <code>std::transform</code>は<code>fmap</code>のより原始的な従兄弟だ。それに渡せるイテレータを実装しているため、ほとんどのC++コンテナは関手だと言える。残念ながら、関手の単純さは、イテレータや一時変数
           (上記の<code>fmap</code>の実装を参照)
-          でいつも煩雑になるため失われてしまう。新しく提案されたC++のrangeライブラリによってrangeの関手的な性質がより顕著になったのは喜ばしい。</p>
+          でいつも煩雑になるため失われてしまう。新しく提案されたC++のrangeライブラリによってrangeの関手的な性質がより顕著になったのは喜ばしい。
+        </p>
         <h3 data-number="7.1.7" id="reader関手"><span class="header-section-number">7.1.7</span> Reader関手</h3>
         <p>
           さて、直観が育ってきただろう――たとえば、関手はある種のコンテナだ――では、一見したところ非常に異なる例をお見せしよう。型<code>a</code>からの、<code>a</code>を返す関数の型への写像を考えてみよう。関数型についてはあまり詳しく述べていない
@@ -5069,7 +5073,8 @@
         <p>
           <code>Const</code>型コンストラクターは<code>c</code>と<code>a</code>の2つの型を取る。アローコンストラクターで行ったように、部分適用で関手を作成しよう。データコンストラクター
           (これも<code>Const</code>と呼ばれる)
-          は型<code>c</code>の値を1つだけ取る。これは<code>a</code>には依存しない。この型コンストラクターの<code>fmap</code>の型は次のようになる:</p>
+          は型<code>c</code>の値を1つだけ取る。これは<code>a</code>には依存しない。この型コンストラクターの<code>fmap</code>の型は次のようになる:
+        </p>
         <div class="sourceCode" id="cb192">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb192-1"><a href="#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span><span class="ot"> ::</span> (a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> <span class="dt">Const</span> c a <span class="ot">-&gt;</span> <span class="dt">Const</span> c b</span></code></pre>
@@ -5393,7 +5398,8 @@
         <p>この型クラス定義では、両方のデフォルト実装を<code>bimap</code>として提供している。</p>
         <p>
           <code>Bifunctor</code>のインスタンスを宣言するときには、<code>bimap</code>を実装してデフォルトの<code>first</code>と<code>second</code>を受け入れるか、<code>first</code>と<code>second</code>の両方を実装してデフォルトの<code>bimap</code>を受け入れるか、どちらかを選択できる
-          (もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる)。</p>
+          (もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる)。
+        </p>
         <h2 data-number="8.2" id="積と余積の双関手"><span class="header-section-number">8.2</span> 積と余積の双関手</h2>
         <p>双関手の重要な例として、圏論的な積がある。それは<a
             href="#products-and-coproducts">普遍的構成</a>によって定義される2つの対象の積だ。対象の任意のペアに対して積が存在する場合、これらの対象から積への写像は双関手的だ。これは一般に真であり、Haskellに特によく当てはまる。以下に、ペアのコンストラクターについての<code>Bifunctor</code>インスタンスを示す。最も単純な直積型だ:
@@ -7495,7 +7501,8 @@
         <p>
           <code>int</code>や<code>double</code>を取る関数を完全にメモ化したいとは思わないだろう。しかし、関数とデータ型の間には、常に実用的だとは限らないにしても、同等性がある。型はリスト・文字列・木など無数に存在する。これらの型を取る関数をせっせとメモ化したら、無限のストレージが必要になるだろう。しかし、Haskellは遅延評価言語であるため、遅延評価された
           (無限の)
-          データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪乗対象との区別を説明している。冪乗対象の方が<em>データ</em>という概念によく対応している。</p>
+          データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪乗対象との区別を説明している。冪乗対象の方が<em>データ</em>という概念によく対応している。
+        </p>
         <h2 data-number="9.4" id="カルテシアン閉圏"><span class="header-section-number">9.4</span> カルテシアン閉圏</h2>
         <p>型や関数のモデルとしては集合の圏を今後も使うが、圏にはより大きな族があって、同じ目的のモデルとして使えることは言及する価値がある。それらの圏は<span id="Cartesian_closed"
             class="keyword">カルテシアン閉</span> (Cartesian
@@ -7893,7 +7900,8 @@
         </div>
         <p>
           <code>a</code>を取り<code>b</code>を返す関数<code>f</code>と、型<code>a</code>の具体的な値<code>x</code>とのペアがあれば、<code>f</code>を<code>x</code>に適用するだけで型<code>b</code>の具体的な値を得られる。この関数を実装することで、型<code>((a -&gt; b), a) -&gt; b</code>が居住であることを示した。modus
-          ponensは我々の論理では真だ。</p>
+          ponensは我々の論理では真だ。
+        </p>
         <p>では、あからさまに間違っている述語ではどうだろうか？ 例:
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -8314,10 +8322,10 @@
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 F f \Colon F a \to F b \\
                 G f \Colon G a \to G b
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -8369,10 +8377,10 @@
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 \alpha_a \Colon F\ a \to G\ a \\
                 \alpha_b \Colon F\ b \to G\ b
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -9644,10 +9652,10 @@
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 F \Colon \symbf{C} \to \symbf{D} \\
                 G \Colon \symbf{D} \to \symbf{E}
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -9712,10 +9720,10 @@
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 \alpha \Colon F \to F&#39; \\
                 \beta \Colon G \to G&#39;
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -10038,10 +10046,10 @@
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 \beta_{F\ a} \Colon G (F\ a) \to G&#39;(F\ a) \\
                 \beta_{F&#39;a} \Colon G (F&#39;a) \to G&#39;(F&#39;a)
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -10117,10 +10125,10 @@
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 G \alpha_a \Colon G (F\ a) \to G (F&#39;a) \\
                 G&#39;\alpha_a \Colon G&#39;(F\ a) \to G&#39;(F&#39;a)
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -10653,10 +10661,10 @@
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 F &amp;= m \frac{dv}{dt} \\
                 v &amp;= \frac{dx}{dt}
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -19054,10 +19062,10 @@ C<sup>op</sup> × C -> Set
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 \eta \Colon I_{\symbf{D}} \to R \circ L \\
                 \varepsilon \Colon L \circ R \to I_{\symbf{C}}
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -19111,10 +19119,10 @@ C<sup>op</sup> × C -> Set
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 R \circ L \to I_{\symbf{D}} \quad\quad\text{必須ではない} \\
                 I_{\symbf{C}} \to L \circ R \quad\quad\text{必須ではない}
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -19452,10 +19460,10 @@ C<sup>op</sup> × C -> Set
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 L = L \circ I_{\symbf{D}} \to L \circ R \circ L \to I_{\symbf{C}} \circ L = L \\
                 R = I_{\symbf{D}} \circ R \to R \circ L \circ R \to R \circ I_{\symbf{C}} = R
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -19521,10 +19529,10 @@ C<sup>op</sup> × C -> Set
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 \varepsilon_{L d} \circ L \eta_d = id_{L d} \\
                 R \varepsilon_{c} \circ \eta_{R c} = id_{R c}
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -19872,10 +19880,10 @@ C<sup>op</sup> × C -> Set
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 c \to \symbf{C}(L d, c) \\
                 c \to \symbf{D}(d, R c)
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -19921,10 +19929,10 @@ C<sup>op</sup> × C -> Set
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 d \to \symbf{C}(L d, c) \\
                 d \to \symbf{D}(d, R c)
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -20910,10 +20918,10 @@ C<sup>op</sup> × C -> Set
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 f \Colon c&#39; \to a \\
                 g \Colon c&#39;&#39; \to b
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -21675,10 +21683,10 @@ construction}.} -->
                   </mtr>
                 </mtable>
                 <annotation encoding="application/x-tex">
-                  \begin{gather*}
+                  \begin{gathered}
                   a \to \symbf{C}(L a, b) \\
                   a \to \symbf{D}(a, R b)
-                  \end{gather*}
+                  \end{gathered}
                 </annotation>
               </semantics>
             </math>
@@ -23711,10 +23719,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 f \Colon a \to T\ b \\
                 g \Colon b \to T\ c
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -24346,11 +24354,11 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \alpha_{a b c} &amp;\Colon (a \otimes b) \otimes c \to a \otimes (b \otimes c) \\
                 \lambda_a &amp;\Colon i \otimes a \to a \\
                 \rho_a &amp;\Colon a \otimes i \to a
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -24426,10 +24434,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \mu &amp;\Colon m \otimes m \to m \\
                 \eta &amp;\Colon i \to m
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -24654,10 +24662,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 \mu \Colon T \circ T \to T \\
                 \eta \Colon I \to T
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -24743,10 +24751,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 \eta \Colon I_{\symbf{D}} \to R \circ L \\
                 \varepsilon \Colon L \circ R \to I_{\symbf{C}}
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -24843,10 +24851,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 L\ z = z\times{}s
                 R\ b = s \Rightarrow b
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -25201,10 +25209,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \varepsilon &amp;\Colon T \to I \\
                 \delta &amp;\Colon T \to T^2
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -25345,10 +25353,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \mu &amp;\Colon m \otimes m \to m \\
                 \eta &amp;\Colon i \to m
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -25382,10 +25390,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \delta &amp;\Colon m \to m \otimes m \\
                 \varepsilon &amp;\Colon m \to i
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -25477,10 +25485,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 L\ z &amp;= z\times{}s \\
                 R\ a &amp;= s \Rightarrow a
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -25622,10 +25630,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \delta &amp;\Colon L \circ R \to L \circ R \circ L \circ R \\
                 \delta &amp;= L \circ \eta \circ R
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -25691,7 +25699,8 @@ construction}.} -->
           (実際、コモナドの恒等則では<code>extract . duplicate = id</code>と規定されている)。</p>
         <p>
           <code>Store</code>コモナドは<code>Lens</code>ライブラリの理論的基盤として重要だ。概念としては、<code>Store s a</code>コモナドは、型<code>s</code>をインデックスとしてdate型<code>a</code>の特定のサブ構造に
-          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型:</p>
+          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型:
+        </p>
         <div class="sourceCode" id="cb509">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb509-1"><a href="#cb509-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> <span class="dt">Store</span> s a</span></code></pre>
@@ -25749,10 +25758,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \mu &amp;\Colon m\times{}m \to m \\
                 \eta &amp;\Colon 1 \to m
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -25808,10 +25817,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \mu &amp;\in m^{m\times{}m} \\
                 \eta &amp;\in m^1
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -25927,11 +25936,11 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 m\times{}m \to m \\
                 m \to m \\
                 1 \to m
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -26703,10 +26712,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 zero &amp;\Colon 1 \to N \\
                 succ &amp;\Colon N \to N
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -27101,10 +27110,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \eta_a &amp;\Colon a \to m\ a \\
                 \mu_a &amp;\Colon m\ (m\ a) \to m\ a
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -27516,10 +27525,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 alg &amp;\circ \eta_{Ta} = \mathbf{id}_{Ta} \\
                 alg &amp;\circ \mu_a = alg \circ T\ alg
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -28229,10 +28238,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 f_{\symbf{K}} \Colon a \to b \\
                 g_{\symbf{K}} \Colon b \to c
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -28269,10 +28278,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 f \Colon a \to T\ b \\
                 g \Colon b \to T\ c
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -28341,10 +28350,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 h &amp;\Colon a \to T\ c \\
                 h &amp;= \mu \circ (T\ g) \circ f
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -28829,10 +28838,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 set &amp;\Colon a \to s \to a \\
                 get &amp;\Colon a \to s
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -30117,10 +30126,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \tau_a &amp;\Colon F\ a \to G\ a \\
                 \tau_b &amp;\Colon F\ b \to G\ b
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -30457,11 +30466,11 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 &amp;a \sim a \\
                 &amp;\text{if}\ a \sim b\ \text{then}\ b \sim a \\
                 &amp;\text{if}\ a \sim b\ \text{and}\ b \sim c\ \text{then}\ a \sim c
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -34042,10 +34051,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 \lambda_a &amp;\Colon i \otimes a \to a \\
                 \rho_a &amp;\Colon a \otimes i \to a
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -35766,10 +35775,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 f &amp;\Colon a \to b \\
                 f&#39; &amp;\Colon a&#39; \to b
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -35859,10 +35868,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{align*}
+                \begin{aligned}
                 g &amp;\Colon c \to a \\
                 g&#39; &amp;\Colon c \to a
-                \end{align*}
+                \end{aligned}
               </annotation>
             </semantics>
           </math></p>
@@ -37432,10 +37441,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 F\ (m \times n) = F\ m \times F\ n \\
                 F \circ I_{\symbf{L}} = I&#39;_{\symbf{L&#39;}}
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -37558,10 +37567,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 M \Colon \symbf{L} \to \symbf{Set}\\
                 M\ (a \times b) \cong M\ a \times M\ b
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -40855,10 +40864,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 f \Colon x \to a \\
                 g \Colon x \to b
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -40894,10 +40903,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 f&#39; \Colon y \to b \\
                 g&#39; \Colon y \to c
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -40950,10 +40959,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 h \Colon z \to x \\
                 h&#39; \Colon z \to y
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -41259,10 +41268,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 \eta \Colon I \to T \\
                 \mu \Colon T \circ T \to T
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -41371,10 +41380,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 dom \Colon Ar \to Ob \\
                 cod \Colon Ar \to Ob
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -41517,10 +41526,10 @@ construction}.} -->
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
-                \begin{gather*}
+                \begin{gathered}
                 dom \circ \eta = id
                 cod \circ \eta = id
-                \end{gather*}
+                \end{gathered}
               </annotation>
             </semantics>
           </math></p>
@@ -41792,7 +41801,8 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#one-to-one" epub:type="index-locator">one-to-one</a></span></li>
           <li><span epub:type="index-term"><a href="#point" epub:type="index-locator">points</a></span></li>
           <li>predicate – <span epub:type="index-term"><a href="#predicates" epub:type="index-locator">a</a></span>,
-            <span epub:type="index-term"><a href="#predicate" epub:type="index-locator">b</a></span></li>
+            <span epub:type="index-term"><a href="#predicate" epub:type="index-locator">b</a></span>
+          </li>
           <li><span epub:type="index-term"><a href="#proof-relevant_relation" epub:type="index-locator">proof-relevant
                 relation</a></span></li>
           <li><span epub:type="index-term"><a href="#total" epub:type="index-locator">total</a></span></li>
@@ -41940,7 +41950,8 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#exponential" epub:type="index-locator">冪乗</a></span></li>
           <li><span epub:type="index-term"><a href="#point-free" epub:type="index-locator">ポイントフリー</a></span></li>
           <li>忘却関手 – <span epub:type="index-term"><a href="#forgetful_functor" epub:type="index-locator">a</a></span>,
-            <span epub:type="index-term"><a href="#forgetful_functor2" epub:type="index-locator">b</a></span></li>
+            <span epub:type="index-term"><a href="#forgetful_functor2" epub:type="index-locator">b</a></span>
+          </li>
           <li><span epub:type="index-term"><a href="#enriched" epub:type="index-locator">enriched</a></span></li>
           <li><span epub:type="index-term"><a href="#enriched_functor" epub:type="index-locator">enriched
                 functor</a></span></li>
