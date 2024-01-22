@@ -1,3 +1,5 @@
+\clearpage
+
 # 謝辞 {-}
 
 私の計算と論理をチェックしてくれたEdward KmettとGershom Bazermanに感謝したい。誤りを訂正し、本書を改善してくれた大勢のボランティアに感謝している。

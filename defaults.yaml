@@ -12,8 +12,13 @@ html-math-method:
 to: latex
 pdf-engine: lualatex
 metadata:
-  documentclass: ltjsbook
-  geometry: a5paper
+  documentclass: jlreq
+variables:
+  classoption:
+    - book
+    - afterindent=true
+    - paper=a5paper
+    - jlreq_warnings
 
 # common
 metadata-file: metadata.yaml
