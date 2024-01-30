@@ -2692,11 +2692,11 @@
               <msup>
                 <mi>𝐂</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}</annotation>
             </semantics>
           </math>を定義できるとわかる。反対圏は、同時に圏を再定義する限り、合成のすべての要件を自動的に満たす。もとの射<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2749,8 +2749,8 @@
                 <msup>
                   <mi>f</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>∷</mo>
@@ -2758,7 +2758,7 @@
                 <mo>→</mo>
                 <mi>a</mi>
               </mrow>
-              <annotation encoding="application/x-tex">f^{op} \Colon b \to a</annotation>
+              <annotation encoding="application/x-tex">f^\mathit{op} \Colon b \to a</annotation>
             </semantics>
           </math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -2766,8 +2766,8 @@
                 <msup>
                   <mi>g</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>∷</mo>
@@ -2775,7 +2775,7 @@
                 <mo>→</mo>
                 <mi>b</mi>
               </mrow>
-              <annotation encoding="application/x-tex">g^{op} \Colon c \to b</annotation>
+              <annotation encoding="application/x-tex">g^\mathit{op} \Colon c \to b</annotation>
             </semantics>
           </math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -2783,28 +2783,28 @@
                 <msup>
                   <mi>h</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>=</mo>
                 <msup>
                   <mi>f</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>∘</mo>
                 <msup>
                   <mi>g</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
               </mrow>
-              <annotation encoding="application/x-tex">h^{op} = f^{op} \circ g^{op}</annotation>
+              <annotation encoding="application/x-tex">h^\mathit{op} = f^\mathit{op} \circ g^\mathit{op}</annotation>
             </semantics>
           </math>によって<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -2812,8 +2812,8 @@
                 <msup>
                   <mi>h</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>∷</mo>
@@ -2821,7 +2821,7 @@
                 <mo>→</mo>
                 <mi>a</mi>
               </mrow>
-              <annotation encoding="application/x-tex">h^{op} \Colon c \to a</annotation>
+              <annotation encoding="application/x-tex">h^\mathit{op} \Colon c \to a</annotation>
             </semantics>
           </math>へと合成される。そして、恒等射を逆にすることは、(駄洒落に注意！)
           no-opだ。
@@ -3585,7 +3585,7 @@
             </math>によって分解されるものだ。</p>
         </blockquote>
         <p>集合の圏では、余積は2つの集合の<em>非交和</em> (disjoint union)
-          だ。　<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
@@ -4104,8 +4104,7 @@
         <p>
           <code>maybeTail</code>の定義の最初の部分は、<code>Nil</code>コンストラクターをパターンとして使い、<code>Nothing</code>を返す。2番目の部分では、<code>Cons</code>コンストラクターをパターンとして使う。コンストラクターの最初の引数には興味がないため、ワイルドカードで置き換える。<code>Cons</code>の2番目の引数は、変数<code>t</code>に束縛される
           (厳密に言えば、一度式に束縛されたら決して変化しないものの、変数と呼ぶことにする)。戻り値は<code>Just t</code>だ。こうして、<code>List</code>の作成方法に応じて、句の1つに一致するようになった。作成に<code>Cons</code>が使われるときは、渡した2つの引数が取得される
-          (最初の引数は破棄される)。
-        </p>
+          (最初の引数は破棄される)。</p>
         <p>
           さらに複雑な直和型は、C++では多相クラス階層を使って実装されている。共通の祖先を持つ一連のクラスは、1つのバリアント型として理解でき、その中では仮想関数テーブルが隠しタグとして機能する。Haskellではコンストラクター上のパターンマッチングで特殊なコードを呼び出して行っていることを、C++では仮想関数テーブルのポインターに基づいて仮想関数呼び出しをディスパッチして実現している。
         </p>
@@ -4848,8 +4847,7 @@
           (残念ながら、テンプレート仮想関数は作れない)？
           フリーテンプレート関数は、カリー化版と非カリー化版のどちらにすべきだろうか？
           C++コンパイラは不足した型情報を正しく推論できるのか、それとも明示的に指定すべきだろうか？
-          入力関数<code>f</code>が<code>int</code>から<code>bool</code>への関数である状況を考えてみよう。コンパイラに<code>g</code>の型が分かるだろうか:
-        </p>
+          入力関数<code>f</code>が<code>int</code>から<code>bool</code>への関数である状況を考えてみよう。コンパイラに<code>g</code>の型が分かるだろうか:</p>
         <div class="sourceCode" id="cb168">
           <pre
             class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> g <span class="op">=</span> fmap<span class="op">(</span>f<span class="op">);</span></span></code></pre>
@@ -4949,8 +4947,7 @@
           <code>List a</code>に作用する関数は、リストの2つのコンストラクターに対応する2つの場合を考慮する必要がある。<code>Nil</code>の場合は自明で、単に<code>Nil</code>を返す。空のリストでできることはあまりない。<code>Cons</code>の場合は、再帰を伴うため、ややトリッキーだ。そこで、少し前に戻って、何をしようとしているのか考えてみよう。<code>a</code>のリストと、<code>a</code>を<code>b</code>に変換する関数<code>f</code>があり、<code>b</code>のリストを生成したいと考えている。自明なのは、<code>f</code>を使ってリストの各要素を<code>a</code>から<code>b</code>に変換することだ。(空でない)
           リストが頭部と尾部の<code>Cons</code>として定義されている場合、実際にはどうやってそれを行うのだろうか。<code>f</code>を頭部に適用し、リフト
           (<code>fmap</code>)
-          された<code>f</code>を尾部に適用する。これは再帰的な定義だ。リフトされた<code>f</code>をリフトされた<code>f</code>を用いて定義しているからだ。
-        </p>
+          された<code>f</code>を尾部に適用する。これは再帰的な定義だ。リフトされた<code>f</code>をリフトされた<code>f</code>を用いて定義しているからだ。</p>
         <div class="sourceCode" id="cb179">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span> f (<span class="dt">Cons</span> x t) <span class="ot">=</span> <span class="dt">Cons</span> (f x) (<span class="fu">fmap</span> f t)</span></code></pre>
@@ -4992,8 +4989,7 @@
         <p>
           <code>std::transform</code>は<code>fmap</code>のより原始的な従兄弟だ。それに渡せるイテレータを実装しているため、ほとんどのC++コンテナは関手だと言える。残念ながら、関手の単純さは、イテレータや一時変数
           (上記の<code>fmap</code>の実装を参照)
-          でいつも煩雑になるため失われてしまう。新しく提案されたC++のrangeライブラリによってrangeの関手的な性質がより顕著になったのは喜ばしい。
-        </p>
+          でいつも煩雑になるため失われてしまう。新しく提案されたC++のrangeライブラリによってrangeの関手的な性質がより顕著になったのは喜ばしい。</p>
         <h3 data-number="7.1.7" id="reader関手"><span class="header-section-number">7.1.7</span> Reader関手</h3>
         <p>
           さて、直観が育ってきただろう――たとえば、関手はある種のコンテナだ――では、一見したところ非常に異なる例をお見せしよう。型<code>a</code>からの、<code>a</code>を返す関数の型への写像を考えてみよう。関数型についてはあまり詳しく述べていない
@@ -5061,8 +5057,7 @@
         <p>
           <code>Const</code>型コンストラクターは<code>c</code>と<code>a</code>の2つの型を取る。アローコンストラクターで行ったように、部分適用で関手を作成しよう。データコンストラクター
           (これも<code>Const</code>と呼ばれる)
-          は型<code>c</code>の値を1つだけ取る。これは<code>a</code>には依存しない。この型コンストラクターの<code>fmap</code>の型は次のようになる:
-        </p>
+          は型<code>c</code>の値を1つだけ取る。これは<code>a</code>には依存しない。この型コンストラクターの<code>fmap</code>の型は次のようになる:</p>
         <div class="sourceCode" id="cb191">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span><span class="ot"> ::</span> (a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> <span class="dt">Const</span> c a <span class="ot">-&gt;</span> <span class="dt">Const</span> c b</span></code></pre>
@@ -5381,8 +5376,7 @@
         <p>この型クラス定義では、両方のデフォルト実装を<code>bimap</code>として提供している。</p>
         <p>
           <code>Bifunctor</code>のインスタンスを宣言するときには、<code>bimap</code>を実装してデフォルトの<code>first</code>と<code>second</code>を受け入れるか、<code>first</code>と<code>second</code>の両方を実装してデフォルトの<code>bimap</code>を受け入れるか、どちらかを選択できる
-          (もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる)。
-        </p>
+          (もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる)。</p>
         <h2 data-number="8.2" id="積と余積の双関手"><span class="header-section-number">8.2</span> 積と余積の双関手</h2>
         <p>双関手の重要な例として、圏論的な積がある。それは<a
             href="#products-and-coproducts">普遍的構成</a>によって定義される2つの対象の積だ。対象の任意のペアに対して積が存在する場合、これらの対象から積への写像は双関手的だ。これは一般に真であり、Haskellに特によく当てはまる。以下に、ペアのコンストラクターについての<code>Bifunctor</code>インスタンスを示す。最も単純な直積型だ:
@@ -5702,11 +5696,11 @@
               <msup>
                 <mi>𝐂</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}</annotation>
             </semantics>
           </math>が存在する。これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -5719,11 +5713,11 @@
               <msup>
                 <mi>𝐂</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}</annotation>
             </semantics>
           </math>から他の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -5739,14 +5733,14 @@
                 <msup>
                   <mi>𝐂</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>→</mo>
                 <mi>𝐃</mi>
               </mrow>
-              <annotation encoding="application/x-tex">F \Colon \mathbf{C}^{op} \to \mathbf{D}</annotation>
+              <annotation encoding="application/x-tex">F \Colon \mathbf{C}^\mathit{op} \to \mathbf{D}</annotation>
             </semantics>
           </math></p>
         <p>このような関手は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -5754,11 +5748,11 @@
               <msup>
                 <mi>𝐂</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}</annotation>
             </semantics>
           </math>の射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -5766,8 +5760,8 @@
                 <msup>
                   <mi>f</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>∷</mo>
@@ -5775,7 +5769,7 @@
                 <mo>→</mo>
                 <mi>b</mi>
               </mrow>
-              <annotation encoding="application/x-tex">f^{op} \Colon a \to b</annotation>
+              <annotation encoding="application/x-tex">f^\mathit{op} \Colon a \to b</annotation>
             </semantics>
           </math>を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -5789,8 +5783,8 @@
                 <msup>
                   <mi>f</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>∷</mo>
@@ -5800,18 +5794,18 @@
                 <mi>F</mi>
                 <mi>b</mi>
               </mrow>
-              <annotation encoding="application/x-tex">F f^{op} \Colon F a \to F b</annotation>
+              <annotation encoding="application/x-tex">F f^\mathit{op} \Colon F a \to F b</annotation>
             </semantics>
           </math>に写す。しかし、射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <msup>
                 <mi>f</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">f^{op}</annotation>
+              <annotation encoding="application/x-tex">f^\mathit{op}</annotation>
             </semantics>
           </math>は、もとの圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -5884,8 +5878,8 @@
                 <msup>
                   <mi>f</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>∷</mo>
@@ -5893,7 +5887,7 @@
                 <mo>→</mo>
                 <mi>b</mi>
               </mrow>
-              <annotation encoding="application/x-tex">f^{op} \Colon a \to b</annotation>
+              <annotation encoding="application/x-tex">f^\mathit{op} \Colon a \to b</annotation>
             </semantics>
           </math>に写し、次に関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -5907,8 +5901,8 @@
                 <msup>
                   <mi>f</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>∷</mo>
@@ -5920,7 +5914,7 @@
                 <mspace width="0.222em"></mspace>
                 <mi>b</mi>
               </mrow>
-              <annotation encoding="application/x-tex">F f^{op} \Colon F\ a \to F\ b</annotation>
+              <annotation encoding="application/x-tex">F f^\mathit{op} \Colon F\ a \to F\ b</annotation>
             </semantics>
           </math>を取得する。</p>
         <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -6039,8 +6033,8 @@
                 <msup>
                   <mi>𝐂</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>×</mo>
@@ -6052,7 +6046,8 @@
                   <mi>𝐭</mi>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op} \times \mathbf{D} \to \mathbf{Set}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op} \times \mathbf{D} \to \mathbf{Set}
+              </annotation>
             </semantics>
           </math></p>
         <p>
@@ -6116,15 +6111,15 @@
                 <msup>
                   <mi>𝐂</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>×</mo>
                 <mrow></mrow>
                 <mi>𝐂</mi>
               </mrow>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op}\times{}\mathbf{C}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}\times{}\mathbf{C}</annotation>
             </semantics>
           </math>から集合の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -6142,15 +6137,15 @@
                 <msup>
                   <mi>𝐂</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>×</mo>
                 <mrow></mrow>
                 <mi>𝐂</mi>
               </mrow>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op}\times{}\mathbf{C}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}\times{}\mathbf{C}</annotation>
             </semantics>
           </math>の射は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -6901,12 +6896,12 @@
           </math>への射であり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>e</mi>
-                <mi>v</mi>
-                <mi>a</mi>
-                <mi>l</mi>
+                <mi>𝑒</mi>
+                <mi>𝑣</mi>
+                <mi>𝑎</mi>
+                <mi>𝑙</mi>
               </mrow>
-              <annotation encoding="application/x-tex">eval</annotation>
+              <annotation encoding="application/x-tex">\mathit{eval}</annotation>
             </semantics>
           </math>と呼ばれる。対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -6925,12 +6920,12 @@
           </math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>e</mi>
-                <mi>v</mi>
-                <mi>a</mi>
-                <mi>l</mi>
+                <mi>𝑒</mi>
+                <mi>𝑣</mi>
+                <mi>𝑎</mi>
+                <mi>𝑙</mi>
               </mrow>
-              <annotation encoding="application/x-tex">eval</annotation>
+              <annotation encoding="application/x-tex">\mathit{eval}</annotation>
             </semantics>
           </math>を通じて分解するようなかたちで一意に写せる場合、最も優れていると言える。我々の順位付けでは、この対象は他のどの対象よりも優れている。
         </p>
@@ -6974,10 +6969,12 @@
             <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mrow>
-                  <mi>e</mi>
-                  <mi>v</mi>
-                  <mi>a</mi>
-                  <mi>l</mi>
+                  <mrow>
+                    <mi>𝑒</mi>
+                    <mi>𝑣</mi>
+                    <mi>𝑎</mi>
+                    <mi>𝑙</mi>
+                  </mrow>
                   <mo>∷</mo>
                   <mrow>
                     <mo stretchy="true" form="prefix">(</mo>
@@ -6995,7 +6992,8 @@
                   <mo>→</mo>
                   <mi>b</mi>
                 </mrow>
-                <annotation encoding="application/x-tex">eval \Colon ((a \Rightarrow b) \times a) \to b</annotation>
+                <annotation encoding="application/x-tex">\mathit{eval} \Colon ((a \Rightarrow b) \times a) \to b
+                </annotation>
               </semantics>
             </math>
             を伴ったものであり、他の任意の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7048,12 +7046,12 @@
             </math>を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mrow>
-                  <mi>e</mi>
-                  <mi>v</mi>
-                  <mi>a</mi>
-                  <mi>l</mi>
+                  <mi>𝑒</mi>
+                  <mi>𝑣</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
                 </mrow>
-                <annotation encoding="application/x-tex">eval</annotation>
+                <annotation encoding="application/x-tex">\mathit{eval}</annotation>
               </semantics>
             </math>を通じて分解する:
             <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7061,10 +7059,12 @@
                 <mrow>
                   <mi>g</mi>
                   <mo>=</mo>
-                  <mi>e</mi>
-                  <mi>v</mi>
-                  <mi>a</mi>
-                  <mi>l</mi>
+                  <mrow>
+                    <mi>𝑒</mi>
+                    <mi>𝑣</mi>
+                    <mi>𝑎</mi>
+                    <mi>𝑙</mi>
+                  </mrow>
                   <mo>∘</mo>
                   <mrow>
                     <mo stretchy="true" form="prefix">(</mo>
@@ -7077,7 +7077,7 @@
                     <mo stretchy="true" form="postfix">)</mo>
                   </mrow>
                 </mrow>
-                <annotation encoding="application/x-tex">g=eval \circ (h \times \mathbf{id})</annotation>
+                <annotation encoding="application/x-tex">g=\mathit{eval} \circ (h \times \mathbf{id})</annotation>
               </semantics>
             </math>
           </p>
@@ -7324,10 +7324,12 @@
               <mrow>
                 <mi>g</mi>
                 <mo>=</mo>
-                <mi>e</mi>
-                <mi>v</mi>
-                <mi>a</mi>
-                <mi>l</mi>
+                <mrow>
+                  <mi>𝑒</mi>
+                  <mi>𝑣</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                </mrow>
                 <mo>∘</mo>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
@@ -7340,7 +7342,7 @@
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">g = eval \circ (h \times \mathbf{id})</annotation>
+              <annotation encoding="application/x-tex">g = \mathit{eval} \circ (h \times \mathbf{id})</annotation>
             </semantics>
           </math></p>
         <p>関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7487,8 +7489,7 @@
         <p>
           <code>int</code>や<code>double</code>を取る関数を完全にメモ化したいとは思わないだろう。しかし、関数とデータ型の間には、常に実用的だとは限らないにしても、同値性がある。型はリスト・文字列・木など無数に存在する。これらの型を取る関数をせっせとメモ化したら、無限のストレージが必要になるだろう。しかし、Haskellは遅延評価言語であるため、遅延評価された
           (無限の)
-          データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪乗対象との区別を説明している。冪乗対象の方が<em>データ</em>という概念によく対応している。
-        </p>
+          データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪乗対象との区別を説明している。冪乗対象の方が<em>データ</em>という概念によく対応している。</p>
         <h2 data-number="9.4" id="カルテシアン閉圏"><span class="header-section-number">9.4</span> カルテシアン閉圏</h2>
         <p>型や関数のモデルとしては集合の圏を今後も使うが、圏にはより大きな族があって、同じ目的のモデルとして使えることは言及する価値がある。それらの圏は<span id="Cartesian_closed"
             class="keyword">カルテシアン閉</span> (Cartesian
@@ -7793,10 +7794,12 @@
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>e</mi>
-                <mi>v</mi>
-                <mi>a</mi>
-                <mi>l</mi>
+                <mrow>
+                  <mi>𝑒</mi>
+                  <mi>𝑣</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                </mrow>
                 <mo>∷</mo>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
@@ -7810,7 +7813,8 @@
                 <mo>→</mo>
                 <mi>b</mi>
               </mrow>
-              <annotation encoding="application/x-tex">eval \Colon (a \Rightarrow b) \times a \to b</annotation>
+              <annotation encoding="application/x-tex">\mathit{eval} \Colon (a \Rightarrow b) \times a \to b
+              </annotation>
             </semantics>
           </math></p>
         <p>この射は関数型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7886,8 +7890,7 @@
         </div>
         <p>
           <code>a</code>を取り<code>b</code>を返す関数<code>f</code>と、型<code>a</code>の具体的な値<code>x</code>とのペアがあれば、<code>f</code>を<code>x</code>に適用するだけで型<code>b</code>の具体的な値を得られる。この関数を実装することで、型<code>((a -&gt; b), a) -&gt; b</code>が居住であることを示した。modus
-          ponensは我々の論理では真だ。
-        </p>
+          ponensは我々の論理では真だ。</p>
         <p>では、あからさまに間違っている述語ではどうだろうか？ 例:
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -7938,15 +7941,17 @@
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>f</mi>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>s</mi>
-                <mi>e</mi>
+                <mrow>
+                  <mi>𝑓</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <mi>𝑠</mi>
+                  <mi>𝑒</mi>
+                </mrow>
                 <mo>⇒</mo>
                 <mi>a</mi>
               </mrow>
-              <annotation encoding="application/x-tex">false \Rightarrow a</annotation>
+              <annotation encoding="application/x-tex">\mathit{false} \Rightarrow a</annotation>
             </semantics>
           </math></p>
         <p>虚偽からは何でも導ける (<em>ex falso
@@ -11779,9 +11784,11 @@
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>N</mi>
-                <mi>a</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑁</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑡</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <msub>
@@ -11793,15 +11800,15 @@
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">Nat(\Delta_c, D)</annotation>
+              <annotation encoding="application/x-tex">\mathit{Nat}(\Delta_c, D)</annotation>
             </semantics>
           </math>
-          を見ていることになる。この特定の自然変換の集合への<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          を見ていることになる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>c</mi>
               <annotation encoding="application/x-tex">c</annotation>
             </semantics>
-          </math>からの写像は
+          </math>からこの特定の自然変換の集合への写像は
           (反変) 関手だ。どうやってそれを示そう？
           ここでも、射の作用を定義してみよう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -11836,9 +11843,11 @@
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>N</mi>
-                <mi>a</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑁</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑡</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <msub>
@@ -11850,9 +11859,11 @@
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
                 <mo>→</mo>
-                <mi>N</mi>
-                <mi>a</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑁</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑡</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <msub>
@@ -11867,7 +11878,8 @@
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">Nat(\Delta_c, D) \to Nat(\Delta_{c&#39;}, D)</annotation>
+              <annotation encoding="application/x-tex">\mathit{Nat}(\Delta_c, D) \to \mathit{Nat}(\Delta_{c&#39;}, D)
+              </annotation>
             </semantics>
           </math></p>
         <p>自然変換をどのように写せば良いだろう？
@@ -11897,9 +11909,11 @@
           (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>N</mi>
-                <mi>a</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑁</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑡</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <msub>
@@ -11911,7 +11925,7 @@
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">Nat(\Delta_c, D)</annotation>
+              <annotation encoding="application/x-tex">\mathit{Nat}(\Delta_c, D)</annotation>
             </semantics>
           </math>
           のメンバー) のコンポーネントは、次の射だ:</p>
@@ -11970,9 +11984,11 @@
           </math>について、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>N</mi>
-                <mi>a</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑁</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑡</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <msub>
@@ -11987,7 +12003,7 @@
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">Nat(\Delta_{c&#39;}, D)</annotation>
+              <annotation encoding="application/x-tex">\mathit{Nat}(\Delta_{c&#39;}, D)</annotation>
             </semantics>
           </math>
           のメンバーである<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12075,9 +12091,11 @@
               <mrow>
                 <mi>c</mi>
                 <mo>→</mo>
-                <mi>N</mi>
-                <mi>a</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑁</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑡</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <msub>
@@ -12089,7 +12107,7 @@
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">c \to Nat(\Delta_c, D)</annotation>
+              <annotation encoding="application/x-tex">c \to \mathit{Nat}(\Delta_c, D)</annotation>
             </semantics>
           </math></p>
         <p>先ほど示したのは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12176,9 +12194,11 @@
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
                 <mo>≃</mo>
-                <mi>N</mi>
-                <mi>a</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑁</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑡</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <msub>
@@ -12192,7 +12212,7 @@
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{C}(c, %
                 \mathbf{Lim}{D}%
-                ) \simeq Nat(\Delta_c, D)</annotation>
+                ) \simeq \mathit{Nat}(\Delta_c, D)</annotation>
             </semantics>
           </math></p>
         <p>自然同型とは何かを思い出してほしい。すべてのコンポーネントが同型、すなわち可逆な射である自然変換だ。</p>
@@ -12232,9 +12252,11 @@
           のメンバーで、結果は自然変換――<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>N</mi>
-                <mi>a</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑁</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑡</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <msub>
@@ -12246,7 +12268,7 @@
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">Nat(\Delta_c, D)</annotation>
+              <annotation encoding="application/x-tex">\mathit{Nat}(\Delta_c, D)</annotation>
             </semantics>
           </math>
           のメンバー、または錐と呼ばれるものになる。この自然変換には独自のコンポーネントがあり、それは射だ。したがって、どこまでも射なので、それらを追跡できれば、先ほどの命題を証明できる。</p>
@@ -12254,9 +12276,11 @@
         <p>今後のアトラクションの予告として、集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>N</mi>
-                <mi>a</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑁</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑡</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <msub>
@@ -12268,7 +12292,7 @@
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">Nat(\Delta_c, D)</annotation>
+              <annotation encoding="application/x-tex">\mathit{Nat}(\Delta_c, D)</annotation>
             </semantics>
           </math>
           を関手圏におけるhom集合と見なせることに触れておきたい。つまり、ここでの自然同型は2つのhom集合を関連づけ、随伴と呼ばれるさらに一般的な関係を指し示している。</p>
@@ -14373,8 +14397,8 @@ C<sup>op</sup> × C -> Set
                 <msup>
                   <mi>𝐂</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>×</mo>
@@ -14386,8 +14410,8 @@ C<sup>op</sup> × C -> Set
                   <mi>𝐭</mi>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">C(-, =) \Colon \mathbf{C}^{op} \times \mathbf{C} \to \mathbf{Set}
-              </annotation>
+              <annotation encoding="application/x-tex">C(-, =) \Colon \mathbf{C}^\mathit{op} \times \mathbf{C} \to
+                \mathbf{Set}</annotation>
             </semantics>
           </math></p>
         <h2 data-number="14.2" id="表現可能関手"><span class="header-section-number">14.2</span> 表現可能関手</h2>
@@ -14829,11 +14853,11 @@ C<sup>op</sup> × C -> Set
               <msup>
                 <mi>𝐂</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}</annotation>
             </semantics>
           </math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -14850,8 +14874,8 @@ C<sup>op</sup> × C -> Set
                 <msup>
                   <mi>𝐂</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mrow>
@@ -14862,7 +14886,7 @@ C<sup>op</sup> × C -> Set
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op}(a, -)</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}(a, -)</annotation>
             </semantics>
           </math>
           は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -16566,11 +16590,11 @@ C<sup>op</sup> × C -> Set
               <msup>
                 <mi>𝐂</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}</annotation>
             </semantics>
           </math>に適用すれば反変関手の間の写像を得られる。</p>
         <p>同様に、hom関手の始対象の代わりに終対象を固定することで、余米田の補題を導出できる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -17210,11 +17234,11 @@ C<sup>op</sup> × C -> Set
               <msup>
                 <mi>𝐂</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{C}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}</annotation>
             </semantics>
           </math>)
           を関手圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -20356,15 +20380,17 @@ C<sup>op</sup> × C -> Set
                 <mi>𝐂</mi>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
-                  <mi>r</mi>
-                  <mi>e</mi>
-                  <mi>p</mi>
+                  <mrow>
+                    <mi>𝑟</mi>
+                    <mi>𝑒</mi>
+                    <mi>𝑝</mi>
+                  </mrow>
                   <mo>,</mo>
                   <mi>_</mi>
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">\mathbf{C}(rep, \_)</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}(\mathit{rep}, \_)</annotation>
             </semantics>
           </math>
           が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -20375,11 +20401,11 @@ C<sup>op</sup> × C -> Set
           </math>に対して自然同型であるような関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>r</mi>
-                <mi>e</mi>
-                <mi>p</mi>
+                <mi>𝑟</mi>
+                <mi>𝑒</mi>
+                <mi>𝑝</mi>
               </mrow>
-              <annotation encoding="application/x-tex">rep</annotation>
+              <annotation encoding="application/x-tex">\mathit{rep}</annotation>
             </semantics>
           </math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -20430,9 +20456,11 @@ C<sup>op</sup> × C -> Set
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>r</mi>
-                <mi>e</mi>
-                <mi>p</mi>
+                <mrow>
+                  <mi>𝑟</mi>
+                  <mi>𝑒</mi>
+                  <mi>𝑝</mi>
+                </mrow>
                 <mo>=</mo>
                 <mi>L</mi>
                 <mrow>
@@ -20440,7 +20468,7 @@ C<sup>op</sup> × C -> Set
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">rep = L ()</annotation>
+              <annotation encoding="application/x-tex">\mathit{rep} = L ()</annotation>
             </semantics>
           </math></p>
         <p>実際、随伴は次の2つのhom集合が自然同型だと教えてくれる:</p>
@@ -20566,20 +20594,20 @@ C<sup>op</sup> × C -> Set
           </math>の積は、2つの射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>f</mi>
-                <mi>s</mi>
-                <mi>t</mi>
+                <mi>𝑓</mi>
+                <mi>𝑠</mi>
+                <mi>𝑡</mi>
               </mrow>
-              <annotation encoding="application/x-tex">fst</annotation>
+              <annotation encoding="application/x-tex">\mathit{fst}</annotation>
             </semantics>
           </math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>s</mi>
-                <mi>n</mi>
-                <mi>d</mi>
+                <mi>𝑠</mi>
+                <mi>𝑛</mi>
+                <mi>𝑑</mi>
               </mrow>
-              <annotation encoding="application/x-tex">snd</annotation>
+              <annotation encoding="application/x-tex">\mathit{snd}</annotation>
             </semantics>
           </math>を伴う対象
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -20635,20 +20663,20 @@ C<sup>op</sup> × C -> Set
           </math>を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>f</mi>
-                <mi>s</mi>
-                <mi>t</mi>
+                <mi>𝑓</mi>
+                <mi>𝑠</mi>
+                <mi>𝑡</mi>
               </mrow>
-              <annotation encoding="application/x-tex">fst</annotation>
+              <annotation encoding="application/x-tex">\mathit{fst}</annotation>
             </semantics>
           </math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>s</mi>
-                <mi>n</mi>
-                <mi>d</mi>
+                <mi>𝑠</mi>
+                <mi>𝑛</mi>
+                <mi>𝑑</mi>
               </mrow>
-              <annotation encoding="application/x-tex">snd</annotation>
+              <annotation encoding="application/x-tex">\mathit{snd}</annotation>
             </semantics>
           </math>を通じて分解する一意な射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -21267,20 +21295,20 @@ C<sup>op</sup> × C -> Set
           </math>を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>f</mi>
-                <mi>s</mi>
-                <mi>t</mi>
+                <mi>𝑓</mi>
+                <mi>𝑠</mi>
+                <mi>𝑡</mi>
               </mrow>
-              <annotation encoding="application/x-tex">fst</annotation>
+              <annotation encoding="application/x-tex">\mathit{fst}</annotation>
             </semantics>
           </math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>s</mi>
-                <mi>n</mi>
-                <mi>d</mi>
+                <mi>𝑠</mi>
+                <mi>𝑛</mi>
+                <mi>𝑑</mi>
               </mrow>
-              <annotation encoding="application/x-tex">snd</annotation>
+              <annotation encoding="application/x-tex">\mathit{snd}</annotation>
             </semantics>
           </math>でそれぞれ合成することで、常に<code>factorizer</code>の逆を合成できる。</p>
         <div class="sourceCode" id="cb378">
@@ -21372,15 +21400,15 @@ C<sup>op</sup> × C -> Set
           </math>に対する右随伴関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>P</mi>
-                <mi>r</mi>
-                <mi>o</mi>
-                <mi>d</mi>
-                <mi>u</mi>
-                <mi>c</mi>
-                <mi>t</mi>
+                <mi>𝑃</mi>
+                <mi>𝑟</mi>
+                <mi>𝑜</mi>
+                <mi>𝑑</mi>
+                <mi>𝑢</mi>
+                <mi>𝑐</mi>
+                <mi>𝑡</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Product</annotation>
+              <annotation encoding="application/x-tex">\mathit{Product}</annotation>
             </semantics>
           </math>の作用の結果だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -21395,28 +21423,28 @@ C<sup>op</sup> × C -> Set
           </math>からの関手はすべて双関手であるため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>P</mi>
-                <mi>r</mi>
-                <mi>o</mi>
-                <mi>d</mi>
-                <mi>u</mi>
-                <mi>c</mi>
-                <mi>t</mi>
+                <mi>𝑃</mi>
+                <mi>𝑟</mi>
+                <mi>𝑜</mi>
+                <mi>𝑑</mi>
+                <mi>𝑢</mi>
+                <mi>𝑐</mi>
+                <mi>𝑡</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Product</annotation>
+              <annotation encoding="application/x-tex">\mathit{Product}</annotation>
             </semantics>
           </math>は双関手であることに注意してほしい。Haskellでは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>P</mi>
-                <mi>r</mi>
-                <mi>o</mi>
-                <mi>d</mi>
-                <mi>u</mi>
-                <mi>c</mi>
-                <mi>t</mi>
+                <mi>𝑃</mi>
+                <mi>𝑟</mi>
+                <mi>𝑜</mi>
+                <mi>𝑑</mi>
+                <mi>𝑢</mi>
+                <mi>𝑐</mi>
+                <mi>𝑡</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Product</annotation>
+              <annotation encoding="application/x-tex">\mathit{Product}</annotation>
             </semantics>
           </math>双関手は単に<code>(,)</code>と書かれる。次の例のように、2つの型にこれを適用すれば直積型を得られる:</p>
         <div class="sourceCode" id="cb379">
@@ -21574,12 +21602,12 @@ C<sup>op</sup> × C -> Set
         <p>射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>e</mi>
-                <mi>v</mi>
-                <mi>a</mi>
-                <mi>l</mi>
+                <mi>𝑒</mi>
+                <mi>𝑣</mi>
+                <mi>𝑎</mi>
+                <mi>𝑙</mi>
               </mrow>
-              <annotation encoding="application/x-tex">eval</annotation>
+              <annotation encoding="application/x-tex">\mathit{eval}</annotation>
             </semantics>
           </math>はこの随伴の余単位に他ならないことに注目してほしい:
           <!-- \footnote{See ch.9 on \hyperref[function-types]{universal
@@ -24539,11 +24567,13 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>b</mi>
-                <mi>i</mi>
-                <mi>m</mi>
-                <mi>a</mi>
-                <mi>p</mi>
+                <mrow>
+                  <mi>𝑏</mi>
+                  <mi>𝑖</mi>
+                  <mi>𝑚</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑝</mi>
+                </mrow>
                 <mo>∷</mo>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
@@ -24573,8 +24603,8 @@ construction}.} -->
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">bimap \Colon (a \to b) \to (c \to d) \to (a \otimes c \to b
-                \otimes d)</annotation>
+              <annotation encoding="application/x-tex">\mathit{bimap} \Colon (a \to b) \to (c \to d) \to (a \otimes c
+                \to b \otimes d)</annotation>
             </semantics>
           </math></p>
         <p>対象を自己関手で、矢印を自然変換で、テンソル積を合成で置き換えると、次のようになる:</p>
@@ -25699,8 +25729,7 @@ construction}.} -->
           (実際、コモナドの恒等則では<code>extract . duplicate = id</code>と規定されている)。</p>
         <p>
           <code>Store</code>コモナドは<code>Lens</code>ライブラリの理論的基盤として重要だ。概念としては、<code>Store s a</code>コモナドは、型<code>s</code>をインデックスとしてdate型<code>a</code>の特定のサブ構造に
-          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型:
-        </p>
+          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型:</p>
         <div class="sourceCode" id="cb508">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb508-1"><a href="#cb508-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> <span class="dt">Store</span> s a</span></code></pre>
@@ -26135,9 +26164,11 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>F</mi>
-                <mi>i</mi>
-                <mi>x</mi>
+                <mrow>
+                  <mi>𝐹</mi>
+                  <mi>𝑖</mi>
+                  <mi>𝑥</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mi>f</mi>
                 <mo>=</mo>
@@ -26145,27 +26176,31 @@ construction}.} -->
                 <mspace width="0.222em"></mspace>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
-                  <mi>F</mi>
-                  <mi>i</mi>
-                  <mi>x</mi>
+                  <mrow>
+                    <mi>𝐹</mi>
+                    <mi>𝑖</mi>
+                    <mi>𝑥</mi>
+                  </mrow>
                   <mspace width="0.222em"></mspace>
                   <mi>f</mi>
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">Fix\ f = f\ (Fix\ f)</annotation>
+              <annotation encoding="application/x-tex">\mathit{Fix}\ f = f\ (\mathit{Fix}\ f)</annotation>
             </semantics>
           </math></p>
         <p>この定義の背景には、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>F</mi>
-                <mi>i</mi>
-                <mi>x</mi>
+                <mrow>
+                  <mi>𝐹</mi>
+                  <mi>𝑖</mi>
+                  <mi>𝑥</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mi>f</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Fix\ f</annotation>
+              <annotation encoding="application/x-tex">\mathit{Fix}\ f</annotation>
             </semantics>
           </math>を得るために<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -27126,9 +27161,11 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>g</mi>
+                <mrow>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <mi>𝑔</mi>
+                </mrow>
                 <mo>∷</mo>
                 <mi>m</mi>
                 <mspace width="0.222em"></mspace>
@@ -27136,7 +27173,7 @@ construction}.} -->
                 <mo>→</mo>
                 <mi>a</mi>
               </mrow>
-              <annotation encoding="application/x-tex">alg \Colon m\ a \to a</annotation>
+              <annotation encoding="application/x-tex">\mathit{alg} \Colon m\ a \to a</annotation>
             </semantics>
           </math></p>
         <p>まず注目すべきは、代数が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -27173,9 +27210,11 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>g</mi>
+                <mrow>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <mi>𝑔</mi>
+                </mrow>
                 <mo>∘</mo>
                 <msub>
                   <mi>η</mi>
@@ -27190,7 +27229,7 @@ construction}.} -->
                   <mi>a</mi>
                 </msub>
               </mrow>
-              <annotation encoding="application/x-tex">alg \circ \eta_a = \mathbf{id}_a</annotation>
+              <annotation encoding="application/x-tex">\mathit{alg} \circ \eta_a = \mathbf{id}_a</annotation>
             </semantics>
           </math></p>
         <p>第2の条件は、2重にネストされた式<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -27221,26 +27260,33 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>g</mi>
+                <mrow>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <mi>𝑔</mi>
+                </mrow>
                 <mo>∘</mo>
                 <msub>
                   <mi>μ</mi>
                   <mi>a</mi>
                 </msub>
                 <mo>=</mo>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>g</mi>
+                <mrow>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <mi>𝑔</mi>
+                </mrow>
                 <mo>∘</mo>
                 <mi>m</mi>
                 <mspace width="0.222em"></mspace>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>g</mi>
+                <mrow>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <mi>𝑔</mi>
+                </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">alg \circ \mu_a = alg \circ m\ alg</annotation>
+              <annotation encoding="application/x-tex">\mathit{alg} \circ \mu_a = \mathit{alg} \circ m\ \mathit{alg}
+              </annotation>
             </semantics>
           </math></p>
         <p>ここで、射<code>m alg</code>は関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -27251,11 +27297,11 @@ construction}.} -->
           </math>を使って<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>g</mi>
+                <mi>𝑎</mi>
+                <mi>𝑙</mi>
+                <mi>𝑔</mi>
               </mrow>
-              <annotation encoding="application/x-tex">alg</annotation>
+              <annotation encoding="application/x-tex">\mathit{alg}</annotation>
             </semantics>
           </math>をリフトした結果だ。次の可換図式はこれら2つの条件を示している
           (後のことを想定して<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -27473,9 +27519,11 @@ construction}.} -->
               <mtable>
                 <mtr>
                   <mtd columnalign="right" style="text-align: right">
-                    <mi>a</mi>
-                    <mi>l</mi>
-                    <mi>g</mi>
+                    <mrow>
+                      <mi>𝑎</mi>
+                      <mi>𝑙</mi>
+                      <mi>𝑔</mi>
+                    </mrow>
                   </mtd>
                   <mtd columnalign="left" style="text-align: left">
                     <mo>∘</mo>
@@ -27501,9 +27549,11 @@ construction}.} -->
                 </mtr>
                 <mtr>
                   <mtd columnalign="right" style="text-align: right">
-                    <mi>a</mi>
-                    <mi>l</mi>
-                    <mi>g</mi>
+                    <mrow>
+                      <mi>𝑎</mi>
+                      <mi>𝑙</mi>
+                      <mi>𝑔</mi>
+                    </mrow>
                   </mtd>
                   <mtd columnalign="left" style="text-align: left">
                     <mo>∘</mo>
@@ -27512,22 +27562,26 @@ construction}.} -->
                       <mi>a</mi>
                     </msub>
                     <mo>=</mo>
-                    <mi>a</mi>
-                    <mi>l</mi>
-                    <mi>g</mi>
+                    <mrow>
+                      <mi>𝑎</mi>
+                      <mi>𝑙</mi>
+                      <mi>𝑔</mi>
+                    </mrow>
                     <mo>∘</mo>
                     <mi>T</mi>
                     <mspace width="0.222em"></mspace>
-                    <mi>a</mi>
-                    <mi>l</mi>
-                    <mi>g</mi>
+                    <mrow>
+                      <mi>𝑎</mi>
+                      <mi>𝑙</mi>
+                      <mi>𝑔</mi>
+                    </mrow>
                   </mtd>
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
                 \begin{aligned}
-                alg &amp;\circ \eta_{Ta} = \mathbf{id}_{Ta} \\
-                alg &amp;\circ \mu_a = alg \circ T\ alg
+                \mathit{alg} &amp;\circ \eta_{Ta} = \mathbf{id}_{Ta} \\
+                \mathit{alg} &amp;\circ \mu_a = \mathit{alg} \circ T\ \mathit{alg}
                 \end{aligned}
               </annotation>
             </semantics>
@@ -28621,11 +28675,11 @@ construction}.} -->
         <p>ここで、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>a</mi>
+                <mi>𝑐</mi>
+                <mi>𝑜</mi>
+                <mi>𝑎</mi>
               </mrow>
-              <annotation encoding="application/x-tex">coa</annotation>
+              <annotation encoding="application/x-tex">\mathit{coa}</annotation>
             </semantics>
           </math>は台が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -28637,9 +28691,11 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>a</mi>
+                <mrow>
+                  <mi>𝑐</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑎</mi>
+                </mrow>
                 <mo>∷</mo>
                 <mi>a</mi>
                 <mo>→</mo>
@@ -28647,7 +28703,7 @@ construction}.} -->
                 <mspace width="0.222em"></mspace>
                 <mi>a</mi>
               </mrow>
-              <annotation encoding="application/x-tex">coa \Colon a \to W\ a</annotation>
+              <annotation encoding="application/x-tex">\mathit{coa} \Colon a \to W\ a</annotation>
             </semantics>
           </math></p>
         <p>そして、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -28762,49 +28818,55 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>a</mi>
-                <mi>l</mi>
-                <msub>
-                  <mi>g</mi>
-                  <mi>s</mi>
-                </msub>
+                <mrow>
+                  <mi>𝑐</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <msub>
+                    <mi>𝑔</mi>
+                    <mi>𝑠</mi>
+                  </msub>
+                </mrow>
                 <mo>∷</mo>
                 <mi>a</mi>
                 <mo>→</mo>
-                <mi>S</mi>
-                <mi>t</mi>
-                <mi>o</mi>
-                <mi>r</mi>
-                <mi>e</mi>
+                <mrow>
+                  <mi>𝑆</mi>
+                  <mi>𝑡</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑟</mi>
+                  <mi>𝑒</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mi>s</mi>
                 <mspace width="0.222em"></mspace>
                 <mi>a</mi>
               </mrow>
-              <annotation encoding="application/x-tex">coalg_s \Colon a \to Store\ s\ a</annotation>
+              <annotation encoding="application/x-tex">\mathit{coalg_s} \Colon a \to \mathit{Store}\ s\ a</annotation>
             </semantics>
           </math></p>
-        <p>この余代数は関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>ここで関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>S</mi>
-                <mi>t</mi>
-                <mi>o</mi>
-                <mi>r</mi>
-                <mi>e</mi>
+                <mrow>
+                  <mi>𝑆</mi>
+                  <mi>𝑡</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑟</mi>
+                  <mi>𝑒</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mi>s</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Store\ s</annotation>
+              <annotation encoding="application/x-tex">\mathit{Store}\ s</annotation>
             </semantics>
-          </math>に対するものだ:</p>
+          </math>は次のとおりだ:</p>
         <div class="sourceCode" id="cb552">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb552-1"><a href="#cb552-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Store</span> s a <span class="ot">=</span> <span class="dt">Store</span> (s <span class="ot">-&gt;</span> a) s</span></code></pre>
         </div>
-        <p>この余代数は、次の関数のペアとしても表せる:</p>
+        <p>この余代数は、以下の関数のペアとしても表せる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mtable>
@@ -28861,28 +28923,34 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>a</mi>
-                <mi>l</mi>
-                <msub>
-                  <mi>g</mi>
-                  <mi>s</mi>
-                </msub>
+                <mrow>
+                  <mi>𝑐</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <msub>
+                    <mi>𝑔</mi>
+                    <mi>𝑠</mi>
+                  </msub>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mi>a</mi>
                 <mo>=</mo>
-                <mi>S</mi>
-                <mi>t</mi>
-                <mi>o</mi>
-                <mi>r</mi>
-                <mi>e</mi>
+                <mrow>
+                  <mi>𝑆</mi>
+                  <mi>𝑡</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑟</mi>
+                  <mi>𝑒</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
-                  <mi>s</mi>
-                  <mi>e</mi>
-                  <mi>t</mi>
+                  <mrow>
+                    <mi>𝑠</mi>
+                    <mi>𝑒</mi>
+                    <mi>𝑡</mi>
+                  </mrow>
                   <mspace width="0.222em"></mspace>
                   <mi>a</mi>
                   <mo stretchy="true" form="postfix">)</mo>
@@ -28890,15 +28958,18 @@ construction}.} -->
                 <mspace width="0.222em"></mspace>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
-                  <mi>g</mi>
-                  <mi>e</mi>
-                  <mi>t</mi>
+                  <mrow>
+                    <mi>𝑔</mi>
+                    <mi>𝑒</mi>
+                    <mi>𝑡</mi>
+                  </mrow>
                   <mspace width="0.222em"></mspace>
                   <mi>a</mi>
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">coalg_s\ a = Store\ (set\ a)\ (get\ a)</annotation>
+              <annotation encoding="application/x-tex">\mathit{coalg_s}\ a = \mathit{Store}\ (\mathit{set}\ a)\
+                (\mathit{get}\ a)</annotation>
             </semantics>
           </math></p>
         <p>ここで、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -28924,15 +28995,17 @@ construction}.} -->
         <p>また、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>S</mi>
-                <mi>t</mi>
-                <mi>o</mi>
-                <mi>r</mi>
-                <mi>e</mi>
+                <mrow>
+                  <mi>𝑆</mi>
+                  <mi>𝑡</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑟</mi>
+                  <mi>𝑒</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mi>s</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Store\ s</annotation>
+              <annotation encoding="application/x-tex">\mathit{Store}\ s</annotation>
             </semantics>
           </math>がコモナドなのも分かっている。</p>
         <div class="sourceCode" id="cb553">
@@ -28950,11 +29023,13 @@ construction}.} -->
                   <mi>a</mi>
                 </msub>
                 <mo>∘</mo>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>g</mi>
+                <mrow>
+                  <mi>𝑐</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <mi>𝑔</mi>
+                </mrow>
                 <mo>=</mo>
                 <msub>
                   <mrow>
@@ -28964,7 +29039,7 @@ construction}.} -->
                   <mi>a</mi>
                 </msub>
               </mrow>
-              <annotation encoding="application/x-tex">\varepsilon_a \circ coalg = %
+              <annotation encoding="application/x-tex">\varepsilon_a \circ \mathit{coalg} = %
                 \mathbf{id}_{a}%
               </annotation>
             </semantics>
@@ -29004,35 +29079,44 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>f</mi>
-                <mi>m</mi>
-                <mi>a</mi>
-                <mi>p</mi>
+                <mrow>
+                  <mi>𝑓</mi>
+                  <mi>𝑚</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑝</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>g</mi>
+                <mrow>
+                  <mi>𝑐</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <mi>𝑔</mi>
+                </mrow>
                 <mo>∘</mo>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>g</mi>
+                <mrow>
+                  <mi>𝑐</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <mi>𝑔</mi>
+                </mrow>
                 <mo>=</mo>
                 <msub>
                   <mi>δ</mi>
                   <mi>a</mi>
                 </msub>
                 <mo>∘</mo>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>g</mi>
+                <mrow>
+                  <mi>𝑐</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑎</mi>
+                  <mi>𝑙</mi>
+                  <mi>𝑔</mi>
+                </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">fmap\ coalg \circ coalg = \delta_a \circ coalg</annotation>
+              <annotation encoding="application/x-tex">\mathit{fmap}\ \mathit{coalg} \circ \mathit{coalg} = \delta_a
+                \circ \mathit{coalg}</annotation>
             </semantics>
           </math></p>
         <p>は、もう少し手間がかかる。まず、<code>store</code>関手の<code>fmap</code>の定義を思い出してほしい:</p>
@@ -29158,8 +29242,8 @@ construction}.} -->
                 <msup>
                   <mi>𝐂</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>×</mo>
@@ -29172,8 +29256,8 @@ construction}.} -->
                   <mi>𝐭</mi>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">\mathbf{C}(-, =) \Colon \mathbf{C}^{op}\times{}\mathbf{C} \to
-                \mathbf{Set}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{C}(-, =) \Colon \mathbf{C}^\mathit{op}\times{}\mathbf{C}
+                \to \mathbf{Set}</annotation>
             </semantics>
           </math></p>
         <p>一般に、このような関手はすべて、圏内の対象間の関係を確立するものとして解釈できる。関係には2つの異なる圏<math display="inline"
@@ -29197,8 +29281,8 @@ construction}.} -->
                 <msup>
                   <mi>𝐃</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>×</mo>
@@ -29211,8 +29295,8 @@ construction}.} -->
                   <mi>𝐭</mi>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">p \Colon \mathbf{D}^{op}\times{}\mathbf{C} \to \mathbf{Set}
-              </annotation>
+              <annotation encoding="application/x-tex">p \Colon \mathbf{D}^\mathit{op}\times{}\mathbf{C} \to
+                \mathbf{Set}</annotation>
             </semantics>
           </math></p>
         <p>これは数学者によると<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -29467,8 +29551,8 @@ construction}.} -->
                 <msup>
                   <mi>𝐂</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>×</mo>
@@ -29482,7 +29566,7 @@ construction}.} -->
                 </mrow>
                 <mo stretchy="false" form="postfix">]</mo>
               </mrow>
-              <annotation encoding="application/x-tex">{[}\mathbf{C}^{op}\times{}\mathbf{C}, \mathbf{Set}{]}
+              <annotation encoding="application/x-tex">{[}\mathbf{C}^\mathit{op}\times{}\mathbf{C}, \mathbf{Set}{]}
               </annotation>
             </semantics>
           </math>のメンバーである2つのプロ関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -29544,8 +29628,8 @@ construction}.} -->
                 <msup>
                   <mi>𝐂</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>×</mo>
@@ -29559,7 +29643,7 @@ construction}.} -->
                 </mrow>
                 <mo stretchy="false" form="postfix">]</mo>
               </mrow>
-              <annotation encoding="application/x-tex">{[}\mathbf{C}^{op}\times{}\mathbf{C}, \mathbf{Set}{]}
+              <annotation encoding="application/x-tex">{[}\mathbf{C}^\mathit{op}\times{}\mathbf{C}, \mathbf{Set}{]}
               </annotation>
             </semantics>
           </math>内の自然変換なら、前記の図式は2つの自然性の正方図式と1つの関手性条件
@@ -29578,8 +29662,8 @@ construction}.} -->
                 <msup>
                   <mi>𝐂</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>×</mo>
@@ -29593,7 +29677,7 @@ construction}.} -->
                 </mrow>
                 <mo stretchy="false" form="postfix">]</mo>
               </mrow>
-              <annotation encoding="application/x-tex">{[}\mathbf{C}^{op}\times{}\mathbf{C}, \mathbf{Set}{]}
+              <annotation encoding="application/x-tex">{[}\mathbf{C}^\mathit{op}\times{}\mathbf{C}, \mathbf{Set}{]}
               </annotation>
             </semantics>
           </math>内の自然変換<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -29646,10 +29730,12 @@ construction}.} -->
                 <mspace width="0.222em"></mspace>
                 <mi>.</mi>
                 <mspace width="0.222em"></mspace>
-                <mi>a</mi>
-                <mi>p</mi>
-                <mi>e</mi>
-                <mi>x</mi>
+                <mrow>
+                  <mi>𝑎</mi>
+                  <mi>𝑝</mi>
+                  <mi>𝑒</mi>
+                  <mi>𝑥</mi>
+                </mrow>
                 <mo>→</mo>
                 <mi>p</mi>
                 <mspace width="0.222em"></mspace>
@@ -29657,7 +29743,8 @@ construction}.} -->
                 <mspace width="0.222em"></mspace>
                 <mi>a</mi>
               </mrow>
-              <annotation encoding="application/x-tex">\alpha \Colon \forall a\ .\ apex \to p\ a\ a</annotation>
+              <annotation encoding="application/x-tex">\alpha \Colon \forall a\ .\ \mathit{apex} \to p\ a\ a
+              </annotation>
             </semantics>
           </math></p>
         <p>錐とは違って、くさびには底面の頂点同士を接続する関数はない。しかし、すでに見たとおり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -30058,10 +30145,31 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb573-1"><a href="#cb573-1" aria-hidden="true" tabindex="-1"></a><span class="kw">forall</span> a<span class="op">.</span> f a <span class="ot">-&gt;</span> g a</span></code></pre>
         </div>
         <p>Haskellでこれが動作する理由は、自然性がパラメトリック性に従うためだ。ただし、Haskell以外では、このようなhom集合に渡るすべての対角要素が自然変換を生成するわけではない。しかし、写像:</p>
-        <div class="sourceCode" id="cb574">
-          <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb574-1"><a href="#cb574-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>a, b<span class="op">&gt;</span> <span class="ot">-&gt;</span> <span class="dt">C</span>(<span class="dt">F</span> a, <span class="dt">G</span> b)</span></code></pre>
-        </div>
+        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mo stretchy="false" form="prefix">⟨</mo>
+                <mi>a</mi>
+                <mo>,</mo>
+                <mi>b</mi>
+                <mo stretchy="false" form="postfix">⟩</mo>
+                <mo>→</mo>
+                <mi>𝐂</mi>
+                <mrow>
+                  <mo stretchy="true" form="prefix">(</mo>
+                  <mi>F</mi>
+                  <mspace width="0.222em"></mspace>
+                  <mi>a</mi>
+                  <mo>,</mo>
+                  <mi>G</mi>
+                  <mspace width="0.222em"></mspace>
+                  <mi>b</mi>
+                  <mo stretchy="true" form="postfix">)</mo>
+                </mrow>
+              </mrow>
+              <annotation encoding="application/x-tex">\langle a, b \rangle \to \mathbf{C}(F\ a, G\ b)</annotation>
+            </semantics>
+          </math></p>
         <p>がプロ関手であることに注目すれば、そのエンドを研究するのは意味がある。くさび条件は次のとおりだ:</p>
         <p><img src="images/end1.jpg" style="width:40.0%" /></p>
         <p>集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -30308,14 +30416,14 @@ construction}.} -->
           </math>が存在すると言えただろう。エンドの定義で使った全称量化子は、コエンドでは存在量化子
           (existential quantifier) になる。</p>
         <p>このため、擬似Haskellでは、コエンドを次のように定義する:</p>
-        <div class="sourceCode" id="cb575">
+        <div class="sourceCode" id="cb574">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb575-1"><a href="#cb575-1" aria-hidden="true" tabindex="-1"></a>exists a<span class="op">.</span> p a a</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb574-1"><a href="#cb574-1" aria-hidden="true" tabindex="-1"></a>exists a<span class="op">.</span> p a a</span></code></pre>
         </div>
         <p>Haskellで存在量化子を実装する標準的な方法では、全称量化されたデータコンストラクターを用いる。したがって、次のように定義できる:</p>
-        <div class="sourceCode" id="cb576">
+        <div class="sourceCode" id="cb575">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb576-1"><a href="#cb576-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Coend</span> p <span class="ot">=</span> <span class="kw">forall</span> a<span class="op">.</span> <span class="dt">Coend</span> (p a a)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb575-1"><a href="#cb575-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Coend</span> p <span class="ot">=</span> <span class="kw">forall</span> a<span class="op">.</span> <span class="dt">Coend</span> (p a a)</span></code></pre>
         </div>
         <p>この背後にあるロジックは、型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -30357,9 +30465,9 @@ construction}.} -->
             </semantics>
           </math>の単一の巨大な余積を取ることだ。これはHaskellでは存在型
           (existential type) として表現される:</p>
-        <div class="sourceCode" id="cb577">
+        <div class="sourceCode" id="cb576">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb577-1"><a href="#cb577-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">SumP</span> p <span class="ot">=</span> <span class="kw">forall</span> a b<span class="op">.</span> <span class="dt">SumP</span> (b <span class="ot">-&gt;</span> a) (p a b)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb576-1"><a href="#cb576-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">SumP</span> p <span class="ot">=</span> <span class="kw">forall</span> a b<span class="op">.</span> <span class="dt">SumP</span> (b <span class="ot">-&gt;</span> a) (p a b)</span></code></pre>
         </div>
         <p>この直和型を評価する方法は2つある。<code>dimap</code>を使って関数をリフトする方法と、プロ関手<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
@@ -30368,11 +30476,11 @@ construction}.} -->
               <annotation encoding="application/x-tex">p</annotation>
             </semantics>
           </math>に適用する方法だ:</p>
-        <div class="sourceCode" id="cb578">
+        <div class="sourceCode" id="cb577">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb578-1"><a href="#cb578-1" aria-hidden="true" tabindex="-1"></a>lambda,<span class="ot"> rho ::</span> <span class="dt">Profunctor</span> p <span class="ot">=&gt;</span> <span class="dt">SumP</span> p <span class="ot">-&gt;</span> <span class="dt">DiagSum</span> p</span>
-<span id="cb578-2"><a href="#cb578-2" aria-hidden="true" tabindex="-1"></a>lambda (<span class="dt">SumP</span> f pab) <span class="ot">=</span> <span class="dt">DiagSum</span> (dimap f <span class="fu">id</span> pab)</span>
-<span id="cb578-3"><a href="#cb578-3" aria-hidden="true" tabindex="-1"></a>rho    (<span class="dt">SumP</span> f pab) <span class="ot">=</span> <span class="dt">DiagSum</span> (dimap <span class="fu">id</span> f pab)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb577-1"><a href="#cb577-1" aria-hidden="true" tabindex="-1"></a>lambda,<span class="ot"> rho ::</span> <span class="dt">Profunctor</span> p <span class="ot">=&gt;</span> <span class="dt">SumP</span> p <span class="ot">-&gt;</span> <span class="dt">DiagSum</span> p</span>
+<span id="cb577-2"><a href="#cb577-2" aria-hidden="true" tabindex="-1"></a>lambda (<span class="dt">SumP</span> f pab) <span class="ot">=</span> <span class="dt">DiagSum</span> (dimap f <span class="fu">id</span> pab)</span>
+<span id="cb577-3"><a href="#cb577-3" aria-hidden="true" tabindex="-1"></a>rho    (<span class="dt">SumP</span> f pab) <span class="ot">=</span> <span class="dt">DiagSum</span> (dimap <span class="fu">id</span> f pab)</span></code></pre>
         </div>
         <p>ここで、<code>DiagSum</code>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -30380,9 +30488,9 @@ construction}.} -->
               <annotation encoding="application/x-tex">p</annotation>
             </semantics>
           </math>の対角要素の和だ:</p>
-        <div class="sourceCode" id="cb579">
+        <div class="sourceCode" id="cb578">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb579-1"><a href="#cb579-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">DiagSum</span> p <span class="ot">=</span> <span class="kw">forall</span> a<span class="op">.</span> <span class="dt">DiagSum</span> (p a a)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb578-1"><a href="#cb578-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">DiagSum</span> p <span class="ot">=</span> <span class="kw">forall</span> a<span class="op">.</span> <span class="dt">DiagSum</span> (p a a)</span></code></pre>
         </div>
         <p>
           これら2つの関数のコイコライザはコエンドだ。コイコライザを<code>DiagSum p</code>から得るには、<code>lambda</code>または<code>rho</code>を同じ引数に対して適用することで得られる値を同一視する。ここで、引数は関数<math
@@ -31062,18 +31170,18 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>Haskellの<code>Data.Profunctor.Composition</code>でのプロ関手は、名前をいくらか変更したうえで、こう定義されている:</p>
-        <div class="sourceCode" id="cb580">
+        <div class="sourceCode" id="cb579">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb580-1"><a href="#cb580-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Procompose</span> q p a b <span class="kw">where</span></span>
-<span id="cb580-2"><a href="#cb580-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Procompose</span><span class="ot"> ::</span> q a c <span class="ot">-&gt;</span> p c b <span class="ot">-&gt;</span> <span class="dt">Procompose</span> q p a b</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb579-1"><a href="#cb579-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Procompose</span> q p a b <span class="kw">where</span></span>
+<span id="cb579-2"><a href="#cb579-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Procompose</span><span class="ot"> ::</span> q a c <span class="ot">-&gt;</span> p c b <span class="ot">-&gt;</span> <span class="dt">Procompose</span> q p a b</span></code></pre>
         </div>
         <p>これは一般化代数的データ型 (generalized algebraic data type)
           すなわちGADTの構文を使っており、自由型変数 (ここでは<code>c</code>)
           が自動的に存在量化される。したがって、(非カリー化された)
           データ・コンストラクター<code>Procompose</code>は次と等価だ:</p>
-        <div class="sourceCode" id="cb581">
+        <div class="sourceCode" id="cb580">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb581-1"><a href="#cb581-1" aria-hidden="true" tabindex="-1"></a>exists c<span class="op">.</span> (q a c, p c b)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb580-1"><a href="#cb580-1" aria-hidden="true" tabindex="-1"></a>exists c<span class="op">.</span> (q a c, p c b)</span></code></pre>
         </div>
         <p>
           こうして定義された合成の単位はhom関手だ――これは忍者米田の補題からすぐに導出される。したがって、プロ関手が射の役目を果たす圏があるかを問うのは理にかなっている。ある、というのがその問いの答えだ。ただし、プロ関手の合成に関する結合則と恒等則は自然同型を除いてのみ満たされることに注意する必要がある。それらの結合則と恒等則が同型を除いて満たされる圏は、(<math
@@ -33515,39 +33623,39 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>エンドを全称量化子に、hom集合を関数型に置き換える:</p>
-        <div class="sourceCode" id="cb582">
+        <div class="sourceCode" id="cb581">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb582-1"><a href="#cb582-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">Ran</span> k d a <span class="ot">=</span> <span class="dt">Ran</span> (<span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> k i) <span class="ot">-&gt;</span> d i)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb581-1"><a href="#cb581-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">Ran</span> k d a <span class="ot">=</span> <span class="dt">Ran</span> (<span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> k i) <span class="ot">-&gt;</span> d i)</span></code></pre>
         </div>
         <p>
           この定義を見ると、<code>Ran</code>には、関数を適用できる型<code>a</code>の値と、2つの関手<code>k</code>と<code>d</code>の間の自然変換が含まれている必要があることは明らかだ。たとえば、<code>k</code>がtree関手、<code>d</code>がlist関手だとして、<code>Ran Tree [] String</code>が与えられたとする。これに関数:
         </p>
-        <div class="sourceCode" id="cb583">
+        <div class="sourceCode" id="cb582">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb583-1"><a href="#cb583-1" aria-hidden="true" tabindex="-1"></a><span class="ot">f ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Tree</span> <span class="dt">Int</span></span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb582-1"><a href="#cb582-1" aria-hidden="true" tabindex="-1"></a><span class="ot">f ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Tree</span> <span class="dt">Int</span></span></code></pre>
         </div>
         <p>
           を渡すと<code>Int</code>のリストが返される、などだ。右Kan拡張はこの関数を使って木を生成し、再パッケージしてリストにする。たとえば、文字列から構文解析木を生成するパーサーを渡すと、その木の深さ優先トラバースに対応するリストが得られる。
         </p>
         <p>右Kan拡張は、関手<code>d</code>を恒等関手に置き換えれば、任意の関手の左随伴を計算するために使える。これにより、関手<code>k</code>の左随伴は、次の型の多相関数の集合で表される:</p>
-        <div class="sourceCode" id="cb584">
+        <div class="sourceCode" id="cb583">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb584-1"><a href="#cb584-1" aria-hidden="true" tabindex="-1"></a><span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> k i) <span class="ot">-&gt;</span> i</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb583-1"><a href="#cb583-1" aria-hidden="true" tabindex="-1"></a><span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> k i) <span class="ot">-&gt;</span> i</span></code></pre>
         </div>
         <p><code>k</code>がモノイドの圏からの忘却関手だとしよう。すると、全称量化子はすべてのモノイドに及ぶ。もちろんHaskellではモノイダル則を表現できないが、以下は結果の自由関手の適切な近似になっている
           (忘却関手<code>k</code>は対象における恒等関手だ):</p>
-        <div class="sourceCode" id="cb585">
+        <div class="sourceCode" id="cb584">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb585-1"><a href="#cb585-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Lst</span> a <span class="ot">=</span> <span class="kw">forall</span> i<span class="op">.</span> <span class="dt">Monoid</span> i <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> i) <span class="ot">-&gt;</span> i</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb584-1"><a href="#cb584-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Lst</span> a <span class="ot">=</span> <span class="kw">forall</span> i<span class="op">.</span> <span class="dt">Monoid</span> i <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> i) <span class="ot">-&gt;</span> i</span></code></pre>
         </div>
         <p>期待どおり、自由モノイド、すなわちHaskellのリストが得られる:</p>
-        <div class="sourceCode" id="cb586">
+        <div class="sourceCode" id="cb585">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb586-1"><a href="#cb586-1" aria-hidden="true" tabindex="-1"></a><span class="ot">toLst ::</span> [a] <span class="ot">-&gt;</span> <span class="dt">Lst</span> a</span>
-<span id="cb586-2"><a href="#cb586-2" aria-hidden="true" tabindex="-1"></a>toLst as <span class="ot">=</span> \f <span class="ot">-&gt;</span> <span class="fu">foldMap</span> f as</span>
-<span id="cb586-3"><a href="#cb586-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb586-4"><a href="#cb586-4" aria-hidden="true" tabindex="-1"></a><span class="ot">fromLst ::</span> <span class="dt">Lst</span> a <span class="ot">-&gt;</span> [a]</span>
-<span id="cb586-5"><a href="#cb586-5" aria-hidden="true" tabindex="-1"></a>fromLst f <span class="ot">=</span> f (\a <span class="ot">-&gt;</span> [a])</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb585-1"><a href="#cb585-1" aria-hidden="true" tabindex="-1"></a><span class="ot">toLst ::</span> [a] <span class="ot">-&gt;</span> <span class="dt">Lst</span> a</span>
+<span id="cb585-2"><a href="#cb585-2" aria-hidden="true" tabindex="-1"></a>toLst as <span class="ot">=</span> \f <span class="ot">-&gt;</span> <span class="fu">foldMap</span> f as</span>
+<span id="cb585-3"><a href="#cb585-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb585-4"><a href="#cb585-4" aria-hidden="true" tabindex="-1"></a><span class="ot">fromLst ::</span> <span class="dt">Lst</span> a <span class="ot">-&gt;</span> [a]</span>
+<span id="cb585-5"><a href="#cb585-5" aria-hidden="true" tabindex="-1"></a>fromLst f <span class="ot">=</span> f (\a <span class="ot">-&gt;</span> [a])</span></code></pre>
         </div>
         <p>この左Kan拡張はコエンドだ:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -33590,31 +33698,31 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>したがって、存在量化子へと翻訳される。記号的にはこうなる:</p>
-        <div class="sourceCode" id="cb587">
+        <div class="sourceCode" id="cb586">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb587-1"><a href="#cb587-1" aria-hidden="true" tabindex="-1"></a><span class="dt">Lan</span> k d a <span class="ot">=</span> exists i<span class="op">.</span> (k i <span class="ot">-&gt;</span> a, d i)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb586-1"><a href="#cb586-1" aria-hidden="true" tabindex="-1"></a><span class="dt">Lan</span> k d a <span class="ot">=</span> exists i<span class="op">.</span> (k i <span class="ot">-&gt;</span> a, d i)</span></code></pre>
         </div>
         <p>これはHaskellでは<em>GADT</em>、あるいは全称量化されたデータコンストラクターを使ってコード化できる:</p>
-        <div class="sourceCode" id="cb588">
+        <div class="sourceCode" id="cb587">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb588-1"><a href="#cb588-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Lan</span> k d a <span class="ot">=</span> <span class="kw">forall</span> i<span class="op">.</span> <span class="dt">Lan</span> (k i <span class="ot">-&gt;</span> a) (d i)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb587-1"><a href="#cb587-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Lan</span> k d a <span class="ot">=</span> <span class="kw">forall</span> i<span class="op">.</span> <span class="dt">Lan</span> (k i <span class="ot">-&gt;</span> a) (d i)</span></code></pre>
         </div>
         <p>
           このデータ構造を解釈すると、不特定の数の<code>i</code>を含むコンテナを取って<code>a</code>を1つ生成する関数を含むものだと言える。また、それらの<code>i</code>のコンテナも持つ。<code>i</code>が何かは分からないので、このデータ構造で唯一できるのは、<code>i</code>のコンテナを取得し、自然変換を使って関手<code>k</code>で定義されたコンテナに再パックし、関数を呼んで<code>a</code>を得ることだけだ。たとえば、<code>d</code>が木で<code>k</code>がリストの場合は、木を直列化して得られるリストで関数を呼べば<code>a</code>が得られる。
         </p>
         <p>左Kan拡張は関手の右随伴を計算するために使える。積関手の右随伴が冪乗なのは知っているので、Kan拡張を使って実装してみよう:</p>
-        <div class="sourceCode" id="cb589">
+        <div class="sourceCode" id="cb588">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb589-1"><a href="#cb589-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Exp</span> a b <span class="ot">=</span> <span class="dt">Lan</span> ((,) a) <span class="dt">I</span> b</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb588-1"><a href="#cb588-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Exp</span> a b <span class="ot">=</span> <span class="dt">Lan</span> ((,) a) <span class="dt">I</span> b</span></code></pre>
         </div>
         <p>これが実際に関数型と同型であることは、次の関数のペアによって分かる:</p>
-        <div class="sourceCode" id="cb590">
+        <div class="sourceCode" id="cb589">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb590-1"><a href="#cb590-1" aria-hidden="true" tabindex="-1"></a><span class="ot">toExp ::</span> (a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> <span class="dt">Exp</span> a b</span>
-<span id="cb590-2"><a href="#cb590-2" aria-hidden="true" tabindex="-1"></a>toExp f <span class="ot">=</span> <span class="dt">Lan</span> (f <span class="op">.</span> <span class="fu">fst</span>) (<span class="dt">I</span> ())</span>
-<span id="cb590-3"><a href="#cb590-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb590-4"><a href="#cb590-4" aria-hidden="true" tabindex="-1"></a><span class="ot">fromExp ::</span> <span class="dt">Exp</span> a b <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> b)</span>
-<span id="cb590-5"><a href="#cb590-5" aria-hidden="true" tabindex="-1"></a>fromExp (<span class="dt">Lan</span> f (<span class="dt">I</span> x)) <span class="ot">=</span> \a <span class="ot">-&gt;</span> f (a, x)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb589-1"><a href="#cb589-1" aria-hidden="true" tabindex="-1"></a><span class="ot">toExp ::</span> (a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> <span class="dt">Exp</span> a b</span>
+<span id="cb589-2"><a href="#cb589-2" aria-hidden="true" tabindex="-1"></a>toExp f <span class="ot">=</span> <span class="dt">Lan</span> (f <span class="op">.</span> <span class="fu">fst</span>) (<span class="dt">I</span> ())</span>
+<span id="cb589-3"><a href="#cb589-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb589-4"><a href="#cb589-4" aria-hidden="true" tabindex="-1"></a><span class="ot">fromExp ::</span> <span class="dt">Exp</span> a b <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> b)</span>
+<span id="cb589-5"><a href="#cb589-5" aria-hidden="true" tabindex="-1"></a>fromExp (<span class="dt">Lan</span> f (<span class="dt">I</span> x)) <span class="ot">=</span> \a <span class="ot">-&gt;</span> f (a, x)</span></code></pre>
         </div>
         <p>すでに一般的な場合について説明したとおり、次のような段階を経ることに注意してほしい:</p>
         <ol type="1">
@@ -33753,29 +33861,29 @@ construction}.} -->
             </semantics>
           </math>に基づく自由関手と呼ばれる。</p>
         <p>Haskellでは、次のように書ける:</p>
-        <div class="sourceCode" id="cb591">
+        <div class="sourceCode" id="cb590">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb591-1"><a href="#cb591-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">FreeF</span> f a <span class="ot">=</span> <span class="kw">forall</span> i<span class="op">.</span> <span class="dt">FMap</span> (i <span class="ot">-&gt;</span> a) (f i)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb590-1"><a href="#cb590-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">FreeF</span> f a <span class="ot">=</span> <span class="kw">forall</span> i<span class="op">.</span> <span class="dt">FMap</span> (i <span class="ot">-&gt;</span> a) (f i)</span></code></pre>
         </div>
         <p>実際、すべての型コンストラクター<code>f</code>について<code>FreeF f</code>は関手となる:</p>
-        <div class="sourceCode" id="cb592">
+        <div class="sourceCode" id="cb591">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb592-1"><a href="#cb592-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Functor</span> (<span class="dt">FreeF</span> f) <span class="kw">where</span></span>
-<span id="cb592-2"><a href="#cb592-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmap</span> g (<span class="dt">FMap</span> h fi) <span class="ot">=</span> <span class="dt">FMap</span> (g <span class="op">.</span> h) fi</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb591-1"><a href="#cb591-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Functor</span> (<span class="dt">FreeF</span> f) <span class="kw">where</span></span>
+<span id="cb591-2"><a href="#cb591-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmap</span> g (<span class="dt">FMap</span> h fi) <span class="ot">=</span> <span class="dt">FMap</span> (g <span class="op">.</span> h) fi</span></code></pre>
         </div>
         <p>ご覧のとおり、自由関手は、関数と引数の両方を記録することで関数のリフトを偽装する。それは、関数合成を記録することによって、リフトされた関数を累積する。関手則は自動的に満たされる。この構成は論文<a
             href="http://okmij.org/ftp/Haskell/extensible/more.pdf">Freer Monads,
             More Extensible Effects</a>で使われたものだ。</p>
         <p>別の方法として、右Kan拡張も同じ目的に使える:</p>
-        <div class="sourceCode" id="cb593">
+        <div class="sourceCode" id="cb592">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb593-1"><a href="#cb593-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">FreeF</span> f a <span class="ot">=</span> <span class="dt">FreeF</span> (<span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> i) <span class="ot">-&gt;</span> f i)</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb592-1"><a href="#cb592-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">FreeF</span> f a <span class="ot">=</span> <span class="dt">FreeF</span> (<span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> i) <span class="ot">-&gt;</span> f i)</span></code></pre>
         </div>
         <p>これが実際に関手であることは簡単に確認できる:</p>
-        <div class="sourceCode" id="cb594">
+        <div class="sourceCode" id="cb593">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb594-1"><a href="#cb594-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Functor</span> (<span class="dt">FreeF</span> f) <span class="kw">where</span></span>
-<span id="cb594-2"><a href="#cb594-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fmap</span> g (<span class="dt">FreeF</span> r) <span class="ot">=</span> <span class="dt">FreeF</span> (\bi <span class="ot">-&gt;</span> r (bi <span class="op">.</span> g))</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb593-1"><a href="#cb593-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Functor</span> (<span class="dt">FreeF</span> f) <span class="kw">where</span></span>
+<span id="cb593-2"><a href="#cb593-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fmap</span> g (<span class="dt">FreeF</span> r) <span class="ot">=</span> <span class="dt">FreeF</span> (\bi <span class="ot">-&gt;</span> r (bi <span class="op">.</span> g))</span></code></pre>
         </div>
         <h1 data-number="28" id="豊穣圏"><span class="header-section-number">28</span> 豊穣圏</h1>
         <p>圏が<em>小さい</em>とは、対象が集合を形成することだ。しかし、集合より大きいものの存在も知られている。有名な話として、すべての集合の集合は、標準的な集合論
@@ -34466,23 +34574,23 @@ construction}.} -->
           (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>F</mi>
-                <mi>a</mi>
-                <mi>l</mi>
-                <mi>s</mi>
-                <mi>e</mi>
+                <mi>𝐹</mi>
+                <mi>𝑎</mi>
+                <mi>𝑙</mi>
+                <mi>𝑠</mi>
+                <mi>𝑒</mi>
               </mrow>
-              <annotation encoding="application/x-tex">False</annotation>
+              <annotation encoding="application/x-tex">\mathit{False}</annotation>
             </semantics>
           </math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>T</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mi>𝑇</mi>
+                <mi>𝑟</mi>
+                <mi>𝑢</mi>
+                <mi>𝑒</mi>
               </mrow>
-              <annotation encoding="application/x-tex">True</annotation>
+              <annotation encoding="application/x-tex">\mathit{True}</annotation>
             </semantics>
           </math>とも呼ばれる)
           だけを含む非常に単純なモノイダル圏上の豊穣圏だと解釈できる。必須の恒等射に加えて、この圏には<math display="inline"
@@ -35990,27 +36098,29 @@ construction}.} -->
           </math>への関数を使えばよい。この関数を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>t</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mi>𝑡</mi>
+                <mi>𝑟</mi>
+                <mi>𝑢</mi>
+                <mi>𝑒</mi>
               </mrow>
-              <annotation encoding="application/x-tex">true</annotation>
+              <annotation encoding="application/x-tex">\mathit{true}</annotation>
             </semantics>
           </math>と呼ぼう:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>t</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mrow>
+                  <mi>𝑡</mi>
+                  <mi>𝑟</mi>
+                  <mi>𝑢</mi>
+                  <mi>𝑒</mi>
+                </mrow>
                 <mo>∷</mo>
                 <mn>1</mn>
                 <mo>→</mo>
                 <mi>Ω</mi>
               </mrow>
-              <annotation encoding="application/x-tex">true \Colon 1 \to \Omega</annotation>
+              <annotation encoding="application/x-tex">\mathit{true} \Colon 1 \to \Omega</annotation>
             </semantics>
           </math></p>
         <p><img src="images/true.jpg" style="width:40.0%" /></p>
@@ -36023,12 +36133,12 @@ construction}.} -->
           </math>についても要素に触れずに定義できる。ここでのアイデアは、射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>t</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mi>𝑡</mi>
+                <mi>𝑟</mi>
+                <mi>𝑢</mi>
+                <mi>𝑒</mi>
               </mrow>
-              <annotation encoding="application/x-tex">true</annotation>
+              <annotation encoding="application/x-tex">\mathit{true}</annotation>
             </semantics>
           </math>が「総称」部分対象を表すようにしたい、というものだ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -36054,12 +36164,12 @@ construction}.} -->
         <p>より一般的な条件では、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>t</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mi>𝑡</mi>
+                <mi>𝑟</mi>
+                <mi>𝑢</mi>
+                <mi>𝑒</mi>
               </mrow>
-              <annotation encoding="application/x-tex">true</annotation>
+              <annotation encoding="application/x-tex">\mathit{true}</annotation>
             </semantics>
           </math>を終対象から<em>分類対象</em>
           (classifying object)
@@ -36086,12 +36196,12 @@ construction}.} -->
           </math>に沿った<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>t</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mi>𝑡</mi>
+                <mi>𝑟</mi>
+                <mi>𝑢</mi>
+                <mi>𝑒</mi>
               </mrow>
-              <annotation encoding="application/x-tex">true</annotation>
+              <annotation encoding="application/x-tex">\mathit{true}</annotation>
             </semantics>
           </math>の引き戻しが、部分集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -36110,17 +36220,21 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>t</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mrow>
+                  <mi>𝑡</mi>
+                  <mi>𝑟</mi>
+                  <mi>𝑢</mi>
+                  <mi>𝑒</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mi>.</mi>
                 <mspace width="0.222em"></mspace>
-                <mi>u</mi>
-                <mi>n</mi>
-                <mi>i</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑢</mi>
+                  <mi>𝑛</mi>
+                  <mi>𝑖</mi>
+                  <mi>𝑡</mi>
+                </mrow>
                 <mo>=</mo>
                 <mi>χ</mi>
                 <mspace width="0.222em"></mspace>
@@ -36128,25 +36242,29 @@ construction}.} -->
                 <mspace width="0.222em"></mspace>
                 <mi>f</mi>
               </mrow>
-              <annotation encoding="application/x-tex">true\ .\ unit = \chi\ .\ f</annotation>
+              <annotation encoding="application/x-tex">\mathit{true}\ .\ \mathit{unit} = \chi\ .\ f</annotation>
             </semantics>
           </math></p>
         <p>関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>t</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mrow>
+                  <mi>𝑡</mi>
+                  <mi>𝑟</mi>
+                  <mi>𝑢</mi>
+                  <mi>𝑒</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mi>.</mi>
                 <mspace width="0.222em"></mspace>
-                <mi>u</mi>
-                <mi>n</mi>
-                <mi>i</mi>
-                <mi>t</mi>
+                <mrow>
+                  <mi>𝑢</mi>
+                  <mi>𝑛</mi>
+                  <mi>𝑖</mi>
+                  <mi>𝑡</mi>
+                </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">true\ .\ unit</annotation>
+              <annotation encoding="application/x-tex">\mathit{true}\ .\ \mathit{unit}</annotation>
             </semantics>
           </math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -36206,12 +36324,12 @@ construction}.} -->
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>t</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mi>𝑡</mi>
+                <mi>𝑟</mi>
+                <mi>𝑢</mi>
+                <mi>𝑒</mi>
               </mrow>
-              <annotation encoding="application/x-tex">true</annotation>
+              <annotation encoding="application/x-tex">\mathit{true}</annotation>
             </semantics>
           </math>を定義できる。また、引き戻しも必要だ――実際の要件は、すべて有限の極限を持つことだ
           (引き戻しは有限の極限の一例だ)。これらの仮定の下で、分類対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -36248,12 +36366,12 @@ construction}.} -->
           </math>と、2つの射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>t</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mi>𝑡</mi>
+                <mi>𝑟</mi>
+                <mi>𝑢</mi>
+                <mi>𝑒</mi>
               </mrow>
-              <annotation encoding="application/x-tex">true</annotation>
+              <annotation encoding="application/x-tex">\mathit{true}</annotation>
             </semantics>
           </math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -36268,12 +36386,12 @@ construction}.} -->
           </math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>u</mi>
-                <mi>n</mi>
-                <mi>i</mi>
-                <mi>t</mi>
+                <mi>𝑢</mi>
+                <mi>𝑛</mi>
+                <mi>𝑖</mi>
+                <mi>𝑡</mi>
               </mrow>
-              <annotation encoding="application/x-tex">unit</annotation>
+              <annotation encoding="application/x-tex">\mathit{unit}</annotation>
             </semantics>
           </math>
           (後者は終対象の定義によって一意に決定される)
@@ -36301,12 +36419,12 @@ construction}.} -->
           </math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>t</mi>
-                <mi>r</mi>
-                <mi>u</mi>
-                <mi>e</mi>
+                <mi>𝑡</mi>
+                <mi>𝑟</mi>
+                <mi>𝑢</mi>
+                <mi>𝑒</mi>
               </mrow>
-              <annotation encoding="application/x-tex">true</annotation>
+              <annotation encoding="application/x-tex">\mathit{true}</annotation>
             </semantics>
           </math>について解いている。与えられた<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -36375,16 +36493,18 @@ construction}.} -->
           </math>の部分対象の集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>S</mi>
-                <mi>u</mi>
-                <mi>b</mi>
+                <mrow>
+                  <mi>𝑆</mi>
+                  <mi>𝑢</mi>
+                  <mi>𝑏</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <mi>b</mi>
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">Sub(b)</annotation>
+              <annotation encoding="application/x-tex">\mathit{Sub}(b)</annotation>
             </semantics>
           </math>
           をモノ射の族として定義でき、それが<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -36401,9 +36521,11 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>S</mi>
-                <mi>u</mi>
-                <mi>b</mi>
+                <mrow>
+                  <mi>𝑆</mi>
+                  <mi>𝑢</mi>
+                  <mi>𝑏</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <mi>b</mi>
@@ -36419,22 +36541,24 @@ construction}.} -->
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">Sub(b) \cong \mathbf{C}(b, \Omega)</annotation>
+              <annotation encoding="application/x-tex">\mathit{Sub}(b) \cong \mathbf{C}(b, \Omega)</annotation>
             </semantics>
           </math></p>
         <p>偶然にも、これは2つの関手の自然同型だ。言い換えれば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>S</mi>
-                <mi>u</mi>
-                <mi>b</mi>
+                <mrow>
+                  <mi>𝑆</mi>
+                  <mi>𝑢</mi>
+                  <mi>𝑏</mi>
+                </mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <mo>−</mo>
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">Sub(-)</annotation>
+              <annotation encoding="application/x-tex">\mathit{Sub}(-)</annotation>
             </semantics>
           </math>
           は表現可能 (反変)
@@ -36484,14 +36608,14 @@ construction}.} -->
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>i</mi>
-                <mi>s</mi>
-                <mi>E</mi>
-                <mi>v</mi>
-                <mi>e</mi>
-                <mi>n</mi>
+                <mi>𝑖</mi>
+                <mi>𝑠</mi>
+                <mi>𝐸</mi>
+                <mi>𝑣</mi>
+                <mi>𝑒</mi>
+                <mi>𝑛</mi>
               </mrow>
-              <annotation encoding="application/x-tex">isEven</annotation>
+              <annotation encoding="application/x-tex">\mathit{isEven}</annotation>
             </semantics>
           </math>は自然数の集合から偶数の部分集合を選択する。トポスでは、述語の概念を対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -36527,12 +36651,12 @@ construction}.} -->
           <li>特性関数に沿った<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mrow>
-                  <mi>t</mi>
-                  <mi>r</mi>
-                  <mi>u</mi>
-                  <mi>e</mi>
+                  <mi>𝑡</mi>
+                  <mi>𝑟</mi>
+                  <mi>𝑢</mi>
+                  <mi>𝑒</mi>
                 </mrow>
-                <annotation encoding="application/x-tex">true</annotation>
+                <annotation encoding="application/x-tex">\mathit{true}</annotation>
               </semantics>
             </math>の引き戻しである関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
@@ -36679,11 +36803,11 @@ construction}.} -->
                 <msup>
                   <mi>𝐅</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
-                <annotation encoding="application/x-tex">\mathbf{F}^{op}</annotation>
+                <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}</annotation>
               </semantics>
             </math>。</li>
           <li>ローヴェア・セオリー<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -36785,9 +36909,9 @@ construction}.} -->
               <annotation encoding="application/x-tex">2 = 1 + 1</annotation>
             </semantics>
           </math>だ。Haskellでも次のように表現される:</p>
-        <div class="sourceCode" id="cb595">
+        <div class="sourceCode" id="cb594">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb595-1"><a href="#cb595-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">type</span> <span class="dt">Two</span> <span class="ot">=</span> <span class="dt">Either</span> () ()</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb594-1"><a href="#cb594-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">type</span> <span class="dt">Two</span> <span class="ot">=</span> <span class="dt">Either</span> () ()</span></code></pre>
         </div>
         <p>しかし、空集合は1つしかないと考えるのが自然だとしても、単集合は異なるものが多数存在してよい。典型的な例として、集合<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
@@ -36962,14 +37086,15 @@ construction}.} -->
                 <msup>
                   <mi>𝐅</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>→</mo>
                 <mi>𝐋</mi>
               </mrow>
-              <annotation encoding="application/x-tex">I_{\mathbf{L}} \Colon \mathbf{F}^{op}\to \mathbf{L}</annotation>
+              <annotation encoding="application/x-tex">I_{\mathbf{L}} \Colon \mathbf{F}^\mathit{op}\to \mathbf{L}
+              </annotation>
             </semantics>
           </math></p>
         <p>この関手は対象の全単射である必要があり、有限積を保存する必要がある
@@ -36978,11 +37103,11 @@ construction}.} -->
               <msup>
                 <mi>𝐅</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}</annotation>
             </semantics>
           </math>内の積と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -37054,11 +37179,11 @@ construction}.} -->
               <msup>
                 <mi>𝐅</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}</annotation>
             </semantics>
           </math>内のhom集合よりも豊穣だ。これらは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -37320,11 +37445,11 @@ construction}.} -->
               <msup>
                 <mi>𝐅</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}</annotation>
             </semantics>
           </math>に基づいており、積を定義する「退屈な」射はそこから継承されている。それは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -37460,11 +37585,11 @@ construction}.} -->
               <msup>
                 <mi>𝐅</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}</annotation>
             </semantics>
           </math>自体だ
           (これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -37839,11 +37964,11 @@ construction}.} -->
               <msup>
                 <mi>𝐅</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}</annotation>
             </semantics>
           </math>のモデルを考えてみよう。そのようなモデルは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -37890,8 +38015,8 @@ construction}.} -->
                   <msup>
                     <mi>𝐅</mi>
                     <mrow>
-                      <mi>o</mi>
-                      <mi>p</mi>
+                      <mi>𝑜</mi>
+                      <mi>𝑝</mi>
                     </mrow>
                   </msup>
                   <mo>,</mo>
@@ -37903,7 +38028,7 @@ construction}.} -->
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">\mathbf{Mod}(\mathbf{F}^{op}, \mathbf{Set})</annotation>
+              <annotation encoding="application/x-tex">\mathbf{Mod}(\mathbf{F}^\mathit{op}, \mathbf{Set})</annotation>
             </semantics>
           </math>
           内のすべての射
@@ -37963,8 +38088,8 @@ construction}.} -->
                   <msup>
                     <mi>𝐅</mi>
                     <mrow>
-                      <mi>o</mi>
-                      <mi>p</mi>
+                      <mi>𝑜</mi>
+                      <mi>𝑝</mi>
                     </mrow>
                   </msup>
                   <mo>,</mo>
@@ -37976,7 +38101,7 @@ construction}.} -->
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">\mathbf{Mod}(\mathbf{F}^{op}, \mathbf{Set})</annotation>
+              <annotation encoding="application/x-tex">\mathbf{Mod}(\mathbf{F}^\mathit{op}, \mathbf{Set})</annotation>
             </semantics>
           </math>
           は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -38477,11 +38602,11 @@ construction}.} -->
               <msup>
                 <mi>𝐅</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}</annotation>
             </semantics>
           </math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -38504,14 +38629,14 @@ construction}.} -->
                 <msup>
                   <mi>𝐅</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>→</mo>
                 <mi>𝐋</mi>
               </mrow>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}\to \mathbf{L}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}\to \mathbf{L}</annotation>
             </semantics>
           </math>があることを意味する。この関手は、モデル上に逆向きの関手を引き起こす
           (モデルはセオリー<em>から</em>集合への関手だからだ):</p>
@@ -38545,8 +38670,8 @@ construction}.} -->
                   <msup>
                     <mi>𝐅</mi>
                     <mrow>
-                      <mi>o</mi>
-                      <mi>p</mi>
+                      <mi>𝑜</mi>
+                      <mi>𝑝</mi>
                     </mrow>
                   </msup>
                   <mo>,</mo>
@@ -38559,7 +38684,7 @@ construction}.} -->
                 </mrow>
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{Mod}(\mathbf{L}, \mathbf{Set}) \to
-                \mathbf{Mod}(\mathbf{F}^{op}, \mathbf{Set})</annotation>
+                \mathbf{Mod}(\mathbf{F}^\mathit{op}, \mathbf{Set})</annotation>
             </semantics>
           </math></p>
         <p>ただし、すでに議論したように、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -38567,11 +38692,11 @@ construction}.} -->
               <msup>
                 <mi>𝐅</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}</annotation>
             </semantics>
           </math>のモデルの圏は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -39029,11 +39154,11 @@ construction}.} -->
                 </mrow>
                 <mi>T</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msubsup>
-              <annotation encoding="application/x-tex">\mathbf{Kl}^{op}_{T}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{Kl}^\mathit{op}_{T}</annotation>
             </semantics>
           </math>こそ、求めていたローヴェア・セオリーだ。特に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -39232,16 +39357,16 @@ construction}.} -->
                   <mn>2</mn>
                 </msub>
                 <mo>,</mo>
-                <mi>…</mi>
-                <mrow></mrow>
-                <mo>,</mo>
+                <mi>.</mi>
+                <mi>.</mi>
+                <mi>.</mi>
                 <msub>
                   <mi>a</mi>
                   <mi>n</mi>
                 </msub>
                 <mo stretchy="true" form="postfix">)</mo>
               </mrow>
-              <annotation encoding="application/x-tex">(a_1, a_2, \ldots{}, a_n)</annotation>
+              <annotation encoding="application/x-tex">(a_1, a_2, ...a_n)</annotation>
             </semantics>
           </math>
           から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -39337,8 +39462,9 @@ construction}.} -->
                         <mi>x</mi>
                         <mo>,</mo>
                         <mspace width="0.222em"></mspace>
-                        <mi>…</mi>
-                        <mrow></mrow>
+                        <mi>.</mi>
+                        <mi>.</mi>
+                        <mi>.</mi>
                         <mspace width="0.222em"></mspace>
                         <mo>,</mo>
                         <mi>x</mi>
@@ -39350,8 +39476,7 @@ construction}.} -->
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">\lambda{}x \to (\underbrace{x, x,\ \ldots{}\ , x}_{m})
-              </annotation>
+              <annotation encoding="application/x-tex">\lambda{}x \to (\underbrace{x, x,\ ...\ , x}_{m})</annotation>
             </semantics>
           </math></p>
         <p>いま扱っているプロ関手が2番目の引数について共変であることは、自明だとはすぐに言えないことに気付いたと思う。hom関手<math display="inline"
@@ -39638,8 +39763,8 @@ construction}.} -->
                 <msup>
                   <mi>𝐅</mi>
                   <mrow>
-                    <mi>o</mi>
-                    <mi>p</mi>
+                    <mi>𝑜</mi>
+                    <mi>𝑝</mi>
                   </mrow>
                 </msup>
                 <mo>×</mo>
@@ -39651,7 +39776,8 @@ construction}.} -->
                   <mi>𝐭</mi>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}\times \mathbf{F} \to \mathbf{Set}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}\times \mathbf{F} \to \mathbf{Set}
+              </annotation>
             </semantics>
           </math>だ。コエンドをプロ関手の対角要素すべての余積
           (非交和)として定義できることを思い出してほしい。それらの対角要素のうちいくつかは同一視できる。この同一視は余くさび条件に対応している。</p>
@@ -40004,11 +40130,11 @@ construction}.} -->
               <msup>
                 <mi>𝐅</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}</annotation>
             </semantics>
           </math>自体で、これがどのように機能するかを見てみよう。そのようなセオリーでは、すべての<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
@@ -40136,9 +40262,9 @@ construction}.} -->
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
           </math>に写し、零項演算を次の関数に写す関手だ:</p>
-        <div class="sourceCode" id="cb596">
+        <div class="sourceCode" id="cb595">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb596-1"><a href="#cb596-1" aria-hidden="true" tabindex="-1"></a><span class="ot">    raise ::</span> () <span class="ot">-&gt;</span> a</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb595-1"><a href="#cb595-1" aria-hidden="true" tabindex="-1"></a><span class="ot">    raise ::</span> () <span class="ot">-&gt;</span> a</span></code></pre>
         </div>
         <p><code>Maybe</code>モナドはコエンド式を使って復元できる。零項演算を追加すると、hom集合<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
@@ -40162,11 +40288,11 @@ construction}.} -->
               <msup>
                 <mi>𝐅</mi>
                 <mrow>
-                  <mi>o</mi>
-                  <mi>p</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑝</mi>
                 </mrow>
               </msup>
-              <annotation encoding="application/x-tex">\mathbf{F}^{op}</annotation>
+              <annotation encoding="application/x-tex">\mathbf{F}^\mathit{op}</annotation>
             </semantics>
           </math>にはない)
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -40295,14 +40421,14 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>あるいは、Haskellの記法では:</p>
-        <div class="sourceCode" id="cb597">
+        <div class="sourceCode" id="cb596">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb597-1"><a href="#cb597-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">type</span> <span class="dt">Maybe</span> a <span class="ot">=</span> <span class="dt">Either</span> () a</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb596-1"><a href="#cb596-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">type</span> <span class="dt">Maybe</span> a <span class="ot">=</span> <span class="dt">Either</span> () a</span></code></pre>
         </div>
         <p>となり、次と等価だ:</p>
-        <div class="sourceCode" id="cb598">
+        <div class="sourceCode" id="cb597">
           <pre
-            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb598-1"><a href="#cb598-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">data</span> <span class="dt">Maybe</span> a <span class="ot">=</span> <span class="dt">Nothing</span> <span class="op">|</span> <span class="dt">Just</span> a</span></code></pre>
+            class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb597-1"><a href="#cb597-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">data</span> <span class="dt">Maybe</span> a <span class="ot">=</span> <span class="dt">Nothing</span> <span class="op">|</span> <span class="dt">Just</span> a</span></code></pre>
         </div>
         <p>このローヴェア・セオリーは例外の送出のみをサポートしており、例外の処理はサポートしていないことに注意してほしい。</p>
         <h2 data-number="30.8" id="課題-21"><span class="header-section-number">30.8</span> 課題</h2>
@@ -40394,11 +40520,11 @@ construction}.} -->
         </ol>
         <h1 data-number="31" id="モナドモノイド圏"><span class="header-section-number">31</span> モナド・モノイド・圏</h1>
         <p>
-          区切り良く圏論の本を終わらせることはできない。学ぶべきことは常にある。圏論は広大な題材だ。同時に、同じテーマ・コンセプト・パターンが明らかに何度も繰り返されている。すべての概念はKan拡張である、という格言があり、実際、Kan拡張を使えば極限・余極限・モナド・米田の補題などを導出できる。圏自体のこの考え方は抽象化のどのレベルにも現れ、モノイドとモナドの概念にも現れる。一番基本的なのはどれだろうか？
-          結局のところ、それらはすべて相互に関連しており、抽象化の終わりのないサイクルで互いにつながっている。それらの相互関係を示すことは、この本を締めくくるのにふさわしいと判断した。</p>
+          区切り良く圏論の本を終わらせることはできない。学ぶべきことは常にある。圏論は広大な題材だ。それと同時に、同じテーマ・コンセプト・パターンが明らかに何度も繰り返されている。すべての概念はKan拡張である、という格言があるとおり、Kan拡張を使えば極限・余極限・モナド・米田の補題などを導出できる。圏自体の概念は抽象化のあらゆるレベルに現れる。モノイドとモナドの概念も同様だ。最も基本となるものはどれだろうか？
+          結局のところ、それらはすべて相互に関連しており、抽象化の終わりのないサイクルで互いにつながっている。それらの相互関係を示すことが、この本を締めくくるのにふさわしいと判断した。</p>
         <h2 data-number="31.1" id="双圏"><span class="header-section-number">31.1</span> 双圏</h2>
         <p>
-          圏論で特に難しい側面の1つは、絶えず視点が切り替わることだ。たとえば、集合の圏を考えてみてほしい。我々は、要素によって集合を定義することに慣れている。空集合には要素がない。単集合には要素が1つある。2つの集合のカルテシアン積はペアの集合であり、以下同様だ。しかし、<math
+          圏論で特に難しい側面の1つは、絶えず視点が切り替わることだ。たとえば、集合の圏を考えてみてほしい。我々は要素によって集合を定義することに慣れている。空集合には要素がない。単集合には要素が1つある。2つの集合のカルテシアン積はペアの集合であり、以下同様だ。しかし、<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -40419,9 +40545,10 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{Set}</annotation>
             </semantics>
-          </math>内の特定の普遍的構成が要素の観点で何を記述しているか知るためだった。そして、終対象は1つの要素を持つ集合であることなどが分かった。しかし、それらは健全性確認にすぎなかった。</p>
-        <p>関手は圏の写像として定義される。写像を圏内の射と見なすのは自然なことだ。関手は、圏の圏の射であることが分かった
-          (サイズに関する問題を避けたいなら、小さい圏だ)。関手を矢として扱うと、圏の内部
+          </math>内の特定の普遍的構成が要素の観点で何を記述しているか知るためだった。そうして、終対象は1つの要素を持つ集合であることなどが分かった。しかし、それらは健全性確認にすぎなかった。</p>
+        <p>関手は圏の写像として定義される。写像を圏内の射と見なすのは自然だ。関手は、圏
+          (サイズに関する問題を避けたいなら、小さい圏)
+          の圏の射であることが分かった。関手を矢として扱うと、圏の内部
           (その対象と射)
           に対するその作用についての情報を失うことになる。これは、集合の要素に対する関数の作用についての情報が、その関数を<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
@@ -40433,7 +40560,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{Set}</annotation>
             </semantics>
-          </math>内の矢として扱うと失われるのと同じだ。しかし、任意の2つの圏の間の関手も圏を形成する。今度は、ある圏の矢であったものを、別の圏の対象と見なすことが求められる。関手圏では、関手は対象であり、自然変換は射だ。同一のものが、ある圏では矢であり、別の圏では対象であり得ることが発見された。対象を名詞とし矢を動詞とする素朴な考え方は成り立たない。
+          </math>内の矢として扱うと失われるのと同じだ。しかし、任意の2つの圏の間の関手も圏を形成する。今度は、ある圏の矢であったものを別の圏の対象と見なすことが求められる。関手圏では関手が対象であり、自然変換が射だ。同一のものが、ある圏では矢であり、別の圏では対象であり得ることが発見された。対象を名詞とし矢を動詞とする素朴な考え方は成り立たない。
         </p>
         <p>2つの観点を切り替える代わりに、1つの観点に統合しようとすることもできる。そうすることで<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
@@ -40617,7 +40744,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">\mathbf{C}(a, a)</annotation>
             </semantics>
           </math>
-          内の対象と見なせる。これらは矢なので互いに合成できる。しかし、それらを対象として見ると、合成は1対の対象から1つの対象への写像になる。それは実際に、積に――正確にはテンソル積に――非常によく似ている。このテンソル積は恒等射<math
+          内の対象と見なせる。これらは矢なので互いに合成できる。しかし、それらを対象として見ると、合成は対象の1つのペアから1つの対象への写像になる。それは実際に、積に――正確にはテンソル積に――非常によく似ている。このテンソル積は恒等<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>1</mn>
@@ -40648,7 +40775,7 @@ construction}.} -->
               <mn>1</mn>
               <annotation encoding="application/x-tex">1</annotation>
             </semantics>
-          </math>-セルの合成として定義される。結合則と単位元則は、対応する圏の規則から単に除外される。</p>
+          </math>-セルの合成として定義される。結合則と単位元則は、対応する圏の規則から単に除かれる。</p>
         <p>これが何を意味するのかを、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>𝟐</mn>
@@ -40688,8 +40815,8 @@ construction}.} -->
               <annotation encoding="application/x-tex">a</annotation>
             </semantics>
           </math>上の自己関手の圏だ。その中では、自己関手の合成がテンソル積の役目を果たしている。恒等関手はこの積の単位だ。自己関手がモノイダル圏を形成することは以前にも見た
-          (その事実をモナドの定義で使った)。しかし、これはもっと一般的な現象だと分かる。つまり、すべての<math display="inline"
-            xmlns="http://www.w3.org/1998/Math/MathML">
+          (その事実をモナドの定義で使った)
+          ものの、これはもっと一般的な現象だと分かる。つまり、すべての<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>𝟐</mn>
               <annotation encoding="application/x-tex">\mathbf{2}</annotation>
@@ -41331,10 +41458,10 @@ construction}.} -->
           </math>-セルをここでは選択する。すぐに明らかになる理由から、これを<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>O</mi>
-                <mi>b</mi>
+                <mi>𝑂</mi>
+                <mi>𝑏</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ob</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ob}</annotation>
             </semantics>
           </math>と呼ぶことにする。次に、自己-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -41345,55 +41472,75 @@ construction}.} -->
           (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>O</mi>
-                <mi>b</mi>
+                <mi>𝑂</mi>
+                <mi>𝑏</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ob</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ob}</annotation>
             </semantics>
           </math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>O</mi>
-                <mi>b</mi>
+                <mi>𝑂</mi>
+                <mi>𝑏</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ob</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ob}</annotation>
             </semantics>
           </math>へ戻るスパン)
-          を選択する。その頂点には<code>Ar</code>と呼ばれる集合があり、次の2つの関数を伴う:</p>
+          を選択する。その頂点には<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>𝐴</mi>
+                <mi>𝑟</mi>
+              </mrow>
+              <annotation encoding="application/x-tex">\mathit{Ar}</annotation>
+            </semantics>
+          </math>と呼ばれる集合があり、次の2つの関数を伴う:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mtable>
                 <mtr>
                   <mtd columnalign="center" style="text-align: center">
-                    <mi>d</mi>
-                    <mi>o</mi>
-                    <mi>m</mi>
+                    <mrow>
+                      <mi>𝑑</mi>
+                      <mi>𝑜</mi>
+                      <mi>𝑚</mi>
+                    </mrow>
                     <mo>∷</mo>
-                    <mi>A</mi>
-                    <mi>r</mi>
+                    <mrow>
+                      <mi>𝐴</mi>
+                      <mi>𝑟</mi>
+                    </mrow>
                     <mo>→</mo>
-                    <mi>O</mi>
-                    <mi>b</mi>
+                    <mrow>
+                      <mi>𝑂</mi>
+                      <mi>𝑏</mi>
+                    </mrow>
                   </mtd>
                 </mtr>
                 <mtr>
                   <mtd columnalign="center" style="text-align: center">
-                    <mi>c</mi>
-                    <mi>o</mi>
-                    <mi>d</mi>
+                    <mrow>
+                      <mi>𝑐</mi>
+                      <mi>𝑜</mi>
+                      <mi>𝑑</mi>
+                    </mrow>
                     <mo>∷</mo>
-                    <mi>A</mi>
-                    <mi>r</mi>
+                    <mrow>
+                      <mi>𝐴</mi>
+                      <mi>𝑟</mi>
+                    </mrow>
                     <mo>→</mo>
-                    <mi>O</mi>
-                    <mi>b</mi>
+                    <mrow>
+                      <mi>𝑂</mi>
+                      <mi>𝑏</mi>
+                    </mrow>
                   </mtd>
                 </mtr>
               </mtable>
               <annotation encoding="application/x-tex">
                 \begin{gathered}
-                dom \Colon Ar \to Ob \\
-                cod \Colon Ar \to Ob
+                \mathit{dom} \Colon \mathit{Ar} \to \mathit{Ob} \\
+                \mathit{cod} \Colon \mathit{Ar} \to \mathit{Ob}
                 \end{gathered}
               </annotation>
             </semantics>
@@ -41402,37 +41549,37 @@ construction}.} -->
         <p>集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>A</mi>
-                <mi>r</mi>
+                <mi>𝐴</mi>
+                <mi>𝑟</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ar</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ar}</annotation>
             </semantics>
           </math>の要素を「矢」と呼ぼう。さらに、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>O</mi>
-                <mi>b</mi>
+                <mi>𝑂</mi>
+                <mi>𝑏</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ob</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ob}</annotation>
             </semantics>
           </math>の要素を「対象」と呼ぼう、と言ったら、目指している場所の手掛かりになるだろう。2つの関数<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>d</mi>
-                <mi>o</mi>
-                <mi>m</mi>
+                <mi>𝑑</mi>
+                <mi>𝑜</mi>
+                <mi>𝑚</mi>
               </mrow>
-              <annotation encoding="application/x-tex">dom</annotation>
+              <annotation encoding="application/x-tex">\mathit{dom}</annotation>
             </semantics>
           </math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>d</mi>
+                <mi>𝑐</mi>
+                <mi>𝑜</mi>
+                <mi>𝑑</mi>
               </mrow>
-              <annotation encoding="application/x-tex">cod</annotation>
+              <annotation encoding="application/x-tex">\mathit{cod}</annotation>
             </semantics>
           </math>は、始域と終域を「矢」に割り当てる。</p>
         <p>スパンをモナドにするには2つの<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -41453,26 +41600,26 @@ construction}.} -->
           </math>が必要だ。この場合のモノイダル単位は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>O</mi>
-                <mi>b</mi>
+                <mi>𝑂</mi>
+                <mi>𝑏</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ob</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ob}</annotation>
             </semantics>
           </math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>O</mi>
-                <mi>b</mi>
+                <mi>𝑂</mi>
+                <mi>𝑏</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ob</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ob}</annotation>
             </semantics>
           </math>への自明なスパンであり、頂点は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>O</mi>
-                <mi>b</mi>
+                <mi>𝑂</mi>
+                <mi>𝑏</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ob</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ob}</annotation>
             </semantics>
           </math>で、2つの恒等関数を伴う。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -41487,18 +41634,18 @@ construction}.} -->
           </math>は2つの頂点<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>O</mi>
-                <mi>b</mi>
+                <mi>𝑂</mi>
+                <mi>𝑏</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ob</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ob}</annotation>
             </semantics>
           </math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>A</mi>
-                <mi>r</mi>
+                <mi>𝐴</mi>
+                <mi>𝑟</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ar</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ar}</annotation>
             </semantics>
           </math>の間の関数だ。つまり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -41517,17 +41664,21 @@ construction}.} -->
               <mtable>
                 <mtr>
                   <mtd columnalign="center" style="text-align: center">
-                    <mi>d</mi>
-                    <mi>o</mi>
-                    <mi>m</mi>
+                    <mrow>
+                      <mi>𝑑</mi>
+                      <mi>𝑜</mi>
+                      <mi>𝑚</mi>
+                    </mrow>
                     <mo>∘</mo>
                     <mi>η</mi>
                     <mo>=</mo>
                     <mi>i</mi>
                     <mi>d</mi>
-                    <mi>c</mi>
-                    <mi>o</mi>
-                    <mi>d</mi>
+                    <mrow>
+                      <mi>𝑐</mi>
+                      <mi>𝑜</mi>
+                      <mi>𝑑</mi>
+                    </mrow>
                     <mo>∘</mo>
                     <mi>η</mi>
                     <mo>=</mo>
@@ -41538,8 +41689,8 @@ construction}.} -->
               </mtable>
               <annotation encoding="application/x-tex">
                 \begin{gathered}
-                dom \circ \eta = id
-                cod \circ \eta = id
+                \mathit{dom} \circ \eta = id
+                \mathit{cod} \circ \eta = id
                 \end{gathered}
               </annotation>
             </semantics>
@@ -41549,53 +41700,64 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>d</mi>
-                <mi>o</mi>
-                <mi>m</mi>
+                <mrow>
+                  <mi>𝑑</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑚</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <mi>η</mi>
                   <mspace width="0.222em"></mspace>
-                  <mi>o</mi>
-                  <mi>b</mi>
+                  <mrow>
+                    <mi>𝑜</mi>
+                    <mi>𝑏</mi>
+                  </mrow>
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
                 <mo>=</mo>
-                <mi>o</mi>
-                <mi>b</mi>
+                <mrow>
+                  <mi>𝑜</mi>
+                  <mi>𝑏</mi>
+                </mrow>
                 <mo>=</mo>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>d</mi>
+                <mrow>
+                  <mi>𝑐</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑑</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <mi>η</mi>
                   <mspace width="0.222em"></mspace>
-                  <mi>o</mi>
-                  <mi>b</mi>
+                  <mrow>
+                    <mi>𝑜</mi>
+                    <mi>𝑏</mi>
+                  </mrow>
                   <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="application/x-tex">dom\ (\eta\ ob) = ob = cod\ (\eta\ ob)</annotation>
+              <annotation encoding="application/x-tex">\mathit{dom}\ (\eta\ \mathit{ob}) = \mathit{ob} = \mathit{cod}\
+                (\eta\ \mathit{ob})</annotation>
             </semantics>
           </math></p>
         <p>ここで、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>o</mi>
-                <mi>b</mi>
+                <mi>𝑜</mi>
+                <mi>𝑏</mi>
               </mrow>
-              <annotation encoding="application/x-tex">ob</annotation>
+              <annotation encoding="application/x-tex">\mathit{ob}</annotation>
             </semantics>
           </math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>O</mi>
-                <mi>b</mi>
+                <mi>𝑂</mi>
+                <mi>𝑏</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ob</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ob}</annotation>
             </semantics>
           </math>内の「対象」だ。言い換えると、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -41616,18 +41778,18 @@ construction}.} -->
           </math>は、それ自体とスパン<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>A</mi>
-                <mi>r</mi>
+                <mi>𝐴</mi>
+                <mi>𝑟</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ar</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ar}</annotation>
             </semantics>
           </math>との合成に作用する。合成は引き戻しとして定義されているため、その要素は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>A</mi>
-                <mi>r</mi>
+                <mi>𝐴</mi>
+                <mi>𝑟</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ar</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ar}</annotation>
             </semantics>
           </math>からの要素のペア――「矢」のペア
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -41653,25 +41815,29 @@ construction}.} -->
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>c</mi>
-                <mi>o</mi>
-                <mi>d</mi>
+                <mrow>
+                  <mi>𝑐</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑑</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <msub>
                   <mi>a</mi>
                   <mn>1</mn>
                 </msub>
                 <mo>=</mo>
-                <mi>d</mi>
-                <mi>o</mi>
-                <mi>m</mi>
+                <mrow>
+                  <mi>𝑑</mi>
+                  <mi>𝑜</mi>
+                  <mi>𝑚</mi>
+                </mrow>
                 <mspace width="0.222em"></mspace>
                 <msub>
                   <mi>a</mi>
                   <mn>2</mn>
                 </msub>
               </mrow>
-              <annotation encoding="application/x-tex">cod\ a_1 = dom\ a_2</annotation>
+              <annotation encoding="application/x-tex">\mathit{cod}\ a_1 = \mathit{dom}\ a_2</annotation>
             </semantics>
           </math></p>
         <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -41724,10 +41890,10 @@ construction}.} -->
           を、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
-                <mi>A</mi>
-                <mi>r</mi>
+                <mi>𝐴</mi>
+                <mi>𝑟</mi>
               </mrow>
-              <annotation encoding="application/x-tex">Ar</annotation>
+              <annotation encoding="application/x-tex">\mathit{Ar}</annotation>
             </semantics>
           </math>からの単一の矢<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -41812,8 +41978,7 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#one-to-one" epub:type="index-locator">one-to-one</a></span></li>
           <li><span epub:type="index-term"><a href="#point" epub:type="index-locator">points</a></span></li>
           <li>predicate – <span epub:type="index-term"><a href="#predicates" epub:type="index-locator">a</a></span>,
-            <span epub:type="index-term"><a href="#predicate" epub:type="index-locator">b</a></span>
-          </li>
+            <span epub:type="index-term"><a href="#predicate" epub:type="index-locator">b</a></span></li>
           <li><span epub:type="index-term"><a href="#proof-relevant_relation" epub:type="index-locator">proof-relevant
                 relation</a></span></li>
           <li><span epub:type="index-term"><a href="#total" epub:type="index-locator">total</a></span></li>
@@ -41961,8 +42126,7 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#exponential" epub:type="index-locator">冪乗</a></span></li>
           <li><span epub:type="index-term"><a href="#point-free" epub:type="index-locator">ポイントフリー</a></span></li>
           <li>忘却関手 – <span epub:type="index-term"><a href="#forgetful_functor" epub:type="index-locator">a</a></span>,
-            <span epub:type="index-term"><a href="#forgetful_functor2" epub:type="index-locator">b</a></span>
-          </li>
+            <span epub:type="index-term"><a href="#forgetful_functor2" epub:type="index-locator">b</a></span></li>
           <li><span epub:type="index-term"><a href="#enriched" epub:type="index-locator">enriched</a></span></li>
           <li><span epub:type="index-term"><a href="#enriched_functor" epub:type="index-locator">enriched
                 functor</a></span></li>
