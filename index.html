@@ -718,8 +718,10 @@
           合成は圏論の根本にあり、圏そのものの定義の一部だ。そして私は、合成こそプログラミングの本質であると強く主張したい。我々は、偉大なエンジニアがサブルーチンのアイデアを思いつく遥か前から、ずっとものを合成してきた。かつて構造化プログラミングはプログラミングに革命をもたらした。コードのブロックを合成可能にしたからだ。続いてオブジェクト指向プログラミングが登場した。これはオブジェクトを合成することこそすべてだ。関数型プログラミングは、関数や代数的データ構造を合成するだけでなく、並行性を合成可能にする。これは他のプログラミングパラダイムでは事実上不可能だ。
         </p>
         <p>
-          第3に、私には秘密兵器の「肉切り包丁」がある。それを使って数学を捌いて、プログラマーにとって更に美味しいものにするつもりだ。プロの数学者なら、すべての仮定を確かめ、すべての命題を適切に述べ、すべての証明を厳密に構成するために、細心の注意を払う必要がある。それによって数学の論文や書籍は門外漢には非常に読みにくくなっている。一方で私は実践を通じた物理学者であり、物理学は形式的でない推論を用いて驚くべき進歩を遂げた学問だ。かつて数学者たちはディラックのデルタ関数を嗤った。デルタ関数は、偉大な物理学者であるP.A.M.
-          ディラックが微分方程式を解く過程で作ったものだ。ディラックの洞察を形式化した分布理論と呼ばれる微積分学のまったく新しい分岐を物理学者たちが発見したとき、彼らは嗤うのをやめた。</p>
+          第3に、私には秘密兵器の「肉切り包丁」がある。それを使って数学を捌いて、プログラマーにとってさらに美味しいものにするつもりだ。プロの数学者なら、すべての仮定を確かめ、すべての命題を適切に述べ、すべての証明を厳密に構成するために、細心の注意を払う必要がある。それによって数学の論文や書籍は門外漢には非常に読みにくくなっている。一方で私は実践を通じた物理学者であり、物理学は形式的でない推論を用いて驚くべき進歩を遂げた学問だ。かつて数学者たちはディラックのデルタ関数を嗤った。デルタ関数は、偉大な物理学者であるP.A.M.
+          ディラックが微分方程式を解く過程で作ったものだ。ディラックの洞察を形式化した微積分学のまったく新しい分野として超関数理論
+          (distribuiton theory)
+          を物理学者たちが発見したとき、彼らは嗤うのをやめた。</p>
         <p>
           当然ながら、身振り手振りで議論するときには明らかに間違ったことを言ってしまう危険があるので、本書では非公式な議論の背景にしっかりした数学的理論があることを確認するようにしたい。私のベッドサイドには、使い古されたソーンダーズ・マックレーンの『圏論の基礎』が置かれている。
         </p>
@@ -4104,7 +4106,8 @@
         <p>
           <code>maybeTail</code>の定義の最初の部分は、<code>Nil</code>コンストラクターをパターンとして使い、<code>Nothing</code>を返す。2番目の部分では、<code>Cons</code>コンストラクターをパターンとして使う。コンストラクターの最初の引数には興味がないため、ワイルドカードで置き換える。<code>Cons</code>の2番目の引数は、変数<code>t</code>に束縛される
           (厳密に言えば、一度式に束縛されたら決して変化しないものの、変数と呼ぶことにする)。戻り値は<code>Just t</code>だ。こうして、<code>List</code>の作成方法に応じて、句の1つに一致するようになった。作成に<code>Cons</code>が使われるときは、渡した2つの引数が取得される
-          (最初の引数は破棄される)。</p>
+          (最初の引数は破棄される)。
+        </p>
         <p>
           さらに複雑な直和型は、C++では多相クラス階層を使って実装されている。共通の祖先を持つ一連のクラスは、1つのバリアント型として理解でき、その中では仮想関数テーブルが隠しタグとして機能する。Haskellではコンストラクター上のパターンマッチングで特殊なコードを呼び出して行っていることを、C++では仮想関数テーブルのポインターに基づいて仮想関数呼び出しをディスパッチして実現している。
         </p>
@@ -4847,7 +4850,8 @@
           (残念ながら、テンプレート仮想関数は作れない)？
           フリーテンプレート関数は、カリー化版と非カリー化版のどちらにすべきだろうか？
           C++コンパイラは不足した型情報を正しく推論できるのか、それとも明示的に指定すべきだろうか？
-          入力関数<code>f</code>が<code>int</code>から<code>bool</code>への関数である状況を考えてみよう。コンパイラに<code>g</code>の型が分かるだろうか:</p>
+          入力関数<code>f</code>が<code>int</code>から<code>bool</code>への関数である状況を考えてみよう。コンパイラに<code>g</code>の型が分かるだろうか:
+        </p>
         <div class="sourceCode" id="cb168">
           <pre
             class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> g <span class="op">=</span> fmap<span class="op">(</span>f<span class="op">);</span></span></code></pre>
@@ -4947,7 +4951,8 @@
           <code>List a</code>に作用する関数は、リストの2つのコンストラクターに対応する2つの場合を考慮する必要がある。<code>Nil</code>の場合は自明で、単に<code>Nil</code>を返す。空のリストでできることはあまりない。<code>Cons</code>の場合は、再帰を伴うため、ややトリッキーだ。そこで、少し前に戻って、何をしようとしているのか考えてみよう。<code>a</code>のリストと、<code>a</code>を<code>b</code>に変換する関数<code>f</code>があり、<code>b</code>のリストを生成したいと考えている。自明なのは、<code>f</code>を使ってリストの各要素を<code>a</code>から<code>b</code>に変換することだ。(空でない)
           リストが頭部と尾部の<code>Cons</code>として定義されている場合、実際にはどうやってそれを行うのだろうか。<code>f</code>を頭部に適用し、リフト
           (<code>fmap</code>)
-          された<code>f</code>を尾部に適用する。これは再帰的な定義だ。リフトされた<code>f</code>をリフトされた<code>f</code>を用いて定義しているからだ。</p>
+          された<code>f</code>を尾部に適用する。これは再帰的な定義だ。リフトされた<code>f</code>をリフトされた<code>f</code>を用いて定義しているからだ。
+        </p>
         <div class="sourceCode" id="cb179">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span> f (<span class="dt">Cons</span> x t) <span class="ot">=</span> <span class="dt">Cons</span> (f x) (<span class="fu">fmap</span> f t)</span></code></pre>
@@ -4989,7 +4994,8 @@
         <p>
           <code>std::transform</code>は<code>fmap</code>のより原始的な従兄弟だ。それに渡せるイテレータを実装しているため、ほとんどのC++コンテナは関手だと言える。残念ながら、関手の単純さは、イテレータや一時変数
           (上記の<code>fmap</code>の実装を参照)
-          でいつも煩雑になるため失われてしまう。新しく提案されたC++のrangeライブラリによってrangeの関手的な性質がより顕著になったのは喜ばしい。</p>
+          でいつも煩雑になるため失われてしまう。新しく提案されたC++のrangeライブラリによってrangeの関手的な性質がより顕著になったのは喜ばしい。
+        </p>
         <h3 data-number="7.1.7" id="reader関手"><span class="header-section-number">7.1.7</span> Reader関手</h3>
         <p>
           さて、直観が育ってきただろう――たとえば、関手はある種のコンテナだ――では、一見したところ非常に異なる例をお見せしよう。型<code>a</code>からの、<code>a</code>を返す関数の型への写像を考えてみよう。関数型についてはあまり詳しく述べていない
@@ -5057,7 +5063,8 @@
         <p>
           <code>Const</code>型コンストラクターは<code>c</code>と<code>a</code>の2つの型を取る。アローコンストラクターで行ったように、部分適用で関手を作成しよう。データコンストラクター
           (これも<code>Const</code>と呼ばれる)
-          は型<code>c</code>の値を1つだけ取る。これは<code>a</code>には依存しない。この型コンストラクターの<code>fmap</code>の型は次のようになる:</p>
+          は型<code>c</code>の値を1つだけ取る。これは<code>a</code>には依存しない。この型コンストラクターの<code>fmap</code>の型は次のようになる:
+        </p>
         <div class="sourceCode" id="cb191">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span><span class="ot"> ::</span> (a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> <span class="dt">Const</span> c a <span class="ot">-&gt;</span> <span class="dt">Const</span> c b</span></code></pre>
@@ -5376,7 +5383,8 @@
         <p>この型クラス定義では、両方のデフォルト実装を<code>bimap</code>として提供している。</p>
         <p>
           <code>Bifunctor</code>のインスタンスを宣言するときには、<code>bimap</code>を実装してデフォルトの<code>first</code>と<code>second</code>を受け入れるか、<code>first</code>と<code>second</code>の両方を実装してデフォルトの<code>bimap</code>を受け入れるか、どちらかを選択できる
-          (もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる)。</p>
+          (もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる)。
+        </p>
         <h2 data-number="8.2" id="積と余積の双関手"><span class="header-section-number">8.2</span> 積と余積の双関手</h2>
         <p>双関手の重要な例として、圏論的な積がある。それは<a
             href="#products-and-coproducts">普遍的構成</a>によって定義される2つの対象の積だ。対象の任意のペアに対して積が存在する場合、これらの対象から積への写像は双関手的だ。これは一般に真であり、Haskellに特によく当てはまる。以下に、ペアのコンストラクターについての<code>Bifunctor</code>インスタンスを示す。最も単純な直積型だ:
@@ -7489,7 +7497,8 @@
         <p>
           <code>int</code>や<code>double</code>を取る関数を完全にメモ化したいとは思わないだろう。しかし、関数とデータ型の間には、常に実用的だとは限らないにしても、同値性がある。型はリスト・文字列・木など無数に存在する。これらの型を取る関数をせっせとメモ化したら、無限のストレージが必要になるだろう。しかし、Haskellは遅延評価言語であるため、遅延評価された
           (無限の)
-          データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪乗対象との区別を説明している。冪乗対象の方が<em>データ</em>という概念によく対応している。</p>
+          データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪乗対象との区別を説明している。冪乗対象の方が<em>データ</em>という概念によく対応している。
+        </p>
         <h2 data-number="9.4" id="カルテシアン閉圏"><span class="header-section-number">9.4</span> カルテシアン閉圏</h2>
         <p>型や関数のモデルとしては集合の圏を今後も使うが、圏にはより大きな族があって、同じ目的のモデルとして使えることは言及する価値がある。それらの圏は<span id="Cartesian_closed"
             class="keyword">カルテシアン閉</span> (Cartesian
@@ -7890,7 +7899,8 @@
         </div>
         <p>
           <code>a</code>を取り<code>b</code>を返す関数<code>f</code>と、型<code>a</code>の具体的な値<code>x</code>とのペアがあれば、<code>f</code>を<code>x</code>に適用するだけで型<code>b</code>の具体的な値を得られる。この関数を実装することで、型<code>((a -&gt; b), a) -&gt; b</code>が居住であることを示した。modus
-          ponensは我々の論理では真だ。</p>
+          ponensは我々の論理では真だ。
+        </p>
         <p>では、あからさまに間違っている述語ではどうだろうか？ 例:
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -9224,7 +9234,7 @@
           </math>と書かれる。この最後の表記法は、関手圏自体が他の圏では関数オブジェクト
           (冪乗) と見なせることを示唆している。だが、本当にそうだろうか？</p>
         <p>これまでに構築してきた抽象化の階層を見てみよう。最初は対象と射の集まりとしての圏から始めた。圏自体
-          (厳密に言えば、対象が集合を形成する<em>小さな</em>圏)
+          (厳密に言えば、対象が集合を形成する<em>小さい</em>圏)
           は、それ自体がより高いレベルの圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -9538,7 +9548,7 @@
             </semantics>
           </math>-圏と見なす場合、次のようになる:</p>
         <ul>
-          <li>対象: (小さな) 圏</li>
+          <li>対象: (小さい) 圏</li>
           <li>1-射: 圏の間の関手</li>
           <li>2-射: 関手の間の自然変換。</li>
         </ul>
@@ -11125,7 +11135,7 @@
               <mi>𝐈</mi>
               <annotation encoding="application/x-tex">\mathbf{I}</annotation>
             </semantics>
-          </math>から始める。小さな、多くの場合は有限な圏だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>から始める。小さい、多くの場合は有限な圏だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐈</mi>
               <annotation encoding="application/x-tex">\mathbf{I}</annotation>
@@ -25729,7 +25739,8 @@ construction}.} -->
           (実際、コモナドの恒等則では<code>extract . duplicate = id</code>と規定されている)。</p>
         <p>
           <code>Store</code>コモナドは<code>Lens</code>ライブラリの理論的基盤として重要だ。概念としては、<code>Store s a</code>コモナドは、型<code>s</code>をインデックスとしてdate型<code>a</code>の特定のサブ構造に
-          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型:</p>
+          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型:
+        </p>
         <div class="sourceCode" id="cb508">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb508-1"><a href="#cb508-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> <span class="dt">Store</span> s a</span></code></pre>
@@ -35649,7 +35660,7 @@ construction}.} -->
               <mn>𝟐</mn>
               <annotation encoding="application/x-tex">\mathbf{2}</annotation>
             </semantics>
-          </math>-圏については、(小さな)
+          </math>-圏については、(小さい)
           圏の圏である<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -40545,11 +40556,10 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{Set}</annotation>
             </semantics>
-          </math>内の特定の普遍的構成が要素の観点で何を記述しているか知るためだった。そうして、終対象は1つの要素を持つ集合であることなどが分かった。しかし、それらは健全性確認にすぎなかった。</p>
+          </math>内の特定の普遍的構成が要素の観点で何を記述しているか知るためだった。そうして、終対象は1つの要素からなる集合であることなどが分かった。しかし、それらは健全性確認にすぎなかった。</p>
         <p>関手は圏の写像として定義される。写像を圏内の射と見なすのは自然だ。関手は、圏
           (サイズに関する問題を避けたいなら、小さい圏)
-          の圏の射であることが分かった。関手を矢として扱うと、圏の内部
-          (その対象と射)
+          の圏の射だと分かった。関手を矢として扱うと、圏の内部 (その対象と射)
           に対するその作用についての情報を失うことになる。これは、集合の要素に対する関数の作用についての情報が、その関数を<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -40827,7 +40837,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">1</annotation>
             </semantics>
           </math>-セルはモノイダル圏を形成する。これについては、後でモナドを一般化するときに再度説明する。</p>
-        <p>覚えているだろうが、一般のモノイダル圏では、モノイダル則がきっちり満たされていることは主張しなかった。単位元則と結合則が同型を除いて満たされていれば十分な場合が多かった。<math display="inline"
+        <p>覚えているだろうが、一般のモノイダル圏では、モノイダル則がきちんと満たされていることは主張しなかった。多くの場合、単位元則と結合則が同型を除いて満たされていれば十分だった。<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>𝟐</mn>
@@ -40961,9 +40971,9 @@ construction}.} -->
               <mn>1</mn>
               <annotation encoding="application/x-tex">1</annotation>
             </semantics>
-          </math>-セルは、厳格でない規則を持つ一般化されたモノイダル圏を形成する。</p>
-        <p>双圏の興味深い例は、スパン (span)
-          の圏だ。2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>-セルは、規則が厳密でない一般化されたモノイダル圏を形成する。</p>
+        <p>双圏の興味深い例としてスパン (span)
+          の圏が挙げられる。2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
@@ -41162,12 +41172,12 @@ construction}.} -->
               <annotation encoding="application/x-tex">g\ p = f&#39;\ q</annotation>
             </semantics>
           </math></p>
-        <p>同じ終点を共有する2つのスパンの間の射は、適切な三角形が可換になるように、頂点間の射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>同じ終点を共有する2つのスパンの間の射は頂点間の射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>h</mi>
               <annotation encoding="application/x-tex">h</annotation>
             </semantics>
-          </math>として定義される。</p>
+          </math>として定義され、適切な三角形を可換にする。</p>
         <figure>
           <img src="images/morphspan.png" style="width:35.0%" alt="\mathbf{Span}内の2-セル。" />
           <figcaption aria-hidden="true"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -41262,7 +41272,7 @@ construction}.} -->
               <mn>1</mn>
               <annotation encoding="application/x-tex">1</annotation>
             </semantics>
-          </math>-セルの1つの小さなhom圏にすぎない、という新たな理解に沿って、この定義を再検討してみよう。それがモノイダル圏であることは知っている。つまり、テンソル積が自己関手の合成に由来する。モノイドは、モノイダル圏内のある対象――ここでは自己関手<math
+          </math>-セルの1つの小さいhom圏にすぎない、という新たな理解に沿って、この定義を再検討してみよう。それがモノイダル圏であることは知っており、テンソル積は自己関手の合成に由来する。モノイドは、モノイダル圏内のある対象――ここでは自己関手<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>T</mi>
@@ -41430,7 +41440,7 @@ construction}.} -->
               <mn>2</mn>
               <annotation encoding="application/x-tex">2</annotation>
             </semantics>
-          </math>-セルだけを使って、より一般的にモナドを定義する。双圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>-セルだけを使って、より一般的にモナドを定義する。これは、双圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐂</mi>
@@ -41562,7 +41572,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">\mathit{Ob}</annotation>
             </semantics>
-          </math>の要素を「対象」と呼ぼう、と言ったら、目指している場所の手掛かりになるだろう。2つの関数<math display="inline"
+          </math>の要素を「対象」と呼ぼう、と言えば、目的地の手掛かりになるだろう。2つの関数<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -41674,6 +41684,10 @@ construction}.} -->
                     <mo>=</mo>
                     <mi>i</mi>
                     <mi>d</mi>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd columnalign="center" style="text-align: center">
                     <mrow>
                       <mi>𝑐</mi>
                       <mi>𝑜</mi>
@@ -41689,7 +41703,7 @@ construction}.} -->
               </mtable>
               <annotation encoding="application/x-tex">
                 \begin{gathered}
-                \mathit{dom} \circ \eta = id
+                \mathit{dom} \circ \eta = id \\
                 \mathit{cod} \circ \eta = id
                 \end{gathered}
               </annotation>
@@ -41978,7 +41992,8 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#one-to-one" epub:type="index-locator">one-to-one</a></span></li>
           <li><span epub:type="index-term"><a href="#point" epub:type="index-locator">points</a></span></li>
           <li>predicate – <span epub:type="index-term"><a href="#predicates" epub:type="index-locator">a</a></span>,
-            <span epub:type="index-term"><a href="#predicate" epub:type="index-locator">b</a></span></li>
+            <span epub:type="index-term"><a href="#predicate" epub:type="index-locator">b</a></span>
+          </li>
           <li><span epub:type="index-term"><a href="#proof-relevant_relation" epub:type="index-locator">proof-relevant
                 relation</a></span></li>
           <li><span epub:type="index-term"><a href="#total" epub:type="index-locator">total</a></span></li>
@@ -42126,7 +42141,8 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#exponential" epub:type="index-locator">冪乗</a></span></li>
           <li><span epub:type="index-term"><a href="#point-free" epub:type="index-locator">ポイントフリー</a></span></li>
           <li>忘却関手 – <span epub:type="index-term"><a href="#forgetful_functor" epub:type="index-locator">a</a></span>,
-            <span epub:type="index-term"><a href="#forgetful_functor2" epub:type="index-locator">b</a></span></li>
+            <span epub:type="index-term"><a href="#forgetful_functor2" epub:type="index-locator">b</a></span>
+          </li>
           <li><span epub:type="index-term"><a href="#enriched" epub:type="index-locator">enriched</a></span></li>
           <li><span epub:type="index-term"><a href="#enriched_functor" epub:type="index-locator">enriched
                 functor</a></span></li>
