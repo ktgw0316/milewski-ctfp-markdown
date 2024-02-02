@@ -3826,7 +3826,8 @@
 <span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>alpha_inv  (x, (y, z)) <span class="ot">=</span> ((x, y), z)</span></code></pre>
         </div>
         <p>したがって、これは同型だ。データは同じで、再パッケージ化するための方法が違うにすぎない。</p>
-        <p>直積型の生成は、型における二項演算として解釈できる。この観点から見ると、上記の同型は、モノイドで見た結合則に非常によく似ている:</p>
+        <p>直積型の生成は、型における二項演算として解釈できる。この観点から見ると、上記の同型は、モノイドで見た結合律
+          (associativity law) に非常によく似ている:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -4136,7 +4137,7 @@
               <annotation encoding="application/x-tex">a \times 0 = 0</annotation>
             </semantics>
           </math>ということだ。</p>
-        <p>加算と乗算をつなぐもう1つのものとして、分配律がある:</p>
+        <p>加算と乗算をつなぐもう1つのものとして、分配法則がある:</p>
         <div class="sourceCode" id="cb138">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">*</span> (b <span class="op">+</span> c) <span class="ot">=</span> a <span class="op">*</span> b <span class="op">+</span> a <span class="op">*</span> c</span></code></pre>
@@ -4233,7 +4234,7 @@
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span> <span class="op">+</span> a <span class="op">*</span> x</span></code></pre>
         </div>
         <p>
-          型の減算や除算はできないので、従来の代数的方法でこれを解くことはできない。しかし、置換の連続なら試せる。つまり、ひたすら右辺の<code>x</code>を<code>(1 + a*x)</code>に置き換えては分配律を使う。これによって次の一連の結果が得られる:
+          型の減算や除算はできないので、従来の代数的方法でこれを解くことはできない。しかし、置換の連続なら試せる。つまり、ひたすら右辺の<code>x</code>を<code>(1 + a*x)</code>に置き換えては分配法則を使う。これによって次の一連の結果が得られる:
         </p>
         <div class="sourceCode" id="cb146">
           <pre
@@ -10410,7 +10411,7 @@
               <annotation encoding="application/x-tex">\mathbf{C}</annotation>
             </semantics>
           </math>上の恒等関手をそれ自体に写す。水平合成の恒等射は垂直合成の恒等射でもあるが、逆は成り立たないことに注意してほしい。</p>
-        <p>最後に、2つの合成は交換則を満たす:</p>
+        <p>最後に、2つの合成は交換律 (interchange law) を満たす:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -10569,7 +10570,7 @@
               コンポーネントを使う)。これは図式を追ういい練習になる。</p>
           </li>
           <li>
-            <p>交換則を証明するために必要な明確な図を描くのを楽しむ方法について、短いエッセイを書け。</p>
+            <p>交換律を証明するために必要な明確な図を描くのを楽しむ方法について、短いエッセイを書け。</p>
           </li>
           <li>
             <p>異なる<code>Op</code>関手間の変換の反対の自然条件について、テストケースをいくつか作成せよ。以下は1つの選択肢だ:</p>
@@ -13065,8 +13066,8 @@ C<sup>op</sup> × C -> Set
           これまでに見てきたように、モノイドは単一の対象を持つ圏として記述され、その圏ではすべての論理が射の合成の規則として表現されている。この圏論的モデルは、より伝統的で集合論的なモノイドの定義と完全に等価だ。そこでは集合の2つの要素を「乗算」することで第3の要素が得られる。この「乗算」の過程はさらに詳細に分析できる。すなわち、まず要素のペア1つを形成し、次にこのペアを既存の要素――それらの「積」と同一視する。
         </p>
         <p>乗算の2番目の部分、つまりペアと既存の要素との同一視を省くとどうなるだろうか？
-          たとえば、任意の集合から始めて、すべての可能な要素のペアを形成し、それらを新しい要素と呼ぶ、といったことが可能だ。次に、これらの新しい要素をすべての可能な要素とペアにする。以下同様だ。これは連鎖反応だ――新しい要素を永久に追加し続けられる。その結果は、無限集合であり、<em>ほぼ</em>モノイドとなる。ただし、モノイドには単位元と結合則も必要だ。しかし、問題ない。特別な単位元を追加し、いくつかのペアを特定できる――単位元則と結合則をちょうど満たせる。
-        </p>
+          たとえば、任意の集合から始めて、すべての可能な要素のペアを形成し、それらを新しい要素と呼ぶ、といったことが可能だ。次に、これらの新しい要素をすべての可能な要素とペアにする。以下同様だ。これは連鎖反応だ――新しい要素を永久に追加し続けられる。その結果は、無限集合であり、<em>ほぼ</em>モノイドとなる。ただし、モノイドには単位元と結合律も必要だ。しかし、問題ない。特別な単位元を追加し、いくつかのペアを特定できる――単位律
+          (unit law) と結合律をちょうど満たせる。</p>
         <p>簡単な例で、これがどのように機能するか見てみよう。2要素の集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -13424,7 +13425,7 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">e</annotation>
             </semantics>
           </math>を空リストで表せば、「乗算」はリストの連結に他ならないことがわかる。</p>
-        <p>この種の構成では、要素の可能なすべての組み合わせを生成し続け、同一視は最小限に――単位元則と結合則を維持するのにちょうど十分なだけに留める。これは自由構成と呼ばれる。これで、生成元<math
+        <p>この種の構成では、要素の可能なすべての組み合わせを生成し続け、同一視は最小限に――単位律と結合律を維持するのにちょうど十分なだけに留める。これは自由構成と呼ばれる。これで、生成元<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -13452,7 +13453,7 @@ C<sup>op</sup> × C -> Set
         </div>
         <p>これが意味しているのは、すべての<code>Monoid</code>が<code>mempty</code>と呼ばれる中立元と、<code>mappend</code>と呼ばれる二項関数
           (乗算)
-          を持たなければならないということだ。Haskellでは単位元則と結合則は表現できず、モノイドがインスタンス化されるたびにプログラマによって検証されなければならない。</p>
+          を持たなければならないということだ。Haskellでは単位律と結合律は表現できず、モノイドがインスタンス化されるたびにプログラマによって検証されなければならない。</p>
         <p>任意の型のリストがモノイドを形成するという事実は、次のインスタンス定義によって記述される:</p>
         <div class="sourceCode" id="cb327">
           <pre
@@ -13471,7 +13472,7 @@ C<sup>op</sup> × C -> Set
         </div>
         <p>これは簡単だが、問題は、圏論では対象の中を見るのが許されないのに、どうやってこの自由構成を実現できるのか、ということだ。我々の馬車馬を使おう:
           普遍的構成だ。</p>
-        <p>2番目の興味深い疑問は、単位元則と結合則が必要とする最小数よりも多くの要素を同一視すれば、ある自由モノイドから任意のモノイドを得られるのか、ということだ。これが普遍的構成から直接導かれることをお見せしよう。</p>
+        <p>2番目の興味深い疑問は、単位律と結合律が必要とする最小数よりも多くの要素を同一視すれば、ある自由モノイドから任意のモノイドを得られるのか、ということだ。これが普遍的構成から直接導かれることをお見せしよう。</p>
         <h2 data-number="13.2" id="自由モノイドの普遍的構成"><span class="header-section-number">13.2</span> 自由モノイドの普遍的構成</h2>
         <p>
           普遍的構成についての経験を振り返れば、それは何かを構築するというより、特定のパターンに最もよく適合する対象を選択するものだと気付くだろう。したがって、普遍的構成を使って自由モノイドを「構築」したいなら、選択肢となる多数のモノイドの全体を考慮する必要がある。選択するにはモノイドの圏全体が必要だ。だが、モノイドは圏を形成するのだろうか？
@@ -17415,8 +17416,9 @@ C<sup>op</sup> × C -> Set
               <annotation encoding="application/x-tex">\leqslant</annotation>
             </semantics>
           </math>
-          (以下)
-          で記述される。前順序に「前」が付いているのは、関係が推移律と反射律を満たす必要があるだけで、必ずしも反対称律を満たす必要はないからだ
+          (以下) で記述される。前順序に「前」が付いているのは、関係が推移律
+          (transitive law) と反射律 (reflexive law)
+          を満たす必要があるだけで、必ずしも反対称律を満たす必要はないからだ
           (すなわち、循環してもよい)。</p>
         <p>前順序関係をもつ集合は圏を生成する。対象はその集合の要素だ。対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -22375,7 +22377,7 @@ construction}.} -->
           ことを意味する。そのような「構造のない」対象は自由対象 (free object)
           と呼ばれる。</p>
         <p><img src="images/freeimage.jpg" style="width:45.0%" /></p>
-        <p>モノイドの例では、自由モノイドは単位元則と結合則によって生成される構造以外には何の構造も持たない。それ以外では、すべての乗算はまったく新しい要素を生成する。</p>
+        <p>モノイドの例では、自由モノイドは単位律と結合律によって生成される構造以外には何の構造も持たない。それ以外では、すべての乗算はまったく新しい要素を生成する。</p>
         <p>自由モノイドでは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -23819,7 +23821,7 @@ construction}.} -->
             </semantics>
           </math>は<em>単位</em>
           (unit) と呼ばれる。</p>
-        <p>大まかに言うと、結合則は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>大まかに言うと、結合律は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>T</mi>
               <annotation encoding="application/x-tex">T</annotation>
@@ -23837,7 +23839,7 @@ construction}.} -->
               <mi>T</mi>
               <annotation encoding="application/x-tex">T</annotation>
             </semantics>
-          </math>に縮約するための2つの方法が同じ結果を与えなければならない、と述べている。左右2つの単位元則は、<math display="inline"
+          </math>に縮約するための2つの方法が同じ結果を与えなければならない、と述べている。左右2つの単位律は、<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>η</mi>
@@ -24092,7 +24094,7 @@ construction}.} -->
               <mi>η</mi>
               <annotation encoding="application/x-tex">\eta</annotation>
             </semantics>
-          </math>・結合則・単位元則が存在する。しかし、我々のモノイドの定義は狭すぎて、モナドをモノイドとしては記述できない。そこで、モノイドの概念を一般化しよう。</p>
+          </math>・結合律・単位律が存在する。しかし、我々のモノイドの定義は狭すぎて、モナドをモノイドとしては記述できない。そこで、モノイドの概念を一般化しよう。</p>
         <h2 data-number="22.1" id="モノイダル圏"><span class="header-section-number">22.1</span> モノイダル圏</h2>
         <p>モノイドの従来の定義に戻ろう。それは二項演算と単位という特殊な要素を持つ集合だ。Haskellでは、これは型クラスとして表現できる:</p>
         <div class="sourceCode" id="cb448">
@@ -24171,7 +24173,7 @@ construction}.} -->
           </math></p>
         <p>これにより、要素について述べることなく単位「要素」を選べる。</p>
         <p>
-          以前モノイドを単一対象圏として定義したときとは違って、ここではモノイダル則が自動的に満たされるわけではなく、それらを課す必要がある。しかし、それらを定式化するには、基礎となる圏論的な積そのもののモノイダル構造を確立しなければならない。まずはHaskellでモノイダル構造がどう機能するか思い出そう。
+          以前モノイドを単一対象圏として定義したときとは違って、ここではモノイド則が自動的に満たされるわけではなく、それらを課す必要がある。しかし、それらを定式化するには、基礎となる圏論的な積そのもののモノイダル構造を確立しなければならない。まずはHaskellでモノイダル構造がどう機能するか思い出そう。
         </p>
         <p>結合性から始める。Haskellでは、対応する等式的規則 (equational law)
           はこうなる:</p>
@@ -24204,12 +24206,12 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb456-1"><a href="#cb456-1" aria-hidden="true" tabindex="-1"></a><span class="ot">alpha ::</span> ((a, b), c) <span class="ot">-&gt;</span> (a, (b, c))</span>
 <span id="cb456-2"><a href="#cb456-2" aria-hidden="true" tabindex="-1"></a>alpha ((x, y), z) <span class="ot">=</span> (x, (y, z))</span></code></pre>
         </div>
-        <p>結合子の助けを借りれば<code>mu</code>についての結合則をポイントフリーで書ける:</p>
+        <p>結合子の助けを借りれば<code>mu</code>についての結合律をポイントフリーで書ける:</p>
         <div class="sourceCode" id="cb457">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb457-1"><a href="#cb457-1" aria-hidden="true" tabindex="-1"></a>mu <span class="op">.</span> bimap <span class="fu">id</span> mu <span class="op">.</span> alpha <span class="ot">=</span> mu <span class="op">.</span> bimap mu <span class="fu">id</span></span></code></pre>
         </div>
-        <p>単位元則にも同様のトリックを適用できる。新しい記法では次のような形式になる:</p>
+        <p>単位律にも同様のトリックを適用できる。新しい記法では次のような形式になる:</p>
         <div class="sourceCode" id="cb458">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb458-1"><a href="#cb458-1" aria-hidden="true" tabindex="-1"></a>mu (eta (), x) <span class="ot">=</span> x</span>
@@ -24236,19 +24238,19 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb461-1"><a href="#cb461-1" aria-hidden="true" tabindex="-1"></a><span class="ot">rho ::</span> (a, ()) <span class="ot">-&gt;</span> a</span>
 <span id="cb461-2"><a href="#cb461-2" aria-hidden="true" tabindex="-1"></a>rho (x, ()) <span class="ot">=</span> x</span></code></pre>
         </div>
-        <p>したがって、ポイントフリー版の単位元則は次のようになる:</p>
+        <p>したがって、ポイントフリー版の単位律は次のようになる:</p>
         <div class="sourceCode" id="cb462">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb462-1"><a href="#cb462-1" aria-hidden="true" tabindex="-1"></a>mu <span class="op">.</span> bimap <span class="fu">id</span> eta <span class="ot">=</span> lambda</span>
 <span id="cb462-2"><a href="#cb462-2" aria-hidden="true" tabindex="-1"></a>mu <span class="op">.</span> bimap eta <span class="fu">id</span> <span class="ot">=</span> rho</span></code></pre>
         </div>
         <p>
-          ここまでで、<code>mu</code>と<code>eta</code>についてのポイントフリーなモノイダル則の定式化を、基礎となるカルテシアン積自体が型の圏におけるモノイダル乗算のように作用するという事実を用いて行った。ただし、留意すべき点として、カルテシアン積の結合則と単位元則は同型を除いてのみ有効だ。
+          ここまでで、<code>mu</code>と<code>eta</code>についてのポイントフリーなモノイド則の定式化を、基礎となるカルテシアン積自体が型の圏におけるモノイダル乗算のように作用するという事実を用いて行った。ただし、留意すべき点として、カルテシアン積の結合律と単位律は同型を除いてのみ有効だ。
         </p>
         <p>これらの規則は積と終対象を持つすべての圏に一般化できるとわかった。圏論的な積は確かに同型を除いて結合的であり、同様に、同型を除いて終対象は単位だ。結合子と2つの単位子は自然同型だ。規則は可換図式で表せる。</p>
         <p><img src="images/assocmon.png" style="width:50.0%" /></p>
         <p>積は双関手なので射のペアをリフトできることに注意してほしい――Haskellではそのために<code>bimap</code>が使われる。</p>
-        <p>ここで立ち止まって、圏論的な積と終対象を持つあらゆる圏においてモノイドを定義できる、と述べられる。モノイダル則を満たすような対象<math display="inline"
+        <p>ここで立ち止まって、圏論的な積と終対象を持つあらゆる圏においてモノイドを定義できる、と述べられる。モノイド則を満たすような対象<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>m</mi>
@@ -24274,7 +24276,7 @@ construction}.} -->
               <mi>η</mi>
               <annotation encoding="application/x-tex">\eta</annotation>
             </semantics>
-          </math>について規則を定式化するために完全な圏論的な積は必要ない。射影を使う普遍的構成によって積が定義されるのを思い出してほしい。モノイダル則の定式化に射影は一切使わなかった。</p>
+          </math>について規則を定式化するために完全な圏論的な積は必要ない。射影を使う普遍的構成によって積が定義されるのを思い出してほしい。モノイド則の定式化に射影は一切使わなかった。</p>
         <p>積ではないのに積のように振る舞う双関手は<span id="tensor_product" class="keyword">テンソル積</span> (tensor product)
           と呼ばれ、中置演算子<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -24482,7 +24484,7 @@ construction}.} -->
             </semantics>
           </math>はテンソル積の単位対象だ。</p>
         <p><img src="images/monoid-1.jpg" style="width:40.0%" /></p>
-        <p>これらの射は結合則および単位元則を満たさなければならない。それらは以下の可換図式で表せる:</p>
+        <p>これらの射は結合律および単位律を満たさなければならない。それらは以下の可換図式で表せる:</p>
         <p><img src="images/assoctensor.jpg" style="width:50.0%" /></p>
         <p><img src="images/unitmon.jpg" style="width:50.0%" /></p>
         <p>テンソル積が双関手であることが不可欠なことに注意してほしい。これは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -24664,7 +24666,7 @@ construction}.} -->
               <mi>I</mi>
               <annotation encoding="application/x-tex">I</annotation>
             </semantics>
-          </math>も存在する。これは自己関手の合成――新しいテンソル積――の恒等射として機能する。さらに、関手の合成は結合的だ。実際に結合則と単位元則は厳密だ――結合子や2つの単位子は必要ない。したがって、自己関手は関手合成をテンソル積として伴う厳密なモノイダル圏を形成する。
+          </math>も存在する。これは自己関手の合成――新しいテンソル積――の恒等射として機能する。さらに、関手の合成は結合的だ。実際に結合律と単位律は厳密だ――結合子や2つの単位子は必要ない。したがって、自己関手は関手合成をテンソル積として伴う厳密なモノイダル圏を形成する。
         </p>
         <p>この圏でのモノイドとは何だろう？
           それは対象――自己関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -24705,7 +24707,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>それだけでなく、モノイダル則もある:</p>
+        <p>それだけでなく、モノイド則もある:</p>
         <p><img src="images/assoc.png" style="width:40.0%" /></p>
         <p><img src="images/unitlawcomp.png" style="width:50.0%" /></p>
         <p>これらはいままで見てきたモナド則そのものだ。これでSaunders Mac
@@ -24861,7 +24863,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">\mu = R \circ \varepsilon \circ L</annotation>
             </semantics>
           </math></p>
-        <p>モナド則は随伴の単位と余単位によって満たされた恒等射と交換則に従う。</p>
+        <p>モナド則は随伴の単位と余単位によって満たされた恒等射と交換律に従う。</p>
         <p>随伴から派生したモナドをHaskellであまり見かけないのは、随伴には通常2つの圏が関わるからだ。ただし、冪乗すなわち関数オブジェクトの定義は例外だ。この随伴は次の2つの自己関手から形成される:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -25039,7 +25041,7 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb474-1"><a href="#cb474-1" aria-hidden="true" tabindex="-1"></a><span class="ot">extract ::</span> w a <span class="ot">-&gt;</span> a</span></code></pre>
         </div>
-        <p>これは<code>return</code>の双対だ。さらに、左恒等射と右恒等射だけでなく結合則も必須だ。すべてをまとめると、Haskellではコモナドを次のように定義できる:</p>
+        <p>これは<code>return</code>の双対だ。さらに、左恒等射と右恒等射だけでなく結合律も必須だ。すべてをまとめると、Haskellではコモナドを次のように定義できる:</p>
         <div class="sourceCode" id="cb475">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb475-1"><a href="#cb475-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> <span class="dt">Functor</span> w <span class="ot">=&gt;</span> <span class="dt">Comonad</span> w <span class="kw">where</span></span>
@@ -25454,7 +25456,7 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb497-1"><a href="#cb497-1" aria-hidden="true" tabindex="-1"></a>split x <span class="ot">=</span> (f x, g x)</span></code></pre>
         </div>
-        <p>ここで、モノイドの単位元則と双対関係にあるコモノイド則について考えてみよう:</p>
+        <p>ここで、モノイドの単位律と双対関係にあるコモノイド則について考えてみよう:</p>
         <div class="sourceCode" id="cb498">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb498-1"><a href="#cb498-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="op">.</span> bimap destroy <span class="fu">id</span> <span class="op">.</span> split <span class="ot">=</span> <span class="fu">id</span></span>
@@ -25736,7 +25738,8 @@ construction}.} -->
         </p>
         <p>
           一般に、<code>duplicate</code>された<code>Store</code>に<code>extract</code>が作用すると、もとの<code>Store</code>が生成されることを確信できる
-          (実際、コモナドの恒等則では<code>extract . duplicate = id</code>と規定されている)。</p>
+          (実際、コモナドの恒等律 (identity law)
+          では<code>extract . duplicate = id</code>と規定されている)。</p>
         <p>
           <code>Store</code>コモナドは<code>Lens</code>ライブラリの理論的基盤として重要だ。概念としては、<code>Store s a</code>コモナドは、型<code>s</code>をインデックスとしてdate型<code>a</code>の特定のサブ構造に
           (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型:
@@ -25821,7 +25824,7 @@ construction}.} -->
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>から単位元を選択する。これらのシグネチャを持つ2つの関数ならどれでもモノイドになるわけではない。結合則と単位元則という追加の条件を課す必要がある。しかし、それはしばらく忘れて「潜在的なモノイド」について考えてみよう。関数のペアは、2つの関数集合のカルテシアン積の要素だ。これらの集合が冪乗対象として表現できるのは知っている:
+          </math>から単位元を選択する。これらのシグネチャを持つ2つの関数ならどれでもモノイドになるわけではない。結合律と単位律という追加の条件を課す必要がある。しかし、それはしばらく忘れて「潜在的なモノイド」について考えてみよう。関数のペアは、2つの関数集合のカルテシアン積の要素だ。これらの集合が冪乗対象として表現できるのは知っている:
         </p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -26622,7 +26625,7 @@ construction}.} -->
               </mrow>
               <annotation encoding="application/x-tex">j \circ m = id_i</annotation>
             </semantics>
-          </math>となる。この事実と左側の図式の可換律とを用いて<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>となる。この事実と左側の図式の可換特性を用いて<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>m</mi>
@@ -31195,7 +31198,7 @@ construction}.} -->
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb580-1"><a href="#cb580-1" aria-hidden="true" tabindex="-1"></a>exists c<span class="op">.</span> (q a c, p c b)</span></code></pre>
         </div>
         <p>
-          こうして定義された合成の単位はhom関手だ――これは忍者米田の補題からすぐに導出される。したがって、プロ関手が射の役目を果たす圏があるかを問うのは理にかなっている。ある、というのがその問いの答えだ。ただし、プロ関手の合成に関する結合則と恒等則は自然同型を除いてのみ満たされることに注意する必要がある。それらの結合則と恒等則が同型を除いて満たされる圏は、(<math
+          こうして定義された合成の単位はhom関手だ――これは忍者米田の補題からすぐに導出される。したがって、プロ関手が射の役目を果たす圏があるかを問うのは理にかなっている。ある、というのがその問いの答えだ。ただし、プロ関手の合成に関する結合律と恒等律は自然同型を除いてのみ満たされることに注意する必要がある。それらの結合律と恒等律が同型を除いて満たされる圏は、(<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>𝟐</mn>
@@ -33653,7 +33656,7 @@ construction}.} -->
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb583-1"><a href="#cb583-1" aria-hidden="true" tabindex="-1"></a><span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> k i) <span class="ot">-&gt;</span> i</span></code></pre>
         </div>
-        <p><code>k</code>がモノイドの圏からの忘却関手だとしよう。すると、全称量化子はすべてのモノイドに及ぶ。もちろんHaskellではモノイダル則を表現できないが、以下は結果の自由関手の適切な近似になっている
+        <p><code>k</code>がモノイドの圏からの忘却関手だとしよう。すると、全称量化子はすべてのモノイドに及ぶ。もちろんHaskellではモノイド則を表現できないが、以下は結果の自由関手の適切な近似になっている
           (忘却関手<code>k</code>は対象における恒等関手だ):</p>
         <div class="sourceCode" id="cb584">
           <pre
@@ -34096,7 +34099,7 @@ construction}.} -->
               </annotation>
             </semantics>
           </math></p>
-        <p>このテンソル積は結合的なのが望ましいが、自然同型を除いた結合則さえ満たせば十分だ。この同型射は結合子と呼ばれる。そのコンポーネントはこうなる:</p>
+        <p>このテンソル積は結合的なのが望ましいが、自然同型を除いた結合律さえ満たせば十分だ。この同型射は結合子と呼ばれる。そのコンポーネントはこうなる:</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -34535,7 +34538,7 @@ construction}.} -->
             </semantics>
           </math>内のテンソル単位だ。</p>
         <p><img src="images/id.jpg" style="width:40.0%" /></p>
-        <p>合成の結合則は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>合成の結合律は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>𝐕</mi>
               <annotation encoding="application/x-tex">\mathbf{V}</annotation>
@@ -36682,7 +36685,7 @@ construction}.} -->
           に着目した可能性もあっただろう。そのような宇宙を探検しよう。</p>
         <h2 data-number="30.1" id="普遍代数"><span class="header-section-number">30.1</span> 普遍代数</h2>
         <p>
-          代数を様々な抽象レベルで記述する方法はたくさんある。モノイド・群・環などを記述するための汎用言語を見つけたい。最も単純なレベルでは、これらのすべての構造によって、集合の要素に対する<em>演算</em>と、それらの演算によって満たされなければならないいくつかの<em>規則</em>が定義される。たとえば、モノイドは結合則を満たす二項演算によって定義できる。さらに、単位元と単位元則もある。しかし、少し想像力を働かせれば、単位元は零項演算――引数を取らず集合の特別な要素を返す操作――に変えられる。群について述べるには、受け取った要素の逆を返す単項演算子を追加する。それに対応する左逆元則と右逆元則がある。環では2つの二項演算子といくつかの規則が定義される。以下同様だ。
+          代数を様々な抽象レベルで記述する方法はたくさんある。モノイド・群・環などを記述するための汎用言語を見つけたい。最も単純なレベルでは、これらのすべての構造によって、集合の要素に対する<em>演算</em>と、それらの演算によって満たされなければならないいくつかの<em>規則</em>が定義される。たとえば、モノイドは結合律を満たす二項演算によって定義できる。さらに、単位元と単位律もある。しかし、少し想像力を働かせれば、単位元は零項演算――引数を取らず集合の特別な要素を返す操作――に変えられる。群について述べるには、受け取った要素の逆を返す単項演算子を追加する。それに対応する左逆元則と右逆元則がある。環では2つの二項演算子といくつかの規則が定義される。以下同様だ。
         </p>
         <p>大枠としては、代数はさまざまな値の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -36948,7 +36951,7 @@ construction}.} -->
               <mn>1</mn>
               <annotation encoding="application/x-tex">1</annotation>
             </semantics>
-          </math>はすべて同型であるにもかかわらず、それぞれ異なる。集合の圏の余積は結合則を満たさない。この状況を解決するには、すべての同型集合を同一視する圏を構成すればよい。そのような圏は<span
+          </math>はすべて同型であるにもかかわらず、それぞれ異なる。集合の圏の余積は結合律を満たさない。この状況を解決するには、すべての同型集合を同一視する圏を構成すればよい。そのような圏は<span
             id="skeleton" class="keyword">スケルトン</span> (skeleton)
           と呼ばれる。言い換えれば、すべてのローヴェア・セオリーのバックボーンは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -40785,7 +40788,7 @@ construction}.} -->
               <mn>1</mn>
               <annotation encoding="application/x-tex">1</annotation>
             </semantics>
-          </math>-セルの合成として定義される。結合則と単位元則は、対応する圏の規則から単に除かれる。</p>
+          </math>-セルの合成として定義される。結合律と単位律は、対応する圏の規則から単に除かれる。</p>
         <p>これが何を意味するのかを、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>𝟐</mn>
@@ -40837,7 +40840,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">1</annotation>
             </semantics>
           </math>-セルはモノイダル圏を形成する。これについては、後でモナドを一般化するときに再度説明する。</p>
-        <p>覚えているだろうが、一般のモノイダル圏では、モノイダル則がきちんと満たされていることは主張しなかった。多くの場合、単位元則と結合則が同型を除いて満たされていれば十分だった。<math display="inline"
+        <p>覚えているだろうが、一般のモノイダル圏では、モノイド則がきちんと満たされていることは主張しなかった。多くの場合、単位律と結合律が同型を除いて満たされていれば十分だった。<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>𝟐</mn>
@@ -40858,7 +40861,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">\mathbf{C}(a, a)</annotation>
             </semantics>
           </math>
-          のモノイダル則は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          のモノイド則は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>1</mn>
               <annotation encoding="application/x-tex">1</annotation>
@@ -40943,8 +40946,8 @@ construction}.} -->
           </math></p>
         <p>と、その逆が存在する。</p>
         <figure>
-          <img src="images/bicat.png" style="width:35.0%" alt="双圏の恒等則は同型 (可逆な2-セル\rho) を除いて成り立つ。" />
-          <figcaption aria-hidden="true">双圏の恒等則は同型
+          <img src="images/bicat.png" style="width:35.0%" alt="双圏の恒等律は同型 (可逆な2-セル\rho) を除いて成り立つ。" />
+          <figcaption aria-hidden="true">双圏の恒等律は同型
             (可逆な<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mn>2</mn>
@@ -40958,7 +40961,7 @@ construction}.} -->
             </math>)
             を除いて成り立つ。</figcaption>
         </figure>
-        <p>左恒等射と結合則についても同じことができる。このような緩和された<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>左恒等射と結合律についても同じことができる。このような緩和された<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mn>𝟐</mn>
               <annotation encoding="application/x-tex">\mathbf{2}</annotation>
@@ -41924,7 +41927,7 @@ construction}.} -->
             </semantics>
           </math>は矢の合成を定義する。
         </p>
-        <p>モナド則が矢の恒等則や結合則に対応していることは簡単に確認できる。以上で圏を定義できた
+        <p>モナド則が矢の恒等律や結合律に対応していることは簡単に確認できる。以上で圏を定義できた
           (対象と矢が集合を形成する小さい圏であることは忘れないでほしい)。</p>
         <p>つまり、まとめると、圏はスパンの双圏におけるモナドにすぎない。</p>
         <p>
@@ -41938,7 +41941,7 @@ construction}.} -->
                 <mn>1</mn>
                 <annotation encoding="application/x-tex">1</annotation>
               </semantics>
-            </math>-セルの合成として定義されたテンソル積について、単位元則と結合則を導出せよ。</li>
+            </math>-セルの合成として定義されたテンソル積について、単位律と結合律を導出せよ。</li>
           <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mrow>
@@ -41949,7 +41952,7 @@ construction}.} -->
                 </mrow>
                 <annotation encoding="application/x-tex">\mathbf{Span}</annotation>
               </semantics>
-            </math>内のモナドについて、モナド則が、結果の圏内での恒等射と結合則に対応していることを確認せよ。</li>
+            </math>内のモナドについて、モナド則が、結果の圏内での恒等射と結合律に対応していることを確認せよ。</li>
           <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mrow>
