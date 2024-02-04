@@ -28,4 +28,4 @@ by [Bartosz Milewski][bartosz github], based on:
 
 html版は[github pages](https://ktgw0316.github.io/milewski-ctfp-markdown/)としても公開しています。
 
-※2023年2月現在、下訳が終わった段階で、推敲はまだ途中です。誤訳を含む可能性が高いことにご注意ください。
+※2024年2月現在、1回目の推敲が終わった段階です。誤訳を含む可能性があることにご注意ください。
