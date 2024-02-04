@@ -1,5 +1,8 @@
 build/
+node_modules/
 *.aux
 *.dvi
 *.epub
+*.json
 *.log
+*.pdf
