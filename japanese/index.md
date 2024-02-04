@@ -14,7 +14,7 @@
 * [[アドホック多相](#ad_hoc_polymorphism){epub:type="index-locator"}]{epub:type="index-term"}
 * [[アリティ](#arity){epub:type="index-locator"}]{epub:type="index-term"}
 * [[1対1](#one-to-one){epub:type="index-locator"}]{epub:type="index-term"}
-* 一方向の - [[a](#one_way){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#one_way2){epub:type="index-locator"}]{epub:type="index-term"}
+* [[一方向の](#one_way2){epub:type="index-locator"}]{epub:type="index-term"}
 * 意味論
   * [[操作的-](#operational_semantics){epub:type="index-locator"}]{epub:type="index-term"}
   * [[表示的-](#denotational_semantics){epub:type="index-locator"}]{epub:type="index-term"}
