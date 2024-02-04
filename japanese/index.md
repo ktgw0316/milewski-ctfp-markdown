@@ -2,20 +2,9 @@
 
 # 索引 {-}
 
-<!-- -->
-* [[basic product operations](#basic_product_operations){epub:type="index-locator"}]{epub:type="index-term"}
-* [[extensional](#extensional){epub:type="index-locator"}]{epub:type="index-term"}
-* [[factorizer](#factorizer){epub:type="index-locator"}]{epub:type="index-term"}
-* one way - [[a](#one_way){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#one_way2){epub:type="index-locator"}]{epub:type="index-term"}
-* [[one-to-one](#one-to-one){epub:type="index-locator"}]{epub:type="index-term"}
-* [[points](#point){epub:type="index-locator"}]{epub:type="index-term"}
-* predicate -- [[a](#predicates){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#predicate){epub:type="index-locator"}]{epub:type="index-term"}
-* [[proof-relevant relation](#proof-relevant_relation){epub:type="index-locator"}]{epub:type="index-term"}
-* [[total](#total){epub:type="index-locator"}]{epub:type="index-term"}
-
 <!-- 英数 -->
+* [[factorizer](#factorizer){epub:type="index-locator"}]{epub:type="index-term"}
 * [[hom集合](#hom-set){epub:type="index-locator"}]{epub:type="index-term"}
-* [[Lawvere理論](#lawvere_theory){epub:type="index-locator"}]{epub:type="index-term"}
 * [[modus ponens](#modus_ponen){epub:type="index-locator"}]{epub:type="index-term"}
 * [[theorems for free](#theorems_for_free){epub:type="index-locator"}]{epub:type="index-term"}
 * [[variant](#variant){epub:type="index-locator"}]{epub:type="index-term"}
@@ -24,6 +13,8 @@
 <!-- あ -->
 * [[アドホック多相](#ad_hoc_polymorphism){epub:type="index-locator"}]{epub:type="index-term"}
 * [[アリティ](#arity){epub:type="index-locator"}]{epub:type="index-term"}
+* [[1対1](#one-to-one){epub:type="index-locator"}]{epub:type="index-term"}
+* 一方向の - [[a](#one_way){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#one_way2){epub:type="index-locator"}]{epub:type="index-term"}
 * 意味論
   * [[操作的-](#operational_semantics){epub:type="index-locator"}]{epub:type="index-term"}
   * [[表示的-](#denotational_semantics){epub:type="index-locator"}]{epub:type="index-term"}
@@ -32,6 +23,7 @@
 * [[埋め込み](#embedding){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- か -->
+* [[外延的](#extensional){epub:type="index-locator"}]{epub:type="index-term"}
 * [[型推論](#type_inference){epub:type="index-locator"}]{epub:type="index-term"}
 * [[カリー化](#currying){epub:type="index-locator"}]{epub:type="index-term"}
 * [[カルテシアン閉](#Cartesian_closed){epub:type="index-locator"}]{epub:type="index-term"}
@@ -40,6 +32,7 @@
 * [[関数合成](#function_composition){epub:type="index-locator"}]{epub:type="index-term"}
 * [[関数適用](#function_application){epub:type="index-locator"}]{epub:type="index-term"}
 * 基底集合 - [[a](#underlying){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#underlying_set){epub:type="index-locator"}]{epub:type="index-term"}
+* [[基本的な積操作](#basic_product_operations){epub:type="index-locator"}]{epub:type="index-term"}
 * [[くさび条件](#wedge_condition){epub:type="index-locator"}]{epub:type="index-term"}
 * [[恒等射](#identity){epub:type="index-locator"}]{epub:type="index-term"}
 * [[合成可能](#composable){epub:type="index-locator"}]{epub:type="index-term"}
@@ -49,7 +42,7 @@
 * [[自己関手](#endofunctors){epub:type="index-locator"}]{epub:type="index-term"}
 * [[自然](#natural){epub:type="index-locator"}]{epub:type="index-term"}
 * [[自然同型](#natural_isomorphism){epub:type="index-locator"}]{epub:type="index-term"}
-* [[naturality condition](#naturality_condition){epub:type="index-locator"}]{epub:type="index-term"}
+* [[自然条件](#naturality_condition){epub:type="index-locator"}]{epub:type="index-term"}
 * [[naturally isomorphic](#naturally_isomorphic){epub:type="index-locator"}]{epub:type="index-term"}
 * [[始代数](#initial_algebra){epub:type="index-locator"}]{epub:type="index-term"}
 * [[射](#morphism){epub:type="index-locator"}]{epub:type="index-term"}
@@ -57,8 +50,10 @@
   * [[-関手](#free_functor){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-圏](#free_category){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-モノイド](#free_monoid){epub:type="index-locator"}]{epub:type="index-term"}
+* 述語 -- [[a](#predicates){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#predicate){epub:type="index-locator"}]{epub:type="index-term"}
 * [[純粋関数](#pure_function){epub:type="index-locator"}]{epub:type="index-term"}
 * 準同型 -- [[a](#homomorphisms){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#homomorphism){epub:type="index-locator"}]{epub:type="index-term"}
+* [[証明で関連した関係](#proof-relevant_relation){epub:type="index-locator"}]{epub:type="index-term"}
 * [[シングルソート](#single-sorted){epub:type="index-locator"}]{epub:type="index-term"}
 * [[水平合成](#horizontal_composition){epub:type="index-locator"}]{epub:type="index-term"}
 * 随伴
@@ -79,15 +74,16 @@
 * [[対称](#symmetric){epub:type="index-locator"}]{epub:type="index-term"}
 * [[単射](#injective){epub:type="index-locator"}]{epub:type="index-term"}
 * [[チェイン](#chain){epub:type="index-locator"}]{epub:type="index-term"}
+* [[点](#point){epub:type="index-locator"}]{epub:type="index-term"}
 * [[テンプレートテンプレート仮引数](#template_template_parameter){epub:type="index-locator"}]{epub:type="index-term"}
 * [[テンソル積](#tensor_product){epub:type="index-locator"}]{epub:type="index-term"}
 * [[同型](#isomorphic){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-射](#isomorphism){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-を除いて](#up_to_isomorphism){epub:type="index-locator"}]{epub:type="index-term"}
 * [[equality](#equality){epub:type="index-locator"}]{epub:type="index-term"}
-* [[equational reasoning](#equational_reasoning){epub:type="index-locator"}]{epub:type="index-term"}
-* [[equivalence](#equivalence){epub:type="index-locator"}]{epub:type="index-term"}
-* [[equivalence relation](#equivalence_relation){epub:type="index-locator"}]{epub:type="index-term"}
+* [[等式推論](#equational_reasoning){epub:type="index-locator"}]{epub:type="index-term"}
+* [[同値性](#equivalence){epub:type="index-locator"}]{epub:type="index-term"}
+* [[同値関係](#equivalence_relation){epub:type="index-locator"}]{epub:type="index-term"}
 * [[トポス](#topos){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- な -->
@@ -111,8 +107,8 @@
 * [[冪乗](#exponential){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ポイントフリー](#point-free){epub:type="index-locator"}]{epub:type="index-term"}
 * 忘却関手 -- [[a](#forgetful_functor){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#forgetful_functor2){epub:type="index-locator"}]{epub:type="index-term"}
-* [[enriched](#enriched){epub:type="index-locator"}]{epub:type="index-term"}
-* [[enriched functor](#enriched_functor){epub:type="index-locator"}]{epub:type="index-term"}
+* [[豊穣](#enriched){epub:type="index-locator"}]{epub:type="index-term"}
+  * [[-関手](#enriched_functor){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ポセット](#poset){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ボトム](#bottom){epub:type="index-locator"}]{epub:type="index-term"}
 
@@ -127,7 +123,8 @@
 
 <!-- ら -->
 * [[リグ](#rig){epub:type="index-locator"}]{epub:type="index-term"}
-* [[lifted](#lifted){epub:type="index-locator"}]{epub:type="index-term"}
+* [[リフトされた](#lifted){epub:type="index-locator"}]{epub:type="index-term"}
 * [[レコード](#record){epub:type="index-locator"}]{epub:type="index-term"}
+* [[ローヴェア・セオリー](#lawvere_theory){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- わ -->
