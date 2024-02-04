@@ -2385,8 +2385,7 @@
         </div>
         <p>
           <code>compose</code>テンプレートへの型の受け渡しにはまだ多くのノイズがある。これは、戻り値型推論を持つ総称ラムダ関数をサポートするC++14準拠のコンパイラーがあれば回避できる。(このコードはEric
-          Nieblerによる。)
-        </p>
+          Nieblerによる。)</p>
         <div class="sourceCode" id="cb57">
           <pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> <span class="at">const</span> compose <span class="op">=</span> <span class="op">[](</span><span class="kw">auto</span> m1<span class="op">,</span> <span class="kw">auto</span> m2<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">[</span>m1<span class="op">,</span> m2<span class="op">](</span><span class="kw">auto</span> x<span class="op">)</span> <span class="op">{</span></span>
@@ -4109,8 +4108,7 @@
         <p>
           <code>maybeTail</code>の定義の最初の部分は、<code>Nil</code>コンストラクターをパターンとして使い、<code>Nothing</code>を返す。2番目の部分では、<code>Cons</code>コンストラクターをパターンとして使う。コンストラクターの最初の引数には興味がないため、ワイルドカードで置き換える。<code>Cons</code>の2番目の引数は、変数<code>t</code>に束縛される
           (厳密に言えば、一度式に束縛されたら決して変化しないものの、変数と呼ぶことにする)。戻り値は<code>Just t</code>だ。こうして、<code>List</code>の作成方法に応じて、句の1つに一致するようになった。作成に<code>Cons</code>が使われるときは、渡した2つの引数が取得される
-          (最初の引数は破棄される)。
-        </p>
+          (最初の引数は破棄される)。</p>
         <p>
           さらに複雑な直和型は、C++では多相クラス階層を使って実装されている。共通の祖先を持つ一連のクラスは、1つのバリアント型として理解でき、その中では仮想関数テーブルが隠しタグとして機能する。Haskellではコンストラクター上のパターンマッチングで特殊なコードを呼び出して行っていることを、C++では仮想関数テーブルのポインターに基づいて仮想関数呼び出しをディスパッチして実現している。
         </p>
@@ -4853,8 +4851,7 @@
           (残念ながら、テンプレート仮想関数は作れない)？
           フリーテンプレート関数は、カリー化版と非カリー化版のどちらにすべきだろうか？
           C++コンパイラーは不足した型情報を正しく推論できるのか、それとも明示的に指定すべきだろうか？
-          入力関数<code>f</code>が<code>int</code>から<code>bool</code>への関数である状況を考えてみよう。コンパイラーに<code>g</code>の型が分かるだろうか:
-        </p>
+          入力関数<code>f</code>が<code>int</code>から<code>bool</code>への関数である状況を考えてみよう。コンパイラーに<code>g</code>の型が分かるだろうか:</p>
         <div class="sourceCode" id="cb168">
           <pre
             class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> g <span class="op">=</span> fmap<span class="op">(</span>f<span class="op">);</span></span></code></pre>
@@ -4954,8 +4951,7 @@
           <code>List a</code>に作用する関数は、リストの2つのコンストラクターに対応する2つの場合を考慮する必要がある。<code>Nil</code>の場合は自明で、単に<code>Nil</code>を返す。空のリストでできることはあまりない。<code>Cons</code>の場合は、再帰を伴うため、ややトリッキーだ。そこで、少し前に戻って、何をしようとしているのか考えてみよう。<code>a</code>のリストと、<code>a</code>を<code>b</code>に変換する関数<code>f</code>があり、<code>b</code>のリストを生成したいと考えている。自明なのは、<code>f</code>を使ってリストの各要素を<code>a</code>から<code>b</code>に変換することだ。(空でない)
           リストが頭部と尾部の<code>Cons</code>として定義されている場合、実際にはどうやってそれを行うのだろうか。<code>f</code>を頭部に適用し、リフト
           (<code>fmap</code>)
-          された<code>f</code>を尾部に適用する。これは再帰的な定義だ。リフトされた<code>f</code>をリフトされた<code>f</code>を用いて定義しているからだ。
-        </p>
+          された<code>f</code>を尾部に適用する。これは再帰的な定義だ。リフトされた<code>f</code>をリフトされた<code>f</code>を用いて定義しているからだ。</p>
         <div class="sourceCode" id="cb179">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span> f (<span class="dt">Cons</span> x t) <span class="ot">=</span> <span class="dt">Cons</span> (f x) (<span class="fu">fmap</span> f t)</span></code></pre>
@@ -4997,8 +4993,7 @@
         <p>
           <code>std::transform</code>は<code>fmap</code>のより原始的な従兄弟だ。それに渡せるイテレータを実装しているため、ほとんどのC++コンテナは関手だと言える。残念ながら、関手の単純さは、イテレータや一時変数
           (上記の<code>fmap</code>の実装を参照)
-          でいつも煩雑になるため失われてしまう。新しく提案されたC++のrangeライブラリによってrangeの関手的な性質がより顕著になったのは喜ばしい。
-        </p>
+          でいつも煩雑になるため失われてしまう。新しく提案されたC++のrangeライブラリによってrangeの関手的な性質がより顕著になったのは喜ばしい。</p>
         <h3 data-number="7.1.7" id="reader関手"><span class="header-section-number">7.1.7</span> Reader関手</h3>
         <p>
           さて、直観が育ってきただろう――たとえば、関手はある種のコンテナだ――では、一見したところ非常に異なる例をお見せしよう。型<code>a</code>からの、<code>a</code>を返す関数の型への写像を考えてみよう。関数型についてはあまり詳しく述べていない
@@ -5066,8 +5061,7 @@
         <p>
           <code>Const</code>型コンストラクターは<code>c</code>と<code>a</code>の2つの型を取る。アローコンストラクターで行ったように、部分適用で関手を作成しよう。データコンストラクター
           (これも<code>Const</code>と呼ばれる)
-          は型<code>c</code>の値を1つだけ取る。これは<code>a</code>には依存しない。この型コンストラクターの<code>fmap</code>の型は次のようになる:
-        </p>
+          は型<code>c</code>の値を1つだけ取る。これは<code>a</code>には依存しない。この型コンストラクターの<code>fmap</code>の型は次のようになる:</p>
         <div class="sourceCode" id="cb191">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span><span class="ot"> ::</span> (a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> <span class="dt">Const</span> c a <span class="ot">-&gt;</span> <span class="dt">Const</span> c b</span></code></pre>
@@ -5386,8 +5380,7 @@
         <p>この型クラス定義では、両方のデフォルト実装を<code>bimap</code>として提供している。</p>
         <p>
           <code>Bifunctor</code>のインスタンスを宣言するときには、<code>bimap</code>を実装してデフォルトの<code>first</code>と<code>second</code>を受け入れるか、<code>first</code>と<code>second</code>の両方を実装してデフォルトの<code>bimap</code>を受け入れるか、どちらかを選択できる
-          (もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる)。
-        </p>
+          (もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる)。</p>
         <h2 data-number="8.2" id="積と余積の双関手"><span class="header-section-number">8.2</span> 積と余積の双関手</h2>
         <p>双関手の重要な例として、圏論的な積がある。それは<a
             href="#products-and-coproducts">普遍的構成</a>によって定義される2つの対象の積だ。対象の任意のペアに対して積が存在する場合、これらの対象から積への写像は双関手的だ。これは一般に真であり、Haskellに特によく当てはまる。以下に、ペアのコンストラクターについての<code>Bifunctor</code>インスタンスを示す。最も単純な直積型だ:
@@ -7500,8 +7493,7 @@
         <p>
           <code>int</code>や<code>double</code>を取る関数を完全にメモ化したいとは思わないだろう。しかし、関数とデータ型の間には、常に実用的だとは限らないにしても、同値性がある。型はリスト・文字列・木など無数に存在する。これらの型を取る関数をせっせとメモ化したら、無限のストレージが必要になるだろう。しかし、Haskellは遅延評価言語であるため、遅延評価された
           (無限の)
-          データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪乗対象との区別を説明している。冪乗対象の方が<em>データ</em>という概念によく対応している。
-        </p>
+          データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪乗対象との区別を説明している。冪乗対象の方が<em>データ</em>という概念によく対応している。</p>
         <h2 data-number="9.4" id="カルテシアン閉圏"><span class="header-section-number">9.4</span> カルテシアン閉圏</h2>
         <p>型や関数のモデルとしては集合の圏を今後も使うが、圏にはより大きな族があって、同じ目的のモデルとして使えることは言及する価値がある。それらの圏は<span id="Cartesian_closed"
             class="keyword">カルテシアン閉</span> (Cartesian
@@ -7902,8 +7894,7 @@
         </div>
         <p>
           <code>a</code>を取り<code>b</code>を返す関数<code>f</code>と、型<code>a</code>の具体的な値<code>x</code>とのペアがあれば、<code>f</code>を<code>x</code>に適用するだけで型<code>b</code>の具体的な値を得られる。この関数を実装することで、型<code>((a -&gt; b), a) -&gt; b</code>が居住であることを示した。modus
-          ponensは我々の論理では真だ。
-        </p>
+          ponensは我々の論理では真だ。</p>
         <p>では、あからさまに間違っている述語ではどうだろうか？ 例:
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -25744,8 +25735,7 @@ construction}.} -->
           では<code>extract . duplicate = id</code>と規定されている)。</p>
         <p>
           <code>Store</code>コモナドは<code>Lens</code>ライブラリの理論的基盤として重要だ。概念としては、<code>Store s a</code>コモナドは、型<code>s</code>をインデックスとしてdate型<code>a</code>の特定のサブ構造に
-          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型:
-        </p>
+          (レンズのように)「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型:</p>
         <div class="sourceCode" id="cb508">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb508-1"><a href="#cb508-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> <span class="dt">Store</span> s a</span></code></pre>
@@ -41986,27 +41976,10 @@ construction}.} -->
               Sobocińskiのブログ</a></li>
         </ol>
         <h1 class="unnumbered" id="索引">索引</h1>
-        <!-- -->
-        <ul>
-          <li><span epub:type="index-term"><a href="#basic_product_operations" epub:type="index-locator">basic product
-                operations</a></span></li>
-          <li><span epub:type="index-term"><a href="#extensional" epub:type="index-locator">extensional</a></span></li>
-          <li><span epub:type="index-term"><a href="#factorizer" epub:type="index-locator">factorizer</a></span></li>
-          <li>one way - <span epub:type="index-term"><a href="#one_way" epub:type="index-locator">a</a></span>, <span
-              epub:type="index-term"><a href="#one_way2" epub:type="index-locator">b</a></span></li>
-          <li><span epub:type="index-term"><a href="#one-to-one" epub:type="index-locator">one-to-one</a></span></li>
-          <li><span epub:type="index-term"><a href="#point" epub:type="index-locator">points</a></span></li>
-          <li>predicate – <span epub:type="index-term"><a href="#predicates" epub:type="index-locator">a</a></span>,
-            <span epub:type="index-term"><a href="#predicate" epub:type="index-locator">b</a></span>
-          </li>
-          <li><span epub:type="index-term"><a href="#proof-relevant_relation" epub:type="index-locator">proof-relevant
-                relation</a></span></li>
-          <li><span epub:type="index-term"><a href="#total" epub:type="index-locator">total</a></span></li>
-        </ul>
         <!-- 英数 -->
         <ul>
+          <li><span epub:type="index-term"><a href="#factorizer" epub:type="index-locator">factorizer</a></span></li>
           <li><span epub:type="index-term"><a href="#hom-set" epub:type="index-locator">hom集合</a></span></li>
-          <li><span epub:type="index-term"><a href="#lawvere_theory" epub:type="index-locator">Lawvere理論</a></span></li>
           <li><span epub:type="index-term"><a href="#modus_ponen" epub:type="index-locator">modus ponens</a></span></li>
           <li><span epub:type="index-term"><a href="#theorems_for_free" epub:type="index-locator">theorems for
                 free</a></span></li>
@@ -42018,6 +41991,9 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#ad_hoc_polymorphism" epub:type="index-locator">アドホック多相</a></span>
           </li>
           <li><span epub:type="index-term"><a href="#arity" epub:type="index-locator">アリティ</a></span></li>
+          <li><span epub:type="index-term"><a href="#one-to-one" epub:type="index-locator">1対1</a></span></li>
+          <li>一方向の - <span epub:type="index-term"><a href="#one_way" epub:type="index-locator">a</a></span>, <span
+              epub:type="index-term"><a href="#one_way2" epub:type="index-locator">b</a></span></li>
           <li>意味論
             <ul>
               <li><span epub:type="index-term"><a href="#operational_semantics"
@@ -42032,6 +42008,7 @@ construction}.} -->
         </ul>
         <!-- か -->
         <ul>
+          <li><span epub:type="index-term"><a href="#extensional" epub:type="index-locator">外延的</a></span></li>
           <li><span epub:type="index-term"><a href="#type_inference" epub:type="index-locator">型推論</a></span></li>
           <li><span epub:type="index-term"><a href="#currying" epub:type="index-locator">カリー化</a></span></li>
           <li><span epub:type="index-term"><a href="#Cartesian_closed" epub:type="index-locator">カルテシアン閉</a></span></li>
@@ -42044,6 +42021,8 @@ construction}.} -->
           </li>
           <li>基底集合 - <span epub:type="index-term"><a href="#underlying" epub:type="index-locator">a</a></span>, <span
               epub:type="index-term"><a href="#underlying_set" epub:type="index-locator">b</a></span></li>
+          <li><span epub:type="index-term"><a href="#basic_product_operations"
+                epub:type="index-locator">基本的な積操作</a></span></li>
           <li><span epub:type="index-term"><a href="#wedge_condition" epub:type="index-locator">くさび条件</a></span></li>
           <li><span epub:type="index-term"><a href="#identity" epub:type="index-locator">恒等射</a></span></li>
           <li><span epub:type="index-term"><a href="#composable" epub:type="index-locator">合成可能</a></span></li>
@@ -42054,8 +42033,8 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#endofunctors" epub:type="index-locator">自己関手</a></span></li>
           <li><span epub:type="index-term"><a href="#natural" epub:type="index-locator">自然</a></span></li>
           <li><span epub:type="index-term"><a href="#natural_isomorphism" epub:type="index-locator">自然同型</a></span></li>
-          <li><span epub:type="index-term"><a href="#naturality_condition" epub:type="index-locator">naturality
-                condition</a></span></li>
+          <li><span epub:type="index-term"><a href="#naturality_condition" epub:type="index-locator">自然条件</a></span>
+          </li>
           <li><span epub:type="index-term"><a href="#naturally_isomorphic" epub:type="index-locator">naturally
                 isomorphic</a></span></li>
           <li><span epub:type="index-term"><a href="#initial_algebra" epub:type="index-locator">始代数</a></span></li>
@@ -42067,9 +42046,13 @@ construction}.} -->
               <li><span epub:type="index-term"><a href="#free_monoid" epub:type="index-locator">-モノイド</a></span></li>
             </ul>
           </li>
+          <li>述語 – <span epub:type="index-term"><a href="#predicates" epub:type="index-locator">a</a></span>, <span
+              epub:type="index-term"><a href="#predicate" epub:type="index-locator">b</a></span></li>
           <li><span epub:type="index-term"><a href="#pure_function" epub:type="index-locator">純粋関数</a></span></li>
           <li>準同型 – <span epub:type="index-term"><a href="#homomorphisms" epub:type="index-locator">a</a></span>, <span
               epub:type="index-term"><a href="#homomorphism" epub:type="index-locator">b</a></span></li>
+          <li><span epub:type="index-term"><a href="#proof-relevant_relation"
+                epub:type="index-locator">証明で関連した関係</a></span></li>
           <li><span epub:type="index-term"><a href="#single-sorted" epub:type="index-locator">シングルソート</a></span></li>
           <li><span epub:type="index-term"><a href="#horizontal_composition" epub:type="index-locator">水平合成</a></span>
           </li>
@@ -42097,6 +42080,7 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#symmetric" epub:type="index-locator">対称</a></span></li>
           <li><span epub:type="index-term"><a href="#injective" epub:type="index-locator">単射</a></span></li>
           <li><span epub:type="index-term"><a href="#chain" epub:type="index-locator">チェイン</a></span></li>
+          <li><span epub:type="index-term"><a href="#point" epub:type="index-locator">点</a></span></li>
           <li><span epub:type="index-term"><a href="#template_template_parameter"
                 epub:type="index-locator">テンプレートテンプレート仮引数</a></span></li>
           <li><span epub:type="index-term"><a href="#tensor_product" epub:type="index-locator">テンソル積</a></span></li>
@@ -42108,11 +42092,11 @@ construction}.} -->
             </ul>
           </li>
           <li><span epub:type="index-term"><a href="#equality" epub:type="index-locator">equality</a></span></li>
-          <li><span epub:type="index-term"><a href="#equational_reasoning" epub:type="index-locator">equational
-                reasoning</a></span></li>
-          <li><span epub:type="index-term"><a href="#equivalence" epub:type="index-locator">equivalence</a></span></li>
-          <li><span epub:type="index-term"><a href="#equivalence_relation" epub:type="index-locator">equivalence
-                relation</a></span></li>
+          <li><span epub:type="index-term"><a href="#equational_reasoning" epub:type="index-locator">等式推論</a></span>
+          </li>
+          <li><span epub:type="index-term"><a href="#equivalence" epub:type="index-locator">同値性</a></span></li>
+          <li><span epub:type="index-term"><a href="#equivalence_relation" epub:type="index-locator">同値関係</a></span>
+          </li>
           <li><span epub:type="index-term"><a href="#topos" epub:type="index-locator">トポス</a></span></li>
         </ul>
         <!-- な -->
@@ -42146,11 +42130,12 @@ construction}.} -->
           <li><span epub:type="index-term"><a href="#exponential" epub:type="index-locator">冪乗</a></span></li>
           <li><span epub:type="index-term"><a href="#point-free" epub:type="index-locator">ポイントフリー</a></span></li>
           <li>忘却関手 – <span epub:type="index-term"><a href="#forgetful_functor" epub:type="index-locator">a</a></span>,
-            <span epub:type="index-term"><a href="#forgetful_functor2" epub:type="index-locator">b</a></span>
+            <span epub:type="index-term"><a href="#forgetful_functor2" epub:type="index-locator">b</a></span></li>
+          <li><span epub:type="index-term"><a href="#enriched" epub:type="index-locator">豊穣</a></span>
+            <ul>
+              <li><span epub:type="index-term"><a href="#enriched_functor" epub:type="index-locator">-関手</a></span></li>
+            </ul>
           </li>
-          <li><span epub:type="index-term"><a href="#enriched" epub:type="index-locator">enriched</a></span></li>
-          <li><span epub:type="index-term"><a href="#enriched_functor" epub:type="index-locator">enriched
-                functor</a></span></li>
           <li><span epub:type="index-term"><a href="#poset" epub:type="index-locator">ポセット</a></span></li>
           <li><span epub:type="index-term"><a href="#bottom" epub:type="index-locator">ボトム</a></span></li>
         </ul>
@@ -42168,8 +42153,10 @@ construction}.} -->
         <!-- ら -->
         <ul>
           <li><span epub:type="index-term"><a href="#rig" epub:type="index-locator">リグ</a></span></li>
-          <li><span epub:type="index-term"><a href="#lifted" epub:type="index-locator">lifted</a></span></li>
+          <li><span epub:type="index-term"><a href="#lifted" epub:type="index-locator">リフトされた</a></span></li>
           <li><span epub:type="index-term"><a href="#record" epub:type="index-locator">レコード</a></span></li>
+          <li><span epub:type="index-term"><a href="#lawvere_theory" epub:type="index-locator">ローヴェア・セオリー</a></span>
+          </li>
         </ul>
         <!-- わ -->
         <h1 class="unnumbered" id="謝辞">謝辞</h1>
