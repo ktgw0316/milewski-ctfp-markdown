@@ -14,9 +14,9 @@ by [Bartosz Milewski][bartosz github], based on:
 
 1. Install [pandoc](https://pandoc.org/installing.html)
 1. `cd english/` (or `cd japanese/` if you want to build Japanese version)
-1. `mkdir build`
-1. `cp -R ../images ../base.css build/`
-1. `pandoc -d ../defaults.yaml --template=../html_templates/bootstrap_menu.html --to=html5 -o build/index.html`
+1. Convert markdown to:
+   * html: `pandoc -d ../defaults.yaml --template=../html_templates/bootstrap_menu.html --to=html5 -o index.html`
+   * epub: `pandoc -d ../defaults.yaml --to=epub -o ctfp.epub`
 
 [bartosz github]: https://github.com/BartoszMilewski
 [blogpost series]:

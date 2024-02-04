@@ -1,4 +1,5 @@
 build/
 *.aux
 *.dvi
+*.epub
 *.log
