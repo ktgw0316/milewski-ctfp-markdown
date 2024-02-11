@@ -30,6 +30,7 @@ css:
 highlight-style: tango
 table-of-contents: true
 toc-depth: 2
+top-level-division: chapter
 number-sections: true
 reference-location: section
 
