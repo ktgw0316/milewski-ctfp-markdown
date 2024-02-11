@@ -19,6 +19,8 @@ variables:
     - afterindent=true
     - paper=a5paper
     - jlreq_warnings
+include-in-header:
+  - style.tex
 
 # common
 metadata-file: metadata.yaml
