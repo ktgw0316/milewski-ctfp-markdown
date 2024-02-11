@@ -50,7 +50,7 @@
   * [[-関手](#free_functor){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-圏](#free_category){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-モノイド](#free_monoid){epub:type="index-locator"}]{epub:type="index-term"}
-* 述語 -- [[a](#predicates){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#predicate){epub:type="index-locator"}]{epub:type="index-term"}
+* 述語 -- [[a](#predicate){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#predicate2){epub:type="index-locator"}]{epub:type="index-term"}
 * [[純粋関数](#pure_function){epub:type="index-locator"}]{epub:type="index-term"}
 * 準同型 -- [[a](#homomorphisms){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#homomorphism){epub:type="index-locator"}]{epub:type="index-term"}
 * [[証明で関連した関係](#proof-relevant_relation){epub:type="index-locator"}]{epub:type="index-term"}
@@ -107,7 +107,7 @@
 * [[冪乗](#exponential){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ポイントフリー](#point-free){epub:type="index-locator"}]{epub:type="index-term"}
 * 忘却関手 -- [[a](#forgetful_functor){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#forgetful_functor2){epub:type="index-locator"}]{epub:type="index-term"}
-* [[豊穣](#enriched){epub:type="index-locator"}]{epub:type="index-term"}
+* 豊穣 -- [[a](#enriched){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#enriched2){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-関手](#enriched_functor){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ポセット](#poset){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ボトム](#bottom){epub:type="index-locator"}]{epub:type="index-term"}
