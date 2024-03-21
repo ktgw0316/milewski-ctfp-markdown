@@ -1887,7 +1887,7 @@
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="ot">    mappend ::</span> m <span class="ot">-&gt;</span> m <span class="ot">-&gt;</span> m</span></code></pre>
         </div>
         <p>
-          2つの引数を持つ関数<code>m -&gt; m -&gt; m</code>の型シグネチャは、最初は奇妙に見えるかもしれないが、カリー化を知った後には完全に理にかなったものだと思えるようになるだろう。複数の型を持つシグネチャは、2つの基本的な方法で解釈できる。1つは複数の引数の関数として解釈し、右端の型を戻り値の矢印とする方法、もう1つは1つの引数（左端の引数）の関数として解釈し、関数を返す方法だ。後者の解釈は、<code>m -&gt; (m -&gt; m)</code>のように括弧（矢印が右結合であるため冗長）を追加することによって強調できる。この解釈については後で説明する。
+          2つの引数を持つ関数<code>m -&gt; m -&gt; m</code>の型シグネチャーは、最初は奇妙に見えるかもしれないが、カリー化を知った後には完全に理にかなったものだと思えるようになるだろう。複数の型を持つシグネチャーは、2つの基本的な方法で解釈できる。1つは複数の引数の関数として解釈し、右端の型を戻り値の矢印とする方法、もう1つは1つの引数（左端の引数）の関数として解釈し、関数を返す方法だ。後者の解釈は、<code>m -&gt; (m -&gt; m)</code>のように括弧（矢印が右結合であるため冗長）を追加することによって強調できる。この解釈については後で説明する。
         </p>
         <p>
           Haskellでは、<code>mempty</code>と<code>mappend</code>のモノイダル特性（すなわち、<code>mempty</code>は中立で、<code>mappend</code>は結合性を持つという事実）を表現する方法がないことに注意してほしい。それらを満たすことを確認するのはプログラマーの責任だ。
@@ -2013,7 +2013,7 @@
         <p>従来の加算の規則を与える代わりに、情報を失うことなく加算器を構成する規則を与えることもできる。加算器の合成は結合性を持つことに注目してほしい。これは、関数の合成が結合性を持ち、恒等関数に対応する0加算器があるからだ。
         </p>
         <p>
-          鋭い読者なら、整数から加算器への写像が<code>mappend</code>の型シグネチャを<code>m -&gt; (m -&gt; m)</code>と解釈した結果であることに気付いただろう。これは<code>mappend</code>がモノイド集合の要素を、その集合に作用する関数に写すことを表している。
+          鋭い読者なら、整数から加算器への写像が<code>mappend</code>の型シグネチャーを<code>m -&gt; (m -&gt; m)</code>と解釈した結果であることに気付いただろう。これは<code>mappend</code>がモノイド集合の要素を、その集合に作用する関数に写すことを表している。
         </p>
         <p>
           さて、自然数を集合として扱っていることを忘れて、たくさんの射――加算器たちをひとかたまりにした、単一の対象だと考えてほしい。モノイドは対象が単一の圏だ。実際、monoidという名前は、ギリシャ語で単一を意味する<em>mono</em>に由来する。すべてのモノイドは、適切な合成規則に従う射の集合をもつ単一の対象の圏として記述できる。
@@ -4629,14 +4629,14 @@
 <span id="cb152-3"><a href="#cb152-3" aria-hidden="true" tabindex="-1"></a>f&#39; (<span class="dt">Just</span> x) <span class="ot">=</span> <span class="dt">Just</span> (f x)</span></code></pre>
         </div>
         <p>（ところで、Haskellでは変数名でアポストロフィーを使えるため、今のような場合にとても便利だ。）
-          Haskellでは、関手で射を写す部分は<code>fmap</code>と呼ばれる高階関数として実装されている。<code>Maybe</code>の場合、シグネチャは次のとおりだ：</p>
+          Haskellでは、関手で射を写す部分は<code>fmap</code>と呼ばれる高階関数として実装されている。<code>Maybe</code>の場合、シグネチャーは次のとおりだ：</p>
         <div class="sourceCode" id="cb153">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fmap</span><span class="ot"> ::</span> (a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> (<span class="dt">Maybe</span> a <span class="ot">-&gt;</span> <span class="dt">Maybe</span> b)</span></code></pre>
         </div>
         <p><img src="images/functormaybe.jpg" style="width:35.0%" /></p>
         <p>
-          <code>fmap</code>は関数を<em>リフト</em>するという言い方がよく使われる。リフトされた関数は<code>Maybe</code>値に対して作用する。いつものように、カリー化のため、このシグニチャは次の2つの方法で解釈できる。1つは、関数<code>(a -&gt; b)</code>を1つの引数と捉えて、関数<code>(Maybe a -&gt; Maybe b)</code>を返しているとする解釈だ。もうひとつは、2つの引数を取る関数が<code>Maybe b</code>を返しているとする解釈だ：
+          <code>fmap</code>は関数を<em>リフト</em>するという言い方がよく使われる。リフトされた関数は<code>Maybe</code>値に対して作用する。いつものように、カリー化のため、このシグネチャーは次の2つの方法で解釈できる。1つは、関数<code>(a -&gt; b)</code>を1つの引数と捉えて、関数<code>(Maybe a -&gt; Maybe b)</code>を返しているとする解釈だ。もうひとつは、2つの引数を取る関数が<code>Maybe b</code>を返しているとする解釈だ：
         </p>
         <div class="sourceCode" id="cb154">
           <pre
@@ -4828,7 +4828,7 @@
 <span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="ot">    fmap ::</span> (a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> f a <span class="ot">-&gt;</span> f b</span></code></pre>
         </div>
         <p>
-          これは、指定された型シグニチャを持つ関数<code>fmap</code>が存在する場合、<code>f</code>は<code>Functor</code>だと規定している。小文字の<code>f</code>は型変数であり、型変数<code>a</code>や<code>b</code>と似ている。しかし、コンパイラーはそれが型ではなく型コンストラクターを表していることを、用法に基づいて推論できる。つまり、<code>f a</code>や<code>f b</code>のように他の型に作用しているのを見て推論できる。したがって、<code>Functor</code>のインスタンスを宣言するときは型コンストラクターを指定する必要がある。例として<code>Maybe</code>の場合を示す：
+          これは、指定された型シグネチャーを持つ関数<code>fmap</code>が存在する場合、<code>f</code>は<code>Functor</code>だと規定している。小文字の<code>f</code>は型変数であり、型変数<code>a</code>や<code>b</code>と似ている。しかし、コンパイラーはそれが型ではなく型コンストラクターを表していることを、用法に基づいて推論できる。つまり、<code>f a</code>や<code>f b</code>のように他の型に作用しているのを見て推論できる。したがって、<code>Functor</code>のインスタンスを宣言するときは型コンストラクターを指定する必要がある。例として<code>Maybe</code>の場合を示す：
         </p>
         <div class="sourceCode" id="cb173">
           <pre
@@ -4941,7 +4941,7 @@
         </div>
         <p>
           が型コンストラクターである理由だ。完全な型<code>a -&gt; b</code>を生成するには、もう1つの型<code>b</code>が必要だ。現状のままでは、<code>a</code>によってパラメーター化された一連の型コンストラクターの全体を定義している。これが関手でもあるかどうか見てみよう。2つの型パラメーターを扱うのは混乱を招くかもしれないので、名前を変更しておこう。前の型定義に従って、引数の型を<code>r</code>
-          、結果の型を<code>a</code>と呼ぼう。そうすると、この型コンストラクターは任意の型<code>a</code>を取り、それを型<code>r -&gt; a</code>に写す。これが関手であることを示すために、関数<code>a -&gt; b</code>を、<code>r -&gt; a</code>を受け取って<code>r -&gt; b</code>を返す関数にリフトしよう。これらの型は<code>a</code>と<code>b</code>のそれぞれに型コンストラクター<code>(-&gt;) r</code>を作用させて作る。このケースに適用される<code>fmap</code>の型シグニチャーは次のとおりだ：
+          、結果の型を<code>a</code>と呼ぼう。そうすると、この型コンストラクターは任意の型<code>a</code>を取り、それを型<code>r -&gt; a</code>に写す。これが関手であることを示すために、関数<code>a -&gt; b</code>を、<code>r -&gt; a</code>を受け取って<code>r -&gt; b</code>を返す関数にリフトしよう。これらの型は<code>a</code>と<code>b</code>のそれぞれに型コンストラクター<code>(-&gt;) r</code>を作用させて作る。このケースに適用される<code>fmap</code>の型シグネチャーは次のとおりだ：
         </p>
         <div class="sourceCode" id="cb185">
           <pre
@@ -5123,7 +5123,7 @@
         </ol>
         <h1 data-number="8" id="functoriality"><span class="header-section-number">8</span> 関手性</h1>
         <p>
-          関手とは何かを学び、いくつかの例を見てきたのに続いて、小さい関手から大きい関手を作る方法を見てみよう。特に興味深いのは、どの型コンストラクター（圏内の対象間の写像に対応する）を関手（射の間の写像を含む）に拡張できるのかという点だ。
+          関手とは何かを学び、いくつかの例を見てきたのに続いて、小さい関手から大きい関手を作る方法を見てみよう。特に興味深いのは、（圏内の対象間の写像に対応する）どの型コンストラクターを、（射の間の写像を含む）関手に拡張できるのかという点だ。
         </p>
         <h2 data-number="8.1" id="双関手"><span class="header-section-number">8.1</span> 双関手</h2>
         <p>関手は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -5135,7 +5135,7 @@
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{Cat}</annotation>
             </semantics>
-          </math>（圏の圏）の射であるため、射（特に関数）に関する直観の多くは関手にも当てはまる。たとえば、2つの引数を取る関数と同じように、2つの引数を取る関手、すなわち<span id="bifunctor"
+          </math>（圏の圏）の射であるため、射――典型的には関数――に関する直観の多くは関手にも当てはまる。たとえば、2つの引数を取る関数と同じように、2つの引数を取る関手、すなわち<span id="bifunctor"
             class="keyword">双関手</span> (bifunctor)
           が存在しうる。対象について、双関手は対象のすべてのペアを写す。1つは圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -5198,7 +5198,7 @@
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{C} \times{} \mathbf{D}</annotation>
             </semantics>
-          </math>内の1つの射に相当する。圏のカルテシアン積における射を、ある対象のペアから別の対象のペアへ進む射のペアと定義した。これらの射のペアは、自明な方法で合成できる：</p>
+          </math>内の1つの射に相当する。圏のカルテシアン積における射を、ある対象のペアから別の対象のペアへ向かう射のペアと定義した。これらの射のペアは、自明な方法で合成できる：</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -5238,7 +5238,7 @@
               </annotation>
             </semantics>
           </math></p>
-        <p>合成は結合的であり、恒等射として、恒等射の対
+        <p>合成は結合的であり、恒等射の対
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -5257,13 +5257,13 @@
               <annotation encoding="application/x-tex">(\mathbf{id}, \mathbf{id})</annotation>
             </semantics>
           </math>
-          を持つ。圏のカルテシアン積はまさに圏だ。
+          を恒等射として持つ。圏のカルテシアン積は確かに圏だ。
         </p>
         <p>
-          しかし、さらに簡単に双関手について考えたいなら、両方の引数を取る関手だと見なせばよい。したがって、関手の規則――結合性と恒等射の保存――を関手から双関手へ翻訳するのではなく、引数ごとに別々にチェックすれば十分だろう。圏のペアから第3の圏への写像があり、それが関手的であることを各引数で別々に（たとえば、もう一方の引数を定数にするなどして）証明すれば、写像は自動的に双関手になる。<em>関手的</em>とは、正直な関手
-          (honest functor) のように射に作用するという意味で用いている。</p>
+          双関手についてもっと簡単に考えたいなら、両方の引数を取る関手だと見なせばよい。そうすれば、関手の規則――結合性と恒等射の保存――を関手から双関手へ翻訳するのではなく、引数ごとに別々にチェックすれば十分だろう。ただし、一般には、分割した関手性は結合した関手性の証明としては不十分だ。結合した関手性が成り立たない圏は<em>前モノイダル圏</em>
+          (premonoidal category) と呼ばれる。</p>
         <p>
-          Haskellで双関手を定義しよう。この場合、3つの圏はすべて同じであり、Haskellの型の圏だ。双関手は、2つの型引数を取る型コンストラクターだ。型クラス<code>Bifunctor</code>の定義をライブラリ<code>Control.Bifunctor</code>から採ると、次のとおりだ：
+          Haskellで双関手を定義しよう。この場合の3つの圏はすべて同じで、Haskellの型の圏だ。双関手は2つの型引数を取る型コンストラクターだ。型クラス<code>Bifunctor</code>の定義をライブラリ<code>Control.Bifunctor</code>から採ると、次のとおりだ：
         </p>
         <div class="sourceCode" id="cb203">
           <pre
@@ -5280,10 +5280,10 @@
           <figcaption aria-hidden="true">bimap</figcaption>
         </figure>
         <p>
-          型変数<code>f</code>は双関手を表す。これは、どの型シグネチャにおいても常に2つの型引数に適用されているのが分かる。最初の型シグニチャは、2つの関数を同時に写す<code>bimap</code>を定義している。その結果はリフトされた関数<code>(f a b -&gt; f c d)</code>であり、双関手の型コンストラクターが生成する型に対して作用する。<code>bimap</code>には<code>first</code>と<code>second</code>の観点でのデフォルト実装があり、双関手を定義するにはそれぞれの引数に個別に関手性があれば十分なことを示している。
+          型変数<code>f</code>は双関手を表す。これは、どの型シグネチャーにおいても常に2つの型引数に適用されているのが分かる。最初の型シグネチャーは、2つの関数を同時に写す<code>bimap</code>を定義している。その結果はリフトされた関数<code>(f a b -&gt; f c d)</code>であり、双関手の型コンストラクターが生成する型に対して作用する。<code>bimap</code>には<code>first</code>と<code>second</code>の観点でのデフォルト実装がある（前述のとおり、これは常に機能するわけではなく、2つの写像が可換でない場合には<code>first g . second h</code>と<code>second h . first g</code>は同じではない）。
         </p>
         <p>
-          他の2つの型シグニチャ、<code>first</code>と<code>second</code>は、2つの<code>fmap</code>であり、それぞれ最初と2番目の引数について<code>f</code>の関手性を示す。
+          他の2つの型シグネチャー<code>first</code>と<code>second</code>は、2つの<code>fmap</code>であり、それぞれ最初と2番目の引数について<code>f</code>の関手性を示す。
         </p>
         <table>
           <tbody>
@@ -5293,9 +5293,9 @@
             </tr>
           </tbody>
         </table>
-        <p>この型クラス定義では、両方のデフォルト実装を<code>bimap</code>として提供している。</p>
+        <p>型クラス定義は、この両方のデフォルト実装を<code>bimap</code>に基づいて提供する。</p>
         <p>
-          <code>Bifunctor</code>のインスタンスを宣言するときには、<code>bimap</code>を実装してデフォルトの<code>first</code>と<code>second</code>を受け入れるか、<code>first</code>と<code>second</code>の両方を実装してデフォルトの<code>bimap</code>を受け入れるか、どちらかを選択できる（もちろん、3つすべてを実装することもできるが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる）。
+          <code>Bifunctor</code>のインスタンスを宣言するときには、<code>bimap</code>を実装してデフォルトの<code>first</code>と<code>second</code>を受け入れるか、<code>first</code>と<code>second</code>の両方を実装してデフォルトの<code>bimap</code>を受け入れるか、どちらかを選べる（もちろん3つすべてを実装してもよいが、それらが相互に正しく関連付けられているのを確認するのはプログラマーの責任になる）。
         </p>
         <h2 data-number="8.2" id="積と余積の双関手"><span class="header-section-number">8.2</span> 積と余積の双関手</h2>
         <p>双関手の重要な例として、圏論的な積がある。それは<a
@@ -5543,7 +5543,7 @@
 <span id="cb227-2"><a href="#cb227-2" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span> x <span class="ot">=</span> (x, <span class="st">&quot;&quot;</span>)</span></code></pre>
         </div>
         <p>
-          この2つの関数の型を十分に長く見れば（つまり、十分に<em>長く</em>見れば）、それらを組み合わせて、<code>fmap</code>として機能する適切な型シグネチャを持つ関数を作成する方法を見つけられる。それは次のようになる：
+          この2つの関数の型を十分に長く見れば（つまり、十分に<em>長く</em>見れば）、それらを組み合わせて、<code>fmap</code>として機能する適切な型シグネチャーを持つ関数を作成する方法を見つけられる。それは次のようになる：
         </p>
         <div class="sourceCode" id="cb228">
           <pre
@@ -5591,7 +5591,7 @@
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb232-1"><a href="#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Op</span> r a <span class="ot">=</span> a <span class="ot">-&gt;</span> r</span></code></pre>
         </div>
         <p>
-          今回は、戻り値の型<code>r</code>を修正し、引数の型<code>a</code>を変更する。次のような型シグニチャを持つ<code>fmap</code>を実装するために、何らかの方法で型を一致させられるか見てみよう：
+          今回は、戻り値の型<code>r</code>を修正し、引数の型<code>a</code>を変更する。次のような型シグネチャーを持つ<code>fmap</code>を実装するために、何らかの方法で型を一致させられるか見てみよう：
         </p>
         <div class="sourceCode" id="cb233">
           <pre
@@ -7252,7 +7252,7 @@
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb246-1"><a href="#cb246-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> (b <span class="ot">-&gt;</span> c)</span></code></pre>
         </div>
-        <p>は2変数関数と見なされることが多い。括弧を外したシグネチャはそのように読まれる：</p>
+        <p>は2変数関数と見なされることが多い。括弧を外したシグネチャーはそのように読まれる：</p>
         <div class="sourceCode" id="cb247">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb247-1"><a href="#cb247-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> b <span class="ot">-&gt;</span> c</span></code></pre>
@@ -7667,7 +7667,7 @@
           (inhabited)
           ならば真とされ、そうでなければ偽とされる。特に、論理包含は対応する関数型が居住ならば真であり、その型の関数が存在することを意味する。したがって、関数の実装は定理の証明になる。プログラムを書くのは定理を証明するのと等価だ。いくつか例を見てみよう。
         </p>
-        <p>関数オブジェクトの定義で導入した関数<code>eval</code>を取り上げよう。シグネチャは次のとおりだ：</p>
+        <p>関数オブジェクトの定義で導入した関数<code>eval</code>を取り上げよう。シグネチャーは次のとおりだ：</p>
         <div class="sourceCode" id="cb261">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb261-1"><a href="#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="ot">eval ::</span> ((a <span class="ot">-&gt;</span> b), a) <span class="ot">-&gt;</span> b</span></code></pre>
@@ -7716,7 +7716,7 @@
               </msup>
               <annotation encoding="application/x-tex">b^{a}</annotation>
             </semantics>
-          </math>）を定義する。このシグネチャを、カリー・ハワード同型を使って論理の述語に変換しよう。</p>
+          </math>）を定義する。このシグネチャーを、カリー・ハワード同型を使って論理の述語に変換しよう。</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -7802,7 +7802,7 @@
               <annotation encoding="application/x-tex">b</annotation>
             </semantics>
           </math>が真の場合が反例となるからだ。</p>
-        <p>この述語をCurry-Howard同型を使って関数シグネチャに写すと、次のようになる：</p>
+        <p>この述語をCurry-Howard同型を使って関数シグネチャーに写すと、次のようになる：</p>
         <div class="sourceCode" id="cb264">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb264-1"><a href="#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="dt">Either</span> a b <span class="ot">-&gt;</span> a</span></code></pre>
@@ -8742,7 +8742,7 @@
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb293-1"><a href="#cb293-1" aria-hidden="true" tabindex="-1"></a>contramap f <span class="op">.</span> predToStr <span class="ot">=</span> predToStr <span class="op">.</span> contramap f</span></code></pre>
         </div>
-        <p><code>contramap</code>のシグネチャは次のとおりなので、関数<code>f</code>は<code>fmap</code>で使うのとは逆方向でなければならないことに注意してほしい：</p>
+        <p><code>contramap</code>のシグネチャーは次のとおりなので、関数<code>f</code>は<code>fmap</code>で使うのとは逆方向でなければならないことに注意してほしい：</p>
         <div class="sourceCode" id="cb294">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb294-1"><a href="#cb294-1" aria-hidden="true" tabindex="-1"></a><span class="ot">contramap ::</span> (b <span class="ot">-&gt;</span> a) <span class="ot">-&gt;</span> (<span class="dt">Op</span> <span class="dt">Bool</span> a <span class="ot">-&gt;</span> <span class="dt">Op</span> <span class="dt">Bool</span> b)</span></code></pre>
@@ -8754,7 +8754,7 @@
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb295-1"><a href="#cb295-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> a</span></code></pre>
         </div>
         <p>
-          同じ型<code>a</code>が負（反変）と正（共変）の両側で使われているので、これは関手ではない。この型には<code>fmap</code>や<code>contramap</code>を実装できない。したがって、次のシグネチャを持つ関数：
+          同じ型<code>a</code>が負（反変）と正（共変）の両側で使われているので、これは関手ではない。この型には<code>fmap</code>や<code>contramap</code>を実装できない。したがって、次のシグネチャーを持つ関数：
         </p>
         <div class="sourceCode" id="cb296">
           <pre
@@ -22880,7 +22880,7 @@ construction}.} -->
 <span id="cb432-2"><a href="#cb432-2" aria-hidden="true" tabindex="-1"></a>runCont (<span class="dt">Cont</span> k) h <span class="ot">=</span> k h</span></code></pre>
         </div>
         <p>継続の合成は非常に難しいことで知られており、それゆえモナドや、特に<code>do</code>記法による処理は非常に有利だ。</p>
-        <p>bindの実装について説明しよう。まず、本質だけに絞ったシグネチャに注目する：</p>
+        <p>bindの実装について説明しよう。まず、本質だけに絞ったシグネチャーに注目する：</p>
         <div class="sourceCode" id="cb433">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb433-1"><a href="#cb433-1" aria-hidden="true" tabindex="-1"></a><span class="ot">(&gt;&gt;=) ::</span> ((a <span class="ot">-&gt;</span> r) <span class="ot">-&gt;</span> r) <span class="ot">-&gt;</span></span>
@@ -22930,7 +22930,7 @@ construction}.} -->
           Kleisli合成を使えば、<code>IO</code>オブジェクトの内容を覗き見できると思うかもしれない（またも量子力学で比喩すると「波動関数を収縮させる」ことにあたる）。実際、<code>getChar</code>は、文字を受け取る別のKleisli矢と合成できる。たとえば、受け取った文字を整数に変換するようなものと合成できる。注意点として、そのような2番目のKleisli矢は整数を<code>(IO Int)</code>としてしか返せない。ここでも、すべての可能な整数を重ね合わせることになる。以下同様だ。シュレーディンガーの猫は決して外に出ない。<code>IO</code>モナドに入ると、抜け出す方法はない。<code>IO</code>モナドについて<code>runState</code>や<code>runReader</code>と同等のものはない。<code>runIO</code>はないのだ！
         </p>
         <p>では、Kleisli矢の結果である<code>IO</code>オブジェクトを、他のKleisli矢と合成する以外に何ができるだろう？
-          そう、<code>main</code>から返せる。Haskellでは<code>main</code>は次のシグネチャを持つ：</p>
+          そう、<code>main</code>から返せる。Haskellでは<code>main</code>は次のシグネチャーを持つ：</p>
         <div class="sourceCode" id="cb439">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb439-1"><a href="#cb439-1" aria-hidden="true" tabindex="-1"></a><span class="ot">main ::</span> <span class="dt">IO</span> ()</span></code></pre>
@@ -23168,7 +23168,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">m\ a \to (a \to m\ b) \to m\ b</annotation>
             </semantics>
           </math></p>
-        <p>そうだ、これはモナディックなバインドのシグネチャだ。</p>
+        <p>そうだ、これはモナディックなバインドのシグネチャーだ。</p>
         <p>これはちょっとしたモチベーションになる。さあ、モナドの計算に移ろう。数学者はプログラマーとは異なる表記法を用いる。自己関手には文字<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -24258,7 +24258,7 @@ construction}.} -->
           </math>――それらを合成した自己関手――を生成できる。</p>
         <p>自己関手の合成はテンソル積の良い候補だろうか？
           まず、それが双関手だと示さなければならない。それを使って射――ここでは自然変換――のペアをリフトできるだろうか？
-          テンソル積で<code>bimap</code>に相当するもののシグネチャは次のようになるだろう：</p>
+          テンソル積で<code>bimap</code>に相当するもののシグネチャーは次のようになるだろう：</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -25249,7 +25249,7 @@ construction}.} -->
             </semantics>
           </math></p>
         <p>
-          これをHaskellに変換するには、左<code>Prod</code>関手と右<code>Reader</code>関手との間の随伴から始める。<code>Reader</code>の後に<code>Prod</code>を合成するのは次の定義と等価だ：
+          これをHaskellに変換するには、左<code>Product</code>関手と右<code>Reader</code>関手との間の随伴から始める。<code>Reader</code>の後に<code>Product</code>を合成するのは次の定義と等価だ：
         </p>
         <div class="sourceCode" id="cb501">
           <pre
@@ -25371,12 +25371,14 @@ construction}.} -->
               <mi>L</mi>
               <annotation encoding="application/x-tex">L</annotation>
             </semantics>
-          </math>は<code>Prod</code>関手だ。これは、ペアの左側の要素に<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>は<code>Product</code>関手だ。これは、ペアの左側の要素に<math display="inline"
+            xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>η</mi>
               <annotation encoding="application/x-tex">\eta</annotation>
             </semantics>
-          </math>すなわち<code>Store f</code>を作用させることを意味する（これが<code>Prod</code>の<code>fmap</code>が行うことだ）。すると、次の結果が得られる：</p>
+          </math>すなわち<code>Store f</code>を作用させることを意味する（これが<code>Product</code>の<code>fmap</code>が行うことだ）。すると、次の結果が得られる：
+        </p>
         <div class="sourceCode" id="cb506">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb506-1"><a href="#cb506-1" aria-hidden="true" tabindex="-1"></a>duplicate (<span class="dt">Store</span> f s) <span class="ot">=</span> <span class="dt">Store</span> (<span class="dt">Store</span> f) s</span></code></pre>
@@ -25494,7 +25496,7 @@ construction}.} -->
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
             </semantics>
-          </math>から単位元を選択する。これらのシグネチャを持つ2つの関数ならどれでもモノイドになるわけではない。結合律と単位律という追加の条件を課す必要がある。しかし、それはしばらく忘れて「潜在的なモノイド」について考えてみよう。関数のペアは、2つの関数集合のカルテシアン積の要素だ。これらの集合が冪乗対象として表現できるのは知っている：
+          </math>から単位元を選択する。これらのシグネチャーを持つ2つの関数ならどれでもモノイドになるわけではない。結合律と単位律という追加の条件を課す必要がある。しかし、それはしばらく忘れて「潜在的なモノイド」について考えてみよう。関数のペアは、2つの関数集合のカルテシアン積の要素だ。これらの集合が冪乗対象として表現できるのは知っている：
         </p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -25674,7 +25676,7 @@ construction}.} -->
               <annotation encoding="application/x-tex">m\times{}m + m + 1 \to m</annotation>
             </semantics>
           </math></p>
-        <p>1つの二項演算子（加算）、1つの単項演算子（否定）、1つの零項演算子（恒等射――ここでは0）から始めた。そして、それらを1つの関数に結合した。このシグネチャを持つすべての関数は、潜在的な群を定義する。</p>
+        <p>1つの二項演算子（加算）、1つの単項演算子（否定）、1つの零項演算子（恒等射――ここでは0）から始めた。そして、それらを1つの関数に結合した。このシグネチャーを持つすべての関数は、潜在的な群を定義する。</p>
         <p>同様のことを続けられる。たとえば、環を定義するにはもう1つの二項演算子と1つの零項演算子を追加する、などだ。毎回、左辺が冪乗の和（0乗――終対象――を含んでよい）であり、右辺が集合自体である関数型が得られる。</p>
         <p>きっと一般化に夢中になってしまうだろう。まず、集合を対象に、関数を射に置き換えられる。n項演算子は、n項積からの射として定義できる。これは有限積
           (finite product)
@@ -28459,16 +28461,16 @@ construction}.} -->
             <semantics>
               <mrow>
                 <msup>
-                  <mi>U</mi>
+                  <mi>F</mi>
                   <mi>W</mi>
                 </msup>
                 <mo>∘</mo>
                 <msup>
-                  <mi>F</mi>
+                  <mi>U</mi>
                   <mi>W</mi>
                 </msup>
               </mrow>
-              <annotation encoding="application/x-tex">U^W \circ F^W</annotation>
+              <annotation encoding="application/x-tex">F^W \circ U^W</annotation>
             </semantics>
           </math>として再生成する。
         </p>
@@ -28930,7 +28932,7 @@ construction}.} -->
               <mi>𝐃</mi>
               <annotation encoding="application/x-tex">\mathbf{D}</annotation>
             </semantics>
-          </math>が含まれる場合もある。そのような関係を表す関手は、次のようなシグネチャを持ち、プロ関手
+          </math>が含まれる場合もある。そのような関係を表す関手は、次のようなシグネチャーを持ち、プロ関手
           (profunctor) と呼ばれる。</p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -34789,7 +34791,7 @@ construction}.} -->
         <p><img src="images/functorid.jpg" /></p>
         <h2 data-number="28.7" id="自己豊穣化"><span class="header-section-number">28.7</span> 自己豊穣化</h2>
         <p>
-          閉じた対称モノイダル圏は、hom集合を内部hom（定義は上記を参照）に置き換えることによって自己豊穣化できる。そのためには、内部homについての合成則を定義する必要がある。言い換えると、次のシグネチャを持つ射を実装する必要がある：
+          閉じた対称モノイダル圏は、hom集合を内部hom（定義は上記を参照）に置き換えることによって自己豊穣化できる。そのためには、内部homについての合成則を定義する必要がある。言い換えると、次のシグネチャーを持つ射を実装する必要がある：
         </p>
         <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
