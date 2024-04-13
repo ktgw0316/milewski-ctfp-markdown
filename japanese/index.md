@@ -42,7 +42,7 @@
 * [[自己関手](#endofunctors){epub:type="index-locator"}]{epub:type="index-term"}
 * [[自然](#natural){epub:type="index-locator"}]{epub:type="index-term"}
 * [[自然同型](#natural_isomorphism){epub:type="index-locator"}]{epub:type="index-term"}
-* [[自然条件](#naturality_condition){epub:type="index-locator"}]{epub:type="index-term"}
+* [[自然性条件](#naturality_condition){epub:type="index-locator"}]{epub:type="index-term"}
 * [[naturally isomorphic](#naturally_isomorphic){epub:type="index-locator"}]{epub:type="index-term"}
 * [[始代数](#initial_algebra){epub:type="index-locator"}]{epub:type="index-term"}
 * [[射](#morphism){epub:type="index-locator"}]{epub:type="index-term"}
