@@ -66,7 +66,7 @@
 * [[全順序](#total_order){epub:type="index-locator"}]{epub:type="index-term"}
 * [[双カルテシアン閉](#bicartesian_closed){epub:type="index-locator"}]{epub:type="index-term"}
 * [[双関手](#bifunctor){epub:type="index-locator"}]{epub:type="index-term"}
-* 双射 -- [[a](#bijections){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#bijection){epub:type="index-locator"}]{epub:type="index-term"}
+* 全単射 -- [[a](#bijections){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#bijection){epub:type="index-locator"}]{epub:type="index-term"}
 * [[双閉](#biclosed){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- た -->
