@@ -12977,15 +12977,15 @@
         </ol>
         <h1 data-number="13" id="free-monoids"><span class="header-section-number">13</span> 自由モノイド</h1>
         <p>
-          モノイドは圏論においてもプログラミングにおいても重要な概念だ。圏は強い型付けの言語に相当し、モノイドは型なし言語に相当する。モノイドでは任意の2つの矢を合成できるからだ。それは型なし言語で任意の2つの関数を合成できることに当たる（当然、プログラムの実行時にランタイムエラーが発生する可能性はある）。
+          モノイドは圏論とプログラミングの両方において重要な概念だ。圏は強い型付けの言語に相当し、モノイドは型なし言語に相当する。モノイドでは任意の2つの矢を合成できるからだ。それは型なし言語で任意の2つの関数を合成できることに相当する（当然、プログラムの実行時にランタイムエラーが発生する可能性はある）。
         </p>
         <p>
           これまでに見てきたように、モノイドは単一の対象を持つ圏として記述され、その圏ではすべての論理が射の合成の規則として表現されている。この圏論的モデルは、より伝統的で集合論的なモノイドの定義と完全に等価だ。そこでは集合の2つの要素を「乗算」することで第3の要素が得られる。この「乗算」の過程はさらに詳細に分析できる。すなわち、まず要素のペア1つを形成し、次にこのペアを既存の要素――それらの「積」と同一視する。
         </p>
         <p>乗算の2番目の部分、つまりペアと既存の要素との同一視を省くとどうなるだろうか？
-          たとえば、任意の集合から始めて、すべての可能な要素のペアを形成し、それらを新しい要素と呼ぶ、といったことが可能だ。次に、これらの新しい要素をすべての可能な要素とペアにする。以下同様だ。これは連鎖反応だ――新しい要素を永久に追加し続けられる。その結果は、無限集合であり、<em>ほぼ</em>モノイドとなる。ただし、モノイドには単位元と結合律も必要だ。しかし、問題ない。特別な単位元を追加し、いくつかのペアを特定できる――単位律
-          (unit law) と結合律をちょうど満たせる。</p>
-        <p>簡単な例で、これがどのように機能するか見てみよう。2要素の集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          たとえば、任意の集合から始めて、ペアにできる要素をすべてペアにし、それらを新しい要素と呼ぶ、といったことができる。次に、それらの新しい要素とペアにできる要素をすべてペアにする。以下同様だ。これは連鎖反応だ――新しい要素を永久に追加し続けられる。その結果は、無限集合であり、<em>ほぼ</em>モノイドとなる。ただし、モノイドには単位元と結合律も必要だ。しかし、問題ない。特別な単位元を追加し、いくつかのペアを同一視すれば、単位律
+          (unit law) と結合律をきちんと満たせる。</p>
+        <p>これがどう機能するか簡単な例を見てみよう。2要素の集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mo stretchy="false" form="prefix">{</mo>
@@ -13285,8 +13285,7 @@
               <annotation encoding="application/x-tex">((a, b), a)</annotation>
             </semantics>
           </math>
-          などの要素を追加していく。この時点で、結合性が保持されていることを確認する必要があるので、<math display="inline"
-            xmlns="http://www.w3.org/1998/Math/MathML">
+          などの要素を追加していく。この時点で、結合律が確実に満たされる必要があるので、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mo stretchy="true" form="prefix">(</mo>
@@ -13325,7 +13324,7 @@
           </math>
           などと同一視する。言い換えると、内側の括弧は必要ないということだ。
         </p>
-        <p>このプロセスの最終的な結果が予想できるだろう：可能なすべての<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>このプロセスの最終的な結果が予想できるだろう：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>a</mi>
               <annotation encoding="application/x-tex">a</annotation>
@@ -13335,13 +13334,13 @@
               <mi>b</mi>
               <annotation encoding="application/x-tex">b</annotation>
             </semantics>
-          </math>のリストが作られる。事実、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </math>から作れるすべてのリストが作られる。事実として、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>e</mi>
               <annotation encoding="application/x-tex">e</annotation>
             </semantics>
           </math>を空リストで表せば、「乗算」はリストの連結に他ならないことが分かる。</p>
-        <p>この種の構成では、要素の可能なすべての組み合わせを生成し続け、同一視は最小限に――単位律と結合律を維持するのにちょうど十分なだけに留める。これは自由構成と呼ばれる。これで、生成元<math
+        <p>この種の構成では、要素の組み合わせとして可能なものすべてを生成し続け、同一視は最小限に――単位律と結合律を維持するのにちょうど十分なだけに留める。これは自由構成と呼ばれる。以上で生成元<math
             display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -13379,20 +13378,20 @@
         </div>
         <p>これは、空リスト<code>[]</code>が単位元であり、リスト連結<code>(++)</code>が二項演算であることを記述している。</p>
         <p>
-          これまで見てきたように、型<code>a</code>のリストは、集合<code>a</code>を生成元とする自由モノイドに対応する。乗算を伴う自然数の集合は、多くの積が同一視されるので、自由モノイドではない。次の例と比較しよう：
+          これまで見てきたように、型<code>a</code>のリストは集合<code>a</code>を生成元とする自由モノイドに対応する。ところが、乗算を伴う自然数の集合は、多くの積が同一視されるので自由モノイドではない。次の2つを比較しよう：
         </p>
         <div class="sourceCode" id="cb327">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb327-1"><a href="#cb327-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span> <span class="ot">=</span> <span class="dv">6</span></span>
-<span id="cb327-2"><a href="#cb327-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>] <span class="op">++</span> [<span class="dv">3</span>] <span class="ot">=</span> [<span class="dv">2</span>, <span class="dv">3</span>] <span class="op">//</span> [<span class="dv">6</span>]と同一ではない</span></code></pre>
+<span id="cb327-2"><a href="#cb327-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>] <span class="op">++</span> [<span class="dv">3</span>] <span class="ot">=</span> [<span class="dv">2</span>, <span class="dv">3</span>] <span class="op">//</span> [<span class="dv">6</span>]と同じではない</span></code></pre>
         </div>
-        <p>これは簡単だが、問題は、圏論では対象の中を見るのが許されないのに、どうやってこの自由構成を実現できるのか、ということだ。我々の馬車馬を使おう：普遍的構成だ。</p>
-        <p>2番目の興味深い疑問は、単位律と結合律が必要とする最小数よりも多くの要素を同一視すれば、ある自由モノイドから任意のモノイドを得られるのか、ということだ。これが普遍的構成から直接導かれることをお見せしよう。</p>
+        <p>これは簡単な例だったが、圏論では対象の中を見るのが許されないのにどうやってこの自由構成を実現できるのか、という問題がある。そこで馬車馬のように働いてもらうのが、普遍的構成だ。</p>
+        <p>2番目の興味深い疑問は、単位律と結合律が最小限必要とするよりも多くの要素を同一視すれば、ある自由モノイドから任意のモノイドを得られるのか、ということだ。これが普遍的構成から直接導かれることをお見せしよう。</p>
         <h2 data-number="13.2" id="自由モノイドの普遍的構成"><span class="header-section-number">13.2</span> 自由モノイドの普遍的構成</h2>
         <p>
           普遍的構成についての経験を振り返れば、それは何かを構築するというより、特定のパターンに最もよく適合する対象を選択するものだと気付くだろう。したがって、普遍的構成を使って自由モノイドを「構築」したいなら、選択肢となる多数のモノイドの全体を考慮する必要がある。選択するにはモノイドの圏全体が必要だ。だが、モノイドは圏を形成するのだろうか？
         </p>
-        <p>まず、単位元と乗算によって定義された追加構造を伴う集合としてモノイドを見てみよう。モノイダル構造を保存する関数を射として採用する。このような構造保存関数は<span id="homomorphisms"
+        <p>まず、単位元と乗算によって定義された追加構造を伴う集合としてモノイドを見てみよう。モノイダル構造を保存する関数を射として採用する。構造を保存するこのような関数は<span id="homomorphisms"
             class="keyword">準同型</span> (homomorphism)
           と呼ばれる。モノイド準同型は2つの要素の積を2つの要素の写像の積に写さなければならない：</p>
         <div class="sourceCode" id="cb328">
@@ -13401,7 +13400,7 @@
         </div>
         <p>なおかつ単位元を単位元に写さなければならない。</p>
         <p>
-          例として、整数のリストから整数への準同型を考えよう：<code>[2]</code>を2に写し、<code>[3]</code>を3に写すなら、<code>[2, 3]</code>を6に写す必要がある。なぜなら、連結：
+          例として、整数のリストから整数への準同型を考えよう。<code>[2]</code>を2に写し、<code>[3]</code>を3に写すなら、<code>[2, 3]</code>を6に写す必要がある。なぜなら、連結：
         </p>
         <div class="sourceCode" id="cb329">
           <pre
@@ -13423,7 +13422,7 @@
               <annotation encoding="application/x-tex">\mathbf{Mon}</annotation>
             </semantics>
           </math>が得られる。</p>
-        <p>さて、内部構造を忘れる前に、重要な性質に注目しておこう。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>ところで、内部構造を忘れる前に、重要な性質に注目しておいた方がよいだろう。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
                 <mi>𝐌</mi>
@@ -13432,8 +13431,7 @@
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{Mon}</annotation>
             </semantics>
-          </math>のすべての対象が集合に写せるのは自明だ。それはただの要素の集合だ。この集合は<span id="underlying" class="keyword">基底</span>集合 (underlying
-          set)
+          </math>のすべての対象が集合に写せるのは自明だ。それはただの要素の集合だ。この集合は<span id="underlying" class="keyword">台</span>集合 (underlying set)
           と呼ばれる。実際、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -13493,12 +13491,12 @@
               </mrow>
               <annotation encoding="application/x-tex">\mathbf{Mon}</annotation>
             </semantics>
-          </math>の中の特定の対象について言えるのは、それ自身や他の対象と射を通じて接続しているということだけだ。射の「乗法」の表――合成則――は、集合としてのモノイドという、もう一方の観点から導かれる。圏論に進んだことでこの観点を完全に失ったわけではない――まだ忘却関手を通じてアクセスできる。
+          </math>の中の特定の対象について言えるのは、それ自身や他の対象と射を通じて接続しているということだけだ。射の「掛け算の九九」の表――合成則――は、集合としてのモノイドという、もう一方の観点から導かれる。圏論に進んだことでこの観点を完全に失ったわけではない――まだ忘却関手を通じてアクセスできる。
         </p>
         <p>
           普遍的構成を適用するには、特別な性質を定義することにより、モノイドの圏を探索して自由モノイドの最良の候補を選べるようにする必要がある。しかし、自由モノイドはその生成元によって定義される。別の生成元を選べば、生成される自由モノイドは変わる（<code>Bool</code>のリストと<code>Int</code>のリストは違う）。我々の構成は、生成元の集合から始めなければならない。つまり、集合に戻ってきた！
         </p>
-        <p>ここで忘却関手が登場する。それは我々のモノイドをレントゲン撮影するのに使える。これらの小塊のレントゲン写真から生成元を特定できる。その仕組みはこうだ：</p>
+        <p>ここで忘却関手が登場する。それは我々のモノイドをレントゲン撮影するのに使える。これらの小塊のレントゲン写真から生成元を特定できる。その仕組みは以下のとおりだ：</p>
         <p>生成元の集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>x</mi>
@@ -13542,7 +13540,7 @@
               <mi>p</mi>
               <annotation encoding="application/x-tex">p</annotation>
             </semantics>
-          </math>で構成されている。</p>
+          </math>で構成されている：</p>
         <div class="sourceCode" id="cb331">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb331-1"><a href="#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="ot">p ::</span> x <span class="ot">-&gt;</span> <span class="dt">U</span> m</span></code></pre>
@@ -13611,7 +13609,7 @@
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb332-1"><a href="#cb332-1" aria-hidden="true" tabindex="-1"></a><span class="ot">q ::</span> x <span class="ot">-&gt;</span> <span class="dt">U</span> n</span></code></pre>
         </div>
-        <p>次のようなモノイドの射（構造保存準同型）がある場合、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <p>次のようなモノイドの射（構造を保存する準同型）がある場合、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>m</mi>
               <annotation encoding="application/x-tex">m</annotation>
@@ -13621,7 +13619,7 @@
               <mi>n</mi>
               <annotation encoding="application/x-tex">n</annotation>
             </semantics>
-          </math>よりも優れていると言おう：</p>
+          </math>よりも優れていると言うことにしよう：</p>
         <div class="sourceCode" id="cb333">
           <pre
             class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb333-1"><a href="#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="ot">h ::</span> m <span class="ot">-&gt;</span> n</span></code></pre>
@@ -13676,7 +13674,7 @@
               <mi>h</mi>
               <annotation encoding="application/x-tex">h</annotation>
             </semantics>
-          </math>は、定義上、モノイダル構造を保存することを覚えておいてほしい。これは、1つのモノイドにおける2つの生成子の積が、2番目のモノイドにおいて対応する2つの生成子の積に写されることなどを意味する。</p>
+          </math>は、定義より、モノイダル構造を保存することを思い出してほしい。これは、1つのモノイドにおける2つの生成元の積が、2番目のモノイドにおいて対応する2つの生成元の積に写されることなどを意味する。</p>
         <figure>
           <img src="images/monoid-ranking.jpg" style="width:40.0%" alt="モノイドの順位付け" />
           <figcaption aria-hidden="true">モノイドの順位付け</figcaption>
@@ -13723,7 +13721,7 @@
                 <mi>m</mi>
                 <annotation encoding="application/x-tex">m</annotation>
               </semantics>
-            </math>を生成子<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            </math>を生成元<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
               <semantics>
                 <mi>x</mi>
                 <annotation encoding="application/x-tex">x</annotation>
@@ -13754,7 +13752,7 @@
               </mrow>
               <annotation encoding="application/x-tex">U n</annotation>
             </semantics>
-          </math>の1つの要素へ潰す力がある。ここで、潰すことは自由モノイドのいくつかの要素を同一視することに対応する。したがって、生成子<math display="inline"
+          </math>の1つの要素へ潰す力がある。ここで、潰すことは自由モノイドのいくつかの要素を同一視することに対応する。したがって、生成元<math display="inline"
             xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mi>x</mi>
@@ -26080,7 +26078,7 @@ construction}.} -->
               <mi>b</mi>
               <annotation encoding="application/x-tex">b</annotation>
             </semantics>
-          </math>へ向かう射――と定義する。どの射でもいいわけではなく、2つの評価子と互換性がなければならない。（そのような構造保存射を<span id="homomorphism"
+          </math>へ向かう射――と定義する。どの射でもいいわけではなく、2つの評価子と互換性がなければならない。（構造を保存するそのような射を<span id="homomorphism"
             class="keyword">準同型</span>と呼ぶ。）
           F-代数の準同型を定義する方法は次のとおりだ。まず、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -36386,7 +36384,7 @@ construction}.} -->
           に着目した可能性もあっただろう。そのような宇宙を探検しよう。</p>
         <h2 data-number="30.1" id="普遍代数"><span class="header-section-number">30.1</span> 普遍代数</h2>
         <p>
-          代数を様々な抽象レベルで記述する方法はたくさんある。モノイド・群・環などを記述するための汎用言語を見つけたい。最も単純なレベルでは、これらのすべての構造によって、集合の要素に対する<em>演算</em>と、それらの演算によって満たされなければならないいくつかの<em>規則</em>が定義される。たとえば、モノイドは結合律を満たす二項演算によって定義できる。さらに、単位元と単位律もある。しかし、少し想像力を働かせれば、単位元は零項演算――引数を取らず集合の特別な要素を返す操作――に変えられる。群について述べるには、受け取った要素の逆を返す単項演算子を追加する。それに対応する左逆元則と右逆元則がある。環では2つの二項演算子といくつかの規則が定義される。以下同様だ。
+          代数を様々な抽象レベルで記述する方法はたくさんある。モノイド・群・環などを記述するための汎用言語を見つけたい。最も単純なレベルでは、これらのすべての構造によって、集合の要素に対する<em>演算</em>と、それらの演算によって満たされなければならないいくつかの<em>規則</em>が定義される。たとえば、モノイドは結合律を満たす二項演算によって定義できる。さらに、単位元と単位律もある。しかし、少し想像力を働かせれば、単位元は零項演算――引数を取らず集合の特別な要素を返す操作――に変えられる。群について述べるには、受け取った要素の逆を返す単項演算子を追加する。それに対応する左逆元律と右逆元律がある。環では2つの二項演算子といくつかの規則が定義される。以下同様だ。
         </p>
         <p>大枠としては、代数はさまざまな値の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
@@ -36399,7 +36397,8 @@ construction}.} -->
               <annotation encoding="application/x-tex">n</annotation>
             </semantics>
           </math>項演算の集合と、等式の恒等射の集合によって定義される。これらの恒等射はすべて全称量化されている。たとえば、結合性の等式はすべての可能な3要素の組み合わせについて満たされる必要がある、などだ。</p>
-        <p>ちなみに、これは0（加算についての単位）が乗算について逆を持たないという単純な理由から、フィールドを考慮から除外する。フィールドの逆元則は全称量化できない。</p>
+        <p>ちなみに、これは0（加算についての単位）が乗算について逆を持たないという単純な理由から、体
+          (field) を考慮から除外する。体の逆元律は全称量化できない。</p>
         <p>この普遍代数の定義は、演算（関数）を射に置き換えると、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <semantics>
               <mrow>
@@ -41673,8 +41672,6 @@ construction}.} -->
           </li>
           <li><span epub:type="index-term"><a href="#function_application" epub:type="index-locator">関数適用</a></span>
           </li>
-          <li>基底集合 - <span epub:type="index-term"><a href="#underlying" epub:type="index-locator">a</a></span>, <span
-              epub:type="index-term"><a href="#underlying_set" epub:type="index-locator">b</a></span></li>
           <li><span epub:type="index-term"><a href="#basic_product_operations"
                 epub:type="index-locator">基本的な積操作</a></span></li>
           <li><span epub:type="index-term"><a href="#wedge_condition" epub:type="index-locator">くさび条件</a></span></li>
@@ -41730,6 +41727,8 @@ construction}.} -->
         </ul>
         <!-- た -->
         <ul>
+          <li>台集合 - <span epub:type="index-term"><a href="#underlying" epub:type="index-locator">a</a></span>, <span
+              epub:type="index-term"><a href="#underlying_set" epub:type="index-locator">b</a></span></li>
           <li><span epub:type="index-term"><a href="#object" epub:type="index-locator">対象</a></span></li>
           <li><span epub:type="index-term"><a href="#symmetric" epub:type="index-locator">対称</a></span></li>
           <li><span epub:type="index-term"><a href="#injective" epub:type="index-locator">単射</a></span></li>
