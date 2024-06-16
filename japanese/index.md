@@ -31,7 +31,6 @@
 * [[環](#ring){epub:type="index-locator"}]{epub:type="index-term"}
 * [[関数合成](#function_composition){epub:type="index-locator"}]{epub:type="index-term"}
 * [[関数適用](#function_application){epub:type="index-locator"}]{epub:type="index-term"}
-* 基底集合 - [[a](#underlying){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#underlying_set){epub:type="index-locator"}]{epub:type="index-term"}
 * [[基本的な積操作](#basic_product_operations){epub:type="index-locator"}]{epub:type="index-term"}
 * [[くさび条件](#wedge_condition){epub:type="index-locator"}]{epub:type="index-term"}
 * [[恒等射](#identity){epub:type="index-locator"}]{epub:type="index-term"}
@@ -70,6 +69,7 @@
 * [[双閉](#biclosed){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- た -->
+* 台集合 - [[a](#underlying){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#underlying_set){epub:type="index-locator"}]{epub:type="index-term"}
 * [[対象](#object){epub:type="index-locator"}]{epub:type="index-term"}
 * [[対称](#symmetric){epub:type="index-locator"}]{epub:type="index-term"}
 * [[単射](#injective){epub:type="index-locator"}]{epub:type="index-term"}
