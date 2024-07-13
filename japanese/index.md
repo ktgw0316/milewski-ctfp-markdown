@@ -35,7 +35,7 @@
 * [[くさび条件](#wedge_condition){epub:type="index-locator"}]{epub:type="index-term"}
 * [[恒等射](#identity){epub:type="index-locator"}]{epub:type="index-term"}
 * [[合成可能](#composable){epub:type="index-locator"}]{epub:type="index-term"}
-* [[コンポーネント](#component){epub:type="index-locator"}]{epub:type="index-term"}
+* [[成分](#component){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- さ -->
 * [[自己関手](#endofunctors){epub:type="index-locator"}]{epub:type="index-term"}
