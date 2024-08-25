@@ -104,7 +104,7 @@
 * [[普遍構成](#universal_construction){epub:type="index-locator"}]{epub:type="index-term"}
 * [[プロ関手](#profunctor){epub:type="index-locator"}]{epub:type="index-term"}
 * [[文脈付き計算](#contextual_computation){epub:type="index-locator"}]{epub:type="index-term"}
-* [[冪乗](#exponential){epub:type="index-locator"}]{epub:type="index-term"}
+* [[冪](#exponential){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ポイントフリー](#point-free){epub:type="index-locator"}]{epub:type="index-term"}
 * 忘却関手 -- [[a](#forgetful_functor){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#forgetful_functor2){epub:type="index-locator"}]{epub:type="index-term"}
 * 豊穣 -- [[a](#enriched){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#enriched2){epub:type="index-locator"}]{epub:type="index-term"}
