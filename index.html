@@ -234,8 +234,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
         <li><a href="#参考文献-1" id="toc-参考文献-1"><span
         class="toc-section-number">5.9</span> 参考文献</a></li>
         </ul></li>
-        <li><a href="#シンプルな代数的データ型"
-        id="toc-シンプルな代数的データ型"><span
+        <li><a href="#simple-algebraic-data-types"
+        id="toc-simple-algebraic-data-types"><span
         class="toc-section-number">6</span> シンプルな代数的データ型</a>
         <ul>
         <li><a href="#直積型" id="toc-直積型"><span
@@ -298,14 +298,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
         class="toc-section-number">9.1</span> 普遍的構成</a></li>
         <li><a href="#カリー化" id="toc-カリー化"><span
         class="toc-section-number">9.2</span> カリー化</a></li>
-        <li><a href="#冪乗" id="toc-冪乗"><span
-        class="toc-section-number">9.3</span> 冪乗</a></li>
+        <li><a href="#冪" id="toc-冪"><span
+        class="toc-section-number">9.3</span> 冪</a></li>
         <li><a href="#カルテシアン閉圏" id="toc-カルテシアン閉圏"><span
         class="toc-section-number">9.4</span> カルテシアン閉圏</a></li>
-        <li><a href="#冪乗と代数的データ型"
-        id="toc-冪乗と代数的データ型"><span
+        <li><a href="#冪と代数的データ型"
+        id="toc-冪と代数的データ型"><span
         class="toc-section-number">9.5</span>
-        冪乗と代数的データ型</a></li>
+        冪と代数的データ型</a></li>
         <li><a href="#カリーハワード同型"
         id="toc-カリーハワード同型"><span
         class="toc-section-number">9.6</span>
@@ -439,8 +439,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
         class="toc-section-number">18.2</span> 随伴とhom集合</a></li>
         <li><a href="#随伴に基づく積" id="toc-随伴に基づく積"><span
         class="toc-section-number">18.3</span> 随伴に基づく積</a></li>
-        <li><a href="#随伴に基づく冪乗" id="toc-随伴に基づく冪乗"><span
-        class="toc-section-number">18.4</span> 随伴に基づく冪乗</a></li>
+        <li><a href="#随伴に基づく冪" id="toc-随伴に基づく冪"><span
+        class="toc-section-number">18.4</span> 随伴に基づく冪</a></li>
         <li><a href="#課題-15" id="toc-課題-15"><span
         class="toc-section-number">18.5</span> 課題</a></li>
         </ul></li>
@@ -973,7 +973,7 @@ role="doc-noteref"><sup>3</sup></a>。Curry-Howard同型と呼ばれる論理の
 “ex falso sequitur quodlibet” に対応している。</p>
 <p>次は、単集合に対応する型だ。これが持てる値は1つしかない。その値は単に
 “is”
-だ。すぐにはわからないかもしれないが、これがC++の<code>void</code>だ。この型を引数に取る関数と、この型を返す関数を考えてみてほしい。<code>void</code>を取る関数は常に呼び出せる。それが純粋関数なら、常に同じ結果を返す。そのような関数の例を示そう：</p>
+だ。すぐには分からないかもしれないが、これがC++の<code>void</code>だ。この型を引数に取る関数と、この型を返す関数を考えてみてほしい。<code>void</code>を取る関数は常に呼び出せる。それが純粋関数なら、常に同じ結果を返す。そのような関数の例を示そう：</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> f44<span class="op">()</span> <span class="op">{</span> <span class="cf">return</span> <span class="dv">44</span><span class="op">;</span> <span class="op">}</span></span></code></pre></div>
 <p>この関数は “nothing”
 を取ると思うかもしれないが、先ほど見たように、“nothing”
@@ -1090,9 +1090,9 @@ class="header-section-number">3.2</span> シンプルなグラフ</h2>
 <p>対象を矢で接続するだけで圏を作成できる。任意の有向グラフから始めて、単に矢を追加するだけで圏になるのは想像できるだろう。最初に、各ノードに恒等射を追加する。次に、一方の終点が他方の始点と一致するような2つの矢（つまり、2つの<span
 id="composable"
 class="keyword">合成可能な</span>矢）に対して、新しい矢を追加して合成として機能させる。新しい矢を追加するたびに、（恒等射を除く）他の矢との合成も考慮する必要がある。通常は矢が無限に多くなるが、構わない。</p>
-<p>このプロセスを別の方法で見ると、グラフ内のすべてのノードに対する圏と、射として構成可能なグラフエッジのすべての<span
+<p>このプロセスを別の方法で見ると、グラフ内の各ノードを対象とし、グラフエッジから構成できるすべての<span
 id="chain"
-class="keyword">チェイン</span>を持つ対象を作成していることになる。（恒等射はチェインの長さが0の特殊な場合とも見なせる。）</p>
+class="keyword">チェイン</span>を射とする圏を作成していることになる。（恒等射はチェインの長さが0の特殊な場合とも見なせる。）</p>
 <p>このような圏は、与えられたグラフによって生成される<span
 id="free_category" class="keyword">自由圏</span> (free category)
 と呼ばれる。これは自由構成の例であり、任意の構造を、その規則（ここでは圏の規則）を満たせる最少の要素で拡張して完成させるプロセスだ。今後さらに多くの例について見ていく。</p>
@@ -1237,8 +1237,8 @@ zでマークされた26個の矢を持つグラフ</li>
 </ol></li>
 <li><p>以下はどんな順序だろうか？</p>
 <ol type="1">
-<li>包含関係：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>を持つ集合の集合は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>のすべての要素が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>の要素でもある場合、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>に含まれる。</li>
-<li>次のサブタイプ関係を持つC++の型：<code>T1</code>が<code>T2</code>のサブタイプなのは、<code>T2</code>へのポインタを期待する関数に<code>T1</code>をコンパイルエラーを発生させずに渡せる場合だ。</li>
+<li>次の包含関係を持つ集合の集合：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>のすべての要素が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>の要素でもあるならば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>に含まれる。</li>
+<li>次のサブタイプ関係を持つC++の型：<code>T2</code>へのポインタを期待する関数に<code>T1</code>をコンパイルエラーを発生させずに渡せるならば、<code>T1</code>は<code>T2</code>のサブタイプである。</li>
 </ol></li>
 <li><p><code>Bool</code>が2つの値<code>True</code>と<code>False</code>の集合であることを考えると、演算子<code>&amp;&amp;</code>
 (AND) と<code>||</code> (OR)
@@ -1285,7 +1285,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb45-1"><a href="#
 <div class="sourceCode" id="cb46"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>string toUpper<span class="op">(</span>string s<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    string result<span class="op">;</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="op">(*</span>toupperp<span class="op">)(</span><span class="dt">int</span><span class="op">)</span> <span class="op">=</span> <span class="op">&amp;</span>toupper<span class="op">;</span> <span class="co">// toupper is overloaded</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="op">(*</span>toupperp<span class="op">)(</span><span class="dt">int</span><span class="op">)</span> <span class="op">=</span> <span class="op">&amp;</span>toupper<span class="op">;</span> <span class="co">// toupperはオーバーロードされている</span></span>
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    transform<span class="op">(</span>begin<span class="op">(</span>s<span class="op">),</span> end<span class="op">(</span>s<span class="op">),</span> back_inserter<span class="op">(</span>result<span class="op">),</span> toupperp<span class="op">);</span></span>
 <span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result<span class="op">;</span></span>
 <span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
@@ -1366,7 +1366,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb54-1"><a href="#
 <li><p>最初の結果の2番目の成分（文字列）と2番目の結果の2番目の成分（文字列）を連結する。</p></li>
 <li><p>最終結果の最初の成分と連結された文字列を組み合わせた新しいペアを返す。</p></li>
 </ol>
-<p>この合成をC++の高階関数として抽象化したい場合、圏の3つの対象に対応する3つの型でパラメーター化されたテンプレートを使わなければならない。ルールに従って構成可能な2つの装飾された関数を受け取り、3番目の装飾された関数を返す必要がある：</p>
+<p>この合成をC++の高階関数として抽象化したい場合、圏の3つの対象に対応する3つの型でパラメーター化されたテンプレートを使わなければならない。ルールに従って合成可能な2つの装飾された関数を受け取り、3番目の装飾された関数を返す必要がある：</p>
 <div class="sourceCode" id="cb55"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">class</span> A<span class="op">,</span> <span class="kw">class</span> B<span class="op">,</span> <span class="kw">class</span> C<span class="op">&gt;</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>function<span class="op">&lt;</span>Writer<span class="op">&lt;</span>C<span class="op">&gt;(</span>A<span class="op">)&gt;</span> compose<span class="op">(</span>function<span class="op">&lt;</span>Writer<span class="op">&lt;</span>B<span class="op">&gt;(</span>A<span class="op">)&gt;</span> m1<span class="op">,</span></span>
@@ -1476,7 +1476,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb70-1"><a href="#
 <span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>課題は以下のとおりだ：</p>
 <ol type="1">
-<li><p>部分関数のためのKleisli圏を構築せよ（合成と恒等射を定義せよ）。</p></li>
+<li><p>部分関数についてKleisli圏を構築せよ（合成と恒等射を定義せよ）。</p></li>
 <li><p>引数が0でない場合に有効な逆数を返す装飾された関数<code>safe_reciprocal</code>を実装せよ。</p></li>
 <li><p>関数<code>safe_root</code>と<code>safe_reciprocal</code>を合成して、可能なすべての場合に<code>sqrt(1/x)</code>を計算する<code>safe_root_reciprocal</code>を実装せよ。</p></li>
 </ol>
@@ -1576,7 +1576,7 @@ alt="この図中のすべての射は一意だ" />
 class="header-section-number">5.5</span> 積</h2>
 <p>次の普遍的構成は積 (product)
 に関するものだ。2つの集合のカルテシアン積が何なのかは知っている。ペアからなる集合だ。しかし、積の集合とそれを構成する集合を結びつけるパターンは何だろう？
-それがわかれば、他の圏にも一般化できるはずだ。</p>
+それが分かれば、他の圏にも一般化できるはずだ。</p>
 <p>唯一言えるのは、積から各構成要素への射影 (projection)
 という関数が2つある、ということだ。Haskellでは、これら2つの関数は<code>fst</code>と<code>snd</code>と呼ばれ、それぞれペアの最初と2番目の要素を選択する。</p>
 <div class="sourceCode" id="cb76"><pre
@@ -1772,10 +1772,10 @@ class="header-section-number">5.8</span> 課題</h2>
 <ol type="1">
 <li><p>終対象が一意な同型を除いて一意であることを示せ。</p></li>
 <li><p>ポセットの中の2つの対象の積は何か？
-ヒント：普遍的構成を使う。</p></li>
+ヒント：積の普遍的構成を使う。</p></li>
 <li><p>ポセットの中の2つの対象の余積は何か？</p></li>
 <li><p>Haskellの<code>Either</code>に相当するものを、（Haskell以外の）好きな言語で総称型として実装せよ。</p></li>
-<li><p><code>Either</code>が、2つの単射を伴う<code>int</code>よりも「優れた」余積であることを示せ。</p>
+<li><p><code>Either</code>が、次の2つの単射を伴う<code>int</code>よりも「優れた」余積であることを示せ。</p>
 <div class="sourceCode" id="cb102"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i<span class="op">(</span><span class="dt">int</span> n<span class="op">)</span> <span class="op">{</span> <span class="cf">return</span> n<span class="op">;</span> <span class="op">}</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> j<span class="op">(</span><span class="dt">bool</span> b<span class="op">)</span> <span class="op">{</span> <span class="cf">return</span> b<span class="op">?</span> <span class="dv">0</span><span class="op">:</span> <span class="dv">1</span><span class="op">;</span> <span class="op">}</span></span></code></pre></div>
@@ -1783,8 +1783,8 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb102-1"><a href="
 <div class="sourceCode" id="cb103"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> m<span class="op">(</span>Either <span class="at">const</span> <span class="op">&amp;</span> e<span class="op">);</span></span></code></pre></div>
 <p>を、<code>i</code>と<code>j</code>を分解するように定義する。</p></li>
-<li><p>前の問題の続き。<code>i</code>と<code>j</code>という2つの単射を持つ<code>int</code>が、<code>Either</code>よりも「優れている」ことはないと主張するにはどうすればよいか？</p></li>
-<li><p>さらに続き：単射についてはどうか？</p>
+<li><p>前の問題の続き：<code>i</code>と<code>j</code>という2つの単射を伴う<code>int</code>が<code>Either</code>よりも「優れている」ことはありえないと主張するにはどうすればよいか？</p></li>
+<li><p>さらに続き：次の単射についてはどうか？</p>
 <div class="sourceCode" id="cb104"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i<span class="op">(</span><span class="dt">int</span> n<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>n <span class="op">&lt;</span> <span class="dv">0</span><span class="op">)</span> <span class="cf">return</span> n<span class="op">;</span></span>
@@ -1800,7 +1800,7 @@ class="header-section-number">5.9</span> 参考文献</h2>
 href="https://www.youtube.com/watch?v=upCSDIO9pjc">Products and
 Coproducts</a> video.</li>
 </ol>
-<h1 data-number="6" id="シンプルな代数的データ型"><span
+<h1 data-number="6" id="simple-algebraic-data-types"><span
 class="header-section-number">6</span> シンプルな代数的データ型</h1>
 <p>型を組み合わせる2つの基本的な方法として、積と余積を使う方法を見てきた。日常のプログラミングにおける多くのデータ構造は、この2つのメカニズムだけを使って構築できると分かった。この事実は重要で実用的な結果をもたらす。データ構造の特性の多くは合成可能だ。たとえば、基本型の値が等価かどうか比較する方法を知っていて、それらの比較を積と余積の型に一般化する方法を知っていれば、自動的に複合型の等値演算子を導出できる。Haskellでは、複合型の大きな部分集合に対して、等価性、比較、文字列への変換、文字列からの変換などを自動的に導出できる。</p>
 <p>次に、直積型 (product type) と直和型 (sum type)
@@ -1892,7 +1892,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb121-1"><
 <p>レコードのフィールド名は、それらのフィールドにアクセスするための関数としても機能することに注意してほしい。たとえば、<code>atomicNumber</code>は<code>e</code>から<code>atomicNumber</code>フィールドを取得する。つまり、<code>atomicNumber</code>は次のような型の関数として使われる：</p>
 <div class="sourceCode" id="cb122"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="ot">atomicNumber ::</span> <span class="dt">Element</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></span></code></pre></div>
-<p><g>Element</g>のレコード構文によって、関数<g>startsWithSymbol</g>はより読みやすくなる：</p>
+<p><code>Element</code>のレコード構文によって、関数<code>startsWithSymbol</code>はより読みやすくなる：</p>
 <div class="sourceCode" id="cb123"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="ot">startsWithSymbol ::</span> <span class="dt">Element</span> <span class="ot">-&gt;</span> <span class="dt">Bool</span></span>
 <span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>startsWithSymbol e <span class="ot">=</span> isPrefixOf (symbol e) (name e)</span></code></pre></div>
@@ -2379,7 +2379,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb181-1"><a href="
 <span id="cb181-8"><a href="#cb181-8" aria-hidden="true" tabindex="-1"></a>                  <span class="op">,</span> f<span class="op">);</span></span>
 <span id="cb181-9"><a href="#cb181-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> w<span class="op">;</span></span>
 <span id="cb181-10"><a href="#cb181-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>これを使えば、たとえば次のように数列の要素を自乗できる：</p>
+<p>これを使えば、たとえば次のように数列の要素を2乗できる：</p>
 <div class="sourceCode" id="cb182"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> v<span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span> <span class="op">};</span></span>
 <span id="cb182-2"><a href="#cb182-2" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> w <span class="op">=</span> fmap<span class="op">([](</span><span class="dt">int</span> i<span class="op">)</span> <span class="op">{</span> <span class="cf">return</span> i<span class="op">*</span>i<span class="op">;</span> <span class="op">},</span> v<span class="op">);</span></span>
@@ -2604,7 +2604,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb215-1"><
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb216-1"><a href="#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="ot">bimap ::</span>(fu a <span class="ot">-&gt;</span> fu a&#39;) <span class="ot">-&gt;</span> (gu b <span class="ot">-&gt;</span> gu b&#39;)</span>
 <span id="cb216-2"><a href="#cb216-2" aria-hidden="true" tabindex="-1"></a>  <span class="ot">-&gt;</span> bf (fu a) (gu b) <span class="ot">-&gt;</span> bf (fu a&#39;) (gu b&#39;)</span></code></pre></div>
 <p>ジグソーパズルが好きな人なら、この種の型操作で何時間も楽しめるだろう。</p>
-<p><code>Maybe</code>が関手だと証明する必要はなかったとわかった。この事実は、2つの関手的プリミティブの和という構築方法から導かれたものだ。</p>
+<p><code>Maybe</code>が関手だと証明する必要はなかったと分かった。この事実は、2つの関手的プリミティブの和という構築方法から導かれたものだ。</p>
 <p>鋭い読者ならこう尋ねるだろう：代数的データ型に対する<code>Functor</code>インスタンスをそれほど機械的に導出できるのなら、コンパイラーによって自動化して実行できないのか？
 実際、可能であり、行われている。ただし、ソースファイルの先頭に次の行を含めることで、特定のHaskell拡張を有効にする必要がある：</p>
 <div class="sourceCode" id="cb217"><pre
@@ -2615,7 +2615,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb218-1"><
 <span id="cb218-2"><a href="#cb218-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">deriving</span> <span class="dt">Functor</span></span></code></pre></div>
 <p>すると、対応する<code>fmap</code>が自動的に実装される。</p>
 <p>代数的データ構造の正則性 (regularity)
-により、<g>関手</g>だけでなく、前に述べた<g>Eq</g>型クラスを含む、いくつかの型クラスのインスタンスを派生させられる。コンパイラーに独自の型クラスのインスタンスを派生させるように教えるという選択肢もあるが、それはもう少し高度だ。もっとも、基本的な構成要素に対する動作と和と積とを提供し、残りの部分はコンパイラーに計算させるという考え方は変わらない。</p>
+により、<code>Functor</code>だけでなく、前に述べた<code>Eq</code>型クラスを含む、いくつかの型クラスのインスタンスを派生させられる。コンパイラーに独自の型クラスのインスタンスを派生させるように教えるという選択肢もあるが、それはもう少し高度だ。もっとも、基本的な構成要素に対する動作と和と積とを提供し、残りの部分はコンパイラーに計算させるという考え方は変わらない。</p>
 <h2 data-number="8.4" id="cでの関手-1"><span
 class="header-section-number">8.4</span> C++での関手</h2>
 <p>C++プログラマーなら、関手の実装に関しては、明らかに自分でやることになる。しかし、C++でもある種の代数的データ構造は見つかるはずだ。そのようなデータ構造を総称テンプレートにすれば、<code>fmap</code>を素早く実装できるだろう。</p>
@@ -2887,7 +2887,7 @@ aria-hidden="true">普遍的構成の出発点である対象と射のパター�
 </figure>
 <p>このパターンは、普遍的構成を使って関数型を特定するのに十分特化しているだろうか？
 すべての圏でそうだとは言えない。しかし、我々が関心を持っている圏ではそうだ。さらに別の疑問もある：積を先に定義することなく関数対象を定義できるだろうか？
-積が全く存在しない圏や、対象のすべてのペアに対しては存在しない圏もある。したがって、答えはノーだ。直積型がなければ関数型はない。これについては、後で冪乗について述べるときに再び説明する。</p>
+積が全く存在しない圏や、対象のすべてのペアに対しては存在しない圏もある。したがって、答えはノーだ。直積型がなければ関数型はない。これについては、後で冪について述べるときに再び説明する。</p>
 <p>普遍的構成をおさらいしよう。まず対象と射のパターンから始める。これは粗い検索であり、通常はヒットするものが多すぎる。特に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>では、ほとんどすべてのものがすべてに接続されている。任意の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>を選んで<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>との積を作れば、そこから<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>への関数を作れる（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>が空集合の場合を除く）。</p>
 <p>その時に秘密兵器を使う。順位付けだ。これは通常、候補となる対象の間に一意な写像（構成を分解する写像）が存在することを条件として行われる。ここでは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>×</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">z \times a</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>への射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>を伴う<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>は、それ自身の関数適用<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">g&#39;</annotation></semantics></math>を伴う別の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">z&#39;</annotation></semantics></math>よりも<em>優れて</em>いるとして選別するが、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">g&#39;</annotation></semantics></math>の適用が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>の適用を通じて分解するような、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">z&#39;</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>への一意な写像<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>が存在する場合に限る（ヒント：この文は図を見ながら読むこと）。</p>
 <figure>
@@ -2992,20 +2992,20 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb256-1"><a href="
 <div class="sourceCode" id="cb257"><pre
 class="sourceCode scala"><code class="sourceCode scala"><span id="cb257-1"><a href="#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="fu">catstr</span><span class="op">(</span>s1<span class="op">:</span> <span class="ex">String</span><span class="op">)(</span>s2<span class="op">:</span> <span class="ex">String</span><span class="op">)</span> <span class="op">=</span> s1 <span class="op">+</span> s2</span></code></pre></div>
 <p>当然、これにはある程度の先見の明や予測がライブラリの作者に求められる。</p>
-<h2 data-number="9.3" id="冪乗"><span
-class="header-section-number">9.3</span> 冪乗</h2>
+<h2 data-number="9.3" id="冪"><span
+class="header-section-number">9.3</span> 冪</h2>
 <p>数学の文献では、関数対象、すなわち2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>の間の内部hom対象を<span
-id="exponential" class="keyword">冪乗</span> (exponential)
+id="exponential" class="keyword">冪</span> (exponential)
 と呼んで<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>b</mi><mi>a</mi></msup><annotation encoding="application/x-tex">b^{a}</annotation></semantics></math>と記すことが多い。引数の型が指数に含まれていることに注目してほしい。この記法は一見奇妙に思えるかもしれないが、関数と積の関係を考えると完全に理にかなっている。内部hom対象の普遍的構成で積を使わなければならないことはすでに見たが、つながりはそれよりも深い。</p>
 <p>これは、<code>Bool</code>、<code>Char</code>、あるいは<code>Int</code>や<code>Double</code>など、有限個の値を持つ型の間の関数を考えるときに最もよく見られる。そのような関数は、少なくとも原理的には、完全にメモ化したり、データ構造に変換してルックアップしたりできる。そしてこれが、射である関数と、対象である関数型との同値性の本質だ。</p>
 <p>たとえば、<code>Bool</code>を取る（純粋）関数は、<code>False</code>に対応する値と<code>True</code>に対応する値のペアによって完全に決まる。<code>Bool</code>から<code>Int</code>へのすべての可能な関数の集合は、<code>Int</code>のすべての組み合わせの集合だ。これは積<code>Int</code>
 ×
 <code>Int</code>と同じで、記法を少し創意工夫するなら<code>Int</code><sup>2</sup>とも書ける。</p>
-<p>別の例として、256種類の値を含むC++の型<code>char</code>を見てみよう（Haskellの<code>Char</code>はユニコードを使っているのでもっと多い）。C++標準ライブラリの一部には、実装に通常はルックアップが使われる関数がいくつかある。<code>isupper</code>や<code>isspace</code>のような関数はテーブルを使って実装される。テーブルは256個のブール値のタプルと等価だ。タプルは直積型であるため、256個のブーリアンの積<code>bool × bool × bool × ... × bool</code>を扱っていることになる。積を繰り返したものが冪乗なのは知ってのとおりだ。<code>bool</code>を256（または<code>char</code>）回「掛ける」と、<code>bool</code>の<code>char</code>乗、つまり
+<p>別の例として、256種類の値を含むC++の型<code>char</code>を見てみよう（Haskellの<code>Char</code>はユニコードを使っているのでもっと多い）。C++標準ライブラリの一部には、実装に通常はルックアップが使われる関数がいくつかある。<code>isupper</code>や<code>isspace</code>のような関数はテーブルを使って実装される。テーブルは256個のブール値のタプルと等価だ。タプルは直積型であるため、256個のブーリアンの積<code>bool × bool × bool × ... × bool</code>を扱っていることになる。積を繰り返したものが冪なのは知ってのとおりだ。<code>bool</code>を256（または<code>char</code>）回「掛ける」と、<code>bool</code>の<code>char</code>乗、つまり
 <code>bool</code><sup>char</sup>になる。</p>
 <p><code>bool</code>の256要素のタプルとして定義される型は何通りの値を取りうるだろう？
-ちょうど<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mn>256</mn></msup><annotation encoding="application/x-tex">2^{256}</annotation></semantics></math>通りだ。これはまた、<code>char</code>から<code>bool</code>への関数の種類の数でもあり、各関数は一意な256要素のタプルに対応する。同様に、<code>bool</code>から<code>char</code>への関数の数は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>256</mn><mn>2</mn></msup><annotation encoding="application/x-tex">256^{2}</annotation></semantics></math>と計算できる。以下同様だ。このような場合には、関数型の冪乗記法が完全に理にかなっている。</p>
-<p><code>int</code>や<code>double</code>を取る関数を完全にメモ化したいとは思わないだろう。しかし、関数とデータ型の間には、常に実用的だとは限らないにしても、同値性がある。型はリスト・文字列・木など無数に存在する。これらの型を取る関数をせっせとメモ化したら、無限のストレージが必要になるだろう。しかし、Haskellは遅延評価言語であるため、遅延評価された（無限の）データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪乗対象との区別を説明している。冪乗対象の方が<em>データ</em>という概念によく対応している。</p>
+ちょうど<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mn>256</mn></msup><annotation encoding="application/x-tex">2^{256}</annotation></semantics></math>通りだ。これはまた、<code>char</code>から<code>bool</code>への関数の種類の数でもあり、各関数は一意な256要素のタプルに対応する。同様に、<code>bool</code>から<code>char</code>への関数の数は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>256</mn><mn>2</mn></msup><annotation encoding="application/x-tex">256^{2}</annotation></semantics></math>と計算できる。以下同様だ。このような場合には、関数型の冪記法が完全に理にかなっている。</p>
+<p><code>int</code>や<code>double</code>を取る関数を完全にメモ化したいとは思わないだろう。しかし、関数とデータ型の間には、常に実用的だとは限らないにしても、同値性がある。型はリスト・文字列・木など無数に存在する。これらの型を取る関数をせっせとメモ化したら、無限のストレージが必要になるだろう。しかし、Haskellは遅延評価言語であるため、遅延評価された（無限の）データ構造と関数の境界は曖昧だ。この関数とデータの双対性は、Haskellの関数型と圏論の冪対象との区別を説明している。冪対象の方が<em>データ</em>という概念によく対応している。</p>
 <h2 data-number="9.4" id="カルテシアン閉圏"><span
 class="header-section-number">9.4</span> カルテシアン閉圏</h2>
 <p>型や関数のモデルとしては集合の圏を今後も使うが、圏にはより大きな族があって、同じ目的のモデルとして使えることは言及する価値がある。それらは<span
@@ -3016,9 +3016,9 @@ closed)
 <ol type="1">
 <li>終対象</li>
 <li>任意の対象のペアの直積</li>
-<li>対象の任意のペアの冪乗</li>
+<li>対象の任意のペアの冪</li>
 </ol>
-<p>冪乗を（無限に繰り返される可能性がある）積の反復と見なすなら、カルテシアン閉圏は任意のアリティ<a
+<p>冪を（無限に繰り返される可能性がある）積の反復と見なすなら、カルテシアン閉圏は任意のアリティ<a
 href="#fn7" class="footnote-ref" id="fnref7"
 role="doc-noteref"><sup>7</sup></a>の積をサポートするものと見なせる。特に、終対象は0個の対象の積、すなわち対象の0乗と見なせる。</p>
 <p>コンピューター科学の観点から興味深いのは、カルテシアン閉圏が単純型付きラムダ計算（simply
@@ -3042,20 +3042,20 @@ role="doc-footnote">
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
-<h2 data-number="9.5" id="冪乗と代数的データ型"><span
-class="header-section-number">9.5</span> 冪乗と代数的データ型</h2>
-<p>関数型を冪乗として解釈すると、代数的データ型の体系に非常にうまく適合する。高校で習う代数における数0と1や和・積・冪乗に関する基本的な恒等式はどれも、双カルテシアン閉圏においてそれぞれ始対象と終対象や余積・積・冪乗を考えれば、ほとんどそのまま使えることが分かる。それらについて、証明する手段（随伴や米田の補題など）はまだ得ていないが、価値ある直観の源としてここに挙げておこう。</p>
+<h2 data-number="9.5" id="冪と代数的データ型"><span
+class="header-section-number">9.5</span> 冪と代数的データ型</h2>
+<p>関数型を冪として解釈すると、代数的データ型の体系に非常にうまく適合する。高校で習う代数における数0と1や和・積・冪に関する基本的な恒等式はどれも、双カルテシアン閉圏においてそれぞれ始対象と終対象や余積・積・冪を考えれば、ほとんどそのまま使えることが分かる。それらについて、証明する手段（随伴や米田の補題など）はまだ得ていないが、価値ある直観の源としてここに挙げておこう。</p>
 <h3 data-number="9.5.1" id="乗"><span
 class="header-section-number">9.5.1</span> 0乗</h3>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mn>0</mn></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a^{0} = 1</annotation></semantics></math></p>
-<p>圏論の解釈では、0を始対象に、1を終対象に、等価性を同型に置き換える。冪乗は内部hom対象だ。ここに示した冪乗は、始対象から任意の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>への射の集合を表している。始対象の定義によれば、そのような射は1つだけ存在するので、hom集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(0, a)</annotation></semantics></math>
+<p>圏論の解釈では、0を始対象に、1を終対象に、等価性を同型に置き換える。冪は内部hom対象だ。ここに示した冪は、始対象から任意の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>への射の集合を表している。始対象の定義によれば、そのような射は1つだけ存在するので、hom集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(0, a)</annotation></semantics></math>
 は単集合となる。単集合は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の終対象なので、この恒等式は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内で自明に成り立つ。つまり、どんな双カルテシアン閉圏でも成り立つということだ。</p>
-<p>Haskellでは、0を<code>Void</code>で、1をunit型<code>()</code>で、冪乗を関数型でそれぞれ置き換える。これは、<code>Void</code>から任意の型<code>a</code>への関数の集合と、単集合であるunit型が等価だと主張している。言い換えると、関数<code>Void -&gt; a</code>は1つしかない。この関数は以前にも見たことがある：<code>absurd</code>と呼ばれる関数だ。</p>
+<p>Haskellでは、0を<code>Void</code>で、1をunit型<code>()</code>で、冪を関数型でそれぞれ置き換える。これは、<code>Void</code>から任意の型<code>a</code>への関数の集合と、単集合であるunit型が等価だと主張している。言い換えると、関数<code>Void -&gt; a</code>は1つしかない。この関数は以前にも見たことがある：<code>absurd</code>と呼ばれる関数だ。</p>
 <p>2つの理由から、これは少しトリッキーだ。1つは、Haskellは実際には無人型
 (uninhabited type)
 を持たないことだ――すべての型には「終わりのない計算の結果」、つまりボトムが含まれている。第2の理由は、<code>absurd</code>のすべての実装は等価であるということだ。なぜなら、それらが何をしようと、誰も実行できないからだ。<code>absurd</code>に渡せる値はない。（そして、終わりのない計算を渡せたとしても、決して値は返らない！）</p>
-<h3 data-number="9.5.2" id="の冪乗"><span
-class="header-section-number">9.5.2</span> 1の冪乗</h3>
+<h3 data-number="9.5.2" id="の冪"><span
+class="header-section-number">9.5.2</span> 1の冪</h3>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>1</mn><mi>a</mi></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1^{a} = 1</annotation></semantics></math></p>
 <p>この恒等式を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>で解釈すると、終対象の定義を「どの対象にも終対象への一意な射がある」と言い換えている。一般に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>から終対象への内部hom対象は、終対象そのものと同型だ。</p>
 <p>Haskellでは、型<code>a</code>からunit型への関数は1つしかない。この関数は以前にも見たことがある。<code>unit</code>と呼ばれる関数だ。<code>()</code>に部分適用された<code>const</code>関数とも見なせる。</p>
@@ -3074,10 +3074,10 @@ id="fn8"><p>訳註：終対象の定義では終対象へ向かう射につい�
 href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
-<h3 data-number="9.5.4" id="和による冪乗"><span
-class="header-section-number">9.5.4</span> 和による冪乗</h3>
+<h3 data-number="9.5.4" id="和による冪"><span
+class="header-section-number">9.5.4</span> 和による冪</h3>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mrow><mi>b</mi><mo>+</mo><mi>c</mi></mrow></msup><mo>=</mo><msup><mi>a</mi><mi>b</mi></msup><mo>×</mo><msup><mi>a</mi><mi>c</mi></msup></mrow><annotation encoding="application/x-tex">a^{b+c} = a^{b} \times a^{c}</annotation></semantics></math></p>
-<p>これは、圏論では2つの対象の余積による冪乗が2つの冪乗の積と同型だと明示している。Haskellでは、この代数的恒等射に非常に実用的な解釈がある。これは、2つの型の直和型を取る関数が、個別の型を取る関数のペアと等価だと示している。直和型を取る関数を定義するときに使うケース分析そのものだ。<code>case</code>式で1つの関数定義を記述する代わりに、通常はそれを2つ（またはそれ以上）の関数に分割して、それぞれの型コンストラクターを別々に処理する。たとえば、直和型
+<p>これは、圏論では2つの対象の余積による冪が2つの冪の積と同型だと明示している。Haskellでは、この代数的恒等射に非常に実用的な解釈がある。これは、2つの型の直和型を取る関数が、個別の型を取る関数のペアと等価だと示している。直和型を取る関数を定義するときに使うケース分析そのものだ。<code>case</code>式で1つの関数定義を記述する代わりに、通常はそれを2つ（またはそれ以上）の関数に分割して、それぞれの型コンストラクターを別々に処理する。たとえば、直和型
 <code>(Either Int Double)</code> を取る関数を考えよう：</p>
 <div class="sourceCode" id="cb258"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb258-1"><a href="#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="ot">f ::</span> <span class="dt">Either</span> <span class="dt">Int</span> <span class="dt">Double</span> <span class="ot">-&gt;</span> <span class="dt">String</span></span></code></pre></div>
@@ -3086,12 +3086,12 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb258-1"><
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb259-1"><a href="#cb259-1" aria-hidden="true" tabindex="-1"></a>f (<span class="dt">Left</span> n)  <span class="ot">=</span> <span class="kw">if</span> n <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">then</span> <span class="st">&quot;Negative int&quot;</span> <span class="kw">else</span> <span class="st">&quot;Positive int&quot;</span></span>
 <span id="cb259-2"><a href="#cb259-2" aria-hidden="true" tabindex="-1"></a>f (<span class="dt">Right</span> x) <span class="ot">=</span> <span class="kw">if</span> x <span class="op">&lt;</span> <span class="fl">0.0</span> <span class="kw">then</span> <span class="st">&quot;Negative double&quot;</span> <span class="kw">else</span> <span class="st">&quot;Positive double&quot;</span></span></code></pre></div>
 <p>ここで、<code>n</code>は<code>Int</code>で、<code>x</code>は<code>Double</code>だ。</p>
-<h3 data-number="9.5.5" id="冪乗の冪乗"><span
-class="header-section-number">9.5.5</span> 冪乗の冪乗</h3>
+<h3 data-number="9.5.5" id="冪の冪"><span
+class="header-section-number">9.5.5</span> 冪の冪</h3>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>a</mi><mi>b</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>c</mi></msup><mo>=</mo><msup><mi>a</mi><mrow><mi>b</mi><mo>×</mo><mi>c</mi></mrow></msup></mrow><annotation encoding="application/x-tex">(a^{b})^{c} = a^{b \times c}</annotation></semantics></math></p>
-<p>これは単にカリー化を純粋に冪乗対象の観点で表現したものだ。関数を返す関数は、積を引数に取る関数（2引数の関数）と等価だ。</p>
-<h3 data-number="9.5.6" id="積の冪乗"><span
-class="header-section-number">9.5.6</span> 積の冪乗</h3>
+<p>これは単にカリー化を純粋に冪対象の観点で表現したものだ。関数を返す関数は、積を引数に取る関数（2引数の関数）と等価だ。</p>
+<h3 data-number="9.5.6" id="積の冪"><span
+class="header-section-number">9.5.6</span> 積の冪</h3>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>×</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>c</mi></msup><mo>=</mo><msup><mi>a</mi><mi>c</mi></msup><mo>×</mo><msup><mi>b</mi><mi>c</mi></msup></mrow><annotation encoding="application/x-tex">(a \times b)^{c} = a^{c} \times b^{c}</annotation></semantics></math></p>
 <p>Haskellでは、ペアを返す関数は、それぞれがペアの1つの要素を生成する関数のペアと等価だ。</p>
 <p>これらの高校数学の単純な代数的恒等式が、このように圏論で採用され、関数プログラミングで実際に応用されているのは、実に驚くべきことだ。</p>
@@ -3110,7 +3110,7 @@ class="header-section-number">9.6</span> カリー・ハワード同型</h2>
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb260-1"><a href="#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="ot">eval ::</span> ((a <span class="ot">-&gt;</span> b), a) <span class="ot">-&gt;</span> b</span></code></pre></div>
 <p>これは関数とその引数のペアを取り、適切な型の結果を生成する。つまり、次の射をHaskellで実装したものだ：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝑒</mi><mi>𝑣</mi><mi>𝑎</mi><mi>𝑙</mi></mrow><mo>∷</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>⇒</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mi>a</mi><mo>→</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\mathit{eval} \Colon (a \Rightarrow b) \times a \to b</annotation></semantics></math></p>
-<p>この射は関数型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>⇒</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \Rightarrow b</annotation></semantics></math>（すなわち冪乗対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>b</mi><mi>a</mi></msup><annotation encoding="application/x-tex">b^{a}</annotation></semantics></math>）を定義する。このシグネチャーを、カリー・ハワード同型を使って論理の述語に変換しよう。</p>
+<p>この射は関数型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>⇒</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \Rightarrow b</annotation></semantics></math>（すなわち冪対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>b</mi><mi>a</mi></msup><annotation encoding="application/x-tex">b^{a}</annotation></semantics></math>）を定義する。このシグネチャーを、カリー・ハワード同型を使って論理の述語に変換しよう。</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>⇒</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⇒</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">((a \Rightarrow b) \wedge a) \Rightarrow b</annotation></semantics></math></p>
 <p>この命題の読み方はこうだ：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>ならば<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>が真であり、かつ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>が真ならば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>は必ず真である。これは完全に直観に適っていて、古代から<span
 id="modus_ponen" class="keyword">modus
@@ -3361,11 +3361,11 @@ class="header-section-number">10.3</span> 関手圏</h2>
 (vertical composition)
 と呼ばれている。通常は関数を上下に積んだ図式で説明されるからだ。垂直合成は関手圏を定義するうえで重要だ。水平合成についてもすぐに説明する。</p>
 <p><img src="images/6a_vertical.jpg" style="width:30.0%" /></p>
-<p>圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐃</mi><annotation encoding="application/x-tex">\mathbf{D}</annotation></semantics></math>の間の関手圏は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐅</mi><mi>𝐮</mi><mi>𝐧</mi><mrow><mo stretchy="true" form="prefix" mathvariant="bold">(</mo><mi>𝐂</mi><mo mathvariant="bold">,</mo><mi>𝐃</mi><mo stretchy="true" form="postfix" mathvariant="bold">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{Fun(C, D)}</annotation></semantics></math>または<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix" mathvariant="bold">[</mo><mi>𝐂</mi><mo mathvariant="bold">,</mo><mi>𝐃</mi><mo stretchy="true" form="postfix" mathvariant="bold">]</mo></mrow><annotation encoding="application/x-tex">\mathbf{[C, D]}</annotation></semantics></math>、場合によっては<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>𝐃</mi><mi>𝐂</mi></msup><annotation encoding="application/x-tex">\mathbf{D^C}</annotation></semantics></math>と書かれる。この最後の表記法は、関手圏自体が他の圏では関数対象（冪乗）と見なせることを示唆している。だが、本当にそうだろうか？</p>
+<p>圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐃</mi><annotation encoding="application/x-tex">\mathbf{D}</annotation></semantics></math>の間の関手圏は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐅</mi><mi>𝐮</mi><mi>𝐧</mi><mrow><mo stretchy="true" form="prefix" mathvariant="bold">(</mo><mi>𝐂</mi><mo mathvariant="bold">,</mo><mi>𝐃</mi><mo stretchy="true" form="postfix" mathvariant="bold">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{Fun(C, D)}</annotation></semantics></math>または<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix" mathvariant="bold">[</mo><mi>𝐂</mi><mo mathvariant="bold">,</mo><mi>𝐃</mi><mo stretchy="true" form="postfix" mathvariant="bold">]</mo></mrow><annotation encoding="application/x-tex">\mathbf{[C, D]}</annotation></semantics></math>、場合によっては<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>𝐃</mi><mi>𝐂</mi></msup><annotation encoding="application/x-tex">\mathbf{D^C}</annotation></semantics></math>と書かれる。この最後の表記法は、関手圏自体が他の圏では関数対象（冪）と見なせることを示唆している。だが、本当にそうだろうか？</p>
 <p>これまでに構築してきた抽象化の階層を見てみよう。最初は対象と射の集まりとしての圏から始めた。圏自体（厳密に言えば、対象が集合を形成する<em>小さい</em>圏）は、それ自体がより高いレベルの圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>における対象だ。その圏における射は関手だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>におけるhom集合は関手の集合だ。たとえば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi><mrow><mo stretchy="true" form="prefix" mathvariant="bold">(</mo><mi>𝐂</mi><mo mathvariant="bold">,</mo><mi>𝐃</mi><mo stretchy="true" form="postfix" mathvariant="bold">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{Cat(C, D)}</annotation></semantics></math>は、2つの圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐃</mi><annotation encoding="application/x-tex">\mathbf{D}</annotation></semantics></math>の間の関手の集合だ。</p>
 <p><img src="images/7_cathomset.jpg" style="width:30.0%" /></p>
-<p>関手圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix" mathvariant="bold">[</mo><mi>𝐂</mi><mo mathvariant="bold">,</mo><mi>𝐃</mi><mo stretchy="true" form="postfix" mathvariant="bold">]</mo></mrow><annotation encoding="application/x-tex">\mathbf{[C, D]}</annotation></semantics></math>も、2つの圏の間の関手の集合だ（それと、射としての自然変換も加わる）。その対象は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi><mrow><mo stretchy="true" form="prefix" mathvariant="bold">(</mo><mi>𝐂</mi><mo mathvariant="bold">,</mo><mi>𝐃</mi><mo stretchy="true" form="postfix" mathvariant="bold">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{Cat(C, D)}</annotation></semantics></math>のメンバーと同じだ。さらに、関手圏は圏なので、それ自体が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>の対象でなければならない（2つの小さい圏の間の関手圏も、それ自体が小さい圏だ）。ある圏のhom集合と、同じ圏の対象の間の関係は知っている。この状況は、前の章で見た冪乗対象と全く同じだ。後者を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>で構築する方法を見てみよう。</p>
-<p>覚えていると思うが、冪乗を構成するには、まず積を定義する必要がある。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>では、これは比較的簡単だと分かる。なぜなら、小さい圏は対象の<em>集合</em>であり、集合のカルテシアン積を定義する方法は知っているからだ。したがって、直積圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mo mathvariant="bold">×</mo><mi>𝐃</mi></mrow><annotation encoding="application/x-tex">\mathbf{C \times D}</annotation></semantics></math>内の対象は単なる対象のペア
+<p>関手圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix" mathvariant="bold">[</mo><mi>𝐂</mi><mo mathvariant="bold">,</mo><mi>𝐃</mi><mo stretchy="true" form="postfix" mathvariant="bold">]</mo></mrow><annotation encoding="application/x-tex">\mathbf{[C, D]}</annotation></semantics></math>も、2つの圏の間の関手の集合だ（それと、射としての自然変換も加わる）。その対象は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi><mrow><mo stretchy="true" form="prefix" mathvariant="bold">(</mo><mi>𝐂</mi><mo mathvariant="bold">,</mo><mi>𝐃</mi><mo stretchy="true" form="postfix" mathvariant="bold">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{Cat(C, D)}</annotation></semantics></math>のメンバーと同じだ。さらに、関手圏は圏なので、それ自体が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>の対象でなければならない（2つの小さい圏の間の関手圏も、それ自体が小さい圏だ）。ある圏のhom集合と、同じ圏の対象の間の関係は知っている。この状況は、前の章で見た冪対象と全く同じだ。後者を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>で構築する方法を見てみよう。</p>
+<p>覚えていると思うが、冪を構成するには、まず積を定義する必要がある。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>では、これは比較的簡単だと分かる。なぜなら、小さい圏は対象の<em>集合</em>であり、集合のカルテシアン積を定義する方法は知っているからだ。したがって、直積圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mo mathvariant="bold">×</mo><mi>𝐃</mi></mrow><annotation encoding="application/x-tex">\mathbf{C \times D}</annotation></semantics></math>内の対象は単なる対象のペア
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(c, d)</annotation></semantics></math>
 であり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐃</mi><annotation encoding="application/x-tex">\mathbf{D}</annotation></semantics></math>からそれぞれ1つ取ったものだ。同様に、そのような2つのペア
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(c, d)</annotation></semantics></math>
@@ -3373,7 +3373,7 @@ class="header-section-number">10.3</span> 関手圏</h2>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>′</mi><mo>,</mo><mi>d</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(c&#39;, d&#39;)</annotation></semantics></math>
 の間の射は、射のペア
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(f, g)</annotation></semantics></math>
-であり、ここで<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∷</mo><mi>c</mi><mo>→</mo><mi>c</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">f \Colon c \to c&#39;</annotation></semantics></math>および<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>∷</mo><mi>d</mi><mo>→</mo><mi>d</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">g \Colon d \to d&#39;</annotation></semantics></math>だ。これらの射のペアは成分ごとに合成でき、恒等ペアとしての単なる恒等射のペアも常に存在する。手短に言うと、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>は完全なカルテシアン閉圏であり、そこにはあらゆる圏のペアに対する冪乗対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>𝐃</mi><mi>𝐂</mi></msup><annotation encoding="application/x-tex">\mathbf{D^C}</annotation></semantics></math>が存在する。そして、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>の「対象」は圏を意味するので、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>𝐃</mi><mi>𝐂</mi></msup><annotation encoding="application/x-tex">\mathbf{D^C}</annotation></semantics></math>は圏であり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐃</mi><annotation encoding="application/x-tex">\mathbf{D}</annotation></semantics></math>の間の関手圏と同一視できる。</p>
+であり、ここで<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∷</mo><mi>c</mi><mo>→</mo><mi>c</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">f \Colon c \to c&#39;</annotation></semantics></math>および<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>∷</mo><mi>d</mi><mo>→</mo><mi>d</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">g \Colon d \to d&#39;</annotation></semantics></math>だ。これらの射のペアは成分ごとに合成でき、恒等ペアとしての単なる恒等射のペアも常に存在する。手短に言うと、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>は完全なカルテシアン閉圏であり、そこにはあらゆる圏のペアに対する冪対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>𝐃</mi><mi>𝐂</mi></msup><annotation encoding="application/x-tex">\mathbf{D^C}</annotation></semantics></math>が存在する。そして、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>の「対象」は圏を意味するので、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>𝐃</mi><mi>𝐂</mi></msup><annotation encoding="application/x-tex">\mathbf{D^C}</annotation></semantics></math>は圏であり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐃</mi><annotation encoding="application/x-tex">\mathbf{D}</annotation></semantics></math>の間の関手圏と同一視できる。</p>
 <h2 data-number="10.4" id="圏"><span
 class="header-section-number">10.4</span> 2-圏</h2>
 <p>もう不安はないので、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>を詳しく見てみよう。定義より、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>内のすべてのHom集合は関手の集合だ。しかし、これまで見てきたように、2対象間の関手は単なる集合よりも豊かな構造を持っている。それらは圏を形成し、自然変換は射として作用する。関手は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>では射と見なされるので、自然変換は射の間の射だ。</p>
@@ -3751,7 +3751,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb313-1"><
 <span id="cb313-2"><a href="#cb313-2" aria-hidden="true" tabindex="-1"></a><span class="ot">q ::</span> d <span class="ot">-&gt;</span> c</span>
 <span id="cb313-3"><a href="#cb313-3" aria-hidden="true" tabindex="-1"></a><span class="ot">r ::</span> d <span class="ot">-&gt;</span> b</span></code></pre></div>
 <p><img src="images/pullbackcone.jpg" style="width:35.0%" /></p>
-<p>可換性条件から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>は他の射によって完全に決定されることがわかり、図から省略できる。したがって、次の条件のみが残る：</p>
+<p>可換性条件から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>は他の射によって完全に決定されることが分かり、図から省略できる。したがって、次の条件のみが残る：</p>
 <div class="sourceCode" id="cb314"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb314-1"><a href="#cb314-1" aria-hidden="true" tabindex="-1"></a>g <span class="op">.</span> q <span class="ot">=</span> f <span class="op">.</span> p</span></code></pre></div>
 <p>引き戻しは、この形の普遍錐だ。</p>
@@ -4118,7 +4118,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb351-1"><
 の2番目の引数を固定する。あるいは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>𝐂</mi><mrow><mi>𝑜</mi><mi>𝑝</mi></mrow></msup><annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>への関手を考えるのでも等価だ。なぜなら、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>𝐂</mi><mrow><mi>𝑜</mi><mi>𝑝</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>−</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}^\mathit{op}(a, -)</annotation></semantics></math>
 は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(-, a)</annotation></semantics></math>
 と同じだからだ。</p>
-<p>表現可能性には興味深い捻じれがある。カルテシアン閉圏では、hom集合を内部的には冪乗対象として扱えることに注意してほしい。hom集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a,x)</annotation></semantics></math>
+<p>表現可能性には興味深い捻じれがある。カルテシアン閉圏では、hom集合を内部的には冪対象として扱えることに注意してほしい。hom集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a,x)</annotation></semantics></math>
 は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mi>a</mi></msup><annotation encoding="application/x-tex">x^a</annotation></semantics></math>と等価で、表現可能関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>に対しては次のように書ける：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mo>−</mo><mi>a</mi></msup><mo>=</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">-^a = F</annotation></semantics></math></p>
 <p>試しに、両辺の対数をとってみよう：</p>
@@ -4131,7 +4131,7 @@ class="header-section-number">14.3</span> 課題</h2>
 <li><p>Hom関手が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>内の恒等射を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の対応する恒等関数に写すことを示せ。</p></li>
 <li><p><code>Maybe</code>が表現可能でないことを示せ。</p></li>
 <li><p><code>Reader</code>関手は表現可能か？</p></li>
-<li><p><code>Stream</code>表現を使って、引数を自乗する関数をメモ化せよ。</p></li>
+<li><p><code>Stream</code>表現を使って、引数を2乗する関数をメモ化せよ。</p></li>
 <li><p><code>Stream</code>に対する<code>tabulate</code>と<code>index</code>が実際に互いに逆であることを示せ。（ヒント：数学的帰納法を使う。）</p></li>
 <li><p>次の関手：</p>
 <div class="sourceCode" id="cb352"><pre
@@ -4147,7 +4147,7 @@ href="https://www.youtube.com/watch?v=4QgjKUzyrhM">表現可能関手</a>につ�
 </ol>
 <h1 data-number="15" id="the-yoneda-lemma"><span
 class="header-section-number">15</span> 米田の補題</h1>
-<p>圏論における構造のほとんどは、より具体的な他の数学の分野での結果を一般化したものだ。積・余積・モノイド・冪乗などは、圏論よりずっと前から知られていた。それらは別の数学の分野では別の名前で知られていたかもしれない。集合論におけるカルテシアン積、順序集合論における交わり
+<p>圏論における構造のほとんどは、より具体的な他の数学の分野での結果を一般化したものだ。積・余積・モノイド・冪などは、圏論よりずっと前から知られていた。それらは別の数学の分野では別の名前で知られていたかもしれない。集合論におけるカルテシアン積、順序集合論における交わり
 (meet)、論理学における論理積――これらはすべて圏論的な積という抽象概念に対応する具体例だ。</p>
 <p>米田の補題は、この観点からは圏一般に関する包括的な命題として際立っており、数学の他の分野では全くと言ってよいほど前例がない。一番似ているのは群論におけるCayleyの定理（すべての群はある集合の置換群と同型）だという説もある。</p>
 <p>米田の補題は、任意の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>と、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>への関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>を前提とする。すでに前章で述べたように、集合値関手のいくつかは表現可能であり、hom関手と同型だ。米田の補題は、すべての集合値関手がhom関手から自然変換によって得られることを示し、そのようなすべての変換を明示的に列挙する。</p>
@@ -4450,7 +4450,7 @@ class="keyword">リフトされた</span>射の合成に写したい場合、そ
 <h2 data-number="17.2" id="可換図式"><span
 class="header-section-number">17.2</span> 可換図式</h2>
 <p>射の多くの性質は可換図式によって表される。もし特定の射が他の射の合成として複数の方法で記述できるなら、可換図式があることになる。</p>
-<p>特に、可換図式はほぼすべての普遍的構成の基礎となっている（始対象と終対象という例外を除く）。このことはすでに、積、余積、その他さまざまな（余）極限、冪乗対象、自由モノイドなどの定義で見てきた。</p>
+<p>特に、可換図式はほぼすべての普遍的構成の基礎となっている（始対象と終対象という例外を除く）。このことはすでに、積、余積、その他さまざまな（余）極限、冪対象、自由モノイドなどの定義で見てきた。</p>
 <p>積は普遍的構成の簡単な例だ。ある2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>について、その積となる普遍性を持つような、射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>のペアを伴う対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>の存在を確認する。</p>
 <p><img src="images/productranking.jpg" style="width:30.0%" /></p>
 <p>積は極限の特別な場合でもある。極限は錐によって定義される。一般的な錐は可換図式から作成される。それらの図式の可換性は、関手の写像のための適切な自然性条件で置き換えてよい。このようにして、可換性は自然変換という高水準言語に対するアセンブリ言語の役割に降格される。</p>
@@ -4498,7 +4498,7 @@ class="keyword">自然</span>同型はその条件にぴったり合う。</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo>,</mo><mrow><mi>𝐋</mi><mi>𝐢</mi><mi>𝐦</mi></mrow><mrow></mrow><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≃</mo><mrow><mi>𝐍</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Δ</mi><mi>c</mi></msub><mo>,</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(c, %
 \mathbf{Lim}{}%
 {D}) \simeq \mathbf{Nat}(\Delta_c, D)</annotation></semantics></math></p>
-<p>冪乗対象や自由モノイドの構成も、hom集合間の自然同型として書き直せることが分かる。</p>
+<p>冪対象や自由モノイドの構成も、hom集合間の自然同型として書き直せることが分かる。</p>
 <p>これは偶然の一致ではない――次に見るように、これらはhom集合の自然同型として定義される随伴の様々な例にすぎない。</p>
 <h2 data-number="17.7" id="hom集合の非対称性"><span
 class="header-section-number">17.7</span> Hom集合の非対称性</h2>
@@ -4765,9 +4765,9 @@ class="keyword">右随伴</span>として大域的に定義できる：</p>
 <p>ここで、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>×</mo><mrow></mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">a\times{}b</annotation></semantics></math>は、ペア<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\langle a, b \rangle</annotation></semantics></math>に対する右随伴関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝑃</mi><mi>𝑟</mi><mi>𝑜</mi><mi>𝑑</mi><mi>𝑢</mi><mi>𝑐</mi><mi>𝑡</mi></mrow><annotation encoding="application/x-tex">\mathit{Product}</annotation></semantics></math>の作用の結果だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mo>×</mo><mrow></mrow><mi>𝐂</mi></mrow><annotation encoding="application/x-tex">\mathbf{C}\times{}\mathbf{C}</annotation></semantics></math>からの関手はすべて双関手であるため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝑃</mi><mi>𝑟</mi><mi>𝑜</mi><mi>𝑑</mi><mi>𝑢</mi><mi>𝑐</mi><mi>𝑡</mi></mrow><annotation encoding="application/x-tex">\mathit{Product}</annotation></semantics></math>は双関手であることに注意してほしい。Haskellでは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝑃</mi><mi>𝑟</mi><mi>𝑜</mi><mi>𝑑</mi><mi>𝑢</mi><mi>𝑐</mi><mi>𝑡</mi></mrow><annotation encoding="application/x-tex">\mathit{Product}</annotation></semantics></math>双関手は単に<code>(,)</code>と書かれる。次の例のように、2つの型にこれを適用すれば直積型を得られる：</p>
 <div class="sourceCode" id="cb378"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb378-1"><a href="#cb378-1" aria-hidden="true" tabindex="-1"></a>(,) <span class="dt">Int</span> <span class="dt">Bool</span> <span class="op">~</span> (<span class="dt">Int</span>, <span class="dt">Bool</span>)</span></code></pre></div>
-<h2 data-number="18.4" id="随伴に基づく冪乗"><span
-class="header-section-number">18.4</span> 随伴に基づく冪乗</h2>
-<p>冪乗<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>b</mi><mi>a</mi></msup><annotation encoding="application/x-tex">b^a</annotation></semantics></math>、すなわち関数対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>⇒</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \Rightarrow b</annotation></semantics></math>は、<a
+<h2 data-number="18.4" id="随伴に基づく冪"><span
+class="header-section-number">18.4</span> 随伴に基づく冪</h2>
+<p>冪<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>b</mi><mi>a</mi></msup><annotation encoding="application/x-tex">b^a</annotation></semantics></math>、すなわち関数対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>⇒</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \Rightarrow b</annotation></semantics></math>は、<a
 href="https://bartoszmilewski.com/2015/03/13/function-types/">普遍的構成</a>を使って定義できる。この構成は、対象のすべてのペアに対して存在するなら、随伴と見なせる。繰り返すが、秘訣は言明に集中することだ：</p>
 <blockquote>
 <p>他の任意の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>のうち、射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>∷</mo><mi>z</mi><mo>×</mo><mrow></mrow><mi>a</mi><mo>→</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">g \Colon z\times{}a \to b</annotation></semantics></math>を伴うものについて、一意な射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>∷</mo><mi>z</mi><mo>→</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>⇒</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">h \Colon z \to (a \Rightarrow b)</annotation></semantics></math>
@@ -4786,7 +4786,7 @@ construction}.} --></p>
 <p>ここで：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>⇒</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow></mrow><mi>a</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>L</mi><mo>∘</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">(a \Rightarrow b)\times{}a = (L \circ R) b</annotation></semantics></math></p>
 <p>前に述べたとおり、普遍的構成は同型を除いて一意な対象を定義する。それが積を
-“the” product、冪乗を “the”
+“the” product、冪を “the”
 exponentialと書く理由だ。この特性は随伴にも及ぶ。つまり、ある関手に随伴があるなら、その随伴は同型を除いて一意だ。</p>
 <h2 data-number="18.5" id="課題-15"><span
 class="header-section-number">18.5</span> 課題</h2>
@@ -4897,7 +4897,7 @@ class="header-section-number">19.2</span> 課題</h2>
 </ol>
 <h1 data-number="20" id="モナドプログラマーの定義"><span
 class="header-section-number">20</span> モナド：プログラマーの定義</h1>
-<p>プログラマーたちは、モナドにまつわる神話を発展させてきた。これはプログラミングにおける極めて抽象的で難しい概念の1つだと考えられている。「わかっている」人とそうでない人がいる。多くの人にとって、モナドの概念を理解した瞬間はあたかも神秘的な体験のようだ。モナドは非常に多様な構成の本質を抽象化しているので、日常生活でうまく比喩できるものがない。そして我々は暗闇の中で手探りするようになった。まるで盲人たちが象の様々な部分に触れて「ロープだ」「木の幹だ」「ブリトーだ！」と勝ち誇って叫ぶように。</p>
+<p>プログラマーたちは、モナドにまつわる神話を発展させてきた。これはプログラミングにおける極めて抽象的で難しい概念の1つだと考えられている。「分かっている」人とそうでない人がいる。多くの人にとって、モナドの概念を理解した瞬間はあたかも神秘的な体験のようだ。モナドは非常に多様な構成の本質を抽象化しているので、日常生活でうまく比喩できるものがない。そして我々は暗闇の中で手探りするようになった。まるで盲人たちが象の様々な部分に触れて「ロープだ」「木の幹だ」「ブリトーだ！」と勝ち誇って叫ぶように。</p>
 <p>はっきり言っておこう。モナドを取り巻く神秘主義はすべて誤解に基づいている。モナドはとてもシンプルな概念だ。混乱を引き起こしているのは、モナドの応用先の多様さだ。</p>
 <p>この記事のための調査の一環として、私はダクトテープ（別名ダックテープ）とその応用先について調べた。それを使ってできることのほんの一例を紹介しよう：</p>
 <ul>
@@ -5241,7 +5241,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb429-1"><
 <p><code>Maybe</code>についてのモナディック合成では、エラーが検出されたときは計算がきちんと短絡評価される（継続<code>k</code>が決して呼ばれない）ことに注意してほしい。これは例外に期待される振る舞いだ。</p>
 <h3 data-number="21.2.7" id="継続"><span
 class="header-section-number">21.2.7</span> 継続</h3>
-<p>これは「電話はしないでください、こちらから電話しますので！」という、採用面接のあとで経験しそうな状況を表す。回答を直接得る代わりに、ある関数をハンドラーとして提供することになっており、そのハンドラーが呼ばれると結果が得られる。このスタイルのプログラミングが特に役立つのは、呼び出し時点で結果がわからない場合だ。たとえば、別のスレッドで評価される場合や、リモートのウェブサイトから配信される場合などだ。この場合のKleisli矢が返す関数は「残りの計算」を表すハンドラーを受け取る：</p>
+<p>これは「電話はしないでください、こちらから電話しますので！」という、採用面接のあとで経験しそうな状況を表す。回答を直接得る代わりに、ある関数をハンドラーとして提供することになっており、そのハンドラーが呼ばれると結果が得られる。このスタイルのプログラミングが特に役立つのは、呼び出し時点で結果が分からない場合だ。たとえば、別のスレッドで評価される場合や、リモートのウェブサイトから配信される場合などだ。この場合のKleisli矢が返す関数は「残りの計算」を表すハンドラーを受け取る：</p>
 <div class="sourceCode" id="cb430"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb430-1"><a href="#cb430-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Cont</span> r a <span class="ot">=</span> <span class="dt">Cont</span> ((a <span class="ot">-&gt;</span> r) <span class="ot">-&gt;</span> r)</span></code></pre></div>
 <p>このハンドラー<code>a -&gt; r</code>は、最終的に呼び出されると型<code>r</code>の結果を生成し、その結果が最後に返される。継続は結果の型によってパラメーター化される。（実用上は、これはある種のステータスインジケーターである場合が多い。）</p>
@@ -5453,7 +5453,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb460-1"><
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb461-1"><a href="#cb461-1" aria-hidden="true" tabindex="-1"></a>mu <span class="op">.</span> bimap <span class="fu">id</span> eta <span class="ot">=</span> lambda</span>
 <span id="cb461-2"><a href="#cb461-2" aria-hidden="true" tabindex="-1"></a>mu <span class="op">.</span> bimap eta <span class="fu">id</span> <span class="ot">=</span> rho</span></code></pre></div>
 <p>ここまでで、<code>mu</code>と<code>eta</code>についてのポイントフリーなモノイド則の定式化を、基礎となるカルテシアン積自体が型の圏におけるモノイダル乗算のように作用するという事実を用いて行った。ただし、留意すべき点として、カルテシアン積の結合律と単位律は同型を除いてのみ有効だ。</p>
-<p>これらの規則は積と終対象を持つすべての圏に一般化できるとわかった。圏論的な積は確かに同型を除いて結合的であり、同様に、同型を除いて終対象は単位だ。結合子と2つの単位子は自然同型だ。規則は可換図式で表せる。</p>
+<p>これらの規則は積と終対象を持つすべての圏に一般化できると分かった。圏論的な積は確かに同型を除いて結合的であり、同様に、同型を除いて終対象は単位だ。結合子と2つの単位子は自然同型だ。規則は可換図式で表せる。</p>
 <p><img src="images/assocmon.png" style="width:50.0%" /></p>
 <p>積は双関手なので射のペアをリフトできることに注意してほしい――Haskellではそのために<code>bimap</code>が使われる。</p>
 <p>ここで立ち止まって、圏論的な積と終対象を持つあらゆる圏においてモノイドを定義できる、と述べてよい。モノイド則を満たすような対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>と2つの射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>を選択できるなら、モノイドが存在する。しかし、もっとうまくやれる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>について規則を定式化するために完全な圏論的な積は必要ない。積の定義は射影を使う普遍的構成によって行われるのを思い出してほしい。モノイド則の定式化では射影を一切使わなかった。</p>
@@ -5478,7 +5478,7 @@ convolutionのようなより深遠な積）に対して機能する。モノイ
 <h2 data-number="22.2" id="モノイダル圏におけるモノイド"><span
 class="header-section-number">22.2</span>
 モノイダル圏におけるモノイド</h2>
-<p>モノイダル圏という、より一般的な設定を使ってモノイドを定義する準備が整った。対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>を選択することから始めよう。テンソル積を使えば<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の冪乗を形成できる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の平方は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>⊗</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">m \otimes m</annotation></semantics></math>だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の立方を形成する方法は2つあるが、それらは結合子を通じて同型だ。より高次の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の冪乗についても同様だ（そこではコヒーレンス条件が必要になる）。モノイドを形成するには2つの射を選ぶ必要がある：</p>
+<p>モノイダル圏という、より一般的な設定を使ってモノイドを定義する準備が整った。対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>を選択することから始めよう。テンソル積を使えば<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の冪を形成できる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の平方は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>⊗</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">m \otimes m</annotation></semantics></math>だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の立方を形成する方法は2つあるが、それらは結合子を通じて同型だ。より高次の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の冪についても同様だ（そこではコヒーレンス条件が必要になる）。モノイドを形成するには2つの射を選ぶ必要がある：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>μ</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>∷</mo><mi>m</mi><mo>⊗</mo><mi>m</mi><mo>→</mo><mi>m</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>η</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>∷</mo><mi>i</mi><mo>→</mo><mi>m</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
 \mu &amp;\Colon m \otimes m \to m \\
@@ -5535,7 +5535,7 @@ href="#adjunctions">随伴</a><math display="inline" xmlns="http://www.w3.org/19
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mi>R</mi><mo>∘</mo><mi>ε</mi><mo>∘</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">\mu = R \circ \varepsilon \circ L</annotation></semantics></math></p>
 <p>モナド則は、随伴の単位と余単位によって満たされた恒等律 (identity law)
 と、交換律から導かれる。</p>
-<p>随伴から派生したモナドをHaskellであまり見かけないのは、随伴には通常2つの圏が関わるからだ。ただし、冪乗すなわち関数対象の定義は例外だ。この随伴は次の2つの自己関手から形成される：</p>
+<p>随伴から派生したモナドをHaskellであまり見かけないのは、随伴には通常2つの圏が関わるからだ。ただし、冪すなわち関数対象の定義は例外だ。この随伴は次の2つの自己関手から形成される：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>L</mi><mspace width="0.222em"></mspace><mi>z</mi><mo>=</mo><mi>z</mi><mo>×</mo><mrow></mrow><mi>s</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>R</mi><mspace width="0.222em"></mspace><mi>b</mi><mo>=</mo><mi>s</mi><mo>⇒</mo><mi>b</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{gathered}
 L\ z = z\times{}s \\
@@ -5805,7 +5805,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb504-1"><
 \delta &amp;= L \circ \eta \circ R
 \end{aligned}
 </annotation></semantics></math></p>
-<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>は一番左の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>を通過する必要がある。この<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>は<code>Product</code>関手だ。これは、ペアの左側の要素に<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>すなわち<code>Store f</code>を作用させることを意味する（これが<code>Product</code>の<code>fmap</code>が行うことだ）。すると、次の結果が得られる：</p>
+<p>一番左の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>越しに<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>をくすねる必要がある。この<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>は<code>Product</code>関手だ。これは、ペアの左側の要素に<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>すなわち<code>Store f</code>を作用させることを意味する（これが<code>Product</code>の<code>fmap</code>が行うことだ）。すると、次の結果が得られる：</p>
 <div class="sourceCode" id="cb505"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb505-1"><a href="#cb505-1" aria-hidden="true" tabindex="-1"></a>duplicate (<span class="dt">Store</span> f s) <span class="ot">=</span> <span class="dt">Store</span> (<span class="dt">Store</span> f) s</span></code></pre></div>
 <p>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>の式での<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>は恒等自然変換を表し、成分が恒等射なのを思い出してほしい）。</p>
@@ -5814,10 +5814,10 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb505-1"><
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb506-1"><a href="#cb506-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Comonad</span> (<span class="dt">Store</span> s) <span class="kw">where</span></span>
 <span id="cb506-2"><a href="#cb506-2" aria-hidden="true" tabindex="-1"></a>  extract (<span class="dt">Store</span> f s) <span class="ot">=</span> f s</span>
 <span id="cb506-3"><a href="#cb506-3" aria-hidden="true" tabindex="-1"></a>  duplicate (<span class="dt">Store</span> f s) <span class="ot">=</span> <span class="dt">Store</span> (<span class="dt">Store</span> f) s</span></code></pre></div>
-<p><code>Store</code>の<code>Reader</code>の部分は、一般化されたコンテナに型<code>s</code>の要素をキーにして<code>a</code>が格納されていると見なせる。たとえば、<code>s</code>が<code>Int</code>なら、<code>Reader Int a</code>は<code>a</code>の無限双方向ストリームだ。<code>Store</code>はこのコンテナとキー型の値とをペアにする。また、たとえば、<code>Reader Int a</code>はある<code>Int</code>とペアになっている。この場合、<code>extract</code>はその整数を使って無限ストリームにインデックスを作成する。<code>Store</code>の2番目の要素は現在位置と見なせる。</p>
+<p><code>Store</code>の<code>Reader</code>の部分は、一般化されたコンテナに型<code>s</code>の要素をキーにして<code>a</code>が格納されていると見なせる。たとえば、<code>s</code>が<code>Int</code>なら、<code>Reader Int a</code>は<code>a</code>の双方向無限ストリームだ。<code>Store</code>はこのコンテナとキー型の値とをペアにする。また、たとえば、<code>Reader Int a</code>はある<code>Int</code>とペアになっている。この場合、<code>extract</code>はその整数を使って無限ストリームにインデックスを作成する。<code>Store</code>の2番目の要素は現在位置と見なせる。</p>
 <p>この例についてさらに述べると、<code>duplicate</code>は<code>Int</code>によって添字付けされた新しい無限ストリームを作成する。このストリームは要素としてストリームを含む。特に、現在位置にはもとのストリームが含まれている。しかし、他の（正または負の）<code>Int</code>をキーとして使うと、新しいインデックスに位置するシフトされたストリームが得られる。</p>
 <p>一般に、<code>duplicate</code>された<code>Store</code>に<code>extract</code>が作用すると、もとの<code>Store</code>が生成されることを確信できる（実際、コモナドの恒等律では<code>extract . duplicate = id</code>と規定されている）。</p>
-<p><code>Store</code>コモナドは<code>Lens</code>ライブラリの理論的基盤として重要だ。概念としては、<code>Store s a</code>コモナドは、型<code>s</code>をインデックスとしてdate型<code>a</code>の特定のサブ構造に（レンズのように）「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型：</p>
+<p><code>Store</code>コモナドは<code>Lens</code>ライブラリの理論的基盤として重要だ。概念としては、<code>Store s a</code>コモナドは、型<code>s</code>をインデックスとしてデータ型<code>a</code>の特定のサブ構造に（レンズのように）「焦点を合わせる」という考え方をカプセル化している。特に、ある関数が型：</p>
 <div class="sourceCode" id="cb507"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb507-1"><a href="#cb507-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">-&gt;</span> <span class="dt">Store</span> s a</span></code></pre></div>
 <p>を取るなら、以下の関数のペアと等価だ：</p>
@@ -5832,7 +5832,7 @@ class="header-section-number">23.7</span> 課題</h2>
 </ol>
 <h1 data-number="24" id="f-代数"><span
 class="header-section-number">24</span> F-代数</h1>
-<p>モノイドについて、集合として、単一対象圏として、モノイダル圏の対象としての定式化を見てきた。この単純な概念からどれだけの果汁をさらに搾り取れるだろうか？</p>
+<p>モノイドについて、集合や、単一対象圏や、モノイダル圏の対象としての定式化を見てきた。この単純な概念からどれだけの果汁をさらに搾り取れるだろうか？</p>
 <p>やってみよう。次の関数のペアを持つ集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>としてのモノイドの定義を取り上げる：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>μ</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>∷</mo><mi>m</mi><mo>×</mo><mrow></mrow><mi>m</mi><mo>→</mo><mi>m</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>η</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>∷</mo><mn>1</mn><mo>→</mo><mi>m</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
@@ -5840,7 +5840,7 @@ class="header-section-number">24</span> F-代数</h1>
 \eta &amp;\Colon 1 \to m
 \end{aligned}
 </annotation></semantics></math></p>
-<p>ここで、1は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>の終対象――単集合だ。最初の関数は乗算（要素のペアを取って積を返す）を定義し、2番目の関数は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>から単位元を選択する。これらのシグネチャーを持つ2つの関数ならどれでもモノイドになるわけではない。結合律と単位律という追加の条件を課す必要がある。しかし、それはしばらく忘れて「潜在的なモノイド」について考えてみよう。関数のペアは、2つの関数集合のカルテシアン積の要素だ。これらの集合が冪乗対象として表現できるのは知っている：</p>
+<p>ここで、1は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>の終対象――単集合だ。最初の関数は乗算（要素のペアを取って積を返す）を定義し、2番目の関数は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>から単位元を選択する。これらのシグネチャーを持つ2つの関数ならどれでもモノイドになるわけではない。結合律と単位律という追加の条件を課す必要がある。しかし、それはしばらく忘れて「潜在的なモノイド」について考えてみよう。関数のペアは、2つの関数集合のカルテシアン積の要素だ。それらの集合が冪対象として表現できるのは知っている：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>μ</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>∈</mo><msup><mi>m</mi><mrow><mi>m</mi><mo>×</mo><mrow></mrow><mi>m</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>η</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>∈</mo><msup><mi>m</mi><mn>1</mn></msup></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
 \mu &amp;\in m^{m\times{}m} \\
@@ -5851,11 +5851,14 @@ class="header-section-number">24</span> F-代数</h1>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mrow><mi>m</mi><mo>×</mo><mrow></mrow><mi>m</mi></mrow></msup><mo>×</mo><mrow></mrow><msup><mi>m</mi><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">m^{m\times{}m}\times{}m^1</annotation></semantics></math></p>
 <p>高校代数（すべてのカルテシアン閉圏で機能する）を少し使えば次のように書き直せる：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>m</mi><mrow><mi>m</mi><mo>×</mo><mrow></mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">m^{m\times{}m + 1}</annotation></semantics></math></p>
-<p>記号<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>+</mi><annotation encoding="application/x-tex">+</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>の余積を表す。ここで、関数のペアを次のような単一の関数――集合の要素――に置き換える：</p>
+<p>記号
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>+</mi><annotation encoding="application/x-tex">+</annotation></semantics></math>
+は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>の余積を表す。ここで、関数のペアを次のような単一の関数――集合の要素――に置き換える：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>×</mo><mrow></mrow><mi>m</mi><mo>+</mo><mn>1</mn><mo>→</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">m\times{}m + 1 \to m</annotation></semantics></math></p>
 <p>この関数集合のどの要素も潜在的なモノイドだ。</p>
-<p>この定式化の利点は、興味深い一般化を導くことだ。たとえば、この言語を使って群を記述するにはどうすればよいだろうか？
-群は、すべての要素に逆を対応させる関数が追加されたモノイドだ。後者は型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>→</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">m \to m</annotation></semantics></math>の関数だ。たとえば、整数は群を形成し、二項演算として加算、単位元として0、否定として正負反転を持つ。群を定義するには次の3つの関数から始める：</p>
+<p>この定式化の利点は、興味深い一般化を導くことだ。たとえば、この言語を使って群
+(group) を記述するにはどうすればよいだろうか？
+群は、すべての要素に逆を対応させる関数が追加されたモノイドだ。後者の関数の型は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>→</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">m \to m</annotation></semantics></math>だ。例を挙げると、整数は群を形成し、二項演算として加算、単位元として0、否定として正負反転を持つ。群を定義するには次の3つの関数から始める：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>m</mi><mo>×</mo><mrow></mrow><mi>m</mi><mo>→</mo><mi>m</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>m</mi><mo>→</mo><mi>m</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>1</mn><mo>→</mo><mi>m</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
 m\times{}m \to m \\
@@ -5866,17 +5869,17 @@ m \to m \\
 <p>前と同様に、このトリプルを結合して1つの関数集合にできる：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>×</mo><mrow></mrow><mi>m</mi><mo>+</mo><mi>m</mi><mo>+</mo><mn>1</mn><mo>→</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">m\times{}m + m + 1 \to m</annotation></semantics></math></p>
 <p>1つの二項演算子（加算）、1つの単項演算子（否定）、1つの零項演算子（恒等射――ここでは0）から始めた。そして、それらを1つの関数に結合した。このシグネチャーを持つすべての関数は、潜在的な群を定義する。</p>
-<p>同様のことを続けられる。たとえば、環を定義するにはもう1つの二項演算子と1つの零項演算子を追加する、などだ。毎回、左辺が冪乗の和（0乗――終対象――を含んでよい）であり、右辺が集合自体である関数型が得られる。</p>
+<p>同様のことを続けられる。たとえば、環を定義するにはもう1つの二項演算子と1つの零項演算子を追加する、などだ。毎回、左辺が冪（0乗――終対象――を含んでよい）の和で、右辺が集合自体である関数型を得られる。</p>
 <p>きっと一般化に夢中になってしまうだろう。まず、集合を対象に、関数を射に置き換えられる。n項演算子は、n項積からの射として定義できる。これは有限積
 (finite product)
-をサポートする圏が必要であることを意味する。零項演算子については、終対象が存在する必要がある。したがって、カルテシアン圏が必要だ。これらの演算子を結合するには冪乗が必要なので、必要なのはカルテシアン閉圏だ。最終的に、この代数的な悪ふざけを完成させるには、余積が必要になる。</p>
-<p>あるいは、式の導出方法を忘れて、最終的な積に集中することもできる。射の左側にある積の和が自己関手を定義する。代わりに任意の自己関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>を選択するとどうなるだろう？
+をサポートする圏が必要であることを意味する。零項演算子については、終対象が存在する必要がある。したがって、カルテシアン圏が必要だ。これらの演算子を結合するには冪が必要なので、必要なのはカルテシアン閉圏だ。最終的に、この代数的な悪ふざけを完成させるには、余積が必要になる。</p>
+<p>あるいは、式の導出方法を忘れて、最終的な積に集中してもよい。射の左側にある積の和は自己関手を定義している。代わりに任意の自己関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>を選択するとどうなるだろう？
 その場合は圏に制約を課す必要はない。こうして得られたものはF-代数と呼ばれる。</p>
-<p>F-代数は、1つの自己関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>、1つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>、1つの射からなるトリプルだ。</p>
+<p>F-代数は、1つの自己関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>、1つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と、次の1つの射からなるトリプルだ：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>a</mi><mo>→</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">F\ a \to a</annotation></semantics></math></p>
-<p>この対象はしばしば台 (carrier, underlying object)
-と呼ばれ、プログラミングの文脈ではキャリア<em>型</em>と呼ばれる。射は評価関数
-(evaluation function) または構造マップ (structure map)
+<p>ここでの対象はしばしば台 (carrier, underlying object)
+と呼ばれ、プログラミングの文脈ではキャリア<em>型</em>と呼ばれる。また、射は評価射
+(evaluation function, structure map)
 と呼ばれることが多い。関手<code>F</code>が式を形成し、それを射が評価すると考えてほしい。</p>
 <p>HaskellによるF-代数の定義を示す：</p>
 <div class="sourceCode" id="cb509"><pre
@@ -5885,7 +5888,8 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb509-1"><
 <p>モノイドの例では、問題の関手は次のようになる：</p>
 <div class="sourceCode" id="cb510"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb510-1"><a href="#cb510-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">MonF</span> a <span class="ot">=</span> <span class="dt">MEmpty</span> <span class="op">|</span> <span class="dt">MAppend</span> a a</span></code></pre></div>
-<p>これはHaskellで<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>a</mi><mo>×</mo><mrow></mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">1 + a \times{}a</annotation></semantics></math>を表したものだ（<g2>代数的データ構造</g2>を思い出してほしい）。</p>
+<p>これはHaskellで<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>a</mi><mo>×</mo><mrow></mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">1 + a \times{}a</annotation></semantics></math>を表したものだ（<a
+href="#simple-algebraic-data-types">代数的データ構造</a>を思い出してほしい）。</p>
 <p>環は次の関手を使って定義される：</p>
 <div class="sourceCode" id="cb511"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb511-1"><a href="#cb511-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">RingF</span> a <span class="ot">=</span> <span class="dt">RZero</span></span>
@@ -5894,7 +5898,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb511-1"><
 <span id="cb511-4"><a href="#cb511-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">|</span> <span class="dt">RMul</span> a a</span>
 <span id="cb511-5"><a href="#cb511-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">|</span> <span class="dt">RNeg</span> a</span></code></pre></div>
 <p>これはHaskellで<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><mi>a</mi><mo>×</mo><mrow></mrow><mi>a</mi><mo>+</mo><mi>a</mi><mo>×</mo><mrow></mrow><mi>a</mi><mo>+</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">1 + 1 + a \times{}a + a \times{}a + a</annotation></semantics></math>を表したものだ。</p>
-<p>環の例としては整数の集合が挙げられる。<code>Integer</code>をキャリア型に選ぶと、評価関数を次のように定義できる。</p>
+<p>環の例としては整数の集合が挙げられる。<code>Integer</code>をキャリア型に選ぶと、評価関数を次のように定義できる：</p>
 <div class="sourceCode" id="cb512"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb512-1"><a href="#cb512-1" aria-hidden="true" tabindex="-1"></a><span class="ot">evalZ ::</span> <span class="dt">Algebra</span> <span class="dt">RingF</span> <span class="dt">Integer</span></span>
 <span id="cb512-2"><a href="#cb512-2" aria-hidden="true" tabindex="-1"></a>evalZ <span class="dt">RZero</span>      <span class="ot">=</span> <span class="dv">0</span></span>
@@ -5921,7 +5925,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb514-1"><
 <span id="cb514-4"><a href="#cb514-4" aria-hidden="true" tabindex="-1"></a>evalZ (<span class="dt">RAdd</span> e1 e2) <span class="ot">=</span> evalZ e1 <span class="op">+</span> evalZ e2</span>
 <span id="cb514-5"><a href="#cb514-5" aria-hidden="true" tabindex="-1"></a>evalZ (<span class="dt">RMul</span> e1 e2) <span class="ot">=</span> evalZ e1 <span class="op">*</span> evalZ e2</span>
 <span id="cb514-6"><a href="#cb514-6" aria-hidden="true" tabindex="-1"></a>evalZ (<span class="dt">RNeg</span> e)     <span class="ot">=</span> <span class="op">-</span>(evalZ e)</span></code></pre></div>
-<p>これはまだあまり実用的ではない。すべての整数を1の和で表現するのが強制されているからだ。もっとも、緊急用には役立つ。</p>
+<p>これはまだあまり実用的ではない。すべての整数を1の和で表現するのが強制されているからだ。もっとも、応急用には役立つ。</p>
 <p>それにしても、F-代数の言葉で式木を記述するにはどうすればよいだろうか？
 関手の定義において、自由型変数を再帰的に置換の結果で置き換えるプロセスを、何らかの形で形式化する必要がある。これを段階的に行うことを想像してほしい。まず、深さ1の木を次のように定義する：</p>
 <div class="sourceCode" id="cb515"><pre
@@ -5959,7 +5963,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb521-1"><
 <p>2つの関数は互いに逆だ。これらの関数は後で使うことになる。</p>
 <h2 data-number="24.2" id="f-代数の圏"><span
 class="header-section-number">24.2</span> F-代数の圏</h2>
-<p>この本の中で最も古いトリックについて述べよう：何か新しい対象を構築する方法を思いついたら、それらが圏を形成するかどうかを常に確認すべし。驚くことではないが、任意の自己関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>における代数は圏を形成する。その圏の対象は代数だ――台対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>a</mi><mo>→</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">F\ a \to a</annotation></semantics></math>からなるペアで、どちらももとの圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>からのものだ。</p>
+<p>この本の中で最も古いトリックについて述べよう：何か新しい対象を構築する方法を思いついたら、それらが圏を形成するかどうかを常に確認すべし。驚くまでもなく、任意の自己関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>における代数は圏を形成する。その圏の対象は代数だ――台対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>a</mi><mo>→</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">F\ a \to a</annotation></semantics></math>からなるペアで、どちらももとの圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>からのものだ。</p>
 <p>この描像を完全なものにするには、F-代数の圏における射を定義する必要がある。射は、ある代数
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, f)</annotation></semantics></math>
 を別の代数
@@ -5975,7 +5979,7 @@ alt="alg" /></a></p>
 <p>これが本当に圏であることは簡単に納得できる（ヒント：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>の恒等射については問題なく、また、準同型の合成は準同型だ）。</p>
 <p>F-代数の圏に始対象が存在するなら、それは<span id="initial_algebra"
 class="keyword">始代数</span> (initial algebra)
-と呼ばれる。この始代数の台を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>と呼び、その評価子を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∷</mo><mi>F</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>→</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">j \Colon F\ i \to i</annotation></semantics></math>と呼ぼう。始代数の評価子である<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>は同型射だと分かる。この結果はLambekの定理として知られている。その証明は始対象の定義に依存している。定義では、始対象は他のF-代数への一意な準同型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の存在を必要とする。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>が準同型なので、次の図式は可換でなければならない：</p>
+と呼ばれる。この始代数の台を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>と呼び、その評価子を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∷</mo><mi>F</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>→</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">j \Colon F\ i \to i</annotation></semantics></math>と呼ぼう。始代数の評価子である<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>は同型射だと分かる。この結果はLambekの定理として知られている。その証明は始対象の定義に依存している。その始対象の定義より、他のF-代数への一意な準同型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の存在が必要とされる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>が準同型なので、次の図式が可換でなければならない：</p>
 <p><a href="images/alg2.png" width="30%"><img src="images/alg2.png"
 alt="alg2" /></a></p>
 <p>次に、台が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>i</mi></mrow><annotation encoding="application/x-tex">F\ i</annotation></semantics></math>である代数を構築しよう。そのような代数の評価子は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F\ (F i)</annotation></semantics></math>
@@ -5984,7 +5988,7 @@ alt="alg2" /></a></p>
 <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math>
 は始代数なので、そこから
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mi>i</mi><mo>,</mo><mi>F</mi><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(F i, F j)</annotation></semantics></math>
-への一意な準同型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>が必要だ。次の図式は可換でなければならない：</p>
+への一意な準同型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>が必要だ。次の図式が可換でなければならない：</p>
 <p><a href="images/alg3a.png" width="30%"><img src="images/alg3a.png"
 alt="alg3a" /></a></p>
 <p>しかし、次のような自明な可換図式もある（どちらの経路も同じだ！）：</p>
@@ -5997,10 +6001,10 @@ alt="alg3" /></a></p>
 <p><a href="images/alg4.png" width="60%"><img src="images/alg4.png"
 alt="alg4" /></a></p>
 <p>この図式は、同様に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∘</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">j \circ m</annotation></semantics></math>が代数の準同型であることを示していると解釈できる。この場合のみ2つの代数は同じだ。さらに、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math>
-は初期代数なので、それ自身から自身への準同型は1つしか存在できず、それはどの代数でも準同型だとわかっている恒等射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><msub><mi>d</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">id_i</annotation></semantics></math>だ。したがって、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∘</mo><mi>m</mi><mo>=</mo><mi>i</mi><msub><mi>d</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">j \circ m = id_i</annotation></semantics></math>となる。この事実と左側の図式の可換特性を用いて<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>∘</mo><mi>j</mi><mo>=</mo><mi>i</mi><msub><mi>d</mi><mrow><mi>F</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">m\circ j=id_{Fi}</annotation></semantics></math>であることを証明できる。これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>の逆であることを示しているため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>i</mi></mrow><annotation encoding="application/x-tex">F\ i</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>の間の同型射だ。</p>
+は始代数なので、それ自身から自身への準同型は1つしか存在できず、それはどの代数でも準同型だと分かっている恒等射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><msub><mi>d</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">id_i</annotation></semantics></math>だ。したがって、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∘</mo><mi>m</mi><mo>=</mo><mi>i</mi><msub><mi>d</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">j \circ m = id_i</annotation></semantics></math>となる。この事実と左側の図式の可換特性を用いて<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>∘</mo><mi>j</mi><mo>=</mo><mi>i</mi><msub><mi>d</mi><mrow><mi>F</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">m\circ j=id_{Fi}</annotation></semantics></math>であることを証明できる。これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>の逆であることを示しているため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>i</mi></mrow><annotation encoding="application/x-tex">F\ i</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>の間の同型射だ：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>≅</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">F\ i \cong i</annotation></semantics></math></p>
 <p>しかし、これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>の不動点だと言っているにすぎない。以上が最初の身振り手振りでの議論の背景にある形式的証明だ。</p>
-<p>Haskellに戻ろう：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>は<code>Fix f</code>で、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>はコンストラクター<code>Fix</code>、その逆は<code>unFix</code>だと理解している。Lambekの定理における同型からは、始代数を得るには関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>を取って引数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>を<code>Fix f</code>に置き換えればよいことが分かる。また、不動点が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>によらない理由も分かる。</p>
+<p>Haskellに戻ろう。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>は<code>Fix f</code>で、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>はコンストラクター<code>Fix</code>、その逆は<code>unFix</code>だと理解できる。Lambekの定理における同型からは、始代数を得るには関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>を取って引数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>を<code>Fix f</code>に置き換えればよいことが分かる。また、不動点が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>によらない理由も分かる。</p>
 <h2 data-number="24.3" id="自然数"><span
 class="header-section-number">24.3</span> 自然数</h2>
 <p>自然数もF-代数として定義できる。出発点は次のような射のペアだ：</p>
@@ -6010,21 +6014,21 @@ zero &amp;\Colon 1 \to N \\
 succ &amp;\Colon N \to N
 \end{aligned}
 </annotation></semantics></math></p>
-<p>1番目は0を選択し、2番目はすべての数をその次の数に写す。前と同じように、この2つは1つにまとめられる：</p>
+<p>1つ目は0を選択し、2つ目はすべての数をその次の数に写す。前と同じように、この2つは1つにまとめられる：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>N</mi><mo>→</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">1 + N \to N</annotation></semantics></math></p>
 <p>左辺は関手を定義し、Haskellでは次のように書ける：</p>
 <div class="sourceCode" id="cb522"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb522-1"><a href="#cb522-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">NatF</span> a <span class="ot">=</span> <span class="dt">ZeroF</span> <span class="op">|</span> <span class="dt">SuccF</span> a</span></code></pre></div>
-<p>この関手の不動点（生成される始代数）は、Haskellでは次のようにコード化できる：</p>
+<p>この関手の不動点（この関手が生成する始代数）は、Haskellでは次のようにコード化できる：</p>
 <div class="sourceCode" id="cb523"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb523-1"><a href="#cb523-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Nat</span> <span class="ot">=</span> <span class="dt">Zero</span> <span class="op">|</span> <span class="dt">Succ</span> <span class="dt">Nat</span></span></code></pre></div>
 <p>自然数は、0か、ある数の次の数かのどちらかだ。これは自然数のPeano表現として知られている。</p>
 <h2 data-number="24.4" id="カタモルフィズム"><span
 class="header-section-number">24.4</span> カタモルフィズム</h2>
-<p>Haskellの表記で初期条件を書き直してみよう。始代数は<code>Fix f</code>と呼ばれる。その評価子はコンストラクター<code>Fix</code>だ。始代数から他の任意の代数への一意な射<code>m</code>が同じ関手上に存在する。台が<code>a</code>であり評価子が<code>alg</code>である代数を選択しよう。</p>
+<p>始代数の条件をHaskellの表記で書き直してみよう。始代数は<code>Fix f</code>と呼ばれる。その評価子はコンストラクター<code>Fix</code>だ。始代数から他の任意の代数への一意な射<code>m</code>が同じ関手上に存在する。台が<code>a</code>であり評価子が<code>alg</code>である代数を選択しよう。</p>
 <p><a href="images/alg5.png" width="40%"><img src="images/alg5.png"
 alt="alg5" /></a></p>
-<p>ところで、<code>m</code>が何なのかに注目してほしい：これは不動点の評価子であり、再帰的な式木全体の評価子だ。これを実装するための汎用的な方法を探そう。</p>
+<p>ところで、<code>m</code>が何なのかに注目してほしい。これは不動点の評価子であり、再帰的な式木全体の評価子だ。これを実装するための汎用的な方法を探そう。</p>
 <p>Lambekの定理はコンストラクター<code>Fix</code>が同型射であることを示している。その逆は<code>unFix</code>と呼ばれる。したがって、この図式で矢印の1つを反転して次のようにできる：</p>
 <p><a href="images/alg6.png" width="40%"><img src="images/alg6.png"
 alt="alg6" /></a></p>
@@ -6033,8 +6037,8 @@ alt="alg6" /></a></p>
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb524-1"><a href="#cb524-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">=</span> alg <span class="op">.</span> <span class="fu">fmap</span> m <span class="op">.</span> unFix</span></code></pre></div>
 <p>この方程式は<code>m</code>の再帰的な定義として解釈できる。再帰は関手<code>f</code>を使って作成されたすべての有限木に対して停止する。そのことは、<code>fmap m</code>が関手<code>f</code>の最上層の下で動作することに着目すれば分かる。言い換えると、それはもとの木の子に対して機能する。子は常にもとの木より1レベル浅くなる。</p>
 <p><code>Fix f</code>を使って構築された木に<code>m</code>を適用するとどうなるか述べよう。まず、<code>unFix</code>の作用によってコンストラクターが剥がれ、木の最上位があらわになる。次に、最上位ノードのすべての子に<code>m</code>を適用する。それにより、型<code>a</code>の結果が生成される。最後に、非再帰的評価子<code>alg</code>を適用することで、これらの結果を結合する。重要な点は、評価子<code>alg</code>が単純な非再帰関数であることだ。</p>
-<p>これは任意の代数<code>alg</code>に対して行えるので、代数をパラメーターに取って<code>m</code>と呼ばれる関数を返す高階関数を定義することは意味がある。この高階関数はカタモルフィズム
-(catamorphism) と呼ばれる。</p>
+<p>これは任意の代数<code>alg</code>に対して行えるので、代数をパラメーターに取って<code>m</code>と呼ばれる関数を返す高階関数を定義するのは意味がある。この高階関数はカタモルフィズム
+(catamorphism) と呼ばれる：</p>
 <div class="sourceCode" id="cb525"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb525-1"><a href="#cb525-1" aria-hidden="true" tabindex="-1"></a><span class="ot">cata ::</span> <span class="dt">Functor</span> f <span class="ot">=&gt;</span> (f a <span class="ot">-&gt;</span> a) <span class="ot">-&gt;</span> <span class="dt">Fix</span> f <span class="ot">-&gt;</span> a</span>
 <span id="cb525-2"><a href="#cb525-2" aria-hidden="true" tabindex="-1"></a>cata alg <span class="ot">=</span> alg <span class="op">.</span> <span class="fu">fmap</span> (cata alg) <span class="op">.</span> unFix</span></code></pre></div>
@@ -6056,7 +6060,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb528-1"><
 <p>実際、<code>List e</code>と呼ばれる再帰の結果で変数<code>a</code>を置き換えると、次のようになる：</p>
 <div class="sourceCode" id="cb529"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb529-1"><a href="#cb529-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">List</span> e <span class="ot">=</span> <span class="dt">Nil</span> <span class="op">|</span> <span class="dt">Cons</span> e (<span class="dt">List</span> e)</span></code></pre></div>
-<p>list関手の代数は、台の特定の型を選択し、2つのコンストラクターについてパターンマッチングを行う関数を定義する。<code>NilF</code>に対するその値は、空リストを評価する方法を表す。また、<code>ConsF</code>に対する値は、現在の要素をそれ以前の累積値と組み合わせる方法を表す。</p>
+<p>list関手の代数は、台の特定の型を選択し、2つのコンストラクターについてパターンマッチングを行う関数を定義する。<code>NilF</code>の値は空リストを評価する方法を表し、<code>ConsF</code>の値は現在の要素をそれ以前の累積値と組み合わせる方法を表す。</p>
 <p>例として、リストの長さを計算するために使える代数を次に示す（台の型は<code>Int</code>だ）：</p>
 <div class="sourceCode" id="cb530"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb530-1"><a href="#cb530-1" aria-hidden="true" tabindex="-1"></a><span class="ot">lenAlg ::</span> <span class="dt">ListF</span> e <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></span>
@@ -6091,13 +6095,13 @@ class="header-section-number">24.6</span> 余代数</h2>
 alt="alg7" /></a></p>
 <p>終余代数はその関手の不動点であり、射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∷</mo><mi>t</mi><mo>→</mo><mi>F</mi><mspace width="0.222em"></mspace><mi>t</mi></mrow><annotation encoding="application/x-tex">u \Colon t \to F\ t</annotation></semantics></math>が同型射である（余代数に関するLambekの定理）ことを意味する：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>t</mi><mo>≅</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">F\ t \cong t</annotation></semantics></math></p>
-<p>終余代数は通常、プログラミングでは、（無限であってもよい）データ構造または遷移系を生成するためのレシピとして解釈される。</p>
+<p>終余代数は、プログラミングでは通常、（無限でもよい）データ構造または遷移系を生成するためのレシピとして解釈される。</p>
 <p>始代数の評価にカタモルフィズムが使えるのと同様に、終余代数の余評価にはアナモルフィズム
 (anamorphism) が使える：</p>
 <div class="sourceCode" id="cb534"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb534-1"><a href="#cb534-1" aria-hidden="true" tabindex="-1"></a><span class="ot">ana ::</span> <span class="dt">Functor</span> f <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> f a) <span class="ot">-&gt;</span> a <span class="ot">-&gt;</span> <span class="dt">Fix</span> f</span>
 <span id="cb534-2"><a href="#cb534-2" aria-hidden="true" tabindex="-1"></a>ana coalg <span class="ot">=</span> <span class="dt">Fix</span> <span class="op">.</span> <span class="fu">fmap</span> (ana coalg) <span class="op">.</span> coalg</span></code></pre></div>
-<p>余代数の正準的な例は、不動点が型<code>e</code>の要素の無限ストリームであるような関手に基づいている。これがその関手だ：</p>
+<p>余代数の正統な例は、不動点が型<code>e</code>の要素の無限ストリームであるような関手に基づいている。これがその関手だ：</p>
 <div class="sourceCode" id="cb535"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb535-1"><a href="#cb535-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">StreamF</span> e a <span class="ot">=</span> <span class="dt">StreamF</span> e a</span>
 <span id="cb535-2"><a href="#cb535-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">deriving</span> <span class="dt">Functor</span></span></code></pre></div>
@@ -6105,7 +6109,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb535-1"><
 <div class="sourceCode" id="cb536"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb536-1"><a href="#cb536-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Stream</span> e <span class="ot">=</span> <span class="dt">Stream</span> e (<span class="dt">Stream</span> e)</span></code></pre></div>
 <p><code>StreamF e</code>の余代数は、型<code>a</code>のシードを取り、ある要素と次のシードからなるペアを生成する関数だ（ペアを<code>StreamF</code>というファンシーな名前で呼んでいる）。</p>
-<p>無限数列を生成する余代数の簡単な例はすぐ生成できる。たとえば、自乗や逆数などのリストだ。</p>
+<p>無限数列を生成する余代数の簡単な例はすぐ生成できる。たとえば、2乗や逆数などのリストだ。</p>
 <p>もっと興味深い例としては、素数のリストを生成する余代数がある。無限リストを台として使うのが秘訣だ。最初のシードはリスト<code>[2..]</code>になる。次のシードはこのリストの尾部から2の倍数をすべて除いたものになる。これは奇数のリストであり、3から始まる。次の段階では、このリストの尾部を取って3の倍数をすべて除く。エラトステネスの篩を作っているのに気付いただろう。この余代数は次の関数で実装される：</p>
 <div class="sourceCode" id="cb537"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb537-1"><a href="#cb537-1" aria-hidden="true" tabindex="-1"></a><span class="ot">era ::</span> [<span class="dt">Int</span>] <span class="ot">-&gt;</span> <span class="dt">StreamF</span> <span class="dt">Int</span> [<span class="dt">Int</span>]</span>
@@ -6120,8 +6124,8 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb539-1"><
 <span id="cb539-2"><a href="#cb539-2" aria-hidden="true" tabindex="-1"></a>toListC <span class="ot">=</span> cata al</span>
 <span id="cb539-3"><a href="#cb539-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">where</span><span class="ot"> al ::</span> <span class="dt">StreamF</span> e [e] <span class="ot">-&gt;</span> [e]</span>
 <span id="cb539-4"><a href="#cb539-4" aria-hidden="true" tabindex="-1"></a>         al (<span class="dt">StreamF</span> e a) <span class="ot">=</span> e <span class="op">:</span> a</span></code></pre></div>
-<p>ここでは、同じ不動点が同じ自己関手の始代数でもあり終余代数でもある。これは任意の圏でいつも成り立つわけでない。一般に、自己関手には不動点が多数ありうる（不動点がないこともある）。始代数はいわゆる最小不動点で、終余代数は最大不動点だ。ただし、Haskellでは両方とも同じ式で定義され、一致する。</p>
-<p>リストのアナモルフィズムはunfoldと呼ばれる。有限リストを作成するには、関手を改変して<code>Maybe</code>のペアを作成する：</p>
+<p>ここでは、同じ不動点が同じ自己関手の始代数でもあり終余代数でもある。これは任意の圏で常に成り立つわけではない。一般に、自己関手には不動点が多数ありうる（不動点がないこともある）。始代数はいわば最小不動点で、終余代数は最大不動点だ。ただし、Haskellでは両方とも同じ式で定義され、一致する。</p>
+<p>リストのアナモルフィズムはunfoldと呼ばれる。有限リストを作成するには、ペアについての<code>Maybe</code>を生成するように関手を改変する：</p>
 <div class="sourceCode" id="cb540"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb540-1"><a href="#cb540-1" aria-hidden="true" tabindex="-1"></a><span class="ot">unfoldr ::</span> (b <span class="ot">-&gt;</span> <span class="dt">Maybe</span> (a, b)) <span class="ot">-&gt;</span> b <span class="ot">-&gt;</span> [a]</span></code></pre></div>
 <p><code>Nothing</code>の値でリストの生成が終了する。</p>
@@ -6138,18 +6142,18 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb543-1"><
 <p>ここで次のような関手を定義した：</p>
 <div class="sourceCode" id="cb544"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb544-1"><a href="#cb544-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Store</span> s a <span class="ot">=</span> <span class="dt">Store</span> (s <span class="ot">-&gt;</span> a) s</span></code></pre></div>
-<p>これは積の和から構成される単純な代数的関手ではないことに注意してほしい。これには冪乗<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>a</mi><mi>s</mi></msup><annotation encoding="application/x-tex">a^s</annotation></semantics></math>が含まれる。</p>
+<p>これは積の和から構成される単純な代数的関手ではないことに注意してほしい。これには冪<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>a</mi><mi>s</mi></msup><annotation encoding="application/x-tex">a^s</annotation></semantics></math>が含まれる。</p>
 <p>レンズはこの関手の余代数であり、台の型は<code>a</code>だ。<code>Store s</code>がコモナドでもあることは以前にも見た。行儀の良い
 (well-behaved)
 レンズは、コモナドの構造と適合する余代数に対応することが分かる。これについては次章で説明する。</p>
 <h2 data-number="24.7" id="課題-18"><span
 class="header-section-number">24.7</span> 課題</h2>
 <ol type="1">
-<li>1変数多項式の環について評価関数を実装せよ。多項式は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>の冪乗の係数のリストとして表せる。たとえば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">4x^2-1</annotation></semantics></math>は、（0乗項から始めて）<code>[-1, 0, 4]</code>と表される。</li>
+<li>1変数多項式の環について評価関数を実装せよ。多項式は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>の冪の係数のリストとして表せる。たとえば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">4x^2-1</annotation></semantics></math>は、（0乗項から始めて）<code>[-1, 0, 4]</code>と表される。</li>
 <li>前の構成を、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi><mo>−</mo><mn>3</mn><msup><mi>y</mi><mn>3</mn></msup><mi>z</mi></mrow><annotation encoding="application/x-tex">x^2y-3y^3z</annotation></semantics></math>のような、独立変数を多数含む多項式に一般化せよ。</li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>×</mo><mrow></mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2\times{}2</annotation></semantics></math>行列の環について代数を実装せよ。</li>
-<li>自然数の自乗のリストを生成するようなアナモルフィズムを持つ余代数を定義せよ。</li>
-<li><code>unfoldr</code>を使って、最初の<g2>n</g2>個の素数のリストを生成せよ。</li>
+<li>自然数の2乗のリストを生成するようなアナモルフィズムを持つ余代数を定義せよ。</li>
+<li><code>unfoldr</code>を使って、最初の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>個の素数のリストを生成せよ。</li>
 </ol>
 <h1 data-number="25" id="algebras-for-monads"><span
 class="header-section-number">25</span> モナドの代数</h1>
@@ -6453,7 +6457,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb563-1"><
 に直接変換される：</p>
 <div class="sourceCode" id="cb564"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb564-1"><a href="#cb564-1" aria-hidden="true" tabindex="-1"></a><span class="kw">forall</span> a<span class="op">.</span> p a a</span></code></pre></div>
-<p>厳密に言うと、これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>のすべての対角要素の積に過ぎないが、くさび条件は<a
+<p>厳密に言うと、これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>のすべての対角要素の積にすぎないが、くさび条件は<a
 href="https://bartoszmilewski.com/2017/04/11/profunctor-parametricity/">パラメトリック性</a>
 (parametricity)
 によって自動的に満たされる。任意の関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∷</mo><mi>a</mi><mo>→</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">f \Colon a \to b</annotation></semantics></math>について、くさび条件は次のようになる：</p>
@@ -6608,12 +6612,12 @@ class="header-section-number">26.6</span> 忍者米田の補題</h2>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mo>∫</mo><mi>z</mi></msup><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow></mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>z</mi><mo>,</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{Set}(\int^z \mathbf{C}(z, a)\times{}F\ z, c)</annotation></semantics></math></p>
 <p>継続の引数を使うと、コエンドをエンドに置き換えられる：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi>z</mi></msub><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow></mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>z</mi><mo>,</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\int_z \mathbf{Set}(\mathbf{C}(z, a)\times{}F\ z, c)</annotation></semantics></math></p>
-<p>これで積と冪乗の間の随伴を利用できるようになった：</p>
+<p>これで積と冪の間の随伴を利用できるようになった：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi>z</mi></msub><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><msup><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mspace width="0.222em"></mspace><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\int_z \mathbf{Set}(\mathbf{C}(z, a), c^{(F\ z)})</annotation></semantics></math></p>
 <p>米田の補題を使って「積分を実行」し、次が得られる：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mspace width="0.222em"></mspace><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">c^{(F\ a)}</annotation></semantics></math></p>
 <p>(関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">c^{(F z)}</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>について反変なので、米田の補題の反変版を使っていることに注意してほしい。)</p>
-<p>この冪乗対象は次のhom集合について同型だ：</p>
+<p>この冪対象は次のhom集合について同型だ：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mspace width="0.222em"></mspace><mi>a</mi><mo>,</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{Set}(F\ a, c)</annotation></semantics></math></p>
 <p>最後に、米田埋め込みを利用して同型射に辿り着く：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mo>∫</mo><mi>z</mi></msup><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow></mrow><mi>F</mi><mspace width="0.222em"></mspace><mi>z</mi><mo>≅</mo><mi>F</mi><mspace width="0.222em"></mspace><mi>a</mi></mrow><annotation encoding="application/x-tex">\int^z \mathbf{C}(z, a)\times{}F\ z \cong F\ a</annotation></semantics></math></p>
@@ -6759,9 +6763,9 @@ class="header-section-number">27.4</span> エンドとしてのKan拡張</h2>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi>a</mi></msub><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mo>∫</mo><mi>i</mi></msup><mi>𝐀</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow></mrow><mi>D</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>,</mo><mi>F</mi><mi>′</mi><mspace width="0.222em"></mspace><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\int_a \mathbf{Set}(\int^i \mathbf{A}(K\ i, a)\times{}D\ i, F&#39;\ a)</annotation></semantics></math></p>
 <p>Hom関手の連続性を使って、コエンドをエンドに置き換えられる：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi>a</mi></msub><msub><mo>∫</mo><mi>i</mi></msub><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐀</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow></mrow><mi>D</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>,</mo><mi>F</mi><mi>′</mi><mspace width="0.222em"></mspace><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\int_a \int_i \mathbf{Set}(\mathbf{A}(K\ i, a)\times{}D\ i, F&#39;\ a)</annotation></semantics></math></p>
-<p>積と冪乗についての随伴が使える：</p>
+<p>積と冪についての随伴が使える：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi>a</mi></msub><msub><mo>∫</mo><mi>i</mi></msub><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐀</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="0.222em"></mspace><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mi>′</mi><mspace width="0.222em"></mspace><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>D</mi><mspace width="0.222em"></mspace><mi>i</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\int_a \int_i \mathbf{Set}(\mathbf{A}(K\ i, a),\ (F&#39;\ a)^{D\ i})</annotation></semantics></math></p>
-<p>この冪乗は、対応するhom集合と同型だ：</p>
+<p>この冪は、対応するhom集合と同型だ：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi>a</mi></msub><msub><mo>∫</mo><mi>i</mi></msub><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐀</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="0.222em"></mspace><mi>𝐀</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>,</mo><mi>F</mi><mi>′</mi><mspace width="0.222em"></mspace><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\int_a \int_i \mathbf{Set}(\mathbf{A}(K\ i, a),\ \mathbf{A}(D\ i, F&#39;\ a))</annotation></semantics></math></p>
 <p>Fubiniの定理と呼ばれる定理より、2つのエンドを交換してよい：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi>i</mi></msub><msub><mo>∫</mo><mi>a</mi></msub><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐀</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="0.222em"></mspace><mi>A</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>,</mo><mi>F</mi><mi>′</mi><mspace width="0.222em"></mspace><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\int_i \int_a \mathbf{Set}(\mathbf{A}(K\ i, a),\ A(D\ i, F&#39;\ a))</annotation></semantics></math></p>
@@ -6803,7 +6807,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb585-1"><
 <div class="sourceCode" id="cb586"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb586-1"><a href="#cb586-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Lan</span> k d a <span class="ot">=</span> <span class="kw">forall</span> i<span class="op">.</span> <span class="dt">Lan</span> (k i <span class="ot">-&gt;</span> a) (d i)</span></code></pre></div>
 <p>このデータ構造を解釈すると、不特定の数の<code>i</code>を含むコンテナを取って<code>a</code>を1つ生成する関数を含むものだと言える。また、それらの<code>i</code>のコンテナも持つ。<code>i</code>が何かは分からないので、このデータ構造で唯一できるのは、<code>i</code>のコンテナを取得し、自然変換を使って関手<code>k</code>で定義されたコンテナに再パックし、関数を呼んで<code>a</code>を得ることだけだ。たとえば、<code>d</code>が木で<code>k</code>がリストの場合は、木を直列化して得られるリストで関数を呼べば<code>a</code>が得られる。</p>
-<p>左Kan拡張は関手の右随伴を計算するために使える。積関手の右随伴が冪乗なのは知っているので、Kan拡張を使って実装してみよう：</p>
+<p>左Kan拡張は関手の右随伴を計算するために使える。積関手の右随伴が冪なのは知っているので、Kan拡張を使って実装してみよう：</p>
 <div class="sourceCode" id="cb587"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb587-1"><a href="#cb587-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Exp</span> a b <span class="ot">=</span> <span class="dt">Lan</span> ((,) a) <span class="dt">I</span> b</span></code></pre></div>
 <p>これが実際に関数型と同型であることは、次の関数のペアによって分かる：</p>
@@ -6898,7 +6902,7 @@ class="header-section-number">28.2</span> モノイダル圏</h2>
 \mathbf{id}_{a \otimes b}%
 </annotation></semantics></math></p>
 <p>かつモノイダル構造と一致していることだ。</p>
-<p>モノイダル圏に関して興味深いのは、内部hom（関数対象）をテンソル積に対する右随伴として定義できることだ。この関数対象、すなわち冪乗の標準的な定義は、右随伴を通じて圏論的な積へと向かっていたことを思い出してほしい。そのような対象が存在する圏をカルテシアン閉圏と呼んだ。モノイダル圏の内部homを定義する随伴は次のとおりだ：</p>
+<p>モノイダル圏に関して興味深いのは、内部hom（関数対象）をテンソル積に対する右随伴として定義できることだ。この関数対象、すなわち冪の標準的な定義は、右随伴を通じて圏論的な積へと向かっていたことを思い出してほしい。そのような対象が存在する圏をカルテシアン閉圏と呼んだ。モノイダル圏の内部homを定義する随伴は次のとおりだ：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐕</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>⊗</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∼</mo><mi>𝐕</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{V}(a \otimes b, c) \sim \mathbf{V}(a, [b, c])</annotation></semantics></math></p>
 <p><a href="http://www.tac.mta.ca/tac/reprints/articles/10/tr10.pdf">G.
 M.
@@ -7003,7 +7007,7 @@ class="header-section-number">28.7</span> 自己豊穣化</h2>
 <p>これは、随伴を通じて、次と同型だ：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐕</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>⊗</mo><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{V}(i \otimes a, a)</annotation></semantics></math></p>
 <p>このhom集合は左恒等射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>λ</mi><mi>a</mi></msub><annotation encoding="application/x-tex">\lambda_a</annotation></semantics></math>を含むことが分かっている。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>j</mi><mi>a</mi></msub><annotation encoding="application/x-tex">j_a</annotation></semantics></math>は随伴の下の像として定義できる。</p>
-<p>自己豊穣化の実際的な例としては、プログラミング言語における型のプロトタイプとして機能する圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>が挙げられる。以前、それがカルテシアン積に対するモノイダル閉圏であることを見た。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>では、任意の2集合間のhom集合はそれ自体が集合であるため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の対象になる。それが冪乗集合の同型であることは分かっているので、外部homと内部homは等価となる。さらに、自己豊穣化を通じて、冪乗集合をhom対象として使えて、合成を冪乗対象のカルテシアン積として表現できるのも分かった。</p>
+<p>自己豊穣化の実際的な例としては、プログラミング言語における型のプロトタイプとして機能する圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>が挙げられる。以前、それがカルテシアン積に対するモノイダル閉圏であることを見た。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>では、任意の2集合間のhom集合はそれ自体が集合であるため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の対象になる。それが冪集合の同型であることは分かっているので、外部homと内部homは等価となる。さらに、自己豊穣化を通じて、冪集合をhom対象として使えて、合成を冪対象のカルテシアン積として表現できるのも分かった。</p>
 <h2 data-number="28.8" id="圏との関係"><span
 class="header-section-number">28.8</span> 2-圏との関係</h2>
 <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>𝟐</mn><annotation encoding="application/x-tex">\mathbf{2}</annotation></semantics></math>-圏については、（小さい）圏の圏である<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>の文脈において説明した。圏間の射は関手だが、追加の構造がある：関手間の自然変換だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>𝟐</mn><annotation encoding="application/x-tex">\mathbf{2}</annotation></semantics></math>-圏では、対象は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>-セル、射は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>-セル、射間の射は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>-セルと呼ばれることが多い。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>では、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>-セルは圏、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>-セルは関手、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>-セルは自然変換だ。</p>
@@ -7017,7 +7021,7 @@ class="header-section-number">29</span> トポイ</h1>
 <p>可能性の1つは、集合の代わりに空間 (space)
 を使うことだ。空間は構造がより豊かで、集合を使わずに定義できる。通常、空間に関連付けられるものの1つは位相幾何学
 (topology)
-で、連続性などを定義するために必要だ。位相幾何学への従来のアプローチは、ご想像のとおり、集合論によるものだ。特に、部分集合は位相幾何学の中心的な概念だ。驚くまでもないが、圏論の研究者たちはこの概念を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>以外の圏に一般化した。集合論に代わるものとしてふさわしい性質を持つ圏の型は<span
+で、連続性などを定義するために必要だ。位相幾何学への従来のアプローチは、ご想像のとおり、集合論によるものだ。特に、部分集合は位相幾何学の中心的な概念だ。驚くまでもなく、圏論の研究者たちはこの概念を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>以外の圏に一般化した。集合論に代わるものとしてふさわしい性質を持つ圏の型は<span
 id="topos" class="keyword">トポス</span>（topos,
 複数形：トポイtopoi）と呼ばれ、部分集合を一般化した概念などを提供する。</p>
 <h2 data-number="29.1" id="部分対象分類子"><span
@@ -7085,7 +7089,7 @@ g&#39; &amp;\Colon c \to a
 class="header-section-number">29.2</span> トポス</h2>
 <p>トポスは次のような圏だ：</p>
 <ol type="1">
-<li>カルテシアン閉である：積・終対象・（積の右随伴として定義される）冪乗のすべてを持つ。</li>
+<li>カルテシアン閉である：積・終対象・（積の右随伴として定義される）冪のすべてを持つ。</li>
 <li>すべての有限図式について極限を持つ。</li>
 <li>部分対象分類子<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Ω</mi><annotation encoding="application/x-tex">\Omega</annotation></semantics></math>がある。</li>
 </ol>
@@ -7097,7 +7101,7 @@ class="header-section-number">29.3</span> トポイと論理</h2>
 class="keyword">述語</span> (predicate)
 を定義するものと解釈されうる。述語は、一部の要素に対しては真となり、他の要素に対しては偽となる。述語<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝑖</mi><mi>𝑠</mi><mi>𝐸</mi><mi>𝑣</mi><mi>𝑒</mi><mi>𝑛</mi></mrow><annotation encoding="application/x-tex">\mathit{isEven}</annotation></semantics></math>は自然数の集合から偶数の部分集合を選択する。トポスでは、述語の概念を対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Ω</mi><annotation encoding="application/x-tex">\Omega</annotation></semantics></math>への射に一般化できる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Ω</mi><annotation encoding="application/x-tex">\Omega</annotation></semantics></math>が真偽対象
 (truth object) と呼ばれることがあるのはこのためだ。</p>
-<p>述語は論理の構成要素だ。トポスには、論理を研究するのに必要な全装備が揃っている。積は論理積（<em>and</em>）に対応し、余積は論理和（<em>or</em>）に対応し、冪乗は論理包含に対応する。排中律（または、等価なものとして、二重否定除去）を除く論理学の標準的な公理すべてがトポスに含まれている。これが、トポスの論理が構成的論理
+<p>述語は論理の構成要素だ。トポスには、論理を研究するのに必要な全装備が揃っている。積は論理積（<em>and</em>）に対応し、余積は論理和（<em>or</em>）に対応し、冪は論理包含に対応する。排中律（または、等価なものとして、二重否定除去）を除く論理学の標準的な公理すべてがトポスに含まれている。これが、トポスの論理が構成的論理
 (constructive logic) あるいは直観主義論理 (intuitionistic logic)
 に対応する理由だ。</p>
 <p>直観主義論理は計算機科学から予想外に支持され、着実に定着していっている。排中律という古典的な概念は、絶対的な真実があるという信念に基づいている。つまり、すべての記述は真か偽のいずれかであり、古代ローマ人が言ったように、<em>tertium
@@ -7124,7 +7128,7 @@ id="arity" class="keyword">アリティ</span>（arity,
 演算の引数の数）についてはどうだろう？
 二項演算（アリティ2）は、積<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>×</mo><mrow></mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a \times{}a</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>へ戻る射として定義できる。一般の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>項演算は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>乗から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>への射だ：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>n</mi></msub><mo>∷</mo><msup><mi>a</mi><mi>n</mi></msup><mo>→</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">\alpha_n \Colon a^n \to a</annotation></semantics></math></p>
-<p>零項演算は、終対象（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>の0乗）からの射だ。したがって、あらゆる代数を定義するために必要なのはある圏だけで、その圏の対象は1つの特別な対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>の冪乗だ。特定の代数は、この圏のhom集合として符号化されている。これがローヴェア・セオリーの概略だ。</p>
+<p>零項演算は、終対象（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>の0乗）からの射だ。したがって、あらゆる代数を定義するために必要なのはある圏だけで、その圏の対象は1つの特別な対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>の冪だ。特定の代数は、この圏のhom集合として符号化されている。これがローヴェア・セオリーの概略だ。</p>
 <p>ローヴェア・セオリーの導出は多くのステップを経るため、道順を示しておく：</p>
 <ol type="1">
 <li>有限集合の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐅</mi><mi>𝐢</mi><mi>𝐧</mi><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{FinSet}</annotation></semantics></math>。</li>
@@ -7140,7 +7144,7 @@ id="arity" class="keyword">アリティ</span>（arity,
 <p><img src="images/lawvere1.png" style="width:80.0%" /></p>
 <h2 data-number="30.2" id="ローヴェアセオリー-1"><span
 class="header-section-number">30.2</span> ローヴェア・セオリー</h2>
-<p>複数あるローヴェア・セオリーはすべて共通のバックボーンを共有している。ローヴェア・セオリーにおけるすべての対象は、ただ1つの対象から積を使って生成される（実際に、ただの冪乗だ）。しかし、一般の圏では、これらの積をどのように定義するのだろうか？
+<p>複数あるローヴェア・セオリーはすべて共通のバックボーンを共有している。ローヴェア・セオリーにおけるすべての対象は、ただ1つの対象から積を使って生成される（実際に、ただの冪だ）。しかし、一般の圏では、これらの積をどのように定義するのだろうか？
 より単純な圏からの写像を使って積を定義できることが知られている。事実として、このより単純な圏は積ではなく余積を定義する可能性があり、その場合は<em>反変</em>関手を使ってそれらを終域圏に埋め込む。反変関手は、余積を積に変換し、単射を射影に変換する。</p>
 <p>ローヴェア圏のバックボーンとして自然な選択肢は、有限集合の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐅</mi><mi>𝐢</mi><mi>𝐧</mi><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{FinSet}</annotation></semantics></math>だ。これは空集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⌀</mi><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math>、単集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>、2要素集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>などを含む。この圏の対象はすべて、余積を使って単集合から生成できる（空集合は零項余積の特殊なケースとして扱う）。たとえば、2要素集合は2つの単集合の和<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>=</mo><mn>1</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2 = 1 + 1</annotation></semantics></math>だ。Haskellでも次のように表現される：</p>
 <div class="sourceCode" id="cb593"><pre
@@ -7159,7 +7163,7 @@ class="keyword">ローヴェア・セオリー</span>を、次の特別な関手
 (後者は<span id="basic_product_operations"
 class="keyword">基本的な積操作</span> (basic product operation)
 とも呼ばれる)。ローヴェア・セオリーの等式的規則はそれらの射へ符号化されている。</p>
-<p>鍵となる知見は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐅</mi><annotation encoding="application/x-tex">\mathbf{F}</annotation></semantics></math>内の単集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>内で同じく<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>と呼ばれる対象に写され、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>内の他のすべての対象が自動的にこの対象の冪乗になることだ。たとえば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐅</mi><annotation encoding="application/x-tex">\mathbf{F}</annotation></semantics></math>内の2要素集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>は余積<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1+1</annotation></semantics></math>であるため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>内の積<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>×</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1 \times 1</annotation></semantics></math>（または<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>1</mn><mn>2</mn></msup><annotation encoding="application/x-tex">1^2</annotation></semantics></math>）に写される必要がある。この意味で、圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐅</mi><annotation encoding="application/x-tex">\mathbf{F}</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>の対数のように振る舞う。</p>
+<p>鍵となる知見は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐅</mi><annotation encoding="application/x-tex">\mathbf{F}</annotation></semantics></math>内の単集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>内で同じく<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>と呼ばれる対象に写され、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>内の他のすべての対象が自動的にこの対象の冪になることだ。たとえば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐅</mi><annotation encoding="application/x-tex">\mathbf{F}</annotation></semantics></math>内の2要素集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>は余積<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1+1</annotation></semantics></math>であるため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>内の積<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>×</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1 \times 1</annotation></semantics></math>（または<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>1</mn><mn>2</mn></msup><annotation encoding="application/x-tex">1^2</annotation></semantics></math>）に写される必要がある。この意味で、圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐅</mi><annotation encoding="application/x-tex">\mathbf{F}</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>の対数のように振る舞う。</p>
 <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>内の射には、関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mi>𝐋</mi></msub><annotation encoding="application/x-tex">I_{\mathbf{L}}</annotation></semantics></math>によって<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐅</mi><annotation encoding="application/x-tex">\mathbf{F}</annotation></semantics></math>から転送されたものもある。それらは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>で構造としての役割を果たす。特に、余積単射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>i</mi><mi>k</mi></msub><annotation encoding="application/x-tex">i_k</annotation></semantics></math>は積射影<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>k</mi></msub><annotation encoding="application/x-tex">p_k</annotation></semantics></math>になる。直観として有用なのは、射影：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>k</mi></msub><mo>∷</mo><msup><mn>1</mn><mi>n</mi></msup><mo>→</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p_k \Colon 1^n \to 1</annotation></semantics></math></p>
 <p>を、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>個の変数のうち第<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>番目以外のすべてを無視するような関数のプロトタイプとして想像することだ。逆に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐅</mi><annotation encoding="application/x-tex">\mathbf{F}</annotation></semantics></math>内の定常射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>→</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n \to 1</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>内では対角射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>→</mo><msup><mn>1</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">1 \to 1^n</annotation></semantics></math>になる。これらは変数の複製に相当する。</p>
@@ -7192,7 +7196,7 @@ M\ (a \times b) \cong M\ a \times M\ b
 \end{gathered}
 </annotation></semantics></math></p>
 <p>積の保存は<em>同型を除いて</em>のみ必要であることに注意してほしい。これは非常に重要だ。なぜなら、積を厳密に保存すると、ほとんどの興味深いセオリーが棄却されるからだ。</p>
-<p>モデルによる積の保存とは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>の像が、集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mspace width="0.222em"></mspace><mn>1</mn></mrow><annotation encoding="application/x-tex">M\ 1</annotation></semantics></math>――<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>からの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>の像――の冪乗によって生成された一連の集合であることを意味する。この集合を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と呼ぼう。(この集合は<em>ソート</em>
+<p>モデルによる積の保存とは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>の像が、集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mspace width="0.222em"></mspace><mn>1</mn></mrow><annotation encoding="application/x-tex">M\ 1</annotation></semantics></math>――<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐋</mi><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math>からの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>の像――の冪によって生成された一連の集合であることを意味する。この集合を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と呼ぼう。(この集合は<em>ソート</em>
 (sort) と呼ばれることがあり、このような代数は<span id="single-sorted"
 class="keyword">シングルソート</span> (single-sorted)
 と呼ばれる。ローヴェア・セオリーのマルチソート代数 (multi-sorted
@@ -7255,7 +7259,7 @@ href="#freeforgetful-adjunctions">随伴</a>を経る。忘却関手<math displa
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐝</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐋</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>−</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≅</mo><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{Mod}(\mathbf{L}(n, -), M) \cong \mathbf{Set}(n, U(M))</annotation></semantics></math></p>
 <p>右辺を単純化しよう：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>≅</mo><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>M</mi><mspace width="0.222em"></mspace><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>≅</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mspace width="0.222em"></mspace><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mo>≅</mo><mi>M</mi><mspace width="0.222em"></mspace><mi>n</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}(n, U(M)) \cong \mathbf{Set}(n, M\ 1) \cong (M\ 1)^n \cong M\ n</annotation></semantics></math></p>
-<p>（射の集合が冪乗と同型であり、ここでは単に積の反復であるという事実を使った。）
+<p>（射の集合が冪と同型であり、ここでは単に積の反復であるという事実を使った。）
 随伴は米田の補題の結果だ：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>𝐋</mi><mo>,</mo><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐋</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>−</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≅</mo><mi>M</mi><mspace width="0.222em"></mspace><mi>n</mi></mrow><annotation encoding="application/x-tex">[\mathbf{L}, \mathbf{Set}](\mathbf{L}(n, -), M) \cong M\ n</annotation></semantics></math></p>
 <p>まとめると、忘却関手と自由関手によって<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>上の<a
@@ -7284,7 +7288,7 @@ class="header-section-number">30.6</span> コエンドとしてのモナド</h2>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>𝐋</mi></msub><mspace width="0.222em"></mspace><mi>a</mi><mo>=</mo><msup><mo>∫</mo><mi>n</mi></msup><msup><mi>a</mi><mi>n</mi></msup><mo>×</mo><mi>𝐋</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">T_{\mathbf{L}}\ a = \int^n a^n \times \mathbf{L}(n, 1)</annotation></semantics></math></p>
 <p>まず、このコエンドは、次のように定義された<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐅</mi><annotation encoding="application/x-tex">\mathbf{F}</annotation></semantics></math>内のプロ関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>に置き換えられる：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mspace width="0.222em"></mspace><mi>n</mi><mspace width="0.222em"></mspace><mi>m</mi><mo>=</mo><msup><mi>a</mi><mi>n</mi></msup><mo>×</mo><mi>𝐋</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P\ n\ m = a^n \times \mathbf{L}(m, 1)</annotation></semantics></math></p>
-<p>このプロ関手は最初の引数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>について反変だ。これが射をどうリフトするかを考えよう。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐅</mi><mi>𝐢</mi><mi>𝐧</mi><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{FinSet}</annotation></semantics></math>内の射は有限集合の間の写像<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∷</mo><mi>m</mi><mo>→</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">f \Colon m \to n</annotation></semantics></math>だ。このような写像は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>要素の集合から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>要素を（重複は許容して）選ぶことを表している。つまり、次のように<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>の冪乗の写像へリフトできる（方向に注意してほしい）：</p>
+<p>このプロ関手は最初の引数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>について反変だ。これが射をどうリフトするかを考えよう。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐅</mi><mi>𝐢</mi><mi>𝐧</mi><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{FinSet}</annotation></semantics></math>内の射は有限集合の間の写像<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∷</mo><mi>m</mi><mo>→</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">f \Colon m \to n</annotation></semantics></math>だ。このような写像は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>要素の集合から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>要素を（重複は許容して）選ぶことを表している。つまり、次のように<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>の冪の写像へリフトできる（方向に注意してほしい）：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>n</mi></msup><mo>→</mo><msup><mi>a</mi><mi>m</mi></msup></mrow><annotation encoding="application/x-tex">a^n \to a^m</annotation></semantics></math></p>
 <p>このリフトでは、単純に<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>要素タプル
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>2</mn></msub><mo>,</mo><mi>.</mi><mi>.</mi><mi>.</mi><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a_1, a_2, ...a_n)</annotation></semantics></math>
@@ -7748,7 +7752,7 @@ epub:type="index-locator">プロ関手</a></span></li>
 <li><span epub:type="index-term"><a href="#contextual_computation"
 epub:type="index-locator">文脈付き計算</a></span></li>
 <li><span epub:type="index-term"><a href="#exponential"
-epub:type="index-locator">冪乗</a></span></li>
+epub:type="index-locator">冪</a></span></li>
 <li><span epub:type="index-term"><a href="#point-free"
 epub:type="index-locator">ポイントフリー</a></span></li>
 <li>忘却関手 – <span epub:type="index-term"><a href="#forgetful_functor"
