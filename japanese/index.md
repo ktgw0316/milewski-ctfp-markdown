@@ -118,7 +118,7 @@
 
 <!-- や -->
 * [[矢](#arrow){epub:type="index-locator"}]{epub:type="index-term"}
-* [[余イコライザ](#coequalizer){epub:type="index-locator"}]{epub:type="index-term"}
+* [[余等化子](#coequalizer){epub:type="index-locator"}]{epub:type="index-term"}
 * [[米田埋め込み](#Yoneda_embedding){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- ら -->
