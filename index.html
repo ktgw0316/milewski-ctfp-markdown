@@ -120,10 +120,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
       <div class="container">
         <span class="doc-title">プログラマーのための圏論</span>
         <ul class="nav pull-right doc-info">
-                    <li><p class="navbar-text">バルトシュ・ミレフスキー著
-北川雅裕訳</p></li>
-                                        <li><p class="navbar-text"><a href="https://github.com/ktgw0316/milewski-ctfp-markdown/">https://github.com/ktgw0316/milewski-ctfp-markdown/</a></p></li>
-                  </ul>
+          <li><p class="navbar-text">バルトシュ・ミレフスキー著　北川雅裕訳</p></li>
+          <li><p class="navbar-text"><a href="https://github.com/ktgw0316/milewski-ctfp-markdown/">https://github.com/ktgw0316/milewski-ctfp-markdown/</a></p></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -6878,16 +6877,19 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb592-1"><
 <span id="cb592-2"><a href="#cb592-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fmap</span> g (<span class="dt">FreeF</span> r) <span class="ot">=</span> <span class="dt">FreeF</span> (\bi <span class="ot">-&gt;</span> r (bi <span class="op">.</span> g))</span></code></pre></div>
 <h1 data-number="28" id="豊穣圏"><span
 class="header-section-number">28</span> 豊穣圏</h1>
-<p>圏が<em>小さい</em>とは、対象が集合を形成することだ。しかし、集合より大きいものの存在も知られている。有名な話として、すべての集合の集合は、標準的な集合論（選択公理を含めて議論されることもあるツェルメロ＝フレンケル集合論）では形成できない。つまり、すべての集合の圏は大きいことになる。グロタンディーク宇宙
+<p>圏が<em>小さい</em>とは、対象が集合を形成することだ。しかし、集合より大きいものの存在も知られている。有名な話として、すべての集合の集合は、標準的な集合論では形成できない（標準的な集合論とはツェルメロ＝フレンケル集合論を指し、選択公理
+(Axiom of Choice) を議論に含めることもある）<a href="#fn12"
+class="footnote-ref" id="fnref12"
+role="doc-noteref"><sup>12</sup></a>。つまり、すべての集合の圏は大きいことになる。グロタンディーク宇宙
 (Grothendieck universe)
 などの数学的トリックがいくつかあって、集合を超える集まりを定義するのに使える。それらのトリックによって大きい圏について語れるようになる。</p>
 <p>任意の2つの対象間の射が集合を形成するような圏は、<em>局所的に小さい</em>、という。それらが集合を形成しないなら、定義のいくつかは再考する必要がある。特に、射を集合から選ぶことさえできない場合、射の合成とは何を意味するのだろう？
-解決策は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の対象からなるhom集合を他の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>からの<em>対象</em>で置き換えることによって、ブートストラップすることだ。ただし、一般に、対象には要素がないため、個々の射については語れない点が異なる。<span
+解決策は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の対象からなるhom集合を他の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>からの<em>対象</em>で置き換えることによってブートストラップすることだ。ただし、一般に、対象には要素がないため個々の射については語れない点が異なる。<span
 id="enriched2" class="keyword">豊穣</span>圏 (enriched category)
-のすべての特性を、hom対象に対して実行できる操作全体として定義する必要がある。そのためには、hom対象を提供する圏は、追加の構造を持たなければならない――モノイダル圏でなければならない。このモノイダルを圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>と呼ぶとき、圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>上の豊穣圏だと言える。</p>
+のすべての特性を、hom対象に対して実行できる操作全体として定義する必要がある。そのためには、hom対象を提供する圏は、追加の構造を持たなければならない――モノイダル圏でなければならない。このモノイダル圏を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>と呼ぶとき、圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>上の豊穣圏だと言える。</p>
 <p>大きさの理由に加えて、hom集合をただの集合以上の構造があるものへと一般化することも興味深そうだ。たとえば、従来の圏には対象間の距離という概念はない。2つの対象は射によって接続されているかいないかのどちらかだ。ある対象に接続されているすべての対象は近傍
 (neighbors)
-と呼ばれる。現実の人生とは違って、圏においては、友人の友人の友人は、親友と同じくらい近しい。適切な豊穣圏では、対象間の距離を定義できる。</p>
+と呼ばれる。現実の人生とは違って、圏においては、友人の友人の友人は、親友と同じくらい近しい。だが、適切な豊穣圏では、対象間の距離を定義できる。</p>
 <p>豊穣圏について経験を積むべき極めて実用的な理由はもう1つある。それは、圏に関する知識の非常に有用なオンライン情報源である<a
 href="https://ncatlab.org/">nLab</a>が主に豊穣圏について書かれているからだ。</p>
 <h2 data-number="28.1" id="なぜモノイダル圏か"><span
@@ -6903,6 +6905,15 @@ class="header-section-number">28.1</span> なぜモノイダル圏か？</h2>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>j</mi><mi>a</mi></msub><mo>∷</mo><mn>𝟏</mn><mo>→</mo><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">j_a \Colon \mathbf{1} \to \mathbf{C}(a, a)</annotation></semantics></math></p>
 <p>ここでも単集合は終対象に置き換えられるが、さらに進んでテンソル積の単位<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>にも置き換えられる。</p>
 <p>ご覧のように、あるモノイダル圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>から取った対象は、hom集合を置き換える候補として適している。</p>
+<aside id="footnotes-12" class="footnotes footnotes-end-of-section"
+role="doc-footnote">
+<hr />
+<ol start="12">
+<li
+id="fn12"><p>訳註：すべての集合の集合を考えることで素朴集合論において生じる矛盾は「カントールのパラドックス」と呼ばれる。ツェルメロ＝フレンケル集合論などの公理的集合論にはそのような矛盾を防ぐための制限が加えられている。<a
+href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
 <h2 data-number="28.2" id="モノイダル圏-1"><span
 class="header-section-number">28.2</span> モノイダル圏</h2>
 <p>モノイダル圏については前にも述べたが、定義をもう一度述べておく価値はある。モノイダル圏は、テンソル積を双関手として定義する：</p>
@@ -6960,7 +6971,7 @@ class="header-section-number">28.3</span> 豊饒圏</h2>
 class="header-section-number">28.4</span> 前順序</h2>
 <p>前順序は薄い圏として定義され、その中のhom集合はどれも空集合か単集合だ。集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a, b)</annotation></semantics></math>
 が空でないことは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>以下であることの証明と解釈される。そのような圏は、2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐹</mi><mi>𝑎</mi><mi>𝑙</mi><mi>𝑠</mi><mi>𝑒</mi></mrow><annotation encoding="application/x-tex">\mathit{False}</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝑇</mi><mi>𝑟</mi><mi>𝑢</mi><mi>𝑒</mi></mrow><annotation encoding="application/x-tex">\mathit{True}</annotation></semantics></math>とも呼ばれる）だけを含む非常に単純なモノイダル圏上の豊穣圏だと解釈できる。必須の恒等射に加えて、この圏には<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>への単一の射がある。これを<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>→</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 \to 1</annotation></semantics></math>と呼ぼう。単純なモノイダル構造をその中に確立できる。そのためには、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>の単純な算術をモデル化したテンソル積を使う（たとえば、0でない積は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>⊗</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1 \otimes 1</annotation></semantics></math>だけだ）。この圏の恒等対象は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>だ。これは厳密なモノイダル圏であり、つまり結合子と単位子は恒等射だ。</p>
-<p>前順序のhom集合は空集合か単集合なので、ちっぽけな圏からのhom対象に簡単に置き換えられる。豊穣化された前順序<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>は、対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>の任意のペアについてのhom対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a, b)</annotation></semantics></math>
+<p>前順序のhom集合は空集合か単集合なので、ここでのちっぽけな圏からのhom対象に簡単に置き換えられる。豊穣化された前順序<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>は、対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>の任意のペアについてのhom対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a, b)</annotation></semantics></math>
 を持つ。この対象は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>以下なら<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>で、そうでなければ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>だ。</p>
 <p>合成を見てみよう。任意の2つの対象のテンソル積は通常は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>で、両方が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>のときだけ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>となる。テンソル積が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>の場合、合成射には2つの候補がある。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mi>𝐢</mi><mi>𝐝</mi></mrow><mn>0</mn></msub><annotation encoding="application/x-tex">%
 \mathbf{id}_{0}%
@@ -6981,7 +6992,7 @@ href="http://www.tac.mta.ca/tac/reprints/articles/1/tr1.pdf">ウィリアム・�
 による興味深い例がある。ローヴェアは豊穣圏を使って距離空間 (metric
 space)
 を定義できることに気付いた。距離空間は任意の2対象間の距離を定義する。この距離は非負実数だ。取り得る値に無限大を含めると便利だ。距離が無限大の場合、一方の対象から他方の対象へ到達する方法はない。</p>
-<p>距離には、満たさなければならない自明な特性がいくつかある。その1つは、ある対象からそれ自身への距離は0でなければならない、というものだ。もう1つは三角不等式で、直線距離は中継地点同士の距離の合計を超えない、というものだ。距離が対称である必要がないのは、最初は奇妙に思えるかもしれないが、ローヴェアによる説明どおりに、ある方向へは坂を上り、逆方向へは坂を下るのを想像すれば分かる。いずれにしても、対称性は追加の制約として後から課してもよい。</p>
+<p>距離には、満たさなければならない自明な特性がいくつかある。その1つは、ある対象からそれ自身への距離は0でなければならない、というものだ。もう1つは三角不等式で、直線距離は中継地点同士の距離の合計を超えない、というものだ。距離が対称でなくてよいのは、最初は奇妙に思えるかもしれないが、ローヴェアによる説明どおりに、ある方向へは坂を上り、逆方向へは坂を下るのを想像すれば分かる。いずれにしても、対称性は追加の制約として後から課してもよい。</p>
 <p>さて、どうすれば距離空間を圏論の言葉で語れるだろうか？
 それには、hom対象が距離であるような圏を構築する必要がある。注意してほしいのは、距離は射ではなくhom対象だということだ。一体どうすればhom対象が数値になるだろう？
 それらの数値が対象であるようなモノイダル圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>さえ構築できればよい。非負実数（と無限大）は全順序を形成するので、薄い圏として扱える。このような2つの数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>の間の射は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x \geqslant y</annotation></semantics></math>の場合だけ存在する（註：これは前順序の定義での伝統的な向きとは逆だ）。モノイダル構造は加算で与えられ、0が単位対象として機能する。言い換えると、2つの数値のテンソル積はそれらの合計だ。</p>
@@ -7003,10 +7014,10 @@ class="header-section-number">28.6</span> 豊穣関手</h2>
 id="enriched_functor" class="keyword">豊穣関手</span> (enriched functor)
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>は、対象を対象に写すだけでなく、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>内の対象のすべてのペアに対して<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>内の射を割り当てる：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><mo>∷</mo><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>𝐃</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mspace width="0.222em"></mspace><mi>a</mi><mo>,</mo><mi>F</mi><mspace width="0.222em"></mspace><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F_{a b} \Colon \mathbf{C}(a, b) \to \mathbf{D}(F\ a, F\ b)</annotation></semantics></math></p>
-<p>関手は構造を保持する写像だ。普通の関手については、それは合成と恒等射を保存することを意味した。豊穣化された設定においては、合成の保存とは次の図式が可換であることを意味する：</p>
+<p>関手は構造を保持する写像だ。それは正則関手では合成と恒等射を保存することを意味した。豊穣化された設定においては、合成の保存とは次の図式が可換であることを意味する：</p>
 <p><img src="images/functorcomp.jpg" /></p>
-<p>恒等射の保存は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>内の射のうち恒等射を「選択」するものの保存に置き換えられる。</p>
-<p><img src="images/functorid.jpg" /></p>
+<p>恒等射の保存は、恒等射を「選択」するような<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>内の射の保存に置き換えられる：</p>
+<p><img src="images/functorid2.jpg" /></p>
 <h2 data-number="28.7" id="自己豊穣化"><span
 class="header-section-number">28.7</span> 自己豊穣化</h2>
 <p>閉じた対称モノイダル圏は、hom集合を内部hom（定義は上記を参照）に置き換えることによって自己豊穣化できる。そのためには、内部homについての合成律を定義する必要がある。言い換えると、次のシグネチャーを持つ射を実装する必要がある：</p>
@@ -7045,9 +7056,9 @@ class="header-section-number">29</span> トポイ</h1>
 (divergent computation) を含む。</p>
 <p>また、集合論には、計算機科学の基礎として、そして数学自体の基礎としても、最適とは言い難い根本的な理由がある。良い比喩としては、集合論は特定のアーキテクチャに結び付けられたアセンブリ言語だと言える。別のアーキテクチャで計算を実行したいなら、より一般的なツールを使う必要がある。</p>
 <p>可能性の1つは、集合の代わりに空間 (space)
-を使うことだ。空間は構造がより豊かで、集合を使わずに定義できる。通常、空間に関連付けられるものの1つは位相幾何学
+を使うことだ。空間は構造がより豊かで、集合を使わずに定義できる。通常、空間に関連付けられるものの1つは位相
 (topology)
-で、連続性などを定義するために必要だ。位相幾何学への従来のアプローチは、ご想像のとおり、集合論によるものだ。特に、部分集合は位相幾何学の中心的な概念だ。驚くまでもなく、圏論の研究者たちはこの概念を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>以外の圏に一般化した。集合論に代わるものとしてふさわしい性質を持つ圏の型は<span
+で、連続性などを定義するために必要だ。位相への従来のアプローチは、ご想像のとおり、集合論によるものだ。特に、部分集合は位相の中心的な概念だ。驚くまでもなく、圏論の研究者たちはこの概念を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>以外の圏に一般化した。集合論に代わるものとしてふさわしい性質を持つ圏の型は<span
 id="topos" class="keyword">トポス</span>（topos,
 複数形：トポイtopoi）と呼ばれ、部分集合を一般化した概念などを提供する。</p>
 <h2 data-number="29.1" id="部分対象分類子"><span
