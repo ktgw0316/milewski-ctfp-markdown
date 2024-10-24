@@ -12,11 +12,12 @@ by [Bartosz Milewski][bartosz github], based on:
 
 ## How to build
 
-1. Install [pandoc](https://pandoc.org/installing.html)
+1. Install [pandoc](https://pandoc.org/installing.html) and LuaLaTeX
 1. `cd english/` (or `cd japanese/` if you want to build Japanese version)
 1. Convert markdown to:
    * html: `pandoc -d ../defaults.yaml --template=../html_templates/bootstrap_menu.html --to=html5 -o index.html`
    * epub: `pandoc -d ../defaults.yaml --to=epub -o ctfp.epub`
+   * pdf: `pandoc -d ../defaults.yaml -o ctfp.pdf`
 
 [bartosz github]: https://github.com/BartoszMilewski
 [blogpost series]:
