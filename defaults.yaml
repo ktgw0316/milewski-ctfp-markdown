@@ -20,6 +20,7 @@ variables:
     - paper=a5paper
     - jlreq_warnings
 include-in-header:
+  - ../packages.tex
   - style.tex
   - ../frontmatter.tex
 
