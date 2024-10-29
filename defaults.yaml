@@ -21,6 +21,7 @@ variables:
     - jlreq_warnings
 include-in-header:
   - style.tex
+  - ../frontmatter.tex
 
 # common
 metadata-file: metadata.yaml
