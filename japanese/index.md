@@ -1,5 +1,7 @@
-\clearpage
+\cleardoublepage
+\printindex
 
+```{=html5}
 # 索引 {-}
 
 <!-- 英数 -->
@@ -128,3 +130,5 @@
 * [[ローヴェア・セオリー](#lawvere_theory){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- わ -->
+
+```

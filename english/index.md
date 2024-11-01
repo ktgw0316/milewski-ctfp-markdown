@@ -1,4 +1,8 @@
 
+\cleardoublepage
+\printindex
+
+```{=html5}
 # Index {-}
 
 <!-- -->
@@ -144,3 +148,5 @@
 
 <!-- -->
 * [[Yoneda embedding](#Yoneda_embedding){epub:type="index-locator"}]{epub:type="index-term"}
+
+```
