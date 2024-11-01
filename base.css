@@ -176,6 +176,17 @@ p img {
     border: none;
 }
 
+div:has(>div.page>svg) {
+    width: 100% !important;
+    zoom: 1.3;
+    column-gap: 0.6em;
+}
+
+div.page>svg {
+    right: 0;
+    margin: 0 auto;
+}
+
 sup {
     vertical-align: super;
     line-height: 0.5em;
