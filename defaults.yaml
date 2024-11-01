@@ -16,9 +16,7 @@ metadata:
 variables:
   classoption:
     - book
-    - afterindent=true
     - paper=a5paper
-    - jlreq_warnings
 include-in-header:
   - ../packages.tex
   - style.tex
