@@ -24,7 +24,7 @@ But you’re not off the hook as far as Haskell is concerned. You don’t have t
 
 If you’re an experienced programmer, you might be asking yourself: I’ve been coding for so long without worrying about category theory or functional methods, so what’s changed? Surely you can’t help but notice that there’s been a steady stream of new functional features invading imperative languages. Even Java, the bastion of object-oriented programming, let the lambdas in. C++ has recently been evolving at a frantic pace — a new standard every few years — trying to catch up with the changing world. All this activity is in preparation for a disruptive change or, as we physicist call it, a phase transition. If you keep heating water, it will eventually start boiling. We are now in the position of a frog that must decide if it should continue swimming in increasingly hot water, or start looking for some alternatives.
 
-`\begin{figure} \centering`{=latex}
+`\begin{figure}[H] \centering`{=latex}
 ![](images/img_1299.jpg){width=50%}
 `\end{figure}`{=latex}
 \noindent
