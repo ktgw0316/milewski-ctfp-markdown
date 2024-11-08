@@ -3,6 +3,11 @@ node_modules/
 *.aux
 *.dvi
 *.epub
+*.idx
+*.ilg
+*.ind
 *.json
 *.log
 *.pdf
+*.tex
+*.toc
