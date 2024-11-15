@@ -18,7 +18,7 @@ by [Bartosz Milewski][bartosz github], based on:
    * html: `pandoc -d ../defaults.yaml --template=../html_templates/bootstrap_menu.html --to=html5 -o index.html`
    * epub: `pandoc -d ../defaults.yaml --to=epub -o ctfp.epub`
    * pdf: `pandoc -d ../defaults.yaml -o ctfp.pdf`
-     * If you make index available in pdf, you need to run the following commands:
+     * If you want to make index available in pdf, you need to run the following commands:
         ```shell
         pandoc -d ../defaults.yaml -o ctfp.tex
         lualatex ctfp
