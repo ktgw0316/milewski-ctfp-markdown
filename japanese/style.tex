@@ -2,3 +2,15 @@
 \renewcommand{\labelenumii}{(\theenumii) }
 \setlength{\parindent}{1\zw}
 \setlength{\parskip}{0pt}
+
+% ダッシュをつなげる
+% cf. https://qiita.com/isari/items/1d0b60b76c7ef168e376
+\usepackage{newunicodechar}
+\makeatletter
+\chardef\my@J@horizbar="2015% Unicodeの2015
+\newunicodechar{―}{\x@my@dash}
+\def\x@my@dash{\@ifnextchar―{%
+  \my@J@horizbar\kern-.5\zw\my@J@horizbar\kern-.5\zw}{%
+    \my@J@horizbar}}
+% 次が―なら2回目のkernまでを、そうでないなら普通の―を出力
+\makeatother
