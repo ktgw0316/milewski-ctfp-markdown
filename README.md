@@ -15,8 +15,8 @@ by [Bartosz Milewski][bartosz github], based on:
 1. Install [pandoc](https://pandoc.org/installing.html) and LuaLaTeX
 1. `cd english/` (or `cd japanese/` if you want to build Japanese version)
 1. Convert markdown to:
-   * html: `pandoc -d ../defaults.yaml --template=../html_templates/bootstrap_menu.html --to=html5 -o index.html`
-   * epub: `pandoc -d ../defaults.yaml --to=epub -o ctfp.epub`
+   * html: `pandoc -d ../defaults_html.yaml --template=../html_templates/bootstrap_menu.html --to=html5 -o index.html`
+   * epub: `pandoc -d ../defaults_html.yaml --to=epub -o ctfp.epub`
    * pdf: `pandoc -d ../defaults.yaml -o ctfp.pdf`
      * If you want to make index available in pdf, you need to run the following commands:
         ```shell

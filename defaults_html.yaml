@@ -1,18 +1,16 @@
-# pdf
-to: latex
-pdf-engine: lualatex
-metadata:
-  documentclass: jlreq
-variables:
-  classoption:
-    - book
-    - paper=a5paper
-include-in-header:
-  - ../packages.tex
-  - style.tex
-  - ../frontmatter.tex
+# epub
+epub-metadata: metadata.yaml
+epub-chapter-level: 2
+epub-cover-image: images/monoid.jpg
+
+# html
+standalone: true
+html-math-method:
+  method: mathml
 
 # common
+css:
+  - base.css
 metadata-file: metadata.yaml
 from: markdown+smart
 highlight-style: tango
@@ -56,6 +54,6 @@ input-files:
   - part3/ch13.md
   - part3/ch14.md
   - part3/ch15.md
-  - index.md
+  - index_html.md
   - acknowledgments.md
   - license.md
