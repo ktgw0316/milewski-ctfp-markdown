@@ -21,6 +21,7 @@ by [Bartosz Milewski][bartosz github], based on:
      * If you want to make index available in pdf, you need to run the following commands:
         ```shell
         pandoc -d ../defaults.yaml -o ctfp.tex
+        sed -i -f ../ensuremath.sed ctfp.tex
         lualatex ctfp
         upmendex -d index.dic ctfp
         lualatex ctfp
