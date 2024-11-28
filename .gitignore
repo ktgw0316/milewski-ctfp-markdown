@@ -1,5 +1,11 @@
 build/
+documents/
 node_modules/
+pytermex/
+termextract*/
+tests/
+test_data/
+*/images
 *.aux
 *.dvi
 *.epub
@@ -9,5 +15,8 @@ node_modules/
 *.json
 *.log
 *.pdf
+*.py
 *.tex
 *.toc
+*.txt
+*.zip
