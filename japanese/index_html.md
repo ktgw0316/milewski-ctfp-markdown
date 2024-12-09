@@ -91,6 +91,7 @@
 * [[パラメトリック多相](#parametric_polymorphism){epub:type="index-locator"}]{epub:type="index-term"}
 * [[半環](#semiring){epub:type="index-locator"}]{epub:type="index-term"}
 * [[半順序](#partial_order){epub:type="index-locator"}]{epub:type="index-term"}
+  * [[-集合](#poset){epub:type="index-locator"}]{epub:type="index-term"}
 * [[反対圏](#opposite_category){epub:type="index-locator"}]{epub:type="index-term"}
 * [[反変](#contravariant){epub:type="index-locator"}]{epub:type="index-term"}
 * [[評価](#evaluation){epub:type="index-locator"}]{epub:type="index-term"}
@@ -107,7 +108,6 @@
 * 忘却関手 -- [[a](#forgetful_functor){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#forgetful_functor2){epub:type="index-locator"}]{epub:type="index-term"}
 * 豊穣 -- [[a](#enriched){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#enriched2){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-関手](#enriched_functor){epub:type="index-locator"}]{epub:type="index-term"}
-* [[ポセット](#poset){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ボトム](#bottom){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- ま -->
