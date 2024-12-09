@@ -100,7 +100,7 @@
   * [[-前層](#representable_presheaf){epub:type="index-locator"}]{epub:type="index-term"}
 * [[副作用](#side_effect){epub:type="index-locator"}]{epub:type="index-term"}
 * [[不動点](#fixed_point){epub:type="index-locator"}]{epub:type="index-term"}
-* [[普遍構成](#universal_construction){epub:type="index-locator"}]{epub:type="index-term"}
+* [[普遍的構成](#universal_construction){epub:type="index-locator"}]{epub:type="index-term"}
 * [[プロ関手](#profunctor){epub:type="index-locator"}]{epub:type="index-term"}
 * [[文脈付き計算](#contextual_computation){epub:type="index-locator"}]{epub:type="index-term"}
 * [[冪](#exponential){epub:type="index-locator"}]{epub:type="index-term"}
