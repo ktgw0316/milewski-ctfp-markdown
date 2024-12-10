@@ -24,8 +24,6 @@
 * [[外延的](#extensional){epub:type="index-locator"}]{epub:type="index-term"}
 * [[型推論](#type_inference){epub:type="index-locator"}]{epub:type="index-term"}
 * [[カリー化](#currying){epub:type="index-locator"}]{epub:type="index-term"}
-* [[カルテシアン閉](#Cartesian_closed){epub:type="index-locator"}]{epub:type="index-term"}
-* [[カルテシアン積](#Cartesian_product){epub:type="index-locator"}]{epub:type="index-term"}
 * [[環](#ring){epub:type="index-locator"}]{epub:type="index-term"}
 * [[関数合成](#function_composition){epub:type="index-locator"}]{epub:type="index-term"}
 * [[関数適用](#function_application){epub:type="index-locator"}]{epub:type="index-term"}
@@ -61,7 +59,7 @@
 * [[全射](#surjective){epub:type="index-locator"}]{epub:type="index-term"}
 * [[前順序](#preorder){epub:type="index-locator"}]{epub:type="index-term"}
 * [[全順序](#total_order){epub:type="index-locator"}]{epub:type="index-term"}
-* [[双カルテシアン閉](#bicartesian_closed){epub:type="index-locator"}]{epub:type="index-term"}
+* [[双デカルト閉](#bicartesian_closed){epub:type="index-locator"}]{epub:type="index-term"}
 * [[双関手](#bifunctor){epub:type="index-locator"}]{epub:type="index-term"}
 * 全単射 -- [[a](#bijections){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#bijection){epub:type="index-locator"}]{epub:type="index-term"}
 * [[双閉](#biclosed){epub:type="index-locator"}]{epub:type="index-term"}
@@ -72,6 +70,8 @@
 * [[対称](#symmetric){epub:type="index-locator"}]{epub:type="index-term"}
 * [[単射](#injective){epub:type="index-locator"}]{epub:type="index-term"}
 * [[チェイン](#chain){epub:type="index-locator"}]{epub:type="index-term"}
+* [[デカルト閉](#Cartesian_closed){epub:type="index-locator"}]{epub:type="index-term"}
+* [[デカルト積](#Cartesian_product){epub:type="index-locator"}]{epub:type="index-term"}
 * [[点](#point){epub:type="index-locator"}]{epub:type="index-term"}
 * [[テンプレートテンプレート仮引数](#template_template_parameter){epub:type="index-locator"}]{epub:type="index-term"}
 * [[テンソル積](#tensor_product){epub:type="index-locator"}]{epub:type="index-term"}
@@ -91,6 +91,7 @@
 * [[パラメトリック多相](#parametric_polymorphism){epub:type="index-locator"}]{epub:type="index-term"}
 * [[半環](#semiring){epub:type="index-locator"}]{epub:type="index-term"}
 * [[半順序](#partial_order){epub:type="index-locator"}]{epub:type="index-term"}
+  * [[-集合](#poset){epub:type="index-locator"}]{epub:type="index-term"}
 * [[反対圏](#opposite_category){epub:type="index-locator"}]{epub:type="index-term"}
 * [[反変](#contravariant){epub:type="index-locator"}]{epub:type="index-term"}
 * [[評価](#evaluation){epub:type="index-locator"}]{epub:type="index-term"}
@@ -99,7 +100,7 @@
   * [[-前層](#representable_presheaf){epub:type="index-locator"}]{epub:type="index-term"}
 * [[副作用](#side_effect){epub:type="index-locator"}]{epub:type="index-term"}
 * [[不動点](#fixed_point){epub:type="index-locator"}]{epub:type="index-term"}
-* [[普遍構成](#universal_construction){epub:type="index-locator"}]{epub:type="index-term"}
+* [[普遍的構成](#universal_construction){epub:type="index-locator"}]{epub:type="index-term"}
 * [[プロ関手](#profunctor){epub:type="index-locator"}]{epub:type="index-term"}
 * [[文脈付き計算](#contextual_computation){epub:type="index-locator"}]{epub:type="index-term"}
 * [[冪](#exponential){epub:type="index-locator"}]{epub:type="index-term"}
@@ -107,7 +108,6 @@
 * 忘却関手 -- [[a](#forgetful_functor){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#forgetful_functor2){epub:type="index-locator"}]{epub:type="index-term"}
 * 豊穣 -- [[a](#enriched){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#enriched2){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-関手](#enriched_functor){epub:type="index-locator"}]{epub:type="index-term"}
-* [[ポセット](#poset){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ボトム](#bottom){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- ま -->
