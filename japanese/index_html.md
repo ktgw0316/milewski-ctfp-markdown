@@ -79,7 +79,7 @@
   * [[-射](#isomorphism){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-を除いて](#up_to_isomorphism){epub:type="index-locator"}]{epub:type="index-term"}
 * [[equality](#equality){epub:type="index-locator"}]{epub:type="index-term"}
-* [[等式推論](#equational_reasoning){epub:type="index-locator"}]{epub:type="index-term"}
+* [[等式による推論](#equational_reasoning){epub:type="index-locator"}]{epub:type="index-term"}
 * [[同値性](#equivalence){epub:type="index-locator"}]{epub:type="index-term"}
 * [[同値関係](#equivalence_relation){epub:type="index-locator"}]{epub:type="index-term"}
 * [[トポス](#topos){epub:type="index-locator"}]{epub:type="index-term"}
