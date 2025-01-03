@@ -2,7 +2,7 @@
 
 <!-- 英数 -->
 * [[factorizer](#factorizer){epub:type="index-locator"}]{epub:type="index-term"}
-* [[hom集合](#hom-set){epub:type="index-locator"}]{epub:type="index-term"}
+* [[ホム集合](#hom-set){epub:type="index-locator"}]{epub:type="index-term"}
 * [[modus ponens](#modus_ponen){epub:type="index-locator"}]{epub:type="index-term"}
 * [[theorems for free](#theorems_for_free){epub:type="index-locator"}]{epub:type="index-term"}
 * [[variant](#variant){epub:type="index-locator"}]{epub:type="index-term"}
