@@ -77,7 +77,6 @@
 * [[同型](#isomorphic){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-射](#isomorphism){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-を除いて](#up_to_isomorphism){epub:type="index-locator"}]{epub:type="index-term"}
-* [[equality](#equality){epub:type="index-locator"}]{epub:type="index-term"}
 * [[等式による推論](#equational_reasoning){epub:type="index-locator"}]{epub:type="index-term"}
 * [[同値性](#equivalence){epub:type="index-locator"}]{epub:type="index-term"}
 * [[同値関係](#equivalence_relation){epub:type="index-locator"}]{epub:type="index-term"}
@@ -93,6 +92,7 @@
   * [[-集合](#poset){epub:type="index-locator"}]{epub:type="index-term"}
 * [[反対圏](#opposite_category){epub:type="index-locator"}]{epub:type="index-term"}
 * [[反変](#contravariant){epub:type="index-locator"}]{epub:type="index-term"}
+* [[等しさ](#equality){epub:type="index-locator"}]{epub:type="index-term"}
 * [[評価](#evaluation){epub:type="index-locator"}]{epub:type="index-term"}
 * [[表現](#representation){epub:type="index-locator"}]{epub:type="index-term"}
 * 表現可能 -- [[a](#representable){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#representable2){epub:type="index-locator"}]{epub:type="index-term"}
