@@ -2,6 +2,7 @@
 
 <!-- 英数 -->
 * [[factorizer](#factorizer){epub:type="index-locator"}]{epub:type="index-term"}
+* [[hom集合](#hom-set){epub:type="index-locator"}]{epub:type="index-term"}
 * [[modus ponens](#modus_ponen){epub:type="index-locator"}]{epub:type="index-term"}
 * [[theorems for free](#theorems_for_free){epub:type="index-locator"}]{epub:type="index-term"}
 * [[variant](#variant){epub:type="index-locator"}]{epub:type="index-term"}
@@ -108,7 +109,6 @@
 * 豊穣 -- [[a](#enriched){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#enriched2){epub:type="index-locator"}]{epub:type="index-term"}
   * [[-関手](#enriched_functor){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ボトム](#bottom){epub:type="index-locator"}]{epub:type="index-term"}
-* [[ホム集合](#hom-set){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- ま -->
 * [[モナド](#monad){epub:type="index-locator"}]{epub:type="index-term"}
