@@ -4521,13 +4521,13 @@ class="header-section-number">12.5</span> 課題</h2>
 </ol>
 <h1 data-number="13" id="free-monoids"><span
 class="header-section-number">13</span> 自由モノイド</h1>
-<p>モノイドは圏論とプログラミングの両方において重要な概念だ。圏は強い型付けの言語に相当し、モノイドは型なし言語に相当する。モノイドでは任意の2つの射を合成できるからだ。それは型なし言語で任意の2つの関数を合成できることに相当する（当然、プログラムの実行時にランタイムエラーが発生する可能性はある）。</p>
-<p>これまでに見てきたように、モノイドは単一の対象を持つ圏として記述され、その圏ではすべての論理が射の合成の規則として表現されている。この圏論的モデルは、より伝統的で集合論的なモノイドの定義と完全に等価だ。そこでは集合の2つの要素を「乗算」することで第3の要素が得られる。この「乗算」の過程はさらに詳細に分析できる。すなわち、まず要素のペア1つを形成し、次にこのペアを既存の要素――それらの「積」と同一視する。</p>
-<p>乗算の2番目の部分、つまりペアと既存の要素との同一視を省くとどうなるだろうか？　たとえば、任意の集合から始めて、ペアにできる要素をすべてペアにし、それらを新しい要素と呼ぶ、といったことができる。次に、それらの新しい要素とペアにできる要素をすべてペアにする。以下同様だ。これは連鎖反応だ――新しい要素を永久に追加し続けられる。その結果は、無限集合であり、<em>ほぼ</em>モノイドとなる。ただし、モノイドには単位元と結合律も必要だ。しかし、問題ない。特別な単位元を追加し、いくつかのペアを同一視すれば、単位律
+<p>モノイドは圏論とプログラミングの両方において重要な概念となる。圏は強く型付けされた言語に対応し、モノイドは型なし言語に対応する。型なしの言語で任意の2つの関数を合成できる（当然、プログラムを実行したときにランタイムエラーが発生する可能性はある）ように、モノイドでは任意の2つの射を合成できるからだ。</p>
+<p>これまでに見てきたように、モノイドは単一の対象を持つ圏として記述され、その圏ではすべての論理が射の合成の規則として表現されている。この圏論的モデルは、より伝統的で集合論的なモノイドの定義と完全に等価だ。そこでは集合の2つの要素を「乗算」することで第3の要素が得られる。この「乗算」の過程はさらに細かく分割できる。すなわち、まず要素のペア1つを形成するという過程と、次にこのペアを既存の要素――それらの「積」と同一視するという過程だ。</p>
+<p>乗算の2番目の部分、つまりペアと既存の要素との同一視を省くとどうなるだろうか？　たとえば、任意の集合から始めて、ペアにできる要素をすべてペアにし、それらを新しい要素と呼ぶことができる。次に、それらの新しい要素とペアにできる要素をすべてペアにしていく。以下同様だ。これは連鎖反応だ――新しい要素を永久に追加し続けられる。その結果は、無限集合であり、<em>ほぼ</em>モノイドとなる。ただし、モノイドには単位元と結合律も必要となる。しかし、問題ない。特別な単位元を追加し、生成されたペアの一部を同一視すれば、単位律
 (unit law) と結合律をきちんと満たせる。</p>
-<p>これがどう機能するか簡単な例を見てみよう。2要素の集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a, b\}</annotation></semantics></math>から始めよう。それらを自由モノイドの生成元
+<p>実際にどうなるかを簡単な例で見てみよう。2要素の集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a, b\}</annotation></semantics></math>から始めることにしよう。それらの要素を自由モノイドの生成元
 (generator)
-と呼ぶことにする。まず、単位元として機能する特別な要素<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>を追加する。次に、要素のすべてのペアを追加し、それらを「積」と呼ぶ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>の積はペア
+と呼ぶことにする。まず、単位元となる特別な要素<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>を追加する。次に、要素のすべてのペアを追加し、それらを「積」と呼ぶ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>の積はペア
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, b)</annotation></semantics></math>
 となる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>の積はペア
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(b, a)</annotation></semantics></math>
@@ -4535,115 +4535,134 @@ class="header-section-number">13</span> 自由モノイド</h1>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, a)</annotation></semantics></math>
 となり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>の積は
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(b, b)</annotation></semantics></math>
-となる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>とのペアとして形成できる
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>e</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, e)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>e</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(e, b)</annotation></semantics></math>
-などは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>などと同一視する。したがって、このラウンドでは
+となる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>とのペアも作れて、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>e</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, e)</annotation></semantics></math>
+や
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>e</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(e, b)</annotation></semantics></math>
+などになるが、それらは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>や<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>などと同一視することにする。結局このラウンドでは
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, a)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, b)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(b, a)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(b, a)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(b, a)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(b, b)</annotation></semantics></math>
-だけを追加して、最終的に<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>e</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{e, a, b, (a, a), (a, b), (b, a), (b, b)\}</annotation></semantics></math>という集合を作成する。</p>
+だけを追加して、結果として<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>e</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{e, a, b, (a, a), (a, b), (b, a), (b, b)\}</annotation></semantics></math>という集合が得られる。</p>
 <p> <img src="images/bunnies.jpg" style="width:80.0%" />
-次のラウンドでは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, (a, b))</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">((a, b), a)</annotation></semantics></math>
-などの要素を追加していく。この時点で、結合律が確実に満たされる必要があるので、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, (b, a))</annotation></semantics></math>
-を
+次のラウンドでは
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, (a, b))</annotation></semantics></math>
+や
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">((a, b), a)</annotation></semantics></math>
-などと同一視する。言い換えると、内側の括弧は必要ないということだ。</p>
-<p>このプロセスの最終的な結果が予想できるだろう：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>から作れるすべてのリストが作られる。事実として、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>を空リストで表せば、「乗算」はリストの連接に他ならないことが分かる。</p>
-<p>この種の構成では、要素の組み合わせとして可能なものすべてを生成し続け、同一視は最小限に――単位律と結合律を維持するのにちょうど十分なだけに留める。これは自由構成と呼ばれる。以上で生成元<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a, b\}</annotation></semantics></math>の集合から<span
-id="free_monoid" class="keyword"><em>自由モノイド</em></span> (free
-monoid) を構築したことになる。</p>
+といった要素を追加していく。この時点で、結合律が確実に満たされるようにする必要がある。そのため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, (b, a))</annotation></semantics></math>
+と
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">((a, b), a)</annotation></semantics></math>
+などを同一視する。要するに、内側の括弧は必要ないということだ。</p>
+<p>このプロセスの最終的な結果が予想できるだろう。要素が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>か<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>であるようなすべてのリストが作られる。実際、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>を空リストで表せば、「乗算」はリストの連接に他ならないことが分かる。</p>
+<p>この種の構成では、要素の組み合わせとして可能なものすべてを生成し続け、同一視は最小限に――その構造の規則を維持するのにちょうど十分なだけに留める。こういった構成は自由構成と呼ばれる。上記では、生成元の集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a, b\}</annotation></semantics></math>から<span
+id="free_monoid"
+class="keyword"><em>自由モノイド</em></span>を構築した。</p>
 <h2 data-number="13.1" id="haskellにおける自由モノイド"><span
 class="header-section-number">13.1</span>
 Haskellにおける自由モノイド</h2>
-<p>Haskellの二元集合は型<code>Bool</code>と等価であり、この集合によって生成される自由モノイドは型<code>[Bool]</code>（<code>Bool</code>のリスト）と等価だ。（無限リストの問題は意図的に無視している。）</p>
+<p>Haskellにおける二元集合は型<code>Bool</code>と等価であり、この集合から生成される自由モノイドは型<code>[Bool]</code>（<code>Bool</code>のリスト）と等価だ。（無限リストの問題は意図的に無視している。）</p>
 <p>Haskellのモノイドは型クラスによって定義されている：</p>
 <div class="sourceCode" id="cb324"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb324-1"><a href="#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> <span class="dt">Monoid</span> m <span class="kw">where</span></span>
 <span id="cb324-2"><a href="#cb324-2" aria-hidden="true" tabindex="-1"></a><span class="ot">    mempty  ::</span> m</span>
 <span id="cb324-3"><a href="#cb324-3" aria-hidden="true" tabindex="-1"></a><span class="ot">    mappend ::</span> m <span class="ot">-&gt;</span> m <span class="ot">-&gt;</span> m</span></code></pre></div>
 <p>
-これが意味しているのは、すべての<code>Monoid</code>が<code>mempty</code>と呼ばれる中立元と、<code>mappend</code>と呼ばれる二項関数（乗算）を持たなければならないということだ。Haskellでは単位律と結合律は表現できず、モノイドがインスタンス化されるたびにプログラマーによって検証されなければならない。</p>
-<p>任意の型のリストがモノイドを形成するという事実は、次のインスタンス定義によって記述される：</p>
+このクラスが意味しているのは、すべての<code>Monoid</code>が<code>mempty</code>と呼ばれる中立元と、<code>mappend</code>と呼ばれる二項関数（乗算）を持たなければならないということだ。Haskellでは単位律と結合律は表現できず、具体的なモノイドを与えるたびにプログラマーによって検証されなければならない。</p>
+<p>任意の型のリストがモノイドを形成するという事実は、次のインスタンス定義によって説明される：</p>
 <div class="sourceCode" id="cb325"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb325-1"><a href="#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Monoid</span> [a] <span class="kw">where</span></span>
 <span id="cb325-2"><a href="#cb325-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mempty</span>  <span class="ot">=</span> []</span>
 <span id="cb325-3"><a href="#cb325-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mappend</span> <span class="ot">=</span> (<span class="op">++</span>)</span></code></pre></div>
 <p>
-これは、空リスト<code>[]</code>が単位元であり、リスト連接<code>(++)</code>が二項演算であることを記述している。</p>
-<p>これまで見てきたように、型<code>a</code>のリストは集合<code>a</code>を生成元とする自由モノイドに対応する。ところが、乗算を伴う自然数の集合は、多くの積が同一視されるので自由モノイドではない。次の2つを比較しよう：</p>
+これはリストモノイドについて、空リスト<code>[]</code>が単位元であり、リスト連接<code>(++)</code>が二項演算であることを述べている。</p>
+<p>これまで見てきたように、型<code>a</code>のリストは集合<code>a</code>を生成元たちとする自由モノイドに対応する。その一方で、乗算を伴う自然数の集合は、多くの積が同一視されるので自由モノイドではない。次の2つを比べてみよう：</p>
 <div class="sourceCode" id="cb326"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb326-1"><a href="#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span> <span class="ot">=</span> <span class="dv">6</span></span>
 <span id="cb326-2"><a href="#cb326-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>] <span class="op">++</span> [<span class="dv">3</span>] <span class="ot">=</span> [<span class="dv">2</span>, <span class="dv">3</span>] <span class="op">//</span> [<span class="dv">6</span>]と同じではない</span></code></pre></div>
 <p>
-これは簡単な例だったが、圏論では対象の中を見るのが許されないのにどうやってこの自由構成を実現できるのか、という問題がある。そこで馬車馬のように働いてもらうのが、普遍的構成だ。</p>
+これは簡単な例だったが、圏論では対象の中を見るのが許されないのにどうやってこの自由構成を実現できるのか、という疑問がある。そこで我々の働き者にもうひと仕事してもらうとしよう：普遍的構成だ。</p>
 <p>2番目の興味深い疑問は、単位律と結合律が最小限必要とするよりも多くの要素を同一視すれば、ある自由モノイドから任意のモノイドを得られるのか、ということだ。これが普遍的構成から直接導かれることをお見せしよう。</p>
 <h2 data-number="13.2" id="自由モノイドの普遍的構成"><span
 class="header-section-number">13.2</span> 自由モノイドの普遍的構成</h2>
-<p>普遍的構成についての経験を振り返れば、それは何かを構築するというより、特定のパターンに最もよく適合する対象を選択するものだと気付くだろう。したがって、普遍的構成を使って自由モノイドを「構築」したいなら、選択肢となる多数のモノイドの全体を考慮する必要がある。選択するにはモノイドの圏全体が必要だ。だが、モノイドは圏を形成するのだろうか？</p>
-<p>まず、単位元と乗算によって定義された追加構造を伴う集合としてモノイドを見てみよう。モノイダル構造を保存する関数を射として採用する。構造を保存するこのような関数は<span
+<p>普遍的構成についての経験を振り返れば、それは何かを構築するというより、特定のパターンに最もよく適合する対象を選択するものだと気付くだろう。なので、普遍的構成を使って自由モノイドを「構築」したいなら、選択肢となる多数のモノイドの全体を考慮する必要がある。つまり、選択のもととなるモノイドの圏がまるごと必要だ。だが、モノイドたちは圏をなすのだろうか<a
+href="#fn72" class="footnote-ref" id="fnref72"
+role="doc-noteref"><sup>72</sup></a>？</p>
+<p>まずは、単位元と二項演算による構造が加わった集合としてモノイドを見てみよう。そして、モノイドの構造を保存するような関数を射として採用する。構造を保存するそういった関数は<span
 id="homomorphisms" class="keyword"><em>準同型</em></span> (homomorphism)
-と呼ばれる。モノイド準同型は2つの要素の積を2つの要素の写像の積に写さなければならない：</p>
+と呼ばれる。モノイド準同型は2つの要素の積を2つの要素の写し先の積へと写さなければならない：</p>
 <div class="sourceCode" id="cb327"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb327-1"><a href="#cb327-1" aria-hidden="true" tabindex="-1"></a>h (a <span class="op">*</span> b) <span class="ot">=</span> h a <span class="op">*</span> h b</span></code></pre></div>
-<p> なおかつ単位元を単位元に写さなければならない。</p>
-<p>例として、整数のリストから整数への準同型を考えよう。<code>[2]</code>を2に写し、<code>[3]</code>を3に写すなら、<code>[2, 3]</code>を6に写す必要がある。なぜなら、連接：</p>
+<p> そして、単位元を単位元に写さなければならない。</p>
+<p>例として、整数のリストから整数への準同型を考えよう<a href="#fn73"
+class="footnote-ref" id="fnref73"
+role="doc-noteref"><sup>73</sup></a>。<code>[2]</code>を2に写し、<code>[3]</code>を3に写すなら、<code>[2, 3]</code>を6に写す必要がある。なぜなら、連接：</p>
 <div class="sourceCode" id="cb328"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb328-1"><a href="#cb328-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>] <span class="op">++</span> [<span class="dv">3</span>] <span class="ot">=</span> [<span class="dv">2</span>, <span class="dv">3</span>]</span></code></pre></div>
-<p> が次のような乗算になるからだ：</p>
+<p> が次のような乗算に写されるからだ：</p>
 <div class="sourceCode" id="cb329"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb329-1"><a href="#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span> <span class="ot">=</span> <span class="dv">6</span></span></code></pre></div>
 <p>
 ここで、個々のモノイドの内部構造については忘れて、対応する射を持つ対象としてのみ見よう。すると、モノイドの圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>が得られる。</p>
-<p>ところで、内部構造を忘れる前に、重要な性質に注目しておいた方がよいだろう。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>のすべての対象が集合に写せるのは自明だ。それはただの要素の集合だ。この集合は<span
+<p>さて、内部構造を忘れる前に、重要な性質に注目しておいた方がよいだろう。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>のどの対象も自明に集合へと写せる。写し先の集合は単にもとのモノイドの要素の集合だ。この集合は<span
 id="underlying" class="keyword"><em>台</em></span>集合 (underlying set)
-と呼ばれる。実際、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>の対象を集合に写せるだけでなく、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>の射（準同型）も関数に写せる。これも自明なだけに見えるが、すぐに役立つようになるだろう。この<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>への対象と射の写像は、実際には関手だ。この関手はモノイダル構造を「忘れている」。いったん通常の集合の中に入ると、もはや単位元を区別したり乗算を気にしたりすることはない。そのため、<span
+と呼ばれる。実際には、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>の各対象を集合に写せるだけでなく、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>の各射（準同型）も関数に写せる。これも自明なだけに見えるが、すぐに役に立つ。この<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>への対象と射の写像は、実は関手になっている。この関手はモノイドの構造を「忘れている」。いったん通常の集合の中に入ると、もはや単位元を区別したり乗算を気にしたりすることはない。こういった関手は<span
 id="forgetful_functor" class="keyword"><em>忘却関手</em></span>
 (forgetful functor) と呼ばれる。忘却関手は圏論ではよく出てくる。</p>
-<p>これで、2つの異なる観点から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>を見たことになる。それらは対象と射を伴う他のすべての圏と同じように扱える。この観点では、モノイドの内部構造は見えない。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>の中の特定の対象について言えるのは、それ自身や他の対象と射を通じて接続しているということだけだ。射の「掛け算の九九」の表――合成律――は、集合としてのモノイドという、もう一方の観点から導かれる。圏論に進んだことでこの観点を完全に失ったわけではない――まだ忘却関手を通じてアクセスできる。</p>
-<p>普遍的構成を適用するには、特別な性質を定義することにより、モノイドの圏を探索して自由モノイドの最良の候補を選べるようにする必要がある。しかし、自由モノイドはその生成元によって定義される。別の生成元を選べば、生成される自由モノイドは変わる（<code>Bool</code>のリストと<code>Int</code>のリストは違う）。我々の構成は、生成元の集合から始めなければならない。つまり、集合に戻ってきた！</p>
-<p>ここで忘却関手が登場する。それは我々のモノイドをレントゲン撮影するのに使える。これらの小塊のレントゲン写真から生成元を特定できる。その仕組みは以下のとおりだ：</p>
-<p>生成元の集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>から始める。それは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の集合だ。</p>
-<p>マッチさせるパターンは、モノイド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>――<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>の対象――と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>で構成されている：</p>
+<p>これで、2つの異なる観点から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>を見たことになる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>は対象と射を伴う他のすべての圏と同じように扱える。この観点では、モノイドの内部構造は見えない。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>の中の特定の対象について言えるのは、それ自身や他の対象と射を通じて接続しているということだけだ。射の「乗算」表――つまり、合成の規則――は、もう一方の観点、すなわち集合としてのモノイドから導かれる。圏論に進んだことでこの観点が完全に失われたわけではない――忘却関手を通じてならアクセスできる。</p>
+<p>普遍的構成を適用するには、モノイドの圏を探索して自由モノイドの最良の候補を選べるようにするための特別な性質を定義する必要がある。しかし、自由モノイドはその生成元たちによって定義される。別の生成元たちを選べば、生成される自由モノイドは変わる（<code>Bool</code>のリストと<code>Int</code>のリストは違う）。我々の構成は、生成元の集合から始めなければならない。つまり、集合に戻ってきたということだ！</p>
+<p>ここで忘却関手が役立つことになる。忘却関手によってモノイドをレントゲン撮影できる。そして、これらの小塊のレントゲン写真から生成元たちを特定できる。その仕組みは以下のとおりだ：</p>
+<p>生成元の集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>から始める。この集合は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>の対象だ。</p>
+<p>マッチさせようとしているパターンは、モノイド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>――<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>の対象――と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>で構成されている：</p>
 <div class="sourceCode" id="cb330"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb330-1"><a href="#cb330-1" aria-hidden="true" tabindex="-1"></a><span class="ot">p ::</span> x <span class="ot">-&gt;</span> <span class="dt">U</span> m</span></code></pre></div>
 <p>
-ここで、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>への忘却関手だ。これは奇妙な混成パターンだ――半分は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>で半分は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>だ。</p>
-<p>この考え方では、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>のレントゲン写真内の生成元の集合を関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>が特定する。関数が集合内の点をきちんと特定できなくても問題ない（関数が点を潰してもよい）。普遍構成によってそのパターンの最良の代表が選ばれて、すべて整理されるだろう。</p>
+ここで、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>への忘却関手だ。これは奇妙な混成パターンだ――半分は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>で半分は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>になっている。</p>
+<p>意図としては、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>のレントゲン写真に写った生成元の集合が関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>によって特定されるようにするということだ。関数たちが集合内の点たち<a
+href="#fn74" class="footnote-ref" id="fnref74"
+role="doc-noteref"><sup>74</sup></a>をきちんと特定できない（それらを潰す）かもしれないことは問題ない。普遍的構成によってこのパターンの最良の代表が選ばれ、すべてが整理されるだろう。</p>
 <p> <img src="images/monoid-pattern.jpg" style="width:40.0%" />
-候補間の順位付けも定義しなければならない。もう1つの候補があるとしよう。モノイド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>と、そのレントゲン写真内の生成元を特定する関数だ：</p>
+候補間の順位付けも定義しなければならない。もう1つの候補があるとしよう。モノイド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>と、そのレントゲン写真内の生成元たちを特定しようとする関数だ：</p>
 <div class="sourceCode" id="cb331"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb331-1"><a href="#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="ot">q ::</span> x <span class="ot">-&gt;</span> <span class="dt">U</span> n</span></code></pre></div>
 <p>
-次のようなモノイドの射（構造を保存する準同型）がある場合、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>よりも優れていると言うことにしよう：</p>
+次のようなモノイドの射（準同型なので構造を保存する）がある場合、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>よりも優れていると言うことにしよう：</p>
 <div class="sourceCode" id="cb332"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb332-1"><a href="#cb332-1" aria-hidden="true" tabindex="-1"></a><span class="ot">h ::</span> m <span class="ot">-&gt;</span> n</span></code></pre></div>
 <p>
-これの<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>の下の像（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>は関手なので、射を関数に写す）は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>を通じて分解する：</p>
+これの<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>の下の像（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>は関手なので射を関数に写す）は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>を通じて<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>を分解する：</p>
 <div class="sourceCode" id="cb333"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb333-1"><a href="#cb333-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">=</span> <span class="dt">U</span> h <span class="op">.</span> p</span></code></pre></div>
 <p>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>内の生成元を選択し、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>内の「同じ」生成元を選択すると見なすなら、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>はこれらの生成元を2つのモノイドの間で写していると見なせる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>は、定義より、モノイダル構造を保存することを思い出してほしい。これは、1つのモノイドにおける2つの生成元の積が、2番目のモノイドにおいて対応する2つの生成元の積に写されることなどを意味する。</p>
-<p><img src="images/monoid-ranking.jpg" style="width:40.0%"
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>内で生成元たちを選択し、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>内で「同じ」生成元たちを選択していると見なすなら、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>はこれらの生成元たちを2つのモノイドの間で写していると見なせる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>は、定義より、モノイドの構造を保存することを思い出してほしい。これは、一方のモノイドにおける2つの生成元の積が、もう一方のモノイドにおける対応する2つの生成元の積に写されることなどを意味する。</p>
+<p> <img src="images/monoid-ranking.jpg" style="width:40.0%"
 alt="モノイドの順位付け" />
 この順位付けは、最も優れた候補、すなわち自由モノイドを見つけるために使われる。定義は次のとおりだ：</p>
 <blockquote>
-<p>（関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>を伴う）<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>と、前述の分解特性を満たす任意の他の（関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>を伴う）モノイド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>とについて、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>への<em>一意な</em>射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>が存在する場合に限って、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>を生成元<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>を伴う<strong>自由モノイド</strong>と呼ぶ。</p>
+<p>（関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>を伴う）<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>を生成元<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>を伴う<strong>自由モノイド</strong>と呼ぶのは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>から（関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>を伴う）他の任意のモノイド<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>への、前述の分解特性を満たす<em>一意な</em>射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>が存在する場合、かつその場合に限る。</p>
 </blockquote>
-<p>ちなみに、これは2番目の疑問に対する答えだ。関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">U h</annotation></semantics></math>には、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">U m</annotation></semantics></math>の複数の要素を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">U n</annotation></semantics></math>の1つの要素へ潰す力がある。ここで、潰すことは自由モノイドのいくつかの要素を同一視することに対応する。したがって、生成元<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>を伴うモノイドは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>に基づく自由モノイドから、いくつかの要素を同一視することによって得られる。自由モノイドとは、最小限だけしか同一視されていないモノイドのことだ。</p>
-<p>随伴について話すとき、自由モノイドに戻ってこよう。</p>
+<p>ところで、これは2番目の疑問に対する答えになっている。関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">U h</annotation></semantics></math>には、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">U m</annotation></semantics></math>の複数の要素を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">U n</annotation></semantics></math>の1つの要素へ潰す力がある。ここで、潰すことは自由モノイドのいくつかの要素を同一視することに対応する。したがって、生成元たちとして<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>を持つモノイドはどれも、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>に基づく自由モノイドから、いくつかの要素を同一視することによって得られる。自由モノイドとは、最小限のものだけしか同一視されていないモノイドのことだ。</p>
+<p>自由モノイドについては、随伴について話すときにまた戻ってくることにしよう。</p>
+<aside id="footnotes-42" class="footnotes footnotes-end-of-section"
+role="doc-footnote">
+<hr />
+<ol start="72">
+<li
+id="fn72"><p>訳注：この章の冒頭ではモノイドと単一対象の圏との対応について述べていたが、ここではモノイドが対象であるような圏について述べていることに注意。<a
+href="#fnref72" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li
+id="fn73"><p>訳注：ここでは二項演算が乗算であるようなモノイド構造を考えている。<a
+href="#fnref73" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li
+id="fn74"><p>訳注：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の生成元たちのこと。<a
+href="#fnref74" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
 <h2 data-number="13.3" id="課題-10"><span
 class="header-section-number">13.3</span> 課題</h2>
 <ol>
-<li><p>モノイドの準同型が単位元を保存する、という条件は（もともと私もそう思ったように）冗長だと思うかもしれない。結局のところ、すべての<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>について次が成り立つのは分かっている：</p>
+<li><p>モノイドの準同型が単位元を保存する、という条件は（当初は私もそう思ったように）冗長だと思うかもしれない。何しろ、すべての<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>について次が言えるのだから：</p>
 <div class="sourceCode" id="cb334"><pre
-class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb334-1"><a href="#cb334-1" aria-hidden="true" tabindex="-1"></a>h a <span class="op">*</span> h e <span class="ot">=</span> h (a <span class="op">*</span> e) <span class="ot">=</span> h a</span></code></pre></div></li>
-</ol>
+class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb334-1"><a href="#cb334-1" aria-hidden="true" tabindex="-1"></a>h a <span class="op">*</span> h e <span class="ot">=</span> h (a <span class="op">*</span> e) <span class="ot">=</span> h a</span></code></pre></div>
 <p>
-したがって、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">h e</annotation></semantics></math>は右単位元のように働く（同様に、左単位元のようにも働く）。
-問題は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">h a</annotation></semantics></math>は、すべての<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>を考えると、終域モノイドの一部のモノイドしかカバーできないということだ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>の像の外部に「真の」単位元が存在する場合がある。モノイド間で乗算を保存する同型は自動的に単位元を保存しなければならないことを示せ。</p>
-<ol>
-<li><p>連接できる整数リストから乗算できる整数へのモノイド準同型について考える。空リスト<code>[]</code>の像は何か？
-すべての単要素リストは、それが含む整数に写されるとする。たとえば、<code>[3]</code>は3に写される。<code>[1, 2, 3, 4]</code>の像は何か？
-整数12に写されるリストはいくつあるか？
-2つのモノイド間に他の準同型はあるか？</p></li>
+つまり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">h e</annotation></semantics></math>は右単位元のように働く（同様に、左単位元のようにも働く）。問題は、すべての<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>に対して<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">h a</annotation></semantics></math>を集めてきたものを考えると、終域モノイドの部分モノイドしかカバーできないということだ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>の像の外部に「真の」単位元が存在するかもしれない。モノイド間で乗算を保存する同型は自動的に単位元を保存することになることを示せ。</p></li>
+<li><p>連接を二項演算とする整数リストから乗算を二項演算とする整数へのモノイド準同型について考える。空リスト<code>[]</code>の像は何か？　すべての単要素リストは、それが含む整数に写されるとする。たとえば、<code>[3]</code>は3に写される。<code>[1, 2, 3, 4]</code>の像は何か？　整数12に写されるリストはいくつあるか？　2つのモノイド間に他の準同型はあるか？</p></li>
 <li><p>単元集合によって生成される自由モノイドとは何か？　それが何と同型なのか分かるか？</p></li>
 </ol>
 <h1 data-number="14" id="representable-functors"><span
@@ -4732,7 +4751,7 @@ functor)
 となる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>−</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a, -)</annotation></semantics></math>
 がそうだからだ。</p>
 <p>以前述べたように、同型集合は同一と見なされることが多い。より一般には、圏の同型<em>対象</em>は同一と見なされる。ある対象は、他の対象（およびそれ自身）との射による関係以外の構造を持たないからだ。</p>
-<p>たとえば、まず集合でモデル化されたモノイドの圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>について以前説明した。ただし、それらの集合のモノイダル構造を保存する関数のみを射として選ぶように気を付けた。そのため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>内の2つの対象は、同型なら、つまり可逆な射が間にあるなら、全く同じ構造を持つ。それらが基づく集合と関数を見てみると、片方のモノイドの単位元はもう片方のモノイドの単位元に写され、2つの要素の積はそれらの写像の積に写されているのが分かる。</p>
+<p>たとえば、まず集合でモデル化されたモノイドの圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>について以前説明した。ただし、それらの集合のモノイドの構造を保存する関数のみを射として選ぶように気を付けた。そのため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐌</mi><mi>𝐨</mi><mi>𝐧</mi></mrow><annotation encoding="application/x-tex">\mathbf{Mon}</annotation></semantics></math>内の2つの対象は、同型なら、つまり可逆な射が間にあるなら、全く同じ構造を持つ。それらが基づく集合と関数を見てみると、片方のモノイドの単位元はもう片方のモノイドの単位元に写され、2つの要素の積はそれらの写像の積に写されているのが分かる。</p>
 <p>同じ論法が関手にも適用できる。2つの圏の間の関手は圏を形成し、そこでは自然変換が射の役割を果たしている。したがって、2つの関手の間に可逆な自然変換があれば、それらは同型であり、同一と見なせる。</p>
 <p>この観点から表現可能関手の定義を分析してみよう。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>が表現可能となる条件は次のとおりだ：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>に対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>があり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>−</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a, -)</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>への自然変換<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>が1つあり、逆方向に別の自然変換<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>があり、それらの合成が恒等自然変換であること。</p>
 <p>ある対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>における<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>の成分を見てみよう。それは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の関数だ：
@@ -4828,16 +4847,16 @@ class="header-section-number">14.4</span> 参考文献</h2>
 <ol>
 <li><a
 href="https://www.youtube.com/watch?v=4QgjKUzyrhM">表現可能関手</a><a
-href="#fn72" class="footnote-ref" id="fnref72"
-role="doc-noteref"><sup>72</sup></a>についてのCatstersの動画</li>
+href="#fn75" class="footnote-ref" id="fnref75"
+role="doc-noteref"><sup>75</sup></a>についてのCatstersの動画</li>
 </ol>
-<aside id="footnotes-42" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-43" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="72">
-<li id="fn72"><p><a href="https://www.youtube.com/watch?v=4QgjKUzyrhM"
+<ol start="75">
+<li id="fn75"><p><a href="https://www.youtube.com/watch?v=4QgjKUzyrhM"
 class="uri">https://www.youtube.com/watch?v=4QgjKUzyrhM</a><a
-href="#fnref72" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref75" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h1 data-number="15" id="the-yoneda-lemma"><span
@@ -4994,16 +5013,16 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb363-1"><
 class="header-section-number">15.4</span> 参考文献</h2>
 <ol>
 <li><a href="https://www.youtube.com/watch?v=TLMxHB19khE">Catsters</a><a
-href="#fn73" class="footnote-ref" id="fnref73"
-role="doc-noteref"><sup>73</sup></a>の動画</li>
+href="#fn76" class="footnote-ref" id="fnref76"
+role="doc-noteref"><sup>76</sup></a>の動画</li>
 </ol>
-<aside id="footnotes-43" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-44" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="73">
-<li id="fn73"><p><a href="https://www.youtube.com/watch?v=TLMxHB19khE"
+<ol start="76">
+<li id="fn76"><p><a href="https://www.youtube.com/watch?v=TLMxHB19khE"
 class="uri">https://www.youtube.com/watch?v=TLMxHB19khE</a><a
-href="#fnref73" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref76" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h1 data-number="16" id="yoneda-embedding"><span
@@ -5084,16 +5103,16 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb366-1"><
 <p>この同型を別の観点で見ると、<code>b</code>から<code>a</code>への関数を継続渡しスタイルで表しているとも見なせる。引数<code>a -&gt; x</code>は継続（ハンドラー）だ。結果は<code>b</code>から<code>x</code>への関数であり、型<code>b</code>の値で呼ばれたとき、エンコードされた関数を前合成した継続を実行する。</p>
 <p>米田埋め込みはHaskellのデータ構造の代替表現についても説明する。特に、非常に便利な<a
 href="https://bartoszmilewski.com/2015/07/13/from-lenses-to-yoneda-embedding/">レンズの表現</a><a
-href="#fn74" class="footnote-ref" id="fnref74"
-role="doc-noteref"><sup>74</sup></a>を<code>Control.Lens</code>ライブラリで提供する。</p>
-<aside id="footnotes-44" class="footnotes footnotes-end-of-section"
+href="#fn77" class="footnote-ref" id="fnref77"
+role="doc-noteref"><sup>77</sup></a>を<code>Control.Lens</code>ライブラリで提供する。</p>
+<aside id="footnotes-45" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="74">
-<li id="fn74"><p><a
+<ol start="77">
+<li id="fn77"><p><a
 href="https://bartoszmilewski.com/2015/07/13/from-lenses-to-yoneda-embedding/"
 class="uri">https://bartoszmilewski.com/2015/07/13/from-lenses-to-yoneda-embedding/</a><a
-href="#fnref74" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref77" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h2 data-number="16.3" id="前順序の例"><span
@@ -5102,9 +5121,9 @@ class="header-section-number">16.3</span> 前順序の例</h2>
 Harperによって提案された。前順序によって定義された圏に米田埋め込みを適用するものだ。前順序は要素間に順序関係がある集合だ。順序関係は伝統的に<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>≤</mo><annotation encoding="application/x-tex">\leqslant</annotation></semantics></math>（以下）で記述される。前順序に「前」が付いているのは、関係が推移律
 (transitive law) と反射律 (reflexive law)
 を満たす必要があるだけで、必ずしも反対称律 (antisymmetric law)
-を満たす必要はないからだ（すなわち、循環してもよい）<a href="#fn75"
-class="footnote-ref" id="fnref75"
-role="doc-noteref"><sup>75</sup></a>。</p>
+を満たす必要はないからだ（すなわち、循環してもよい）<a href="#fn78"
+class="footnote-ref" id="fnref78"
+role="doc-noteref"><sup>78</sup></a>。</p>
 <p>前順序関係を持つ集合は圏を生成する。対象はその集合の要素だ。対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>への射は、対象が比較できない場合や<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \leqslant  b</annotation></semantics></math>が真でない場合には存在せず、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \leqslant b</annotation></semantics></math>の場合には<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>への向きに存在する。ある対象から別の対象への射が2つ以上存在することはない。したがって、このような圏のhom集合はすべて、空集合または単元集合だ。このような圏は<em>細い圏</em>と呼ばれる。</p>
 <p>この構成が実際に圏であることは簡単に納得できる。まず、射は合成可能だ。なぜなら、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \leqslant b</annotation></semantics></math>かつ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>≤</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">b \leqslant c</annotation></semantics></math>ならば<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a \leqslant c</annotation></semantics></math>だからだ。そして、合成は結合性を持つ。恒等射も存在する。なぜなら、（基礎となる関係から再帰的に）すべての要素がそれ自身（以下）となるからだ。</p>
 <p>これで前順序圏に余米田埋め込みを適用できるようになった。特に興味があるのは射に対する作用だ：
@@ -5125,18 +5144,18 @@ role="doc-noteref"><sup>75</sup></a>。</p>
 が空でないか<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \leqslant b</annotation></semantics></math>であることと等価だ。まとめると、次の結果が得られる：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if and only if for all </mtext><mspace width="0.333em"></mspace></mrow><mi>x</mi><mo>,</mo><mi>x</mi><mo>≤</mo><mi>a</mi><mo>⇒</mo><mi>x</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \leqslant b \text{ if and only if for all } x, x \leqslant a \Rightarrow x \leqslant b</annotation></semantics></math>
 この結果に直接到達することもできただろう。直観的には、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \leqslant b</annotation></semantics></math>ならば<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>未満のすべての要素も<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>未満である必要がある。逆に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>で右辺の<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>を置き換えると、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \leqslant b</annotation></semantics></math>となる。しかし、米田埋め込みを通じてこの結果に到達する方がはるかに刺激的なのは認めなければならない。</p>
-<aside id="footnotes-45" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-46" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="75">
+<ol start="78">
 <li
-id="fn75"><p>訳注：集合の任意の元<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a, b, c</annotation></semantics></math>について</p>
+id="fn78"><p>訳注：集合の任意の元<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a, b, c</annotation></semantics></math>について</p>
 <ul>
 <li>推移律：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \leqslant b</annotation></semantics></math>かつ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>≤</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">b \leqslant c</annotation></semantics></math>ならば<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a \leqslant c</annotation></semantics></math></li>
 <li>反射律：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">a \leqslant a</annotation></semantics></math></li>
 <li>反対称律：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \leqslant b</annotation></semantics></math>かつ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>≤</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">b \leqslant a</annotation></semantics></math>ならば<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a = b</annotation></semantics></math></li>
 </ul>
-<a href="#fnref75" class="footnote-back" role="doc-backlink">↩︎</a></li>
+<a href="#fnref78" class="footnote-back" role="doc-backlink">↩︎</a></li>
 </ol>
 </aside>
 <h2 data-number="16.4" id="自然性"><span
@@ -5537,20 +5556,20 @@ href="#function-types">普遍的構成</a>を使って定義できる。この�
 この随伴の基礎となるhom集合の写像を極力理解しやすくするには、普遍的構成で用いた図式を描き直せばよい。</p>
 <p> <img src="images/adj-expo.jpg" style="width:40.0%" />
 射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝑒</mi><mi>𝑣</mi><mi>𝑎</mi><mi>𝑙</mi></mrow><annotation encoding="application/x-tex">\mathit{eval}</annotation></semantics></math><a
-href="#fn76" class="footnote-ref" id="fnref76"
-role="doc-noteref"><sup>76</sup></a>はこの随伴の余単位に他ならないことに注目してほしい：
+href="#fn79" class="footnote-ref" id="fnref79"
+role="doc-noteref"><sup>79</sup></a>はこの随伴の余単位に他ならないことに注目してほしい：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>⇒</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow></mrow><mi>a</mi><mo>→</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">(a \Rightarrow b)\times{}a \to b</annotation></semantics></math>
 ここで：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>⇒</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow></mrow><mi>a</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>L</mi><mo>∘</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">(a \Rightarrow b)\times{}a = (L \circ R) b</annotation></semantics></math>
 前に述べたとおり、普遍的構成は同型を除いて一意な対象を定義する。それが積を
 “the” product、冪を “the”
 exponentialと書く理由だ。この特性は随伴にも及ぶ。つまり、ある関手に随伴があるなら、その随伴は同型を除いて一意だ。</p>
-<aside id="footnotes-46" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-47" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="76">
-<li id="fn76"><p>第9章の<a
-href="#function-types">普遍的構成</a>を参照。<a href="#fnref76"
+<ol start="79">
+<li id="fn79"><p>第9章の<a
+href="#function-types">普遍的構成</a>を参照。<a href="#fnref79"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
@@ -5609,8 +5628,8 @@ aria-hidden="true">モノイド<math display="inline" xmlns="http://www.w3.org/1
 <p>Haskellでは、リストのデータ構造は自由モノイドだ
 (ただし、注意点がいくつかある：<a
 href="http://comonad.com/reader/2015/free-monoids-in-haskell/">Dan
-Doelのブログ記事</a><a href="#fn77" class="footnote-ref" id="fnref77"
-role="doc-noteref"><sup>77</sup></a>を参照)。リスト型<code>[a]</code>は自由モノイドであり、型<code>a</code>は生成元の集合を表す。たとえば、型<code>[Char]</code>には、単位元――空リスト<code>[]</code>――と、<code>['a']</code>、<code>['b']</code>のような単要素リスト――自由モノイドの生成元が含まれている。残りは「積」を適用して生成される。ここでは、2つのリストの積は単に片方をもう片方に連接するだけだ。連接は結合的で単位元的
+Doelのブログ記事</a><a href="#fn80" class="footnote-ref" id="fnref80"
+role="doc-noteref"><sup>80</sup></a>を参照)。リスト型<code>[a]</code>は自由モノイドであり、型<code>a</code>は生成元の集合を表す。たとえば、型<code>[Char]</code>には、単位元――空リスト<code>[]</code>――と、<code>['a']</code>、<code>['b']</code>のような単要素リスト――自由モノイドの生成元が含まれている。残りは「積」を適用して生成される。ここでは、2つのリストの積は単に片方をもう片方に連接するだけだ。連接は結合的で単位元的
 (unital)
 だ（つまり、中立元が存在する――ここでは空リストだ）。<code>Char</code>によって生成される自由モノイドは、<code>Char</code>からなるすべての文字列の集合に他ならない。これはHaskellでは<code>String</code>と呼ばれる：</p>
 <div class="sourceCode" id="cb377"><pre
@@ -5659,14 +5678,14 @@ class="keyword"><em>同型</em></span>として定義されるので、<math dis
 全体を累積できる。このアプローチの利点は、そのような木を変換して、評価を高速にしたり、メモリー消費を減らしたりできることだ。これはたとえば、行列計算の実装に使われる。先行評価
 (eager evaluation)
 で行列計算を行うと、中間結果を保存するための一時的な配列が大量に割り当てられてしまうからだ。</p>
-<aside id="footnotes-47" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-48" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="77">
-<li id="fn77"><p><a
+<ol start="80">
+<li id="fn80"><p><a
 href="http://comonad.com/reader/2015/free-monoids-in-haskell/"
 class="uri">http://comonad.com/reader/2015/free-monoids-in-haskell/</a><a
-href="#fnref77" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref80" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h2 data-number="19.2" id="課題-16"><span
@@ -5864,25 +5883,25 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb405-1"><
 <p>興味深いことに、<code>do</code>記法と同等のものが命令型言語に、典型的にはC++に応用されている。再開可能な関数
 (resumable function) やコルーチン (coroutine) のことだ。C++の<a
 href="https://bartoszmilewski.com/2014/02/26/c17-i-see-a-monad-in-your-future/">futureがモナドを形成する</a><a
-href="#fn78" class="footnote-ref" id="fnref78"
-role="doc-noteref"><sup>78</sup></a>
+href="#fn81" class="footnote-ref" id="fnref81"
+role="doc-noteref"><sup>81</sup></a>
 ことは秘密ではない。それは継続モナドの一例だ。継続モナドについてはすぐ後で議論する。継続の問題点は、合成するのが非常に難しいことだ。Haskellでは<code>do</code>という表記法を使うことで、「こっちのハンドラーがそっちのハンドラーを呼ぶ」というスパゲッティを、逐次コードに非常によく似たものに変換している。再開可能な関数によって、同じ変換がC++でも可能になる。また、同じメカニズムを適用すれば、<a
 href="https://bartoszmilewski.com/2014/04/21/getting-lazy-with-c/">ネストされたループのスパゲッティ</a><a
-href="#fn79" class="footnote-ref" id="fnref79"
-role="doc-noteref"><sup>79</sup></a>
+href="#fn82" class="footnote-ref" id="fnref82"
+role="doc-noteref"><sup>82</sup></a>
 をリスト内包表記または「ジェネレーター」に変えられる。これは本質的にリストモナドの<code>do</code>記法だ。モナドによる統一的な抽象化がなければ、これらの個々の問題は通常、言語にカスタム拡張を提供して対処されることになる。Haskellでは、すべてライブラリを通じて対処される。</p>
-<aside id="footnotes-48" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-49" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="78">
-<li id="fn78"><p><a
+<ol start="81">
+<li id="fn81"><p><a
 href="https://bartoszmilewski.com/2014/02/26/c17-i-see-a-monad-in-your-future/"
 class="uri">https://bartoszmilewski.com/2014/02/26/c17-i-see-a-monad-in-your-future/</a><a
-href="#fnref78" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn79"><p><a
+href="#fnref81" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn82"><p><a
 href="https://bartoszmilewski.com/2014/04/21/getting-lazy-with-c/"
 class="uri">https://bartoszmilewski.com/2014/04/21/getting-lazy-with-c/</a><a
-href="#fnref79" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref82" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h1 data-number="21" id="モナドと作用"><span
@@ -5894,8 +5913,8 @@ class="header-section-number">21</span> モナドと作用</h1>
 class="header-section-number">21.1</span> 問題</h2>
 <p>よく似た問題を集めた短いリストを、<a
 href="https://core.ac.uk/download/pdf/21173011.pdf">エウジニオ・モッジの独創的な論文</a><a
-href="#fn80" class="footnote-ref" id="fnref80"
-role="doc-noteref"><sup>80</sup></a>から転載して以下に示した。どれも伝統的には関数の純粋さを放棄することで解決される：</p>
+href="#fn83" class="footnote-ref" id="fnref83"
+role="doc-noteref"><sup>83</sup></a>から転載して以下に示した。どれも伝統的には関数の純粋さを放棄することで解決される：</p>
 <ul>
 <li>部分性：停止しない可能性のある計算</li>
 <li>非決定性：何種類もの結果を返す可能性のある計算</li>
@@ -5913,13 +5932,13 @@ role="doc-noteref"><sup>80</sup></a>から転載して以下に示した。ど�
 <p>本当に驚くべきことに、これらすべての問題は1つの巧妙なトリックで解決できる。装飾された関数にするというトリックだ。もちろん、装飾は各ケースで全く違うものになる。</p>
 <p>装飾がモナディックだという条件は、この段階では必要ないことを認識しておかなくてはならない。合成――1つの装飾された関数をより小さな装飾された関数に分解できること――を主張するとき、初めてモナドが必要になる。また、それぞれの装飾が違うため、モナディック合成の実装方法もやはり違うものになるが、全体的なパターンは同じだ。非常に単純な、恒等射を伴った結合的な合成というパターンだ。</p>
 <p>次節では、Haskellでの例について詳しく説明する。圏論に戻りたい人や、Haskellによるモナドの実装にすでに慣れている人は、遠慮なく斜め読みしたり飛ばしたりして構わない。</p>
-<aside id="footnotes-49" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-50" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="80">
-<li id="fn80"><p><a href="https://core.ac.uk/download/pdf/21173011.pdf"
+<ol start="83">
+<li id="fn83"><p><a href="https://core.ac.uk/download/pdf/21173011.pdf"
 class="uri">https://core.ac.uk/download/pdf/21173011.pdf</a><a
-href="#fnref80" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref83" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h2 data-number="21.2" id="解決策"><span
@@ -5933,16 +5952,16 @@ class="header-section-number">21.2.1</span> 部分性</h3>
 <p>面白いのは、Haskellのような遅延評価言語では、終わりのない関数が実際に値を返すことがあり、その値が次の関数に渡されうるということだ。この特別な値をボトムと呼ぶ。この値が（たとえば、パターンマッチングに使うため、あるいは出力として生成したため）明示的に必要とされているのでない限り、プログラムの実行を遅らせることなくこの値を渡せる。すべてのHaskellの関数は潜在的に停止しない関数であり得るため、Haskellのすべての型はリフトされることが想定されている。これが、単純な<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>ではなく、Haskellの（リフトされた）型と関数の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐇</mi><mi>𝐚</mi><mi>𝐬</mi><mi>𝐤</mi></mrow><annotation encoding="application/x-tex">\mathbf{Hask}</annotation></semantics></math>について頻繁に議論する理由だ。もっとも、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐇</mi><mi>𝐚</mi><mi>𝐬</mi><mi>𝐤</mi></mrow><annotation encoding="application/x-tex">\mathbf{Hask}</annotation></semantics></math>が本物の圏かどうかは議論がある
 (<a
 href="http://math.andrej.com/2016/08/06/hask-is-not-a-category/">Andrej
-Bauerによる記事</a><a href="#fn81" class="footnote-ref" id="fnref81"
-role="doc-noteref"><sup>81</sup></a>を参照)。</p>
-<aside id="footnotes-50" class="footnotes footnotes-end-of-section"
+Bauerによる記事</a><a href="#fn84" class="footnote-ref" id="fnref84"
+role="doc-noteref"><sup>84</sup></a>を参照)。</p>
+<aside id="footnotes-51" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="81">
-<li id="fn81"><p><a
+<ol start="84">
+<li id="fn84"><p><a
 href="http://math.andrej.com/2016/08/06/hask-is-not-a-category/"
 class="uri">http://math.andrej.com/2016/08/06/hask-is-not-a-category/</a><a
-href="#fnref81" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref84" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h3 data-number="21.2.2" id="非決定性"><span
@@ -5962,8 +5981,8 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb407-1"><
 <p>プログラマーの観点では、リストの操作は比較的簡単であり、たとえば、非決定論的関数をループ内で呼び出したり、イテレーターを返す関数を実装したりする方が難しい
 (ただし、<a
 href="http://ericniebler.com/2014/04/27/range-comprehensions/">近年のC++</a><a
-href="#fn82" class="footnote-ref" id="fnref82"
-role="doc-noteref"><sup>82</sup></a>では、遅延評価するrangeを返すのはHaskellでリストを返すのとほぼ等価だ)。</p>
+href="#fn85" class="footnote-ref" id="fnref85"
+role="doc-noteref"><sup>85</sup></a>では、遅延評価するrangeを返すのはHaskellでリストを返すのとほぼ等価だ)。</p>
 <p>非決定性が創造的に使われる好例はゲームプログラミングだ。たとえば、コンピューターが人間を相手にチェスをするとき、相手の次の動きは予測できない。しかし、すべての可能な移動のリストを生成して1つずつ分析できる。同様に、非決定論的な構文解析器は、与えられた式に対して可能なすべての構文解析のリストを生成できる。</p>
 <p>リストを返す関数は非決定論的だと解釈してもよいものの、リストモナドの応用範囲はもっと広い。リストを生成する計算をつなぎ合わせることは、命令型プログラミングで使われる反復構文――ループ――を関数プログラミングで完全に代替する手段だからだ。単一のループは、多くの場合<code>fmap</code>を使って書き直せる。fmapはループの本体をリストの各要素に適用する。リストモナドで<code>do</code>記法を使えば、複雑な多重ループを置き換えられる。</p>
 <p>私のお気に入りの例は、ピタゴラス数 (Pythagorean triple)
@@ -5992,14 +6011,14 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb410-1"><
 <p>
 これはリストモナド（厳密に言えば、<code>MonadPlus</code>）のためのさらなる糖衣構文だ。</p>
 <p>他の関数型言語や命令型言語でも、ジェネレーターやコルーチンという名のもとに同様の構造が見られることがある。</p>
-<aside id="footnotes-51" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-52" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="82">
-<li id="fn82"><p><a
+<ol start="85">
+<li id="fn85"><p><a
 href="http://ericniebler.com/2014/04/27/range-comprehensions/"
 class="uri">http://ericniebler.com/2014/04/27/range-comprehensions/</a><a
-href="#fnref82" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref85" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h3 data-number="21.2.3" id="読み取り専用の状態"><span
@@ -6105,8 +6124,8 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb427-1"><
 <h3 data-number="21.2.7" id="継続"><span
 class="header-section-number">21.2.7</span> 継続</h3>
 <p>これは「電話はしないでください、こちらから電話しますので！」という、採用面接のあとで経験しそうな状況を表す<a
-href="#fn83" class="footnote-ref" id="fnref83"
-role="doc-noteref"><sup>83</sup></a>。回答を直接得る代わりに、ある関数をハンドラーとして提供することになっており、そのハンドラーが呼ばれると結果が得られる。このスタイルのプログラミングが特に役立つのは、呼び出し時点で結果が分からない場合だ。たとえば、別のスレッドで評価される場合や、リモートのウェブサイトから配信される場合などだ。この場合のクライスリ射が返す関数は「残りの計算」を表すハンドラーを受け取る：</p>
+href="#fn86" class="footnote-ref" id="fnref86"
+role="doc-noteref"><sup>86</sup></a>。回答を直接得る代わりに、ある関数をハンドラーとして提供することになっており、そのハンドラーが呼ばれると結果が得られる。このスタイルのプログラミングが特に役立つのは、呼び出し時点で結果が分からない場合だ。たとえば、別のスレッドで評価される場合や、リモートのウェブサイトから配信される場合などだ。この場合のクライスリ射が返す関数は「残りの計算」を表すハンドラーを受け取る：</p>
 <div class="sourceCode" id="cb428"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb428-1"><a href="#cb428-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Cont</span> r a <span class="ot">=</span> <span class="dt">Cont</span> ((a <span class="ot">-&gt;</span> r) <span class="ot">-&gt;</span> r)</span></code></pre></div>
 <p>
@@ -6141,13 +6160,13 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb433-1"><
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb434-1"><a href="#cb434-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Monad</span> (<span class="dt">Cont</span> r) <span class="kw">where</span></span>
 <span id="cb434-2"><a href="#cb434-2" aria-hidden="true" tabindex="-1"></a>    ka <span class="op">&gt;&gt;=</span> kab <span class="ot">=</span> <span class="dt">Cont</span> (\hb <span class="ot">-&gt;</span> runCont ka (\a <span class="ot">-&gt;</span> runCont (kab a) hb))</span>
 <span id="cb434-3"><a href="#cb434-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> a <span class="ot">=</span> <span class="dt">Cont</span> (\ha <span class="ot">-&gt;</span> ha a)</span></code></pre></div>
-<aside id="footnotes-52" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-53" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="83">
+<ol start="86">
 <li
-id="fn83"><p>訳注：プログラミングの文脈では、この台詞には「ハリウッドの原則」という名前が付いている。電話することと関数を呼び出すことが同じcallという動詞で表されることに基づく駄洒落。<a
-href="#fnref83" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+id="fn86"><p>訳注：プログラミングの文脈では、この台詞には「ハリウッドの原則」という名前が付いている。電話することと関数を呼び出すことが同じcallという動詞で表されることに基づく駄洒落。<a
+href="#fnref86" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h3 data-number="21.2.8" id="インタラクティブな入力"><span
@@ -6291,7 +6310,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb448-1"><
 単元集合は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>の終対象なので、終対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>を持つすべての圏にこの定義を一般化するのは自然だ：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>∷</mo><mi>t</mi><mo>→</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\eta \Colon t \to m</annotation></semantics></math>
 これにより、要素について述べることなく単位「要素」を選べる。</p>
-<p>以前モノイドを単一対象圏として定義したときとは違って、ここではモノイド則が自動的に満たされるわけではなく、それらを課す必要がある。しかし、それらを定式化するには、基礎となる圏論的な積そのもののモノイダル構造を確立しなければならない。まずはHaskellでモノイダル構造がどう機能するか思い出そう。</p>
+<p>以前モノイドを単一対象圏として定義したときとは違って、ここではモノイド則が自動的に満たされるわけではなく、それらを課す必要がある。しかし、それらを定式化するには、基礎となる圏論的な積そのもののモノイドの構造を確立しなければならない。まずはHaskellでモノイドの構造がどう機能するか思い出そう。</p>
 <p>結合性から始める。Haskellでは、対応する等式的規則 (equational law)
 はこうなる：</p>
 <div class="sourceCode" id="cb449"><pre
@@ -6347,8 +6366,8 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb459-1"><
 <p>ここで立ち止まって、圏論的な積と終対象を持つあらゆる圏においてモノイドを定義できる、と述べてよい。モノイド則を満たすような対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>と2つの射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>を選択できるなら、モノイドが存在する。しかし、もっとうまくやれる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>について規則を定式化するために完全な圏論的な積は必要ない。積の定義は射影を使う普遍的構成によって行われるのを思い出してほしい。モノイド則の定式化では射影を一切使わなかった。</p>
 <p>積ではないのに積のように振る舞う双関手は<span id="tensor_product"
 class="keyword"><em>テンソル積</em></span> (tensor product) と呼ばれ<a
-href="#fn84" class="footnote-ref" id="fnref84"
-role="doc-noteref"><sup>84</sup></a>、中置演算子<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⊗</mi><annotation encoding="application/x-tex">\otimes</annotation></semantics></math>で表されることが多い。テンソル積の一般的な定義は少しトリッキーだが、気にしないでよい。ここでは単にその特性を列挙する――最も重要なのは同型を除いた結合性だ。</p>
+href="#fn87" class="footnote-ref" id="fnref87"
+role="doc-noteref"><sup>87</sup></a>、中置演算子<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⊗</mi><annotation encoding="application/x-tex">\otimes</annotation></semantics></math>で表されることが多い。テンソル積の一般的な定義は少しトリッキーだが、気にしないでよい。ここでは単にその特性を列挙する――最も重要なのは同型を除いた結合性だ。</p>
 <p>同様に、対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>が終対象である必要はない。それが終対象であるという特性――つまり、どの対象からも一意な射が存在すること――を使ったことはない。必要なのは、それがテンソル積とうまく協調して働くことだ。つまり、同型を除いてテンソル積の単位であってほしい。以上をまとめてみよう：</p>
 <p>モノイダル圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>はテンソル積と呼ばれる双関手を伴う：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⊗</mi><mo>∷</mo><mi>𝐂</mi><mo>×</mo><mrow></mrow><mi>𝐂</mi><mo>→</mo><mi>𝐂</mi></mrow><annotation encoding="application/x-tex">\otimes \Colon \mathbf{C}\times{}\mathbf{C} \to \mathbf{C}</annotation></semantics></math>
@@ -6364,12 +6383,12 @@ role="doc-noteref"><sup>84</sup></a>、中置演算子<math display="inline" xml
 も存在する。)</p>
 <p>重要なのは、よく知られた多くの双関手がテンソル積で記述できることだ。それは特に、積、余積、そしてすぐ後でみるように自己関手の合成（そしてDay
 convolutionのようなより深遠な積）に対して機能する。モノイダル圏は豊穣圏の定式化において不可欠な役割を果たすことになる。</p>
-<aside id="footnotes-53" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-54" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="84">
-<li id="fn84"><p>訳注：モノイダル圏に伴うテンソル積はモノイダル積
-(monoidal product) とも呼ばれる。<a href="#fnref84"
+<ol start="87">
+<li id="fn87"><p>訳注：モノイダル圏に伴うテンソル積はモノイダル積
+(monoidal product) とも呼ばれる。<a href="#fnref87"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
@@ -6391,7 +6410,7 @@ src="images/unitmon.jpg" style="width:50.0%" />
 テンソル積は必然的に双関手であることに注意してほしい。これは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>⊗</mo><mrow><mi>𝐢</mi><mi>𝐝</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \otimes \mathbf{id}</annotation></semantics></math>や<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>⊗</mo><mrow><mi>𝐢</mi><mi>𝐝</mi></mrow></mrow><annotation encoding="application/x-tex">\eta \otimes \mathbf{id}</annotation></semantics></math>のような積を形成するには射のペアをリフトする必要があるからだ。これらの図式は、圏論的な積に関するこれまでの結果を直接的に一般化しているにすぎない。</p>
 <h2 data-number="22.3" id="モノイドとしてのモナド"><span
 class="header-section-number">22.3</span> モノイドとしてのモナド</h2>
-<p>モノイダル構造は思いがけないところに現れる。その1つが関手圏だ。少し目を細めれば、関手の合成が積の生成に見えてくるだろう。問題は、2つの関手は合成できるとは限らないことだ――一方にとっての行き先となる圏が他方にとってのもととなる圏でなければならない。これは射の合成の一般的な規則に他ならない――そして、すでに知っているとおり、関手はまさに圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>内の射だ。ただし、自己射（同じ対象にループバックする射）と同様に自己関手も常に合成可能だ。任意の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>について、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>への自己関手は関手圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>𝐂</mi><mo>,</mo><mi>𝐂</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">{[}\mathbf{C}, \mathbf{C}{]}</annotation></semantics></math>を形成する。その対象は自己関手であり、射はそれらの間の自然変換だ。この圏から任意の2つの対象、たとえば自己関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>を取って、3番目の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>∘</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">F \circ G</annotation></semantics></math>――それらを合成した自己関手――を生成できる。</p>
+<p>モノイドの構造は思いがけないところに現れる。その1つが関手圏だ。少し目を細めれば、関手の合成が積の生成に見えてくるだろう。問題は、2つの関手は合成できるとは限らないことだ――一方にとっての行き先となる圏が他方にとってのもととなる圏でなければならない。これは射の合成の一般的な規則に他ならない――そして、すでに知っているとおり、関手はまさに圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mi>𝐚</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Cat}</annotation></semantics></math>内の射だ。ただし、自己射（同じ対象にループバックする射）と同様に自己関手も常に合成可能だ。任意の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>について、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>への自己関手は関手圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>𝐂</mi><mo>,</mo><mi>𝐂</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">{[}\mathbf{C}, \mathbf{C}{]}</annotation></semantics></math>を形成する。その対象は自己関手であり、射はそれらの間の自然変換だ。この圏から任意の2つの対象、たとえば自己関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>を取って、3番目の対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>∘</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">F \circ G</annotation></semantics></math>――それらを合成した自己関手――を生成できる。</p>
 <p>自己関手の合成はテンソル積の良い候補だろうか？　まず、それが双関手だと示さなければならない。それを使って射――ここでは自然変換――のペアをリフトできるだろうか？　テンソル積で<code>bimap</code>に相当するもののシグネチャーは次のようになるだろう：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝑏</mi><mi>𝑖</mi><mi>𝑚</mi><mi>𝑎</mi><mi>𝑝</mi></mrow><mo>∷</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>→</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo>→</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>⊗</mo><mi>c</mi><mo>→</mo><mi>b</mi><mo>⊗</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathit{bimap} \Colon (a \to b) \to (c \to d) \to (a \otimes c \to b \otimes d)</annotation></semantics></math>
 対象を自己関手で、矢印を自然変換で、テンソル積を合成で置き換えると：
@@ -7478,8 +7497,8 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb562-1"><
 <p>
 厳密に言うと、これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>のすべての対角要素の積にすぎないが、くさび条件は<a
 href="https://bartoszmilewski.com/2017/04/11/profunctor-parametricity/">パラメトリック性</a><a
-href="#fn85" class="footnote-ref" id="fnref85"
-role="doc-noteref"><sup>85</sup></a> (parametricity)
+href="#fn88" class="footnote-ref" id="fnref88"
+role="doc-noteref"><sup>88</sup></a> (parametricity)
 によって自動的に満たされる。任意の関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∷</mo><mi>a</mi><mo>→</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">f \Colon a \to b</annotation></semantics></math>について、くさび条件は次のようになる：</p>
 <div class="sourceCode" id="cb563"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb563-1"><a href="#cb563-1" aria-hidden="true" tabindex="-1"></a>dimap f <span class="fu">id</span> <span class="op">.</span> <span class="fu">pi</span> <span class="ot">=</span> dimap <span class="fu">id</span> f <span class="op">.</span> <span class="fu">pi</span></span></code></pre></div>
@@ -7503,14 +7522,14 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb565-1"><
 <p>行き先の圏が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>でなくてもその圏に対してエンドを定義できるが、これ以降では集合値プロ関手
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>-valued
 profunctor) とそのエンドのみを扱う。</p>
-<aside id="footnotes-54" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-55" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="85">
-<li id="fn85"><p><a
+<ol start="88">
+<li id="fn88"><p><a
 href="https://bartoszmilewski.com/2017/04/11/profunctor-parametricity/"
 class="uri">https://bartoszmilewski.com/2017/04/11/profunctor-parametricity/</a><a
-href="#fnref85" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref88" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h2 data-number="26.3" id="等化子としてのエンド"><span
@@ -7646,8 +7665,8 @@ class="header-section-number">26.6</span> 忍者米田の補題</h2>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mo>∫</mo><mi>z</mi></msup><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow></mrow><mi>F</mi><mi>z</mi><mo>≅</mo><mi>F</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\int^z \mathbf{C}(z, a)\times{}F z \cong F a</annotation></semantics></math>
 この恒等式はディラックのデルタ関数の式（関数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>−</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta(a - z)</annotation></semantics></math>、というより<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">a = z</annotation></semantics></math>に無限大のピークを持つ分布）を強く連想させる。ここでは、hom関手がデルタ関数の役割を果たしている。</p>
 <p>これら2つの恒等式を合わせて忍者米田の補題 (Ninja Yoneda lemma)
-と呼ぶことがある<a href="#fn86" class="footnote-ref" id="fnref86"
-role="doc-noteref"><sup>86</sup></a>。</p>
+と呼ぶことがある<a href="#fn89" class="footnote-ref" id="fnref89"
+role="doc-noteref"><sup>89</sup></a>。</p>
 <p>2番目の式を証明するには米田埋め込みからの帰結を使う。その帰結によると、2つの対象が同型となるのは、それらのhom関手が同型である場合に限られる。言い換えると、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≅</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \cong b</annotation></semantics></math>となるのは、次の型の自然変換：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>𝐂</mi><mo>,</mo><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>−</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mo>=</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">[\mathbf{C}, \mathbf{Set}](\mathbf{C}(a, -), \mathbf{C}(b, =))</annotation></semantics></math>
 があって同型射である場合だけだ。</p>
@@ -7664,17 +7683,17 @@ Continuity argumentを使うと、コエンドをエンドに置き換えられ�
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mi>a</mi><mo>,</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{Set}(F a, c)</annotation></semantics></math>
 最後に、米田埋め込みを利用して同型に辿り着く：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mo>∫</mo><mi>z</mi></msup><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow></mrow><mi>F</mi><mi>z</mi><mo>≅</mo><mi>F</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\int^z \mathbf{C}(z, a)\times{}F z \cong F a</annotation></semantics></math></p>
-<aside id="footnotes-55" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-56" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="86">
+<ol start="89">
 <li
-id="fn86"><p>訳注：この名前は、圏論に造詣が深いオーストラリアの数学者たちをレンスター
+id="fn89"><p>訳注：この名前は、圏論に造詣が深いオーストラリアの数学者たちをレンスター
 (Tom Leinster)
 が「忍者圏論家たち」と形容したことに由来する。ただし、忍者圏論家たち自身は単に米田の定理と呼んでいた。<a
 href="https://mathoverflow.net/questions/20445/coend-computation/20451#20451"
 class="uri">https://mathoverflow.net/questions/20445/coend-computation/20451#20451</a>を参照のこと。なお、レンスターは『ベーシック圏論』の著者。<a
-href="#fnref86" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref89" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h2 data-number="26.7" id="プロ関手の合成"><span
@@ -7905,8 +7924,8 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb588-1"><
 <p>
 ご覧のとおり、自由関手は、関数と引数の両方を記録することで関数のリフトを偽装する。それは、関数合成を記録することによって、リフトされた関数を累積する。関手則は自動的に満たされる。この構成は論文<a
 href="http://okmij.org/ftp/Haskell/extensible/more.pdf">Freer Monads,
-More Extensible Effects</a><a href="#fn87" class="footnote-ref"
-id="fnref87" role="doc-noteref"><sup>87</sup></a>で使われたものだ。</p>
+More Extensible Effects</a><a href="#fn90" class="footnote-ref"
+id="fnref90" role="doc-noteref"><sup>90</sup></a>で使われたものだ。</p>
 <p>別の方法として、右カン拡張も同じ目的に使える：</p>
 <div class="sourceCode" id="cb589"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb589-1"><a href="#cb589-1" aria-hidden="true" tabindex="-1"></a><span class="kw">newtype</span> <span class="dt">FreeF</span> f a <span class="ot">=</span> <span class="dt">FreeF</span> (<span class="kw">forall</span> i<span class="op">.</span> (a <span class="ot">-&gt;</span> i) <span class="ot">-&gt;</span> f i)</span></code></pre></div>
@@ -7914,22 +7933,22 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb589-1"><
 <div class="sourceCode" id="cb590"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb590-1"><a href="#cb590-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Functor</span> (<span class="dt">FreeF</span> f) <span class="kw">where</span></span>
 <span id="cb590-2"><a href="#cb590-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fmap</span> g (<span class="dt">FreeF</span> r) <span class="ot">=</span> <span class="dt">FreeF</span> (\bi <span class="ot">-&gt;</span> r (bi <span class="op">.</span> g))</span></code></pre></div>
-<aside id="footnotes-56" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-57" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="87">
-<li id="fn87"><p><a
+<ol start="90">
+<li id="fn90"><p><a
 href="http://okmij.org/ftp/Haskell/extensible/more.pdf"
 class="uri">http://okmij.org/ftp/Haskell/extensible/more.pdf</a><a
-href="#fnref87" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref90" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h1 data-number="28" id="豊穣圏"><span
 class="header-section-number">28</span> 豊穣圏</h1>
 <p>圏が<em>小さい</em>とは、対象が集合を形成することだ。しかし、集合より大きいものの存在も知られている。有名な話として、すべての集合の集合は、標準的な集合論では形成できない（標準的な集合論とはツェルメロ＝フレンケル集合論を指し、選択公理
-(Axiom of Choice) を議論に含めることもある）<a href="#fn88"
-class="footnote-ref" id="fnref88"
-role="doc-noteref"><sup>88</sup></a>。つまり、すべての集合の圏は大きいことになる。グロタンディーク宇宙
+(Axiom of Choice) を議論に含めることもある）<a href="#fn91"
+class="footnote-ref" id="fnref91"
+role="doc-noteref"><sup>91</sup></a>。つまり、すべての集合の圏は大きいことになる。グロタンディーク宇宙
 (Grothendieck universe)
 などの数学的トリックがいくつかあって、集合を超える集まりを定義するのに使える。それらのトリックによって大きい圏について語れるようになる。</p>
 <p>任意の2つの対象間の射が集合を形成するような圏は、<em>局所的に小さい</em>、という。それらが集合を形成しないなら、定義のいくつかは再考する必要がある。特に、射を集合から選ぶことさえできない場合、射の合成とは何を意味するのだろう？　解決策は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の対象からなるhom集合を他の圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>からの<em>対象</em>で置き換えることによってブートストラップすることだ。ただし、一般に、対象には要素がないため個々の射については語れない点が異なる。<span
@@ -7940,9 +7959,9 @@ category)
 (neighbors)
 と呼ばれる。現実の人生とは違って、圏においては、友人の友人の友人は、親友と同じくらい近しい。だが、適切な豊穣圏では、対象間の距離を定義できる。</p>
 <p>豊穣圏について経験を積むべき極めて実用的な理由はもう1つある。それは、圏に関する知識の非常に有用なオンライン情報源である<a
-href="https://ncatlab.org/">nLab</a><a href="#fn89" class="footnote-ref"
-id="fnref89"
-role="doc-noteref"><sup>89</sup></a>が主に豊穣圏について書かれているからだ。</p>
+href="https://ncatlab.org/">nLab</a><a href="#fn92" class="footnote-ref"
+id="fnref92"
+role="doc-noteref"><sup>92</sup></a>が主に豊穣圏について書かれているからだ。</p>
 <h2 data-number="28.1" id="なぜモノイダル圏か"><span
 class="header-section-number">28.1</span> なぜモノイダル圏か？</h2>
 <p>豊穣圏を構築する際には、モノイダル圏を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>に置き換え、hom対象をhom集合に置き換えれば、通常の定義を復元できることに留意する必要がある。これを実現する一番良い方法は、通常の定義から始めて、ポイントフリーな方法で――つまり、集合の要素に名前を付けずに――再定式化を繰り返すことだ。</p>
@@ -7956,15 +7975,15 @@ class="header-section-number">28.1</span> なぜモノイダル圏か？</h2>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>j</mi><mi>a</mi></msub><mo>∷</mo><mn>𝟏</mn><mo>→</mo><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">j_a \Colon \mathbf{1} \to \mathbf{C}(a, a)</annotation></semantics></math>
 ここでも単元集合は終対象に置き換えられるが、さらに進んでテンソル積の単位元<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>にも置き換えられる。</p>
 <p>ご覧のように、あるモノイダル圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>から取った対象は、hom集合を置き換える候補として適している。</p>
-<aside id="footnotes-57" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-58" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="88">
+<ol start="91">
 <li
-id="fn88"><p>訳注：すべての集合の集合を考えることで素朴集合論において生じる矛盾は「カントールのパラドックス」と呼ばれる。ツェルメロ＝フレンケル集合論などの公理的集合論にはそのような矛盾を防ぐための制限が加えられている。<a
-href="#fnref88" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn89"><p><a href="https://ncatlab.org/"
-class="uri">https://ncatlab.org/</a><a href="#fnref89"
+id="fn91"><p>訳注：すべての集合の集合を考えることで素朴集合論において生じる矛盾は「カントールのパラドックス」と呼ばれる。ツェルメロ＝フレンケル集合論などの公理的集合論にはそのような矛盾を防ぐための制限が加えられている。<a
+href="#fnref91" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn92"><p><a href="https://ncatlab.org/"
+class="uri">https://ncatlab.org/</a><a href="#fnref92"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
@@ -8015,12 +8034,12 @@ class="keyword"><em>対称</em></span> (symmetric)
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mrow><mi>b</mi><mi>a</mi></mrow></msub><mo>∘</mo><msub><mi>γ</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><mo>=</mo><msub><mrow><mi>𝐢</mi><mi>𝐝</mi></mrow><mrow><mi>a</mi><mo>⊗</mo><mi>b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\gamma_{b a} \circ \gamma_{a b} = %
 \mathbf{id}_{a \otimes b}%
 </annotation></semantics></math>
-かつモノイダル構造と一致していることだ。</p>
+かつモノイドの構造と一致していることだ。</p>
 <p>モノイダル圏に関して興味深いのは、内部hom（関数対象）をテンソル積に対する右随伴として定義できることだ。この関数対象、すなわち冪の標準的な定義は、右随伴を通じて圏論的な積へと向かっていたことを思い出してほしい。そのような対象が存在する圏をデカルト閉圏と呼んだ。モノイダル圏の内部homを定義する随伴は次のとおりだ：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐕</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>⊗</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∼</mo><mi>𝐕</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{V}(a \otimes b, c) \sim \mathbf{V}(a, [b, c])</annotation></semantics></math>
 <a href="http://www.tac.mta.ca/tac/reprints/articles/10/tr10.pdf">G. M.
-Kelly</a><a href="#fn90" class="footnote-ref" id="fnref90"
-role="doc-noteref"><sup>90</sup></a>にならって、内部homを<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">{[}b, c{]}</annotation></semantics></math>と表記しよう。この随伴の余単位は自然変換であり、その成分は評価射
+Kelly</a><a href="#fn93" class="footnote-ref" id="fnref93"
+role="doc-noteref"><sup>93</sup></a>にならって、内部homを<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">{[}b, c{]}</annotation></semantics></math>と表記しよう。この随伴の余単位は自然変換であり、その成分は評価射
 (evaluation morphism) と呼ばれる：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ε</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><mo>∷</mo><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>⊗</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\varepsilon_{a b} \Colon ([a, b] \otimes a) \to b</annotation></semantics></math>
 テンソル積が非対称なら、次の随伴を使って、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">{[}{[}a, c{]}{]}</annotation></semantics></math>で示される別の内部homを定義できることに注目してほしい：
@@ -8028,14 +8047,14 @@ role="doc-noteref"><sup>90</sup></a>にならって、内部homを<math display=
 両方が定義されているモノイダル圏は<span id="biclosed"
 class="keyword"><em>双閉</em></span> (biclosed)
 と呼ばれる。双閉ではない圏の例としては<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐒</mi><mi>𝐞</mi><mi>𝐭</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>内の自己関手の圏があり、関手合成がテンソル積として機能する。この圏はモナドを定義するのに使った。</p>
-<aside id="footnotes-58" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-59" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="90">
-<li id="fn90"><p><a
+<ol start="93">
+<li id="fn93"><p><a
 href="http://www.tac.mta.ca/tac/reprints/articles/10/tr10.pdf"
 class="uri">http://www.tac.mta.ca/tac/reprints/articles/10/tr10.pdf</a><a
-href="#fnref90" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref93" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h2 data-number="28.3" id="豊饒圏"><span
@@ -8090,7 +8109,7 @@ class="header-section-number">28.3</span> 豊饒圏</h2>
 <h2 data-number="28.4" id="前順序"><span
 class="header-section-number">28.4</span> 前順序</h2>
 <p>前順序は細い圏として定義され、その中のhom集合はどれも空集合か単元集合だ。集合<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a, b)</annotation></semantics></math>
-が空でないことは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>以下であることの証明と解釈される。そのような圏は、2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐹</mi><mi>𝑎</mi><mi>𝑙</mi><mi>𝑠</mi><mi>𝑒</mi></mrow><annotation encoding="application/x-tex">\mathit{False}</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝑇</mi><mi>𝑟</mi><mi>𝑢</mi><mi>𝑒</mi></mrow><annotation encoding="application/x-tex">\mathit{True}</annotation></semantics></math>とも呼ばれる）だけを含む非常に単純なモノイダル圏上の豊穣圏だと解釈できる。必須の恒等射に加えて、この圏には<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>への単一の射がある。これを<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>→</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 \to 1</annotation></semantics></math>と呼ぼう。単純なモノイダル構造をその中に確立できる。そのためには、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>の単純な算術をモデル化したテンソル積を使う（たとえば、0でない積は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>⊗</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1 \otimes 1</annotation></semantics></math>だけだ）。この圏の恒等対象は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>だ。これは厳密なモノイダル圏であり、つまり結合子と単位子は恒等射だ。</p>
+が空でないことは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>以下であることの証明と解釈される。そのような圏は、2つの対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐹</mi><mi>𝑎</mi><mi>𝑙</mi><mi>𝑠</mi><mi>𝑒</mi></mrow><annotation encoding="application/x-tex">\mathit{False}</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝑇</mi><mi>𝑟</mi><mi>𝑢</mi><mi>𝑒</mi></mrow><annotation encoding="application/x-tex">\mathit{True}</annotation></semantics></math>とも呼ばれる）だけを含む非常に単純なモノイダル圏上の豊穣圏だと解釈できる。必須の恒等射に加えて、この圏には<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>への単一の射がある。これを<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>→</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 \to 1</annotation></semantics></math>と呼ぼう。単純なモノイドの構造をその中に確立できる。そのためには、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>の単純な算術をモデル化したテンソル積を使う（たとえば、0でない積は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>⊗</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1 \otimes 1</annotation></semantics></math>だけだ）。この圏の恒等対象は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>だ。これは厳密なモノイダル圏であり、つまり結合子と単位子は恒等射だ。</p>
 <p>前順序のhom集合は空集合か単元集合なので、ここでのちっぽけな圏からのhom対象に簡単に置き換えられる。豊穣化された前順序<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>は、対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>の任意のペアについてのhom対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a, b)</annotation></semantics></math>
 を持つ。この対象は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>以下なら<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>で、そうでなければ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>だ。</p>
 <p>合成を見てみよう。任意の2つの対象のテンソル積は通常は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>で、両方が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>のときだけ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>となる。テンソル積が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>の場合、合成射には2つの候補がある。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mi>𝐢</mi><mi>𝐝</mi></mrow><mn>0</mn></msub><annotation encoding="application/x-tex">%
@@ -8107,13 +8126,13 @@ class="header-section-number">28.4</span> 前順序</h2>
 class="header-section-number">28.5</span> 距離空間</h2>
 <p><a
 href="http://www.tac.mta.ca/tac/reprints/articles/1/tr1.pdf">ウィリアム・ローヴェア</a><a
-href="#fn91" class="footnote-ref" id="fnref91"
-role="doc-noteref"><sup>91</sup></a> (William Lawvere)
+href="#fn94" class="footnote-ref" id="fnref94"
+role="doc-noteref"><sup>94</sup></a> (William Lawvere)
 による興味深い例がある。ローヴェアは豊穣圏を使って距離空間 (metric
 space)
 を定義できることに気付いた。距離空間は任意の2対象間の距離を定義する。この距離は非負実数だ。取り得る値に無限大を含めると便利だ。距離が無限大の場合、始域となる対象から終域となる対象へ到達する方法はない。</p>
 <p>距離には、満たさなければならない自明な特性がいくつかある。その1つは、ある対象からそれ自身への距離は0でなければならない、というものだ。もう1つは三角不等式で、直線距離は中継地点同士の距離の合計を超えない、というものだ。距離が対称でなくてよいのは、最初は奇妙に思えるかもしれないが、ローヴェアによる説明どおりに、ある方向へは坂を上り、逆方向へは坂を下るのを想像すれば分かる。いずれにしても、対称性は追加の制約として後から課してもよい。</p>
-<p>さて、どうすれば距離空間を圏論の言葉で語れるだろうか？　それには、hom対象が距離であるような圏を構築する必要がある。注意してほしいのは、距離は射ではなくhom対象だということだ。一体どうすればhom対象が数値になるだろう？　それらの数値が対象であるようなモノイダル圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>さえ構築できればよい。非負実数（と無限大）は全順序を形成するので、細い圏として扱える。このような2つの数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>の間の射は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x \geqslant y</annotation></semantics></math>の場合だけ存在する（注：これは前順序の定義での伝統的な向きとは逆だ）。モノイダル構造は加算で与えられ、0が単位対象として機能する。言い換えると、2つの数値のテンソル積はそれらの合計だ。</p>
+<p>さて、どうすれば距離空間を圏論の言葉で語れるだろうか？　それには、hom対象が距離であるような圏を構築する必要がある。注意してほしいのは、距離は射ではなくhom対象だということだ。一体どうすればhom対象が数値になるだろう？　それらの数値が対象であるようなモノイダル圏<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>さえ構築できればよい。非負実数（と無限大）は全順序を形成するので、細い圏として扱える。このような2つの数<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>の間の射は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x \geqslant y</annotation></semantics></math>の場合だけ存在する（注：これは前順序の定義での伝統的な向きとは逆だ）。モノイドの構造は加算で与えられ、0が単位対象として機能する。言い換えると、2つの数値のテンソル積はそれらの合計だ。</p>
 <p>距離空間は、このようなモノイダル圏上の豊穣圏だ。対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>へのhom対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a, b)</annotation></semantics></math>
 は、非負の（無限大を取り得る）数であり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>への距離と呼ばれる。このような圏で恒等射と合成に何ができるか見てみよう。</p>
 <p>我々の定義では、0という数であるテンソル単位元からhom対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a, a)</annotation></semantics></math>
@@ -8125,14 +8144,14 @@ space)
 から始める。テンソル積は、2つの距離の合計として定義された。合成は、この積から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{C}(a, c)</annotation></semantics></math>
 への、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>内の射だ。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>内の射は「以上」の関係として定義される。言い換えると、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>への距離と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>への距離の合計は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>への距離以上になる。もっとも、これは標準的な三角不等式にすぎない。良し！</p>
 <p>距離空間を豊饒圏へと再投影することにより、三角不等式と自己距離0が「無料で」得られる。</p>
-<aside id="footnotes-59" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-60" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="91">
-<li id="fn91"><p><a
+<ol start="94">
+<li id="fn94"><p><a
 href="http://www.tac.mta.ca/tac/reprints/articles/1/tr1.pdf"
 class="uri">http://www.tac.mta.ca/tac/reprints/articles/1/tr1.pdf</a><a
-href="#fnref91" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref94" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h2 data-number="28.6" id="豊穣関手"><span
@@ -8200,8 +8219,8 @@ class="header-section-number">28.8</span> 2-圏との関係</h2>
 <h1 data-number="29" id="トポイ"><span
 class="header-section-number">29</span> トポイ</h1>
 <p>プログラミングから離れてハードコアな数学に飛び込んでしまったかもしれないのは分かっている。しかし、プログラミングにおける次の大きな革命が何をもたらすのか、理解のためにどんな数学が必要となるのかは、誰にも分からない。すでにいくつか非常に興味深いアイデアがある。連続時間<a
-href="#fn92" class="footnote-ref" id="fnref92"
-role="doc-noteref"><sup>92</sup></a>での関数型リアクティブプログラミング、Haskellの型システムの依存型による拡張、ホモトピー型理論のプログラミングにおける探究などだ。</p>
+href="#fn95" class="footnote-ref" id="fnref95"
+role="doc-noteref"><sup>95</sup></a>での関数型リアクティブプログラミング、Haskellの型システムの依存型による拡張、ホモトピー型理論のプログラミングにおける探究などだ。</p>
 <p>ここまでは、値の<em>集合</em>を使って気楽に型を区別してきた。これは厳密には正しくない。なぜなら、このようなアプローチはある事実を考慮していないからだ。それは、プログラミングでは値を<em>計算</em>し、そして計算は時間のかかるプロセスであり、極端な場合には停止しない可能性がある、という事実だ。すべてのチューリング完全な言語は発散計算
 (divergent computation) を含む。</p>
 <p>また、集合論には、計算機科学の基礎として、そして数学自体の基礎としても、最適とは言い難い根本的な理由がある。良い比喩としては、集合論は特定のアーキテクチャに結び付けられたアセンブリ言語だと言える。別のアーキテクチャで計算を実行したいなら、より一般的なツールを使う必要がある。</p>
@@ -8272,13 +8291,13 @@ g&#39; &amp;\Colon c \to a
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝑆</mi><mi>𝑢</mi><mi>𝑏</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≅</mo><mi>𝐂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>Ω</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathit{Sub}(b) \cong \mathbf{C}(b, \Omega)</annotation></semantics></math>
 偶然にも、これは2つの関手の自然同型だ。言い換えれば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝑆</mi><mi>𝑢</mi><mi>𝑏</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathit{Sub}(-)</annotation></semantics></math>
 は表現可能（反変）関手であり、その表現は対象<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Ω</mi><annotation encoding="application/x-tex">\Omega</annotation></semantics></math>だ。</p>
-<aside id="footnotes-60" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-61" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="92">
+<ol start="95">
 <li
-id="fn92"><p>訳注：離散時間（飛び飛びの時刻値のみを扱う）ではないという意味。<a
-href="#fnref92" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+id="fn95"><p>訳注：離散時間（飛び飛びの時刻値のみを扱う）ではないという意味。<a
+href="#fnref95" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h2 data-number="29.2" id="トポス"><span
@@ -8610,27 +8629,27 @@ class="header-section-number">30.9</span> 参考文献</h2>
 <ol>
 <li><a
 href="http://www.tac.mta.ca/tac/reprints/articles/5/tr5.pdf">Functorial
-Semantics of Algebraic Theories</a><a href="#fn93" class="footnote-ref"
-id="fnref93" role="doc-noteref"><sup>93</sup></a>, F. William
+Semantics of Algebraic Theories</a><a href="#fn96" class="footnote-ref"
+id="fnref96" role="doc-noteref"><sup>96</sup></a>, F. William
 Lawvere</li>
 <li><a
 href="http://homepages.inf.ed.ac.uk/gdp/publications/Comp_Eff_Monads.pdf">Notions
-of computation determine monads</a><a href="#fn94" class="footnote-ref"
-id="fnref94" role="doc-noteref"><sup>94</sup></a>, Gordon Plotkin and
+of computation determine monads</a><a href="#fn97" class="footnote-ref"
+id="fnref97" role="doc-noteref"><sup>97</sup></a>, Gordon Plotkin and
 John Power</li>
 </ol>
-<aside id="footnotes-61" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-62" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="93">
-<li id="fn93"><p><a
+<ol start="96">
+<li id="fn96"><p><a
 href="http://www.tac.mta.ca/tac/reprints/articles/5/tr5.pdf"
 class="uri">http://www.tac.mta.ca/tac/reprints/articles/5/tr5.pdf</a><a
-href="#fnref93" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn94"><p><a
+href="#fnref96" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn97"><p><a
 href="http://homepages.inf.ed.ac.uk/gdp/publications/Comp_Eff_Monads.pdf"
 class="uri">http://homepages.inf.ed.ac.uk/gdp/publications/Comp_Eff_Monads.pdf</a><a
-href="#fnref94" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref97" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h1 data-number="31" id="モナドモノイド圏"><span
@@ -8783,17 +8802,17 @@ class="header-section-number">31.4</span> 参考文献</h2>
 <ol>
 <li><a
 href="https://graphicallinearalgebra.net/2017/04/16/a-monoid-is-a-category-a-category-is-a-monad-a-monad-is-a-monoid/">Paweł
-Sobocińskiのブログ</a><a href="#fn95" class="footnote-ref" id="fnref95"
-role="doc-noteref"><sup>95</sup></a></li>
+Sobocińskiのブログ</a><a href="#fn98" class="footnote-ref" id="fnref98"
+role="doc-noteref"><sup>98</sup></a></li>
 </ol>
-<aside id="footnotes-62" class="footnotes footnotes-end-of-section"
+<aside id="footnotes-63" class="footnotes footnotes-end-of-section"
 role="doc-footnote">
 <hr />
-<ol start="95">
-<li id="fn95"><p><a
+<ol start="98">
+<li id="fn98"><p><a
 href="https://graphicallinearalgebra.net/2017/04/16/a-monoid-is-a-category-a-category-is-a-monad-a-monad-is-a-monoid/"
 class="uri">https://graphicallinearalgebra.net/2017/04/16/a-monoid-is-a-category-a-category-is-a-monad-a-monad-is-a-monoid/</a><a
-href="#fnref95" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref98" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <h1 class="unnumbered" id="索引">索引</h1>
