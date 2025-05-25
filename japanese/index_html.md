@@ -111,6 +111,7 @@
 * [[ボトム](#bottom){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- ま -->
+* [[持ち上げられた](#lifted){epub:type="index-locator"}]{epub:type="index-term"}
 * [[モナド](#monad){epub:type="index-locator"}]{epub:type="index-term"}
 * [[モノイダル圏](#monoidal_category){epub:type="index-locator"}]{epub:type="index-term"}
 
@@ -121,7 +122,6 @@
 
 <!-- ら -->
 * [[リグ](#rig){epub:type="index-locator"}]{epub:type="index-term"}
-* [[リフトされた](#lifted){epub:type="index-locator"}]{epub:type="index-term"}
 * [[レコード](#record){epub:type="index-locator"}]{epub:type="index-term"}
 * [[ローヴェア・セオリー](#lawvere_theory){epub:type="index-locator"}]{epub:type="index-term"}
 
