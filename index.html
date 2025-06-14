@@ -680,7 +680,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
       </div>
             <div class="span9">
 
-
+      
       <h1 class="unnumbered" id="序文">序文</h1>
 <blockquote>
 <p>しばらく前から、プログラマーを対象とした圏論に関する本を書こうと考えていた。計算機科学者ではなくプログラマー、科学者ではなくエンジニア向けだということに注目してほしい。正気の沙汰ではないし、本当に恐ろしい。科学と工学の間に大きなギャップがあるのは否定できないと思う。自分自身がその分断の両側で仕事をしてきたからだ。それでも、物事を説明したいという強い衝動をいつも感じていた。簡潔な説明の達人だったリチャード・ファインマン<a
@@ -7434,15 +7434,15 @@ F-代数の準同型を定義する方法は次のとおりだ。まず、<math 
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>m</mi><mo>∷</mo><mi>F</mi><mi>a</mi><mo>→</mo><mi>F</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">F m \Colon F a \to F b</annotation></semantics></math>
 それから<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>を辿ると<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>に行き着く。同様に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>を使って<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">F a</annotation></semantics></math>から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>に移ってから<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>を辿ってもよい。2つの経路が等しくなるようにしたい：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>∘</mo><mi>F</mi><mi>m</mi><mo>=</mo><mi>m</mi><mo>∘</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">g \circ F m = m \circ f</annotation></semantics></math>
-<a href="images/alg.png" width="30%"><img src="images/alg.png"
+<a href="images/alg.png"><img src="images/alg.png" style="width:30.0%"
 alt="alg" /></a> </p>
 <p>
 これが本当に圏であることは簡単に納得できる（ヒント：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐂</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>の恒等射については問題なく、また、準同型の合成は準同型だ）。</p>
 <p>F-代数の圏に始対象が存在するなら、それは<span id="initial_algebra"
 class="keyword"><em>始代数</em></span> (initial algebra)
 と呼ばれる。この始代数の台を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>と呼び、その評価子を<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∷</mo><mi>F</mi><mi>i</mi><mo>→</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">j \Colon F i \to i</annotation></semantics></math>と呼ぼう。始代数の評価子である<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>は同型射だと分かる。この結果はLambekの定理として知られている。その証明は始対象の定義に依存している。その始対象の定義より、他のF-代数への一意な準同型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>の存在が必要とされる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>が準同型なので、次の図式が可換でなければならない：</p>
-<p> <a href="images/alg2.png" width="30%"><img src="images/alg2.png"
-alt="alg2" /></a> </p>
+<p> <a href="images/alg2.png"><img src="images/alg2.png"
+style="width:30.0%" alt="alg2" /></a> </p>
 <p>
 次に、台が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">F i</annotation></semantics></math>である代数を構築しよう。そのような代数の評価子は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>F</mi><mi>i</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F (F i)</annotation></semantics></math>
 から<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">F i</annotation></semantics></math>への射でなければならない。このような評価子は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>を持ち上げるだけで簡単に構成できる。
@@ -7451,19 +7451,19 @@ alt="alg2" /></a> </p>
 は始代数なので、そこから
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>F</mi><mi>i</mi><mo>,</mo><mi>F</mi><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(F i, F j)</annotation></semantics></math>
 への一意な準同型<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>が必要だ。次の図式が可換でなければならない：</p>
-<p> <a href="images/alg3a.png" width="30%"><img src="images/alg3a.png"
-alt="alg3a" /></a> </p>
+<p> <a href="images/alg3a.png"><img src="images/alg3a.png"
+style="width:30.0%" alt="alg3a" /></a> </p>
 <p>
 しかし、次のような自明な可換図式もある（どちらの経路も同じだ！）：</p>
-<p> <a href="images/alg3.png" width="30%"><img src="images/alg3.png"
-alt="alg3" /></a> </p>
+<p> <a href="images/alg3.png"><img src="images/alg3.png"
+style="width:30.0%" alt="alg3" /></a> </p>
 <p>
 これは、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>が代数の準同型であり、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>F</mi><mi>i</mi><mo>,</mo><mi>F</mi><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(F i, F j)</annotation></semantics></math>
 を
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math>
 に写すことを示していると解釈できる。これら2つの図式をつなぐと次のようになる：</p>
-<p> <a href="images/alg4.png" width="60%"><img src="images/alg4.png"
-alt="alg4" /></a> </p>
+<p> <a href="images/alg4.png"><img src="images/alg4.png"
+style="width:60.0%" alt="alg4" /></a> </p>
 <p>
 この図式は、同様に、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∘</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">j \circ m</annotation></semantics></math>が代数の準同型であることを示していると解釈できる。この場合のみ2つの代数は同じだ。さらに、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math>
 は始代数なので、それ自身から自身への準同型は1つしか存在できず、それはどの代数でも準同型だと分かっている恒等射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mi>𝐢</mi><mi>𝐝</mi></mrow><mi>i</mi></msub><annotation encoding="application/x-tex">\mathbf{id}_i</annotation></semantics></math>だ。したがって、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∘</mo><mi>m</mi><mo>=</mo><msub><mrow><mi>𝐢</mi><mi>𝐝</mi></mrow><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">j \circ m = \mathbf{id}_i</annotation></semantics></math>となる。この事実と左側の図式の可換特性を用いて<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>∘</mo><mi>j</mi><mo>=</mo><msub><mrow><mi>𝐢</mi><mi>𝐝</mi></mrow><mrow><mi>F</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">m \circ j=\mathbf{id}_{Fi}</annotation></semantics></math>であることを証明できる。これは<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>が<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>の逆であることを示しているため、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">F i</annotation></semantics></math>と<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>の間の同型射だ：
@@ -7493,13 +7493,13 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb519-1"><
 <h2 data-number="24.4" id="カタモルフィズム"><span
 class="header-section-number">24.4</span> カタモルフィズム</h2>
 <p>始代数の条件をHaskellの表記で書き直してみよう。始代数を<code>Fix f</code>と呼ぶことにする。その評価子はコンストラクター<code>Fix</code>だ。始代数から他の任意の代数への一意な射<code>m</code>が同じ関手上に存在する。台が<code>a</code>であり評価子が<code>alg</code>である代数を選択しよう。</p>
-<p> <a href="images/alg5.png" width="40%"><img src="images/alg5.png"
-alt="alg5" /></a> </p>
+<p> <a href="images/alg5.png"><img src="images/alg5.png"
+style="width:40.0%" alt="alg5" /></a> </p>
 <p>
 ところで、<code>m</code>が何なのかに注目してほしい。これは不動点の評価子であり、再帰的な式木全体の評価子だ。これを実装するための汎用的な方法を探そう。</p>
 <p>Lambekの定理はコンストラクター<code>Fix</code>が同型射であることを示している。その逆は<code>unFix</code>と呼ばれる。したがって、この図式で矢印の1つを反転して次のようにできる：</p>
-<p> <a href="images/alg6.png" width="40%"><img src="images/alg6.png"
-alt="alg6" /></a> </p>
+<p> <a href="images/alg6.png"><img src="images/alg6.png"
+style="width:40.0%" alt="alg6" /></a> </p>
 <p> この図式の可換条件を書こう：</p>
 <div class="sourceCode" id="cb520"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb520-1"><a href="#cb520-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">=</span> alg <span class="op">.</span> <span class="fu">fmap</span> m <span class="op">.</span> unFix</span></code></pre></div>
@@ -7566,8 +7566,8 @@ class="header-section-number">24.6</span> 余代数</h2>
 は終余代数 (terminal / final coalgebra) と呼ばれる。他のすべての代数
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a, f)</annotation></semantics></math>
 では、次の図式を可換にする一意な準同型<code>m</code>が存在する：</p>
-<p> <a href="images/alg7.png" width="40%"><img src="images/alg7.png"
-alt="alg7" /></a> </p>
+<p> <a href="images/alg7.png"><img src="images/alg7.png"
+style="width:40.0%" alt="alg7" /></a> </p>
 <p>
 終余代数はその関手の不動点であり、射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∷</mo><mi>t</mi><mo>→</mo><mi>F</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">u \Colon t \to F t</annotation></semantics></math>が同型射である（余代数に関するLambekの定理）ことを意味する：
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>t</mi><mo>≅</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">F t \cong t</annotation></semantics></math>
