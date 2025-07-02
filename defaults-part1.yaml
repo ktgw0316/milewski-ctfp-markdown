@@ -15,7 +15,7 @@ include-in-header:
 # common
 metadata-file: metadata.yaml
 from: markdown+smart
-listings: true
+highlight-style: haddock
 table-of-contents: true
 toc-depth: 2
 top-level-division: chapter
