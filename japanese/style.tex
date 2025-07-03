@@ -3,6 +3,19 @@
 \setlength{\parindent}{1\zw}
 \setlength{\parskip}{0pt}
 
+% Codeblock style
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\small}
+\mdfsetup{
+   linecolor=gray!20,
+   linewidth=2pt,
+   topline=false,
+   bottomline=false,
+   rightline=false,
+   skipabove=1ex,
+   skipbelow=1ex,
+ }
+\surroundwithmdframed[linewidth=2pt]{Highlighting}
+
 % ダッシュをつなげる
 % cf. https://qiita.com/isari/items/1d0b60b76c7ef168e376
 \usepackage{newunicodechar}
