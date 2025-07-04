@@ -9,6 +9,7 @@ variables:
     - paper=a5paper
 include-in-header:
   - ../packages.tex
+  - ../codeblock.tex
   - style.tex
   - ../frontmatter.tex
 

@@ -2,14 +2,13 @@
 to: latex
 pdf-engine: lualatex
 metadata:
-  documentclass: jlreq
+  documentclass: book
 variables:
   classoption:
-    - book
-    - paper=a5paper
+    - a5paper
 include-in-header:
   - ../packages.tex
-  - style.tex
+  - ../codeblock.tex
   - ../frontmatter.tex
 
 # common

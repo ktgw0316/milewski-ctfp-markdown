@@ -17,10 +17,11 @@ by [Bartosz Milewski][bartosz github], based on:
 1. Convert markdown to:
    * html: `pandoc -d ../defaults_html.yaml --template=../html_templates/bootstrap_menu.html --to=html5 -o index.html`
    * epub: `pandoc -d ../defaults_html.yaml --to=epub -o ctfp.epub`
-   * pdf: `pandoc -d ../defaults.yaml -o ctfp.pdf`
+   * pdf: `pandoc -d defaults.yaml -o ctfp.pdf`
      * If you want to make index available in pdf, you need to run the following commands:
+
         ```shell
-        pandoc -d ../defaults.yaml -o ctfp.tex
+        pandoc -d defaults.yaml -o ctfp.tex
         sed -i -f ../ensuremath.sed ctfp.tex
         lualatex ctfp
         upmendex -d index.dic ctfp
