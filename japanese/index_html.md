@@ -48,7 +48,7 @@
 * 述語 -- [[a](#predicate){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#predicate2){epub:type="index-locator"}]{epub:type="index-term"}
 * [[純粋関数](#pure_function){epub:type="index-locator"}]{epub:type="index-term"}
 * 準同型 -- [[a](#homomorphisms){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#homomorphism){epub:type="index-locator"}]{epub:type="index-term"}
-* [[証明で関連した関係](#proof-relevant_relation){epub:type="index-locator"}]{epub:type="index-term"}
+* [[証明を区別する関係](#proof-relevant_relation){epub:type="index-locator"}]{epub:type="index-term"}
 * [[シングルソート](#single-sorted){epub:type="index-locator"}]{epub:type="index-term"}
 * [[水平合成](#horizontal_composition){epub:type="index-locator"}]{epub:type="index-term"}
 * 随伴
