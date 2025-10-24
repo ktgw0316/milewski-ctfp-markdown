@@ -49,7 +49,6 @@
 * [[純粋関数](#pure_function){epub:type="index-locator"}]{epub:type="index-term"}
 * 準同型 -- [[a](#homomorphisms){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#homomorphism){epub:type="index-locator"}]{epub:type="index-term"}
 * [[証明を区別する関係](#proof-relevant_relation){epub:type="index-locator"}]{epub:type="index-term"}
-* [[シングルソート](#single-sorted){epub:type="index-locator"}]{epub:type="index-term"}
 * [[水平合成](#horizontal_composition){epub:type="index-locator"}]{epub:type="index-term"}
 * 随伴
   * [[左-](#left_adjoint){epub:type="index-locator"}]{epub:type="index-term"}
@@ -68,6 +67,7 @@
 * 台集合 - [[a](#underlying){epub:type="index-locator"}]{epub:type="index-term"}, [[b](#underlying_set){epub:type="index-locator"}]{epub:type="index-term"}
 * [[対象](#object){epub:type="index-locator"}]{epub:type="index-term"}
 * [[対称](#symmetric){epub:type="index-locator"}]{epub:type="index-term"}
+* [[単一ソート](#single-sorted){epub:type="index-locator"}]{epub:type="index-term"}
 * [[単射](#injective){epub:type="index-locator"}]{epub:type="index-term"}
 * [[チェイン](#chain){epub:type="index-locator"}]{epub:type="index-term"}
 * [[デカルト閉](#Cartesian_closed){epub:type="index-locator"}]{epub:type="index-term"}
