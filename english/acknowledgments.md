@@ -11,4 +11,3 @@ clever implementation of `compose` that uses advanced features of
 C++14 to drive type inference. I was able to cut the whole section of
 old fashioned template magic that did the same thing using type traits.
 Good riddance!
-I’m also grateful to Gershom Bazerman for useful comments that helped me clarify some important points.
