@@ -32,6 +32,7 @@
 * [[恒等射](#identity){epub:type="index-locator"}]{epub:type="index-term"}
 * [[合成可能](#composable){epub:type="index-locator"}]{epub:type="index-term"}
 * [[成分](#component){epub:type="index-locator"}]{epub:type="index-term"}
+* [[骨格](#skeleton){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- さ -->
 * [[自己関手](#endofunctors){epub:type="index-locator"}]{epub:type="index-term"}
@@ -53,7 +54,6 @@
 * 随伴
   * [[左-](#left_adjoint){epub:type="index-locator"}]{epub:type="index-term"}
   * [[右-](#right_adjoint){epub:type="index-locator"}]{epub:type="index-term"}
-* [[スケルトン](#skeleton){epub:type="index-locator"}]{epub:type="index-term"}
 * [[線形順序](#linear_order){epub:type="index-locator"}]{epub:type="index-term"}
 * [[全射](#surjective){epub:type="index-locator"}]{epub:type="index-term"}
 * [[前順序](#preorder){epub:type="index-locator"}]{epub:type="index-term"}
