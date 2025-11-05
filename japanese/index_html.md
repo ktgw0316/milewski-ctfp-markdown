@@ -123,6 +123,6 @@
 <!-- ら -->
 * [[リグ](#rig){epub:type="index-locator"}]{epub:type="index-term"}
 * [[レコード](#record){epub:type="index-locator"}]{epub:type="index-term"}
-* [[ローヴェア・セオリー](#lawvere_theory){epub:type="index-locator"}]{epub:type="index-term"}
+* [[ローヴェア理論](#lawvere_theory){epub:type="index-locator"}]{epub:type="index-term"}
 
 <!-- わ -->
