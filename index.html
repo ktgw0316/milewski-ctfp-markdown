@@ -1,54 +1,33 @@
-<!doctype html>
-<html  lang="ja-JP" >
-<head>
+<!DOCTYPE html>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="バルトシュ・ミレフスキー著 北川雅裕訳">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!--[if lt IE 9]>
-                <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-        <![endif]-->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>プログラマーのための圏論</title>
 
-    <!-- <link rel="stylesheet" type="text/css" href="template.css" /> -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/template.css" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-    <!-- <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" /> -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-    <!-- <script type='text/javascript' src='menu/js/jquery.cookie.js'></script> -->
-    <!-- <script type='text/javascript' src='menu/js/jquery.hoverIntent.minified.js'></script> -->
-    <!-- <script type='text/javascript' src='menu/js/jquery.dcjqaccordion.2.7.min.js'></script> -->
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
 
-    <!-- <link href="menu/css/skins/blue.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <link href="menu/css/skins/graphite.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <link href="menu/css/skins/grey.css" rel="stylesheet" type="text/css" /> -->
-
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-    <!-- <script src="script.js"></script> -->
-
-    <!-- <script src="jquery.sticky-kit.js "></script> -->
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.cookie.js'></script>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.hoverIntent.minified.js'></script>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.dcjqaccordion.2.7.min.js'></script>
-
-    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/blue.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/graphite.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/grey.css" rel="stylesheet" type="text/css" />
-
-    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/script.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/jquery.sticky-kit.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
-    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
-
-    <meta name="generator" content="pandoc" />
-  <meta name="author" content="バルトシュ・ミレフスキー著 北川雅裕訳" />
-  <title>プログラマーのための圏論</title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <style type="text/css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
 html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
@@ -108,578 +87,597 @@ code span.st { color: #008080; } /* String */
 code span.va { } /* Variable */
 code span.vs { color: #008080; } /* VerbatimString */
 code span.wa { color: #008000; font-weight: bold; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="base.css" />
-</head>
-<body>
+    </style>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" type="text/css">
+  </head>
 
+  <body>
 
-    <div class="navbar navbar-static-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <span class="doc-title">プログラマーのための圏論</span>
-        <ul class="nav pull-right doc-info">
-                    <li><p class="navbar-text">バルトシュ・ミレフスキー著　北川雅裕訳</p></li>
-                                        <li><p class="navbar-text"><a href="https://github.com/ktgw0316/milewski-ctfp-markdown/">https://github.com/ktgw0316/milewski-ctfp-markdown/</a></p></li>
-                  </ul>
-      </div>
-    </div>
-  </div>
-    <div class="container">
-    <div class="row">
-            <div id="TOC" class="span3">
-        <div class="well toc">
-
-        <ul>
-        <li><a href="#序文" id="toc-序文">序文</a></li>
-        <li><a href="#圏合成の本質" id="toc-圏合成の本質"><span
-        class="toc-section-number">1</span> 圏：合成の本質</a>
-        <ul>
-        <li><a href="#関数としての射" id="toc-関数としての射"><span
-        class="toc-section-number">1.1</span> 関数としての射</a></li>
-        <li><a href="#合成の性質" id="toc-合成の性質"><span
-        class="toc-section-number">1.2</span> 合成の性質</a></li>
-        <li><a href="#合成はプログラミングの本質"
-        id="toc-合成はプログラミングの本質"><span
-        class="toc-section-number">1.3</span>
-        合成はプログラミングの本質</a></li>
-        <li><a href="#課題" id="toc-課題"><span
-        class="toc-section-number">1.4</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#types-and-functions"
-        id="toc-types-and-functions"><span
-        class="toc-section-number">2</span> 型と関数</a>
-        <ul>
-        <li><a href="#型を必要とするのは誰か"
-        id="toc-型を必要とするのは誰か"><span
-        class="toc-section-number">2.1</span>
-        型を必要とするのは誰か？</a></li>
-        <li><a href="#型は合成に関する" id="toc-型は合成に関する"><span
-        class="toc-section-number">2.2</span> 型は合成に関する</a></li>
-        <li><a href="#型とは何か" id="toc-型とは何か"><span
-        class="toc-section-number">2.3</span> 型とは何か？</a></li>
-        <li><a href="#なぜ数学モデルが必要なのか"
-        id="toc-なぜ数学モデルが必要なのか"><span
-        class="toc-section-number">2.4</span>
-        なぜ数学モデルが必要なのか？</a></li>
-        <li><a href="#純粋関数と非純粋関数"
-        id="toc-純粋関数と非純粋関数"><span
-        class="toc-section-number">2.5</span>
-        純粋関数と非純粋関数</a></li>
-        <li><a href="#型の例" id="toc-型の例"><span
-        class="toc-section-number">2.6</span> 型の例</a></li>
-        <li><a href="#課題-1" id="toc-課題-1"><span
-        class="toc-section-number">2.7</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#圏のさまざま" id="toc-圏のさまざま"><span
-        class="toc-section-number">3</span> 圏のさまざま</a>
-        <ul>
-        <li><a href="#対象がない場合" id="toc-対象がない場合"><span
-        class="toc-section-number">3.1</span> 対象がない場合</a></li>
-        <li><a href="#有向グラフ" id="toc-有向グラフ"><span
-        class="toc-section-number">3.2</span> 有向グラフ</a></li>
-        <li><a href="#順序" id="toc-順序"><span
-        class="toc-section-number">3.3</span> 順序</a></li>
-        <li><a href="#集合としてのモノイド"
-        id="toc-集合としてのモノイド"><span
-        class="toc-section-number">3.4</span>
-        集合としてのモノイド</a></li>
-        <li><a href="#monoid-as-set" id="toc-monoid-as-set"><span
-        class="toc-section-number">3.5</span>
-        圏としてのモノイド</a></li>
-        <li><a href="#課題-2" id="toc-課題-2"><span
-        class="toc-section-number">3.6</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#kleisli-categories"
-        id="toc-kleisli-categories"><span
-        class="toc-section-number">4</span> クライスリ圏</a>
-        <ul>
-        <li><a href="#writer圏" id="toc-writer圏"><span
-        class="toc-section-number">4.1</span> Writer圏</a></li>
-        <li><a href="#haskellにおけるwriter"
-        id="toc-haskellにおけるwriter"><span
-        class="toc-section-number">4.2</span>
-        HaskellにおけるWriter</a></li>
-        <li><a href="#クライスリ圏" id="toc-クライスリ圏"><span
-        class="toc-section-number">4.3</span> クライスリ圏</a></li>
-        <li><a href="#課題-3" id="toc-課題-3"><span
-        class="toc-section-number">4.4</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#products-and-coproducts"
-        id="toc-products-and-coproducts"><span
-        class="toc-section-number">5</span> 積と余積</a>
-        <ul>
-        <li><a href="#始対象" id="toc-始対象"><span
-        class="toc-section-number">5.1</span> 始対象</a></li>
-        <li><a href="#終対象" id="toc-終対象"><span
-        class="toc-section-number">5.2</span> 終対象</a></li>
-        <li><a href="#双対性" id="toc-双対性"><span
-        class="toc-section-number">5.3</span> 双対性</a></li>
-        <li><a href="#同型" id="toc-同型"><span
-        class="toc-section-number">5.4</span> 同型</a></li>
-        <li><a href="#積" id="toc-積"><span
-        class="toc-section-number">5.5</span> 積</a></li>
-        <li><a href="#余積" id="toc-余積"><span
-        class="toc-section-number">5.6</span> 余積</a></li>
-        <li><a href="#非対称性" id="toc-非対称性"><span
-        class="toc-section-number">5.7</span> 非対称性</a></li>
-        <li><a href="#課題-4" id="toc-課題-4"><span
-        class="toc-section-number">5.8</span> 課題</a></li>
-        <li><a href="#参考文献" id="toc-参考文献"><span
-        class="toc-section-number">5.9</span> 参考文献</a></li>
-        </ul></li>
-        <li><a href="#simple-algebraic-data-types"
-        id="toc-simple-algebraic-data-types"><span
-        class="toc-section-number">6</span> シンプルな代数的データ型</a>
-        <ul>
-        <li><a href="#直積型" id="toc-直積型"><span
-        class="toc-section-number">6.1</span> 直積型</a></li>
-        <li><a href="#レコード" id="toc-レコード"><span
-        class="toc-section-number">6.2</span> レコード</a></li>
-        <li><a href="#直和型" id="toc-直和型"><span
-        class="toc-section-number">6.3</span> 直和型</a></li>
-        <li><a href="#型の代数" id="toc-型の代数"><span
-        class="toc-section-number">6.4</span> 型の代数</a></li>
-        <li><a href="#課題-5" id="toc-課題-5"><span
-        class="toc-section-number">6.5</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#functors" id="toc-functors"><span
-        class="toc-section-number">7</span> 関手</a>
-        <ul>
-        <li><a href="#プログラミングにおける関手"
-        id="toc-プログラミングにおける関手"><span
-        class="toc-section-number">7.1</span>
-        プログラミングにおける関手</a></li>
-        <li><a href="#コンテナーとしての関手"
-        id="toc-コンテナーとしての関手"><span
-        class="toc-section-number">7.2</span>
-        コンテナーとしての関手</a></li>
-        <li><a href="#関手の合成" id="toc-関手の合成"><span
-        class="toc-section-number">7.3</span> 関手の合成</a></li>
-        <li><a href="#課題-6" id="toc-課題-6"><span
-        class="toc-section-number">7.4</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#functoriality" id="toc-functoriality"><span
-        class="toc-section-number">8</span> 関手性</a>
-        <ul>
-        <li><a href="#双関手" id="toc-双関手"><span
-        class="toc-section-number">8.1</span> 双関手</a></li>
-        <li><a href="#product-and-coproduct-bifunctors"
-        id="toc-product-and-coproduct-bifunctors"><span
-        class="toc-section-number">8.2</span> 積と余積の双関手</a></li>
-        <li><a href="#関手的代数的データ型"
-        id="toc-関手的代数的データ型"><span
-        class="toc-section-number">8.3</span>
-        関手的代数的データ型</a></li>
-        <li><a href="#cにおける関手-1" id="toc-cにおける関手-1"><span
-        class="toc-section-number">8.4</span> C++における関手</a></li>
-        <li><a href="#writer関手" id="toc-writer関手"><span
-        class="toc-section-number">8.5</span> Writer関手</a></li>
-        <li><a href="#共変関手と反変関手"
-        id="toc-共変関手と反変関手"><span
-        class="toc-section-number">8.6</span>
-        共変関手と反変関手</a></li>
-        <li><a href="#プロ関手" id="toc-プロ関手"><span
-        class="toc-section-number">8.7</span> プロ関手</a></li>
-        <li><a href="#hom関手" id="toc-hom関手"><span
-        class="toc-section-number">8.8</span> Hom関手</a></li>
-        <li><a href="#課題-7" id="toc-課題-7"><span
-        class="toc-section-number">8.9</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#function-types" id="toc-function-types"><span
-        class="toc-section-number">9</span> 関数型</a>
-        <ul>
-        <li><a href="#普遍的構成" id="toc-普遍的構成"><span
-        class="toc-section-number">9.1</span> 普遍的構成</a></li>
-        <li><a href="#カリー化" id="toc-カリー化"><span
-        class="toc-section-number">9.2</span> カリー化</a></li>
-        <li><a href="#冪" id="toc-冪"><span
-        class="toc-section-number">9.3</span> 冪</a></li>
-        <li><a href="#デカルト閉圏" id="toc-デカルト閉圏"><span
-        class="toc-section-number">9.4</span> デカルト閉圏</a></li>
-        <li><a href="#冪と代数的データ型"
-        id="toc-冪と代数的データ型"><span
-        class="toc-section-number">9.5</span>
-        冪と代数的データ型</a></li>
-        <li><a href="#カリーハワード同型"
-        id="toc-カリーハワード同型"><span
-        class="toc-section-number">9.6</span>
-        カリー・ハワード同型</a></li>
-        <li><a href="#参考文献-1" id="toc-参考文献-1"><span
-        class="toc-section-number">9.7</span> 参考文献</a></li>
-        </ul></li>
-        <li><a href="#natural-transformations"
-        id="toc-natural-transformations"><span
-        class="toc-section-number">10</span> 自然変換</a>
-        <ul>
-        <li><a href="#多相関数" id="toc-多相関数"><span
-        class="toc-section-number">10.1</span> 多相関数</a></li>
-        <li><a href="#自然性を越えて" id="toc-自然性を越えて"><span
-        class="toc-section-number">10.2</span> 自然性を越えて</a></li>
-        <li><a href="#関手圏" id="toc-関手圏"><span
-        class="toc-section-number">10.3</span> 関手圏</a></li>
-        <li><a href="#圏" id="toc-圏"><span
-        class="toc-section-number">10.4</span> 2-圏</a></li>
-        <li><a href="#おわりに" id="toc-おわりに"><span
-        class="toc-section-number">10.5</span> おわりに</a></li>
-        <li><a href="#課題-8" id="toc-課題-8"><span
-        class="toc-section-number">10.6</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#宣言的プログラミング"
-        id="toc-宣言的プログラミング"><span
-        class="toc-section-number">11</span>
-        宣言的プログラミング</a></li>
-        <li><a href="#limits-and-colimits"
-        id="toc-limits-and-colimits"><span
-        class="toc-section-number">12</span> 極限と余極限</a>
-        <ul>
-        <li><a href="#自然同型としての極限"
-        id="toc-自然同型としての極限"><span
-        class="toc-section-number">12.1</span>
-        自然同型としての極限</a></li>
-        <li><a href="#極限の例" id="toc-極限の例"><span
-        class="toc-section-number">12.2</span> 極限の例</a></li>
-        <li><a href="#余極限" id="toc-余極限"><span
-        class="toc-section-number">12.3</span> 余極限</a></li>
-        <li><a href="#連続性" id="toc-連続性"><span
-        class="toc-section-number">12.4</span> 連続性</a></li>
-        <li><a href="#課題-9" id="toc-課題-9"><span
-        class="toc-section-number">12.5</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#free-monoids" id="toc-free-monoids"><span
-        class="toc-section-number">13</span> 自由モノイド</a>
-        <ul>
-        <li><a href="#haskellにおける自由モノイド"
-        id="toc-haskellにおける自由モノイド"><span
-        class="toc-section-number">13.1</span>
-        Haskellにおける自由モノイド</a></li>
-        <li><a href="#自由モノイドの普遍的構成"
-        id="toc-自由モノイドの普遍的構成"><span
-        class="toc-section-number">13.2</span>
-        自由モノイドの普遍的構成</a></li>
-        <li><a href="#課題-10" id="toc-課題-10"><span
-        class="toc-section-number">13.3</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#representable-functors"
-        id="toc-representable-functors"><span
-        class="toc-section-number">14</span> 表現可能関手</a>
-        <ul>
-        <li><a href="#hom関手-1" id="toc-hom関手-1"><span
-        class="toc-section-number">14.1</span> Hom関手</a></li>
-        <li><a href="#表現可能関手" id="toc-表現可能関手"><span
-        class="toc-section-number">14.2</span> 表現可能関手</a></li>
-        <li><a href="#課題-11" id="toc-課題-11"><span
-        class="toc-section-number">14.3</span> 課題</a></li>
-        <li><a href="#参考文献-2" id="toc-参考文献-2"><span
-        class="toc-section-number">14.4</span> 参考文献</a></li>
-        </ul></li>
-        <li><a href="#the-yoneda-lemma" id="toc-the-yoneda-lemma"><span
-        class="toc-section-number">15</span> 米田の補題</a>
-        <ul>
-        <li><a href="#haskellにおける米田の補題"
-        id="toc-haskellにおける米田の補題"><span
-        class="toc-section-number">15.1</span>
-        Haskellにおける米田の補題</a></li>
-        <li><a href="#余米田の補題" id="toc-余米田の補題"><span
-        class="toc-section-number">15.2</span> 余米田の補題</a></li>
-        <li><a href="#課題-12" id="toc-課題-12"><span
-        class="toc-section-number">15.3</span> 課題</a></li>
-        <li><a href="#参考文献-3" id="toc-参考文献-3"><span
-        class="toc-section-number">15.4</span> 参考文献</a></li>
-        </ul></li>
-        <li><a href="#yoneda-embedding" id="toc-yoneda-embedding"><span
-        class="toc-section-number">16</span> 米田埋め込み</a>
-        <ul>
-        <li><a href="#埋め込み" id="toc-埋め込み"><span
-        class="toc-section-number">16.1</span> 埋め込み</a></li>
-        <li><a href="#haskellへの応用" id="toc-haskellへの応用"><span
-        class="toc-section-number">16.2</span> Haskellへの応用</a></li>
-        <li><a href="#前順序での例" id="toc-前順序での例"><span
-        class="toc-section-number">16.3</span> 前順序での例</a></li>
-        <li><a href="#自然性" id="toc-自然性"><span
-        class="toc-section-number">16.4</span> 自然性</a></li>
-        <li><a href="#課題-13" id="toc-課題-13"><span
-        class="toc-section-number">16.5</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#射こそすべて" id="toc-射こそすべて"><span
-        class="toc-section-number">17</span> 射こそすべて</a>
-        <ul>
-        <li><a href="#関手" id="toc-関手"><span
-        class="toc-section-number">17.1</span> 関手</a></li>
-        <li><a href="#可換図式" id="toc-可換図式"><span
-        class="toc-section-number">17.2</span> 可換図式</a></li>
-        <li><a href="#自然変換" id="toc-自然変換"><span
-        class="toc-section-number">17.3</span> 自然変換</a></li>
-        <li><a href="#自然同型" id="toc-自然同型"><span
-        class="toc-section-number">17.4</span> 自然同型</a></li>
-        <li><a href="#hom集合" id="toc-hom集合"><span
-        class="toc-section-number">17.5</span> Hom集合</a></li>
-        <li><a href="#hom集合同型" id="toc-hom集合同型"><span
-        class="toc-section-number">17.6</span> Hom集合同型</a></li>
-        <li><a href="#hom集合の非対称性"
-        id="toc-hom集合の非対称性"><span
-        class="toc-section-number">17.7</span>
-        Hom集合の非対称性</a></li>
-        <li><a href="#課題-14" id="toc-課題-14"><span
-        class="toc-section-number">17.8</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#adjunctions" id="toc-adjunctions"><span
-        class="toc-section-number">18</span> 随伴</a>
-        <ul>
-        <li><a href="#随伴と単位余単位ペア"
-        id="toc-随伴と単位余単位ペア"><span
-        class="toc-section-number">18.1</span>
-        随伴と単位/余単位ペア</a></li>
-        <li><a href="#随伴とhom集合" id="toc-随伴とhom集合"><span
-        class="toc-section-number">18.2</span> 随伴とhom集合</a></li>
-        <li><a href="#随伴に基づく積" id="toc-随伴に基づく積"><span
-        class="toc-section-number">18.3</span> 随伴に基づく積</a></li>
-        <li><a href="#随伴に基づく冪" id="toc-随伴に基づく冪"><span
-        class="toc-section-number">18.4</span> 随伴に基づく冪</a></li>
-        <li><a href="#課題-15" id="toc-課題-15"><span
-        class="toc-section-number">18.5</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#freeforgetful-adjunctions"
-        id="toc-freeforgetful-adjunctions"><span
-        class="toc-section-number">19</span> 自由/忘却随伴</a>
-        <ul>
-        <li><a href="#いくつかの直観" id="toc-いくつかの直観"><span
-        class="toc-section-number">19.1</span> いくつかの直観</a></li>
-        <li><a href="#課題-16" id="toc-課題-16"><span
-        class="toc-section-number">19.2</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#モナドプログラマーの定義"
-        id="toc-モナドプログラマーの定義"><span
-        class="toc-section-number">20</span>
-        モナド：プログラマーの定義</a>
-        <ul>
-        <li><a href="#クライスリ圏-1" id="toc-クライスリ圏-1"><span
-        class="toc-section-number">20.1</span> クライスリ圏</a></li>
-        <li><a href="#fishの解剖" id="toc-fishの解剖"><span
-        class="toc-section-number">20.2</span> Fishの解剖</a></li>
-        <li><a href="#do記法" id="toc-do記法"><span
-        class="toc-section-number">20.3</span>
-        <code>do</code>記法</a></li>
-        </ul></li>
-        <li><a href="#モナドと計算効果" id="toc-モナドと計算効果"><span
-        class="toc-section-number">21</span> モナドと計算効果</a>
-        <ul>
-        <li><a href="#問題" id="toc-問題"><span
-        class="toc-section-number">21.1</span> 問題</a></li>
-        <li><a href="#解決策" id="toc-解決策"><span
-        class="toc-section-number">21.2</span> 解決策</a></li>
-        <li><a href="#結論" id="toc-結論"><span
-        class="toc-section-number">21.3</span> 結論</a></li>
-        </ul></li>
-        <li><a href="#monads-categorically"
-        id="toc-monads-categorically"><span
-        class="toc-section-number">22</span> 圏論から見たモナド</a>
-        <ul>
-        <li><a href="#モノイダル圏" id="toc-モノイダル圏"><span
-        class="toc-section-number">22.1</span> モノイダル圏</a></li>
-        <li><a href="#モノイダル圏におけるモノイド"
-        id="toc-モノイダル圏におけるモノイド"><span
-        class="toc-section-number">22.2</span>
-        モノイダル圏におけるモノイド</a></li>
-        <li><a href="#モノイドとしてのモナド"
-        id="toc-モノイドとしてのモナド"><span
-        class="toc-section-number">22.3</span>
-        モノイドとしてのモナド</a></li>
-        <li><a href="#随伴に基づくモナド"
-        id="toc-随伴に基づくモナド"><span
-        class="toc-section-number">22.4</span>
-        随伴に基づくモナド</a></li>
-        </ul></li>
-        <li><a href="#comonads" id="toc-comonads"><span
-        class="toc-section-number">23</span> コモナド</a>
-        <ul>
-        <li><a href="#コモナドによるプログラミング"
-        id="toc-コモナドによるプログラミング"><span
-        class="toc-section-number">23.1</span>
-        コモナドによるプログラミング</a></li>
-        <li><a href="#積コモナド" id="toc-積コモナド"><span
-        class="toc-section-number">23.2</span> 積コモナド</a></li>
-        <li><a href="#合成の分析" id="toc-合成の分析"><span
-        class="toc-section-number">23.3</span> 合成の分析</a></li>
-        <li><a href="#streamコモナド" id="toc-streamコモナド"><span
-        class="toc-section-number">23.4</span> Streamコモナド</a></li>
-        <li><a href="#圏論から見たコモナド"
-        id="toc-圏論から見たコモナド"><span
-        class="toc-section-number">23.5</span>
-        圏論から見たコモナド</a></li>
-        <li><a href="#storeコモナド" id="toc-storeコモナド"><span
-        class="toc-section-number">23.6</span> Storeコモナド</a></li>
-        <li><a href="#課題-17" id="toc-課題-17"><span
-        class="toc-section-number">23.7</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#f-代数" id="toc-f-代数"><span
-        class="toc-section-number">24</span>
-        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>-代数</a>
-        <ul>
-        <li><a href="#再帰" id="toc-再帰"><span
-        class="toc-section-number">24.1</span> 再帰</a></li>
-        <li><a href="#f-代数の圏" id="toc-f-代数の圏"><span
-        class="toc-section-number">24.2</span>
-        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>-代数の圏</a></li>
-        <li><a href="#自然数" id="toc-自然数"><span
-        class="toc-section-number">24.3</span> 自然数</a></li>
-        <li><a href="#catamorphism" id="toc-catamorphism"><span
-        class="toc-section-number">24.4</span> Catamorphism</a></li>
-        <li><a href="#fold" id="toc-fold"><span
-        class="toc-section-number">24.5</span> fold</a></li>
-        <li><a href="#余代数" id="toc-余代数"><span
-        class="toc-section-number">24.6</span> 余代数</a></li>
-        <li><a href="#課題-18" id="toc-課題-18"><span
-        class="toc-section-number">24.7</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#algebras-for-monads"
-        id="toc-algebras-for-monads"><span
-        class="toc-section-number">25</span> モナドの代数</a>
-        <ul>
-        <li><a href="#t-代数" id="toc-t-代数"><span
-        class="toc-section-number">25.1</span>
-        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>-代数</a></li>
-        <li><a href="#クライスリ圏-2" id="toc-クライスリ圏-2"><span
-        class="toc-section-number">25.2</span> クライスリ圏</a></li>
-        <li><a href="#コモナドの余代数" id="toc-コモナドの余代数"><span
-        class="toc-section-number">25.3</span> コモナドの余代数</a></li>
-        <li><a href="#レンズ" id="toc-レンズ"><span
-        class="toc-section-number">25.4</span> レンズ</a></li>
-        <li><a href="#課題-19" id="toc-課題-19"><span
-        class="toc-section-number">25.5</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#ends-and-coends" id="toc-ends-and-coends"><span
-        class="toc-section-number">26</span> エンドとコエンド</a>
-        <ul>
-        <li><a href="#対角自然変換" id="toc-対角自然変換"><span
-        class="toc-section-number">26.1</span> 対角自然変換</a></li>
-        <li><a href="#エンド" id="toc-エンド"><span
-        class="toc-section-number">26.2</span> エンド</a></li>
-        <li><a href="#等化子としてのエンド"
-        id="toc-等化子としてのエンド"><span
-        class="toc-section-number">26.3</span>
-        等化子としてのエンド</a></li>
-        <li><a href="#エンドとしての自然変換"
-        id="toc-エンドとしての自然変換"><span
-        class="toc-section-number">26.4</span>
-        エンドとしての自然変換</a></li>
-        <li><a href="#コエンド" id="toc-コエンド"><span
-        class="toc-section-number">26.5</span> コエンド</a></li>
-        <li><a href="#忍者米田の補題" id="toc-忍者米田の補題"><span
-        class="toc-section-number">26.6</span> 忍者米田の補題</a></li>
-        <li><a href="#プロ関手の合成" id="toc-プロ関手の合成"><span
-        class="toc-section-number">26.7</span> プロ関手の合成</a></li>
-        </ul></li>
-        <li><a href="#カン拡張" id="toc-カン拡張"><span
-        class="toc-section-number">27</span> カン拡張</a>
-        <ul>
-        <li><a href="#右カン拡張" id="toc-右カン拡張"><span
-        class="toc-section-number">27.1</span> 右カン拡張</a></li>
-        <li><a href="#随伴としてのカン拡張"
-        id="toc-随伴としてのカン拡張"><span
-        class="toc-section-number">27.2</span>
-        随伴としてのカン拡張</a></li>
-        <li><a href="#左カン拡張" id="toc-左カン拡張"><span
-        class="toc-section-number">27.3</span> 左カン拡張</a></li>
-        <li><a href="#エンドとしてのカン拡張"
-        id="toc-エンドとしてのカン拡張"><span
-        class="toc-section-number">27.4</span>
-        エンドとしてのカン拡張</a></li>
-        <li><a href="#haskellにおけるカン拡張"
-        id="toc-haskellにおけるカン拡張"><span
-        class="toc-section-number">27.5</span>
-        Haskellにおけるカン拡張</a></li>
-        <li><a href="#自由関手" id="toc-自由関手"><span
-        class="toc-section-number">27.6</span> 自由関手</a></li>
-        </ul></li>
-        <li><a href="#豊穣圏" id="toc-豊穣圏"><span
-        class="toc-section-number">28</span> 豊穣圏</a>
-        <ul>
-        <li><a href="#なぜモノイダル圏か"
-        id="toc-なぜモノイダル圏か"><span
-        class="toc-section-number">28.1</span>
-        なぜモノイダル圏か？</a></li>
-        <li><a href="#モノイダル圏-1" id="toc-モノイダル圏-1"><span
-        class="toc-section-number">28.2</span> モノイダル圏</a></li>
-        <li><a href="#豊饒圏" id="toc-豊饒圏"><span
-        class="toc-section-number">28.3</span> 豊饒圏</a></li>
-        <li><a href="#前順序" id="toc-前順序"><span
-        class="toc-section-number">28.4</span> 前順序</a></li>
-        <li><a href="#距離空間" id="toc-距離空間"><span
-        class="toc-section-number">28.5</span> 距離空間</a></li>
-        <li><a href="#豊穣関手" id="toc-豊穣関手"><span
-        class="toc-section-number">28.6</span> 豊穣関手</a></li>
-        <li><a href="#自己豊穣化" id="toc-自己豊穣化"><span
-        class="toc-section-number">28.7</span> 自己豊穣化</a></li>
-        <li><a href="#圏との関係" id="toc-圏との関係"><span
-        class="toc-section-number">28.8</span> 2-圏との関係</a></li>
-        </ul></li>
-        <li><a href="#トポス" id="toc-トポス"><span
-        class="toc-section-number">29</span> トポス</a>
-        <ul>
-        <li><a href="#部分対象分類子" id="toc-部分対象分類子"><span
-        class="toc-section-number">29.1</span> 部分対象分類子</a></li>
-        <li><a href="#トポス-1" id="toc-トポス-1"><span
-        class="toc-section-number">29.2</span> トポス</a></li>
-        <li><a href="#トポスと論理" id="toc-トポスと論理"><span
-        class="toc-section-number">29.3</span> トポスと論理</a></li>
-        <li><a href="#課題-20" id="toc-課題-20"><span
-        class="toc-section-number">29.4</span> 課題</a></li>
-        </ul></li>
-        <li><a href="#ローヴェア理論" id="toc-ローヴェア理論"><span
-        class="toc-section-number">30</span> ローヴェア理論</a>
-        <ul>
-        <li><a href="#普遍代数" id="toc-普遍代数"><span
-        class="toc-section-number">30.1</span> 普遍代数</a></li>
-        <li><a href="#ローヴェア理論-1" id="toc-ローヴェア理論-1"><span
-        class="toc-section-number">30.2</span> ローヴェア理論</a></li>
-        <li><a href="#ローヴェア理論のモデル"
-        id="toc-ローヴェア理論のモデル"><span
-        class="toc-section-number">30.3</span>
-        ローヴェア理論のモデル</a></li>
-        <li><a href="#モノイドの理論" id="toc-モノイドの理論"><span
-        class="toc-section-number">30.4</span> モノイドの理論</a></li>
-        <li><a href="#ローヴェア理論とモナド"
-        id="toc-ローヴェア理論とモナド"><span
-        class="toc-section-number">30.5</span>
-        ローヴェア理論とモナド</a></li>
-        <li><a href="#コエンドとしてのモナド"
-        id="toc-コエンドとしてのモナド"><span
-        class="toc-section-number">30.6</span>
-        コエンドとしてのモナド</a></li>
-        <li><a href="#副作用のローヴェア理論"
-        id="toc-副作用のローヴェア理論"><span
-        class="toc-section-number">30.7</span>
-        副作用のローヴェア理論</a></li>
-        <li><a href="#課題-21" id="toc-課題-21"><span
-        class="toc-section-number">30.8</span> 課題</a></li>
-        <li><a href="#参考文献-4" id="toc-参考文献-4"><span
-        class="toc-section-number">30.9</span> 参考文献</a></li>
-        </ul></li>
-        <li><a href="#モナドモノイド圏" id="toc-モナドモノイド圏"><span
-        class="toc-section-number">31</span> モナド・モノイド・圏</a>
-        <ul>
-        <li><a href="#双圏" id="toc-双圏"><span
-        class="toc-section-number">31.1</span> 双圏</a></li>
-        <li><a href="#モナド" id="toc-モナド"><span
-        class="toc-section-number">31.2</span> モナド</a></li>
-        <li><a href="#課題-22" id="toc-課題-22"><span
-        class="toc-section-number">31.3</span> 課題</a></li>
-        <li><a href="#参考文献-5" id="toc-参考文献-5"><span
-        class="toc-section-number">31.4</span> 参考文献</a></li>
-        </ul></li>
-        <li><a href="#索引" id="toc-索引">索引</a></li>
-        <li><a href="#謝辞" id="toc-謝辞">謝辞</a></li>
-        <li><a href="#ライセンス"
-        id="toc-ライセンス">ライセンス</a></li>
-        </ul>
-
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">"プログラマーのための圏論" バルトシュ・ミレフスキー著 北川雅裕訳</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+                        <li><a href="https://github.com/ktgw0316/milewski-ctfp-markdown/">https://github.com/ktgw0316/milewski-ctfp-markdown/</a></li>
+                      </ul>
         </div>
       </div>
-            <div class="span9">
+    </nav>
 
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#序文" id="toc-序文">序文</a></li>
+          <li><a href="#圏合成の本質" id="toc-圏合成の本質"><span
+          class="toc-section-number">1</span> 圏：合成の本質</a>
+          <ul>
+          <li><a href="#関数としての射" id="toc-関数としての射"><span
+          class="toc-section-number">1.1</span> 関数としての射</a></li>
+          <li><a href="#合成の性質" id="toc-合成の性質"><span
+          class="toc-section-number">1.2</span> 合成の性質</a></li>
+          <li><a href="#合成はプログラミングの本質"
+          id="toc-合成はプログラミングの本質"><span
+          class="toc-section-number">1.3</span>
+          合成はプログラミングの本質</a></li>
+          <li><a href="#課題" id="toc-課題"><span
+          class="toc-section-number">1.4</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#types-and-functions"
+          id="toc-types-and-functions"><span
+          class="toc-section-number">2</span> 型と関数</a>
+          <ul>
+          <li><a href="#型を必要とするのは誰か"
+          id="toc-型を必要とするのは誰か"><span
+          class="toc-section-number">2.1</span>
+          型を必要とするのは誰か？</a></li>
+          <li><a href="#型は合成に関する"
+          id="toc-型は合成に関する"><span
+          class="toc-section-number">2.2</span>
+          型は合成に関する</a></li>
+          <li><a href="#型とは何か" id="toc-型とは何か"><span
+          class="toc-section-number">2.3</span> 型とは何か？</a></li>
+          <li><a href="#なぜ数学モデルが必要なのか"
+          id="toc-なぜ数学モデルが必要なのか"><span
+          class="toc-section-number">2.4</span>
+          なぜ数学モデルが必要なのか？</a></li>
+          <li><a href="#純粋関数と非純粋関数"
+          id="toc-純粋関数と非純粋関数"><span
+          class="toc-section-number">2.5</span>
+          純粋関数と非純粋関数</a></li>
+          <li><a href="#型の例" id="toc-型の例"><span
+          class="toc-section-number">2.6</span> 型の例</a></li>
+          <li><a href="#課題-1" id="toc-課題-1"><span
+          class="toc-section-number">2.7</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#圏のさまざま" id="toc-圏のさまざま"><span
+          class="toc-section-number">3</span> 圏のさまざま</a>
+          <ul>
+          <li><a href="#対象がない場合" id="toc-対象がない場合"><span
+          class="toc-section-number">3.1</span> 対象がない場合</a></li>
+          <li><a href="#有向グラフ" id="toc-有向グラフ"><span
+          class="toc-section-number">3.2</span> 有向グラフ</a></li>
+          <li><a href="#順序" id="toc-順序"><span
+          class="toc-section-number">3.3</span> 順序</a></li>
+          <li><a href="#集合としてのモノイド"
+          id="toc-集合としてのモノイド"><span
+          class="toc-section-number">3.4</span>
+          集合としてのモノイド</a></li>
+          <li><a href="#monoid-as-set" id="toc-monoid-as-set"><span
+          class="toc-section-number">3.5</span>
+          圏としてのモノイド</a></li>
+          <li><a href="#課題-2" id="toc-課題-2"><span
+          class="toc-section-number">3.6</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#kleisli-categories"
+          id="toc-kleisli-categories"><span
+          class="toc-section-number">4</span> クライスリ圏</a>
+          <ul>
+          <li><a href="#writer圏" id="toc-writer圏"><span
+          class="toc-section-number">4.1</span> Writer圏</a></li>
+          <li><a href="#haskellにおけるwriter"
+          id="toc-haskellにおけるwriter"><span
+          class="toc-section-number">4.2</span>
+          HaskellにおけるWriter</a></li>
+          <li><a href="#クライスリ圏" id="toc-クライスリ圏"><span
+          class="toc-section-number">4.3</span> クライスリ圏</a></li>
+          <li><a href="#課題-3" id="toc-課題-3"><span
+          class="toc-section-number">4.4</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#products-and-coproducts"
+          id="toc-products-and-coproducts"><span
+          class="toc-section-number">5</span> 積と余積</a>
+          <ul>
+          <li><a href="#始対象" id="toc-始対象"><span
+          class="toc-section-number">5.1</span> 始対象</a></li>
+          <li><a href="#終対象" id="toc-終対象"><span
+          class="toc-section-number">5.2</span> 終対象</a></li>
+          <li><a href="#双対性" id="toc-双対性"><span
+          class="toc-section-number">5.3</span> 双対性</a></li>
+          <li><a href="#同型" id="toc-同型"><span
+          class="toc-section-number">5.4</span> 同型</a></li>
+          <li><a href="#積" id="toc-積"><span
+          class="toc-section-number">5.5</span> 積</a></li>
+          <li><a href="#余積" id="toc-余積"><span
+          class="toc-section-number">5.6</span> 余積</a></li>
+          <li><a href="#非対称性" id="toc-非対称性"><span
+          class="toc-section-number">5.7</span> 非対称性</a></li>
+          <li><a href="#課題-4" id="toc-課題-4"><span
+          class="toc-section-number">5.8</span> 課題</a></li>
+          <li><a href="#参考文献" id="toc-参考文献"><span
+          class="toc-section-number">5.9</span> 参考文献</a></li>
+          </ul></li>
+          <li><a href="#simple-algebraic-data-types"
+          id="toc-simple-algebraic-data-types"><span
+          class="toc-section-number">6</span>
+          シンプルな代数的データ型</a>
+          <ul>
+          <li><a href="#直積型" id="toc-直積型"><span
+          class="toc-section-number">6.1</span> 直積型</a></li>
+          <li><a href="#レコード" id="toc-レコード"><span
+          class="toc-section-number">6.2</span> レコード</a></li>
+          <li><a href="#直和型" id="toc-直和型"><span
+          class="toc-section-number">6.3</span> 直和型</a></li>
+          <li><a href="#型の代数" id="toc-型の代数"><span
+          class="toc-section-number">6.4</span> 型の代数</a></li>
+          <li><a href="#課題-5" id="toc-課題-5"><span
+          class="toc-section-number">6.5</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#functors" id="toc-functors"><span
+          class="toc-section-number">7</span> 関手</a>
+          <ul>
+          <li><a href="#プログラミングにおける関手"
+          id="toc-プログラミングにおける関手"><span
+          class="toc-section-number">7.1</span>
+          プログラミングにおける関手</a></li>
+          <li><a href="#コンテナーとしての関手"
+          id="toc-コンテナーとしての関手"><span
+          class="toc-section-number">7.2</span>
+          コンテナーとしての関手</a></li>
+          <li><a href="#関手の合成" id="toc-関手の合成"><span
+          class="toc-section-number">7.3</span> 関手の合成</a></li>
+          <li><a href="#課題-6" id="toc-課題-6"><span
+          class="toc-section-number">7.4</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#functoriality" id="toc-functoriality"><span
+          class="toc-section-number">8</span> 関手性</a>
+          <ul>
+          <li><a href="#双関手" id="toc-双関手"><span
+          class="toc-section-number">8.1</span> 双関手</a></li>
+          <li><a href="#product-and-coproduct-bifunctors"
+          id="toc-product-and-coproduct-bifunctors"><span
+          class="toc-section-number">8.2</span>
+          積と余積の双関手</a></li>
+          <li><a href="#関手的代数的データ型"
+          id="toc-関手的代数的データ型"><span
+          class="toc-section-number">8.3</span>
+          関手的代数的データ型</a></li>
+          <li><a href="#cにおける関手-1" id="toc-cにおける関手-1"><span
+          class="toc-section-number">8.4</span> C++における関手</a></li>
+          <li><a href="#writer関手" id="toc-writer関手"><span
+          class="toc-section-number">8.5</span> Writer関手</a></li>
+          <li><a href="#共変関手と反変関手"
+          id="toc-共変関手と反変関手"><span
+          class="toc-section-number">8.6</span>
+          共変関手と反変関手</a></li>
+          <li><a href="#プロ関手" id="toc-プロ関手"><span
+          class="toc-section-number">8.7</span> プロ関手</a></li>
+          <li><a href="#hom関手" id="toc-hom関手"><span
+          class="toc-section-number">8.8</span> Hom関手</a></li>
+          <li><a href="#課題-7" id="toc-課題-7"><span
+          class="toc-section-number">8.9</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#function-types" id="toc-function-types"><span
+          class="toc-section-number">9</span> 関数型</a>
+          <ul>
+          <li><a href="#普遍的構成" id="toc-普遍的構成"><span
+          class="toc-section-number">9.1</span> 普遍的構成</a></li>
+          <li><a href="#カリー化" id="toc-カリー化"><span
+          class="toc-section-number">9.2</span> カリー化</a></li>
+          <li><a href="#冪" id="toc-冪"><span
+          class="toc-section-number">9.3</span> 冪</a></li>
+          <li><a href="#デカルト閉圏" id="toc-デカルト閉圏"><span
+          class="toc-section-number">9.4</span> デカルト閉圏</a></li>
+          <li><a href="#冪と代数的データ型"
+          id="toc-冪と代数的データ型"><span
+          class="toc-section-number">9.5</span>
+          冪と代数的データ型</a></li>
+          <li><a href="#カリーハワード同型"
+          id="toc-カリーハワード同型"><span
+          class="toc-section-number">9.6</span>
+          カリー・ハワード同型</a></li>
+          <li><a href="#参考文献-1" id="toc-参考文献-1"><span
+          class="toc-section-number">9.7</span> 参考文献</a></li>
+          </ul></li>
+          <li><a href="#natural-transformations"
+          id="toc-natural-transformations"><span
+          class="toc-section-number">10</span> 自然変換</a>
+          <ul>
+          <li><a href="#多相関数" id="toc-多相関数"><span
+          class="toc-section-number">10.1</span> 多相関数</a></li>
+          <li><a href="#自然性を越えて" id="toc-自然性を越えて"><span
+          class="toc-section-number">10.2</span> 自然性を越えて</a></li>
+          <li><a href="#関手圏" id="toc-関手圏"><span
+          class="toc-section-number">10.3</span> 関手圏</a></li>
+          <li><a href="#圏" id="toc-圏"><span
+          class="toc-section-number">10.4</span> 2-圏</a></li>
+          <li><a href="#おわりに" id="toc-おわりに"><span
+          class="toc-section-number">10.5</span> おわりに</a></li>
+          <li><a href="#課題-8" id="toc-課題-8"><span
+          class="toc-section-number">10.6</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#宣言的プログラミング"
+          id="toc-宣言的プログラミング"><span
+          class="toc-section-number">11</span>
+          宣言的プログラミング</a></li>
+          <li><a href="#limits-and-colimits"
+          id="toc-limits-and-colimits"><span
+          class="toc-section-number">12</span> 極限と余極限</a>
+          <ul>
+          <li><a href="#自然同型としての極限"
+          id="toc-自然同型としての極限"><span
+          class="toc-section-number">12.1</span>
+          自然同型としての極限</a></li>
+          <li><a href="#極限の例" id="toc-極限の例"><span
+          class="toc-section-number">12.2</span> 極限の例</a></li>
+          <li><a href="#余極限" id="toc-余極限"><span
+          class="toc-section-number">12.3</span> 余極限</a></li>
+          <li><a href="#連続性" id="toc-連続性"><span
+          class="toc-section-number">12.4</span> 連続性</a></li>
+          <li><a href="#課題-9" id="toc-課題-9"><span
+          class="toc-section-number">12.5</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#free-monoids" id="toc-free-monoids"><span
+          class="toc-section-number">13</span> 自由モノイド</a>
+          <ul>
+          <li><a href="#haskellにおける自由モノイド"
+          id="toc-haskellにおける自由モノイド"><span
+          class="toc-section-number">13.1</span>
+          Haskellにおける自由モノイド</a></li>
+          <li><a href="#自由モノイドの普遍的構成"
+          id="toc-自由モノイドの普遍的構成"><span
+          class="toc-section-number">13.2</span>
+          自由モノイドの普遍的構成</a></li>
+          <li><a href="#課題-10" id="toc-課題-10"><span
+          class="toc-section-number">13.3</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#representable-functors"
+          id="toc-representable-functors"><span
+          class="toc-section-number">14</span> 表現可能関手</a>
+          <ul>
+          <li><a href="#hom関手-1" id="toc-hom関手-1"><span
+          class="toc-section-number">14.1</span> Hom関手</a></li>
+          <li><a href="#表現可能関手" id="toc-表現可能関手"><span
+          class="toc-section-number">14.2</span> 表現可能関手</a></li>
+          <li><a href="#課題-11" id="toc-課題-11"><span
+          class="toc-section-number">14.3</span> 課題</a></li>
+          <li><a href="#参考文献-2" id="toc-参考文献-2"><span
+          class="toc-section-number">14.4</span> 参考文献</a></li>
+          </ul></li>
+          <li><a href="#the-yoneda-lemma"
+          id="toc-the-yoneda-lemma"><span
+          class="toc-section-number">15</span> 米田の補題</a>
+          <ul>
+          <li><a href="#haskellにおける米田の補題"
+          id="toc-haskellにおける米田の補題"><span
+          class="toc-section-number">15.1</span>
+          Haskellにおける米田の補題</a></li>
+          <li><a href="#余米田の補題" id="toc-余米田の補題"><span
+          class="toc-section-number">15.2</span> 余米田の補題</a></li>
+          <li><a href="#課題-12" id="toc-課題-12"><span
+          class="toc-section-number">15.3</span> 課題</a></li>
+          <li><a href="#参考文献-3" id="toc-参考文献-3"><span
+          class="toc-section-number">15.4</span> 参考文献</a></li>
+          </ul></li>
+          <li><a href="#yoneda-embedding"
+          id="toc-yoneda-embedding"><span
+          class="toc-section-number">16</span> 米田埋め込み</a>
+          <ul>
+          <li><a href="#埋め込み" id="toc-埋め込み"><span
+          class="toc-section-number">16.1</span> 埋め込み</a></li>
+          <li><a href="#haskellへの応用" id="toc-haskellへの応用"><span
+          class="toc-section-number">16.2</span>
+          Haskellへの応用</a></li>
+          <li><a href="#前順序での例" id="toc-前順序での例"><span
+          class="toc-section-number">16.3</span> 前順序での例</a></li>
+          <li><a href="#自然性" id="toc-自然性"><span
+          class="toc-section-number">16.4</span> 自然性</a></li>
+          <li><a href="#課題-13" id="toc-課題-13"><span
+          class="toc-section-number">16.5</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#射こそすべて" id="toc-射こそすべて"><span
+          class="toc-section-number">17</span> 射こそすべて</a>
+          <ul>
+          <li><a href="#関手" id="toc-関手"><span
+          class="toc-section-number">17.1</span> 関手</a></li>
+          <li><a href="#可換図式" id="toc-可換図式"><span
+          class="toc-section-number">17.2</span> 可換図式</a></li>
+          <li><a href="#自然変換" id="toc-自然変換"><span
+          class="toc-section-number">17.3</span> 自然変換</a></li>
+          <li><a href="#自然同型" id="toc-自然同型"><span
+          class="toc-section-number">17.4</span> 自然同型</a></li>
+          <li><a href="#hom集合" id="toc-hom集合"><span
+          class="toc-section-number">17.5</span> Hom集合</a></li>
+          <li><a href="#hom集合同型" id="toc-hom集合同型"><span
+          class="toc-section-number">17.6</span> Hom集合同型</a></li>
+          <li><a href="#hom集合の非対称性"
+          id="toc-hom集合の非対称性"><span
+          class="toc-section-number">17.7</span>
+          Hom集合の非対称性</a></li>
+          <li><a href="#課題-14" id="toc-課題-14"><span
+          class="toc-section-number">17.8</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#adjunctions" id="toc-adjunctions"><span
+          class="toc-section-number">18</span> 随伴</a>
+          <ul>
+          <li><a href="#随伴と単位余単位ペア"
+          id="toc-随伴と単位余単位ペア"><span
+          class="toc-section-number">18.1</span>
+          随伴と単位/余単位ペア</a></li>
+          <li><a href="#随伴とhom集合" id="toc-随伴とhom集合"><span
+          class="toc-section-number">18.2</span> 随伴とhom集合</a></li>
+          <li><a href="#随伴に基づく積" id="toc-随伴に基づく積"><span
+          class="toc-section-number">18.3</span> 随伴に基づく積</a></li>
+          <li><a href="#随伴に基づく冪" id="toc-随伴に基づく冪"><span
+          class="toc-section-number">18.4</span> 随伴に基づく冪</a></li>
+          <li><a href="#課題-15" id="toc-課題-15"><span
+          class="toc-section-number">18.5</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#freeforgetful-adjunctions"
+          id="toc-freeforgetful-adjunctions"><span
+          class="toc-section-number">19</span> 自由/忘却随伴</a>
+          <ul>
+          <li><a href="#いくつかの直観" id="toc-いくつかの直観"><span
+          class="toc-section-number">19.1</span> いくつかの直観</a></li>
+          <li><a href="#課題-16" id="toc-課題-16"><span
+          class="toc-section-number">19.2</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#モナドプログラマーの定義"
+          id="toc-モナドプログラマーの定義"><span
+          class="toc-section-number">20</span>
+          モナド：プログラマーの定義</a>
+          <ul>
+          <li><a href="#クライスリ圏-1" id="toc-クライスリ圏-1"><span
+          class="toc-section-number">20.1</span> クライスリ圏</a></li>
+          <li><a href="#fishの解剖" id="toc-fishの解剖"><span
+          class="toc-section-number">20.2</span> Fishの解剖</a></li>
+          <li><a href="#do記法" id="toc-do記法"><span
+          class="toc-section-number">20.3</span>
+          <code>do</code>記法</a></li>
+          </ul></li>
+          <li><a href="#モナドと計算効果"
+          id="toc-モナドと計算効果"><span
+          class="toc-section-number">21</span> モナドと計算効果</a>
+          <ul>
+          <li><a href="#問題" id="toc-問題"><span
+          class="toc-section-number">21.1</span> 問題</a></li>
+          <li><a href="#解決策" id="toc-解決策"><span
+          class="toc-section-number">21.2</span> 解決策</a></li>
+          <li><a href="#結論" id="toc-結論"><span
+          class="toc-section-number">21.3</span> 結論</a></li>
+          </ul></li>
+          <li><a href="#monads-categorically"
+          id="toc-monads-categorically"><span
+          class="toc-section-number">22</span> 圏論から見たモナド</a>
+          <ul>
+          <li><a href="#モノイダル圏" id="toc-モノイダル圏"><span
+          class="toc-section-number">22.1</span> モノイダル圏</a></li>
+          <li><a href="#モノイダル圏におけるモノイド"
+          id="toc-モノイダル圏におけるモノイド"><span
+          class="toc-section-number">22.2</span>
+          モノイダル圏におけるモノイド</a></li>
+          <li><a href="#モノイドとしてのモナド"
+          id="toc-モノイドとしてのモナド"><span
+          class="toc-section-number">22.3</span>
+          モノイドとしてのモナド</a></li>
+          <li><a href="#随伴に基づくモナド"
+          id="toc-随伴に基づくモナド"><span
+          class="toc-section-number">22.4</span>
+          随伴に基づくモナド</a></li>
+          </ul></li>
+          <li><a href="#comonads" id="toc-comonads"><span
+          class="toc-section-number">23</span> コモナド</a>
+          <ul>
+          <li><a href="#コモナドによるプログラミング"
+          id="toc-コモナドによるプログラミング"><span
+          class="toc-section-number">23.1</span>
+          コモナドによるプログラミング</a></li>
+          <li><a href="#積コモナド" id="toc-積コモナド"><span
+          class="toc-section-number">23.2</span> 積コモナド</a></li>
+          <li><a href="#合成の分析" id="toc-合成の分析"><span
+          class="toc-section-number">23.3</span> 合成の分析</a></li>
+          <li><a href="#streamコモナド" id="toc-streamコモナド"><span
+          class="toc-section-number">23.4</span> Streamコモナド</a></li>
+          <li><a href="#圏論から見たコモナド"
+          id="toc-圏論から見たコモナド"><span
+          class="toc-section-number">23.5</span>
+          圏論から見たコモナド</a></li>
+          <li><a href="#storeコモナド" id="toc-storeコモナド"><span
+          class="toc-section-number">23.6</span> Storeコモナド</a></li>
+          <li><a href="#課題-17" id="toc-課題-17"><span
+          class="toc-section-number">23.7</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#f-代数" id="toc-f-代数"><span
+          class="toc-section-number">24</span>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>-代数</a>
+          <ul>
+          <li><a href="#再帰" id="toc-再帰"><span
+          class="toc-section-number">24.1</span> 再帰</a></li>
+          <li><a href="#f-代数の圏" id="toc-f-代数の圏"><span
+          class="toc-section-number">24.2</span>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>-代数の圏</a></li>
+          <li><a href="#自然数" id="toc-自然数"><span
+          class="toc-section-number">24.3</span> 自然数</a></li>
+          <li><a href="#catamorphism" id="toc-catamorphism"><span
+          class="toc-section-number">24.4</span> Catamorphism</a></li>
+          <li><a href="#fold" id="toc-fold"><span
+          class="toc-section-number">24.5</span> fold</a></li>
+          <li><a href="#余代数" id="toc-余代数"><span
+          class="toc-section-number">24.6</span> 余代数</a></li>
+          <li><a href="#課題-18" id="toc-課題-18"><span
+          class="toc-section-number">24.7</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#algebras-for-monads"
+          id="toc-algebras-for-monads"><span
+          class="toc-section-number">25</span> モナドの代数</a>
+          <ul>
+          <li><a href="#t-代数" id="toc-t-代数"><span
+          class="toc-section-number">25.1</span>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>-代数</a></li>
+          <li><a href="#クライスリ圏-2" id="toc-クライスリ圏-2"><span
+          class="toc-section-number">25.2</span> クライスリ圏</a></li>
+          <li><a href="#コモナドの余代数"
+          id="toc-コモナドの余代数"><span
+          class="toc-section-number">25.3</span>
+          コモナドの余代数</a></li>
+          <li><a href="#レンズ" id="toc-レンズ"><span
+          class="toc-section-number">25.4</span> レンズ</a></li>
+          <li><a href="#課題-19" id="toc-課題-19"><span
+          class="toc-section-number">25.5</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#ends-and-coends" id="toc-ends-and-coends"><span
+          class="toc-section-number">26</span> エンドとコエンド</a>
+          <ul>
+          <li><a href="#対角自然変換" id="toc-対角自然変換"><span
+          class="toc-section-number">26.1</span> 対角自然変換</a></li>
+          <li><a href="#エンド" id="toc-エンド"><span
+          class="toc-section-number">26.2</span> エンド</a></li>
+          <li><a href="#等化子としてのエンド"
+          id="toc-等化子としてのエンド"><span
+          class="toc-section-number">26.3</span>
+          等化子としてのエンド</a></li>
+          <li><a href="#エンドとしての自然変換"
+          id="toc-エンドとしての自然変換"><span
+          class="toc-section-number">26.4</span>
+          エンドとしての自然変換</a></li>
+          <li><a href="#コエンド" id="toc-コエンド"><span
+          class="toc-section-number">26.5</span> コエンド</a></li>
+          <li><a href="#忍者米田の補題" id="toc-忍者米田の補題"><span
+          class="toc-section-number">26.6</span> 忍者米田の補題</a></li>
+          <li><a href="#プロ関手の合成" id="toc-プロ関手の合成"><span
+          class="toc-section-number">26.7</span> プロ関手の合成</a></li>
+          </ul></li>
+          <li><a href="#カン拡張" id="toc-カン拡張"><span
+          class="toc-section-number">27</span> カン拡張</a>
+          <ul>
+          <li><a href="#右カン拡張" id="toc-右カン拡張"><span
+          class="toc-section-number">27.1</span> 右カン拡張</a></li>
+          <li><a href="#随伴としてのカン拡張"
+          id="toc-随伴としてのカン拡張"><span
+          class="toc-section-number">27.2</span>
+          随伴としてのカン拡張</a></li>
+          <li><a href="#左カン拡張" id="toc-左カン拡張"><span
+          class="toc-section-number">27.3</span> 左カン拡張</a></li>
+          <li><a href="#エンドとしてのカン拡張"
+          id="toc-エンドとしてのカン拡張"><span
+          class="toc-section-number">27.4</span>
+          エンドとしてのカン拡張</a></li>
+          <li><a href="#haskellにおけるカン拡張"
+          id="toc-haskellにおけるカン拡張"><span
+          class="toc-section-number">27.5</span>
+          Haskellにおけるカン拡張</a></li>
+          <li><a href="#自由関手" id="toc-自由関手"><span
+          class="toc-section-number">27.6</span> 自由関手</a></li>
+          </ul></li>
+          <li><a href="#豊穣圏" id="toc-豊穣圏"><span
+          class="toc-section-number">28</span> 豊穣圏</a>
+          <ul>
+          <li><a href="#なぜモノイダル圏か"
+          id="toc-なぜモノイダル圏か"><span
+          class="toc-section-number">28.1</span>
+          なぜモノイダル圏か？</a></li>
+          <li><a href="#モノイダル圏-1" id="toc-モノイダル圏-1"><span
+          class="toc-section-number">28.2</span> モノイダル圏</a></li>
+          <li><a href="#豊饒圏" id="toc-豊饒圏"><span
+          class="toc-section-number">28.3</span> 豊饒圏</a></li>
+          <li><a href="#前順序" id="toc-前順序"><span
+          class="toc-section-number">28.4</span> 前順序</a></li>
+          <li><a href="#距離空間" id="toc-距離空間"><span
+          class="toc-section-number">28.5</span> 距離空間</a></li>
+          <li><a href="#豊穣関手" id="toc-豊穣関手"><span
+          class="toc-section-number">28.6</span> 豊穣関手</a></li>
+          <li><a href="#自己豊穣化" id="toc-自己豊穣化"><span
+          class="toc-section-number">28.7</span> 自己豊穣化</a></li>
+          <li><a href="#圏との関係" id="toc-圏との関係"><span
+          class="toc-section-number">28.8</span> 2-圏との関係</a></li>
+          </ul></li>
+          <li><a href="#トポス" id="toc-トポス"><span
+          class="toc-section-number">29</span> トポス</a>
+          <ul>
+          <li><a href="#部分対象分類子" id="toc-部分対象分類子"><span
+          class="toc-section-number">29.1</span> 部分対象分類子</a></li>
+          <li><a href="#トポス-1" id="toc-トポス-1"><span
+          class="toc-section-number">29.2</span> トポス</a></li>
+          <li><a href="#トポスと論理" id="toc-トポスと論理"><span
+          class="toc-section-number">29.3</span> トポスと論理</a></li>
+          <li><a href="#課題-20" id="toc-課題-20"><span
+          class="toc-section-number">29.4</span> 課題</a></li>
+          </ul></li>
+          <li><a href="#ローヴェア理論" id="toc-ローヴェア理論"><span
+          class="toc-section-number">30</span> ローヴェア理論</a>
+          <ul>
+          <li><a href="#普遍代数" id="toc-普遍代数"><span
+          class="toc-section-number">30.1</span> 普遍代数</a></li>
+          <li><a href="#ローヴェア理論-1"
+          id="toc-ローヴェア理論-1"><span
+          class="toc-section-number">30.2</span> ローヴェア理論</a></li>
+          <li><a href="#ローヴェア理論のモデル"
+          id="toc-ローヴェア理論のモデル"><span
+          class="toc-section-number">30.3</span>
+          ローヴェア理論のモデル</a></li>
+          <li><a href="#モノイドの理論" id="toc-モノイドの理論"><span
+          class="toc-section-number">30.4</span> モノイドの理論</a></li>
+          <li><a href="#ローヴェア理論とモナド"
+          id="toc-ローヴェア理論とモナド"><span
+          class="toc-section-number">30.5</span>
+          ローヴェア理論とモナド</a></li>
+          <li><a href="#コエンドとしてのモナド"
+          id="toc-コエンドとしてのモナド"><span
+          class="toc-section-number">30.6</span>
+          コエンドとしてのモナド</a></li>
+          <li><a href="#副作用のローヴェア理論"
+          id="toc-副作用のローヴェア理論"><span
+          class="toc-section-number">30.7</span>
+          副作用のローヴェア理論</a></li>
+          <li><a href="#課題-21" id="toc-課題-21"><span
+          class="toc-section-number">30.8</span> 課題</a></li>
+          <li><a href="#参考文献-4" id="toc-参考文献-4"><span
+          class="toc-section-number">30.9</span> 参考文献</a></li>
+          </ul></li>
+          <li><a href="#モナドモノイド圏"
+          id="toc-モナドモノイド圏"><span
+          class="toc-section-number">31</span> モナド・モノイド・圏</a>
+          <ul>
+          <li><a href="#双圏" id="toc-双圏"><span
+          class="toc-section-number">31.1</span> 双圏</a></li>
+          <li><a href="#モナド" id="toc-モナド"><span
+          class="toc-section-number">31.2</span> モナド</a></li>
+          <li><a href="#課題-22" id="toc-課題-22"><span
+          class="toc-section-number">31.3</span> 課題</a></li>
+          <li><a href="#参考文献-5" id="toc-参考文献-5"><span
+          class="toc-section-number">31.4</span> 参考文献</a></li>
+          </ul></li>
+          <li><a href="#索引" id="toc-索引">索引</a></li>
+          <li><a href="#謝辞" id="toc-謝辞">謝辞</a></li>
+          <li><a href="#ライセンス"
+          id="toc-ライセンス">ライセンス</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-      <h1 class="unnumbered" id="序文">序文</h1>
+<h1 class="unnumbered" id="序文">序文</h1>
 <blockquote>
 <p>しばらく前から、プログラマーを対象とした圏論に関する本を書こうと考えていた。計算機科学者ではなくプログラマー、科学者ではなくエンジニア向けだということに注目してほしい。正気の沙汰ではないし、本当に恐ろしい。科学と工学の間に大きなギャップがあるのは否定できないと思う。自分自身がその分断の両側で仕事をしてきたからだ。それでも、物事を説明したいという強い衝動をいつも感じていた。簡潔な説明の達人だったリチャード・ファインマン<a
 href="#fn1" class="footnote-ref" id="fnref1"
@@ -10041,10 +10039,34 @@ href="http://creativecommons.org/licenses/by-sa/4.0/deed.ja"
 class="uri">http://creativecommons.org/licenses/by-sa/4.0/deed.ja</a>をご覧頂くか、Creative
 Commons, PO Box 1866, Mountain View, CA 94042, USA
 までお手紙をお送りください。</p>
-            </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <!-- <script src="https://vjs.zencdn.net/5.4.4/video.js"></script> -->
 
-</body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+  </body>
 </html>
