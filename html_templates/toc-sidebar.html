@@ -51,6 +51,7 @@ $endfor$
 $if(math)$
   $math$
 $endif$
+    <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" type="text/css">
 $for(header-includes)$
   $header-includes$
 $endfor$
@@ -125,6 +126,7 @@ $body$
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
 $for(include-after)$
   $include-after$
 $endfor$
