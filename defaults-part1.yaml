@@ -25,6 +25,7 @@ reference-location: section
 
 input-files:
   - ../category.tex
+  - preface-for-japanese.md
   - preface.md
   - ../mainmatter.tex
   - part1/ch01.md
