@@ -1,9 +1,17 @@
 title: プログラマーのための圏論
-author: バルトシュ・ミレフスキー著 北川雅裕訳
+author:
+  - |
+    著：バルトシュ・ミレフスキー
+  - |
+    監訳：松田一孝
+  - |
+    翻訳：北川雅裕
 date: \today
 creator:
   - role: author
     text: バルトシュ・ミレフスキー
+  - role: translator
+    text: 松田一孝
   - role: translator
     text: 北川雅裕
 lang: ja-JP
