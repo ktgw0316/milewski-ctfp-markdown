@@ -22,7 +22,6 @@ reference-location: section
 
 input-files:
   - ../category.tex
-  - preface-for-japanese.md
   - preface.md
   - part1/ch01.md
   - part1/ch02.md
