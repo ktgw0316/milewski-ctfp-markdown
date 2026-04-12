@@ -57,6 +57,7 @@
 * [[線形順序](#linear_order){epub:type="index-locator"}]{epub:type="index-term"}
 * [[全射](#surjective){epub:type="index-locator"}]{epub:type="index-term"}
 * [[前順序](#preorder){epub:type="index-locator"}]{epub:type="index-term"}
+* [[全域](#total){epub:type="index-locator"}]{epub:type="index-term"}
 * [[全順序](#total_order){epub:type="index-locator"}]{epub:type="index-term"}
 * [[双デカルト閉](#bicartesian_closed){epub:type="index-locator"}]{epub:type="index-term"}
 * [[双関手](#bifunctor){epub:type="index-locator"}]{epub:type="index-term"}
