@@ -105,7 +105,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">"プログラマーのための圏論" 著：バルトシュ・ミレフスキー　監訳：松田一孝　翻訳：北川雅裕</a>
+          <a class="navbar-brand" href="#">"プログラマーのための圏論" 著：バルトシュ・ミレフスキー 監訳：松田一孝 翻訳：北川雅裕</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -2052,7 +2052,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb100-1"><
 <p>これは集合の固有の特性ではなく、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝑺</mi><mi mathvariant="bold-italic">𝒆</mi><mi mathvariant="bold-italic">𝒕</mi></mrow><annotation encoding="application/x-tex">\mathbf{Set}</annotation></semantics></math>で射として使う関数の特性だ。関数は（一般に）非対称だ。説明しよう。</p>
 <p>関数は、その域 (domain)
 のすべての要素に対して定義する必要がある（プログラミングでは<span
-id="total" class="keyword"><em>全</em></span>関数 (total function)
+id="total" class="keyword"><em>全域</em></span>関数 (total function)
 と呼ぶ）。しかし、余域 (codomain)
 全体を網羅する必要はない。すでにその極端な例をいくつか見てきた。単元集合からの関数たち――余域内の1つの要素だけを選択する関数たちのことだ。（実際に、空集合からの関数は本当に極端だ。）
 域のサイズが余域のサイズよりもずっと小さい場合、我々はよく、域を余域に埋め込むような関数を思い浮かべる。たとえば、単元集合からの関数は、その1つの要素を余域に埋め込むものだと考えられる。私はそれらを<span
@@ -7844,7 +7844,7 @@ href="#fnref152" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 <li id="fn153"><p>監訳注：これは結構微妙なところである。</p>
 <p>たとえば、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⊥</mi><annotation encoding="application/x-tex">\bot</annotation></semantics></math>があるが<code>seq</code>のないHaskellを考えたときに、関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>×</mo><mi>−</mi></mrow><annotation encoding="application/x-tex">a \times -</annotation></semantics></math>は始代数を持たない。では、<code>StreamF a</code>が始代数をもたないのかというとそうではなく、実は<code>StreamF a e</code>は圏論的な積<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>×</mo><mi>e</mi></mrow><annotation encoding="application/x-tex">a \times e</annotation></semantics></math>ではないので、上記の議論はあてはまらず始代数を持つ。</p>
-<p>酒井政裕氏の修士論文「非正格関数に対して適用可能な融合変換」では、関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>が始代数を持つための条件は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>m</mi><mi>a</mi><mi>p</mi><mi>f</mi><mi>⊥</mi><mo>=</mo><mi>⊥</mi></mrow><annotation encoding="application/x-tex">fmap f \bot = \bot</annotation></semantics></math>であることを示している。<a
+<p>酒井政裕氏の修士論文「非正格関数に対して適用可能な融合変換」では、関手<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>が始代数を持つための条件は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>m</mi><mi>a</mi><mi>p</mi><mspace width="0.222em"></mspace><mi>f</mi><mspace width="0.222em"></mspace><mi>⊥</mi><mo>=</mo><mi>⊥</mi></mrow><annotation encoding="application/x-tex">fmap~f~\bot = \bot</annotation></semantics></math>であることを示している。<a
 href="#fnref153" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 <li
@@ -8047,7 +8047,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb546-1"><
 に相当する射<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi mathvariant="bold-italic">𝑲</mi></msub><annotation encoding="application/x-tex">f_{\mathbf{K}}</annotation></semantics></math>について、この関手の作用は<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝑪</mi><annotation encoding="application/x-tex">\mathbf{C}</annotation></semantics></math>内の射
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mi>a</mi><mo>→</mo><mi>T</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">T a \to T b</annotation></semantics></math>
 であり、これはまず<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>を持ち上げてから<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>を適用することで得られる。
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mrow><mi>T</mi><mi>b</mi></mrow></msub><mo>∘</mo><mi>T</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">\mu_{T b} \circ T f</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mi>b</mi></msub><mo>∘</mo><mi>T</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">\mu_{b} \circ T f</annotation></semantics></math>
 Haskellの記法だと次のようになる。</p>
 <div class="sourceCode">
 <pre
@@ -8156,7 +8156,7 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb555-1"><
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb556-1"><a href="#cb556-1" aria-hidden="true" tabindex="-1"></a>get (set a s) <span class="ot">=</span> s</span></code></pre></div>
 <p>
 は、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>に設定されたフィールドの値を取得すると<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>が返されることを表す。この規則はPUTGETとしても知られる。</p>
-<p>GETPUTとPUTGETを満たすレンズは、振る舞いの良い (well-defined)
+<p>GETPUTとPUTGETを満たすレンズは、振る舞いの良い (well-behaved)
 レンズと呼ばれる。そのレンズがさらにPUTPUTも満たすなら、とても振る舞いの良い
 (very well behaved) レンズと呼ばれる<a href="#fn155"
 class="footnote-ref" id="fnref155"
@@ -8912,7 +8912,8 @@ class="header-section-number">28.2</span> モノイダル圏</h2>
   & a \otimes b
 \end{tikzcd}
 </script>
-<p> (symmetric) モノイダル圏と呼ばれるための条件は、以下の成分
+<p> <!-- --> <span id="symmetric" class="keyword"><em>対称</em></span>
+(symmetric) モノイダル圏と呼ばれるための条件は、以下の成分
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><mo>∷</mo><mi>a</mi><mo>⊗</mo><mi>b</mi><mo>→</mo><mi>b</mi><mo>⊗</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">\gamma_{a b} \Colon a \otimes b \to b \otimes a</annotation></semantics></math>
 の自然同型を持ち、その2乗が恒等射であり
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mrow><mi>b</mi><mi>a</mi></mrow></msub><mo>∘</mo><msub><mi>γ</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="bold-italic">𝒊</mi><mi mathvariant="bold-italic">𝒅</mi></mrow><mrow><mi>a</mi><mo>⊗</mo><mi>b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\gamma_{b a} \circ \gamma_{a b} = %
@@ -9932,6 +9933,8 @@ epub:type="index-locator">線形順序</a></span></li>
 epub:type="index-locator">全射</a></span></li>
 <li><span epub:type="index-term"><a href="#preorder"
 epub:type="index-locator">前順序</a></span></li>
+<li><span epub:type="index-term"><a href="#total"
+epub:type="index-locator">全域</a></span></li>
 <li><span epub:type="index-term"><a href="#total_order"
 epub:type="index-locator">全順序</a></span></li>
 <li><span epub:type="index-term"><a href="#bicartesian_closed"
