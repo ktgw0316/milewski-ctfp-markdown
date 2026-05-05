@@ -18,11 +18,11 @@ by [Bartosz Milewski][bartosz github], based on:
    * html: `pandoc -d ../defaults_html.yaml --template=../html_templates/toc-sidebar.html --to=html5 -o index.html`
    * epub: `pandoc -d ../defaults_html.yaml --to=epub -o ctfp.epub`
    * pdf: `pandoc -d defaults.yaml -o ctfp.pdf`
-     * If you want to make index available in pdf, you need to run the following commands:
+     * To make the index available in PDF and/or fix "Missing character" warnings, you need to run the following commands:
 
         ```shell
         pandoc -d defaults.yaml -o ctfp.tex
-        sed -i -f ../ensuremath.sed ctfp.tex
+        sed -i '' -f ../ensuremath.sed ctfp.tex
         lualatex ctfp
         upmendex -d index.dic ctfp
         lualatex ctfp
