@@ -18,11 +18,11 @@ by [Bartosz Milewski][bartosz github], based on:
    * html: `pandoc -d ../defaults_html.yaml --template=../html_templates/toc-sidebar.html --to=html5 -o index.html`
    * epub: `pandoc -d ../defaults_html.yaml --to=epub -o ctfp.epub`
    * pdf: `pandoc -d defaults.yaml -o ctfp.pdf`
-     * If you want to make index available in pdf, you need to run the following commands:
+     * To make the index available in PDF and/or fix "Missing character" warnings, you need to run the following commands:
 
         ```shell
         pandoc -d defaults.yaml -o ctfp.tex
-        sed -i -f ../ensuremath.sed ctfp.tex
+        sed -i '' -f ../ensuremath.sed ctfp.tex
         lualatex ctfp
         upmendex -d index.dic ctfp
         lualatex ctfp
@@ -40,3 +40,6 @@ html版は[github pages](https://ktgw0316.github.io/milewski-ctfp-markdown/)と�
 
 * 監訳：松田 一孝
 * 翻訳：北川 雅裕
+
+オーム社より2026年5月26日発売の[書籍版](https://www.ohmsha.co.jp/book/9784274234866/)
+およびPDF版とは内容が一部異なる箇所があります。
