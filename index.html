@@ -1597,7 +1597,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb57-1"><a href="#
 <p>
 この新しい定義では、<code>process</code>の実装は次のように簡略化される。</p>
 <div class="sourceCode" id="cb58"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>Writer<span class="op">&lt;</span>vector<span class="op">&lt;</span>string<span class="op">&gt;&gt;</span> process<span class="op">(</span>string s<span class="op">){</span></span>
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>Writer<span class="op">&lt;</span>vector<span class="op">&lt;</span>string<span class="op">&gt;&gt;</span> process<span class="op">(</span>string s<span class="op">)</span> <span class="op"></span>{</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> compose<span class="op">(</span>toUpper<span class="op">,</span> toWords<span class="op">)(</span>s<span class="op">);</span></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>
