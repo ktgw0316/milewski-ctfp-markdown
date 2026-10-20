@@ -4,8 +4,7 @@ name: Build and release
 
 on:
   push:
-    # TODO: release-workflowは動作確認用の一時的な指定。確認後に削除する。
-    branches: [main, release-workflow]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
