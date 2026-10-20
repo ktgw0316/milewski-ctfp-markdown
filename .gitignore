@@ -20,3 +20,4 @@ test_data/
 *.toc
 *.txt
 *.zip
+dist/

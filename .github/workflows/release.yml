@@ -1,0 +1,54 @@
+# GitHub Pages(mainブランチ直下から配信)と同じく、mainへのpushを契機に
+# epub / pdfをビルドしてGitHub Releasesへ公開する。
+name: Build and release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  PANDOC_VERSION: 3.7.0.2
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-luatex texlive-lang-japanese texlive-latex-extra \
+            texlive-pictures texlive-fonts-recommended texlive-science
+
+      - name: Install pandoc
+        run: |
+          wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb"
+          sudo dpkg -i "pandoc-${PANDOC_VERSION}-1-amd64.deb"
+          rm "pandoc-${PANDOC_VERSION}-1-amd64.deb"
+
+      - name: Build epub / pdf
+        run: scripts/build.sh
+
+      # 既存タグに合わせて日付(YYYYMMDD)をタグ名にする。同日に既にタグがあればコミットハッシュを付ける。
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="$(TZ=Asia/Tokyo date +%Y%m%d)"
+          if git ls-remote --exit-code --tags origin "refs/tags/${tag}" >/dev/null; then
+            tag="${tag}-${GITHUB_SHA::7}"
+          fi
+          gh release create "${tag}" dist/* \
+            --target "${GITHUB_SHA}" \
+            --title "${tag}" \
+            --generate-notes
