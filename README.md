@@ -28,12 +28,6 @@ by [Bartosz Milewski][bartosz github], based on:
         lualatex ctfp
         ```
 
-        (On Linux, use `sed -i` instead of `sed -i ''`.)
-
-`scripts/build.sh` runs the epub and pdf steps above for both languages and puts the results in `dist/`.
-On every push to `main`, the GitHub Actions workflow `.github/workflows/release.yml` runs this script
-and publishes the epub/pdf files to [GitHub Releases](../../releases).
-
 [bartosz github]: https://github.com/BartoszMilewski
 [blogpost series]:
   https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/

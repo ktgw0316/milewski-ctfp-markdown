@@ -1,18 +1,12 @@
 #!/usr/bin/env bash
-# READMEの「How to build」に沿ってepub / pdfをビルドし、dist/に集める。
-# usage: scripts/build.sh [english|japanese ...]  (省略時は両方)
+# READMEの「How to build」に沿って英語版・日本語版のepub / pdfをビルドし、dist/に集める。
 set -euo pipefail
 
 root="$(cd "$(dirname "$0")/.." && pwd)"
 dist="$root/dist"
 mkdir -p "$dist"
 
-langs=("$@")
-if [ ${#langs[@]} -eq 0 ]; then
-  langs=(english japanese)
-fi
-
-for lang in "${langs[@]}"; do
+for lang in english japanese; do
   (
     cd "$root/$lang"
 
