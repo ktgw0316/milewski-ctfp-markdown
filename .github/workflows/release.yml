@@ -1,0 +1,67 @@
+# GitHub Pages(mainブランチ直下から配信)と同じく、mainへのpushを契機に
+# epub / pdfをビルドしてGitHub Releasesへ公開する。
+name: Build and release
+
+on:
+  push:
+    # TODO: release-workflowは動作確認用の一時的な指定。確認後に削除する。
+    branches: [main, release-workflow]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  PANDOC_VERSION: 3.7.0.2
+
+jobs:
+  # TeX Liveを毎回インストールしないよう、ビルド済みのTeX Liveコンテナ内でビルドする。
+  build:
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/xu-cheng/texlive-historic-debian:2025
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # コンテナにはsudo / ghが無くpandoc/actions/setupが動かないため、公式のバイナリを直接展開する。
+      - name: Install pandoc
+        run: |
+          curl -fsSL "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz" \
+            | tar -xz -C /usr/local --strip-components 1
+
+      - name: Build epub / pdf
+        run: scripts/build.sh
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+
+  release:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dist
+          path: dist/
+
+      # 既存タグに合わせて日付(YYYYMMDD)をタグ名にする。同日に既にタグがあればコミットハッシュを付ける。
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="$(TZ=Asia/Tokyo date +%Y%m%d)"
+          if gh api "repos/${GITHUB_REPOSITORY}/git/ref/tags/${tag}" >/dev/null 2>&1; then
+            tag="${tag}-${GITHUB_SHA::7}"
+          fi
+          gh release create "${tag}" dist/* \
+            --repo "${GITHUB_REPOSITORY}" \
+            --target "${GITHUB_SHA}" \
+            --title "${tag}" \
+            --generate-notes
